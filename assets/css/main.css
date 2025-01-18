@@ -811,7 +811,7 @@ section,
   color: var(--contrast-color);
 }
 
-.contact .email-form {
+.contact .contact-form {
   background-color: var(--surface-color);
   height: 100%;
   padding: 30px;
@@ -819,14 +819,14 @@ section,
 }
 
 @media (max-width: 575px) {
-  .contact .email-form {
+  .contact .contact-form {
     padding: 20px;
   }
 }
 
-.contact .email-form input[type=text],
-.contact .email-form input[type=email],
-.contact .email-form textarea {
+.contact .contact-form input[type=text],
+.contact .contact-form input[type=email],
+.contact .contact-form textarea {
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
@@ -836,19 +836,19 @@ section,
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.contact .email-form input[type=text]:focus,
-.contact .email-form input[type=email]:focus,
-.contact .email-form textarea:focus {
+.contact .contact-form input[type=text]:focus,
+.contact .contact-form input[type=email]:focus,
+.contact .contact-form textarea:focus {
   border-color: var(--accent-color);
 }
 
-.contact .email-form input[type=text]::placeholder,
-.contact .email-form input[type=email]::placeholder,
-.contact .email-form textarea::placeholder {
+.contact .contact-form input[type=text]::placeholder,
+.contact .contact-form input[type=email]::placeholder,
+.contact .contact-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .email-form button[type=submit] {
+.contact .contact-form button[type=submit] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -857,6 +857,6 @@ section,
   border-radius: 50px;
 }
 
-.contact .email-form button[type=submit]:hover {
+.contact .contact-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
