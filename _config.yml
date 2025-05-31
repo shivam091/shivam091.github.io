@@ -45,3 +45,7 @@ author:
   linkedin_username: shivam091
   instagram_username: taurusian_soul
   resume: /assets/docs/resume.pdf
+
+nav:
+  - {title: "Home", icon: "home", href: "/"}
+  - {title: "About", icon: "info-circle", href: "/about"}

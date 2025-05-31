@@ -1,0 +1,53 @@
+<button class="sidebar-toggle" aria-label="Toggle Sidebar">
+  <span class="icon-bar top-bar"></span>
+  <span class="icon-bar middle-bar"></span>
+  <span class="icon-bar bottom-bar"></span>
+</button>
+<aside class="sidebar">
+  <div class="sidebar-content">
+    <div class="sidebar-top">
+      <a href="/">
+        <img src="{{ '/assets/img/profile-img.png' | relative_url }}" alt="{{ site.author.name }}" class="profile-pic" loading="lazy">
+      </a>
+      <div class="site-title">
+        {{ site.title }}
+      </div>
+      <div class="site-subtitle">
+        A showcase of personal and open source projects.
+      </div>
+    </div>
+    <div class="sidebar-social">
+      <a href="{{ site.author.resume | relative_url }}" title="Download resume" class="social-icon">
+        <svg><use xlink:href="#icon-file"></use></svg>
+      </a>
+      <a href="mailto:{{ site.author.email }}" title="Email {{ site.author.email }}" class="social-icon" target="_blank">
+        <svg><use xlink:href="#icon-envelope"></use></svg>
+      </a>
+      <a href="https://www.github.com/{{ site.author.github_username }}" class="social-icon" target="_blank">
+        <svg><use xlink:href="#icon-github"></use></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}" class="social-icon" target="_blank">
+        <svg><use xlink:href="#icon-linkedin"></use></svg>
+      </a>
+      <a href="https://www.instagram.com/{{ site.author.instagram_username }}" class="social-icon" target="_blank">
+        <svg><use xlink:href="#icon-instagram"></use></svg>
+      </a>
+    </div>
+    <hr/>
+    <nav class="sidebar-nav">
+      {% for item in site.nav %}
+        {% if item.href contains "http" %}
+           <a href="{{ item.href }}" class="sidebar-nav-link">
+             <svg><use xlink:href="#icon-{{ item.icon }}"></use></svg>
+             {{ item.title }}
+           </a>
+        {% else %}
+           <a href="{{ item.href | relative_url }}" class="sidebar-nav-link">
+             <svg><use xlink:href="#icon-{{ item.icon }}"></use></svg>
+             {{ item.title }}
+           </a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+</aside>

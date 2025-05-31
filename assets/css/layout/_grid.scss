@@ -3,19 +3,18 @@
   padding: 1rem;
   flex: 1;
   transition: margin-left 0.3s ease;
+  will-change: margin-left;
 
   @media (max-width: 1024px) {
     margin-left: var(--layout-offset-md);
   }
 
   @media (max-width: 768px) {
-    margin-left: var(--layout-offset-sm);
-    padding: 1rem;
-  }
+    margin-left: 0;
 
-  @media (max-width: 768px) {
-    body:not(.sidebar-visible) & {
-      margin-left: 0;
+    &.sidebar-active {
+      margin-left: var(--layout-offset-sm);
+      padding: 1rem;
     }
   }
 }

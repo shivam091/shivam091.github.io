@@ -5,11 +5,13 @@
 </head>
 <body>
   {% include sprite.svg %}
+  {% include sidebar.html %}
 
   <main class="main-content">
     {{ content }}
   </main>
 
+  {% include footer.html %}
   <script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

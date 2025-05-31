@@ -4,6 +4,7 @@
 @import "abstracts/variables";
 @import "abstracts/modules";
 @import "abstracts/mixins";
+@import "abstracts/animations";
 
 @import "base/reset";
 @import "base/base";
@@ -12,6 +13,8 @@
 @import "base/utilities";
 
 @import "layout/grid";
+@import "layout/sidebar";
+@import "layout/footer";
 
 @import "components/hero";
 @import "components/titles";
