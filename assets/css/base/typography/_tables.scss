@@ -1,0 +1,126 @@
+table {
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+  width: max-content;
+  max-width: 100%;
+  border-collapse: collapse;
+  overflow: auto;
+  font-variant: tabular-nums;
+
+  th {
+    font-weight: 600;
+  }
+
+  td,
+  th {
+   padding: 6px 14px;
+   border: 1px solid var(--borderColor-default);
+  }
+
+  tr {
+    background-color: var(--bgColor-default);
+    border-top: 1px solid var(--borderColor-muted);
+
+    &:nth-child(2n) {
+      background-color: var(--bgColor-muted);
+    }
+  }
+}
+
+
+details {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  summary {
+    cursor: pointer;
+    display: list-item;
+  }
+
+  p {
+    margin-top: 0.5rem;
+  }
+}
+
+.task-list-item {
+    list-style-type: none;
+}
+.task-list-item-checkbox {
+    margin: 0 0.5em 0.25em -1.4em;
+    vertical-align: middle;
+}
+mark {
+  background-color: var(--bgColor-attention-muted);
+  color: var(--fgColor-default);
+}
+
+
+.footnote {
+  &:before {
+    content: "[";
+  }
+
+  &:after {
+    content: "]";
+  }
+}
+
+.footnotes {
+  font-size: 12px;
+  color: var(--fgColor-muted);
+  border-top: 1px solid var(--borderColor-default);
+
+  li {
+    position: relative;
+    padding-left: 0.5rem;
+
+    &:target {
+      color: var(--fgColor-default);
+      border: 1px solid var(--fgColor-link);
+      border-radius: 0.5rem;
+      background-color: var(--bgColor-muted);
+      padding: 0.5rem;
+    }
+
+    p {
+      margin-top: 1rem;
+    }
+  }
+}
+
+
+kbd {
+  display: inline-block;
+  padding: 0.25rem;
+  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  line-height: 10px;
+  color: var(--fgColor-default);
+  vertical-align: middle;
+  background-color: var(--bgColor-muted);
+  border: solid 1px var(--borderColor-muted);
+  border-bottom-color: var(--borderColor-muted);
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 var(--borderColor-muted);
+}
+figure {
+  display: block;
+  margin: 2rem auto;
+  max-width: 100%;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--fgColor-muted, #666);
+    font-style: italic;
+    line-height: 1.4;
+  }
+}

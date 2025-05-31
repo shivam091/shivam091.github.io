@@ -49,3 +49,4 @@ author:
 nav:
   - {title: "Home", icon: "home", href: "/"}
   - {title: "About", icon: "info-circle", href: "/about"}
+  - {title: "Tags", icon: "tag", href: "/tags"}

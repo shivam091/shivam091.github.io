@@ -9,6 +9,8 @@
   --bgColor-muted: #f6f8fa;
   --bgColor-accent-emphasis: #0969da;
   --bgColor-accent-muted: #ddf4ff;
+  --bgColor-attention-muted: #fff8c5;
+  --bgColor-neutral-muted: #818b981f;
 
   --fgColor-default: #1f2328;
   --fgColor-accent: #0969da;
@@ -25,4 +27,19 @@
   --borderColor-accent-muted: #54aeff66;
 
   --avatar-shadow: 0px 0px 0px 2px #ffffffcc;
+
+  --color-prettylights-syntax-comment: #59636e;
+  --color-prettylights-syntax-entity: #6639ba;
+  --color-prettylights-syntax-string: #0a3069;
+  --color-prettylights-syntax-keyword: #cf222e;
+  --color-prettylights-syntax-variable: #953800;
+  --color-prettylights-syntax-constant: #0550ae;
+
+  --tag-text: #222;
+  --tag-bg: #f5f5f5;
+  --tag-border: #ccc;
+  --tag-bg-hover: #e0e0e0;
+  --tag-border-hover: #aaa;
+  --tag-count-bg: #ddd;
+  --tag-count-text: #000;
 }

@@ -1,0 +1,14 @@
+code, pre, tt {
+  font-family: source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace;
+  padding: 0.2rem 0.4rem;
+  margin: 0;
+  font-size: 0.95rem;
+  white-space: break-spaces;
+  background-color: var(--bgColor-neutral-muted);
+  border-radius: 6px;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
