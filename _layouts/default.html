@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {% include sprite.svg %}
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  <script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

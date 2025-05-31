@@ -1,0 +1,47 @@
+title: Harshal LADHE
+
+description: Software Engineer | Freelancer | Learner
+
+url: "https://shivam091.github.io"
+
+# The language of the webpage
+lang: en
+
+# The time zone of the webpage
+timezone: Asia/Kolkata
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+permalink: /blog/:year/:month/:day/:title
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter_opts:
+    default_lang: text
+
+include:
+  - assets
+
+exclude:
+  - README.md
+  - LICENSE.md
+
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+author:
+  name: Harshal LADHE
+  roles:
+    - software engineer
+    - freelancer
+    - lifelong learner
+    - entrepreneur
+  email: harshal.ladhe.1@gmail.com
+  github_username: shivam091
+  linkedin_username: shivam091
+  instagram_username: taurusian_soul
+  resume: /assets/docs/resume.pdf

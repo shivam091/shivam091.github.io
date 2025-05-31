@@ -1,0 +1,21 @@
+.main-content {
+  margin-left: var(--layout-offset-lg);
+  padding: 1rem;
+  flex: 1;
+  transition: margin-left 0.3s ease;
+
+  @media (max-width: 1024px) {
+    margin-left: var(--layout-offset-md);
+  }
+
+  @media (max-width: 768px) {
+    margin-left: var(--layout-offset-sm);
+    padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    body:not(.sidebar-visible) & {
+      margin-left: 0;
+    }
+  }
+}

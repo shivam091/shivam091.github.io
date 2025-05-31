@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>
+  {%- if page.layout == "home" -%}
+    {{ site.title }}
+  {%- else -%}
+    {{ page.title }} | {{ site.title }}
+  {%- endif -%}
+</title>
+
+{%- seo -%}
+
+<!-- Favicon -->
+<link href="{{ '/assets/img/favicon.png' | relative_url }}" rel="icon">
+
+<!-- Preconnect for fonts -->
+{% if site.font_url contains "fonts.googleapis.com" %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% endif %}
+
+<!-- Google Font or Custom Font -->
+{% if site.font_url %}
+  <link rel="stylesheet" href="{{ site.font_url }}">
+{% endif %}
+
+<!-- Stylesheets -->
+<link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet">
+
+<!-- Additional head includes -->
+{{ content_for_head }}

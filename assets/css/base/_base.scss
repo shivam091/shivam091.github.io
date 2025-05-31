@@ -1,0 +1,53 @@
+html,
+body {
+  font-size: clamp(14px, 1.5vw, 16px);
+  height: 100%;
+  width: 100%;
+  line-height: 1.5;
+  font-family: var(--font-family);
+  background: var(--bgColor-default);
+  color: var(--fgColor-default);
+  scroll-behavior: smooth;
+}
+
+body {
+  @extend %no-cursor;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ccc, transparent);
+  margin: 1rem 0;
+}
+
+svg {
+  width: clamp(1rem, 2vw, 1.5rem);
+  height: clamp(1rem, 2vw, 1.5rem);
+  fill: currentColor;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: var(--avatar-shadow);
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
+}
