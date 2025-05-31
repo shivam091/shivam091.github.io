@@ -1,6 +1,7 @@
 @media (prefers-reduced-motion: reduce) {
   a,
-  svg {
+  svg,
+  .sidebar {
     transition: none !important;
   }
 }
