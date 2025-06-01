@@ -25,19 +25,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
     will-change: opacity, transform, visibility;
-  }
 
-  &:hover::after,
-  &:focus-visible::after {
-    animation: tooltip-in 0.2s forwards;
-  }
-
-  @media (max-width: 768px) {
-    &::after {
+    @media (max-width: 768px) {
       font-size: 0.65rem;
       bottom: auto;
       top: 125%;
       transform: translateX(-50%) translateY(-0.25rem);
     }
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    animation: tooltip-in 0.2s forwards;
   }
 }
