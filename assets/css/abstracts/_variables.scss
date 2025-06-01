@@ -7,12 +7,14 @@
 
   --bgColor-default: #ffffff;
   --bgColor-muted: #f6f8fa;
+  --bgColor-emphasis: #25292e;
   --bgColor-accent-emphasis: #0969da;
   --bgColor-accent-muted: #ddf4ff;
 
   --fgColor-default: #1f2328;
   --fgColor-accent: #0969da;
   --fgColor-muted: #59636e;
+  --fgColor-onEmphasis: #ffffff;
   --fgColor-neutral: #59636e;
   --fgColor-severe: #bc4c00;
   --fgColor-danger: #d1242f;
@@ -25,4 +27,8 @@
   --borderColor-accent-muted: #54aeff66;
 
   --avatar-shadow: 0px 0px 0px 2px #ffffffcc;
+
+  --tooltip-bgColor: var(--bgColor-emphasis);
+  --tooltip-fgColor: var(--fgColor-onEmphasis);
+  --tooltip-borderColor: var(--borderColor-emphasis);
 }
