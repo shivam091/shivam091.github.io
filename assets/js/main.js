@@ -40,10 +40,19 @@ var PersonalBlog = (function() {
     });
   }
 
+  function bindMainContentFocus() {
+    document.querySelector(".skip-link").addEventListener("click", function (event) {
+      event.preventDefault();
+      const main = document.getElementById("main-content");
+      if (main) main.focus();
+    });
+  }
+
   return {
     init: function() {
       _initTypedJs();
       _initSideBar();
+      bindMainContentFocus();
     }
   };
 })();
