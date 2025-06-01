@@ -39,12 +39,12 @@
       {% for item in site.nav %}
         {% if item.href contains "http" %}
            <a href="{{ item.href }}" class="sidebar-nav-link" target="_blank" rel="noopener noreferrer">
-             <svg><use xlink:href="#icon-{{ item.icon }}"></use></svg>
+             <svg role="img" aria-hidden="true"><use xlink:href="#icon-{{ item.icon }}"></use></svg>
              {{ item.title }}
            </a>
         {% else %}
            <a href="{{ item.href | relative_url }}" class="sidebar-nav-link">
-             <svg><use xlink:href="#icon-{{ item.icon }}"></use></svg>
+             <svg role="img" aria-hidden="true"><use xlink:href="#icon-{{ item.icon }}"></use></svg>
              {{ item.title }}
            </a>
         {% endif %}
