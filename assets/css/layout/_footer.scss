@@ -14,6 +14,10 @@ footer {
     p {
       margin-bottom: 0;
       font-size: clamp(0.75rem, 1vw, 1rem);
+
+      @media (max-width: 768px) {
+        font-size: 0.75rem;
+      }
     }
   }
 
@@ -22,20 +26,16 @@ footer {
     font-size: clamp(0.625rem, 1.2vw, 0.875rem);
     color: var(--fgColor-muted);
 
-    .heart {
+    .love {
       color: var(--fgColor-danger);
+    }
+
+    @media (max-width: 768px) {
+      font-size: 0.7rem;
     }
   }
 
   @media (max-width: 768px) {
     padding: 0.75rem 1rem;
-
-    .copyright p {
-      font-size: 0.75rem;
-    }
-
-    .credits {
-      font-size: 0.7rem;
-    }
   }
 }

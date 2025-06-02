@@ -4,14 +4,17 @@
   {% include head.html %}
 </head>
 <body>
+  {% include skip-link.html %}
   {% include sprite.svg %}
   {% include sidebar.html %}
 
-  <main class="main-content">
+  <main id="main-content" class="main-content" role="main" tabindex="-1">
     {{ content }}
   </main>
 
   {% include footer.html %}
+
+  {% include scroll_top.html %}
   <script type="text/javascript" src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

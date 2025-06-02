@@ -5,3 +5,45 @@
     transition: none !important;
   }
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: absolute;
+  top: -3.5rem;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background-color: var(--control-bgColor);
+  color: var(--control-fgColor);
+  border: 1px solid var(--control-borderColor);
+  font-size: 0.875rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: top 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  will-change: top, opacity, background-color;
+
+  &:hover {
+    background-color: var(--control-bgColor-hover);
+  }
+
+  &:focus {
+    top: 1rem;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.25rem 0.5rem;
+  }
+}

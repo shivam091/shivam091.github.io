@@ -1,50 +1,50 @@
-<div class="hero">
+<div class="hero" role="banner" aria-labelledby="hero-title">
   <div class="hero-content">
     <a href="/">
       <img src="{{ '/assets/img/profile-img.png' | relative_url }}" alt="{{ site.author.name }}" class="profile-pic" loading="lazy">
     </a>
-    <h1 class="hero-title">{{ site.author.name }}</h1>
+    <h1 id="hero-title" class="hero-title">{{ site.author.name }}</h1>
     <p class="hero-subtitle lead">
       I'm
       {% assign role_list = site.author.roles | join: "," %}
       <span class="hero-highlight typed" data-typed-items="{{ role_list }}"></span>
     </p>
     <hr/>
-    <div class="hero-links">
+    <nav class="hero-links" aria-label="Hero links">
       <a href="/about" class="hero-link">
-        <svg><use xlink:href="#icon-info-circle"></use></svg>
+        <svg role="img" aria-hidden="true"><use xlink:href="#icon-info-circle"></use></svg>
         About
       </a>
       {%- if site.author.resume -%}
         <a href="{{ site.author.resume | relative_url }}" class="hero-link">
-          <svg><use xlink:href="#icon-file"></use></svg>
+          <svg role="img" aria-hidden="true"><use xlink:href="#icon-file"></use></svg>
           Resume
         </a>
       {%- endif -%}
       {%- if site.author.email -%}
-        <a href="mailto:{{ site.author.email }}" title="Email {{ site.author.email }}" class="hero-link" target="_blank">
-          <svg><use xlink:href="#icon-envelope"></use></svg>
+        <a href="mailto:{{ site.author.email }}" class="hero-link" target="_blank">
+          <svg role="img" aria-hidden="true"><use xlink:href="#icon-envelope"></use></svg>
           Email me
         </a>
       {%- endif -%}
       {%- if site.author.github_username -%}
         <a href="https://www.github.com/{{ site.author.github_username }}" class="hero-link" target="_blank">
-          <svg><use xlink:href="#icon-github"></use></svg>
+          <svg role="img" aria-hidden="true"><use xlink:href="#icon-github"></use></svg>
           GitHub
         </a>
       {%- endif -%}
       {%- if site.author.linkedin_username -%}
         <a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}" class="hero-link" target="_blank">
-          <svg><use xlink:href="#icon-linkedin"></use></svg>
+          <svg role="img" aria-hidden="true"><use xlink:href="#icon-linkedin"></use></svg>
           LinkedIn
         </a>
       {%- endif -%}
       {%- if site.author.instagram_username -%}
         <a href="https://www.instagram.com/{{ site.author.instagram_username }}" class="hero-link" target="_blank">
-          <svg><use xlink:href="#icon-instagram"></use></svg>
+          <svg role="img" aria-hidden="true"><use xlink:href="#icon-instagram"></use></svg>
           Instagram
         </a>
       {%- endif -%}
-    </div>
+    </nav>
   </div>
 </div>
