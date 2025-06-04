@@ -1,4 +1,4 @@
-footer {
+.site-footer {
   flex-shrink: 0;
   width: 100%;
   text-align: center;
@@ -10,7 +10,7 @@ footer {
   max-width: 100%;
   margin: 0 auto;
 
-  .copyright {
+  .site-copyright {
     p {
       margin-bottom: 0;
       font-size: clamp(0.75rem, 1vw, 1rem);
@@ -21,7 +21,7 @@ footer {
     }
   }
 
-  .credits {
+  .site-credits {
     margin-top: 0.25rem;
     font-size: clamp(0.625rem, 1.2vw, 0.875rem);
     color: var(--fgColor-muted);

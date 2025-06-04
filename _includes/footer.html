@@ -1,8 +1,14 @@
-<footer role="contentinfo" aria-label="Site footer">
-  <div class="copyright">
-    <p>{{- "&copy;" }} <span>{{ "now" | date: "%Y" }} <strong class="sitename">{{ site.title }}</strong>, All Rights Reserved.</span></p>
+<footer class="site-footer" role="contentinfo" aria-label="Site footer">
+  <div class="site-copyright">
+    <p>
+      <span>
+        {{- "&copy;" }}
+        {{ "now" | date: "%Y" }} <strong class="site-name">{{ site.title }}</strong>,
+        <span data-tooltip="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." tabindex="0">Some rights reserved</span>.
+      </span>
+    </p>
   </div>
-  <div class="credits">
+  <div class="site-credits">
     Made with <span class="love" role="img" aria-label="love">&#10084;</span> and <a href="https://jekyllrb.com/">Jekyll</a>.
   </div>
 </footer>
