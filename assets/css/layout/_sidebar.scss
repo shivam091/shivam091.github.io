@@ -26,20 +26,22 @@
   @media (max-width: 768px) {
     width: var(--layout-offset-sm);
     padding: 1rem 0.5rem;
-    transform: translateX(-100%);
 
-    &:not(.open) {
+    &[data-state="idle"],
+    &:not([data-state]) {
+      transform: translateX(-100%);
+      opacity: 0;
       pointer-events: none;
     }
 
-    &.open {
+    &[data-state="open"] {
       animation: slideIn 0.4s ease forwards;
-      display: block;
+      pointer-events: auto;
     }
 
-    &.close {
-      animation: slideOut 0.3s ease forwards;
-      display: block;
+    &[data-state="close"] {
+      animation: slideOut 0.4s ease forwards;
+      pointer-events: none;
     }
   }
 }
@@ -182,7 +184,7 @@
     transform: rotate(0);
   }
 
-  &.open {
+  &[data-state="open"] {
     .middle-bar {
       opacity: 0;
     }
