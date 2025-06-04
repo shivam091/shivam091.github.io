@@ -7,7 +7,7 @@
     <p class="hero-subtitle lead">
       I'm
       {% assign role_list = site.author.roles | join: "," %}
-      <span class="hero-highlight typed" data-typed-items="{{ role_list }}"></span>
+      <span id="hero-highlight" class="hero-highlight typed" data-typed-items="{{ role_list }}"></span>
     </p>
     <hr/>
     <nav class="hero-links" aria-label="Hero links">
