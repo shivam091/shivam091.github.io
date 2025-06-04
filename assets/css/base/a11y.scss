@@ -1,8 +1,7 @@
 @media (prefers-reduced-motion: reduce) {
   a,
   svg,
-  .sidebar,
-  .scroll-top {
+  .sidebar {
     transition: none;
     animation: none;
   }
@@ -21,7 +20,6 @@
   border: 1px solid var(--control-borderColor);
   font-size: 0.875rem;
   border-radius: 4px;
-  text-decoration: none;
   transition: top 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
   opacity: 0;
   pointer-events: none;
@@ -34,7 +32,9 @@
   &:focus {
     top: 1rem;
     opacity: 1;
+    color: var(--control-fgColor);
     pointer-events: auto;
+    text-decoration: none;
   }
 
   @media (max-width: 768px) {
