@@ -11,30 +11,13 @@ var PersonalBlog = (function() {
     new Typed(typedElement, {strings, loop: true, typeSpeed: 100, backSpeed: 50, backDelay: 2000});
   }
 
-  function initSidebarToggle() {
-    const toggleButton = document.getElementById("sidebar-toggle");
-    const sidebar = document.getElementById("sidebar");
-    const mainContent = document.getElementById("main-content");
-
-    if (!toggleButton || !sidebar || !mainContent) return;
-
-    toggleButton.addEventListener("click", () => {
-      const isOpen = sidebar.classList.toggle("open");
-
-      sidebar.classList.toggle("close", !isOpen);
-      mainContent.classList.toggle("sidebar-active", isOpen);
-      toggleButton.classList.toggle("open", isOpen);
-      toggleButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-  }
-
   function bindSkipLinkFocus() {
     const skipLink = document.getElementById("skip-link");
     const main = document.getElementById("main-content");
 
     if (!skipLink || !main) return;
 
-    skipLink.addEventListener("click", function (event) {
+    skipLink.addEventListener("click", (event) => {
       event.preventDefault();
 
       main.focus();
@@ -44,15 +27,55 @@ var PersonalBlog = (function() {
   return {
     init: function() {
       initTypedJs();
-      initSidebarToggle();
       bindSkipLinkFocus();
     }
   };
 })();
 
-var ScrollTop = (()=> {
+const SideBar = (() => {
+  const toggleButton = document.getElementById("sidebar-toggle");
+  const sidebar = document.getElementById("sidebar");
+  const mainContent = document.getElementById("main-content");
+
+  function collapseSidebarWithFallback() {
+    if (!sidebar) return;
+
+    sidebar.setAttribute("data-state", "close");
+    setTimeout(() => {
+      if (sidebar.getAttribute("data-state") === "close") {
+        sidebar.setAttribute("data-state", "idle");
+      }
+    }, 400);
+  }
+
+  function initSidebarToggle() {
+    if (!toggleButton || !sidebar || !mainContent) return;
+
+    toggleButton.addEventListener("click", () => {
+      const isOpen = sidebar.getAttribute("data-state") === "open";
+      const nextState = isOpen ? "close" : "open";
+
+      sidebar.setAttribute("data-state", nextState);
+      mainContent.setAttribute("data-sidebar", nextState);
+      toggleButton.setAttribute("data-state", nextState);
+      toggleButton.setAttribute("aria-expanded", String(nextState === "open"));
+
+      if (!isOpen) return;
+      collapseSidebarWithFallback();
+    });
+  }
+
+  return {
+    init: () => {
+      initSidebarToggle();
+    }
+  };
+})();
+
+const ScrollTop = (() => {
   let scrollTopBtn = null;
   let isVisible = false;
+  let ticking = false;
 
   function handleClick(event) {
     event.preventDefault();
@@ -60,26 +83,37 @@ var ScrollTop = (()=> {
   }
 
   function toggleVisibility() {
+    if (!scrollTopBtn) return;
+
     const shouldShow = window.scrollY > 250;
 
     if (shouldShow && !isVisible) {
-      scrollTopBtn.classList.remove("animate-out");
-      scrollTopBtn.classList.add("animate-in");
+      scrollTopBtn.setAttribute("data-state", "visible");
       isVisible = true;
     } else if (!shouldShow && isVisible) {
-      scrollTopBtn.classList.remove("animate-in");
-      scrollTopBtn.classList.add("animate-out");
+      scrollTopBtn.setAttribute("data-state", "hidden");
       isVisible = false;
     }
   }
 
   return {
-    init: ()=> {
+    init: () => {
       scrollTopBtn = document.getElementById("scroll-top");
       if (!scrollTopBtn) return;
 
       scrollTopBtn.addEventListener("click", handleClick);
-      window.addEventListener("scroll", toggleVisibility, {passive: true});
+
+      // Throttle or debounce to avoid over-triggering toggleVisibility()
+      window.addEventListener("scroll", () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            toggleVisibility();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, {passive: true});
+
       window.addEventListener("load", toggleVisibility);
       toggleVisibility();
     }
@@ -236,5 +270,6 @@ var Tooltip = (function () {
 
   PersonalBlog.init();
   ScrollTop.init();
+  SideBar.init();
   Tooltip.init();
 })();

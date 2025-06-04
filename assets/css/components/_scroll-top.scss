@@ -26,14 +26,13 @@
     color: var(--fgColor-onEmphasis);
   }
 
-  &.animate-in {
+  &[data-state="visible"] {
     animation: scrollTopBounceIn 0.4s both;
     pointer-events: auto;
     opacity: 1;
-    visibility: visible;
   }
 
-  &.animate-out {
+  &[data-state="hidden"] {
     animation: scrollTopBounceOut 0.4s both;
     pointer-events: none;
     opacity: 0;

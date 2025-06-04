@@ -12,7 +12,7 @@
   @media (max-width: 768px) {
     margin-left: 0;
 
-    &.sidebar-active {
+    &[data-sidebar="open"] {
       margin-left: var(--layout-offset-sm);
       padding: 1rem;
     }
