@@ -1,49 +1,35 @@
 var PersonalBlog = (function() {
-  function _initTypedJs() {
-    if (typeof Typed === "undefined") return;
+  function initTypedJs() {
+    const typedElement = document.getElementById("hero-highlight");
 
-    const selectTyped = document.querySelector(".typed");
+    if (!typedElement || typeof Typed === "undefined") return;
 
-    if (selectTyped) {
-      let typedStrings = selectTyped.getAttribute("data-typed-items");
-      typedStrings = typedStrings.split(",");
+    const strings = typedElement.getAttribute("data-typed-items")?.split(",").map(str => str.trim());
 
-      new Typed(".typed", {
-        strings: typedStrings,
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 50,
-        backDelay: 2000
-      });
-    }
+    if (!strings || strings.length === 0) return;
+
+    new Typed(typedElement, {strings, loop: true, typeSpeed: 100, backSpeed: 50, backDelay: 2000});
   }
 
-  function _initSideBar() {
-    const toggleButton = document.querySelector(".sidebar-toggle");
-    const mainContent = document.querySelector(".main-content");
-    const sidebar = document.querySelector(".sidebar");
+  function initSidebarToggle() {
+    const toggleButton = document.getElementById("sidebar-toggle");
+    const sidebar = document.getElementById("sidebar");
+    const mainContent = document.getElementById("main-content");
 
-    if (toggleButton && mainContent && sidebar) {
-      toggleButton.addEventListener("click", () => {
-        const isOpen = sidebar.classList.contains("open");
+    if (!toggleButton || !sidebar || !mainContent) return;
 
-        if (isOpen) {
-          sidebar.classList.remove("open");
-          sidebar.classList.add("close");
-          mainContent.classList.remove("sidebar-active");
-          toggleButton.classList.remove("open");
-        } else {
-          sidebar.classList.remove("close");
-          sidebar.classList.add("open");
-          mainContent.classList.add("sidebar-active");
-          toggleButton.classList.add("open");
-        }
-      });
-    }
+    toggleButton.addEventListener("click", () => {
+      const isOpen = sidebar.classList.toggle("open");
+
+      sidebar.classList.toggle("close", !isOpen);
+      mainContent.classList.toggle("sidebar-active", isOpen);
+      toggleButton.classList.toggle("open", isOpen);
+      toggleButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
   }
 
-  function _bindMainContentFocus() {
-    const skipLink = document.querySelector(".skip-link");
+  function bindSkipLinkFocus() {
+    const skipLink = document.getElementById("skip-link");
     const main = document.getElementById("main-content");
 
     if (!skipLink || !main) return;
@@ -57,9 +43,9 @@ var PersonalBlog = (function() {
 
   return {
     init: function() {
-      _initTypedJs();
-      _initSideBar();
-      _bindMainContentFocus();
+      initTypedJs();
+      initSidebarToggle();
+      bindSkipLinkFocus();
     }
   };
 })();
@@ -89,13 +75,13 @@ var ScrollTop = (()=> {
 
   return {
     init: ()=> {
-      scrollTopBtn = document.querySelector("#scroll-top");
+      scrollTopBtn = document.getElementById("scroll-top");
       if (!scrollTopBtn) return;
 
       scrollTopBtn.addEventListener("click", handleClick);
       window.addEventListener("scroll", toggleVisibility, {passive: true});
       window.addEventListener("load", toggleVisibility);
-      toggleVisibility(); // Initial check
+      toggleVisibility();
     }
   };
 })();
