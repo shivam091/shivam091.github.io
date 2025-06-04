@@ -50,9 +50,10 @@ var PersonalBlog = (function() {
   };
 })();
 
-var ScrollTop = (()=> {
+const ScrollTop = (() => {
   let scrollTopBtn = null;
   let isVisible = false;
+  let ticking = false;
 
   function handleClick(event) {
     event.preventDefault();
@@ -63,23 +64,32 @@ var ScrollTop = (()=> {
     const shouldShow = window.scrollY > 250;
 
     if (shouldShow && !isVisible) {
-      scrollTopBtn.classList.remove("animate-out");
-      scrollTopBtn.classList.add("animate-in");
+      scrollTopBtn.setAttribute("data-state", "visible");
       isVisible = true;
     } else if (!shouldShow && isVisible) {
       scrollTopBtn.classList.remove("animate-in");
-      scrollTopBtn.classList.add("animate-out");
       isVisible = false;
     }
   }
 
   return {
-    init: ()=> {
+    init: () => {
       scrollTopBtn = document.getElementById("scroll-top");
       if (!scrollTopBtn) return;
 
       scrollTopBtn.addEventListener("click", handleClick);
-      window.addEventListener("scroll", toggleVisibility, {passive: true});
+
+      // Throttle or debounce to avoid over-triggering toggleVisibility()
+      window.addEventListener("scroll", () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            toggleVisibility();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, {passive: true});
+
       window.addEventListener("load", toggleVisibility);
       toggleVisibility();
     }
