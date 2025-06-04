@@ -30,6 +30,7 @@
     animation: scrollTopBounceIn 0.4s both;
     pointer-events: auto;
     opacity: 1;
+    visibility: visible;
   }
 
   &.animate-out {

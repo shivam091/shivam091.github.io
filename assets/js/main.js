@@ -55,48 +55,47 @@ var PersonalBlog = (function() {
     });
   }
 
-  function _bindScrollTop() {
-    const scrollTop = document.querySelector(".scroll-top");
-
-    if (!scrollTop) return;
-
-    scrollTop.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
-  }
-
-  function _toggleScrollTop() {
-    const scrollTop = document.querySelector(".scroll-top");
-
-    if (!scrollTop) return;
-
-    const shouldShow = window.scrollY > 250;
-    const isVisible = scrollTop.classList.contains("animate-in");
-
-    if (shouldShow && !isVisible) {
-      scrollTop.classList.remove("animate-out");
-      scrollTop.classList.add("animate-in");
-    } else if (!shouldShow && isVisible) {
-      scrollTop.classList.remove("animate-in");
-      scrollTop.classList.add("animate-out");
-    }
-  }
-
   return {
     init: function() {
       _initTypedJs();
       _initSideBar();
       _bindMainContentFocus();
-      _bindScrollTop();
-      _toggleScrollTop();
+    }
+  };
+})();
 
-      window.addEventListener("load", _toggleScrollTop);
-      document.addEventListener("scroll", _toggleScrollTop);
+var ScrollTop = (()=> {
+  let scrollTopBtn = null;
+  let isVisible = false;
+
+  function handleClick(event) {
+    event.preventDefault();
+    window.scrollTo({top: 0, behavior: "smooth"});
+  }
+
+  function toggleVisibility() {
+    const shouldShow = window.scrollY > 250;
+
+    if (shouldShow && !isVisible) {
+      scrollTopBtn.classList.remove("animate-out");
+      scrollTopBtn.classList.add("animate-in");
+      isVisible = true;
+    } else if (!shouldShow && isVisible) {
+      scrollTopBtn.classList.remove("animate-in");
+      scrollTopBtn.classList.add("animate-out");
+      isVisible = false;
+    }
+  }
+
+  return {
+    init: ()=> {
+      scrollTopBtn = document.querySelector("#scroll-top");
+      if (!scrollTopBtn) return;
+
+      scrollTopBtn.addEventListener("click", handleClick);
+      window.addEventListener("scroll", toggleVisibility, {passive: true});
+      window.addEventListener("load", toggleVisibility);
+      toggleVisibility(); // Initial check
     }
   };
 })();
@@ -105,4 +104,5 @@ var PersonalBlog = (function() {
   "use strict";
 
   PersonalBlog.init();
+  ScrollTop.init();
 })();
