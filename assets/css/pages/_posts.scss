@@ -1,3 +1,48 @@
+.post-listing {
+  counter-reset: post;
+  padding: 0;
+  margin: 0;
+}
+
+.post-item {
+  counter-increment: post;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  padding-left: 1.5rem;
+
+  &::before {
+    content: counter(post) ".";
+    position: absolute;
+    left: 0;
+    width: 1.5rem;
+    color: var(--fgColor-accent);
+    font-weight: 500;
+  }
+}
+
+.post-title {
+  @extend %text-truncate;
+  max-width: 40%;
+}
+
+.post-separator {
+  flex-grow: 1;
+  border-bottom: 1px dotted var(--borderColor-muted);
+  margin: 0 0.5rem;
+  height: 0.1rem;
+  align-self: center;
+}
+
+.post-date {
+  flex-shrink: 0;
+  color: var(--fgColor-muted);
+  font-size: 0.875rem;
+}
+
 .post-meta {
   display: flex;
   flex-wrap: wrap;

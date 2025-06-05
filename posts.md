@@ -1,7 +1,7 @@
 ---
 layout: page
 title: All Blog Posts
-permalink: /blogs
+permalink: /posts
 ---
 <section style="max-width: 800px; margin: 2rem auto; padding: 1rem;">
   <ul style="list-style: none; padding: 0; display: grid; gap: 1.5rem;">
@@ -27,8 +27,8 @@ permalink: /blogs
             </div>
           {% endif %}
           {% if post.categories %}
-            <div>
-              🏷️
+            <div style="display: inline-flex; align-items: center; gap: 0.25rem;">
+              <svg><use xlink:href="#icon-folder"></use></svg>
               {% for category in post.categories %}
                 <a href="{{ '/categories/' | append: category | downcase | relative_url }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
               {% endfor %}

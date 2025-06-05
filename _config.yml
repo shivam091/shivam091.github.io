@@ -15,7 +15,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-permalink: /blog/:year/:month/:day/:title
+permalink: /post/:year/:month/:day/:title
 
 markdown: kramdown
 highlighter: rouge
@@ -47,9 +47,7 @@ jekyll-archives:
   enabled:
     - tags
     - categories
-  layouts:
-    category: category
-    tag: tag
+  layout: archive
   permalinks:
     tag: /tag/:name/
     category: /category/:name/

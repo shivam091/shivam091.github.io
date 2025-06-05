@@ -1,0 +1,12 @@
+<ol class="post-listing" role="region">
+  {% assign posts = include.posts %}
+  {% for post in posts %}
+    <li class="post-item">
+      <a class="post-title" href="{{ post.url | relative_url }}" data-tooltip="{{ post.title }}">
+        {{ post.title }}
+      </a>
+      <span class="post-separator" aria-hidden="true"></span>
+      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+    </li>
+  {% endfor %}
+</ol>

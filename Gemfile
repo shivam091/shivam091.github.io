@@ -10,7 +10,7 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   # Add metadata tags for search engines and social networks
   gem "jekyll-seo-tag", "~> 2.8"
-
+  # Automatically generate post archives by dates, tags, and categories
   gem "jekyll-archives", "~> 2.3"
 end
 
