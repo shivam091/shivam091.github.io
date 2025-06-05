@@ -1,0 +1,19 @@
+details {
+  margin-block: 1rem;
+
+  summary {
+    cursor: pointer;
+    display: list-item;
+    font-weight: 500;
+  }
+
+  &[open] {
+    summary {
+      font-weight: 600;
+    }
+  }
+
+  p {
+    margin-top: 0.5rem;
+  }
+}
