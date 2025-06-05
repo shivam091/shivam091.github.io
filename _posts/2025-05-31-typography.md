@@ -139,7 +139,10 @@ Inline `console.log("Hi")` inside text.
 
 This sentence has a footnote.[^1]
 
+This sentence has an another footnote.[^2]
+
 [^1]: This is the footnote content.
+[^2]: This is the another footnote content.
 
 ## Misc elements
 
