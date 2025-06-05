@@ -1,11 +1,14 @@
 ---
 layout: page
+title: Posts {{ page.title }}
 ---
 
-<ul>
+<ul class="tag-list__posts" role="region">
   {% for post in page.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+    <li class="tag-list__post">
+      <a href="{{ post.url }}" class="tag-list__post-title">{{ post.title }}</a>
+      <span class="tag-list__dash"></span>
+      <small class="tag-list__date">{{ post.date | date: "%B %d, %Y" }}</small>
     </li>
   {% endfor %}
 </ul>

@@ -70,5 +70,5 @@ author:
 nav:
   - {title: "Home", icon: "home", href: "/"}
   - {title: "About", icon: "info-circle", href: "/about"}
-  - {title: "Categories", icon: "categories", href: "/categories"}
+  - {title: "Categories", icon: "folder", href: "/categories"}
   - {title: "Tags", icon: "tag", href: "/tags"}

@@ -1,81 +1,45 @@
 .tags {
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.4rem 0.75rem;
-    font-size: 0.875rem;
-    border-radius: 2rem;
-    background-color: var(--bgColor-muted);
-    color: var(--fgColor-default);
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-    border: 1px solid #ccc;
-
-    &:hover {
-      background-color: #007acc;
-      color: #fff;
-
-      .count {
-        background-color: #fff;
-        color: #007acc;
-      }
-    }
-
-    .name {
-      text-align: center;
-    }
-
-    .count {
-      background-color: #ddd;
-      color: #333;
-      font-size: 0.75rem;
-      margin-left: 0.5rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-      font-weight: 500;
-    }
-  }
-}
-
-
-
-.tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.5rem 1rem;
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
-.tag-item {
+.tag {
   margin: 0;
-}
 
-.tag-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3em;
-  padding: 0.4em 0.7em;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--tag-text, #333);
-  background-color: var(--tag-bg, #f2f2f2);
-  border: 1px solid var(--tag-border, #ccc);
-  border-radius: 1em;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  .tag-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: .7em;
+    padding: 6px 8px 7px;
+    background-color: var(--bgColor-muted);
+    font-size: 0.95rem;
+    border: 1px solid var(--borderColor-default);
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    will-change: background-color, border-color, box-shadow;
 
-  &:hover {
-    background-color: var(--tag-bg-hover, #e0e0e0);
-    border-color: var(--tag-border-hover, #999);
-    transform: scale(1.05);
+    &:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
   }
-}
 
-.tag-count {
-  font-size: 0.8em;
-  background-color: var(--tag-count-bg, #d8d8d8);
-  color: var(--tag-count-text, #000);
-  padding: 0.1em 0.5em;
-  border-radius: 1em;
+  .tag-name {
+    font-weight: 500;
+  }
+
+  .tag-count {
+    display: inline-block;
+    min-width: 1.6em;
+    padding: 0.1em 0.5em;
+    background-color: var(--bgColor-neutral-muted);
+    color: var(--fgColor-default);
+    font-size: 0.8rem;
+    border-radius: 999px;
+    text-align: center;
+    border: 1px solid var(--borderColor-neutral-muted);
+  }
 }
