@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-05T16:30:01+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/blog/2025/06/05/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-05T01:00:00+05:30</published><updated>2025-06-05T01:00:00+05:30</updated><id>https://shivam091.github.io/blog/2025/06/05/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/blog/2025/06/05/understanding-css-grid"><![CDATA[<h2 id="table-of-contents">Table of Contents</h2>
+
+<ol>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#why-css-grid">Why CSS Grid?</a></li>
+  <li><a href="#basic-terminology">Basic Terminology</a></li>
+  <li><a href="#css-grid-properties">CSS Grid Properties</a>
+    <ul>
+      <li><a href="#grid-layout-example">Grid Layout Example</a></li>
+      <li><a href="#understanding-fr-fractional-units">Understanding <code class="language-text highlighter-rouge">fr</code> (Fractional Units)</a></li>
+      <li><a href="#other-useful-properties">Other Useful Properties</a></li>
+      <li><a href="#responsive-design-with-css-grid">Responsive Design with CSS Grid</a></li>
+    </ul>
+  </li>
+  <li><a href="#common-css-grid-properties">Common CSS Grid Properties</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ol>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>CSS Grid is one of the most powerful tools for building web layouts. In this article, we’ll explore all the fundamentals, from basic to advanced usage.</p>
+
+<h2 id="why-css-grid">Why CSS grid?</h2>
+
+<p>Grid allows you to design complex layouts using rows and columns with minimal code. Unlike flexbox, which is one-dimensional, grid is two-dimensional. This makes CSS Grid extremely powerful for both horizontal and vertical layout management.</p>
+
+<h2 id="basic-terminology">Basic terminology</h2>
+
+<ul>
+  <li><strong>Grid Container</strong>: The parent element where grid is applied.</li>
+  <li><strong>Grid Item</strong>: The children of the grid container.</li>
+  <li><strong>Grid Line</strong>: The lines dividing the grid tracks.</li>
+  <li><strong>Grid Track</strong>: The space between two grid lines (either row or column).</li>
+  <li><strong>Grid Cell</strong>: The intersection of a grid row and a grid column.</li>
+</ul>
+
+<h2 id="css-grid-properties">CSS grid properties</h2>
+
+<p>Here are some of the most commonly used properties for defining a grid layout:</p>
+
+<ul>
+  <li><strong>display: grid;</strong> - Turns the container into a grid layout.</li>
+  <li><strong>grid-template-columns</strong> - Defines the number and size of columns.</li>
+  <li><strong>grid-template-rows</strong> - Defines the number and size of rows.</li>
+  <li><strong>gap</strong> - Specifies the space between rows and columns in the grid.</li>
+  <li><strong>grid-column</strong> - Defines how many columns an item will span.</li>
+  <li><strong>grid-row</strong> - Defines how many rows an item will span.</li>
+</ul>
+
+<h3 id="grid-layout-example">Grid layout example</h3>
+
+<p>Here’s an example of a simple 3-column grid layout:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span> <span class="c">/* 3 equal columns */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* Space between columns and rows */</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>This layout has 3 columns of equal width (<code class="language-text highlighter-rouge">1fr</code> stands for 1 fraction of the available space), and there’s a gap of <code class="language-text highlighter-rouge">1rem</code> between both rows and columns.</p>
+
+<h3 id="understanding-fr-fractional-units">Understanding <code class="language-text highlighter-rouge">fr</code> (Fractional Units)</h3>
+
+<p>The <code class="language-text highlighter-rouge">fr</code> unit is a flexible length unit that allows us to create responsive grids. It distributes available space in a grid container proportionally.
+In the example above, <code class="language-text highlighter-rouge">1fr</code> means each column will take up an equal share of the available space.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* First column takes 2/3 of the space, second takes 1/3 */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>In the above code, the first column will take up 2 fractions of the available space, and the second will take 1 fraction.
+The total available space is divided into 3 parts, with the first column getting 2 parts and the second getting 1.</p>
+
+<h3 id="other-useful-properties">Other useful properties</h3>
+
+<p><strong>grid-template-areas</strong> - Defines a grid using named areas. This can make positioning easier.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-areas</span><span class="p">:</span>
+    <span class="s1">"header header header"</span>
+    <span class="s1">"main main sidebar"</span>
+    <span class="s1">"footer footer footer"</span><span class="p">;</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>justify-items</strong> - Aligns items horizontally within their grid cell.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">justify-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* Centers grid items horizontally */</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>align-items</strong> - Aligns items vertically within their grid cell.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* Centers grid items vertically */</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>justify-self</strong> - Aligns a specific grid item horizontally within its grid cell.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">justify-self</span><span class="p">:</span> <span class="nb">end</span><span class="p">;</span> <span class="c">/* Aligns this specific item to the right */</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>align-self</strong> - Aligns a specific grid item vertically within its grid cell.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">align-self</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span> <span class="c">/* Aligns this specific item to the top */</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="responsive-design-with-css-grid">Responsive design with CSS grid</h3>
+
+<p>CSS Grid makes responsive design easier than ever. You can modify your grid layout based on screen size using media queries.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.grid</span> <span class="p">{</span>
+    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* Stack columns on small screens */</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>In this example, the grid has 3 columns on larger screens, but on screens smaller than <code class="language-text highlighter-rouge">768px</code>, the grid switches to 1 column.</p>
+
+<h2 id="common-css-grid-properties">Common CSS grid properties</h2>
+
+<p>Here’s a simple table summarizing key grid properties:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>grid-template-columns</td>
+      <td>Defines column structure</td>
+    </tr>
+    <tr>
+      <td>grid-template-rows</td>
+      <td>Defines row structure</td>
+    </tr>
+    <tr>
+      <td>gap</td>
+      <td>Space between items</td>
+    </tr>
+    <tr>
+      <td>grid-template-areas</td>
+      <td>Defines named areas for grid items</td>
+    </tr>
+    <tr>
+      <td>justify-items</td>
+      <td>Aligns grid items horizontally</td>
+    </tr>
+    <tr>
+      <td>align-items</td>
+      <td>Aligns grid items vertically</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>CSS Grid makes layout development more accessible and powerful. By understanding and utilizing its properties, you can create complex layouts with minimal code. Mastering CSS Grid will significantly improve your UI skills, especially when dealing with complex designs.</p>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="CSS" /><category term="CSS" /><category term="Grid" /><summary type="html"><![CDATA[CSS Grid is one of the most powerful tools for building web layouts.]]></summary></entry><entry><title type="html">Typography Test Post</title><link href="https://shivam091.github.io/blog/2025/05/31/typography" rel="alternate" type="text/html" title="Typography Test Post" /><published>2025-05-31T00:00:00+05:30</published><updated>2025-05-31T00:00:00+05:30</updated><id>https://shivam091.github.io/blog/2025/05/31/typography</id><content type="html" xml:base="https://shivam091.github.io/blog/2025/05/31/typography"><![CDATA[<h2 id="headings">Headings</h2>
+
+<h1 id="h1-heading-usually-reserved-for-post-title">H1 Heading (usually reserved for post title)</h1>
+<h2 id="h2-heading">H2 Heading</h2>
+<h3 id="h3-heading">H3 Heading</h3>
+<h4 id="h4-heading">H4 Heading</h4>
+<h5 id="h5-heading">H5 Heading</h5>
+<h6 id="h6-heading">H6 Heading</h6>
+
+<h2 id="paragraphs">Paragraphs</h2>
+
+<p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. Nulla <em>vehicula</em>, <code class="language-text highlighter-rouge">inline code</code>, <a href="https://example.com">external link</a>, and a line break:<br />
+New line here.</p>
+
+<h2 id="blockquote">Blockquote</h2>
+
+<blockquote>
+  <p>“Design is not just what it looks like and feels like. Design is how it works.”<br />
+— <em>Steve Jobs</em></p>
+</blockquote>
+
+<h2 id="links">Links</h2>
+
+<p><a href="https://example.com">External Link</a><br />
+<a href="/about/">Internal Link</a><br />
+Mailto: <a href="mailto:test@example.com">Send Email</a></p>
+
+<h2 id="lists">Lists</h2>
+
+<h3 id="unordered-list">Unordered List</h3>
+
+<ul>
+  <li>Apples</li>
+  <li>Oranges
+    <ul>
+      <li>Navel</li>
+      <li>Blood</li>
+    </ul>
+  </li>
+  <li>Bananas</li>
+</ul>
+
+<h3 id="ordered-list">Ordered List</h3>
+
+<ol>
+  <li>First item</li>
+  <li>Second item
+    <ol>
+      <li>Nested</li>
+      <li>Nested again</li>
+    </ol>
+  </li>
+  <li>Third item</li>
+</ol>
+
+<h3 id="description-lists">Description Lists</h3>
+
+<dl>
+  <dt>HTML</dt>
+  <dd>Hypertext Markup Language</dd>
+  <dt>CSS</dt>
+  <dd>Cascading Style Sheets</dd>
+</dl>
+
+<h2 id="inline-elements">Inline Elements</h2>
+
+<p><strong>bold text</strong>,
+<em>italic text</em>,
+<code class="language-text highlighter-rouge">code</code>,
+<del>strikethrough</del>,
+<u>underlined</u>,
+<small>small text</small>
+<mark>highlighted</mark> text.
+<abbr title="attribute">attr</abbr></p>
+
+<h2 id="code-blocks">Code Blocks</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Gemfile</span>
+<span class="n">gem</span> <span class="s1">'httparty'</span>
+
+<span class="c1"># app/services/weather_api.rb</span>
+<span class="nb">require</span> <span class="s1">'httparty'</span>
+
+<span class="k">class</span> <span class="nc">WeatherApi</span>
+  <span class="no">API_KEY</span> <span class="o">=</span> <span class="s1">'your_api_key'</span>
+  <span class="no">BASE_URL</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather'</span>
+
+  <span class="k">def</span> <span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">BASE_URL</span><span class="si">}</span><span class="s2">?q=</span><span class="si">#{</span><span class="n">city</span><span class="si">}</span><span class="s2">&amp;appid=</span><span class="si">#{</span><span class="no">API_KEY</span><span class="si">}</span><span class="s2">&amp;units=metric"</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="no">HTTParty</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="s2">"API Error: </span><span class="si">#{</span><span class="n">response</span><span class="p">.</span><span class="nf">code</span><span class="si">}</span><span class="s2">"</span> <span class="k">unless</span> <span class="n">response</span><span class="p">.</span><span class="nf">success?</span>
+    <span class="n">response</span><span class="p">.</span><span class="nf">parsed_body</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># app/controllers/weather_controller.rb</span>
+<span class="k">def</span> <span class="nf">show</span>
+  <span class="n">city</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:city</span><span class="p">]</span>
+  <span class="n">weather_data</span> <span class="o">=</span> <span class="no">WeatherApi</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+  <span class="vi">@temperature</span> <span class="o">=</span> <span class="n">weather_data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">]</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Inline <code class="language-text highlighter-rouge">console.log("Hi")</code> inside text.</p>
+
+<h2 id="details--summary">Details / Summary</h2>
+
+<details>
+  <summary>Click to expand</summary>
+  <p>This is hidden content revealed with HTML <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags.</p>
+</details>
+
+<h2 id="figures-and-images">Figures and Images</h2>
+
+<h3 id="image-with-caption">Image with Caption</h3>
+
+<figure>
+  <img src="https://via.placeholder.com/600x200" alt="Example Image" />
+  <figcaption>This is a caption below the image.</figcaption>
+</figure>
+
+<h3 id="simple-image">Simple Image</h3>
+
+<p><img src="https://via.placeholder.com/400x200" alt="Alt text" /></p>
+
+<h2 id="task-list">Task List</h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Create base layout</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Add dark mode</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Finalize footer</li>
+</ul>
+
+<h2 id="tables">Tables</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Feature</th>
+      <th style="text-align: center">Supported</th>
+      <th style="text-align: left">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">Tables</td>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: left">Markdown &amp; HTML</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">GFM</td>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: left">Supported on GitHub</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">Footnotes</td>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: left">In Markdown config</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="footnotes">Footnotes</h2>
+
+<p>This sentence has a footnote.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
+
+<p>This sentence has an another footnote.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
+
+<h2 id="misc-elements">Misc elements</h2>
+
+<p><strong>Abbreviation:</strong><br />
+The abbreviation for HyperText Markup Language is <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+
+<p><strong>Keyboard Input:</strong><br />
+To save, press <kbd>Ctrl</kbd> + <kbd>S</kbd>.</p>
+
+<p><strong>Subscript/Superscript:</strong><br />
+H<sub>2</sub>O and E = mc<sup>2</sup></p>
+
+<p><strong>Time Tag:</strong><br />
+<time datetime="2025-05-31">May 31, 2025</time></p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>This is the footnote content. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>This is the another footnote content. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="Typography" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various HTML elements styled through your Jekyll theme. It includes headings, paragraphs, lists, tables, forms, code, and more.]]></summary></entry></feed>
