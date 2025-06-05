@@ -1,0 +1,31 @@
+code, pre, tt {
+  font-family: source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace;
+  font-size: inherit;
+  white-space: break-spaces;
+  background-color: var(--bgColor-neutral-muted);
+  border-radius: 6px;
+  padding: 0 .2em;
+}
+
+code[class^="language-"] {
+
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+kbd {
+  display: inline-block;
+  padding: 0.25rem;
+  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  line-height: 10px;
+  color: var(--fgColor-default);
+  vertical-align: middle;
+  background-color: var(--bgColor-muted);
+  border: solid 1px var(--borderColor-muted);
+  border-bottom-color: var(--borderColor-muted);
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 var(--borderColor-muted);
+}

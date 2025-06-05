@@ -10,6 +10,10 @@
   --bgColor-emphasis: #25292e;
   --bgColor-accent-emphasis: #0969da;
   --bgColor-accent-muted: #ddf4ff;
+  --bgColor-attention-emphasis: #9a6700;
+  --bgColor-attention-muted: #fff8c5;
+  --bgColor-neutral-emphasis: #59636e;
+  --bgColor-neutral-muted: #818b981f;
 
   --fgColor-default: #1f2328;
   --fgColor-accent: #0969da;
@@ -40,4 +44,27 @@
   --control-bgColor-hover: #eff2f5;
   --control-fgColor: #25292e;
   --control-borderColor: var(--borderColor-default);
+
+  --color-prettylights-syntax-comment: #6a737d;
+  --color-prettylights-syntax-error-text: #e05252;
+  --color-prettylights-syntax-error-bg: #ffeef0;
+  --color-prettylights-syntax-keyword: #d73a49;
+  --color-prettylights-syntax-namespace: #6f42c1;
+  --color-prettylights-syntax-number: #005cc5;
+  --color-prettylights-syntax-string: #032f62;
+  --color-prettylights-syntax-name: #22863a;
+  --color-prettylights-syntax-builtin: #b31d28;
+  --color-prettylights-syntax-decorator: #b392f0;
+  --color-prettylights-syntax-entity: #795548;
+  --color-prettylights-syntax-function: #005cc5;
+  --color-prettylights-syntax-tag: #22863a;
+  --color-prettylights-syntax-symbol: #e36209;
+  --color-prettylights-syntax-subtle: #d1d5da;
+  --color-prettylights-syntax-heading: #24292e;
+  --color-prettylights-syntax-inserted-bg: #e6ffed;
+  --color-prettylights-syntax-inserted-text: #22863a;
+  --color-prettylights-syntax-deleted-bg: #ffeef0;
+  --color-prettylights-syntax-deleted-text: #b31d28;
+  --color-prettylights-syntax-output: #586069;
+  --color-prettylights-syntax-meta: #444d56;
 }

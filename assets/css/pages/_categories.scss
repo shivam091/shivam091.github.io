@@ -1,0 +1,107 @@
+.category-list {
+  width: 100%;
+  max-width: 90%;
+  margin: 2rem auto;
+  border-radius: 0.75rem;
+
+  .category-list__item {
+    margin-bottom: 1rem;
+    border: 1px solid var(--borderColor-default);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    will-change: box-shadow;
+
+    &[data-expanded] {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+
+      .category-list__header {
+        border-bottom: 1px solid var(--borderColor-default);
+      }
+
+      .category-list__posts {
+        max-height: 1000px; // large enough to fit content
+      }
+
+      .category-list__icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    .category-list__header {
+      background-color: var(--bgColor-muted);
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: none;
+      gap: 0.5rem;
+
+      .category-list__icon {
+        transition: transform 0.3s ease;
+        will-change: transform;
+      }
+
+      .category-list__count {
+        color: var(--fgColor-muted);
+        font-weight: normal;
+      }
+
+      @media (max-width: 768px) {
+        padding: 0.5rem 0.75rem;
+      }
+    }
+
+    .category-list__posts {
+      background-color: var(--bgColor-default);
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease;
+      will-change: max-height;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+.category-list__post {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+
+  &:hover {
+    background-color: var(--bgColor-muted);
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--borderColor-default);
+  }
+
+  .category-list__post-title {
+    @extend %text-truncate;
+    max-width: 40%;
+  }
+
+  .category-list__dash {
+    @include separator;
+  }
+
+  .category-list__date {
+    font-size: 0.875rem;
+    color: var(--fgColor-muted);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+  }
+}

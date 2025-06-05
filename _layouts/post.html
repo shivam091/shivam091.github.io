@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<h1 class="page-title">{{ page.title }}</h1>
+
+<section class="page-content">
+  <p>
+    <strong>Published:</strong>
+    <time datetime="2025-05-28">May 28, 2025</time>
+     |
+    <strong>Tags:</strong> <a href="#">CSS</a>, <a href="#">Grid</a>
+  </p>
+
+  {{ content }}
+
+  <footer class="post__footer" itemscope itemtype="https://schema.org/Person">
+    <p class="post__author">
+      <em>Written by <span itemprop="name">{{ site.title }}</span></em>
+    </p>
+  </footer>
+</section>
