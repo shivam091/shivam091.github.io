@@ -14,6 +14,10 @@ ul, ol {
     margin-bottom: 0.5rem;
     @include break-word();
 
+    + li {
+      margin-top: 0.25em;
+    }
+
     &::marker {
       color: var(--fgColor-accent);
     }
@@ -44,5 +48,20 @@ dl {
     > * {
       @include break-word();
     }
+  }
+}
+
+.task-list {
+  .task-list-item {
+    list-style-type: none;
+
+    + .task-list-item {
+      margin-top: 0.25rem;
+    }
+  }
+
+  .task-list-item-checkbox {
+    margin: 0 0.5em 0.25em -1.4em;
+    vertical-align: middle;
   }
 }

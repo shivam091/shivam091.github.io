@@ -1,0 +1,22 @@
+figure {
+  display: block;
+  margin-block: 1rem;
+  margin-inline: auto;
+  max-width: 100%;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  figcaption {
+    margin-top: 0.75rem;
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
+    color: var(--fgColor-muted);
+    font-style: italic;
+    padding-inline: 1rem;
+    line-height: 1.4;
+  }
+}
