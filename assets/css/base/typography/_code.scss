@@ -2,11 +2,13 @@ code, pre, tt {
   font-family: source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace;
   font-size: inherit;
   white-space: break-spaces;
-  background-color: var(--bgColor-neutral-muted);
   border-radius: 6px;
   padding: 0 .2em;
 }
 
+code.highlighter-rouge {
+  background-color: var(--bgColor-inlineCode);
+}
 code[class^="language-"] {
 
 }
