@@ -30,9 +30,8 @@
 
     .category-list__header {
       background-color: var(--bgColor-muted);
-      padding: 0.75rem 1rem;
+      padding: 0.5rem 1rem;
       font-weight: 500;
-      cursor: pointer;
       width: 100%;
       display: flex;
       align-items: center;
@@ -104,4 +103,17 @@
     padding: 0.5rem 0.75rem;
     font-size: 0.95rem;
   }
+}
+.category-list__toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+  padding: 0.25rem;
 }

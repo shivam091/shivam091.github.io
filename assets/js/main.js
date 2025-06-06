@@ -313,6 +313,54 @@ var Tooltip = (function () {
   };
 })();
 
+var Categories = (function() {
+  function handleToggleClick(event, categoryItem, toggleButton, content) {
+    const expanded = toggleButton.getAttribute("aria-expanded") === "true";
+    const allowMultiple = event.ctrlKey || event.metaKey;
+
+    if (!allowMultiple) {
+      document.querySelectorAll("[data-category]").forEach((item) => {
+        const otherToggle = item.querySelector(".category-list__toggle");
+        const otherContent = item.querySelector(".category-list__posts");
+        const isCurrent = item === categoryItem;
+
+        otherToggle.setAttribute("aria-expanded", isCurrent ? String(!expanded) : "false");
+        otherContent.hidden = !isCurrent || expanded;
+        item.toggleAttribute("data-expanded", isCurrent && !expanded);
+      });
+    }
+
+    toggleButton.setAttribute("aria-expanded", String(!expanded));
+    content.hidden = expanded;
+    categoryItem.toggleAttribute("data-expanded", !expanded);
+  }
+
+  function bindToggle() {
+    document.querySelectorAll("[data-category]").forEach((categoryItem) => {
+      const toggleButton = categoryItem.querySelector(".category-list__toggle");
+      const content = categoryItem.querySelector(".category-list__posts");
+
+      // Keyboard accessibility
+      toggleButton.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggleButton.click();
+        }
+      });
+
+      // Click to toggle
+      toggleButton.addEventListener("click", (event) => {
+        handleToggleClick(event, categoryItem, toggleButton, content);
+      });
+    });
+  }
+
+  return {
+    init: function() {
+      bindToggle();
+    }
+  };
+})();
 
 (function() {
   "use strict";
@@ -322,48 +370,5 @@ var Tooltip = (function () {
   ProgressBar.init();
   SideBar.init();
   Tooltip.init();
-
-  document.querySelectorAll("[data-category]").forEach((categoryItem) => {
-    const toggle = categoryItem.querySelector(".category-list__header");
-    const content = categoryItem.querySelector(".category-list__posts");
-
-    toggle.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        toggle.click();
-      }
-    });
-
-    toggle.addEventListener("click", () => {
-      const expanded = toggle.getAttribute("aria-expanded") === "true";
-      const allowMultiple = event.ctrlKey || event.metaKey;
-
-      if (!allowMultiple) {
-        // Close all other categories
-        document.querySelectorAll("[data-category]").forEach((item) => {
-          const otherToggle = item.querySelector(".category-list__header");
-          const otherContent = item.querySelector(".category-list__posts");
-          const isCurrent = item === categoryItem;
-
-          otherToggle.setAttribute("aria-expanded", isCurrent ? String(!expanded) : "false");
-          otherContent.hidden = !isCurrent || expanded;
-          item.toggleAttribute("data-expanded", isCurrent && !expanded);
-        });
-      }
-
-      toggle.setAttribute("aria-expanded", String(!expanded));
-      content.hidden = expanded;
-      categoryItem.toggleAttribute("data-expanded", !expanded);
-    });
-
-    // Check for URL hash match on load
-    const currentHash = decodeURIComponent(location.hash.slice(1)).toLowerCase();
-    const categoryTitle = toggle.querySelector(".category-list__title").textContent.trim();
-    if (currentHash && categoryTitle.toLowerCase() === currentHash) {
-      setTimeout(() => {
-        toggle.click();
-        categoryItem.scrollIntoView({behavior: "smooth", block: "start"});
-      }, 300);
-    }
-  });
+  Categories.init();
 })();
