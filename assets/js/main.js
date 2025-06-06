@@ -313,7 +313,7 @@ var Tooltip = (function () {
   };
 })();
 
-var Categories = (function() {
+var Categories = (function () {
   function handleToggleClick(event, categoryItem, toggleButton, content) {
     const expanded = toggleButton.getAttribute("aria-expanded") === "true";
     const allowMultiple = event.ctrlKey || event.metaKey;
@@ -356,7 +356,7 @@ var Categories = (function() {
   }
 
   return {
-    init: function() {
+    init: function () {
       bindToggle();
     }
   };
