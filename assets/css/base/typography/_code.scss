@@ -12,7 +12,9 @@ code.highlighter-rouge {
 code[class^="language-"] {
 
 }
-
+div[class^=language-], figure.highlight, .highlight {
+  background-color: var(--bgColor-highlight);
+}
 pre {
   padding: 1rem;
   overflow-x: auto;
@@ -26,8 +28,7 @@ kbd {
   color: var(--fgColor-default);
   vertical-align: middle;
   background-color: var(--bgColor-muted);
-  border: solid 1px var(--borderColor-muted);
-  border-bottom-color: var(--borderColor-muted);
+  border: 1px solid var(--borderColor-muted);
   border-radius: 6px;
-  box-shadow: inset 0 -1px 0 var(--borderColor-muted);
+  box-shadow: inset 0 -2px 0 var(--borderColor-muted);
 }
