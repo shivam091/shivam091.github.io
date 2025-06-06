@@ -99,6 +99,12 @@ def show
 end
 {% endhighlight %}
 
+{% capture code %}
+{% highlight js %}
+console.log("Hello World");
+{% endhighlight %}
+{% endcapture %}
+{% include codeblock.html language="js" content=code %}
 Inline `console.log("Hi")` inside text.
 
 ## Details / Summary
