@@ -13,7 +13,7 @@ permalink: /categories
       <div id="toggle-{{ forloop.index }}" class="category-list__header" aria-expanded="false" aria-controls="posts-{{ forloop.index }}"
         tabindex="0" data-tooltip="Hold Ctrl (or Cmd) to keep others open" role="button">
         <div class="category-list__title-group">
-          <span class="category-list__title">{{ category[0] }}</span>
+          <a href="/category/{{ category[0] | slugify | prepend: site.baseurl }}/" class="category-list__title">{{ category[0] }}</a>
           <small class="category-list__count">{{ count }} post{% if count != 1 %}s{% endif %}</small>
         </div>
         <svg class="category-list__icon" aria-hidden="true">
@@ -23,6 +23,16 @@ permalink: /categories
 
       <ul id="posts-{{ forloop.index }}" class="category-list__posts" role="region" aria-labelledby="toggle-{{ forloop.index }}" hidden>
         {% for post in category[1] %}
+          <li class="category-list__post">
+            <a href="{{ post.url }}" class="category-list__post-title">{{ post.title }}</a>
+            <span class="category-list__dash"></span>
+            <small class="category-list__date">{{ post.date | date: "%B %d, %Y" }}</small>
+          </li>
+          <li class="category-list__post">
+            <a href="{{ post.url }}" class="category-list__post-title">{{ post.title }}</a>
+            <span class="category-list__dash"></span>
+            <small class="category-list__date">{{ post.date | date: "%B %d, %Y" }}</small>
+          </li>
           <li class="category-list__post">
             <a href="{{ post.url }}" class="category-list__post-title">{{ post.title }}</a>
             <span class="category-list__dash"></span>

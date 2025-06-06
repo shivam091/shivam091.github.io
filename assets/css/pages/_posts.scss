@@ -1,38 +1,41 @@
 .post-listing {
-  counter-reset: post;
   padding: 0;
   margin: 0;
 }
 
 .post-item {
-  counter-increment: post;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
   overflow: hidden;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 
   &::before {
-    content: counter(post) ".";
+    content: "";
     position: absolute;
-    left: 0;
-    width: 1.5rem;
-    color: var(--fgColor-accent);
-    font-weight: 500;
+    left: 0.25em;
+    width: 0.25em;
+    height: 0.25em;
+    background-color: var(--fgColor-accent);
+    border-radius: 50%;
   }
 }
 
 .post-title {
   @extend %text-truncate;
   max-width: 40%;
+
+  @media (max-width: 600px) {
+    max-width: 60%;
+  }
 }
 
 .post-separator {
   flex-grow: 1;
-  border-bottom: 1px dotted var(--borderColor-muted);
-  margin: 0 0.5rem;
+  border-bottom: 2px dotted var(--borderColor-muted);
+  margin-inline: 0.5rem;
   height: 0.1rem;
   align-self: center;
 }

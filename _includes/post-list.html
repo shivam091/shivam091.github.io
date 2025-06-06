@@ -1,4 +1,4 @@
-<ol class="post-listing" role="region">
+<ul class="post-listing" role="region">
   {% assign posts = include.posts %}
   {% for post in posts %}
     <li class="post-item">
@@ -9,4 +9,4 @@
       <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
     </li>
   {% endfor %}
-</ol>
+</ul>

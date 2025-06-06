@@ -1,4 +1,4 @@
-.tags {
+.tag-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
@@ -7,7 +7,7 @@
   list-style: none;
 }
 
-.tag {
+.tag-item {
   margin: 0;
 
   .tag-link {
@@ -19,16 +19,16 @@
     background-color: var(--bgColor-muted);
     font-size: 0.95rem;
     border: 1px solid var(--borderColor-default);
-    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    will-change: background-color, border-color, box-shadow;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    will-change: background-color, border-color;
 
     &:hover {
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      background-color: var(--control-transparent-bgColor-hover);
     }
   }
 
   .tag-name {
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .tag-count {

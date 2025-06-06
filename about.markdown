@@ -3,6 +3,7 @@ layout: page
 title: About
 description: Learn more about Harshal Ladhe — Software Engineer, Open Source Contributor, and Minimalist Coder.
 permalink: /about
+icon: info-circle
 ---
 
 ## 👋 Hello there
