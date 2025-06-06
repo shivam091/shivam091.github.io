@@ -1,12 +1,13 @@
 code, pre, tt {
   font-family: source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace;
-  font-size: inherit;
+  font-size: 0.9rem;
   white-space: break-spaces;
   border-radius: 6px;
   padding: 0 .2em;
 }
 
 code.highlighter-rouge {
+  font-size: inherit;
   background-color: var(--bgColor-inlineCode);
 }
 code[class^="language-"] {
@@ -21,9 +22,10 @@ pre {
 }
 
 kbd {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 0.8rem;
   display: inline-block;
   padding: 0.25rem;
-  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   line-height: 10px;
   color: var(--fgColor-default);
   vertical-align: middle;

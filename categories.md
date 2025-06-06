@@ -18,7 +18,7 @@ permalink: /categories
           <small class="category-list__count">{{ count }} post{% if count != 1 %}s{% endif %}</small>
         </div>
 
-        <button type="button" class="category-list__toggle" aria-expanded="false" aria-controls="posts-{{ forloop.index }}" aria-label="Toggle posts in {{ category[0] }}"
+        <button type="button" class="btn category-list__toggle" aria-expanded="false" aria-controls="posts-{{ forloop.index }}" aria-label="Toggle posts in {{ category[0] }}"
           data-tooltip="Hold Ctrl (or Cmd) to keep others open" data-tooltip-position="left">
           <svg class="category-list__icon" aria-hidden="true">
             <use xlink:href="#icon-fold-down"></use>
