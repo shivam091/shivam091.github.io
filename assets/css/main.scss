@@ -1,10 +1,11 @@
 ---
 ---
 
-@use "abstracts/animations";
+@use "abstracts/animations" as *;
+@use "abstracts/mixins" as *;
+
 @import "abstracts/variables";
 @import "abstracts/modules";
-@import "abstracts/mixins";
 
 @import "base/reset";
 @import "base/base";
