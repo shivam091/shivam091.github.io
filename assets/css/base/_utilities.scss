@@ -1,9 +1,12 @@
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--borderColor-default), transparent);
+  margin: 1rem 0;
+}
+
 .clearfix {
   @include clearfix();
-}
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300;
 }
 
 :focus,

@@ -7,11 +7,11 @@
 @import "abstracts/animations";
 
 @import "base/reset";
-@import "base/base";
 @import "base/a11y";
 @import "base/typography";
 @import "base/utilities";
 
+@import "layout/base";
 @import "layout/grid";
 @import "layout/sidebar";
 @import "layout/footer";
