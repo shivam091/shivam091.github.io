@@ -11,6 +11,7 @@ lang: en
 timezone: Asia/Kolkata
 
 plugins:
+  - jekyll-archives
   - jekyll-feed
   - jekyll-seo-tag
 
@@ -33,6 +34,21 @@ sass:
   sass_dir: assets/css
   style: compressed
 
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+jekyll-archives:
+  enabled:
+    - tags
+  layout: archive
+  permalinks:
+    tag: /tag/:name/
 author:
   name: Harshal LADHE
   roles:
@@ -49,3 +65,4 @@ author:
 nav:
   - {title: "Home", icon: "home", href: "/"}
   - {title: "About", icon: "info-circle", href: "/about"}
+  - {title: "Tags", icon: "tag", href: "/tags"}
