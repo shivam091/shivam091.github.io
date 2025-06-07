@@ -1,7 +1,7 @@
 .main-content {
-  margin-left: var(--layout-offset-lg);
-  padding: 1rem;
   flex: 1;
+  padding: 1rem;
+  margin-left: var(--layout-offset-lg);
   transition: margin-left 0.3s ease;
   will-change: margin-left;
 
@@ -17,4 +17,10 @@
       padding: 1rem;
     }
   }
+}
+
+.container {
+  width: 100%;
+  max-width: clamp(600px, 90%, 1200px);
+  margin-inline: auto;
 }
