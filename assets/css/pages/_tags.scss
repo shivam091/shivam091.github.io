@@ -1,0 +1,45 @@
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tag-item {
+  margin: 0;
+
+  .tag-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: .7em;
+    padding: 6px 8px 7px;
+    background-color: var(--bgColor-muted);
+    font-size: 0.95rem;
+    border: 1px solid var(--borderColor-default);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    will-change: background-color, border-color;
+
+    &:hover {
+      background-color: var(--control-transparent-bgColor-hover);
+    }
+  }
+
+  .tag-name {
+    font-weight: 400;
+  }
+
+  .tag-count {
+    display: inline-block;
+    min-width: 1.6em;
+    padding: 0.1em 0.5em;
+    background-color: var(--bgColor-neutral-muted);
+    color: var(--fgColor-default);
+    font-size: 0.8rem;
+    border-radius: 999px;
+    text-align: center;
+    border: 1px solid var(--borderColor-neutral-muted);
+  }
+}

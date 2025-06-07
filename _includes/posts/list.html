@@ -1,0 +1,22 @@
+{% assign posts = include.posts %}
+
+<section class="posts-wrapper">
+  <ul class="posts">
+    {% for post in posts %}
+      <li class="post-item">
+        <article class="post-card">
+          <div class="post-header">
+            <h2 class="post-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            {% if post.excerpt %}
+              <p class="post-excerpt lead">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+            {% endif %}
+          </div>
+
+          {% include posts/meta.html post = post %}
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

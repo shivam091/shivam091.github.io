@@ -1,0 +1,35 @@
+code, pre, tt {
+  font-family: source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  white-space: break-spaces;
+  border-radius: 6px;
+}
+
+code.highlighter-rouge {
+  font-size: inherit;
+  background-color: var(--bgColor-inlineCode);
+  padding: .2em .2em;
+}
+
+code[class^="language-"], figure.highlight, .highlight {
+  background-color: var(--bgColor-highlight);
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+kbd {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 0.8rem;
+  display: inline-block;
+  padding: 0.25rem;
+  line-height: 10px;
+  color: var(--fgColor-default);
+  vertical-align: middle;
+  background-color: var(--bgColor-muted);
+  border: 1px solid var(--borderColor-muted);
+  border-radius: 6px;
+  box-shadow: inset 0 -2px 0 var(--borderColor-muted);
+}

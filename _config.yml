@@ -11,10 +11,11 @@ lang: en
 timezone: Asia/Kolkata
 
 plugins:
+  - jekyll-archives
   - jekyll-feed
   - jekyll-seo-tag
 
-permalink: /blog/:year/:month/:day/:title
+permalink: /post/:year/:month/:day/:title
 
 markdown: kramdown
 highlighter: rouge
@@ -33,6 +34,24 @@ sass:
   sass_dir: assets/css
   style: compressed
 
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+jekyll-archives:
+  enabled:
+    - tags
+    - categories
+  layout: archive
+  permalinks:
+    tag: /tag/:name/
+    category: /category/:name/
+
 author:
   name: Harshal LADHE
   roles:
@@ -49,3 +68,5 @@ author:
 nav:
   - {title: "Home", icon: "home", href: "/"}
   - {title: "About", icon: "info-circle", href: "/about"}
+  - {title: "Categories", icon: "folder", href: "/categories"}
+  - {title: "Tags", icon: "tag", href: "/tags"}
