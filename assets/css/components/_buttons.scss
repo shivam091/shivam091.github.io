@@ -1,0 +1,10 @@
+.btn {
+  background-color: var(--control-bgColor);
+  color: var(--control-fgColor);
+  border: 1px solid var(--control-borderColor);
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--control-bgColor-hover);
+  }
+}
