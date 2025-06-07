@@ -16,6 +16,8 @@
   --bgColor-neutral-muted: #818b981f;
   --bgColor-danger-emphasis: #cf222e;
   --bgColor-danger-muted: #ffebe9;
+  --bgColor-inlineCode: #f6f6f7;
+  --bgColor-highlight: #f7f7f7;
 
   --fgColor-default: #1f2328;
   --fgColor-accent: #0969da;
@@ -46,4 +48,27 @@
   --control-bgColor-hover: #eff2f5;
   --control-fgColor: #25292e;
   --control-borderColor: var(--borderColor-default);
+
+  --color-code-syntax-comment: #6a737d;
+  --color-code-syntax-error-text: #e05252;
+  --color-code-syntax-error-bg: #ffeef0;
+  --color-code-syntax-keyword: #d73a49;
+  --color-code-syntax-namespace: #6f42c1;
+  --color-code-syntax-number: #005cc5;
+  --color-code-syntax-string: #032f62;
+  --color-code-syntax-name: #22863a;
+  --color-code-syntax-builtin: #b31d28;
+  --color-code-syntax-decorator: #b392f0;
+  --color-code-syntax-entity: #795548;
+  --color-code-syntax-function: #005cc5;
+  --color-code-syntax-tag: #22863a;
+  --color-code-syntax-symbol: #e36209;
+  --color-code-syntax-subtle: #d1d5da;
+  --color-code-syntax-heading: #24292e;
+  --color-code-syntax-inserted-bg: #e6ffed;
+  --color-code-syntax-inserted-text: #22863a;
+  --color-code-syntax-deleted-bg: #ffeef0;
+  --color-code-syntax-deleted-text: #b31d28;
+  --color-code-syntax-output: #586069;
+  --color-code-syntax-meta: #444d56;
 }
