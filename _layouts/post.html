@@ -21,15 +21,41 @@ layout: page
     </div>
 
     <div class="share-icons" aria-label="Share this post">
-      <a href="#" aria-label="Share on Twitter">
-        <svg><use xlink:href="#icon-twitter"></use></svg>
+      Share:
+      <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title | uri_escape }}"
+        aria-label="Share on Twitter" aria-describedby="share-twitter" data-tooltip="Twitter"
+        target="_blank" rel="noopener noreferrer nofollow">
+        <svg role="img" aria-hidden="true" class="icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
       </a>
-      <a href="#" aria-label="Share on LinkedIn">
-        <svg><use xlink:href="#icon-linkedin"></use></svg>
+      <span id="share-twitter" class="visually-hidden">Twitter</span>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
+        aria-label="Share on Facebook" aria-describedby="share-facebook" data-tooltip="Facebook"
+        target="_blank" rel="noopener noreferrer nofollow">
+        <svg role="img" aria-hidden="true" class="icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
       </a>
-      <button aria-label="Copy link">
-        <svg><use xlink:href="#icon-link"></use></svg>
-      </button>
+      <span id="share-facebook" class="visually-hidden">Facebook</span>
+      <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title | uri_escape }}"
+        aria-label="Share on Telegram" aria-describedby="share-telegram" data-tooltip="Telegram"
+        target="_blank" rel="noopener noreferrer nofollow">
+        <svg role="img" aria-hidden="true" class="icon-telegram"><use xlink:href="#icon-telegram"></use></svg>
+      </a>
+      <span id="share-telegram" class="visually-hidden">Telegram</span>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}"
+        aria-label="Share on LinkedIn" aria-describedby="share-linkedin" data-tooltip="LinkedIn"
+        target="_blank" rel="noopener noreferrer nofollow">
+        <svg role="img" aria-hidden="true" class="icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg>
+      </a>
+      <span id="share-linkedin" class="visually-hidden">LinkedIn</span>
+      <a href="https://wa.me/?text={{ page.title | uri_escape }}%20{{ page.url | absolute_url }}"
+        aria-label="Share on WhatsApp" aria-describedby="share-whatsapp" data-tooltip="WhatsApp"
+        target="_blank" rel="noopener noreferrer nofollow">
+        <svg role="img" aria-hidden="true" class="icon-whatsapp"><use xlink:href="#icon-whatsapp"></use></svg>
+      </a>
+      <span id="share-whatsapp" class="visually-hidden">WhatsApp</span>
+      <a href="javascript:void(0)" aria-label="Copy link" aria-describedby="share-link" data-tooltip="Copy link">
+        <svg role="img" aria-hidden="true"><use xlink:href="#icon-link"></use></svg>
+      </a>
+      <span id="share-link" class="visually-hidden">Copy link</span>
     </div>
   </div>
 </footer>
