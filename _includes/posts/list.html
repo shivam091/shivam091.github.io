@@ -1,0 +1,23 @@
+{% assign posts = include.posts %}
+
+<section class="posts" aria-labelledby="posts-list-title">
+  <h2 id="posts-list-title" class="visually-hidden">List of blog posts</h2>
+  {% for post in posts %}
+    <article class="post">
+      <header class="post-header">
+        <h2 class="post-title">
+          <a href="{{ post.url | relative_url }}" title="{{ post.title }}" aria-label="Read post: {{ post.title }}">
+            {{ post.title }}
+          </a>
+        </h2>
+        {% if post.excerpt %}
+          <p class="post-excerpt lead">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+        {% endif %}
+      </header>
+
+      <footer class="post-footer">
+        {% include posts/meta.html post = post %}
+      </footer>
+    </article>
+  {% endfor %}
+</section>
