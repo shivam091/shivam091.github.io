@@ -7,19 +7,21 @@
 @import "abstracts/animations";
 
 @import "base/reset";
-@import "base/base";
-@import "base/accessibility";
+@import "base/a11y";
 @import "base/typography";
 @import "base/utilities";
 
+@import "layout/base";
 @import "layout/grid";
 @import "layout/sidebar";
 @import "layout/footer";
 
 @import "components/hero";
-@import "components/titles";
+@import "components/badges";
+@import "components/buttons";
 @import "components/tooltip";
 @import "components/scroll-top";
 @import "components/progress-bar";
 
+@import "pages/base";
 @import "pages/errors";

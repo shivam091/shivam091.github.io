@@ -1,0 +1,5 @@
+@mixin separator($type: dotted) {
+  @if $type == dotted {
+    @extend %dotted-separator;
+  }
+}

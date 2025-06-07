@@ -1,0 +1,18 @@
+a {
+  color: var(--fgColor-link);
+  text-decoration: none;
+  transition:
+    color 0.2s ease-in-out,
+    text-decoration-color 0.2s ease-in-out;
+  will-change: color, text-decoration-color;
+
+  &:hover, &:focus-visible {
+    @extend %text-underline;
+    color: var(--fgColor-link-hover);
+    text-decoration-color: var(--fgColor-link-hover);
+  }
+
+  // &:visited {
+  //   color: var(--fgColor-visited);
+  // }
+}

@@ -1,0 +1,39 @@
+.footnote {
+  font-size: 0.75em;
+
+  &:before {
+    content: "[";
+  }
+
+  &:after {
+    content: "]";
+  }
+}
+
+.footnotes {
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  color: var(--fgColor-muted);
+  border-top: 1px solid var(--borderColor-default);
+
+  li {
+    position: relative;
+
+    &:target {
+      color: var(--fgColor-default);
+      border: 1px solid var(--borderColor-accent-emphasis);
+      border-radius: 0.5rem;
+      background-color: var(--bgColor-muted);
+      padding: 0.5rem;
+      list-style-position: inside;
+    }
+
+    .reversefootnote {
+      text-decoration: none;
+    }
+
+    p {
+      margin-block: 0.5rem;
+      display: inline;
+    }
+  }
+}
