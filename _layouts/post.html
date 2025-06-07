@@ -1,0 +1,35 @@
+---
+layout: page
+---
+
+<header class="post-header">
+  {% include posts/meta.html post = page %}
+</header>
+
+<article class="post-content" aria-labelledby="page-title">
+  {{ content }}
+</article>
+
+<footer class="post-footer" itemscope itemtype="https://schema.org/Person">
+  <p class="post-author">
+    <em>Written by <span itemprop="name">{{ site.author.name}}</span></em>
+  </p>
+
+  <div class="post-footer-bottom">
+    <div class="copyright">
+      This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> by the author.
+    </div>
+
+    <div class="share-icons" aria-label="Share this post">
+      <a href="#" aria-label="Share on Twitter">
+        <svg><use xlink:href="#icon-twitter"></use></svg>
+      </a>
+      <a href="#" aria-label="Share on LinkedIn">
+        <svg><use xlink:href="#icon-linkedin"></use></svg>
+      </a>
+      <button aria-label="Copy link">
+        <svg><use xlink:href="#icon-link"></use></svg>
+      </button>
+    </div>
+  </div>
+</footer>
