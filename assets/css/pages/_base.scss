@@ -1,7 +1,6 @@
 .page-title {
   margin-top: 0rem;
-  border-bottom-width: 2px;
-  border-bottom-color: var(--borderColor-accent-emphasis);
+  border-bottom: 2px solid var(--borderColor-accent-emphasis);
   color: var(--fgColor-default);
   letter-spacing: 0.5px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);

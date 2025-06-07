@@ -8,12 +8,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-weight: 600;
   font-size: clamp(1.375em, 2.2vw + 0.9em, 1.75em);
-  padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--borderColor-default);
-
-  @media (max-width: 768px) {
-    padding-bottom: 0.4rem;
-  }
+  padding-bottom: 0.25rem;
 }
 
 h2 {
