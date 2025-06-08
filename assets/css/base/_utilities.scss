@@ -19,3 +19,10 @@ hr {
   outline: none;
   box-shadow: none;
 }
+
+:disabled,
+.disabled,
+[aria-disabled=true] {
+  box-shadow: none;
+  cursor: not-allowed !important;
+}
