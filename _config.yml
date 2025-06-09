@@ -71,3 +71,7 @@ nav:
   - {title: "Categories", icon: "folder", href: "/categories"}
   - {title: "Tags", icon: "tag", href: "/tags"}
   - {title: "Posts", icon: "list", href: "/posts"}
+
+posts:
+  read_time:
+    words_per_minute: 180
