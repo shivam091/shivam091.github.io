@@ -93,7 +93,7 @@
   &:hover,
   &:focus-visible {
     background-color: var(--fgColor-onEmphasis);
-    color: #000;
+    color: var(--fgColor-default);
     text-decoration: none;
   }
 
