@@ -1,6 +1,6 @@
-@import "modules/bg_cover";
-@import "modules/dotted_separator";
-@import "modules/no_cursor";
-@import "modules/text_clip";
-@import "modules/text_truncate";
-@import "modules/text_underline";
+@forward "modules/bg-cover";
+@forward "modules/dotted-separator";
+@forward "modules/no-cursor";
+@forward "modules/text-clip";
+@forward "modules/text-truncate";
+@forward "modules/text-underline";

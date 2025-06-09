@@ -1,30 +1,27 @@
 ---
 ---
 
-@import "abstracts/variables";
-@import "abstracts/modules";
-@import "abstracts/mixins";
-@import "abstracts/animations";
+@use "abstracts/variables" as *;
 
-@import "base/reset";
-@import "base/a11y";
-@import "base/typography";
-@import "base/utilities";
+@use "base/reset" as *;
+@use "base/a11y" as *;
+@use "base/typography" as *;
+@use "base/utilities" as *;
 
-@import "layout/base";
-@import "layout/grid";
-@import "layout/sidebar";
-@import "layout/footer";
+@use "layout/base" as *;
+@use "layout/grid" as *;
+@use "layout/sidebar" as *;
+@use "layout/footer" as *;
 
-@import "components/hero";
-@import "components/badges";
-@import "components/buttons";
-@import "components/tooltip";
-@import "components/scroll-top";
-@import "components/progress-bar";
+@use "components/hero" as *;
+@use "components/badges" as *;
+@use "components/buttons" as *;
+@use "components/tooltip" as *;
+@use "components/scroll-top" as *;
+@use "components/progress-bar" as *;
 
-@import "pages/base";
-@import "pages/errors";
-@import "pages/posts";
-@import "pages/tags";
-@import "pages/categories";
+@use "pages/base" as *;
+@use "pages/errors" as *;
+@use "pages/posts" as *;
+@use "pages/tags" as *;
+@use "pages/categories" as *;

@@ -1,3 +1,6 @@
+@use "abstracts/modules/bg-cover" as *;
+@use "abstracts/mixins/overlay" as *;
+
 .hero {
   @extend %bg-cover;
   position: relative;

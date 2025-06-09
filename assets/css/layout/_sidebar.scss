@@ -1,3 +1,7 @@
+@use "abstracts/animations/slide-in" as *;
+@use "abstracts/animations/slide-out" as *;
+@use "abstracts/mixins/overlay" as *;
+
 .sidebar {
   position: fixed;
   top: 0;
