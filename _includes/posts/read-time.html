@@ -1,0 +1,9 @@
+{% assign content = include.content %}
+{% assign words = content | words %}
+{% assign read_time = content | read_time %}
+
+<div class="post-read-time" data-tooltip="{{ words }} words">
+  <svg role="img" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+  <span class="visually-hidden">Estimated read time:</span>
+  <span aria-label="{{ read_time }} minute read">{{ read_time }} min read</span>
+</div>
