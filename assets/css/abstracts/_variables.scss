@@ -4,7 +4,9 @@
   --layout-offset-sm: 200px;
   --layout-offset-md: 250px;
   --layout-offset-lg: 300px;
+}
 
+[data-theme="light"] {
   --bgColor-default: #ffffff;
   --bgColor-muted: #f6f8fa;
   --bgColor-emphasis: #25292e;
@@ -24,6 +26,7 @@
   --fgColor-accent: #0969da;
   --fgColor-muted: #59636e;
   --fgColor-onEmphasis: #ffffff;
+  --fgColor-onInverse: #ffffff;
   --fgColor-neutral: #59636e;
   --fgColor-severe: #bc4c00;
   --fgColor-danger: #d1242f;
@@ -40,6 +43,7 @@
   --borderColor-accent-muted: #54aeff66;
   --borderColor-neutral-muted: var(--borderColor-muted);
   --borderColor-disabled: #818b981a;
+  --borderColor-emphasis: #818b98;
 
   --avatar-shadow: 0px 0px 0px 2px #ffffffcc;
 
@@ -78,4 +82,7 @@
   --color-code-syntax-deleted-text: #b31d28;
   --color-code-syntax-output: #586069;
   --color-code-syntax-meta: #444d56;
+}
+
+[data-theme="dark"] {
 }
