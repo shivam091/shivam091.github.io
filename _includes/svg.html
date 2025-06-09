@@ -1,0 +1,12 @@
+{%- assign id = include.id -%}
+{%- assign class = include.class -%}
+
+<svg
+  role="img"
+  aria-hidden="true"
+  focusable="false"
+  {% if id %}id="{{ id }}"{% endif %}
+  {% if class %}class="{{ class }}"{% endif %}
+>
+  <use href="{{ '/assets/img/sprite.svg' | relative_url }}{{ include.name | prepend: '#icon-'}}"></use>
+</svg>
