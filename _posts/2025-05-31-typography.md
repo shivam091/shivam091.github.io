@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Typography Test Post"
+title: "Text and Typography"
 date: 2025-05-31 01:00
 tags: [typography, design, styleguide]
-categories: [typography]
-excerpt: This post is a comprehensive test of various HTML elements styled through your Jekyll theme. It includes headings, paragraphs, lists, tables, forms, code, and more.
+categories: [blogging, typography]
+excerpt: This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.
 ---
 
 ## Headings
