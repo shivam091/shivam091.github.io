@@ -46,9 +46,12 @@ compress_html:
 jekyll-archives:
   enabled:
     - tags
+    - categories
   layout: archive
   permalinks:
     tag: /tag/:name/
+    category: /category/:name/
+
 author:
   name: Harshal LADHE
   roles:
@@ -65,4 +68,6 @@ author:
 nav:
   - {title: "Home", icon: "home", href: "/"}
   - {title: "About", icon: "info-circle", href: "/about"}
+  - {title: "Categories", icon: "folder", href: "/categories"}
   - {title: "Tags", icon: "tag", href: "/tags"}
+  - {title: "Posts", icon: "list", href: "/posts"}

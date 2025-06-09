@@ -18,6 +18,7 @@
   --bgColor-danger-muted: #ffebe9;
   --bgColor-inlineCode: #f6f6f7;
   --bgColor-highlight: #f7f7f7;
+  --bgColor-disabled: #eff2f5;
 
   --fgColor-default: #1f2328;
   --fgColor-accent: #0969da;
@@ -31,12 +32,14 @@
   --fgColor-link-hover: #005a9c;
   --fgColor-visited: #4b0082;
   --fgColor-link-focus: var(--fgColor-link-hover);
+  --fgColor-disabled: #818b98;
 
   --borderColor-default: #d1d9e0;
   --borderColor-muted: #d1d9e0b3;
   --borderColor-accent-emphasis: #0969da;
   --borderColor-accent-muted: #54aeff66;
   --borderColor-neutral-muted: var(--borderColor-muted);
+  --borderColor-disabled: #818b981a;
 
   --avatar-shadow: 0px 0px 0px 2px #ffffffcc;
 
@@ -50,6 +53,8 @@
   --control-fgColor: #25292e;
   --control-transparent-bgColor-hover: #818b981a;
   --control-borderColor: var(--borderColor-default);
+  --control-bgColor-disabled: var(--bgColor-disabled);
+  --control-borderColor-disabled: var(--borderColor-disabled);
 
   --color-code-syntax-comment: #6a737d;
   --color-code-syntax-error-text: #e05252;
