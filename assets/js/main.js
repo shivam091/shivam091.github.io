@@ -316,7 +316,7 @@ var Tooltip = (function () {
 var SvgSprite = (function () {
   return {
     toggle: function (element, symbolHref) {
-      if (element) element.setAttribute("href", symbolHref);
+      if (element) element.setAttribute("href", `/assets/img/sprite.svg${symbolHref}`);
     }
   };
 })();
