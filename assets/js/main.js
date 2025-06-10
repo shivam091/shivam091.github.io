@@ -1,3 +1,106 @@
+const PositioningUtil = (() => {
+  const DEFAULT_SPACING = 8;
+
+  function isFixedElement(el) {
+    while (el && el !== document.body) {
+      if (window.getComputedStyle(el).position === "fixed") return true;
+      el = el.parentElement;
+    }
+    return false;
+  }
+
+  function getAvailablePosition(targetRect, tooltipRect, preferredPositions = ["top", "bottom", "right", "left"]) {
+    const vw = window.innerWidth, vh = window.innerHeight;
+
+    const fits = {
+      top:    targetRect.top >= tooltipRect.height + DEFAULT_SPACING,
+      bottom: vh - targetRect.bottom >= tooltipRect.height + DEFAULT_SPACING,
+      left:   targetRect.left >= tooltipRect.width + DEFAULT_SPACING,
+      right:  vw - targetRect.right >= tooltipRect.width + DEFAULT_SPACING
+    };
+
+    for (const pos of preferredPositions) {
+      if (fits[pos]) return pos;
+    }
+
+    return "top"; // fallback
+  }
+
+  function getPositionOffset(position, targetRect, menuRect, isFixed = false) {
+    const [scrollX, scrollY] = isFixed ? [0, 0] : [window.scrollX, window.scrollY];
+
+    const midTop  = targetRect.top + (targetRect.height - menuRect.height) / 2 + scrollY;
+    const midLeft = targetRect.left + (targetRect.width - menuRect.width) / 2 + scrollX;
+
+    const positions = {
+      top:    {top: targetRect.top - menuRect.height - DEFAULT_SPACING + scrollY, left: midLeft},
+      bottom: {top: targetRect.bottom + DEFAULT_SPACING + scrollY, left: midLeft},
+      left:   {top: midTop, left: targetRect.left - menuRect.width - DEFAULT_SPACING + scrollX},
+      right:  {top: midTop, left: targetRect.right + DEFAULT_SPACING + scrollX}
+    };
+
+    return positions[position] || positions["top"];
+  }
+
+
+  function getViewportPosition(triggerRect, elementRect, position = "bottom-right") {
+    const vw = window.innerWidth, vh = window.innerHeight;
+
+    let top = 0, left = 0, origin = "top left";
+
+    switch (position) {
+      case "top-left":
+        top = triggerRect.top - elementRect.height - DEFAULT_SPACING;
+        left = triggerRect.left;
+        origin = "bottom left";
+        break;
+
+      case "top-right":
+        top = triggerRect.top - elementRect.height - DEFAULT_SPACING;
+        left = triggerRect.right - elementRect.width;
+        origin = "bottom right";
+        break;
+
+      case "bottom-left":
+        top = triggerRect.bottom + DEFAULT_SPACING;
+        left = triggerRect.left;
+        origin = "top left";
+        break;
+
+      case "bottom-right":
+        top = triggerRect.bottom + DEFAULT_SPACING;
+        left = triggerRect.right - elementRect.width;
+        origin = "top right";
+        break;
+
+      case "left":
+        top = triggerRect.top + (triggerRect.height - elementRect.height) / 2;
+        left = triggerRect.left - elementRect.width - DEFAULT_SPACING;
+        origin = "center right";
+        break;
+
+      case "right":
+        top = triggerRect.top + (triggerRect.height - elementRect.height) / 2;
+        left = triggerRect.right + DEFAULT_SPACING;
+        origin = "center left";
+        break;
+    }
+
+    // Keep inside viewport
+    top = Math.max(10, Math.min(top, vh - elementRect.height - 10));
+    left = Math.max(10, Math.min(left, vw - elementRect.width - 10));
+
+    return { top, left, transformOrigin: origin };
+  }
+
+  return {
+    isFixedElement,
+    getAvailablePosition,
+    getPositionOffset,
+    getViewportPosition
+  };
+})();
+
 var PersonalBlog = (function() {
   function initTypedJs() {
     const typedElement = document.getElementById("hero-highlight");
@@ -189,44 +292,6 @@ var Tooltip = (function () {
     return el;
   }
 
-  function isFixedElement(el) {
-    while (el && el !== document.body) {
-      if (window.getComputedStyle(el).position === "fixed") return true;
-      el = el.parentElement;
-    }
-
-    return false;
-  }
-
-  function getAvailablePosition(targetRect, tooltipRect) {
-    const vw = window.innerWidth, vh = window.innerHeight;
-
-    const fits = {
-      top:    targetRect.top >= tooltipRect.height + DEFAULT_SPACING,
-      bottom: vh - targetRect.bottom >= tooltipRect.height + DEFAULT_SPACING,
-      left:   targetRect.left >= tooltipRect.width + DEFAULT_SPACING,
-      right:  vw - targetRect.right >= tooltipRect.width + DEFAULT_SPACING
-    };
-
-    return fits.top ? "top" : fits.bottom ? "bottom" : fits.right ? "right" : fits.left ? "left" : "top";
-  }
-
-  function getPositionOffset(pos, targetRect, tooltipRect, isFixed) {
-    const [scrollX, scrollY] = isFixed ? [0, 0] : [window.scrollX, window.scrollY];
-
-    const midTop  = targetRect.top + (targetRect.height - tooltipRect.height) / 2 + scrollY;
-    const midLeft = targetRect.left + (targetRect.width - tooltipRect.width) / 2 + scrollX;
-
-    const positions = {
-      top:    {top: targetRect.top - tooltipRect.height - DEFAULT_SPACING + scrollY, left: midLeft},
-      bottom: {top: targetRect.bottom + DEFAULT_SPACING + scrollY, left: midLeft},
-      left:   {top: midTop, left: targetRect.left - tooltipRect.width - DEFAULT_SPACING + scrollX},
-      right:  {top: midTop, left: targetRect.right + DEFAULT_SPACING + scrollX}
-    };
-
-    return positions[pos] || {top: 0, left: 0};
-  }
-
   function showTooltip(event) {
     const target = event.currentTarget;
     if (tooltipMap.has(target)) return;
@@ -240,9 +305,9 @@ var Tooltip = (function () {
 
     const [targetRect, tooltipRect] = [target.getBoundingClientRect(), tooltip.getBoundingClientRect()];
 
-    const position = target.getAttribute("data-tooltip-position") || getAvailablePosition(targetRect, tooltipRect);
-    const isFixed = isFixedElement(target);
-    const coords = getPositionOffset(position, targetRect, tooltipRect, isFixed);
+    const position = target.getAttribute("data-tooltip-position") || PositioningUtil.getAvailablePosition(targetRect, tooltipRect);
+    const isFixed = PositioningUtil.isFixedElement(target);
+    const coords = PositioningUtil.getPositionOffset(position, targetRect, tooltipRect, isFixed);
 
     tooltip.classList.add(`tooltip-${position}`);
     tooltip.style.position = isFixed ? "fixed" : "absolute";
@@ -438,109 +503,59 @@ const ThemeSwitcher = (() => {
   ThemeSwitcher.init();
 })();
 document.addEventListener("DOMContentLoaded", () => {
-    const dropdowns = document.querySelectorAll('[data-dropdown]');
+  const dropdowns = document.querySelectorAll('[data-dropdown]');
 
-    dropdowns.forEach(dropdown => {
-      const button = dropdown.querySelector('.dropdown-toggle');
-      const menu = dropdown.querySelector('.dropdown-content');
+  dropdowns.forEach(dropdown => {
+    const button = dropdown.querySelector('.dropdown-toggle');
+    const menu = dropdown.querySelector('.dropdown-content');
 
-      function positionDropdown() {
-        const btnRect = button.getBoundingClientRect();
-        const menuWidth = menu.offsetWidth;
-        const menuHeight = menu.offsetHeight;
-
-        const position = button.dataset.position || "bottom-right";
-        let top, left;
-
-        switch (position) {
-          case "top-left":
-            top = btnRect.top - menuHeight - 8;
-            left = btnRect.left;
-            menu.style.transformOrigin = "bottom left";
-            break;
-
-          case "top-right":
-            top = btnRect.top - menuHeight - 8;
-            left = btnRect.right - menuWidth;
-            menu.style.transformOrigin = "bottom right";
-            break;
-
-          case "bottom-left":
-            top = btnRect.bottom + 8;
-            left = btnRect.left;
-            menu.style.transformOrigin = "top left";
-            break;
-
-          case "bottom-right":
-            top = btnRect.bottom + 8;
-            left = btnRect.right - menuWidth;
-            menu.style.transformOrigin = "top right";
-            break;
-
-          case "left":
-            top = btnRect.top + (btnRect.height / 2) - (menuHeight / 2);
-            left = btnRect.left - menuWidth - 8;
-            menu.style.transformOrigin = "center right";
-            break;
-
-          case "right":
-            top = btnRect.top + (btnRect.height / 2) - (menuHeight / 2);
-            left = btnRect.right + 8;
-            menu.style.transformOrigin = "center left";
-            break;
-
-          default:
-            top = btnRect.bottom + 8;
-            left = btnRect.left;
-            menu.style.transformOrigin = "top left";
-            break;
-        }
-
-        // Adjust to stay within viewport
-        if (top + menuHeight > window.innerHeight) top = window.innerHeight - menuHeight - 10;
-        if (top < 0) top = 10;
-        if (left + menuWidth > window.innerWidth) left = window.innerWidth - menuWidth - 10;
-        if (left < 0) left = 10;
-
-        menu.style.top = `${top}px`;
-        menu.style.left = `${left}px`;
-      }
-
-      button.addEventListener("click", (e) => {
-        e.stopPropagation(); // prevent closing itself
-        const isOpen = menu.classList.contains("show");
-
-        // Close all others first
-        closeAllDropdowns();
-
-        if (!isOpen) {
-          button.setAttribute("aria-expanded", "true");
-          positionDropdown();
-          menu.classList.add("show");
-        }
-      });
-
-      window.addEventListener("resize", () => {
-        if (menu.classList.contains("show")) {
-          positionDropdown();
-        }
-      });
-    });
-
-    // Close all dropdowns
-    function closeAllDropdowns() {
-      document.querySelectorAll('[data-dropdown]').forEach(dropdown => {
-        const button = dropdown.querySelector('.dropdown-toggle');
-        const menu = dropdown.querySelector('.dropdown-content');
-        button.setAttribute("aria-expanded", "false");
-        menu.classList.remove("show");
-      });
+    function positionDropdown() {
+      const btnRect = button.getBoundingClientRect();
+      const menuWidth = menu.offsetWidth;
+      const menuHeight = menu.offsetHeight;
+      const menuRect = menu.getBoundingClientRect();
+      const isFixed = PositioningUtil.isFixedElement(button);
+      const position = button.dataset.position || PositioningUtil.getAvailablePosition(btnRect, menuRect);
+      const coords = PositioningUtil.getViewportPosition(position, btnRect, menuRect);
+      menu.style.top = `${coords.top}px`;
+      menu.style.left = `${coords.left}px`;
     }
 
-    // Close on outside click
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest('[data-dropdown]')) {
-        closeAllDropdowns();
+    button.addEventListener("click", (e) => {
+      e.stopPropagation(); // prevent closing itself
+      const isOpen = menu.classList.contains("show");
+
+      // Close all others first
+      closeAllDropdowns();
+
+      if (!isOpen) {
+        button.setAttribute("aria-expanded", "true");
+        positionDropdown();
+        menu.classList.add("show");
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (menu.classList.contains("show")) {
+        positionDropdown();
       }
     });
   });
+
+  // Close all dropdowns
+  function closeAllDropdowns() {
+    document.querySelectorAll('[data-dropdown]').forEach(dropdown => {
+      const button = dropdown.querySelector('.dropdown-toggle');
+      const menu = dropdown.querySelector('.dropdown-content');
+      button.setAttribute("aria-expanded", "false");
+      menu.classList.remove("show");
+    });
+  }
+
+  // Close on outside click
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest('[data-dropdown]')) {
+      closeAllDropdowns();
+    }
+  });
+});

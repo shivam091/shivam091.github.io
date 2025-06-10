@@ -1,7 +1,6 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  margin: 20px;
 }
 
 .dropdown-toggle {
@@ -21,7 +20,8 @@
 }
 
 .dropdown-content {
-  position: fixed;
+  position: absolute;
+  display: block;
   background-color: #fff;
   min-width: 180px;
   max-width: 250px;
@@ -29,8 +29,7 @@
   border-radius: 6px;
   opacity: 0;
   transform: scale(0.95);
-  transform-origin: top left;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, transform-origin 0.25s ease;
   z-index: 999;
   pointer-events: none;
 }
