@@ -6,6 +6,17 @@ layout: page
   {% include posts/meta.html post = page %}
 </header>
 
+<div class="dropdown" data-dropdown>
+  <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
+    Dropdown
+  </button>
+
+  <div class="dropdown-content" role="menu" aria-labelledby="dropdownMenuButton">
+    <a href="#" class="dropdown-item" role="menuitem">Option 1</a>
+    <a href="#" class="dropdown-item" role="menuitem">Option 2</a>
+    <a href="#" class="dropdown-item" role="menuitem">Option 3</a>
+  </div>
+</div>
 <article class="post-content" aria-labelledby="page-title">
   {{ content }}
 </article>

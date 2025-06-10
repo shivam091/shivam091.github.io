@@ -437,3 +437,110 @@ const ThemeSwitcher = (() => {
   Categories.init();
   ThemeSwitcher.init();
 })();
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdowns = document.querySelectorAll('[data-dropdown]');
+
+    dropdowns.forEach(dropdown => {
+      const button = dropdown.querySelector('.dropdown-toggle');
+      const menu = dropdown.querySelector('.dropdown-content');
+
+      function positionDropdown() {
+        const btnRect = button.getBoundingClientRect();
+        const menuWidth = menu.offsetWidth;
+        const menuHeight = menu.offsetHeight;
+
+        const position = button.dataset.position || "bottom-right";
+        let top, left;
+
+        switch (position) {
+          case "top-left":
+            top = btnRect.top - menuHeight - 8;
+            left = btnRect.left;
+            menu.style.transformOrigin = "bottom left";
+            break;
+
+          case "top-right":
+            top = btnRect.top - menuHeight - 8;
+            left = btnRect.right - menuWidth;
+            menu.style.transformOrigin = "bottom right";
+            break;
+
+          case "bottom-left":
+            top = btnRect.bottom + 8;
+            left = btnRect.left;
+            menu.style.transformOrigin = "top left";
+            break;
+
+          case "bottom-right":
+            top = btnRect.bottom + 8;
+            left = btnRect.right - menuWidth;
+            menu.style.transformOrigin = "top right";
+            break;
+
+          case "left":
+            top = btnRect.top + (btnRect.height / 2) - (menuHeight / 2);
+            left = btnRect.left - menuWidth - 8;
+            menu.style.transformOrigin = "center right";
+            break;
+
+          case "right":
+            top = btnRect.top + (btnRect.height / 2) - (menuHeight / 2);
+            left = btnRect.right + 8;
+            menu.style.transformOrigin = "center left";
+            break;
+
+          default:
+            top = btnRect.bottom + 8;
+            left = btnRect.left;
+            menu.style.transformOrigin = "top left";
+            break;
+        }
+
+        // Adjust to stay within viewport
+        if (top + menuHeight > window.innerHeight) top = window.innerHeight - menuHeight - 10;
+        if (top < 0) top = 10;
+        if (left + menuWidth > window.innerWidth) left = window.innerWidth - menuWidth - 10;
+        if (left < 0) left = 10;
+
+        menu.style.top = `${top}px`;
+        menu.style.left = `${left}px`;
+      }
+
+      button.addEventListener("click", (e) => {
+        e.stopPropagation(); // prevent closing itself
+        const isOpen = menu.classList.contains("show");
+
+        // Close all others first
+        closeAllDropdowns();
+
+        if (!isOpen) {
+          button.setAttribute("aria-expanded", "true");
+          positionDropdown();
+          menu.classList.add("show");
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if (menu.classList.contains("show")) {
+          positionDropdown();
+        }
+      });
+    });
+
+    // Close all dropdowns
+    function closeAllDropdowns() {
+      document.querySelectorAll('[data-dropdown]').forEach(dropdown => {
+        const button = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-content');
+        button.setAttribute("aria-expanded", "false");
+        menu.classList.remove("show");
+      });
+    }
+
+    // Close on outside click
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest('[data-dropdown]')) {
+        closeAllDropdowns();
+      }
+    });
+  });
