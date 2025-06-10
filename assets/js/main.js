@@ -559,3 +559,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+var Clipboard = (function () {
+  function copyToClipboard(targetElement) {
+    const url = window.location.href; // Or you can target other elements by using data attributes if needed
+    navigator.clipboard.writeText(url).then(() => {
+      // Successfully copied to clipboard
+      updateCopyButton(targetElement);
+    }).catch(err => {
+      console.error("Failed to copy text: ", err);
+    });
+  }
+
+  function updateCopyButton(button) {
+    // Change the icon to a checkmark
+    const iconElement = button.querySelector("use");
+    if (iconElement) {
+      SvgSprite.toggle(iconElement, "#icon-check");
+    }
+
+    // Change the tooltip to "Copied!"
+    const tooltip = button.querySelector("[data-tooltip]");
+    if (tooltip) {
+      tooltip.setAttribute("data-tooltip", "Copied!");
+    }
+
+    // Reset the icon and tooltip after 2 seconds
+    setTimeout(() => {
+      if (iconElement) {
+        SvgSprite.toggle(iconElement, "#icon-link");
+      }
+      if (tooltip) {
+        tooltip.setAttribute("data-tooltip", "Copy link");
+      }
+    }, 2000);
+  }
+
+  function bindClipboardEvents() {
+    document.querySelectorAll("[data-clipboard-target]").forEach((copyButton) => {
+      copyButton.addEventListener("click", function () {
+        copyToClipboard(copyButton);
+      });
+    });
+  }
+
+  return {
+    init: function () {
+      bindClipboardEvents();
+    }
+  };
+})();
