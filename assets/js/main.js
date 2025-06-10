@@ -1,3 +1,139 @@
+const PopperUtils = (() => {
+  const instances = new WeakMap();
+
+  function createPopper(target, popperElement, options = {}) {
+    const defaultOptions = {
+      placement: options.placement || "top",
+      modifiers: [
+        {
+          name: "offset",
+          options: {
+            offset: options.offset || [0, 8],
+          },
+        },
+        {
+          name: "preventOverflow",
+          options: {
+            boundary: "viewport",
+          },
+        },
+        {
+          name: "flip",
+          options: {
+            fallbackPlacements: ["top", "bottom", "right", "left"],
+          },
+        },
+        {
+          name: "eventListeners",
+          options: {
+            scroll: true,
+            resize: true,
+          },
+        },
+      ],
+    };
+
+    const instance = Popper.createPopper(target, popperElement, defaultOptions);
+    instances.set(popperElement, instance);
+
+    return instance;
+  }
+
+  function destroyPopper(popperElement) {
+    const instance = instances.get(popperElement);
+    if (instance) {
+      instance.destroy();
+      instances.delete(popperElement);
+    }
+  }
+
+  function updatePopper(popperElement) {
+    const instance = instances.get(popperElement);
+    if (instance) {
+      instance.update();
+    }
+  }
+
+  return {
+    create: createPopper,
+    destroy: destroyPopper,
+    update: updatePopper,
+  };
+})();
+
+const ThemeSwitcher = (() => {
+  const THEME_KEY = "theme"; // "light", "dark", or "system"
+  const themeToggleLink = document.getElementById("theme-toggle-link");
+  const dropdownItems = document.querySelectorAll(".dropdown-item");
+
+  // Get the effective theme based on user/system preference
+  function getEffectiveTheme(savedTheme) {
+    if (savedTheme === "system") {
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      return prefersDark ? "dark" : "light";
+    }
+    return savedTheme;
+  }
+
+  // Apply theme to document
+  function applyTheme(theme) {
+    const actualTheme = getEffectiveTheme(theme);
+    document.documentElement.setAttribute("data-theme", actualTheme);
+    localStorage.setItem(THEME_KEY, theme); // Save user's preference (light/dark/system)
+    updateDropdown(theme); // update active class in dropdown
+  }
+
+  // Update selected dropdown item
+  function updateDropdown(selectedTheme) {
+    dropdownItems.forEach((item) => {
+      const itemTheme = item.textContent.trim().toLowerCase();
+
+      if (itemTheme === selectedTheme) {
+        item.classList.add("dropdown-item-selected");
+      } else {
+        item.classList.remove("dropdown-item-selected");
+      }
+    });
+  }
+
+  // Function to toggle the theme between light and dark
+  function toggleTheme() {
+    const savedTheme = localStorage.getItem(THEME_KEY) || "system";
+    applyTheme(savedTheme);
+
+    dropdownItems.forEach((item) => {
+      item.addEventListener("click", (event) => {
+        event.preventDefault();
+        const title = item.textContent.trim().toLowerCase();
+        const newTheme = title.includes("system") ? "system" : title;
+        applyTheme(newTheme);
+      });
+    });
+
+    // Listen to system theme changes if user selected "system"
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+      const savedTheme = localStorage.getItem(THEME_KEY) || "system";
+      if (savedTheme === "system") {
+        applyTheme("system");
+      }
+    });
+  }
+
+  return {
+    init: () => {
+      const savedTheme = localStorage.getItem(THEME_KEY) || "light";
+      applyTheme(savedTheme);
+      updateDropdown(savedTheme);
+
+      // Event listener for the theme toggle link
+      themeToggleLink.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent link from navigating
+        toggleTheme(); // Toggle the theme
+      });
+    }
+  };
+})();
+
 var PersonalBlog = (function() {
   function initTypedJs() {
     const typedElement = document.getElementById("hero-highlight");
@@ -168,139 +304,117 @@ const ProgressBar = (() => {
   }
 })();
 
-var Tooltip = (function () {
-  const tooltipMap = new WeakMap();
-  const DEFAULT_SPACING = 8;
-
+const Tooltip = (function () {
   function generateId() {
     return `tooltip-${Math.random().toString(36).substr(2, 9)}`;
   }
 
   function createTooltipElement(text) {
     const el = document.createElement("div");
+    const id = generateId();
 
     el.className = "tooltip";
-    el.id = generateId();
+    el.id = id;
     el.innerHTML = text;
     el.setAttribute("role", "tooltip");
     el.setAttribute("aria-live", "polite");
-    el.setAttribute("aria-describedby", el.id)
+    el.setAttribute("aria-hidden", "true");
 
     return el;
   }
 
-  function isFixedElement(el) {
-    while (el && el !== document.body) {
-      if (window.getComputedStyle(el).position === "fixed") return true;
-      el = el.parentElement;
-    }
-
-    return false;
-  }
-
-  function getAvailablePosition(targetRect, tooltipRect) {
-    const vw = window.innerWidth, vh = window.innerHeight;
-
-    const fits = {
-      top:    targetRect.top >= tooltipRect.height + DEFAULT_SPACING,
-      bottom: vh - targetRect.bottom >= tooltipRect.height + DEFAULT_SPACING,
-      left:   targetRect.left >= tooltipRect.width + DEFAULT_SPACING,
-      right:  vw - targetRect.right >= tooltipRect.width + DEFAULT_SPACING
-    };
-
-    return fits.top ? "top" : fits.bottom ? "bottom" : fits.right ? "right" : fits.left ? "left" : "top";
-  }
-
-  function getPositionOffset(pos, targetRect, tooltipRect, isFixed) {
-    const [scrollX, scrollY] = isFixed ? [0, 0] : [window.scrollX, window.scrollY];
-
-    const midTop  = targetRect.top + (targetRect.height - tooltipRect.height) / 2 + scrollY;
-    const midLeft = targetRect.left + (targetRect.width - tooltipRect.width) / 2 + scrollX;
-
-    const positions = {
-      top:    {top: targetRect.top - tooltipRect.height - DEFAULT_SPACING + scrollY, left: midLeft},
-      bottom: {top: targetRect.bottom + DEFAULT_SPACING + scrollY, left: midLeft},
-      left:   {top: midTop, left: targetRect.left - tooltipRect.width - DEFAULT_SPACING + scrollX},
-      right:  {top: midTop, left: targetRect.right + DEFAULT_SPACING + scrollX}
-    };
-
-    return positions[pos] || {top: 0, left: 0};
-  }
-
-  function showTooltip(event) {
-    const target = event.currentTarget;
-    if (tooltipMap.has(target)) return;
+  function show(event) {
+    const target = event?.currentTarget;
+    if (!target) return;
 
     const tooltipText = target.getAttribute("data-tooltip");
-    if (!tooltipText) return;
+    const delay = parseInt(target.getAttribute("data-tooltip-delay") || "3000", 10);
 
-    const tooltip = createTooltipElement(tooltipText)
+    // Prevent double creation
+    if (target._tooltip) {
+      const tooltip = target._tooltip;
+      tooltip.classList.add("show");
+      tooltip.classList.remove("hide");
+      tooltip.setAttribute("aria-hidden", "false");
+      target.setAttribute("aria-describedby", tooltip.id);
+
+      PopperUtils.update(tooltip);
+      return;
+    }
+
+    const tooltip = createTooltipElement(tooltipText);
+    target._tooltip = tooltip; // cache it on the element
+    tooltip._target = target;  // reverse reference if needed
 
     document.body.appendChild(tooltip);
 
-    const [targetRect, tooltipRect] = [target.getBoundingClientRect(), tooltip.getBoundingClientRect()];
+    PopperUtils.create(target, tooltip, {
+      placement: target.getAttribute("data-tooltip-position") || "top",
+      offset: [0, 8],
+    });
 
-    const position = target.getAttribute("data-tooltip-position") || getAvailablePosition(targetRect, tooltipRect);
-    const isFixed = isFixedElement(target);
-    const coords = getPositionOffset(position, targetRect, tooltipRect, isFixed);
-
-    tooltip.classList.add(`tooltip-${position}`);
-    tooltip.style.position = isFixed ? "fixed" : "absolute";
-    tooltip.style.top = `${coords.top}px`;
-    tooltip.style.left = `${coords.left}px`;
-
-    requestAnimationFrame(() => tooltip.classList.add("show"));
-    tooltipMap.set(target, tooltip);
+    tooltip.classList.add("show");
+    tooltip.setAttribute("aria-hidden", "false");
+    target.setAttribute("aria-describedby", tooltip.id);
 
     if ("ontouchstart" in window) {
-      const delay = parseInt(target.getAttribute("data-tooltip-delay") || "3000", 10);
-      setTimeout(() => hideTooltip({currentTarget: target}), delay);
+      setTimeout(() => hide({currentTarget: target}), delay);
     }
   }
 
-  function hideTooltip(event) {
+  function hide(event) {
     const target = event.currentTarget;
-    const tooltip = tooltipMap.get(target);
+    const tooltip = target._tooltip;
+    if (!tooltip) return;
 
-    if (tooltip) {
-      tooltip.classList.remove("show");
-      tooltip.classList.add("hide");
-      target.removeAttribute("aria-describedby");
+    tooltip.classList.remove("show");
+    tooltip.classList.add("hide");
+    tooltip.setAttribute("aria-hidden", "true");
+    target.removeAttribute("aria-describedby");
 
-      const removeTooltip = () => {
-        if (tooltip && tooltip.parentNode) {
-          tooltip.remove();
-          tooltipMap.delete(target);
-        }
-      };
+    const cleanup = () => {
+      if (tooltip.parentNode) tooltip.remove();
+      PopperUtils.destroy(tooltip);
+      delete target._tooltip;
+    };
 
-      let removed = false;
-      const cleanup = () => {
-        if (!removed) {
-          removeTooltip();
-          removed = true;
-        }
-      };
-
-      tooltip.addEventListener("transitionend", cleanup, {once: true});
-      setTimeout(cleanup, 300);
-    }
+    tooltip.addEventListener("transitionend", cleanup, {once: true});
+    setTimeout(cleanup, 300);
   }
 
   function handleEscape(event) {
-    if (event.key === "Escape") hideTooltip({currentTarget: document.activeElement});
+    if (event.key === "Escape") {
+      hide({currentTarget: document.activeElement});
+    }
   }
 
   function attachTooltips() {
     document.querySelectorAll("[data-tooltip]").forEach(tooltipElement => {
-      tooltipElement.addEventListener("mouseenter", showTooltip);
-      tooltipElement.addEventListener("mouseleave", hideTooltip);
+      let hoverTimer;
 
-      tooltipElement.addEventListener("focus", showTooltip);
-      tooltipElement.addEventListener("blur", hideTooltip);
+      const safeShow = (e) => {
+        clearTimeout(hoverTimer);
+        const target = e.currentTarget; // <--- Cache target early
+        hoverTimer = setTimeout(() => show({currentTarget: target}), 200);
+      };
 
-      tooltipElement.addEventListener("touchstart", showTooltip);
-      tooltipElement.addEventListener("touchend", hideTooltip);
+      const safeHide = (e) => {
+        clearTimeout(hoverTimer);
+        const target = e.currentTarget;
+        hoverTimer = setTimeout(() => hide({currentTarget: target}), 50);
+      };
+
+      tooltipElement.addEventListener("mouseenter", safeShow);
+      tooltipElement.addEventListener("mouseleave", safeHide);
+
+      tooltipElement.addEventListener("focus", show);
+      tooltipElement.addEventListener("blur", hide);
+
+      tooltipElement.addEventListener("touchstart", show);
+      tooltipElement.addEventListener("touchend", hide);
+
+      tooltipElement.addEventListener("pointerdown", show);
+      tooltipElement.addEventListener("pointerup", hide);
 
       tooltipElement.addEventListener("keydown", handleEscape);
     });
@@ -379,6 +493,68 @@ var Categories = (function () {
   };
 })();
 
+const Dropdown = (() => {
+  const dropdowns = document.querySelectorAll("[data-dropdown]");
+
+  function closeAll() {
+    dropdowns.forEach(dropdown => {
+      const button = dropdown.querySelector(".dropdown-toggle");
+      const menu = dropdown.querySelector(".dropdown-menu");
+
+      button.setAttribute("aria-expanded", "false");
+      menu.classList.remove("show");
+      button.classList.remove("show");
+
+      PopperUtils.destroy(menu);
+    });
+  }
+
+  function bindDropdowns() {
+    dropdowns.forEach(dropdown => {
+      const button = dropdown.querySelector(".dropdown-toggle");
+      const menu = dropdown.querySelector(".dropdown-menu");
+
+      if (!button || !menu) return;
+
+      button.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = menu.classList.contains("show");
+
+        closeAll();
+
+        if (!isOpen) {
+          button.setAttribute("aria-expanded", "true");
+          menu.classList.add("show");
+          button.classList.add("show");
+
+          PopperUtils.create(button, menu, {
+            placement: button.getAttribute("data-dropdown-position") || "bottom",
+            offset: [0, 8]
+          });
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if (menu.classList.contains("show")) {
+          PopperUtils.update(menu);
+        }
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest("[data-dropdown]")) {
+        closeAll();
+      }
+    });
+  }
+
+  return {
+    init: () => {
+      bindDropdowns();
+    }
+  };
+})();
+
 (function() {
   "use strict";
 
@@ -388,4 +564,6 @@ var Categories = (function () {
   SideBar.init();
   Tooltip.init();
   Categories.init();
+  Dropdown.init();
+  ThemeSwitcher.init();
 })();
