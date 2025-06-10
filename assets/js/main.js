@@ -379,53 +379,6 @@ var Categories = (function () {
   };
 })();
 
-const ThemeSwitcher = (() => {
-  const THEME_KEY = "theme"; // Key for storing theme in localStorage
-  const themeToggleLink = document.getElementById("theme-toggle-link");
-  const themeIcon = document.querySelector("#theme-icon use");
-
-  // Function to apply the selected theme
-  function applyTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem(THEME_KEY, theme); // Save the selected theme in localStorage
-  }
-
-  // Function to update the icon based on the current theme
-  function updateIcon(theme) {
-    // Clear the current icon
-    themeIcon.innerHTML = '';
-
-    // Add the appropriate SVG based on the theme
-    if (theme === "dark") {
-      SvgSprite.toggle(themeIcon, "#icon-sun");
-    } else {
-      SvgSprite.toggle(themeIcon, "#icon-moon");
-    }
-  }
-
-  // Function to toggle the theme between light and dark
-  function toggleTheme() {
-    const currentTheme = localStorage.getItem(THEME_KEY) || "light"; // Default to light if not set
-    const newTheme = currentTheme === "light" ? "dark" : "light";
-    applyTheme(newTheme);
-    updateIcon(newTheme);
-  }
-
-  return {
-    init: () => {
-      const savedTheme = localStorage.getItem(THEME_KEY) || "light";
-      applyTheme(savedTheme);
-      updateIcon(savedTheme);
-
-      // Event listener for the theme toggle link
-      themeToggleLink.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent link from navigating
-        toggleTheme(); // Toggle the theme
-      });
-    }
-  };
-})();
-
 (function() {
   "use strict";
 
@@ -435,5 +388,4 @@ const ThemeSwitcher = (() => {
   SideBar.init();
   Tooltip.init();
   Categories.init();
-  ThemeSwitcher.init();
 })();
