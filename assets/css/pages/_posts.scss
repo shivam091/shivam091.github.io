@@ -1,3 +1,6 @@
+@use "abstracts/modules/no-cursor" as *;
+@use "abstracts/modules/text-truncate" as *;
+
 .post-content {
   @extend %no-cursor;
 

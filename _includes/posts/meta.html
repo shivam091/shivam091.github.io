@@ -2,28 +2,30 @@
 
 <div class="post-meta">
   <div class="post-date">
-    <svg role="img" aria-hidden="true"><use xlink:href="#icon-calendar"></use></svg>
+    {% include svg.html name = "calendar" %}
     <span class="visually-hidden">Published at:</span>
     {% include datetime.html date = post.date tooltip = true %}
   </div>
 
   {% if post.tags %}
-    <div class="post-tags">
-      <svg role="img" aria-hidden="true"><use xlink:href="#icon-tag"></use></svg>
+    <div class="post-tags" role="list">
+      {% include svg.html name = "tag" %}
       <span class="visually-hidden">Tags:</span>
       {% for tag in post.tags %}
-        <a href="/tag{{ tag | slugify | relative_url }}" class="badge" aria-label="Tag: {{ tag }}" rel="tag">{{ tag }}</a>
+        <a href="/tag{{ tag | slugify | relative_url }}" class="badge" aria-label="Tag: {{ tag }}" rel="tag" role="listitem">{{ tag }}</a>
       {% endfor %}
     </div>
   {% endif %}
 
   {% if post.categories %}
-    <div class="post-categories">
-      <svg role="img" aria-hidden="true"><use xlink:href="#icon-folder-open"></use></svg>
+    <div class="post-categories" role="list">
+      {% include svg.html name = "folder-open" %}
       <span class="visually-hidden">Categories:</span>
       {% for category in post.categories %}
-        <a href="/category{{ category | slugify | relative_url }}" class="badge" aria-label="Category: {{ category }}" rel="category">{{ category }}</a>
+        <a href="/category{{ category | slugify | relative_url }}" class="badge" aria-label="Category: {{ category }}" rel="category" role="listitem">{{ category }}</a>
       {% endfor %}
     </div>
   {% endif %}
+
+  {% include posts/read-time.html content = post.content %}
 </div>

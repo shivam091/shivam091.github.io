@@ -1,3 +1,5 @@
+@use "abstracts/modules/text-underline" as *;
+
 a {
   color: var(--fgColor-link);
   text-decoration: none;

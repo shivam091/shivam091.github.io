@@ -1,3 +1,7 @@
+@use "abstracts/animations/slide-in" as *;
+@use "abstracts/animations/slide-out" as *;
+@use "abstracts/mixins/overlay" as *;
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -5,7 +9,7 @@
   width: var(--layout-offset-lg);
   height: 100vh;
   background: url("/assets/img/my-profile-img.png") center center / cover no-repeat;
-  color: #fff;
+  color: var(--fgColor-onEmphasis);
   z-index: 999;
   padding-top: calc(env(safe-area-inset-top) + 1rem);
   padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
@@ -15,6 +19,7 @@
   transition: transform 0.3s ease;
   transform: translateX(0);
   will-change: transform;
+  overflow-y: auto;
 
   @include overlay(rgba(0, 0, 0, 0.6));
 
@@ -68,7 +73,7 @@
 .site-title {
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 700;
-  color: #fff;
+  color: var(--fgColor-onEmphasis);
   margin: 0.5rem 0;
   letter-spacing: 0.5px;
 }
@@ -76,9 +81,9 @@
 .site-subtitle {
   font-size: clamp(0.55rem, 1.2vw, 0.9rem);
   font-style: italic;
-  color: var(--fgColor-muted);
+  color: var(--fgColor-onInverse);
   margin-bottom: 1rem;
-  filter: invert(1);
+  filter: brightness(0.8);
 }
 
 .sidebar-social {
@@ -98,21 +103,22 @@
 .social-icon {
   width: clamp(1.75rem, 3vw, 2.25rem);
   height: clamp(1.75rem, 3vw, 2.25rem);
-  background: #007acc;
+  background: var(--bgColor-accent-emphasis);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: filter 0.3s;
+  will-change: filter;
 
   &:hover,
   &:focus-visible {
-    background-color: #005a9c;
+    filter: brightness(90%);
   }
 
   svg {
-    fill: #fff;
+    fill: var(--fgColor-onEmphasis);
   }
 }
 
@@ -127,8 +133,7 @@
 }
 
 .sidebar-nav-link {
-  color: #fff;
-  text-decoration: none;
+  color: var(--fgColor-onEmphasis);
   padding: 0.75rem 1rem;
   display: inline-flex;
   align-items: center;
@@ -138,9 +143,9 @@
 
   &:hover,
   &:focus-visible {
-    color: #fff;
+    color: var(--fgColor-onEmphasis);
     background-color: rgba(255, 255, 255, 0.1);
-    border-left: 2px solid #007acc;
+    border-left: 2px solid var(--borderColor-accent-emphasis);
     text-decoration: none;
   }
 
@@ -156,7 +161,7 @@
   right: 1rem;
   z-index: 1010;
   background-color: var(--bgColor-accent-emphasis);
-  color: #fff;
+  color: var(--fgColor-onEmphasis);
   border: none;
   padding: 0.8rem 0.6rem;
   border-radius: 50%;
@@ -164,7 +169,7 @@
   display: none;
 
   .icon-bar {
-    background-color: #fff;
+    background-color: var(--fgColor-onEmphasis);
     display: block;
     height: 2px;
     margin-top: 0.25rem;

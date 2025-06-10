@@ -13,38 +13,33 @@
       <div class="site-subtitle">A showcase of personal and open source projects.</div>
     </div>
     <div class="sidebar-social" role="navigation" aria-label="Social Links">
-      <a href="https://www.github.com/{{ site.author.github_username }}" class="social-icon" target="_blank" data-tooltip="GitHub" aria-label="GitHub" aria-describedby="tt-github">
-        <svg role="img" aria-hidden="true"><use xlink:href="#icon-github"></use></svg>
+      <a href="https://www.github.com/{{ site.author.github_username }}" class="social-icon" target="_blank" data-tooltip="GitHub" aria-label="GitHub">
+        {% include svg.html name = "github" %}
       </a>
-      <span id="tt-github" class="visually-hidden">GitHub</span>
-      <a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}" class="social-icon" target="_blank" data-tooltip="LinkedIn" aria-label="LinkedIn" aria-describedby="tt-linkedin">
-        <svg role="img" aria-hidden="true"><use xlink:href="#icon-linkedin"></use></svg>
+      <a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}" class="social-icon" target="_blank" data-tooltip="LinkedIn" aria-label="LinkedIn">
+        {% include svg.html name = "linkedin" %}
       </a>
-      <span id="tt-linkedin" class="visually-hidden">LinkedIn</span>
-      <a href="https://www.instagram.com/{{ site.author.instagram_username }}" class="social-icon" target="_blank" data-tooltip="Instagram" aria-label="Instagram" aria-describedby="tt-instagram">
-        <svg role="img" aria-hidden="true"><use xlink:href="#icon-instagram"></use></svg>
+      <a href="https://www.instagram.com/{{ site.author.instagram_username }}" class="social-icon" target="_blank" data-tooltip="Instagram" aria-label="Instagram">
+        {% include svg.html name = "instagram" %}
       </a>
-      <span id="tt-instagram" class="visually-hidden">Instagram</span>
-      <a href="mailto:{{ site.author.email }}" class="social-icon" target="_blank" data-tooltip="Email {{ site.author.email }}" aria-label="Email {{ site.author.email }}" aria-describedby="tt-email">
-        <svg role="img" aria-hidden="true"><use xlink:href="#icon-envelope"></use></svg>
+      <a href="mailto:{{ site.author.email }}" class="social-icon" target="_blank" data-tooltip="Email {{ site.author.email }}" aria-label="Email {{ site.author.email }}">
+        {% include svg.html name = "envelope" %}
       </a>
-      <span id="tt-email" class="visually-hidden">Email {{ site.author.email }}</span>
-      <a href="{{ site.author.resume | relative_url }}" class="social-icon" target="_blank" data-tooltip="Download resume" aria-label="Download resume" aria-describedby="tt-resume">
-        <svg role="img" aria-hidden="true"><use xlink:href="#icon-file"></use></svg>
+      <a href="{{ site.author.resume | relative_url }}" class="social-icon" target="_blank" data-tooltip="Download resume" aria-label="Download resume">
+        {% include svg.html name = "file" %}
       </a>
-      <span id="tt-resume" class="visually-hidden">Download resume</span>
     </div>
     <hr/>
     <nav class="sidebar-nav" role="navigation" aria-label="Main Navigation">
       {% for item in site.nav %}
         {% if item.href contains "http" %}
-           <a href="{{ item.href }}" class="sidebar-nav-link" target="_blank" rel="noopener noreferrer">
-             <svg role="img" aria-hidden="true"><use xlink:href="#icon-{{ item.icon }}"></use></svg>
+           <a href="{{ item.href }}" class="sidebar-nav-link" target="_blank" rel="noopener noreferrer" {% if page.url == item.href %} aria-current="page" {% endif %}>
+             {% include svg.html name = item.icon %}
              {{ item.title }}
            </a>
         {% else %}
-           <a href="{{ item.href | relative_url }}" class="sidebar-nav-link">
-             <svg role="img" aria-hidden="true"><use xlink:href="#icon-{{ item.icon }}"></use></svg>
+           <a href="{{ item.href | relative_url }}" class="sidebar-nav-link" {% if page.url == item.href %} aria-current="page" {% endif %}>
+             {% include svg.html name = item.icon %}
              {{ item.title }}
            </a>
         {% endif %}
