@@ -55,6 +55,7 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
+  height: 100%;
   padding: 0rem 1rem;
 
   @media (max-width: 768px) {
@@ -87,7 +88,6 @@
 }
 
 .sidebar-social {
-  margin-top: auto;
   margin-bottom: 1rem;
   display: flex;
   gap: 0.5rem;
@@ -212,5 +212,24 @@
 
   @media (max-width: 768px) {
     display: block;
+  }
+}
+
+.sidebar-bottom-links {
+  position: absolute;
+  bottom: 0.5rem;
+  padding-inline: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .bottom-link {
+    color: var(--fgColor-onEmphasis);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--fgColor-onEmphasis);
+      text-decoration: none;
+    }
   }
 }

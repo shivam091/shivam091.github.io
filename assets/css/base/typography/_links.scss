@@ -4,8 +4,8 @@ a {
   color: var(--fgColor-link);
   text-decoration: none;
   transition:
-    color 0.2s ease-in-out,
-    text-decoration-color 0.2s ease-in-out;
+    color 0.2s cubic-bezier(0.6, 0, 0.2, 1),
+    text-decoration-color 0.2s cubic-bezier(0.6, 0, 0.2, 1);
   will-change: color, text-decoration-color;
 
   &:hover, &:focus-visible {
