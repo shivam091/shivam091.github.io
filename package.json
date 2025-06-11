@@ -1,17 +1,19 @@
 {
   "name": "shivam091.github.io",
   "version": "1.0.0",
-  "description": "Personal blog",
+  "description": "Harshal LADHE's personal blog",
+  "type": "module",
   "scripts": {
-    "build": "npm run build:js",
-    "build:js": "esbuild assets/js/main.js --bundle --outfile=assets/js/bundle.min.js --minify",
-    "watch:js": "esbuild assets/js/main.js --bundle --outfile=assets/js/bundle.min.js --minify --watch",
+    "build": "node esbuild.config.js",
+    "watch": "node esbuild.config.js --watch",
+    "clean": "rm -rf dist",
     "jekyll": "bundle exec jekyll serve --livereload",
-    "start": "npm run build && concurrently \"npm run watch:js\" \"npm run jekyll\""
+    "start": "npm run build && concurrently \"npm run watch\" \"npm run jekyll\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
-    "esbuild": "^0.25.5"
+    "esbuild": "^0.25.5",
+    "esbuild-sass-plugin": "^3.3.1"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/shivam091/shivam091.github.io/issues"
   },
-  "homepage": "https://shivam091.github.io"
+  "homepage": "https://shivam091.github.io",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "typed.js": "^2.0.16"
+  }
 }
