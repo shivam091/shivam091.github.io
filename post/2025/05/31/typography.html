@@ -37,6 +37,13 @@
 <!-- Additional head includes -->
 
 
+  <script type="text/javascript">
+    (function() {
+      const theme = localStorage.getItem("theme") || "system";
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", theme === "system" ? (prefersDark ? "dark" : "light") : theme);
+    })();
+  </script>
 </head>
 <body>
   <div id="progress-bar"></div>
@@ -205,7 +212,7 @@
     </nav>
     <div class="sidebar-bottom">
       <div class="dropdown" data-dropdown>
-        <button class="dropdown-toggle theme-switcher" id="theme-toggle-link" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="dropdown-toggle theme-switcher" id="theme-toggle-link" aria-haspopup="true" aria-expanded="false">
           <svg
   role="img"
   aria-hidden="true"
@@ -221,7 +228,7 @@
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
           
             <li>
-              <a href="#" class="dropdown-item" role="menuitem">
+              <button type="button" class="dropdown-item" role="menuitem">
                 <svg
   role="img"
   aria-hidden="true"
@@ -233,11 +240,11 @@
 </svg>
 
                 System
-              </a>
+              </button>
             </li>
           
             <li>
-              <a href="#" class="dropdown-item" role="menuitem">
+              <button type="button" class="dropdown-item" role="menuitem">
                 <svg
   role="img"
   aria-hidden="true"
@@ -249,11 +256,11 @@
 </svg>
 
                 Light
-              </a>
+              </button>
             </li>
           
             <li>
-              <a href="#" class="dropdown-item" role="menuitem">
+              <button type="button" class="dropdown-item" role="menuitem">
                 <svg
   role="img"
   aria-hidden="true"
@@ -265,7 +272,7 @@
 </svg>
 
                 Dark
-              </a>
+              </button>
             </li>
           
         </ul>
