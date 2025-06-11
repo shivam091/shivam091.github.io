@@ -80,15 +80,15 @@ export function attachTooltips() {
   Tooltip.targets.forEach(tooltipElement => {
     let hoverTimer;
 
-    const safeShow = (e) => {
+    const safeShow = (event) => {
       clearTimeout(hoverTimer);
-      const target = e.currentTarget; // <--- Cache target early
+      const target = event.currentTarget; // <--- Cache target early
       hoverTimer = setTimeout(() => Tooltip.show({ currentTarget: target }), 200);
     };
 
-    const safeHide = (e) => {
+    const safeHide = (event) => {
       clearTimeout(hoverTimer);
-      const target = e.currentTarget;
+      const target = event.currentTarget;
       hoverTimer = setTimeout(() => Tooltip.hide({ currentTarget: target }), 50);
     };
 
