@@ -1,0 +1,25 @@
+{
+  "name": "shivam091.github.io",
+  "version": "1.0.0",
+  "description": "Personal blog",
+  "scripts": {
+    "build": "npm run build:js",
+    "build:js": "esbuild assets/js/main.js --bundle --outfile=assets/js/bundle.min.js --minify",
+    "watch:js": "esbuild assets/js/main.js --bundle --outfile=assets/js/bundle.min.js --minify --watch",
+    "jekyll": "bundle exec jekyll serve --livereload",
+    "start": "npm run build && concurrently \"npm run watch:js\" \"npm run jekyll\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.25.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shivam091/shivam091.github.io.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivam091/shivam091.github.io/issues"
+  },
+  "homepage": "https://shivam091.github.io"
+}

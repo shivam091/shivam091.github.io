@@ -501,57 +501,59 @@ const Dropdown = (() => {
       const button = dropdown.querySelector(".dropdown-toggle");
       const menu = dropdown.querySelector(".dropdown-menu");
 
+      if (!button || !menu) return;
+
       button.setAttribute("aria-expanded", "false");
-      menu.classList.remove("show");
       button.classList.remove("show");
+      menu.classList.remove("show");
 
       PopperUtils.destroy(menu);
     });
   }
 
-  function bindDropdowns() {
-    dropdowns.forEach(dropdown => {
-      const button = dropdown.querySelector(".dropdown-toggle");
-      const menu = dropdown.querySelector(".dropdown-menu");
+  function toggleDropdown(button, menu) {
+    const isOpen = menu.classList.contains("show");
 
-      if (!button || !menu) return;
+    closeAll();
 
-      button.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const isOpen = menu.classList.contains("show");
+    if (!isOpen) {
+      button.setAttribute("aria-expanded", "true");
+      button.classList.add("show");
+      menu.classList.add("show");
 
-        closeAll();
-
-        if (!isOpen) {
-          button.setAttribute("aria-expanded", "true");
-          menu.classList.add("show");
-          button.classList.add("show");
-
-          PopperUtils.create(button, menu, {
-            placement: button.getAttribute("data-dropdown-position") || "bottom",
-            offset: [0, 8]
-          });
-        }
+      PopperUtils.create(button, menu, {
+        placement: button.getAttribute("data-dropdown-position") || "bottom",
+        offset: [0, 8]
       });
+    }
+  }
 
-      window.addEventListener("resize", () => {
-        if (menu.classList.contains("show")) {
-          PopperUtils.update(menu);
-        }
-      });
+  function bindDropdown(dropdown) {
+    const button = dropdown.querySelector(".dropdown-toggle");
+    const menu = dropdown.querySelector(".dropdown-menu");
+
+    if (!button || !menu) return;
+
+    button.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleDropdown(button, menu);
     });
 
+    window.addEventListener("resize", () => {
+      if (menu.classList.contains("show")) PopperUtils.update(menu);
+    });
+  }
+
+  function bindAllDropdowns() {
+    dropdowns.forEach(bindDropdown);
+
     document.addEventListener("click", (e) => {
-      if (!e.target.closest("[data-dropdown]")) {
-        closeAll();
-      }
+      if (!e.target.closest("[data-dropdown]")) closeAll();
     });
   }
 
   return {
-    init: () => {
-      bindDropdowns();
-    }
+    init: bindAllDropdowns
   };
 })();
 
