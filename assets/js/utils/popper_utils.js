@@ -14,14 +14,16 @@ export function createInstance(target, popperElement, options = {}) {
     placement: options.placement || "top",
     modifiers: options.modifiers || defaultModifiers,
   };
-
   const instance = createPopper(target, popperElement, defaultOptions);
+
   instances.set(popperElement, instance);
+
   return instance;
 }
 
 export function destroyInstance(popperElement) {
   const instance = instances.get(popperElement);
+
   if (instance) {
     instance.destroy();
     instances.delete(popperElement);
@@ -30,5 +32,6 @@ export function destroyInstance(popperElement) {
 
 export function updateInstance(popperElement) {
   const instance = instances.get(popperElement);
+
   if (instance) instance.update();
 }

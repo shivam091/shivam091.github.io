@@ -1,10 +1,12 @@
-import * as PopperUtils from "./../utils/PopperUtils.js";
+import * as PopperUtils from "./../utils/popper_utils";
 
-export const Dropdown = (() => {
-  const dropdowns = document.querySelectorAll("[data-dropdown]");
+class Dropdown {
+  static get targets() {
+    return document.querySelectorAll("[data-dropdown]");
+  }
 
-  function closeAll() {
-    dropdowns.forEach(dropdown => {
+  static closeAll() {
+    Dropdown.targets.forEach(dropdown => {
       const button = dropdown.querySelector(".dropdown-toggle");
       const menu = dropdown.querySelector(".dropdown-menu");
 
@@ -18,10 +20,10 @@ export const Dropdown = (() => {
     });
   }
 
-  function toggleDropdown(button, menu) {
+  static toggleDropdown(button, menu) {
     const isOpen = menu.classList.contains("show");
 
-    closeAll();
+    Dropdown.closeAll();
 
     if (!isOpen) {
       button.setAttribute("aria-expanded", "true");
@@ -29,37 +31,32 @@ export const Dropdown = (() => {
       menu.classList.add("show");
 
       PopperUtils.createInstance(button, menu, {
-        placement: button.getAttribute("data-dropdown-position") || "bottom",
-        offset: [0, 8]
+        placement: button.getAttribute("data-dropdown-position") || "bottom"
       });
     }
   }
 
-  function bindDropdown(dropdown) {
+  static bindDropdown(dropdown) {
     const button = dropdown.querySelector(".dropdown-toggle");
     const menu = dropdown.querySelector(".dropdown-menu");
 
     if (!button || !menu) return;
 
-    button.addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleDropdown(button, menu);
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      Dropdown.toggleDropdown(button, menu);
     });
 
     window.addEventListener("resize", () => {
       if (menu.classList.contains("show")) PopperUtils.updateInstance(menu);
     });
   }
+}
 
-  function bindAllDropdowns() {
-    dropdowns.forEach(bindDropdown);
+export function bindAllDropdowns() {
+  Dropdown.targets.forEach(Dropdown.bindDropdown);
 
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest("[data-dropdown]")) closeAll();
-    });
-  }
-
-  return {
-    init: bindAllDropdowns
-  };
-})();
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest("[data-dropdown]")) Dropdown.closeAll();
+  });
+}

@@ -1,3 +1,5 @@
+import * as SvgSprite from "./../utils/svg_sprite"
+
 export const Categories = (function () {
   function toggleSubCategories(event, categoryItem, toggleButton, content) {
     const expanded = toggleButton.getAttribute("aria-expanded") === "true";
