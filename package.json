@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node esbuild.config.js",
     "watch": "node esbuild.config.js --watch",
-    "clean": "rm -rf dist",
+    "clean": "bundle exec jekyll clean && rm -rf dist",
     "jekyll": "bundle exec jekyll serve --livereload",
     "start": "npm run build && concurrently \"npm run watch\" \"npm run jekyll\""
   },

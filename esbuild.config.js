@@ -6,13 +6,19 @@ const isWatch = process.argv.includes("--watch");
 const buildOptions = {
   entryPoints: {
     app: "_javascript/main.js",
-    style: "assets/css/main.sass"
+    style: "_sass/main.sass"
   },
   bundle: true,
   minify: true,
   sourcemap: true,
   outdir: "dist",
   plugins: [sassPlugin()],
+  loader: { ".sass": "file", ".png": "file" },
+  plugins: [
+    sassPlugin({
+      loadPaths: ["_sass"]
+    })
+  ],
 };
 
 async function runBuild() {
