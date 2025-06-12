@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,25 +32,18 @@
 
 
 <!-- Stylesheets -->
-<link href="/dist/style.css" rel="stylesheet">
+<link href="/assets/css/main.css" rel="stylesheet">
 
 <!-- Additional head includes -->
 
 
-  <script type="text/javascript">
-    (function() {
-      const theme = localStorage.getItem("theme") || "system";
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.setAttribute("data-theme", theme === "system" ? (prefersDark ? "dark" : "light") : theme);
-    })();
-  </script>
 </head>
 <body>
   <div id="progress-bar"></div>
 
   <a href="#main-content" class="skip-link" id="skip-link" role="link">Skip to main content</a>
 
-  <button class="btn btn-primary sidebar-toggle" id="sidebar-toggle" aria-label="Toggle Sidebar" aria-controls="sidebar" aria-expanded="false">
+  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle Sidebar" aria-controls="sidebar" aria-expanded="false">
   <span class="icon-bar top-bar"></span>
   <span class="icon-bar middle-bar"></span>
   <span class="icon-bar bottom-bar"></span>
@@ -65,7 +58,7 @@
       <div class="site-subtitle">A showcase of personal and open source projects.</div>
     </div>
     <div class="sidebar-social" role="navigation" aria-label="Social Links">
-      <a href="https://www.github.com/shivam091" class="btn btn-primary social-icon" target="_blank" data-tooltip="GitHub" aria-label="GitHub">
+      <a href="https://www.github.com/shivam091" class="social-icon" target="_blank" data-tooltip="GitHub" aria-label="GitHub">
         <svg
   role="img"
   aria-hidden="true"
@@ -77,7 +70,7 @@
 </svg>
 
       </a>
-      <a href="https://www.linkedin.com/in/shivam091" class="btn btn-primary social-icon" target="_blank" data-tooltip="LinkedIn" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/shivam091" class="social-icon" target="_blank" data-tooltip="LinkedIn" aria-label="LinkedIn">
         <svg
   role="img"
   aria-hidden="true"
@@ -89,7 +82,7 @@
 </svg>
 
       </a>
-      <a href="https://www.instagram.com/taurusian_soul" class="btn btn-primary social-icon" target="_blank" data-tooltip="Instagram" aria-label="Instagram">
+      <a href="https://www.instagram.com/taurusian_soul" class="social-icon" target="_blank" data-tooltip="Instagram" aria-label="Instagram">
         <svg
   role="img"
   aria-hidden="true"
@@ -101,7 +94,7 @@
 </svg>
 
       </a>
-      <a href="mailto:harshal.ladhe.1@gmail.com" class="btn btn-primary social-icon" target="_blank" data-tooltip="Email harshal.ladhe.1@gmail.com" aria-label="Email harshal.ladhe.1@gmail.com">
+      <a href="mailto:harshal.ladhe.1@gmail.com" class="social-icon" target="_blank" data-tooltip="Email harshal.ladhe.1@gmail.com" aria-label="Email harshal.ladhe.1@gmail.com">
         <svg
   role="img"
   aria-hidden="true"
@@ -113,7 +106,7 @@
 </svg>
 
       </a>
-      <a href="/assets/docs/resume.pdf" class="btn btn-primary social-icon" target="_blank" data-tooltip="Download resume" aria-label="Download resume">
+      <a href="/assets/docs/resume.pdf" class="social-icon" target="_blank" data-tooltip="Download resume" aria-label="Download resume">
         <svg
   role="img"
   aria-hidden="true"
@@ -210,74 +203,6 @@
         
       
     </nav>
-    <div class="sidebar-bottom">
-      <div class="dropdown" data-dropdown>
-        <button type="button" class="dropdown-toggle theme-switcher bottom-link" id="theme-toggle-link" aria-haspopup="true" aria-expanded="false">
-          <svg
-  role="img"
-  aria-hidden="true"
-  focusable="false"
-  
-  
->
-  <use href="/assets/img/sprite.svg#icon-adjust"></use>
-</svg>
-
-        </button>
-
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
-          
-            <li>
-              <button type="button" class="dropdown-item" role="menuitem">
-                <svg
-  role="img"
-  aria-hidden="true"
-  focusable="false"
-  
-  
->
-  <use href="/assets/img/sprite.svg#icon-device-desktop"></use>
-</svg>
-
-                System
-              </button>
-            </li>
-          
-            <li>
-              <button type="button" class="dropdown-item" role="menuitem">
-                <svg
-  role="img"
-  aria-hidden="true"
-  focusable="false"
-  
-  
->
-  <use href="/assets/img/sprite.svg#icon-sun"></use>
-</svg>
-
-                Light
-              </button>
-            </li>
-          
-            <li>
-              <button type="button" class="dropdown-item" role="menuitem">
-                <svg
-  role="img"
-  aria-hidden="true"
-  focusable="false"
-  
-  
->
-  <use href="/assets/img/sprite.svg#icon-moon"></use>
-</svg>
-
-                Dark
-              </button>
-            </li>
-          
-        </ul>
-      </div>
-    </div>
   </div>
 </aside>
 
@@ -703,7 +628,7 @@ H<sub>2</sub>O and E = mc<sup>2</sup></p>
 </footer>
 
 
-  <button type="button" id="scroll-top" class="btn btn-primary scroll-top" aria-label="Scroll to top" data-scroll-top>
+  <a href="javascript:void(0)" id="scroll-top" class="scroll-top" aria-label="Scroll to top">
  <svg
   role="img"
   aria-hidden="true"
@@ -714,11 +639,8 @@ H<sub>2</sub>O and E = mc<sup>2</sup></p>
   <use href="/assets/img/sprite.svg#icon-arrow-up"></use>
 </svg>
 
-</button>
+</a>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
-<script src="/dist/app.js"></script>
-
+  <script type="text/javascript" src="/assets/js/main.js"></script>
 </body>
 </html>
