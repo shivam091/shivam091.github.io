@@ -5,8 +5,8 @@ const isWatch = process.argv.includes("--watch");
 
 const buildOptions = {
   entryPoints: {
-    app: "assets/js/main.js"
-    // style: "assets/css/main.scss"
+    app: "_javascript/main.js",
+    style: "assets/css/main.sass"
   },
   bundle: true,
   minify: true,
