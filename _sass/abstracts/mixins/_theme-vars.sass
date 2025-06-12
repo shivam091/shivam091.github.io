@@ -1,0 +1,7 @@
+@use "themes/root" as *
+@use "abstracts/functions" as *
+
+@mixin theme-vars($name, $map)
+  [data-theme="#{$name}"]
+    @each $key in $theme-keys
+      --#{$key}: #{theme-get($map, $key)}

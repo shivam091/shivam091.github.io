@@ -1,0 +1,23 @@
+html,
+body
+  font-family: var(--font-family)
+  font-size: clamp(14px, 1.5vw, 16px)
+  background-color: var(--bgColor-default)
+  color: var(--fgColor-default)
+  height: 100%
+  width: 100%
+  line-height: 1.5
+  scroll-behavior: smooth
+
+body
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  overflow-x: hidden
+  font-weight: 400
+
+[data-theme=light]
+  color-scheme: light
+
+[data-theme=dark]
+  color-scheme: dark

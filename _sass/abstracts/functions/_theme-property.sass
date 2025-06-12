@@ -1,0 +1,9 @@
+@use "sass:string"
+
+@function theme-property($prefix, $variant, $fallback: null)
+  $full-key: "--#{$prefix}-#{$variant}"
+
+  @if $fallback == null
+    @return string.unquote("var(#{$full-key})")
+  @else
+    @return string.unquote("var(#{$full-key}, #{$fallback})")

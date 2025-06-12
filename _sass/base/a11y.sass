@@ -1,0 +1,40 @@
+@use "../abstracts/mixins/a11y" as *
+
+@media (prefers-reduced-motion: reduce)
+  a,
+  svg,
+  .sidebar
+    transition: none
+    animation: none
+
+.visually-hidden
+  @include visually-hidden()
+
+.skip-link
+  position: absolute
+  top: -3.5rem
+  left: 1rem
+  z-index: 9999
+  padding: 0.5rem 1rem
+  background-color: var(--control-bgColor)
+  color: var(--control-fgColor)
+  border: 1px solid var(--control-borderColor)
+  font-size: 0.875rem
+  border-radius: 4px
+  transition: top 0.3s ease, opacity 0.3s ease, background-color 0.3s ease
+  opacity: 0
+  pointer-events: none
+  will-change: top, opacity, background-color
+
+  &:hover
+    background-color: var(--control-bgColor-hover)
+
+  &:focus
+    top: 1rem
+    opacity: 1
+    color: var(--control-fgColor)
+    pointer-events: auto
+    text-decoration: none
+
+  @media (max-width: 768px)
+    padding: 0.25rem 0.5rem

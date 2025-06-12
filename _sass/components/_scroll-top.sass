@@ -1,0 +1,28 @@
+@use "abstracts/animations/scroll-top" as *
+
+.scroll-top
+  position: fixed
+  right: 15px
+  bottom: 15px
+  z-index: 99999
+  width: 44px
+  height: 44px
+  border-radius: 50px
+  display: flex
+  align-items: center
+  justify-content: center
+
+  opacity: 0
+  visibility: hidden
+  pointer-events: none
+  transform: translateY(20px)
+
+  &[data-state="visible"]
+    animation: scrollTopBounceIn 0.4s both
+    pointer-events: auto
+    opacity: 1
+
+  &[data-state="hidden"]
+    animation: scrollTopBounceOut 0.4s both
+    pointer-events: none
+    opacity: 0

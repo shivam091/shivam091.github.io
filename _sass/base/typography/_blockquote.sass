@@ -1,0 +1,19 @@
+@use "abstracts/mixins/break-word" as *
+
+blockquote
+  padding: 0 1em
+  color: var(--fgColor-muted)
+  border-left: .25em solid var(--borderColor-default)
+  margin-top: 0
+  margin-bottom: 1rem
+
+  @include break-word()
+
+  p
+    padding: 0.5rem
+
+  &:first-child
+    margin-bottom: 0
+
+  &:last-child
+    margin-top: 0

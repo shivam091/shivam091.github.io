@@ -1,0 +1,61 @@
+.tooltip
+  position: absolute
+  background-color: var(--overlay-bgColor)
+  border: 1px solid var(--overlay-borderColor)
+  box-shadow: var(--shadow-floating-legacy)
+  padding: 0.25rem 0.5rem
+  border-radius: 0.25rem
+  font-size: 0.75rem
+  z-index: 1000
+  pointer-events: none
+  opacity: 0
+  transform: scale(0.95)
+  transition: opacity 0.2s ease
+  max-width: 250px
+  width: max-content
+  white-space: normal
+  text-align: center
+  will-change: opacity
+
+  &::before
+    content: ""
+    position: absolute
+    border: 6px solid transparent
+    z-index: -1
+
+  &.show
+    opacity: 1
+    pointer-events: auto
+
+  &.hide
+    opacity: 0
+    pointer-events: none
+
+  @media (max-width: 768px)
+    max-width: 180px
+    font-size: 0.7rem
+    padding: 0.25rem 0.4rem
+
+[data-popper-placement="top"]::before
+  border-top-color: var(--overlay-bgColor)
+  bottom: calc(-1 * var(--tooltip-caretSize) * 2)
+  left: 50%
+  transform: translateX(-50%)
+
+[data-popper-placement="bottom"]::before
+  border-bottom-color: var(--overlay-bgColor)
+  top: calc(-1 * var(--tooltip-caretSize) * 2)
+  left: 50%
+  transform: translateX(-50%)
+
+[data-popper-placement="left"]::before
+  border-left-color: var(--overlay-bgColor)
+  right: calc(-1 * var(--tooltip-caretSize) * 2)
+  top: 50%
+  transform: translateY(-50%)
+
+[data-popper-placement="right"]::before
+  border-right-color: var(--overlay-bgColor)
+  left: calc(-1 * var(--tooltip-caretSize) * 2)
+  top: 50%
+  transform: translateY(-50%)
