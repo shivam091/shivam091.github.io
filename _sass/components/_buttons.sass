@@ -1,0 +1,73 @@
+button
+  background-color: var(--control-transparent-bgColor)
+  color: var(--control-fgColor)
+  border: 1px solid var(--control-transparent-borderColor)
+  border-radius: 4px
+  padding: clamp(0.25rem, 1vw, 0.35rem)
+  font-size: clamp(13px, 1.4vw, 15px)
+  font-weight: 500
+
+  &:hover,
+  &:focus
+    background-color: var(--control-transparent-bgColor-hover)
+    border-color: var(--control-transparent-borderColor-hover)
+
+  &.active
+    background-color: var(--control-transparent-bgColor-active)
+    border-color: var(--control-transparent-borderColor-active)
+
+[type=button],
+[type=reset],
+[type=submit],
+button
+  -webkit-appearance: button
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled)
+  cursor: pointer
+
+.btn
+  background-color: var(--control-bgColor)
+  color: var(--control-fgColor)
+  border-color: var(--control-borderColor)
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out
+  will-change: color, background-color, border-color
+
+  &:hover,
+  &:focus
+    background-color: var(--control-bgColor-hover)
+    border-color: var(--control-borderColor)
+
+  &.active
+    background-color: var(--control-bgColor-active)
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true]
+    background-color: var(--control-bgColor-disabled)
+    color: var(--control-fgColor-disabled)
+    border-color: var(--control-borderColor-disabled)
+
+.btn-primary
+  background-color: var(--button-primary-bgColor)
+  color: var(--button-primary-fgColor)
+  border-color: var(--button-primary-borderColor)
+
+  &:hover,
+  &:focus
+    background-color: var(--button-primary-bgColor-hover)
+    color: var(--button-primary-fgColor-hover)
+    border-color: var(--button-primary-borderColor-hover)
+
+  &.active
+    background-color: var(--button-primary-bgColor-active)
+    border-color: var(--button-primary-borderColor-active)
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled=true]
+    background-color: var(--button-primary-bgColor-disabled)
+    color: var(--button-primary-fgColor-disabled)
+    border-color: var(--button-primary-borderColor-disabled)

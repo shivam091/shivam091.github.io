@@ -1,0 +1,25 @@
+@use "abstracts/mixins/clearfix" as *
+
+hr
+  border: 0
+  height: 1px
+  background: linear-gradient(to right, transparent, var(--borderColor-default), transparent)
+  margin: 1rem 0
+
+.clearfix
+  @include clearfix()
+
+:focus,
+:focus-visible
+  outline: 2px solid var(--focus-outlineColor)
+  outline-offset: 2px
+
+:focus:not(:focus-visible)
+  outline: none
+  box-shadow: none
+
+:disabled,
+.disabled,
+[aria-disabled=true]
+  box-shadow: none
+  cursor: not-allowed !important

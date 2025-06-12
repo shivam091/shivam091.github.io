@@ -1,0 +1,23 @@
+img
+  max-width: 100%
+  height: auto
+  object-fit: cover
+  border-radius: 0.5rem
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5)
+
+svg
+  width: clamp(1.25rem, 2vw, 1.5rem)
+  height: clamp(1.25rem, 2vw, 1.5rem)
+  fill: currentColor
+
+.profile-pic
+  width: 120px
+  height: 120px
+  border-radius: 50%
+  object-fit: cover
+  margin-bottom: 1rem
+  box-shadow: var(--avatar-shadow)
+
+  @media (max-width: 768px)
+    width: 100px
+    height: 100px
