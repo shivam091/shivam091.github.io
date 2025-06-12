@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "Harshal LADHE's personal blog",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shivam091/shivam091.github.io.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shivam091/shivam091.github.io/issues"
+  },
+  "homepage": "https://shivam091.github.io",
   "scripts": {
     "build": "node esbuild.config.js",
     "watch": "node esbuild.config.js --watch",
@@ -15,15 +24,6 @@
     "esbuild": "^0.25.5",
     "esbuild-sass-plugin": "^3.3.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shivam091/shivam091.github.io.git"
-  },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shivam091/shivam091.github.io/issues"
-  },
-  "homepage": "https://shivam091.github.io",
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "typed.js": "^2.0.16"
