@@ -25,7 +25,8 @@
       <a href="mailto:{{ site.author.email }}" class="btn btn-primary social-icon" target="_blank" data-tooltip="Email {{ site.author.email }}" aria-label="Email {{ site.author.email }}">
         {% include svg.html name = "envelope" %}
       </a>
-      <a href="{{ site.author.resume | relative_url }}" class="btn btn-primary social-icon" target="_blank" data-tooltip="Download resume" aria-label="Download resume">
+      <a href="{{ site.author.resume | relative_url }}" class="btn btn-primary social-icon" target="_blank" aria-label="Download resume" data-tooltip="Download resume"
+      data-analytics-event="download_resume" data-analytics-label="resume.pdf" data-analytics-category="engagement">
         {% include svg.html name = "file" %}
       </a>
     </div>
