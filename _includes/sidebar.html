@@ -45,5 +45,43 @@
         {% endif %}
       {% endfor %}
     </nav>
+    <div class="sidebar-bottom">
+      <div class="dropdown" data-dropdown>
+        <button type="button" class="dropdown-toggle theme-switcher bottom-link" id="theme-toggle-link" aria-haspopup="true" aria-expanded="false">
+          {% include svg.html name = "adjust" %}
+        </button>
+
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
+          {% for item in site.available_themes %}
+            <li>
+              <button type="button" class="dropdown-item" role="menuitem">
+                {% include svg.html name = item.icon %}
+                {{ item.title }}
+              </button>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <select id="language-switcher">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+      <div class="dropdown" data-dropdown>
+        <button type="button" class="dropdown-toggle theme-switcher bottom-link" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
+          {% include svg.html name = "adjust" %}
+        </button>
+
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
+          {% for item in site.available_locales %}
+            <li>
+              <button type="button" class="dropdown-item lang-option" role="menuitem" data-lang="{{ item.key }}">
+                {{ item.display_name }}
+              </button>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </aside>

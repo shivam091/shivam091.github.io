@@ -2,6 +2,37 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}" data-theme="light">
 <head>
   {% include head.html %}
+  <script type="text/javascript">
+    (function() {
+      const theme = localStorage.getItem("theme") || "system";
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", theme === "system" ? (prefersDark ? "dark" : "light") : theme);
+    })();
+
+    const translations = {
+      en: {{ site.data.locales.en | jsonify }},
+      fr: {{ site.data.locales.fr | jsonify }},
+      hi: {{ site.data.locales.hi | jsonify }}
+    };
+
+    document.querySelectorAll('.lang-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        localStorage.setItem('lang', lang);
+        location.reload();
+      });
+    });
+
+    // Optional: on load, set page lang based on localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+      const lang = localStorage.getItem('lang');
+      if (lang && document.documentElement.lang !== lang) {
+        // Redirect to a version of page with `locale: lang` in frontmatter
+        // OR reload with lang-aware logic
+        document.documentElement.lang = lang;
+      }
+    });
+  </script>
 </head>
 <body>
   {% include progress-bar.html %}

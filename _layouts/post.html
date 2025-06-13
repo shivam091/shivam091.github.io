@@ -2,6 +2,10 @@
 layout: page
 ---
 
+{{ site.data.locales[lang] }}
+<p>{{ "greeting" | t }}</p>
+<p>{{ "greeting" | t: "fr" }}</p>
+<p id="greeting"></p>
 <header class="post-header">
   {% include posts/meta.html post = page %}
 </header>

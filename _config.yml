@@ -10,6 +10,7 @@ lang: en
 # The time zone of the webpage
 timezone: Asia/Kolkata
 
+plugins_dir: _plugins
 plugins:
   - jekyll-archives
   - jekyll-feed
@@ -66,11 +67,21 @@ author:
   resume: /assets/docs/resume.pdf
 
 nav:
-  - {title: "Home", icon: "home", href: "/"}
-  - {title: "About", icon: "info-circle", href: "/about"}
-  - {title: "Categories", icon: "folder", href: "/categories"}
-  - {title: "Tags", icon: "tag", href: "/tags"}
-  - {title: "Posts", icon: "list", href: "/posts"}
+  - { title: "Home", icon: "home", href: "/" }
+  - { title: "About", icon: "info-circle", href: "/about" }
+  - { title: "Categories", icon: "folder", href: "/categories" }
+  - { title: "Tags", icon: "tag", href: "/tags" }
+  - { title: "Posts", icon: "list", href: "/posts" }
+
+available_themes:
+  - { title: "System", icon: "device-desktop" }
+  - { title: "Light", icon: "sun" }
+  - { title: "Dark", icon: "moon" }
+
+available_locales:
+  - { key: "en", display_name: "English" }
+  - { key: "fr", display_name: "Français" }
+  - { key: "hi", display_name: "हिंदी" }
 
 posts:
   read_time:

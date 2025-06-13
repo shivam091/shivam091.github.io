@@ -1,0 +1,66 @@
+.dropdown
+  position: relative
+  display: inline-block
+
+.dropdown-toggle
+  cursor: pointer
+
+.dropdown-menu
+  position: absolute
+  display: block
+  background-color: var(--overlay-bgColor)
+  border: 1px solid var(--overlay-borderColor)
+  box-shadow: var(--shadow-floating-small)
+  border-radius: 6px
+  opacity: 0
+  transition: opacity 0.3s ease
+  will-change: opacity
+  z-index: 999
+  pointer-events: none
+  visibility: hidden
+  list-style: none
+  width: fit-content
+  min-width: 10rem
+  padding: 0.5rem
+
+  &.show
+    opacity: 1
+    pointer-events: auto
+    visibility: visible
+
+.dropdown-item
+  display: grid
+  grid-template-columns: auto 1fr
+  grid-template-rows: max-content
+  align-items: center
+  gap: 0.5rem
+  color: var(--control-fgColor)
+  padding-block: .25rem
+  transition: background-color 0.3s ease
+  will-change: background-color
+  background-color: var(--control-transparent-bgColor)
+  border-radius: 0.25rem
+  width: 100%
+  -webkit-tap-highlight-color: transparent
+  text-align: left
+  touch-action: manipulation
+
+  &:hover,
+  &:focus
+    color: var(--control-fgColor)
+    background-color: var(--control-transparent-bgColor-hover)
+    text-decoration: none
+
+.dropdown-item-selected
+  position: relative
+  padding-right: 30px
+
+  &::after
+    content: ""
+    position: absolute
+    right: 10px
+    top: 50%
+    transform: translateY(-50%)
+    width: 18px
+    height: 18px
+    background-image: var(--checkmark-svg)
