@@ -2,10 +2,22 @@
 layout: default
 ---
 
+{%- assign icon = nil -%}
+{%- assign current_nav = site.nav | where: "href", page.url | first -%}
+{%- assign icon = current_nav.icon -%}
+
+{% if page.url contains "/post/" %}
+  {% assign icon = "file" %}
+{% endif %}
+
 <h1 id="page-title" class="page-title">
+  {% if icon %}
+    {% include svg.html name = icon class = "page-title-icon" %}
+  {% endif %}
+
   {{ page.title }}
 </h1>
 
-<section class="page-content" aria-labelledby="page-title">
+<section class="page-content" aria-label="{{ page.title }}">
   {{ content }}
 </section>
