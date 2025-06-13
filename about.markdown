@@ -14,8 +14,6 @@ I’m a software engineer, freelancer, and lifelong learner passionate about bui
 - 🤝 Open to collaboration on Ruby on Rails open-source projects
 - 🧠 Looking for mentorship and support in back-end development
 
-![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id={{ site.author.github_username }}.{{ site.author.github_username }}&format=true&left_text=My%20page%20visitors)
-
 ## 📊 GitHub Statistics
 
 ![Github Stats](https://github-readme-stats.vercel.app/api?username={{ site.author.github_username }}&count_private=true&show_icons=true&include_all_commits=true&show_owner=true)
