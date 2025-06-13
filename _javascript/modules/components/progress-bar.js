@@ -4,41 +4,41 @@ class ProgressBar {
   static intervalId = null;
 
   static get progressBarElement() {
-    return ProgressBar.barElement;
+    return this.barElement;
   }
 
   static initialize() {
-    ProgressBar.barElement = document.getElementById("progress-bar");
+    this.barElement = document.getElementById("progress-bar");
 
-    if (!ProgressBar.barElement) return;
+    if (!this.barElement) return;
 
-    window.addEventListener("beforeunload", ProgressBar.start);
-    window.addEventListener("load", ProgressBar.complete);
+    window.addEventListener("beforeunload", () => this.start());
+    window.addEventListener("load", () => this.complete());
   }
 
   static start() {
-    const bar = ProgressBar.progressBarElement;
+    const bar = this.progressBarElement;
     if (!bar) return;
 
-    ProgressBar.progress = 0;
-    clearInterval(ProgressBar.intervalId);
+    this.progress = 0;
+    clearInterval(this.intervalId);
 
     bar.style.width = "0%";
     bar.setAttribute("data-state", "loading");
 
-    ProgressBar.intervalId = setInterval(() => {
-      if (ProgressBar.progress < 90) {
-        ProgressBar.progress += Math.random() * 10;
-        bar.style.width = `${Math.min(ProgressBar.progress, 90)}%`;
+    this.intervalId = setInterval(() => {
+      if (this.progress < 90) {
+        this.progress += Math.random() * 10;
+        bar.style.width = `${Math.min(this.progress, 90)}%`;
       }
     }, 200);
   }
 
   static complete() {
-    const bar = ProgressBar.progressBarElement;
+    const bar = this.progressBarElement;
     if (!bar) return;
 
-    clearInterval(ProgressBar.intervalId);
+    clearInterval(this.intervalId);
     bar.style.width = "100%";
 
     setTimeout(() => {

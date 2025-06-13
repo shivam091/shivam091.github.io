@@ -1,6 +1,6 @@
-{% assign date = include.date | default: "now" %}
-{% assign wrap_element = include.wrap | default: "time" %}
-{% assign format = include.format | default: "%B %d, %Y" %}
+{%- assign date = include.date | default: "now" -%}
+{%- assign wrap_element = include.wrap | default: "time" -%}
+{%- assign format = include.format | default: "%B %d, %Y" -%}
 
 <{{ wrap_element }}
   datetime="{{ date | date_to_xmlschema }}"
@@ -14,6 +14,7 @@
   {% if include.tooltip %}
     data-tooltip="{{ date | date: '%a, %B %d, %Y %I:%M %p' }}"
     data-tooltip-position="bottom"
+    tabindex="0"
   {% endif %}
 >
   {{ date | date: format }}

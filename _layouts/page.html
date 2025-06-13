@@ -2,10 +2,8 @@
 layout: default
 ---
 
-<h1 id="page-title" class="page-title">
-  {{ page.title }}
-</h1>
+{% include pages/title.html %}
 
-<section class="page-content" aria-labelledby="page-title">
+<section class="page-content" aria-label="{{ page.title }}">
   {{ content }}
 </section>

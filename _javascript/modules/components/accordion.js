@@ -9,14 +9,14 @@ class Accordion {
   }
 
   addEventListeners() {
-    this.toggleButton.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
+    this.toggleButton.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
         this.toggleButton.click();
       }
     });
 
-    this.toggleButton.addEventListener("click", (e) => this.toggle(e));
+    this.toggleButton.addEventListener("click", (event) => this.toggle(event));
 
     this.content.addEventListener("transitionend", () => {
       this.content.style.display =

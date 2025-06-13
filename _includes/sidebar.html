@@ -25,7 +25,8 @@
       <a href="mailto:{{ site.author.email }}" class="btn btn-primary social-icon" target="_blank" data-tooltip="Email {{ site.author.email }}" aria-label="Email {{ site.author.email }}">
         {% include svg.html name = "envelope" %}
       </a>
-      <a href="{{ site.author.resume | relative_url }}" class="btn btn-primary social-icon" target="_blank" data-tooltip="Download resume" aria-label="Download resume">
+      <a href="{{ site.author.resume | relative_url }}" class="btn btn-primary social-icon" target="_blank" aria-label="Download resume" data-tooltip="Download resume"
+      data-analytics-event="download_resume" data-analytics-label="resume.pdf" data-analytics-category="engagement">
         {% include svg.html name = "file" %}
       </a>
     </div>
@@ -45,5 +46,23 @@
         {% endif %}
       {% endfor %}
     </nav>
+    <div class="sidebar-bottom" aria-label="Preferences panel">
+      <div class="dropdown" data-dropdown data-theme-switcher>
+        <button type="button" class="dropdown-toggle theme-switcher bottom-link" aria-haspopup="true" aria-expanded="false">
+          {% include svg.html name = "adjust" %}
+        </button>
+
+        <ul class="dropdown-menu" role="menu" aria-label="Available color schemes" data-theme-switcher-list>
+          {% for item in site.color_schemes %}
+            <li>
+              <button type="button" class="dropdown-item" role="menuitem" data-color-scheme="{{ item.key }}" data-theme-switcher-list-items>
+                {% include svg.html name = item.icon %}
+                {{ item.display_label }}
+              </button>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </aside>

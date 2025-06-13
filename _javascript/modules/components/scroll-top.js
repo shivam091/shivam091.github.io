@@ -7,7 +7,7 @@ class ScrollTop {
   }
 
   static getScrollThreshold() {
-    const el = ScrollTop.scrollTopElement;
+    const el = this.scrollTopElement;
 
     return parseInt(el?.getAttribute("data-scroll-threshold") || "250", 10);
   }
@@ -19,42 +19,42 @@ class ScrollTop {
   }
 
   static updateVisibility() {
-    const el = ScrollTop.scrollTopElement;
+    const el = this.scrollTopElement;
     if (!el) return;
 
-    const threshold = ScrollTop.getScrollThreshold();
+    const threshold = this.getScrollThreshold();
     const shouldShow = window.scrollY > threshold;
 
-    if (shouldShow && !ScrollTop.isVisible) {
+    if (shouldShow && !this.isVisible) {
       el.setAttribute("data-state", "visible");
 
-      ScrollTop.isVisible = true;
-    } else if (!shouldShow && ScrollTop.isVisible) {
+      this.isVisible = true;
+    } else if (!shouldShow && this.isVisible) {
       el.setAttribute("data-state", "hidden");
 
-      ScrollTop.isVisible = false;
+      this.isVisible = false;
     }
   }
 
   static initialize() {
-    const el = ScrollTop.scrollTopElement;
+    const el = this.scrollTopElement;
     if (!el) return;
 
-    el.addEventListener("click", ScrollTop.handleClick);
+    el.addEventListener("click", (event) => this.handleClick(event));
 
     // Throttle or debounce to avoid over-triggering updateVisibility()
     window.addEventListener("scroll", () => {
-      if (!ScrollTop.ticking) {
+      if (!this.ticking) {
         window.requestAnimationFrame(() => {
-          ScrollTop.updateVisibility();
-          ScrollTop.ticking = false;
+          this.updateVisibility();
+          this.ticking = false;
         });
-        ScrollTop.ticking = true;
+        this.ticking = true;
       }
     }, { passive: true });
 
-    window.addEventListener("load", ScrollTop.updateVisibility);
-    ScrollTop.updateVisibility();
+    window.addEventListener("load", () => this.updateVisibility());
+    this.updateVisibility();
   }
 }
 

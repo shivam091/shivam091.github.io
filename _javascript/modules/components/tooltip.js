@@ -13,7 +13,7 @@ class Tooltip {
 
   static createElement(text) {
     const el = document.createElement("div");
-    const id = Tooltip.generateId();
+    const id = this.generateId();
 
     el.className = "tooltip";
     el.id = id;
@@ -31,13 +31,13 @@ class Tooltip {
 
   static show(event) {
     const target = event?.currentTarget;
-    if (Tooltip.tooltipMap.has(target)) return;
+    if (this.tooltipMap.has(target)) return;
 
     const tooltipText = target.getAttribute("data-tooltip");
     if (!tooltipText) return;
 
-    const delay = Tooltip.getTooltipDelay(target);
-    const tooltip = Tooltip.createElement(tooltipText);
+    const delay = this.getTooltipDelay(target);
+    const tooltip = this.createElement(tooltipText);
 
     document.body.appendChild(tooltip);
 
@@ -47,16 +47,16 @@ class Tooltip {
 
     requestAnimationFrame(() => tooltip.classList.add("show"));
     target.setAttribute("aria-describedby", tooltip.id);
-    Tooltip.tooltipMap.set(target, tooltip);
+    this.tooltipMap.set(target, tooltip);
 
     if ("ontouchstart" in window) {
-      setTimeout(() => Tooltip.hide({ currentTarget: target }), delay);
+      setTimeout(() => this.hide({ currentTarget: target }), delay);
     }
   }
 
   static hide(event) {
     const target = event.currentTarget;
-    const tooltip = Tooltip.tooltipMap.get(target);
+    const tooltip = this.tooltipMap.get(target);
 
     if (tooltip) {
       tooltip.classList.remove("show");
@@ -66,7 +66,7 @@ class Tooltip {
       const removeTooltip = () => {
         if (tooltip && tooltip.parentNode) {
           tooltip.remove();
-          Tooltip.tooltipMap.delete(target);
+          this.tooltipMap.delete(target);
           PopperUtils.destroyInstance(tooltip);
         }
       };
@@ -79,47 +79,53 @@ class Tooltip {
         }
       };
 
-      tooltip.addEventListener("transitionend", cleanup, {once: true});
+      tooltip.addEventListener("transitionend", cleanup, { once: true });
       setTimeout(cleanup, 300);
     }
   }
 
   static handleEscape(event) {
     if (event.key === "Escape") {
-      Tooltip.hide({ currentTarget: document.activeElement });
+      this.hide({ currentTarget: document.activeElement });
     }
   }
 
-  static initialize() {
-    Tooltip.tooltipElements.forEach((el) => {
-      let hoverTimer;
+  static getHoverHandlers() {
+    let hoverTimer;
 
-      const safeShow = (event) => {
+    return {
+      safeShow: (event) => {
         clearTimeout(hoverTimer);
         const target = event.currentTarget;
 
         hoverTimer = setTimeout(() => Tooltip.show({ currentTarget: target }), 200);
-      };
-
-      const safeHide = (event) => {
+      },
+      safeHide: (event) => {
         clearTimeout(hoverTimer);
         const target = event.currentTarget;
 
         hoverTimer = setTimeout(() => Tooltip.hide({ currentTarget: target }), 50);
-      };
+      },
+    };
+  }
+
+  static initialize() {
+    this.tooltipElements.forEach((el) => {
+      const { safeShow, safeHide } = this.getHoverHandlers();
 
       el.addEventListener("mouseenter", safeShow);
       el.addEventListener("mouseleave", safeHide);
-      el.addEventListener("focus", Tooltip.show);
-      el.addEventListener("blur", Tooltip.hide);
 
-      el.addEventListener("touchstart", Tooltip.show);
-      el.addEventListener("touchend", Tooltip.hide);
+      el.addEventListener("focus", (event) => this.show(event));
+      el.addEventListener("blur", (event) => this.hide(event));
 
-      el.addEventListener("pointerdown", Tooltip.show);
-      el.addEventListener("pointerup", Tooltip.hide);
+      el.addEventListener("touchstart", (event) => this.show(event));
+      el.addEventListener("touchend", (event) => this.hide(event));
 
-      el.addEventListener("keydown", Tooltip.handleEscape);
+      el.addEventListener("pointerdown", (event) => this.show(event));
+      el.addEventListener("pointerup", (event) => this.hide(event));
+
+      el.addEventListener("keydown", (event) => this.handleEscape(event));
     });
   }
 }

@@ -6,43 +6,43 @@ permalink: /categories
 
 <section class="categories-list" aria-labelledby="categories-list-heading">
   <h2 id="categories-list-heading" class="visually-hidden">Browse posts by category</h2>
-  {% assign sorted_categories = site.categories | sort %}
-  {% assign group_index = 0 %}
+  {%- assign sorted_categories = site.categories | sort -%}
+  {%- assign group_index = 0 -%}
 
   {% for category in sorted_categories %}
-    {% assign category_name = category[0] %}
-    {% assign posts = category[1] %}
-    {% assign first_post = posts[0] %}
+    {%- assign category_name = category[0] -%}
+    {%- assign posts = category[1] -%}
+    {%- assign first_post = posts[0] -%}
 
     {% if category_name == first_post.categories[0] %}
-      {% assign sub_categories = "" | split: "" %}
+      {%- assign sub_categories = "" | split: "" -%}
 
       {% for post in posts %}
-        {% assign sub_category = post.categories[1] %}
+        {%- assign sub_category = post.categories[1] -%}
         {% if sub_category %}
           {% unless sub_categories contains sub_category %}
-            {% assign sub_categories = sub_categories | push: sub_category %}
+            {%- assign sub_categories = sub_categories | push: sub_category -%}
           {% endunless %}
         {% endif %}
       {% endfor %}
 
-      {% assign sub_categories = sub_categories | sort %}
-      {% assign post_count = posts.size %}
-      {% assign category_count = sub_categories.size %}
+      {%- assign sub_categories = sub_categories | sort -%}
+      {%- assign post_count = posts.size -%}
+      {%- assign category_count = sub_categories.size -%}
 
       <div class="category" data-category>
         <div class="category-header" id="toggle-{{ group_index }}">
           <div class="category-title-group">
-            {% include svg.html name = "folder" class = "category-icon" %}
+            {%- include svg.html name = "folder" class = "category-icon" -%}
             <div class="category-meta-info">
               <a href="/category/{{ category_name | slugify | prepend: site.baseurl }}/" class="category-title" title="View all posts in {{ category_name }}">
                 {{ category_name }}
               </a>
               <small class="category-meta">
-                {% if category_count > 0 %}
+                {%- if category_count > 0 -%}
                   {% include categories/count.html category_count = category_count %}
-                {% endif %}
-                {% include posts/count.html post_count = post_count %}
+                {%- endif -%}
+                {%- include posts/count.html post_count = post_count -%}
               </small>
             </div>
           </div>
@@ -57,7 +57,7 @@ permalink: /categories
         {% if category_count > 0 %}
           <ul id="sub-categories-{{ group_index }}" class="sub-categories" role="region" aria-labelledby="categories-list-heading toggle-{{ group_index }}">
             {% for sub_category in sub_categories %}
-              {% assign sub_category_post_count = site.categories[sub_category] | size %}
+              {%- assign sub_category_post_count = site.categories[sub_category] | size -%}
               <li class="sub-category">
                 {% include svg.html name = "folder" %}
                 <div class="sub-category-meta-info">
@@ -74,7 +74,7 @@ permalink: /categories
         {% endif %}
       </div>
 
-      {% assign group_index = group_index | plus: 1 %}
+      {%- assign group_index = group_index | plus: 1 -%}
     {% endif %}
   {% endfor %}
 </section>

@@ -23,6 +23,9 @@ kramdown:
   syntax_highlighter_opts:
     default_lang: text
 
+google_analytics:
+  id: "G-W5GHEJ51PD"
+
 include:
   - assets
 
@@ -66,11 +69,16 @@ author:
   resume: /assets/docs/resume.pdf
 
 nav:
-  - {title: "Home", icon: "home", href: "/"}
-  - {title: "About", icon: "info-circle", href: "/about"}
-  - {title: "Categories", icon: "folder", href: "/categories"}
-  - {title: "Tags", icon: "tag", href: "/tags"}
-  - {title: "Posts", icon: "list", href: "/posts"}
+  - { title: "Home", icon: "home", href: "/" }
+  - { title: "About", icon: "info-circle", href: "/about" }
+  - { title: "Categories", icon: "folder", href: "/categories" }
+  - { title: "Tags", icon: "tag", href: "/tags" }
+  - { title: "Posts", icon: "list", href: "/posts" }
+
+color_schemes:
+  - { key: "system", display_label: "System", icon: "device-desktop" }
+  - { key: "light", display_label: "Light", icon: "sun" }
+  - { key: "dark", display_label: "Dark", icon: "moon" }
 
 posts:
   read_time:

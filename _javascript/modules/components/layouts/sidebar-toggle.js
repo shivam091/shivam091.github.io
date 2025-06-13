@@ -1,4 +1,6 @@
 class SidebarToggle {
+  static TRANSITION_DELAY = 400;
+
   static get sidebarElement() {
     return document.getElementById("sidebar");
   }
@@ -12,7 +14,7 @@ class SidebarToggle {
   }
 
   static gracefullyClose() {
-    const sidebar = SidebarToggle.sidebarElement;
+    const sidebar = this.sidebarElement;
     if (!sidebar) return;
 
     sidebar.setAttribute("data-state", "close");
@@ -21,13 +23,13 @@ class SidebarToggle {
       if (sidebar.getAttribute("data-state") === "close") {
         sidebar.setAttribute("data-state", "idle");
       }
-    }, 400);
+    }, this.TRANSITION_DELAY);
   }
 
   static initialize() {
-    const sidebar = SidebarToggle.sidebarElement;
-    const toggleButton = SidebarToggle.toggleButtonElement;
-    const mainContent = SidebarToggle.mainContentElement;
+    const sidebar = this.sidebarElement;
+    const toggleButton = this.toggleButtonElement;
+    const mainContent = this.mainContentElement;
 
     if (!toggleButton || !sidebar || !mainContent) return;
 
@@ -41,7 +43,7 @@ class SidebarToggle {
       toggleButton.setAttribute("aria-expanded", String(nextState === "open"));
 
       if (isOpen) {
-        SidebarToggle.gracefullyClose();
+        this.gracefullyClose();
       }
     });
   }

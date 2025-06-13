@@ -7,7 +7,7 @@ permalink: /tags
 <section class="tags-list" aria-labelledby="tags-list-title">
   <h2 id="tags-list-title" class="visually-hidden">Browse posts by tags</h2>
   <ul class="tags">
-    {% assign sorted_tags = site.tags | sort %}
+    {%- assign sorted_tags = site.tags | sort -%}
     {% for tag in sorted_tags %}
       <li class="tag">
         <a href="/tag/{{ tag[0] | slugify | prepend: site.baseurl }}/" class="tag-link" rel="tag"
@@ -16,6 +16,6 @@ permalink: /tags
         </a>
         <span class="tag-count">{{ tag[1].size }}</span>
       </li>
-    {% endfor %}
+    {% endfor -%}
   </ul>
 </section>

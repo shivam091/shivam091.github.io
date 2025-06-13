@@ -8,8 +8,8 @@ class SkipLink {
   }
 
   static initialize() {
-    const skipLink = SkipLink.skipLinkElement;
-    const mainContent = SkipLink.mainContentElement;
+    const skipLink = this.skipLinkElement;
+    const mainContent = this.mainContentElement;
 
     if (!skipLink || !mainContent) return;
 
