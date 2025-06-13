@@ -1,3 +1,7 @@
+{% if jekyll.environment == "production" %}
+  {% include google-analytics.html %}
+{% endif %}
+
 <script type="text/javascript">
   (function() {
     const theme = localStorage.getItem("theme") || "system";
