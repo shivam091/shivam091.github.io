@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,6 +35,14 @@
 
 <!-- Additional head includes -->
 
+
+  <script type="text/javascript">
+  (function() {
+    const theme = localStorage.getItem("theme") || "system";
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.setAttribute("data-theme", theme === "system" ? (prefersDark ? "dark" : "light") : theme);
+  })();
+</script>
 
 </head>
 <body>
@@ -137,7 +145,7 @@
 
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
-  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <script src="/dist/app.js"></script>
+
 </body>
 </html>
