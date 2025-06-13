@@ -2,16 +2,16 @@
 layout: default
 ---
 
-{% assign type = page.type %}
-{% assign title = "" %}
+{%- assign type = page.type -%}
+{%- assign title = "" -%}
 
-{% if type == "tag" %}
-  {% assign title = "Posts tagged with: " | append: page.title %}
-{% elsif type == "category" %}
-  {% assign title = "Posts in category: " | append: page.title %}
-{% else %}
-  {% assign title = "Archive: " | append: page.title %}
-{% endif %}
+{%- if type == "tag" -%}
+  {%- assign title = "Posts tagged with: " | append: page.title -%}
+{%- elsif type == "category" -%}
+  {%- assign title = "Posts in category: " | append: page.title -%}
+{%- else -%}
+  {%- assign title = "Archive: " | append: page.title -%}
+{%- endif -%}
 
 <h1 id="page-title" class="page-title">
   {{ title }}
