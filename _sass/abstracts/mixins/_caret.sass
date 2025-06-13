@@ -1,0 +1,60 @@
+@mixin caret($placement)
+  [data-popper-placement="#{$placement}"]
+    &::before,
+    &::after
+      content: ""
+      position: absolute
+      border: 8px solid transparent
+      z-index: -1
+
+    @if $placement == top
+      &::before
+        border-top-color: var(--overlay-borderColor)
+        bottom: calc(-1 * var(--tooltip-caretSize))
+        left: 50%
+        transform: translateX(-50%)
+
+      &::after
+        border-top-color: var(--overlay-bgColor)
+        bottom: calc(-1 * var(--tooltip-caretSize) + 1px)
+        left: 50%
+        transform: translateX(-50%)
+
+    @else if $placement == bottom
+      &::before
+        border-bottom-color: var(--overlay-borderColor)
+        top: calc(-1 * var(--tooltip-caretSize))
+        left: 50%
+        transform: translateX(-50%)
+
+      &::after
+        border-bottom-color: var(--overlay-bgColor)
+        top: calc(-1 * var(--tooltip-caretSize) + 1px)
+        left: 50%
+        transform: translateX(-50%)
+
+    @else if $placement == left
+      &::before
+        border-left-color: var(--overlay-borderColor)
+        right: calc(-1 * var(--tooltip-caretSize))
+        top: 50%
+        transform: translateY(-50%)
+
+      &::after
+        border-left-color: var(--overlay-bgColor)
+        right: calc(-1 * var(--tooltip-caretSize) + 1px)
+        top: 50%
+        transform: translateY(-50%)
+
+    @else if $placement == right
+      &::before
+        border-right-color: var(--overlay-borderColor)
+        left: calc(-1 * var(--tooltip-caretSize))
+        top: 50%
+        transform: translateY(-50%)
+
+      &::after
+        border-right-color: var(--overlay-bgColor)
+        left: calc(-1 * var(--tooltip-caretSize) + 1px)
+        top: 50%
+        transform: translateY(-50%)
