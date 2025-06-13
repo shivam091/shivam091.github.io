@@ -156,20 +156,19 @@
     transform: rotate(0)
 
   &[data-state="open"]
-    .middle-bar
-      opacity: 0
+    .middle-bar 
+      opacity: 0;
+  
 
-    .top-bar
-      transform: rotate(45deg)
-      transform-origin: 19% 190%
-      -webkit-transform: rotate(45deg)
-      -webkit-transform-origin: 19% 190%
+    .top-bar 
+      transform: rotate(45deg) translate(2px, 2px);
+      transform-origin: center;
+  
 
-    .bottom-bar
-      transform: rotate(-45deg)
-      transform-origin: 15% -80%
-      -webkit-transform: rotate(-45deg)
-      -webkit-transform-origin: 15% -80%
+    .bottom-bar 
+      transform: rotate(-45deg) translate(2px, -2px);
+      transform-origin: center;
+  
 
   @media (max-width: 768px)
     display: block
