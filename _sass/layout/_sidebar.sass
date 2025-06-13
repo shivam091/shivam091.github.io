@@ -141,9 +141,10 @@
     background-color: var(--fgColor-white)
     display: block
     height: 2px
-    margin-top: 0.25rem
+    margin: 5px auto
     transition: all 0.2s
     width: 20px
+    transform-origin: center center
 
     &:first-of-type
       margin-top: 0
@@ -160,10 +161,10 @@
       opacity: 0
 
     .top-bar
-      transform: rotate(45deg)
+      transform: translateY(7px) rotate(45deg)
 
     .bottom-bar
-      transform: rotate(-45deg)
+      transform: translateY(-7px) rotate(-45deg)
 
   @media (max-width: 768px)
     display: block
