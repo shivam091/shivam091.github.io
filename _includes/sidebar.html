@@ -45,5 +45,23 @@
         {% endif %}
       {% endfor %}
     </nav>
+    <div class="sidebar-bottom" aria-label="Preferences panel">
+      <div class="dropdown" data-dropdown data-theme-switcher>
+        <button type="button" class="dropdown-toggle theme-switcher bottom-link" aria-haspopup="true" aria-expanded="false">
+          {% include svg.html name = "adjust" %}
+        </button>
+
+        <ul class="dropdown-menu" role="menu" aria-label="Available color schemes" data-theme-switcher-list>
+          {% for item in site.color_schemes %}
+            <li>
+              <button type="button" class="dropdown-item" role="menuitem" data-color-scheme="{{ item.key }}" data-theme-switcher-list-items>
+                {% include svg.html name = item.icon %}
+                {{ item.display_label }}
+              </button>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </aside>
