@@ -1,0 +1,71 @@
+@mixin caret-base
+  &::before,
+  &::after
+    content: ""
+    position: absolute
+    border: 8px solid transparent
+    z-index: -1
+
+@mixin caret-top
+  &::before
+    border-top-color: var(--overlay-borderColor)
+    bottom: calc(-1 * var(--tooltip-caret-size))
+    left: 50%
+    transform: translateX(-50%)
+
+  &::after
+    border-top-color: var(--overlay-bgColor)
+    bottom: calc(-1 * var(--tooltip-caret-size) + 1.5px)
+    left: 50%
+    transform: translateX(-50%)
+
+@mixin caret-bottom
+  &::before
+    border-bottom-color: var(--overlay-borderColor)
+    top: calc(-1 * var(--tooltip-caret-size))
+    left: 50%
+    transform: translateX(-50%)
+
+  &::after
+    border-bottom-color: var(--overlay-bgColor)
+    top: calc(-1 * var(--tooltip-caret-size) + 1.5px)
+    left: 50%
+    transform: translateX(-50%)
+
+@mixin caret-left
+  &::before
+    border-left-color: var(--overlay-borderColor)
+    right: calc(-1 * var(--tooltip-caret-size))
+    top: 50%
+    transform: translateY(-50%)
+
+  &::after
+    border-left-color: var(--overlay-bgColor)
+    right: calc(-1 * var(--tooltip-caret-size) + 1.5px)
+    top: 50%
+    transform: translateY(-50%)
+
+@mixin caret-right
+  &::before
+    border-right-color: var(--overlay-borderColor)
+    left: calc(-1 * var(--tooltip-caret-size))
+    top: 50%
+    transform: translateY(-50%)
+
+  &::after
+    border-right-color: var(--overlay-bgColor)
+    left: calc(-1 * var(--tooltip-caret-size) + 1.5px)
+    top: 50%
+    transform: translateY(-50%)
+
+@mixin caret
+  @include caret-base
+
+  &[data-popper-placement="top"]
+    @include caret-top
+  &[data-popper-placement="bottom"]
+    @include caret-bottom
+  &[data-popper-placement="left"]
+    @include caret-left
+  &[data-popper-placement="right"]
+    @include caret-right
