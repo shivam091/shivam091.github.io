@@ -1,0 +1,13 @@
+@mixin sidebar-responsive-layout
+  margin-left: var(--layout-offset-lg)
+  transition: margin-left 0.3s ease
+  will-change: margin-left
+
+  @media (max-width: 1024px)
+    margin-left: var(--layout-offset-md)
+
+  @media (max-width: 768px)
+    margin-left: 0
+
+  body[data-sidebar="open"] &
+    margin-left: var(--layout-offset-sm)

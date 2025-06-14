@@ -1,3 +1,5 @@
+@use "abstracts/mixins/caret" as *
+
 .tooltip
   position: absolute
   background-color: var(--overlay-bgColor)
@@ -17,12 +19,7 @@
   text-align: center
   will-change: opacity
 
-  &::before,
-  &::after
-    content: ""
-    position: absolute
-    border: 6px solid transparent
-    z-index: -1
+  @include caret
 
   &.show
     opacity: 1
@@ -36,68 +33,3 @@
     max-width: 180px
     font-size: 0.7rem
     padding: 0.25rem 0.4rem
-
-// [data-popper-placement="top"]
-//   &::before
-//     border-top-color: var(--overlay-borderColor)
-//     bottom: calc(-1 * var(--tooltip-caretSize))
-//     left: 50%
-//     transform: translateX(-50%)
-//
-//   &::after
-//     border-top-color: var(--overlay-bgColor)
-//     bottom: calc(-1 * var(--tooltip-caretSize) + 1px)
-//     left: 50%
-//     transform: translateX(-50%)
-
-[data-popper-placement="top"]
-  &::before
-    border-top-color: var(--overlay-borderColor)
-    bottom: calc(-1 * var(--tooltip-caretSize) * 2)
-    left: 50%
-    transform: translateX(-50%)
-
-  &::after
-    border-top-color: var(--overlay-bgColor) // outline or shadow
-    bottom: calc(-1 * var(--tooltip-caretSize) * 2 + 1px) // 1px offset for shadow effect
-    left: 50%
-    transform: translateX(-50%)
-
-[data-popper-placement="bottom"]
-  &::before
-    border-bottom-color: var(--overlay-borderColor)
-    top: calc(-1 * var(--tooltip-caretSize) * 2)
-    left: 50%
-    transform: translateX(-50%)
-
-  &::after
-    border-bottom-color: var(--overlay-bgColor)
-    top: calc(-1 * var(--tooltip-caretSize) * 2 + 1px)
-    left: 50%
-    transform: translateX(-50%)
-
-[data-popper-placement="left"]
-  &::before
-    border-left-color: var(--overlay-borderColor)
-    right: calc(-1 * var(--tooltip-caretSize) * 2)
-    top: 50%
-    transform: translateY(-50%)
-
-  &::after
-    border-left-color: var(--overlay-bgColor)
-    right: calc(-1 * var(--tooltip-caretSize) * 2 + 1px)
-    top: 50%
-    transform: translateY(-50%)
-
-[data-popper-placement="right"]
-  &::before
-    border-right-color: var(--overlay-borderColor)
-    left: calc(-1 * var(--tooltip-caretSize) * 2)
-    top: 50%
-    transform: translateY(-50%)
-
-  &::after
-    border-right-color: var(--overlay-bgColor)
-    left: calc(-1 * var(--tooltip-caretSize) * 2 + 1px)
-    top: 50%
-    transform: translateY(-50%)
