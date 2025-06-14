@@ -1,14 +1,21 @@
-<div class="code-block-wrapper">
+{% assign language_match = include.content | regex_find_first: 'class="language-([a-zA-Z0-9#.+-]+)"' %}
+{% assign language = language_match | remove: 'class="language-' | remove: '"' %}
+{% assign lang_label = language | lang_label %}
+
+<div class="code-block-wrapper" data-clipboard>
   <div class="code-block-header" role="region" aria-label="Code block header">
-    <div class="code-buttons">
-      <span class="code-btn red" aria-hidden="true"></span>
-      <span class="code-btn yellow" aria-hidden="true"></span>
-      <span class="code-btn green" aria-hidden="true"></span>
+    <div class="code-buttons" aria-hidden="true">
+      {% include svg.html name = "circle-filled" class = "code-btn red" %}
+      {% include svg.html name = "circle-filled" class = "code-btn yellow" %}
+      {% include svg.html name = "circle-filled" class = "code-btn green" %}
     </div>
-    <div class="code-lang">{{ include.language | upcase }}</div>
-    <button class="btn btn-primary dcode-copy-btn" aria-label="Copy code">
-      {% include svg.html name = "copy" %}
-    </button>
+    <div class="code-lang">{{ lang_label }}</div>
+    <div class="code-actions">
+      <button type="button" class="btn toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">#</button>
+      <button type="button" class="btn copy-btn" aria-label="Copy code" data-tooltip="Copy">
+        {% include svg.html name = "copy" %}
+      </button>
+    </div>
   </div>
   {{ include.content }}
 </div>

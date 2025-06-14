@@ -1,3 +1,5 @@
-export function toggle(element, symbolHref) {
-  if (element) element.setAttribute("href", `/assets/img/sprite.svg${symbolHref}`);
+export default class SvgSprite {
+  static toggle(element, symbolName) {
+    if (element) element.setAttribute("href", `/assets/img/sprite.svg#icon-${symbolName}`);
+  }
 }

@@ -1,4 +1,4 @@
-import * as SvgSprite from "./../../utils/svg-sprite";
+import SvgSprite from "./../../utils/svg-sprite";
 
 class Accordion {
   constructor(categoryItem) {
@@ -30,7 +30,7 @@ class Accordion {
     this.toggleButton.setAttribute("aria-expanded", String(!expanded));
     this.categoryItem.toggleAttribute("data-expanded", !expanded);
 
-    const iconHref = expanded ? "#icon-folder" : "#icon-folder-open";
+    const iconHref = expanded ? "folder" : "folder-open";
     const iconEl = this.categoryItem.querySelector(".category-icon use");
     if (iconEl) SvgSprite.toggle(iconEl, iconHref);
 

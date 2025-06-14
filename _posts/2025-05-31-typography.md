@@ -129,7 +129,7 @@ def show
 end
 {% endhighlight %}
 {% endcapture %}
-{% include codeblock.html language="ruby" content=code %}
+{% include codeblock.html content = code %}
 
 ## Details / Summary
 
