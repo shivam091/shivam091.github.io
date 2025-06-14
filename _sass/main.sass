@@ -6,54 +6,129 @@
 @use "pages"
 @use "vendors"
 
+// .code-block-wrapper
+//   border-radius: 5px
+//   overflow: hidden
+//   margin-bottom: 1em
+//   background: #2d2d2d
+//
+//   figure
+//     margin-block: 0
+//     border-radius: 0
+//     border-top: none
+//
+// .code-block-header
+//   background: #1e1e1e
+//   color: white
+//   padding: 5px 10px
+//   display: flex
+//   align-items: center
+//   justify-content: space-between
+//   font-family: monospace
+//   border: 1px solid var(--borderColor-muted)
+//
+//
+// .dots span
+//   height: 10px
+//   width: 10px
+//   border-radius: 50%
+//   display: inline-block
+//   margin-right: 5px
+//
+//
+// .dots span:nth-child(1)
+//   background: #ff5f56
+// .dots span:nth-child(2)
+//   background: #ffbd2e
+// .dots span:nth-child(3)
+//   background: #27c93f
+//
+// .language
+//   flex: 1
+//   text-align: center
+//   font-size: 0.9em
+//   opacity: 0.75
+//
+//
+// .copy-button
+//   cursor: pointer
+//   font-size: 0.8em
+//   background: #444
+//   padding: 2px 6px
+//   border-radius: 3px
+//   user-select: none
+
+
+
 .code-block-wrapper
-  border-radius: 5px
+  background-color: var(--bgColor-muted)
+  border: 1px solid var(--borderColor-default)
+  border-radius: 0.5rem
   overflow: hidden
-  margin-bottom: 1em
-  background: #2d2d2d
+  font-size: 0.9rem
+  box-shadow: var(--shadow-floating-small)
+  margin-bottom: 1.5rem
 
   figure
     margin-block: 0
-    border-radius: 0
-    border-top: none
+    border: none
+
+  pre
+    margin: 0
+    padding: 1rem
+    overflow-x: auto
+    background: none
+    color: var(--fgColor-default)
+
+  code
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+    font-size: 0.95em
+    white-space: pre
+    display: block
 
 .code-block-header
-  background: #1e1e1e
-  color: white
-  padding: 5px 10px
   display: flex
   align-items: center
   justify-content: space-between
-  font-family: monospace
-  border: 1px solid var(--borderColor-muted)
+  background-color: var(--bgColor-default)
+  border-bottom: 1px solid var(--borderColor-muted)
+  padding: 0.5rem 1rem
+  font-family: inherit
 
+  .code-buttons
+    display: flex
+    gap: 0.4rem
 
-.dots span
-  height: 10px
-  width: 10px
-  border-radius: 50%
-  display: inline-block
-  margin-right: 5px
+    .code-btn
+      width: 0.75rem
+      height: 0.75rem
+      border-radius: 50%
+      display: inline-block
 
+    .red
+      background-color: var(--bgColor-danger-emphasis)
+    .yellow
+      background-color: var(--bgColor-attention-emphasis)
+    .green
+      background-color: var(--bgColor-success-emphasis)
 
-.dots span:nth-child(1)
-  background: #ff5f56
-.dots span:nth-child(2)
-  background: #ffbd2e
-.dots span:nth-child(3)
-  background: #27c93f
+  .code-lang
+    text-align: center
+    flex-grow: 1
+    font-weight: 600
+    color: var(--fgColor-muted)
 
-.language
-  flex: 1
-  text-align: center
-  font-size: 0.9em
-  opacity: 0.75
+  .code-copy-btn
+    font-size: 0.875rem
+    color: var(--fgColor-accent)
+    background-color: transparent
+    border: none
+    cursor: pointer
+    padding: 0.25rem 0.5rem
+    border-radius: 0.25rem
 
-
-.copy-button
-  cursor: pointer
-  font-size: 0.8em
-  background: #444
-  padding: 2px 6px
-  border-radius: 3px
-  user-select: none
+    &:hover,
+    &:focus
+      text-decoration: underline
+      outline: 2px solid var(--focus-outlineColor)
+      outline-offset: 2px
