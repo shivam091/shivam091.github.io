@@ -1,23 +1,43 @@
 import esbuild from "esbuild";
 import { sassPlugin } from "esbuild-sass-plugin";
+import { readFileSync } from "fs";
+
+// 👇 Optional SVG plugin (inline SVG as string)
+const svgPlugin = {
+  name: "svg-inline",
+  setup(build) {
+    build.onLoad({ filter: /\.svg$/ }, async (args) => {
+      const svg = readFileSync(args.path, "utf8");
+      const escaped = svg.replace(/`/g, "\\`").replace(/\${/g, "\\${");
+      return {
+        contents: `export default \`${escaped}\`;`,
+        loader: "js",
+      };
+    });
+  },
+};
 
 const isWatch = process.argv.includes("--watch");
 
 const buildOptions = {
   entryPoints: {
     app: "_javascript/main.js",
-    style: "_sass/main.sass"
+    style: "_sass/main.sass",
   },
   bundle: true,
   minify: true,
   sourcemap: true,
   outdir: "dist",
-  plugins: [sassPlugin()],
-  loader: { ".sass": "file", ".png": "file" },
+  loader: {
+    ".sass": "file",
+    ".png": "file",
+    ".svg": "file", // 👈 Ensures esbuild watches SVGs (or change to "dataurl" or "text" or use plugin)
+  },
   plugins: [
     sassPlugin({
-      loadPaths: ["_sass"]
-    })
+      loadPaths: ["_sass"],
+    }),
+    svgPlugin, // 👈 Add custom plugin for inline SVG imports (optional)
   ],
 };
 
