@@ -388,7 +388,7 @@ Text and Typography
     </div>
   
 
-  <div class="post-read-time" data-tooltip="327 words" data-tooltip-position="bottom" tabindex="0">
+  <div class="post-read-time" data-tooltip="278 words" data-tooltip-position="bottom" tabindex="0">
   <svg
   role="img"
   aria-hidden="true"
@@ -511,63 +511,6 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
 <span class="k">end</span></code></pre></figure>
 
 <p>Inline <code class="language-text highlighter-rouge">console.log("Hi")</code> inside text.</p>
-
-<div class="code-block-wrapper" data-clipboard="">
-  <div class="code-block-header" role="region" aria-label="Code block header">
-    <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn red">
-  <use href="/assets/img/sprite.svg#icon-circle-filled"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn yellow">
-  <use href="/assets/img/sprite.svg#icon-circle-filled"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn green">
-  <use href="/assets/img/sprite.svg#icon-circle-filled"></use>
-</svg>
-
-    </div>
-    <div class="code-lang">Ruby</div>
-    <div class="code-actions">
-      <button type="button" class="btn toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">#</button>
-      <button type="button" class="btn copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy"></use>
-</svg>
-
-      </button>
-    </div>
-  </div>
-  
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Gemfile</span>
-<span class="n">gem</span> <span class="s1">'httparty'</span>
-
-<span class="c1"># app/services/weather_api.rb</span>
-<span class="nb">require</span> <span class="s1">'httparty'</span>
-
-<span class="k">class</span> <span class="nc">WeatherApi</span>
-  <span class="no">API_KEY</span> <span class="o">=</span> <span class="s1">'your_api_key'</span>
-  <span class="no">BASE_URL</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather'</span>
-
-  <span class="k">def</span> <span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">BASE_URL</span><span class="si">}</span><span class="s2">?q=</span><span class="si">#{</span><span class="n">city</span><span class="si">}</span><span class="s2">&amp;appid=</span><span class="si">#{</span><span class="no">API_KEY</span><span class="si">}</span><span class="s2">&amp;units=metric"</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="no">HTTParty</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">raise</span> <span class="s2">"API Error: </span><span class="si">#{</span><span class="n">response</span><span class="p">.</span><span class="nf">code</span><span class="si">}</span><span class="s2">"</span> <span class="k">unless</span> <span class="n">response</span><span class="p">.</span><span class="nf">success?</span>
-    <span class="n">response</span><span class="p">.</span><span class="nf">parsed_body</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="c1"># app/controllers/weather_controller.rb</span>
-<span class="k">def</span> <span class="nf">show</span>
-  <span class="n">city</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:city</span><span class="p">]</span>
-  <span class="n">weather_data</span> <span class="o">=</span> <span class="no">WeatherApi</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
-  <span class="vi">@temperature</span> <span class="o">=</span> <span class="n">weather_data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">]</span>
-<span class="k">end</span></code></pre></figure>
-
-
-</div>
 
 <h2 id="details--summary">Details / Summary</h2>
 
@@ -760,18 +703,16 @@ H<sub>2</sub>O and E = mc<sup>2</sup></p>
   </main>
 
   <footer class="site-footer" role="contentinfo" aria-label="Site footer">
-  <div class="container">
-    <div class="site-copyright">
-      <p>
-        <span>&copy;
-          2025 <strong class="site-name">Harshal LADHE</strong>,
-          <span data-tooltip="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." tabindex="0">Some rights reserved</span>.
-        </span>
-      </p>
-    </div>
-    <div class="site-credits">
-      Made with <span class="love" role="img" aria-label="love">&#10084;</span> and <a href="https://jekyllrb.com/">Jekyll</a>.
-    </div>
+  <div class="site-copyright">
+    <p>
+      <span>&copy;
+        2025 <strong class="site-name">Harshal LADHE</strong>,
+        <span data-tooltip="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." tabindex="0">Some rights reserved</span>.
+      </span>
+    </p>
+  </div>
+  <div class="site-credits">
+    Made with <span class="love" role="img" aria-label="love">&#10084;</span> and <a href="https://jekyllrb.com/">Jekyll</a>.
   </div>
 </footer>
 
