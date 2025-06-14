@@ -3,8 +3,7 @@
 .scroll-top
   position: fixed
   bottom: 2rem
-  right: 2rem
-  // calc((100vw - 300px - 1250px) / 2 + 2rem);
+  right: var(--floating-button-right-offset)
   z-index: 1000
   transition: right 0.3s ease
   will-change: right
@@ -26,13 +25,6 @@
   // &:hover
   //   transform: translate3d(0, -5px, 0)
   //   -webkit-transform: translate3d(0, -5px, 0)
-
-  body[data-sidebar="open"] &
-    @media (max-width: 768px)
-      right: calc(1rem + var(--layout-offset-sm))
-
-    @media (min-width: 769px)
-      right: calc(2rem + var(--layout-offset-md))
 
   &[data-state="visible"]
     animation: scrollTopBounceIn 0.4s both
