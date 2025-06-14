@@ -388,7 +388,7 @@ Text and Typography
     </div>
   
 
-  <div class="post-read-time" data-tooltip="327 words" data-tooltip-position="bottom" tabindex="0">
+  <div class="post-read-time" data-tooltip="326 words" data-tooltip-position="bottom" tabindex="0">
   <svg
   role="img"
   aria-hidden="true"
@@ -513,12 +513,19 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
 <p>Inline <code class="language-text highlighter-rouge">console.log("Hi")</code> inside text.</p>
 
 <div class="code-block-wrapper">
-  <div class="code-block-header">
-    <div class="dots">
-      <span></span><span></span><span></span>
+  <div class="code-block-header" role="region" aria-label="Code block header">
+    <div class="code-buttons">
+      <span class="code-btn red" aria-hidden="true"></span>
+      <span class="code-btn yellow" aria-hidden="true"></span>
+      <span class="code-btn green" aria-hidden="true"></span>
     </div>
-    <div class="language">RUBY</div>
-    <div class="copy-button" onclick="copyToClipboard(this)">Copy</div>
+    <div class="code-lang">RUBY</div>
+    <button class="btn btn-primary dcode-copy-btn" aria-label="Copy code">
+      <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-copy"></use>
+</svg>
+
+    </button>
   </div>
   
 

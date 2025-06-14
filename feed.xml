@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-14T12:54:15+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-07T18:40:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="table-of-contents">Table of Contents</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-14T13:23:03+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-07T18:40:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="table-of-contents">Table of Contents</h2>
 
 <ol>
   <li><a href="#introduction">Introduction</a></li>
@@ -276,12 +276,19 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
 <p>Inline <code class="language-text highlighter-rouge">console.log("Hi")</code> inside text.</p>
 
 <div class="code-block-wrapper">
-  <div class="code-block-header">
-    <div class="dots">
-      <span></span><span></span><span></span>
+  <div class="code-block-header" role="region" aria-label="Code block header">
+    <div class="code-buttons">
+      <span class="code-btn red" aria-hidden="true"></span>
+      <span class="code-btn yellow" aria-hidden="true"></span>
+      <span class="code-btn green" aria-hidden="true"></span>
     </div>
-    <div class="language">RUBY</div>
-    <div class="copy-button" onclick="copyToClipboard(this)">Copy</div>
+    <div class="code-lang">RUBY</div>
+    <button class="btn btn-primary dcode-copy-btn" aria-label="Copy code">
+      <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-copy"></use>
+</svg>
+
+    </button>
   </div>
   
 
