@@ -1,19 +1,12 @@
+@use "abstracts/mixins/responsive-layout" as *
+
 .main-content
   flex: 1
   padding: 1rem
-  margin-left: var(--layout-offset-lg)
-  transition: margin-left 0.3s ease
-  will-change: margin-left
+  @include sidebar-responsive-layout
 
-  @media (max-width: 1024px)
-    margin-left: var(--layout-offset-md)
-
-  @media (max-width: 768px)
-    margin-left: 0
-
-    &[data-sidebar="open"]
-      margin-left: var(--layout-offset-sm)
-      padding: 1rem
+  &[data-sidebar="open"]
+    padding: 1rem
 
 .container
   width: 100%

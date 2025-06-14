@@ -2,12 +2,15 @@
 
 .scroll-top
   position: fixed
-  right: 15px
-  bottom: 15px
-  z-index: 99999
-  width: 44px
-  height: 44px
-  border-radius: 50px
+  bottom: 2rem
+  right: 2rem
+  // calc((100vw - 300px - 1250px) / 2 + 2rem);
+  z-index: 1000
+  transition: right 0.3s ease
+  will-change: right
+  width: 48px
+  height: 48px
+  border-radius: 50%
   display: flex
   align-items: center
   justify-content: center
@@ -16,6 +19,20 @@
   visibility: hidden
   pointer-events: none
   transform: translateY(20px)
+
+  @media (max-width: 768px)
+    right: 1rem
+
+  // &:hover
+  //   transform: translate3d(0, -5px, 0)
+  //   -webkit-transform: translate3d(0, -5px, 0)
+
+  body[data-sidebar="open"] &
+    @media (max-width: 768px)
+      right: calc(1rem + var(--layout-offset-sm))
+
+    @media (min-width: 769px)
+      right: calc(2rem + var(--layout-offset-md))
 
   &[data-state="visible"]
     animation: scrollTopBounceIn 0.4s both
