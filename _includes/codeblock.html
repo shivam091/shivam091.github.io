@@ -1,0 +1,24 @@
+{%- assign code_block = include.content -%}
+{%- assign lang_label = code_block | detected_language -%}
+
+<div class="code-block-wrapper" data-clipboard tabindex="0">
+  <div class="code-block-header" role="region" aria-label="Code block header">
+    <div class="code-buttons" aria-hidden="true">
+      {% include svg.html name = "circle-fill" class = "code-btn fill-red" %}
+      {% include svg.html name = "circle-fill" class = "code-btn fill-yellow" %}
+      {% include svg.html name = "circle-fill" class = "code-btn fill-green" %}
+    </div>
+    {% if lang_label != "" %}
+      <div class="code-lang">
+        {% include svg.html name = "code" %}
+        {{ lang_label }}
+      </div>
+    {% endif %}
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
+        {% include svg.html name = "copy" %}
+      </button>
+    </div>
+  </div>
+  {{ code_block }}
+</div>

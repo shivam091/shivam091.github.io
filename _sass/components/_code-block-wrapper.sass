@@ -1,0 +1,53 @@
+.code-block-wrapper
+  background-color: var(--bgColor-muted)
+  border: 1px solid var(--borderColor-default)
+  border-radius: 0.5rem
+  overflow: hidden
+  font-size: 0.9rem
+  box-shadow: var(--shadow-floating-small)
+  margin-bottom: 1.5rem
+
+  figure
+    margin-block: 0
+    border: none
+
+.code-block-header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  background-color: var(--bgColor-default)
+  border-bottom: 1px solid var(--borderColor-muted)
+  padding: 0.5rem 1rem
+
+  .code-buttons
+    display: flex
+    gap: 0.4rem
+
+    .code-btn
+      width: 1em
+      height: 1em
+
+    .fill-red
+      fill: var(--bgColor-danger-emphasis)
+    .fill-yellow
+      fill: var(--bgColor-attention-emphasis)
+    .fill-green
+      fill: var(--bgColor-success-emphasis)
+
+  .code-lang
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 0.4rem
+    flex-grow: 1
+    font-weight: 600
+    color: var(--fgColor-muted)
+
+  .code-actions
+    display: flex
+    align-items: center
+    gap: 0.5rem
+
+    .copy-btn
+      display: inline-grid
+      align-items: center

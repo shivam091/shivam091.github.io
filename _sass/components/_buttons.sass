@@ -3,7 +3,7 @@ button
   color: var(--control-fgColor)
   border: 1px solid var(--control-transparent-borderColor)
   border-radius: 4px
-  padding: clamp(0.25rem, 1vw, 0.35rem)
+  padding: clamp(0.4rem, 1.2vw, 0.6rem)
   font-size: clamp(13px, 1.4vw, 15px)
   font-weight: 500
 
@@ -49,6 +49,11 @@ button:not(:disabled)
     background-color: var(--control-bgColor-disabled)
     color: var(--control-fgColor-disabled)
     border-color: var(--control-borderColor-disabled)
+
+.btn-sm
+  padding: clamp(0.2rem, 0.6vw, 0.3rem)
+  font-size: clamp(12px, 1.2vw, 14px)
+  border-radius: 3px
 
 .btn-primary
   background-color: var(--button-primary-bgColor)
