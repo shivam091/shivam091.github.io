@@ -1,0 +1,10 @@
+<div class="code-block-wrapper">
+  <div class="code-block-header">
+    <div class="dots">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="language">{{ include.language | upcase }}</div>
+    <div class="copy-button" onclick="copyToClipboard(this)">Copy</div>
+  </div>
+  {{ include.content }}
+</div>
