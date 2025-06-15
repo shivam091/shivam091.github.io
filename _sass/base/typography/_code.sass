@@ -1,7 +1,7 @@
 code, pre, tt
-  font-family: source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
   font-size: clamp(13px, 1.4vw, 15px)
-  white-space: break-spaces
+  white-space: pre
   border-radius: 6px
 
 code.highlighter-rouge
@@ -13,12 +13,16 @@ figure.highlight,
 .highlight
   background-color: var(--bgColor-muted)
 
-pre
+  code
+    display: block
+    width: 100%
+
+pre:not(:has(.rouge-table))
   padding: 1rem
   overflow-x: auto
 
 kbd
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
   font-size: clamp(12px, 1.2vw, 14px)
   display: inline-block
   padding: 0.25rem
