@@ -384,7 +384,7 @@ Understanding CSS Grid: A Complete Guide
     </div>
   
 
-  <div class="post-read-time" data-tooltip="694 words" data-tooltip-position="bottom" tabindex="0">
+  <div class="post-read-time" data-tooltip="686 words" data-tooltip-position="bottom" tabindex="0">
   <svg
   role="img"
   aria-hidden="true"
@@ -457,50 +457,11 @@ Understanding CSS Grid: A Complete Guide
 
 <p>Here’s an example of a simple 3-column grid layout:</p>
 
-<div class="code-block-wrapper" data-clipboard="" tabindex="0">
-  <div class="code-block-header" role="region" aria-label="Code block header">
-    <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-red">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-yellow">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-green">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-    </div>
-    
-      <div class="code-lang">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-code"></use>
-</svg>
-
-        CSS
-      </div>
-    
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy"></use>
-</svg>
-
-      </button>
-    </div>
-  </div>
-  
-
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
   <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
   <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span> <span class="c">/* 3 equal columns */</span>
   <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* Space between columns and rows */</span>
 <span class="p">}</span></code></pre></figure>
-
-
-</div>
 
 <p>This layout has 3 columns of equal width (<code class="language-text highlighter-rouge">1fr</code> stands for 1 fraction of the available space), and there’s a gap of <code class="language-text highlighter-rouge">1rem</code> between both rows and columns.</p>
 
@@ -509,50 +470,11 @@ Understanding CSS Grid: A Complete Guide
 <p>The <code class="language-text highlighter-rouge">fr</code> unit is a flexible length unit that allows us to create responsive grids. It distributes available space in a grid container proportionally.
 In the example above, <code class="language-text highlighter-rouge">1fr</code> means each column will take up an equal share of the available space.</p>
 
-<div class="code-block-wrapper" data-clipboard="" tabindex="0">
-  <div class="code-block-header" role="region" aria-label="Code block header">
-    <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-red">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-yellow">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-green">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-    </div>
-    
-      <div class="code-lang">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-code"></use>
-</svg>
-
-        CSS
-      </div>
-    
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy"></use>
-</svg>
-
-      </button>
-    </div>
-  </div>
-  
-
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
   <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
   <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* First column takes 2/3 of the space, second takes 1/3 */</span>
   <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
-
-
-</div>
 
 <p>In the above code, the first column will take up 2 fractions of the available space, and the second will take 1 fraction.
 The total available space is divided into 3 parts, with the first column getting 2 parts and the second getting 1.</p>
@@ -560,42 +482,6 @@ The total available space is divided into 3 parts, with the first column getting
 <h3 id="other-useful-properties">Other useful properties</h3>
 
 <p><strong>grid-template-areas</strong> - Defines a grid using named areas. This can make positioning easier.</p>
-
-<div class="code-block-wrapper" data-clipboard="" tabindex="0">
-  <div class="code-block-header" role="region" aria-label="Code block header">
-    <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-red">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-yellow">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-green">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-    </div>
-    
-      <div class="code-lang">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-code"></use>
-</svg>
-
-        CSS
-      </div>
-    
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy"></use>
-</svg>
-
-      </button>
-    </div>
-  </div>
-  
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
   <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
@@ -606,230 +492,35 @@ The total available space is divided into 3 parts, with the first column getting
   <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-
-</div>
-
 <p><strong>justify-items</strong> - Aligns items horizontally within their grid cell.</p>
-
-<div class="code-block-wrapper" data-clipboard="" tabindex="0">
-  <div class="code-block-header" role="region" aria-label="Code block header">
-    <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-red">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-yellow">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-green">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-    </div>
-    
-      <div class="code-lang">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-code"></use>
-</svg>
-
-        CSS
-      </div>
-    
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy"></use>
-</svg>
-
-      </button>
-    </div>
-  </div>
-  
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
   <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
   <span class="nl">justify-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* Centers grid items horizontally */</span>
 <span class="p">}</span></code></pre></figure>
 
-
-</div>
-
 <p><strong>align-items</strong> - Aligns items vertically within their grid cell.</p>
-
-<div class="code-block-wrapper" data-clipboard="" tabindex="0">
-  <div class="code-block-header" role="region" aria-label="Code block header">
-    <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-red">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-yellow">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-green">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-    </div>
-    
-      <div class="code-lang">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-code"></use>
-</svg>
-
-        CSS
-      </div>
-    
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy"></use>
-</svg>
-
-      </button>
-    </div>
-  </div>
-  
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
   <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
   <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* Centers grid items vertically */</span>
 <span class="p">}</span></code></pre></figure>
 
-
-</div>
-
 <p><strong>justify-self</strong> - Aligns a specific grid item horizontally within its grid cell.</p>
-
-<div class="code-block-wrapper" data-clipboard="" tabindex="0">
-  <div class="code-block-header" role="region" aria-label="Code block header">
-    <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-red">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-yellow">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-green">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-    </div>
-    
-      <div class="code-lang">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-code"></use>
-</svg>
-
-        CSS
-      </div>
-    
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy"></use>
-</svg>
-
-      </button>
-    </div>
-  </div>
-  
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.item</span> <span class="p">{</span>
   <span class="nl">justify-self</span><span class="p">:</span> <span class="nb">end</span><span class="p">;</span> <span class="c">/* Aligns this specific item to the right */</span>
 <span class="p">}</span></code></pre></figure>
 
-
-</div>
-
 <p><strong>align-self</strong> - Aligns a specific grid item vertically within its grid cell.</p>
-
-<div class="code-block-wrapper" data-clipboard="" tabindex="0">
-  <div class="code-block-header" role="region" aria-label="Code block header">
-    <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-red">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-yellow">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-green">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-    </div>
-    
-      <div class="code-lang">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-code"></use>
-</svg>
-
-        CSS
-      </div>
-    
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy"></use>
-</svg>
-
-      </button>
-    </div>
-  </div>
-  
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.item</span> <span class="p">{</span>
   <span class="nl">align-self</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span> <span class="c">/* Aligns this specific item to the top */</span>
 <span class="p">}</span></code></pre></figure>
 
-
-</div>
-
 <h3 id="responsive-design-with-css-grid">Responsive design with CSS grid</h3>
 
 <p>CSS Grid makes responsive design easier than ever. You can modify your grid layout based on screen size using media queries.</p>
-
-<div class="code-block-wrapper" data-clipboard="" tabindex="0">
-  <div class="code-block-header" role="region" aria-label="Code block header">
-    <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-red">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-yellow">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-      <svg role="img" aria-hidden="true" focusable="false" class="code-btn fill-green">
-  <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
-</svg>
-
-    </div>
-    
-      <div class="code-lang">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-code"></use>
-</svg>
-
-        CSS
-      </div>
-    
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy"></use>
-</svg>
-
-      </button>
-    </div>
-  </div>
-  
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.grid</span> <span class="p">{</span>
   <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
@@ -842,9 +533,6 @@ The total available space is divided into 3 parts, with the first column getting
     <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* Stack columns on small screens */</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-
-
-</div>
 
 <p>In this example, the grid has 3 columns on larger screens, but on screens smaller than <code class="language-text highlighter-rouge">768px</code>, the grid switches to 1 column.</p>
 
