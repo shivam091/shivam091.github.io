@@ -51,13 +51,16 @@ Here are some of the most commonly used properties for defining a grid layout:
 
 Here’s an example of a simple 3-column grid layout:
 
-{% highlight css %}
+{% capture code %}
+{% highlight css linenos %}
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
   gap: 1rem; /* Space between columns and rows */
 }
 {% endhighlight %}
+{% endcapture %}
+{% include codeblock.html content = code %}
 
 This layout has 3 columns of equal width (`1fr` stands for 1 fraction of the available space), and there’s a gap of `1rem` between both rows and columns.
 
@@ -66,13 +69,16 @@ This layout has 3 columns of equal width (`1fr` stands for 1 fraction of the ava
 The `fr` unit is a flexible length unit that allows us to create responsive grids. It distributes available space in a grid container proportionally.
 In the example above, `1fr` means each column will take up an equal share of the available space.
 
-{% highlight css %}
+{% capture code %}
+{% highlight css linenos %}
 .grid {
   display: grid;
   grid-template-columns: 2fr 1fr; /* First column takes 2/3 of the space, second takes 1/3 */
   gap: 1rem;
 }
 {% endhighlight %}
+{% endcapture %}
+{% include codeblock.html content = code %}
 
 In the above code, the first column will take up 2 fractions of the available space, and the second will take 1 fraction.
 The total available space is divided into 3 parts, with the first column getting 2 parts and the second getting 1.
@@ -80,7 +86,8 @@ The total available space is divided into 3 parts, with the first column getting
 ### Other useful properties
 
 **grid-template-areas** - Defines a grid using named areas. This can make positioning easier.
-{% highlight css %}
+{% capture code %}
+{% highlight css linenos %}
 .grid {
   display: grid;
   grid-template-areas:
@@ -90,42 +97,57 @@ The total available space is divided into 3 parts, with the first column getting
   gap: 1rem;
 }
 {% endhighlight %}
+{% endcapture %}
+{% include codeblock.html content = code %}
 
 **justify-items** - Aligns items horizontally within their grid cell.
-{% highlight css %}
+{% capture code %}
+{% highlight css linenos %}
 .grid {
   display: grid;
   justify-items: center; /* Centers grid items horizontally */
 }
 {% endhighlight %}
+{% endcapture %}
+{% include codeblock.html content = code %}
 
 **align-items** - Aligns items vertically within their grid cell.
-{% highlight css %}
+{% capture code %}
+{% highlight css linenos %}
 .grid {
   display: grid;
   align-items: center; /* Centers grid items vertically */
 }
 {% endhighlight %}
+{% endcapture %}
+{% include codeblock.html content = code %}
 
 **justify-self** - Aligns a specific grid item horizontally within its grid cell.
-{% highlight css %}
+{% capture code %}
+{% highlight css linenos %}
 .item {
   justify-self: end; /* Aligns this specific item to the right */
 }
 {% endhighlight %}
+{% endcapture %}
+{% include codeblock.html content = code %}
 
 **align-self** - Aligns a specific grid item vertically within its grid cell.
-{% highlight css %}
+{% capture code %}
+{% highlight css linenos %}
 .item {
   align-self: start; /* Aligns this specific item to the top */
 }
 {% endhighlight %}
+{% endcapture %}
+{% include codeblock.html content = code %}
 
 ### Responsive design with CSS grid
 
 CSS Grid makes responsive design easier than ever. You can modify your grid layout based on screen size using media queries.
 
-{% highlight css %}
+{% capture code %}
+{% highlight css linenos %}
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -138,6 +160,8 @@ CSS Grid makes responsive design easier than ever. You can modify your grid layo
   }
 }
 {% endhighlight %}
+{% endcapture %}
+{% include codeblock.html content = code %}
 
 In this example, the grid has 3 columns on larger screens, but on screens smaller than `768px`, the grid switches to 1 column.
 
