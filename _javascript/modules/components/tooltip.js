@@ -31,7 +31,7 @@ class Tooltip {
 
   static show(event) {
     const target = event?.currentTarget;
-    if (this.tooltipMap.has(target)) return;
+    if (!target || this.tooltipMap.has(target)) return;
 
     const tooltipText = target.getAttribute("data-tooltip");
     if (!tooltipText) return;
@@ -51,6 +51,18 @@ class Tooltip {
 
     if ("ontouchstart" in window) {
       setTimeout(() => this.hide({ currentTarget: target }), delay);
+    }
+  }
+
+  static update(target, newText) {
+    if (!target || !newText) return;
+
+    target.setAttribute("data-tooltip", newText);
+
+    const tooltip = this.tooltipMap.get(target);
+    if (tooltip) {
+      tooltip.innerHTML = newText;
+      PopperUtils.updateInstance(tooltip);
     }
   }
 
@@ -122,8 +134,8 @@ class Tooltip {
       el.addEventListener("touchstart", (event) => this.show(event));
       el.addEventListener("touchend", (event) => this.hide(event));
 
-      el.addEventListener("pointerdown", (event) => this.show(event));
-      el.addEventListener("pointerup", (event) => this.hide(event));
+      // el.addEventListener("pointerdown", (event) => this.show(event));
+      // el.addEventListener("pointerup", (event) => this.hide(event));
 
       el.addEventListener("keydown", (event) => this.handleEscape(event));
     });
