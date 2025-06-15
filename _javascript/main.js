@@ -7,6 +7,7 @@ import { Tooltip } from "./modules/components/tooltip";
 import { Dropdown } from "./modules/components/dropdown";
 import { SidebarToggle } from "./modules/components/layouts/sidebar-toggle";
 import { Categories } from "./modules/categories.js";
+import { Clipboard } from "./utils/clipboard";
 
 import { bindHeroTyping } from "./modules/components/hero";
 
@@ -19,5 +20,6 @@ Tooltip.initialize();
 Dropdown.initialize();
 SidebarToggle.initialize();
 Categories.initialize();
+Clipboard.initAll();
 
 bindHeroTyping();
