@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-15T22:39:02+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-07T18:40:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="table-of-contents">Table of Contents</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-15T22:50:13+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/15/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-15T21:30:00+05:30</published><updated>2025-06-15T21:30:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/15/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/15/components"><![CDATA[<h2 id="alerts">Alerts</h2>
+
+<h3 id="alert-with-icon-heading--dismiss">Alert with Icon, Heading &amp; Dismiss</h3>
+
+<div class="alert alert-success">
+  <div class="alert-icon">
+    ✅
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Success!</h4>
+    Your profile has been updated successfully.
+  </div>
+  <button class="alert-dismiss" aria-label="Close" data-tooltip="Close"></button>
+</div>
+
+<h3 id="alert-with-only-text">Alert with Only Text</h3>
+
+<div class="alert alert-danger">
+  <div class="alert-content">
+    Failed to save your changes. Please try again.
+  </div>
+</div>
+
+<h3 id="alert-with-svg-icon">Alert with SVG Icon</h3>
+
+<div class="alert alert-attention">
+  <div class="alert-icon">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+      <path d="M12 2L2 22h20L12 2zM12 16v-4h1v4h-1zm0 4v-2h1v2h-1z" />
+    </svg>
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Attention</h4>
+    This action requires confirmation.
+  </div>
+</div>
+
+<h3 id="alert-with-link">Alert with Link</h3>
+
+<div class="alert alert-accent">
+  <div class="alert-icon">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+      <path d="M12 2L2 22h20L12 2zM12 16v-4h1v4h-1zm0 4v-2h1v2h-1z" />
+    </svg>
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Heads Up!</h4>
+    This is an <a href="#">important notification</a> that requires your attention.
+    You can <a href="/settings">update your settings here</a>.
+    An example showing the <code class="language-plaintext highlighter-rouge">warning</code> type prompt.
+  </div>
+  <button class="alert-dismiss" aria-label="Close" data-tooltip="Close"></button>
+</div>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, buttons, and more.]]></summary></entry><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-07T18:40:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="table-of-contents">Table of Contents</h2>
 
 <ol>
   <li><a href="#introduction">Introduction</a></li>
@@ -54,22 +106,30 @@
 <div class="code-block-wrapper" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-red">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-red">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-yellow">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-yellow">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-green">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-green">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
     </div>
     
       <div class="code-lang" id="code-lang-label">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-code ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-code"></use>
 </svg>
 
@@ -78,7 +138,9 @@
     
     <div class="code-actions">
       <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-copy ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-copy"></use>
 </svg>
 
@@ -112,22 +174,30 @@ In the example above, <code class="language-text highlighter-rouge">1fr</code> m
 <div class="code-block-wrapper" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-red">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-red">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-yellow">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-yellow">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-green">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-green">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
     </div>
     
       <div class="code-lang" id="code-lang-label">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-code ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-code"></use>
 </svg>
 
@@ -136,7 +206,9 @@ In the example above, <code class="language-text highlighter-rouge">1fr</code> m
     
     <div class="code-actions">
       <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-copy ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-copy"></use>
 </svg>
 
@@ -170,22 +242,30 @@ The total available space is divided into 3 parts, with the first column getting
 <div class="code-block-wrapper" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-red">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-red">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-yellow">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-yellow">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-green">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-green">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
     </div>
     
       <div class="code-lang" id="code-lang-label">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-code ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-code"></use>
 </svg>
 
@@ -194,7 +274,9 @@ The total available space is divided into 3 parts, with the first column getting
     
     <div class="code-actions">
       <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-copy ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-copy"></use>
 </svg>
 
@@ -229,22 +311,30 @@ The total available space is divided into 3 parts, with the first column getting
 <div class="code-block-wrapper" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-red">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-red">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-yellow">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-yellow">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-green">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-green">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
     </div>
     
       <div class="code-lang" id="code-lang-label">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-code ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-code"></use>
 </svg>
 
@@ -253,7 +343,9 @@ The total available space is divided into 3 parts, with the first column getting
     
     <div class="code-actions">
       <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-copy ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-copy"></use>
 </svg>
 
@@ -280,22 +372,30 @@ The total available space is divided into 3 parts, with the first column getting
 <div class="code-block-wrapper" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-red">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-red">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-yellow">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-yellow">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-green">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-green">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
     </div>
     
       <div class="code-lang" id="code-lang-label">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-code ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-code"></use>
 </svg>
 
@@ -304,7 +404,9 @@ The total available space is divided into 3 parts, with the first column getting
     
     <div class="code-actions">
       <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-copy ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-copy"></use>
 </svg>
 
@@ -331,22 +433,30 @@ The total available space is divided into 3 parts, with the first column getting
 <div class="code-block-wrapper" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-red">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-red">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-yellow">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-yellow">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-green">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-green">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
     </div>
     
       <div class="code-lang" id="code-lang-label">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-code ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-code"></use>
 </svg>
 
@@ -355,7 +465,9 @@ The total available space is divided into 3 parts, with the first column getting
     
     <div class="code-actions">
       <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-copy ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-copy"></use>
 </svg>
 
@@ -380,22 +492,30 @@ The total available space is divided into 3 parts, with the first column getting
 <div class="code-block-wrapper" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-red">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-red">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-yellow">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-yellow">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-green">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-green">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
     </div>
     
       <div class="code-lang" id="code-lang-label">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-code ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-code"></use>
 </svg>
 
@@ -404,7 +524,9 @@ The total available space is divided into 3 parts, with the first column getting
     
     <div class="code-actions">
       <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-copy ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-copy"></use>
 </svg>
 
@@ -431,22 +553,30 @@ The total available space is divided into 3 parts, with the first column getting
 <div class="code-block-wrapper" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-red">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-red">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-yellow">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-yellow">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-green">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-green">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
     </div>
     
       <div class="code-lang" id="code-lang-label">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-code ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-code"></use>
 </svg>
 
@@ -455,7 +585,9 @@ The total available space is divided into 3 parts, with the first column getting
     
     <div class="code-actions">
       <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-copy ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-copy"></use>
 </svg>
 
@@ -641,22 +773,30 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
 <div class="code-block-wrapper" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-buttons" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-red">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-red">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-yellow">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-yellow">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
-      <svg role="img" aria-hidden="true" focusable="false" id="icon-circle-fill " class="code-btn fill-green">
+      
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}" class="code-btn fill-green">
   <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
 </svg>
 
     </div>
     
       <div class="code-lang" id="code-lang-label">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-code ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-code"></use>
 </svg>
 
@@ -665,7 +805,9 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
     
     <div class="code-actions">
       <button type="button" class="btn btn-sm copy-btn" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false" id="icon-copy ">
+        
+
+<svg role="img" aria-hidden="true" focusable="false" id="icon-{{ include.name }}">
   <use href="/assets/img/sprite.svg#icon-copy"></use>
 </svg>
 
