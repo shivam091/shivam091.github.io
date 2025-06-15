@@ -1,0 +1,79 @@
+@use "abstracts/modules/no-cursor" as *
+
+.code-block-wrapper
+  background-color: var(--bgColor-muted)
+  border: 1px solid var(--borderColor-default)
+  border-radius: 0.5rem
+  overflow: hidden
+  font-size: 0.9rem
+  box-shadow: var(--shadow-floating-legacy)
+  margin-bottom: 1.5rem
+
+  figure
+    margin-block: 0
+    border: none
+
+    .gutter
+      position: sticky
+      left: 0
+      text-align: right
+      background-color: var(--bgColor-muted)
+      border-right: 1px solid var(--borderColor-default)
+      z-index: 1
+      padding-right: 0.5rem
+
+      @extend %no-cursor
+
+    .code
+      width: 100%
+
+.code-block-header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  background-color: var(--bgColor-default)
+  border-bottom: 1px solid var(--borderColor-muted)
+  padding: 0.5rem 1rem
+
+  .code-buttons
+    display: flex
+    gap: 0.4rem
+
+  .code-lang
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 0.4rem
+    flex-grow: 1
+    font-weight: 600
+    color: var(--fgColor-muted)
+
+  .code-actions
+    display: flex
+    align-items: center
+    gap: 0.5rem
+
+    .copy-btn
+      display: inline-grid
+      align-items: center
+
+.code-buttons
+  .code-btn
+    width: 1em
+    height: 1em
+
+  .fill-red
+    fill: var(--bgColor-danger-emphasis)
+  .fill-yellow
+    fill: var(--bgColor-attention-emphasis)
+  .fill-green
+    fill: var(--bgColor-success-emphasis)
+
+.lineno
+  color: var(--fgColor-muted)
+
+[data-copy-code],
+[data-copy-link],
+[data-copy-target]
+  #icon-check
+    fill: var(--bgColor-success-emphasis)

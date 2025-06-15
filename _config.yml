@@ -18,10 +18,12 @@ plugins:
 permalink: /post/:year/:month/:day/:title
 
 markdown: kramdown
-highlighter: rouge
 kramdown:
+  input: GFM
+  syntax_highlighter: rouge
   syntax_highlighter_opts:
     default_lang: text
+    line_numbers: false
 
 google_analytics:
   id: "G-W5GHEJ51PD"
