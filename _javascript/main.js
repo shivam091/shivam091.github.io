@@ -6,8 +6,9 @@ import { SkipLink } from "./modules/components/skip-link";
 import { Tooltip } from "./modules/components/tooltip";
 import { Dropdown } from "./modules/components/dropdown";
 import { SidebarToggle } from "./modules/components/layouts/sidebar-toggle";
-import { Categories } from "./modules/categories.js";
+import { Categories } from "./modules/categories";
 import { Clipboard } from "./utils/clipboard";
+import Alert from "./modules/components/alert";
 
 import { bindHeroTyping } from "./modules/components/hero";
 
@@ -21,5 +22,6 @@ Dropdown.initialize();
 SidebarToggle.initialize();
 Categories.initialize();
 Clipboard.initAll();
+Alert.init();
 
 bindHeroTyping();
