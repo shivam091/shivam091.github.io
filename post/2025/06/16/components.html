@@ -388,7 +388,7 @@ Components
     </div>
   
 
-  <div class="post-read-time" data-tooltip="75 words" data-tooltip-position="bottom" tabindex="0">
+  <div class="post-read-time" data-tooltip="189 words" data-tooltip-position="bottom" tabindex="0">
   <svg
   role="img"
   aria-hidden="true"
@@ -400,7 +400,7 @@ Components
 </svg>
 
   <span class="visually-hidden">Estimated reading time:</span>
-  <span>1 min read</span>
+  <span>2 min read</span>
 </div>
 
 </div>
@@ -487,6 +487,211 @@ Components
   <span class="vi">@temperature</span> <span class="o">=</span> <span class="n">weather_data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">]</span>
 <span class="k">end</span>
 </pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<h2 id="alerts">Alerts</h2>
+
+<h3 id="default">Default</h3>
+
+<div class="alert alert-accent" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    This is default alert.
+  </div>
+  
+</div>
+
+<h3 id="with-icon-heading-and-dismiss">With icon, heading, and dismiss</h3>
+
+<div class="alert alert-accent alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Information</h4>
+This is just for your information.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-success alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-bulb" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Heads Up!</h4>
+Your profile has been updated successfully.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-danger alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-times" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Error :(</h4>
+Failed to save your changes. Please try again.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-attention alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Attention</h4>
+This action requires confirmation.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<h3 id="with-icon-outline-and-dismiss">With icon, outline, and dismiss</h3>
+
+<div class="alert alert-accent alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined accent alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-success alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-bulb" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined success alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-danger alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-times" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined danger alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-attention alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined attention alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<h3 id="with-links">With links</h3>
+
+<div class="alert alert-accent" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Information</h4>
+This is an <a href="#">important notification</a> that requires your attention.
+You can <a href="/settings">update your settings here</a>.
+An example showing the <code class="language-plaintext highlighter-rouge">warning</code> type prompt.
+  </div>
+  
+</div>
+
+<h3 id="markdown-support">Markdown support</h3>
+
+<div class="alert alert-danger" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-times" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h3 class="alert-heading" id="markdown-enabled-alert">Markdown enabled alert</h3>
+
+<p>This content is <strong>processed</strong> as <em>Markdown</em>.</p>
+
+  </div>
+  
 </div>
 
 
