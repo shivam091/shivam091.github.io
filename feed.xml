@@ -1,6 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-16T12:35:46+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/15/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-15T21:30:00+05:30</published><updated>2025-06-15T21:30:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/15/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/15/components"><![CDATA[<h2 id="alerts">Alerts</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-16T12:38:55+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/15/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-15T21:30:00+05:30</published><updated>2025-06-15T21:30:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/15/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/15/components"><![CDATA[<h2 id="alerts">Alerts</h2>
 
 <h3 id="default">Default</h3>
+
+<div class="alert alert--accent" role="alert">
+  <div class="alert--content">
+    This is default alert.
+  </div>
+  
+</div>
+
+<h3 id="with-dismiss">With dismiss</h3>
 
 <div class="alert alert--accent alert--dismissible" role="alert">
   <div class="alert--content">
