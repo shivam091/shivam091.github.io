@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-16T11:58:30+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/15/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-15T21:30:00+05:30</published><updated>2025-06-15T21:30:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/15/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/15/components"><![CDATA[<h2 id="alerts">Alerts</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-16T12:21:48+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/15/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-15T21:30:00+05:30</published><updated>2025-06-15T21:30:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/15/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/15/components"><![CDATA[<h2 id="alerts">Alerts</h2>
 
 <h3 id="alerts-with-background">Alerts with background</h3>
 
@@ -40,32 +40,28 @@ This action requires confirmation.
 
 <div class="alert alert--accent alert--dismissible alert--outlined" role="alert">
   <div class="alert--content">
-    <h4 class="alert--heading">Information</h4>
-Please update your preferences
+    This is information alert.
   </div>
   <button class="alert--dismiss" aria-label="Dismiss"></button>
 </div>
 
 <div class="alert alert--success alert--dismissible alert--outlined" role="alert">
   <div class="alert--content">
-    <h4 class="alert--heading">Heads Up!</h4>
-Your profile has been updated successfully.
+    This is success alert.
   </div>
   <button class="alert--dismiss" aria-label="Dismiss"></button>
 </div>
 
 <div class="alert alert--danger alert--dismissible alert--outlined" role="alert">
   <div class="alert--content">
-    <h4 class="alert--heading">Error :(</h4>
-Failed to save your changes. Please try again.
+    This is danger alert.
   </div>
   <button class="alert--dismiss" aria-label="Dismiss"></button>
 </div>
 
 <div class="alert alert--attention alert--dismissible alert--outlined" role="alert">
   <div class="alert--content">
-    <h4 class="alert--heading">Attention</h4>
-This action requires confirmation.
+    This is attention alert.
   </div>
   <button class="alert--dismiss" aria-label="Dismiss"></button>
 </div>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, buttons, and more.]]></summary></entry><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-07T18:40:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="table-of-contents">Table of Contents</h2>
