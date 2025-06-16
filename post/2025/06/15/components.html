@@ -424,7 +424,7 @@ Components
     </div>
   
 
-  <div class="post-read-time" data-tooltip="63 words" data-tooltip-position="bottom" tabindex="0">
+  <div class="post-read-time" data-tooltip="80 words" data-tooltip-position="bottom" tabindex="0">
   
 
 <svg
@@ -448,57 +448,76 @@ Components
 <article class="post-content" aria-labelledby="page-title">
   <h2 id="alerts">Alerts</h2>
 
-<h3 id="alert-with-icon-heading--dismiss">Alert with Icon, Heading &amp; Dismiss</h3>
+<h3 id="alerts-with-background">Alerts with background</h3>
 
-<div class="alert alert-success">
-  <div class="alert-icon">
-    ✅
+<div class="alert alert--accent alert--dismissible" role="alert">
+  <div class="alert--content">
+    <h4 class="alert--heading">Information</h4>
+This is an <a href="#">important notification</a> that requires your attention.
+You can <a href="/settings">update your settings here</a>.
+An example showing the <code class="language-plaintext highlighter-rouge">warning</code> type prompt.
   </div>
-  <div class="alert-content">
-    <h4 class="alert-heading">Success!</h4>
-    Your profile has been updated successfully.
-  </div>
-  <button class="alert-dismiss" aria-label="Close" data-tooltip="Close"></button>
+  <button class="alert--dismiss" aria-label="Dismiss"></button>
 </div>
 
-<h3 id="alert-with-only-text">Alert with Only Text</h3>
-
-<div class="alert alert-danger">
-  <div class="alert-content">
-    Failed to save your changes. Please try again.
+<div class="alert alert--success alert--dismissible" role="alert">
+  <div class="alert--content">
+    <h4 class="alert--heading">Heads Up!</h4>
+Your profile has been updated successfully.
   </div>
+  <button class="alert--dismiss" aria-label="Dismiss"></button>
 </div>
 
-<h3 id="alert-with-svg-icon">Alert with SVG Icon</h3>
-
-<div class="alert alert-attention">
-  <div class="alert-icon">
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-      <path d="M12 2L2 22h20L12 2zM12 16v-4h1v4h-1zm0 4v-2h1v2h-1z" />
-    </svg>
+<div class="alert alert--danger alert--dismissible" role="alert">
+  <div class="alert--content">
+    <h4 class="alert--heading">Error :(</h4>
+Failed to save your changes. Please try again.
   </div>
-  <div class="alert-content">
-    <h4 class="alert-heading">Attention</h4>
-    This action requires confirmation.
-  </div>
+  <button class="alert--dismiss" aria-label="Dismiss"></button>
 </div>
 
-<h3 id="alert-with-link">Alert with Link</h3>
-
-<div class="alert alert-accent">
-  <div class="alert-icon">
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-      <path d="M12 2L2 22h20L12 2zM12 16v-4h1v4h-1zm0 4v-2h1v2h-1z" />
-    </svg>
+<div class="alert alert--attention alert--dismissible" role="alert">
+  <div class="alert--content">
+    <h4 class="alert--heading">Attention</h4>
+This action requires confirmation.
   </div>
-  <div class="alert-content">
-    <h4 class="alert-heading">Heads Up!</h4>
-    This is an <a href="#">important notification</a> that requires your attention.
-    You can <a href="/settings">update your settings here</a>.
-    An example showing the <code class="language-plaintext highlighter-rouge">warning</code> type prompt.
-  </div>
-  <button class="alert-dismiss" aria-label="Close" data-tooltip="Close"></button>
+  <button class="alert--dismiss" aria-label="Dismiss"></button>
 </div>
+
+<h3 id="outlined-alerts">Outlined alerts</h3>
+
+<div class="alert alert--accent alert--dismissible alert--outlined" role="alert">
+  <div class="alert--content">
+    <h4 class="alert--heading">Information</h4>
+Please update your preferences
+  </div>
+  <button class="alert--dismiss" aria-label="Dismiss"></button>
+</div>
+
+<div class="alert alert--success alert--dismissible alert--outlined" role="alert">
+  <div class="alert--content">
+    <h4 class="alert--heading">Heads Up!</h4>
+Your profile has been updated successfully.
+  </div>
+  <button class="alert--dismiss" aria-label="Dismiss"></button>
+</div>
+
+<div class="alert alert--danger alert--dismissible alert--outlined" role="alert">
+  <div class="alert--content">
+    <h4 class="alert--heading">Error :(</h4>
+Failed to save your changes. Please try again.
+  </div>
+  <button class="alert--dismiss" aria-label="Dismiss"></button>
+</div>
+
+<div class="alert alert--attention alert--dismissible alert--outlined" role="alert">
+  <div class="alert--content">
+    <h4 class="alert--heading">Attention</h4>
+This action requires confirmation.
+  </div>
+  <button class="alert--dismiss" aria-label="Dismiss"></button>
+</div>
+
 
 </article>
 
