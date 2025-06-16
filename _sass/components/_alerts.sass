@@ -1,0 +1,74 @@
+$alert-types: (success, danger, attention, accent)
+
+.alert
+  position: relative
+  display: flex
+  align-items: center
+  padding: 1rem
+  border: 1px solid transparent
+  border-radius: 0.5rem
+  font-size: 0.95rem
+  background-color: var(--bgColor-neutral-muted)
+  color: var(--fgColor-default)
+  gap: 1rem
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s
+  margin-bottom: 0.5rem
+
+  @each $type in $alert-types
+    &-#{$type}
+      background-image: linear-gradient(var(--bgColor-#{$type}-muted), var(--bgColor-#{$type}-muted))
+      border-color: var(--borderColor-#{$type}-emphasis)
+
+      &.alert-outlined
+        background-color: transparent
+        background-image: none
+        color: var(--fgColor-#{$type})
+        border-color: var(--borderColor-#{$type}-emphasis)
+
+      .alert-icon
+        svg
+          fill: var(--bgColor-#{$type}-emphasis)
+
+  &.fade-out
+    opacity: 0
+    transform: translateY(-0.5rem)
+    pointer-events: none
+    visibility: hidden
+
+  &-heading
+    font-weight: 600
+    margin: 0 0 0.25rem
+    font-size: 1rem
+
+  &-icon
+    flex-shrink: 0
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    color: inherit
+
+  &-content
+    flex: 1
+
+    p
+      margin-bottom: 0
+
+  &-dismiss
+    background-color: transparent
+    border: none
+    color: inherit
+    padding: 0
+    line-height: 1
+    flex-shrink: 0
+
+    svg
+      transition: transform 0.2s ease, color 0.2s ease
+      pointer-events: none
+      user-select: none
+
+    &:hover,
+    &:focus
+      background-color: transparent
+
+      svg
+        transform: scale(1.25)

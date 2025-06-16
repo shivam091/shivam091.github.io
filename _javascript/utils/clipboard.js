@@ -16,7 +16,7 @@ class Clipboard {
   }
 
   findButton() {
-    if (this.isCode) return this.root.querySelector(".copy-btn");
+    if (this.isCode) return this.root.querySelector(".btn-copy");
     if (this.isLink || this.targetSelector) return this.root;
     return null;
   }

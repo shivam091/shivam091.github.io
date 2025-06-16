@@ -1,6 +1,6 @@
 @use "abstracts/modules/no-cursor" as *
 
-.code-block-wrapper
+.code-block
   background-color: var(--bgColor-muted)
   border: 1px solid var(--borderColor-default)
   border-radius: 0.5rem
@@ -20,7 +20,6 @@
       background-color: var(--bgColor-muted)
       border-right: 1px solid var(--borderColor-default)
       z-index: 1
-      padding-right: 0.5rem
 
       @extend %no-cursor
 
@@ -35,7 +34,7 @@
   border-bottom: 1px solid var(--borderColor-muted)
   padding: 0.5rem 1rem
 
-  .code-buttons
+  .code-block-button-group
     display: flex
     gap: 0.4rem
 
@@ -53,20 +52,21 @@
     align-items: center
     gap: 0.5rem
 
-    .copy-btn
-      display: inline-grid
-      align-items: center
+.code-actions
+  .btn-copy
+    display: inline-grid
+    align-items: center
 
-.code-buttons
-  .code-btn
+.code-block-button-group
+  .code-block-action
     width: 1em
     height: 1em
 
-  .fill-red
+  .code-close
     fill: var(--bgColor-danger-emphasis)
-  .fill-yellow
+  .code-minimize
     fill: var(--bgColor-attention-emphasis)
-  .fill-green
+  .code-maximize
     fill: var(--bgColor-success-emphasis)
 
 .lineno
