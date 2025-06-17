@@ -1,10 +1,11 @@
 {%- assign post = include.post -%}
+{%- assign published_at = post.date -%}
 
 <div class="post-meta">
-  <div class="post-date">
+  <div class="post-published-date">
     {% icon calendar %}
     <span class="visually-hidden">Published at:</span>
-    {% include datetime.html date = post.date tooltip = true %}
+    {% timestamp {{published_at}}, tooltip:true, label:"Published on {{ published_at | date: "%B %d, %Y" }} at {{ published_at | date: '%I:%M %p' }}" %}
   </div>
 
   {% if post.tags %}
