@@ -132,6 +132,7 @@ This content is **processed** as _Markdown_.
 {% icon folder-open %}
 {% icon github %}
 {% icon hash %}
+{% icon history %}
 {% icon home %}
 {% icon info-circle %}
 {% icon instagram %}

@@ -33,6 +33,11 @@ module Jekyll
               #{lang_label}
             </div>
             <div class="code-actions">
+              <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+                <svg role="img" aria-hidden="true" focusable="false">
+                  <use href="/assets/img/sprite.svg#icon-hash" />
+                </svg>
+              </button>
               <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
                 <svg role="img" aria-hidden="true" focusable="false">
                   <use href="/assets/img/sprite.svg#icon-copy" />

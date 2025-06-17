@@ -53,7 +53,8 @@
     gap: 0.5rem
 
 .code-actions
-  .btn-copy
+  .btn-copy,
+  .btn-toggle-lines
     display: inline-grid
     align-items: center
 
@@ -69,8 +70,12 @@
   .code-maximize
     fill: var(--bgColor-success-emphasis)
 
-.lineno
-  color: var(--fgColor-muted)
+.gutter
+  &.hidden
+    display: none
+
+  .lineno
+    color: var(--fgColor-muted)
 
 [data-copy-code],
 [data-copy-link],
