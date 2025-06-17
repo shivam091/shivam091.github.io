@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-17T19:36:57+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-06-16T18:20:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/16/components"><![CDATA[<h2 id="codeblocks">Codeblocks</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-17T21:57:02+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-06-16T18:20:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/16/components"><![CDATA[<h2 id="codeblocks">Codeblocks</h2>
 
 <div class="code-block" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
@@ -282,25 +282,7 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
 
   </div>
   
-</div>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-07T18:40:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="table-of-contents">Table of Contents</h2>
-
-<ol>
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#why-css-grid">Why CSS Grid?</a></li>
-  <li><a href="#basic-terminology">Basic Terminology</a></li>
-  <li><a href="#css-grid-properties">CSS Grid Properties</a>
-    <ul>
-      <li><a href="#grid-layout-example">Grid Layout Example</a></li>
-      <li><a href="#understanding-fr-fractional-units">Understanding <code class="language-text highlighter-rouge">fr</code> (Fractional Units)</a></li>
-      <li><a href="#other-useful-properties">Other Useful Properties</a></li>
-      <li><a href="#responsive-design-with-css-grid">Responsive Design with CSS Grid</a></li>
-    </ul>
-  </li>
-  <li><a href="#common-css-grid-properties">Common CSS Grid Properties</a></li>
-  <li><a href="#conclusion">Conclusion</a></li>
-</ol>
-
-<h2 id="introduction">Introduction</h2>
+</div>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-07T18:40:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="introduction">Introduction</h2>
 
 <p>CSS Grid is one of the most powerful tools for building web layouts. In this article, we’ll explore all the fundamentals, from basic to advanced usage.</p>
 
