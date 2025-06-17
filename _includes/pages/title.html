@@ -1,24 +1,24 @@
-{%- assign icon = page.icon -%}
+{%- assign page_icon = page.icon -%}
 {%- assign title = page.title -%}
 
 {%- if page.url contains "/tag/" -%}
-  {%- assign icon = "tag" -%}
+  {%- assign page_icon = "tag" -%}
   {%- assign title = "Posts tagged with: " | append: page.title -%}
 {%- elsif page.url contains "/category/" -%}
-  {%- assign icon = "folder-open" -%}
+  {%- assign page_icon = "folder-open" -%}
   {%- assign title = "Posts in category: " | append: page.title -%}
 {%- elsif page.url contains "/post/" -%}
-  {%- assign icon = "file" -%}
-{%- elsif icon == nil or icon == "" -%}
+  {%- assign page_icon = "file" -%}
+{%- elsif page_icon == nil or page_icon == "" -%}
   {%- assign current_nav = site.nav | where: "href", page.url | first -%}
   {%- if current_nav -%}
-    {%- assign icon = current_nav.icon -%}
+    {%- assign page_icon = current_nav.icon -%}
   {%- endif -%}
 {%- endif -%}
 
 <h1 id="page-title" class="page-title">
-  {%- if icon -%}
-    {% include svg.html name = icon class = "page-title-icon" %}
+  {%- if page_icon -%}
+    {% icon {{page_icon}} class:"page-title-icon" %}
   {%- endif -%}
 
   {{ title }}

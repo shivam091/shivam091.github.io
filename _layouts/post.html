@@ -28,26 +28,26 @@ layout: page
         Share:
         <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title | uri_escape }}"
           aria-label="Share on Twitter" data-tooltip="Twitter" target="_blank" rel="noopener noreferrer nofollow">
-          {% include svg.html name = "twitter" class = "icon-twitter" %}
+          {% icon twitter %}
         </a>
         <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
           aria-label="Share on Facebook" data-tooltip="Facebook" target="_blank" rel="noopener noreferrer nofollow">
-          {% include svg.html name = "facebook" class = "icon-facebook" %}
+          {% icon facebook %}
         </a>
         <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title | uri_escape }}"
           aria-label="Share on Telegram" data-tooltip="Telegram" target="_blank" rel="noopener noreferrer nofollow">
-          {% include svg.html name = "telegram" class = "icon-telegram" %}
+          {% icon telegram %}
         </a>
         <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}"
           aria-label="Share on LinkedIn" data-tooltip="LinkedIn" target="_blank" rel="noopener noreferrer nofollow">
-          {% include svg.html name = "linkedin" class = "icon-linkedin" %}
+          {% icon linkedin %}
         </a>
         <a href="https://wa.me/?text={{ page.title | uri_escape }}%20{{ page.url | absolute_url }}"
           aria-label="Share on WhatsApp" data-tooltip="WhatsApp" target="_blank" rel="noopener noreferrer nofollow">
-          {% include svg.html name = "whatsapp" class = "icon-whatsapp" %}
+          {% icon whatsapp %}
         </a>
         <a href="" aria-label="Copy link" data-copy-link data-tooltip="Copy link">
-          {% include svg.html name = "link" %}
+          {% icon link %}
         </a>
       </div>
     </section>
