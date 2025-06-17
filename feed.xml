@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-17T12:42:46+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-06-16T18:20:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/16/components"><![CDATA[<h2 id="codeblocks">Codeblocks</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-17T13:12:09+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-06-16T18:20:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/16/components"><![CDATA[<h2 id="codeblocks">Codeblocks</h2>
 
 <div class="code-block" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
@@ -21,6 +21,11 @@
       Ruby
     </div>
     <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -446,6 +451,11 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
       CSS
     </div>
     <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -494,6 +504,11 @@ In the example above, <code class="language-text highlighter-rouge">1fr</code> m
       CSS
     </div>
     <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -541,6 +556,11 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -589,6 +609,11 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -629,6 +654,11 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -669,6 +699,11 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -707,6 +742,11 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -748,6 +788,11 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
