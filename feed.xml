@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-17T13:12:09+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-06-16T18:20:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/16/components"><![CDATA[<h2 id="codeblocks">Codeblocks</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-17T16:54:00+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-06-16T18:20:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/16/components"><![CDATA[<h2 id="codeblocks">Codeblocks</h2>
 
 <div class="code-block" tabindex="0" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
@@ -21,11 +21,6 @@
       Ruby
     </div>
     <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -287,115 +282,25 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
 
   </div>
   
-</div>
+</div>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-07T18:40:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="table-of-contents">Table of Contents</h2>
 
-<h2 id="icons">Icons</h2>
+<ol>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#why-css-grid">Why CSS Grid?</a></li>
+  <li><a href="#basic-terminology">Basic Terminology</a></li>
+  <li><a href="#css-grid-properties">CSS Grid Properties</a>
+    <ul>
+      <li><a href="#grid-layout-example">Grid Layout Example</a></li>
+      <li><a href="#understanding-fr-fractional-units">Understanding <code class="language-text highlighter-rouge">fr</code> (Fractional Units)</a></li>
+      <li><a href="#other-useful-properties">Other Useful Properties</a></li>
+      <li><a href="#responsive-design-with-css-grid">Responsive Design with CSS Grid</a></li>
+    </ul>
+  </li>
+  <li><a href="#common-css-grid-properties">Common CSS Grid Properties</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ol>
 
-<svg id="custom-id" class="icon icon-folder-open custom-class" width="20" height="20" role="img" aria-label="Open folder" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-folder-open" />
-</svg>
-
-<h3 id="available-icons">Available icons</h3>
-
-<svg class="icon icon-adjust" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-adjust" />
-</svg>
-<svg class="icon icon-arrow-up" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-arrow-up" />
-</svg>
-<svg class="icon icon-bulb" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-bulb" />
-</svg>
-<svg class="icon icon-calendar" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-calendar" />
-</svg>
-<svg class="icon icon-code" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-code" />
-</svg>
-<svg class="icon icon-check" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-check" />
-</svg>
-<svg class="icon icon-circle-fill" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-circle-fill" />
-</svg>
-<svg class="icon icon-clock" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-clock" />
-</svg>
-<svg class="icon icon-copy" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy" />
-</svg>
-<svg class="icon icon-device-desktop" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-device-desktop" />
-</svg>
-<svg class="icon icon-emoji-sad" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-emoji-sad" />
-</svg>
-<svg class="icon icon-envelope" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-envelope" />
-</svg>
-<svg class="icon icon-exclamation-triangle" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
-</svg>
-<svg class="icon icon-facebook" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-facebook" />
-</svg>
-<svg class="icon icon-file" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-file" />
-</svg>
-<svg class="icon icon-fold-down" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-fold-down" />
-</svg>
-<svg class="icon icon-fold-up" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-fold-up" />
-</svg>
-<svg class="icon icon-folder" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-folder" />
-</svg>
-<svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-folder-open" />
-</svg>
-<svg class="icon icon-github" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-github" />
-</svg>
-<svg class="icon icon-home" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-home" />
-</svg>
-<svg class="icon icon-info-circle" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-info-circle" />
-</svg>
-<svg class="icon icon-instagram" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-instagram" />
-</svg>
-<svg class="icon icon-link" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-link" />
-</svg>
-<svg class="icon icon-list" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-list" />
-</svg>
-<svg class="icon icon-linkedin" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-linkedin" />
-</svg>
-<svg class="icon icon-moon" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-moon" />
-</svg>
-<svg class="icon icon-sun" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-sun" />
-</svg>
-<svg class="icon icon-tag" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-tag" />
-</svg>
-<svg class="icon icon-telegram" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-telegram" />
-</svg>
-<svg class="icon icon-times" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-times" />
-</svg>
-<svg class="icon icon-twitter" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-twitter" />
-</svg>
-<svg class="icon icon-whatsapp" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-whatsapp" />
-</svg>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-07T18:40:00+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="introduction">Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 
 <p>CSS Grid is one of the most powerful tools for building web layouts. In this article, we’ll explore all the fundamentals, from basic to advanced usage.</p>
 
@@ -451,11 +356,6 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
       CSS
     </div>
     <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -504,11 +404,6 @@ In the example above, <code class="language-text highlighter-rouge">1fr</code> m
       CSS
     </div>
     <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -556,11 +451,6 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -609,11 +499,6 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -654,11 +539,6 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -699,11 +579,6 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -742,11 +617,6 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
@@ -788,11 +658,6 @@ The total available space is divided into 3 parts, with the first column getting
       CSS
     </div>
     <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
       <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
         <svg role="img" aria-hidden="true" focusable="false">
           <use href="/assets/img/sprite.svg#icon-copy" />
