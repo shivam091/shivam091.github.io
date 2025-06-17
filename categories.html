@@ -33,7 +33,7 @@ permalink: /categories
       <div class="category" data-category>
         <div class="category-header" id="toggle-{{ group_index }}">
           <div class="category-title-group">
-            {%- include svg.html name = "folder" class = "category-icon" -%}
+            {%- icon folder class:"category-icon" -%}
             <div class="category-meta-info">
               <a href="/category/{{ category_name | slugify | prepend: site.baseurl }}/" class="category-title" title="View all posts in {{ category_name }}">
                 {{ category_name }}
@@ -50,7 +50,7 @@ permalink: /categories
           <button type="button" class="btn btn-category-toggle"
             {% if category_count == 0 %}disabled aria-disabled="true"{% endif %}
             aria-expanded="false" aria-controls="sub-categories-{{ group_index }}" aria-label="Toggle sub categories in {{ category_name }}">
-            {% include svg.html name = "fold-down" id = "category-toggle-icon" %}
+            {% icon fold-down id:"category-toggle-icon" %}
           </button>
         </div>
 
@@ -59,7 +59,7 @@ permalink: /categories
             {% for sub_category in sub_categories %}
               {%- assign sub_category_post_count = site.categories[sub_category] | size -%}
               <li class="sub-category">
-                {% include svg.html name = "folder" %}
+                {% icon folder %}
                 <div class="sub-category-meta-info">
                   <a href="/category/{{ sub_category | slugify | prepend: site.baseurl }}/" class="sub-category-title" title="View posts in {{ sub_category }}">
                     {{ sub_category }}

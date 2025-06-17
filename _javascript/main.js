@@ -9,6 +9,7 @@ import { SidebarToggle } from "./modules/components/layouts/sidebar-toggle";
 import { Categories } from "./modules/categories";
 import { Clipboard } from "./utils/clipboard";
 import Alert from "./modules/components/alert";
+import CodeBlockUtils from "./utils/code-block-utils";
 
 import { bindHeroTyping } from "./modules/components/hero";
 
@@ -23,5 +24,6 @@ SidebarToggle.initialize();
 Categories.initialize();
 Clipboard.initAll();
 Alert.init();
+CodeBlockUtils.initAll();
 
 bindHeroTyping();

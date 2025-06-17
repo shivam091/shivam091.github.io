@@ -10,27 +10,27 @@
     <hr/>
     <nav class="hero-links" aria-label="Hero links">
       <a href="/about" class="hero-link">
-        {% include svg.html name = "info-circle" %}
+        {% icon info-circle %}
         About
       </a>
       <a href="{{ site.author.resume | relative_url }}" class="hero-link">
-        {% include svg.html name = "file" %}
+        {% icon file %}
         Resume
       </a>
       <a href="mailto:{{ site.author.email }}" class="hero-link" target="_blank">
-        {% include svg.html name = "envelope" %}
+        {% icon envelope %}
         Email me
       </a>
       <a href="https://www.github.com/{{ site.author.github_username }}" class="hero-link" target="_blank">
-        {% include svg.html name = "github" %}
+        {% icon github %}
         GitHub
       </a>
       <a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}" class="hero-link" target="_blank">
-        {% include svg.html name = "linkedin" %}
+        {% icon linkedin %}
         LinkedIn
       </a>
       <a href="https://www.instagram.com/{{ site.author.instagram_username }}" class="hero-link" target="_blank">
-        {% include svg.html name = "instagram" %}
+        {% icon instagram %}
         Instagram
       </a>
     </nav>
