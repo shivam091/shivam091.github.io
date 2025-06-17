@@ -1,0 +1,13 @@
+@mixin icon-mask($svg-url, $size: clamp(1.25em, 2.5vw, 1.35em), $color: currentColor)
+  display: inline-block
+  width: $size
+  height: $size
+  background-color: $color
+  mask-image: $svg-url
+  mask-size: contain
+  mask-repeat: no-repeat
+  mask-position: center
+  -webkit-mask-image: $svg-url
+  -webkit-mask-size: contain
+  -webkit-mask-repeat: no-repeat
+  -webkit-mask-position: center
