@@ -7,19 +7,6 @@ categories: [css]
 excerpt: "CSS Grid is one of the most powerful tools for building web layouts."
 ---
 
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Why CSS Grid?](#why-css-grid)
-3. [Basic Terminology](#basic-terminology)
-4. [CSS Grid Properties](#css-grid-properties)
-   - [Grid Layout Example](#grid-layout-example)
-   - [Understanding `fr` (Fractional Units)](#understanding-fr-fractional-units)
-   - [Other Useful Properties](#other-useful-properties)
-   - [Responsive Design with CSS Grid](#responsive-design-with-css-grid)
-5. [Common CSS Grid Properties](#common-css-grid-properties)
-6. [Conclusion](#conclusion)
-
 ## Introduction
 
 CSS Grid is one of the most powerful tools for building web layouts. In this article, we'll explore all the fundamentals, from basic to advanced usage.

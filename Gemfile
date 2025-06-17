@@ -5,11 +5,16 @@ source "https://rubygems.org"
 # Simple, blog-aware, static sites
 gem "jekyll", "~> 4.4.1"
 
+# Loofah is a general library for manipulating and transforming HTML/XML documents and fragments.
+gem "loofah", "~> 2"
+
 group :jekyll_plugins do
   # Plugin to generate an Atom (RSS-like) feed of your Jekyll posts
   gem "jekyll-feed", "~> 0.12"
+
   # Add metadata tags for search engines and social networks
   gem "jekyll-seo-tag", "~> 2.8"
+
   # Automatically generate post archives by dates, tags, and categories
   gem "jekyll-archives", "~> 2.3"
 end
