@@ -1,5 +1,6 @@
 {%- assign post = include.post -%}
-{%- assign published_at = post.date -%}
+{%- assign published_at = page.published_at | default: page.date -%}
+{%- assign last_modified_at = post.last_modified_at -%}
 
 <div class="post-meta">
   <div class="post-published-date">
@@ -25,6 +26,14 @@
       {% for category in post.categories %}
         <a href="/category{{ category | slugify | relative_url }}" class="badge" aria-label="Category: {{ category }}" rel="category" role="listitem">{{ category }}</a>
       {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if last_modified_at %}
+    <div class="post-last-modified-date">
+      {% icon history %}
+      <span class="visually-hidden">Last updated:</span>
+      {% timestamp {{last_modified_at}}, tooltip:true, label:"Last updated on {{ last_modified_at | date: "%B %d, %Y" }} at {{ last_modified_at | date: '%I:%M %p' }}"%}
     </div>
   {% endif %}
 
