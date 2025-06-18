@@ -1,407 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-18T16:27:59+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-06-17T22:11:25+05:30</updated><id>https://shivam091.github.io/post/2025/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/16/components"><![CDATA[<h2 id="codeblocks">Codeblocks</h2>
-
-<div class="code-block" tabindex="0" data-copy-code="">
-  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
-    <div class="code-block-button-group" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-    </div>
-    <div class="code-lang" id="code-lang-label">
-      <svg role="img" aria-hidden="true" focusable="false">
-        <use href="/assets/img/sprite.svg#icon-code" />
-      </svg>
-      <span class="visually-hidden">Code language:</span>
-      Ruby
-    </div>
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
-      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-copy" />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-</pre></td><td class="code"><pre><span class="c1"># Gemfile</span>
-<span class="n">gem</span> <span class="s1">'httparty'</span>
-
-<span class="c1"># app/services/weather_api.rb</span>
-<span class="nb">require</span> <span class="s1">'httparty'</span>
-
-<span class="k">class</span> <span class="nc">WeatherApi</span>
-  <span class="no">API_KEY</span> <span class="o">=</span> <span class="s1">'your_api_key'</span>
-  <span class="no">BASE_URL</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather'</span>
-
-  <span class="k">def</span> <span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">BASE_URL</span><span class="si">}</span><span class="s2">?q=</span><span class="si">#{</span><span class="n">city</span><span class="si">}</span><span class="s2">&amp;appid=</span><span class="si">#{</span><span class="no">API_KEY</span><span class="si">}</span><span class="s2">&amp;units=metric"</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="no">HTTParty</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="k">raise</span> <span class="s2">"API Error: </span><span class="si">#{</span><span class="n">response</span><span class="p">.</span><span class="nf">code</span><span class="si">}</span><span class="s2">"</span> <span class="k">unless</span> <span class="n">response</span><span class="p">.</span><span class="nf">success?</span>
-    <span class="n">response</span><span class="p">.</span><span class="nf">parsed_body</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="c1"># app/controllers/weather_controller.rb</span>
-<span class="k">def</span> <span class="nf">show</span>
-  <span class="n">city</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:city</span><span class="p">]</span>
-  <span class="n">weather_data</span> <span class="o">=</span> <span class="no">WeatherApi</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
-  <span class="vi">@temperature</span> <span class="o">=</span> <span class="n">weather_data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">]</span>
-<span class="k">end</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-</div>
-
-<h2 id="alerts">Alerts</h2>
-
-<h3 id="default">Default</h3>
-
-<div class="alert alert-accent" role="alert" aria-live="polite" tabindex="0">
-  <div class="alert-icon">
-    <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-info-circle" />
-</svg>
-
-  </div>
-  <div class="alert-content">
-    This is default alert.
-  </div>
-  
-</div>
-
-<h3 id="with-icon-heading-and-dismiss">With icon, heading, and dismiss</h3>
-
-<div class="alert alert-accent alert-dismissible" role="alert" aria-live="polite" tabindex="0">
-  <div class="alert-icon">
-    <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-info-circle" />
-</svg>
-
-  </div>
-  <div class="alert-content">
-    <h4 class="alert-heading">Information</h4>
-This is just for your information.
-  </div>
-  <button type="button" class="alert-dismiss" aria-label="Dismiss">
-  <svg role="img" aria-hidden="true" focusable="false">
-    <use href="/assets/img/sprite.svg#icon-times" />
-  </svg>
-</button>
-
-</div>
-
-<div class="alert alert-success alert-dismissible" role="alert" aria-live="polite" tabindex="0">
-  <div class="alert-icon">
-    <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-bulb" />
-</svg>
-
-  </div>
-  <div class="alert-content">
-    <h4 class="alert-heading">Heads Up!</h4>
-Your profile has been updated successfully.
-  </div>
-  <button type="button" class="alert-dismiss" aria-label="Dismiss">
-  <svg role="img" aria-hidden="true" focusable="false">
-    <use href="/assets/img/sprite.svg#icon-times" />
-  </svg>
-</button>
-
-</div>
-
-<div class="alert alert-danger alert-dismissible" role="alert" aria-live="polite" tabindex="0">
-  <div class="alert-icon">
-    <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-times" />
-</svg>
-
-  </div>
-  <div class="alert-content">
-    <h4 class="alert-heading">Error :(</h4>
-Failed to save your changes. Please try again.
-  </div>
-  <button type="button" class="alert-dismiss" aria-label="Dismiss">
-  <svg role="img" aria-hidden="true" focusable="false">
-    <use href="/assets/img/sprite.svg#icon-times" />
-  </svg>
-</button>
-
-</div>
-
-<div class="alert alert-attention alert-dismissible" role="alert" aria-live="polite" tabindex="0">
-  <div class="alert-icon">
-    <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
-</svg>
-
-  </div>
-  <div class="alert-content">
-    <h4 class="alert-heading">Attention</h4>
-This action requires confirmation.
-  </div>
-  <button type="button" class="alert-dismiss" aria-label="Dismiss">
-  <svg role="img" aria-hidden="true" focusable="false">
-    <use href="/assets/img/sprite.svg#icon-times" />
-  </svg>
-</button>
-
-</div>
-
-<h3 id="with-icon-outline-and-dismiss">With icon, outline, and dismiss</h3>
-
-<div class="alert alert-accent alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
-  <div class="alert-icon">
-    <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-info-circle" />
-</svg>
-
-  </div>
-  <div class="alert-content">
-    An example outlined accent alert with an icon.
-  </div>
-  <button type="button" class="alert-dismiss" aria-label="Dismiss">
-  <svg role="img" aria-hidden="true" focusable="false">
-    <use href="/assets/img/sprite.svg#icon-times" />
-  </svg>
-</button>
-
-</div>
-
-<div class="alert alert-success alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
-  <div class="alert-icon">
-    <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-bulb" />
-</svg>
-
-  </div>
-  <div class="alert-content">
-    An example outlined success alert with an icon.
-  </div>
-  <button type="button" class="alert-dismiss" aria-label="Dismiss">
-  <svg role="img" aria-hidden="true" focusable="false">
-    <use href="/assets/img/sprite.svg#icon-times" />
-  </svg>
-</button>
-
-</div>
-
-<div class="alert alert-danger alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
-  <div class="alert-icon">
-    <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-times" />
-</svg>
-
-  </div>
-  <div class="alert-content">
-    An example outlined danger alert with an icon.
-  </div>
-  <button type="button" class="alert-dismiss" aria-label="Dismiss">
-  <svg role="img" aria-hidden="true" focusable="false">
-    <use href="/assets/img/sprite.svg#icon-times" />
-  </svg>
-</button>
-
-</div>
-
-<div class="alert alert-attention alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
-  <div class="alert-icon">
-    <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
-</svg>
-
-  </div>
-  <div class="alert-content">
-    An example outlined attention alert with an icon.
-  </div>
-  <button type="button" class="alert-dismiss" aria-label="Dismiss">
-  <svg role="img" aria-hidden="true" focusable="false">
-    <use href="/assets/img/sprite.svg#icon-times" />
-  </svg>
-</button>
-
-</div>
-
-<h3 id="with-links">With links</h3>
-
-<div class="alert alert-accent" role="alert" aria-live="polite" tabindex="0">
-  <div class="alert-icon">
-    <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-info-circle" />
-</svg>
-
-  </div>
-  <div class="alert-content">
-    <h4 class="alert-heading">Information</h4>
-This is an <a href="#">important notification</a> that requires your attention.
-You can <a href="/settings">update your settings here</a>.
-An example showing the <code class="language-plaintext highlighter-rouge">warning</code> type prompt.
-  </div>
-  
-</div>
-
-<h3 id="markdown-support">Markdown support</h3>
-
-<div class="alert alert-danger" role="alert" aria-live="polite" tabindex="0">
-  <div class="alert-icon">
-    <svg role="img" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-times" />
-</svg>
-
-  </div>
-  <div class="alert-content">
-    <h3 class="alert-heading" id="markdown-enabled-alert">Markdown enabled alert</h3>
-
-<p>This content is <strong>processed</strong> as <em>Markdown</em>.</p>
-
-  </div>
-  
-</div>
-
-<h2 id="icons">Icons</h2>
-
-<svg id="custom-id" class="icon icon-folder-open custom-class" width="20" height="20" role="img" aria-label="Open folder" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-folder-open" />
-</svg>
-
-<h3 id="available-icons">Available icons</h3>
-
-<svg class="icon icon-adjust" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-adjust" />
-</svg>
-<svg class="icon icon-arrow-up" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-arrow-up" />
-</svg>
-<svg class="icon icon-bulb" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-bulb" />
-</svg>
-<svg class="icon icon-calendar" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-calendar" />
-</svg>
-<svg class="icon icon-code" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-code" />
-</svg>
-<svg class="icon icon-check" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-check" />
-</svg>
-<svg class="icon icon-circle-fill" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-circle-fill" />
-</svg>
-<svg class="icon icon-clock" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-clock" />
-</svg>
-<svg class="icon icon-copy" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy" />
-</svg>
-<svg class="icon icon-device-desktop" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-device-desktop" />
-</svg>
-<svg class="icon icon-emoji-sad" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-emoji-sad" />
-</svg>
-<svg class="icon icon-envelope" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-envelope" />
-</svg>
-<svg class="icon icon-exclamation-triangle" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
-</svg>
-<svg class="icon icon-facebook" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-facebook" />
-</svg>
-<svg class="icon icon-file" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-file" />
-</svg>
-<svg class="icon icon-fold-down" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-fold-down" />
-</svg>
-<svg class="icon icon-fold-up" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-fold-up" />
-</svg>
-<svg class="icon icon-folder" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-folder" />
-</svg>
-<svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-folder-open" />
-</svg>
-<svg class="icon icon-github" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-github" />
-</svg>
-<svg class="icon icon-hash" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-hash" />
-</svg>
-<svg class="icon icon-history" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-history" />
-</svg>
-<svg class="icon icon-home" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-home" />
-</svg>
-<svg class="icon icon-info-circle" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-info-circle" />
-</svg>
-<svg class="icon icon-instagram" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-instagram" />
-</svg>
-<svg class="icon icon-link" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-link" />
-</svg>
-<svg class="icon icon-list" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-list" />
-</svg>
-<svg class="icon icon-linkedin" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-linkedin" />
-</svg>
-<svg class="icon icon-moon" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-moon" />
-</svg>
-<svg class="icon icon-sun" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-sun" />
-</svg>
-<svg class="icon icon-tag" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-tag" />
-</svg>
-<svg class="icon icon-telegram" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-telegram" />
-</svg>
-<svg class="icon icon-times" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-times" />
-</svg>
-<svg class="icon icon-twitter" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-twitter" />
-</svg>
-<svg class="icon icon-whatsapp" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-whatsapp" />
-</svg>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-17T20:13:36+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="introduction">Introduction</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-18T18:48:21+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-17T20:13:36+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="introduction">Introduction</h2>
 
 <p>CSS Grid is one of the most powerful tools for building web layouts. In this article, we’ll explore all the fundamentals, from basic to advanced usage.</p>
 
@@ -1063,4 +660,407 @@ H<sub>2</sub>O and E = mc<sup>2</sup></p>
       <p>This is the another footnote content. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="typography" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.]]></summary></entry></feed>
+</div>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="typography" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.]]></summary></entry><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2023/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2023-06-16T18:20:00+05:30</published><updated>2025-06-18T18:47:51+05:30</updated><id>https://shivam091.github.io/post/2023/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2023/06/16/components"><![CDATA[<h2 id="codeblocks">Codeblocks</h2>
+
+<div class="code-block" tabindex="0" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      Ruby
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="code"><pre><span class="c1"># Gemfile</span>
+<span class="n">gem</span> <span class="s1">'httparty'</span>
+
+<span class="c1"># app/services/weather_api.rb</span>
+<span class="nb">require</span> <span class="s1">'httparty'</span>
+
+<span class="k">class</span> <span class="nc">WeatherApi</span>
+  <span class="no">API_KEY</span> <span class="o">=</span> <span class="s1">'your_api_key'</span>
+  <span class="no">BASE_URL</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather'</span>
+
+  <span class="k">def</span> <span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">BASE_URL</span><span class="si">}</span><span class="s2">?q=</span><span class="si">#{</span><span class="n">city</span><span class="si">}</span><span class="s2">&amp;appid=</span><span class="si">#{</span><span class="no">API_KEY</span><span class="si">}</span><span class="s2">&amp;units=metric"</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="no">HTTParty</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="s2">"API Error: </span><span class="si">#{</span><span class="n">response</span><span class="p">.</span><span class="nf">code</span><span class="si">}</span><span class="s2">"</span> <span class="k">unless</span> <span class="n">response</span><span class="p">.</span><span class="nf">success?</span>
+    <span class="n">response</span><span class="p">.</span><span class="nf">parsed_body</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># app/controllers/weather_controller.rb</span>
+<span class="k">def</span> <span class="nf">show</span>
+  <span class="n">city</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:city</span><span class="p">]</span>
+  <span class="n">weather_data</span> <span class="o">=</span> <span class="no">WeatherApi</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+  <span class="vi">@temperature</span> <span class="o">=</span> <span class="n">weather_data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">]</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<h2 id="alerts">Alerts</h2>
+
+<h3 id="default">Default</h3>
+
+<div class="alert alert-accent" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    This is default alert.
+  </div>
+  
+</div>
+
+<h3 id="with-icon-heading-and-dismiss">With icon, heading, and dismiss</h3>
+
+<div class="alert alert-accent alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Information</h4>
+This is just for your information.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-success alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-bulb" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Heads Up!</h4>
+Your profile has been updated successfully.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-danger alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-times" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Error :(</h4>
+Failed to save your changes. Please try again.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-attention alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Attention</h4>
+This action requires confirmation.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<h3 id="with-icon-outline-and-dismiss">With icon, outline, and dismiss</h3>
+
+<div class="alert alert-accent alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined accent alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-success alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-bulb" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined success alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-danger alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-times" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined danger alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-attention alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined attention alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<h3 id="with-links">With links</h3>
+
+<div class="alert alert-accent" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h4 class="alert-heading">Information</h4>
+This is an <a href="#">important notification</a> that requires your attention.
+You can <a href="/settings">update your settings here</a>.
+An example showing the <code class="language-plaintext highlighter-rouge">warning</code> type prompt.
+  </div>
+  
+</div>
+
+<h3 id="markdown-support">Markdown support</h3>
+
+<div class="alert alert-danger" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-times" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h3 class="alert-heading" id="markdown-enabled-alert">Markdown enabled alert</h3>
+
+<p>This content is <strong>processed</strong> as <em>Markdown</em>.</p>
+
+  </div>
+  
+</div>
+
+<h2 id="icons">Icons</h2>
+
+<svg id="custom-id" class="icon icon-folder-open custom-class" width="20" height="20" role="img" aria-label="Open folder" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-folder-open" />
+</svg>
+
+<h3 id="available-icons">Available icons</h3>
+
+<svg class="icon icon-adjust" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-adjust" />
+</svg>
+<svg class="icon icon-arrow-up" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-arrow-up" />
+</svg>
+<svg class="icon icon-bulb" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-bulb" />
+</svg>
+<svg class="icon icon-calendar" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-calendar" />
+</svg>
+<svg class="icon icon-code" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-code" />
+</svg>
+<svg class="icon icon-check" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-check" />
+</svg>
+<svg class="icon icon-circle-fill" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-circle-fill" />
+</svg>
+<svg class="icon icon-clock" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-clock" />
+</svg>
+<svg class="icon icon-copy" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-copy" />
+</svg>
+<svg class="icon icon-device-desktop" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-device-desktop" />
+</svg>
+<svg class="icon icon-emoji-sad" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-emoji-sad" />
+</svg>
+<svg class="icon icon-envelope" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-envelope" />
+</svg>
+<svg class="icon icon-exclamation-triangle" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
+</svg>
+<svg class="icon icon-facebook" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-facebook" />
+</svg>
+<svg class="icon icon-file" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-file" />
+</svg>
+<svg class="icon icon-fold-down" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-fold-down" />
+</svg>
+<svg class="icon icon-fold-up" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-fold-up" />
+</svg>
+<svg class="icon icon-folder" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-folder" />
+</svg>
+<svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-folder-open" />
+</svg>
+<svg class="icon icon-github" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-github" />
+</svg>
+<svg class="icon icon-hash" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-hash" />
+</svg>
+<svg class="icon icon-history" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-history" />
+</svg>
+<svg class="icon icon-home" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-home" />
+</svg>
+<svg class="icon icon-info-circle" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+<svg class="icon icon-instagram" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-instagram" />
+</svg>
+<svg class="icon icon-link" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-link" />
+</svg>
+<svg class="icon icon-list" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-list" />
+</svg>
+<svg class="icon icon-linkedin" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-linkedin" />
+</svg>
+<svg class="icon icon-moon" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-moon" />
+</svg>
+<svg class="icon icon-sun" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-sun" />
+</svg>
+<svg class="icon icon-tag" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-tag" />
+</svg>
+<svg class="icon icon-telegram" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-telegram" />
+</svg>
+<svg class="icon icon-times" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-times" />
+</svg>
+<svg class="icon icon-twitter" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-twitter" />
+</svg>
+<svg class="icon icon-whatsapp" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-whatsapp" />
+</svg>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry></feed>
