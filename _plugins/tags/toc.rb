@@ -13,6 +13,7 @@ module Jekyll
       content = page["content"]
 
       return "" unless content
+      return unless page["toc"]
 
       @min_level = page["toc_min"]&.to_i || 2
       @max_level = page["toc_max"]&.to_i || 3
