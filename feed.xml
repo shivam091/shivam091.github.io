@@ -1,477 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-19T08:02:22+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-06-17T20:13:36+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="introduction">Introduction</h2>
-
-<p>CSS Grid is one of the most powerful tools for building web layouts. In this article, we’ll explore all the fundamentals, from basic to advanced usage.</p>
-
-<h2 id="why-css-grid">Why CSS grid?</h2>
-
-<p>Grid allows you to design complex layouts using rows and columns with minimal code. Unlike flexbox, which is one-dimensional, grid is two-dimensional. This makes CSS Grid extremely powerful for both horizontal and vertical layout management.</p>
-
-<h2 id="basic-terminology">Basic terminology</h2>
-
-<ul>
-  <li><strong>Grid Container</strong>: The parent element where grid is applied.</li>
-  <li><strong>Grid Item</strong>: The children of the grid container.</li>
-  <li><strong>Grid Line</strong>: The lines dividing the grid tracks.</li>
-  <li><strong>Grid Track</strong>: The space between two grid lines (either row or column).</li>
-  <li><strong>Grid Cell</strong>: The intersection of a grid row and a grid column.</li>
-</ul>
-
-<h2 id="css-grid-properties">CSS grid properties</h2>
-
-<p>Here are some of the most commonly used properties for defining a grid layout:</p>
-
-<ul>
-  <li><strong>display: grid;</strong> - Turns the container into a grid layout.</li>
-  <li><strong>grid-template-columns</strong> - Defines the number and size of columns.</li>
-  <li><strong>grid-template-rows</strong> - Defines the number and size of rows.</li>
-  <li><strong>gap</strong> - Specifies the space between rows and columns in the grid.</li>
-  <li><strong>grid-column</strong> - Defines how many columns an item will span.</li>
-  <li><strong>grid-row</strong> - Defines how many rows an item will span.</li>
-</ul>
-
-<h3 id="grid-layout-example">Grid layout example</h3>
-
-<p>Here’s an example of a simple 3-column grid layout:</p>
-
-<div class="code-block" tabindex="0" data-copy-code="">
-  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
-    <div class="code-block-button-group" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-    </div>
-    <div class="code-lang" id="code-lang-label">
-      <svg role="img" aria-hidden="true" focusable="false">
-        <use href="/assets/img/sprite.svg#icon-code" />
-      </svg>
-      <span class="visually-hidden">Code language:</span>
-      CSS
-    </div>
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
-      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-copy" />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
-  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span> <span class="c">/* 3 equal columns */</span>
-  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* Space between columns and rows */</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-</div>
-
-<p>This layout has 3 columns of equal width (<code class="language-text highlighter-rouge">1fr</code> stands for 1 fraction of the available space), and there’s a gap of <code class="language-text highlighter-rouge">1rem</code> between both rows and columns.</p>
-
-<h3 id="understanding-fr-fractional-units">Understanding <code class="language-text highlighter-rouge">fr</code> (Fractional Units)</h3>
-
-<p>The <code class="language-text highlighter-rouge">fr</code> unit is a flexible length unit that allows us to create responsive grids. It distributes available space in a grid container proportionally.
-In the example above, <code class="language-text highlighter-rouge">1fr</code> means each column will take up an equal share of the available space.</p>
-
-<div class="code-block" tabindex="0" data-copy-code="">
-  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
-    <div class="code-block-button-group" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-    </div>
-    <div class="code-lang" id="code-lang-label">
-      <svg role="img" aria-hidden="true" focusable="false">
-        <use href="/assets/img/sprite.svg#icon-code" />
-      </svg>
-      <span class="visually-hidden">Code language:</span>
-      CSS
-    </div>
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
-      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-copy" />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
-  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* First column takes 2/3 of the space, second takes 1/3 */</span>
-  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-</div>
-
-<p>In the above code, the first column will take up 2 fractions of the available space, and the second will take 1 fraction.
-The total available space is divided into 3 parts, with the first column getting 2 parts and the second getting 1.</p>
-
-<h3 id="other-useful-properties">Other useful properties</h3>
-
-<p><strong>grid-template-areas</strong> - Defines a grid using named areas. This can make positioning easier.</p>
-<div class="code-block" tabindex="0" data-copy-code="">
-  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
-    <div class="code-block-button-group" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-    </div>
-    <div class="code-lang" id="code-lang-label">
-      <svg role="img" aria-hidden="true" focusable="false">
-        <use href="/assets/img/sprite.svg#icon-code" />
-      </svg>
-      <span class="visually-hidden">Code language:</span>
-      CSS
-    </div>
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
-      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-copy" />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
-  <span class="nl">grid-template-areas</span><span class="p">:</span>
-    <span class="s1">"header header header"</span>
-    <span class="s1">"main main sidebar"</span>
-    <span class="s1">"footer footer footer"</span><span class="p">;</span>
-  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-</div>
-
-<p><strong>justify-items</strong> - Aligns items horizontally within their grid cell.</p>
-<div class="code-block" tabindex="0" data-copy-code="">
-  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
-    <div class="code-block-button-group" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-    </div>
-    <div class="code-lang" id="code-lang-label">
-      <svg role="img" aria-hidden="true" focusable="false">
-        <use href="/assets/img/sprite.svg#icon-code" />
-      </svg>
-      <span class="visually-hidden">Code language:</span>
-      CSS
-    </div>
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
-      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-copy" />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
-  <span class="nl">justify-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* Centers grid items horizontally */</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-</div>
-
-<p><strong>align-items</strong> - Aligns items vertically within their grid cell.</p>
-<div class="code-block" tabindex="0" data-copy-code="">
-  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
-    <div class="code-block-button-group" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-    </div>
-    <div class="code-lang" id="code-lang-label">
-      <svg role="img" aria-hidden="true" focusable="false">
-        <use href="/assets/img/sprite.svg#icon-code" />
-      </svg>
-      <span class="visually-hidden">Code language:</span>
-      CSS
-    </div>
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
-      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-copy" />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
-  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* Centers grid items vertically */</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-</div>
-
-<p><strong>justify-self</strong> - Aligns a specific grid item horizontally within its grid cell.</p>
-<div class="code-block" tabindex="0" data-copy-code="">
-  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
-    <div class="code-block-button-group" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-    </div>
-    <div class="code-lang" id="code-lang-label">
-      <svg role="img" aria-hidden="true" focusable="false">
-        <use href="/assets/img/sprite.svg#icon-code" />
-      </svg>
-      <span class="visually-hidden">Code language:</span>
-      CSS
-    </div>
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
-      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-copy" />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="code"><pre><span class="nc">.item</span> <span class="p">{</span>
-  <span class="nl">justify-self</span><span class="p">:</span> <span class="nb">end</span><span class="p">;</span> <span class="c">/* Aligns this specific item to the right */</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-</div>
-
-<p><strong>align-self</strong> - Aligns a specific grid item vertically within its grid cell.</p>
-<div class="code-block" tabindex="0" data-copy-code="">
-  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
-    <div class="code-block-button-group" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-    </div>
-    <div class="code-lang" id="code-lang-label">
-      <svg role="img" aria-hidden="true" focusable="false">
-        <use href="/assets/img/sprite.svg#icon-code" />
-      </svg>
-      <span class="visually-hidden">Code language:</span>
-      CSS
-    </div>
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
-      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-copy" />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="code"><pre><span class="nc">.item</span> <span class="p">{</span>
-  <span class="nl">align-self</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span> <span class="c">/* Aligns this specific item to the top */</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-</div>
-
-<h3 id="responsive-design-with-css-grid">Responsive design with CSS grid</h3>
-
-<p>CSS Grid makes responsive design easier than ever. You can modify your grid layout based on screen size using media queries.</p>
-
-<div class="code-block" tabindex="0" data-copy-code="">
-  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
-    <div class="code-block-button-group" aria-hidden="true">
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
-        <use href="/assets/img/sprite.svg#icon-circle-fill" />
-      </svg>
-    </div>
-    <div class="code-lang" id="code-lang-label">
-      <svg role="img" aria-hidden="true" focusable="false">
-        <use href="/assets/img/sprite.svg#icon-code" />
-      </svg>
-      <span class="visually-hidden">Code language:</span>
-      CSS
-    </div>
-    <div class="code-actions">
-      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-hash" />
-        </svg>
-      </button>
-      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-copy" />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
-  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span>
-  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nc">.grid</span> <span class="p">{</span>
-    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* Stack columns on small screens */</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-</div>
-
-<p>In this example, the grid has 3 columns on larger screens, but on screens smaller than <code class="language-text highlighter-rouge">768px</code>, the grid switches to 1 column.</p>
-
-<h2 id="common-css-grid-properties">Common CSS grid properties</h2>
-
-<p>Here’s a simple table summarizing key grid properties:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>grid-template-columns</td>
-      <td>Defines column structure</td>
-    </tr>
-    <tr>
-      <td>grid-template-rows</td>
-      <td>Defines row structure</td>
-    </tr>
-    <tr>
-      <td>gap</td>
-      <td>Space between items</td>
-    </tr>
-    <tr>
-      <td>grid-template-areas</td>
-      <td>Defines named areas for grid items</td>
-    </tr>
-    <tr>
-      <td>justify-items</td>
-      <td>Aligns grid items horizontally</td>
-    </tr>
-    <tr>
-      <td>align-items</td>
-      <td>Aligns grid items vertically</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>CSS Grid makes layout development more accessible and powerful. By understanding and utilizing its properties, you can create complex layouts with minimal code. Mastering CSS Grid will significantly improve your UI skills, especially when dealing with complex designs.</p>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="css" /><category term="css" /><category term="grid" /><summary type="html"><![CDATA[CSS Grid is one of the most powerful tools for building web layouts.]]></summary></entry><entry><title type="html">Text and Typography</title><link href="https://shivam091.github.io/post/2025/05/31/typography" rel="alternate" type="text/html" title="Text and Typography" /><published>2025-05-31T01:00:00+05:30</published><updated>2025-06-16T19:10:40+05:30</updated><id>https://shivam091.github.io/post/2025/05/31/typography</id><content type="html" xml:base="https://shivam091.github.io/post/2025/05/31/typography"><![CDATA[<h2 id="headings">Headings</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-19T10:24:11+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Text and Typography</title><link href="https://shivam091.github.io/post/2025/05/31/typography" rel="alternate" type="text/html" title="Text and Typography" /><published>2025-05-31T01:00:00+05:30</published><updated>2025-06-16T19:10:40+05:30</updated><id>https://shivam091.github.io/post/2025/05/31/typography</id><content type="html" xml:base="https://shivam091.github.io/post/2025/05/31/typography"><![CDATA[<h2 id="headings">Headings</h2>
 
 <h1 id="h1-heading-usually-reserved-for-post-title">H1 Heading (usually reserved for post title)</h1>
 <h2 id="h2-heading">H2 Heading</h2>
@@ -1063,4 +590,477 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
 </svg>
 <svg class="icon icon-whatsapp" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-whatsapp" />
-</svg>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry></feed>
+</svg>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2023/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2023-06-07T18:40:00+05:30</published><updated>2025-06-19T10:23:43+05:30</updated><id>https://shivam091.github.io/post/2023/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2023/06/07/understanding-css-grid"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<p>CSS Grid is one of the most powerful tools for building web layouts. In this article, we’ll explore all the fundamentals, from basic to advanced usage.</p>
+
+<h2 id="why-css-grid">Why CSS grid?</h2>
+
+<p>Grid allows you to design complex layouts using rows and columns with minimal code. Unlike flexbox, which is one-dimensional, grid is two-dimensional. This makes CSS Grid extremely powerful for both horizontal and vertical layout management.</p>
+
+<h2 id="basic-terminology">Basic terminology</h2>
+
+<ul>
+  <li><strong>Grid Container</strong>: The parent element where grid is applied.</li>
+  <li><strong>Grid Item</strong>: The children of the grid container.</li>
+  <li><strong>Grid Line</strong>: The lines dividing the grid tracks.</li>
+  <li><strong>Grid Track</strong>: The space between two grid lines (either row or column).</li>
+  <li><strong>Grid Cell</strong>: The intersection of a grid row and a grid column.</li>
+</ul>
+
+<h2 id="css-grid-properties">CSS grid properties</h2>
+
+<p>Here are some of the most commonly used properties for defining a grid layout:</p>
+
+<ul>
+  <li><strong>display: grid;</strong> - Turns the container into a grid layout.</li>
+  <li><strong>grid-template-columns</strong> - Defines the number and size of columns.</li>
+  <li><strong>grid-template-rows</strong> - Defines the number and size of rows.</li>
+  <li><strong>gap</strong> - Specifies the space between rows and columns in the grid.</li>
+  <li><strong>grid-column</strong> - Defines how many columns an item will span.</li>
+  <li><strong>grid-row</strong> - Defines how many rows an item will span.</li>
+</ul>
+
+<h3 id="grid-layout-example">Grid layout example</h3>
+
+<p>Here’s an example of a simple 3-column grid layout:</p>
+
+<div class="code-block" tabindex="0" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span> <span class="c">/* 3 equal columns */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* Space between columns and rows */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p>This layout has 3 columns of equal width (<code class="language-text highlighter-rouge">1fr</code> stands for 1 fraction of the available space), and there’s a gap of <code class="language-text highlighter-rouge">1rem</code> between both rows and columns.</p>
+
+<h3 id="understanding-fr-fractional-units">Understanding <code class="language-text highlighter-rouge">fr</code> (Fractional Units)</h3>
+
+<p>The <code class="language-text highlighter-rouge">fr</code> unit is a flexible length unit that allows us to create responsive grids. It distributes available space in a grid container proportionally.
+In the example above, <code class="language-text highlighter-rouge">1fr</code> means each column will take up an equal share of the available space.</p>
+
+<div class="code-block" tabindex="0" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* First column takes 2/3 of the space, second takes 1/3 */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p>In the above code, the first column will take up 2 fractions of the available space, and the second will take 1 fraction.
+The total available space is divided into 3 parts, with the first column getting 2 parts and the second getting 1.</p>
+
+<h3 id="other-useful-properties">Other useful properties</h3>
+
+<p><strong>grid-template-areas</strong> - Defines a grid using named areas. This can make positioning easier.</p>
+<div class="code-block" tabindex="0" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-areas</span><span class="p">:</span>
+    <span class="s1">"header header header"</span>
+    <span class="s1">"main main sidebar"</span>
+    <span class="s1">"footer footer footer"</span><span class="p">;</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p><strong>justify-items</strong> - Aligns items horizontally within their grid cell.</p>
+<div class="code-block" tabindex="0" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">justify-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* Centers grid items horizontally */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p><strong>align-items</strong> - Aligns items vertically within their grid cell.</p>
+<div class="code-block" tabindex="0" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* Centers grid items vertically */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p><strong>justify-self</strong> - Aligns a specific grid item horizontally within its grid cell.</p>
+<div class="code-block" tabindex="0" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">justify-self</span><span class="p">:</span> <span class="nb">end</span><span class="p">;</span> <span class="c">/* Aligns this specific item to the right */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p><strong>align-self</strong> - Aligns a specific grid item vertically within its grid cell.</p>
+<div class="code-block" tabindex="0" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">align-self</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span> <span class="c">/* Aligns this specific item to the top */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<h3 id="responsive-design-with-css-grid">Responsive design with CSS grid</h3>
+
+<p>CSS Grid makes responsive design easier than ever. You can modify your grid layout based on screen size using media queries.</p>
+
+<div class="code-block" tabindex="0" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.grid</span> <span class="p">{</span>
+    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* Stack columns on small screens */</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p>In this example, the grid has 3 columns on larger screens, but on screens smaller than <code class="language-text highlighter-rouge">768px</code>, the grid switches to 1 column.</p>
+
+<h2 id="common-css-grid-properties">Common CSS grid properties</h2>
+
+<p>Here’s a simple table summarizing key grid properties:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>grid-template-columns</td>
+      <td>Defines column structure</td>
+    </tr>
+    <tr>
+      <td>grid-template-rows</td>
+      <td>Defines row structure</td>
+    </tr>
+    <tr>
+      <td>gap</td>
+      <td>Space between items</td>
+    </tr>
+    <tr>
+      <td>grid-template-areas</td>
+      <td>Defines named areas for grid items</td>
+    </tr>
+    <tr>
+      <td>justify-items</td>
+      <td>Aligns grid items horizontally</td>
+    </tr>
+    <tr>
+      <td>align-items</td>
+      <td>Aligns grid items vertically</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>CSS Grid makes layout development more accessible and powerful. By understanding and utilizing its properties, you can create complex layouts with minimal code. Mastering CSS Grid will significantly improve your UI skills, especially when dealing with complex designs.</p>]]></content><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><category term="css" /><category term="css" /><category term="grid" /><summary type="html"><![CDATA[CSS Grid is one of the most powerful tools for building web layouts.]]></summary></entry></feed>
