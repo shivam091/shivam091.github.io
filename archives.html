@@ -1,0 +1,37 @@
+---
+layout: page
+title: Archives
+permalink: /archives
+---
+
+{%- assign posts_by_year = site.posts | group_by_exp: "post", "post.published_at | date: '%Y'" -%}
+
+<div class="timeline-wrapper" role="list">
+  <div class="timeline">
+    {% for year in posts_by_year %}
+      <div class="timeline-year" role="group" aria-labelledby="year-{{ year.name }}">
+        <h2 id="year-{{ year.name }}" class="timeline-left">
+          <span class="visually-hidden">Year:</span>
+          {{ year.name }}
+        </h2>
+        <div class="timeline-seperator"></div>
+      </div>
+      <ul class="timeline-posts" role="list" aria-labelledby="year-{{ year.name }}">
+        <li class="visually-hidden" role="presentation">Posts for year {{ year.name }}</li>
+        {% for post in year.items %}
+          {%- assign published_at = post.published_at -%}
+          <li class="timeline-post" role="listitem">
+            <div class="timeline-left">
+              <span class="visually-hidden">Published on:</span>
+              {% timestamp {{published_at}}, tooltip:true, format:"%d %b", label:"Published on {{ published_at | date: "%B %d, %Y" }} at {{ published_at | date: '%I:%M %p' }}" %}
+            </div>
+            <div class="timeline-seperator"></div>
+            <div class="timeline-right">
+              <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+</div>
