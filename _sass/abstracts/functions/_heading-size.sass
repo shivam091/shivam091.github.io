@@ -1,0 +1,9 @@
+@function heading-size($i)
+  $min: 0.9rem + (5 - $i) * 0.15rem
+  $max: 1.05rem + (5 - $i) * 0.2rem
+
+  @if $i == 1
+    $min: 1.5rem
+    $max: 2.25rem
+
+  @return clamp(#{$min}, #{0.4 + (6 - $i) * 0.6}vw, #{$max})
