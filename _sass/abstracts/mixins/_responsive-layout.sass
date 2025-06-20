@@ -1,7 +1,7 @@
 @mixin sidebar-responsive-layout
   margin-left: var(--layout-offset-lg)
-  transition: margin-left var(--sidebar-transition-duration) ease
-  will-change: margin-left
+  transition: transform var(--sidebar-transition-duration) ease
+  will-change: transform
 
   @media (max-width: 1024px)
     margin-left: var(--layout-offset-md)
@@ -10,4 +10,4 @@
     margin-left: 0
 
   body[data-sidebar="open"] &
-    margin-left: var(--layout-offset-sm)
+    transform: translateX(var(--layout-offset-sm))

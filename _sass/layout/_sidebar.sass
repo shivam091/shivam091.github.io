@@ -7,23 +7,20 @@
   top: 0
   left: 0
   width: var(--layout-offset-lg)
-  height: 100vh
-  background-image: url("./../assets/img/my-profile-img.png")
-  background-position: center center
-  background-repeat: no-repeat
-  background-size: cover
-  color: var(--fgColor-white)
+  height: 100%
+  background: radial-gradient(circle, var(--bgColor-muted) 0%, var(--bgColor-default) 100%)
+  color: var(--fgColor-default)
+  box-shadow: var(--shadow-floating-small)
   z-index: 999
   padding-top: calc(env(safe-area-inset-top) + 1rem)
   padding-bottom: calc(env(safe-area-inset-bottom) + 1rem)
-  box-sizing: border-box
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5)
-  max-height: 100vh
   transform: translateX(0)
-  transition: transform 0.3s ease
-  will-change: transform
-
-  @include overlay(rgba(0, 0, 0, 0.6))
+  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease
+  will-change: background, color, box-shadow, transform
+  backdrop-filter: blur(6px)
+  -webkit-backdrop-filter: blur(6px)
+  scrollbar-width: none
+  overflow-y: auto
 
   @media (max-width: 1024px)
     width: var(--layout-offset-md)
@@ -65,14 +62,13 @@
 .site-title
   font-size: clamp(1.0625rem, 2vw, 1.375rem)
   font-weight: 700
-  color: var(--fgColor-onEmphasis)
   margin: 0.5rem 0
   letter-spacing: 0.5px
 
 .site-subtitle
   font-size: clamp(0.8125rem, 1.25vw, 0.9375rem)
   font-style: italic
-  color: var(--fgColor-onEmphasis)
+  color: var(--fgColor-muted)
   margin-bottom: 1rem
   filter: brightness(0.7)
 
@@ -105,7 +101,7 @@
     padding: 0rem 0.25rem
 
 .sidebar-nav-link
-  color: var(--fgColor-onEmphasis)
+  color: var(--fgColor-default)
   padding: 0.75rem 1rem
   display: inline-flex
   align-items: center
@@ -117,7 +113,7 @@
 
   &:hover,
   &:focus-visible
-    color: var(--fgColor-white)
+    color: var(--fgColor-default)
     background-color: hsla(0, 0%, 100%, .1)
     border-left: 2px solid var(--borderColor-accent-emphasis)
     text-decoration: none
@@ -187,11 +183,11 @@
   text-align: center
 
   .bottom-link
-    color: var(--fgColor-onEmphasis)
+    color: var(--fgColor-default)
 
     &:hover,
     &:focus-visible
-      color: var(--fgColor-white)
+      color: var(--fgColor-default)
       text-decoration: none
 
 .theme-switcher
