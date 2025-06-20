@@ -1,6 +1,6 @@
 @mixin sidebar-responsive-layout
   margin-left: var(--layout-offset-lg)
-  transition: margin-left 0.3s ease
+  transition: margin-left var(--sidebar-transition-duration) ease
   will-change: margin-left
 
   @media (max-width: 1024px)
