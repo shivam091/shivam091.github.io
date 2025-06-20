@@ -7,7 +7,7 @@
   box-shadow: var(--shadow-floating-legacy)
   padding: 0.25rem 0.5rem
   border-radius: 0.25rem
-  font-size: 0.75rem
+  font-size: clamp(0.6875rem, 0.9vw, 0.75rem)
   z-index: 1000
   pointer-events: none
   opacity: 0
@@ -31,5 +31,4 @@
 
   @media (max-width: 768px)
     max-width: 180px
-    font-size: 0.7rem
     padding: 0.25rem 0.4rem
