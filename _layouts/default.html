@@ -5,19 +5,27 @@
   {% include head-scripts.html %}
 </head>
 <body>
-  {% include progress-bar.html %}
-  {% include skip-link.html %}
+  <div id="progress-bar"></div>
+
+  <a href="#main-content" class="skip-link" id="skip-link" role="link">Skip to main content</a>
+
   {% include sidebar.html %}
 
-  <main id="main-content" class="main-content" role="main" tabindex="-1">
-    <div class="container">
-      {{ content }}
-    </div>
-  </main>
+  <div class="page-wrapper">
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+      <div class="container">
+        {{ content }}
+      </div>
+    </main>
 
-  {% include footer.html %}
+    {% include footer.html %}
+  </div>
 
-  {% include scroll-top.html %}
+  <button type="button" id="scroll-top" class="btn btn-primary scroll-top" aria-label="Scroll to top" data-scroll-top>
+   {% icon arrow-up %}
+  </button>
+
+  <div id="mask"></div>
 
   {% include scripts.html %}
 </body>

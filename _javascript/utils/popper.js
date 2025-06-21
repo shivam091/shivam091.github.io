@@ -13,7 +13,8 @@ export function createInstance(target, popperElement, options = {}) {
   const defaultOptions = {
     placement: options.placement || "top",
     modifiers: options.modifiers || defaultModifiers,
-    boundary: options.boundary || "viewport"
+    boundary: options.boundary || "viewport",
+    strategy: "fixed",
   };
   const instance = createPopper(target, popperElement, defaultOptions);
 

@@ -1,6 +1,4 @@
 class SidebarToggle {
-  static TRANSITION_DELAY = 400;
-
   static get sidebarElement() {
     return document.getElementById("sidebar");
   }
@@ -9,36 +7,44 @@ class SidebarToggle {
     return document.getElementById("sidebar-toggle");
   }
 
-  static gracefullyClose() {
+  static get maskElement() {
+    return document.getElementById("mask");
+  }
+
+  static get transitionDuration() {
     const sidebar = this.sidebarElement;
-    if (!sidebar) return;
+    if (!sidebar) return 0;
 
-    sidebar.setAttribute("data-state", "close");
+    const durationStr = getComputedStyle(sidebar).getPropertyValue("--sidebar-transition-duration").trim();
 
-    setTimeout(() => {
-      if (sidebar.getAttribute("data-state") === "close") {
-        sidebar.setAttribute("data-state", "idle");
-      }
-    }, this.TRANSITION_DELAY);
+    const duration = durationStr.endsWith("ms")
+      ? parseFloat(durationStr)
+      : durationStr.endsWith("s")
+      ? parseFloat(durationStr) * 1000
+      : 0;
+
+    return duration;
+  }
+
+  static toggleSidebar() {
+    const toggleButton = this.toggleButtonElement;
+    if (!toggleButton) return;
+
+    const isOpen = document.body.getAttribute("data-sidebar") === "open";
+    const nextState = isOpen ? "close" : "open";
+
+    toggleButton.setAttribute("aria-expanded", String(nextState === "open"));
+    document.body.setAttribute("data-sidebar", nextState);
   }
 
   static initialize() {
-    const sidebar = this.sidebarElement;
     const toggleButton = this.toggleButtonElement;
+    const mask = this.maskElement;
 
-    if (!toggleButton || !sidebar) return;
+    if (!toggleButton || !mask) return;
 
-    toggleButton.addEventListener("click", () => {
-      const isOpen = sidebar.getAttribute("data-state") === "open";
-      const nextState = isOpen ? "close" : "open";
-
-      sidebar.setAttribute("data-state", nextState);
-      toggleButton.setAttribute("data-state", nextState);
-      toggleButton.setAttribute("aria-expanded", String(nextState === "open"));
-      document.body.setAttribute("data-sidebar", nextState);
-
-      if (isOpen) this.gracefullyClose();
-    });
+    toggleButton.addEventListener("click", this.toggleSidebar.bind(this));
+    mask.addEventListener("click", this.toggleSidebar.bind(this));
   }
 }
 
