@@ -23,3 +23,15 @@ hr
 [aria-disabled=true]
   box-shadow: none
   cursor: not-allowed !important
+
+#mask
+  display: none
+  position: fixed
+  inset: 0 0 0 0
+  height: 100%
+  width: 100%
+  z-index: 1
+
+  @at-root [data-sidebar="open"] &
+    @media (max-width: 768px)
+      display: block

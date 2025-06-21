@@ -1,26 +1,15 @@
-h1, h2, h3, h4, h5, h6
-  line-height: 1.3
-  font-weight: 500
-  margin-block: 1rem
-  text-rendering: optimizeLegibility
+@use "abstracts/functions/heading-size" as *
+@use "abstracts/modules/heading" as *
 
-h1
-  font-weight: 600
-  font-size: clamp(1.375em, 2.2vw + 0.9em, 1.75em)
-  border-bottom: 1px solid var(--borderColor-default)
-  padding-bottom: 0.25rem
+@for $i from 1 through 5
+  h#{$i}
+    @extend %heading
 
-h2
-  font-size: clamp(1.25em, 2vw + 0.8em, 1.5em)
+    font-size: heading-size($i)
+    scroll-margin-top: 3.5rem
 
-h3
-  font-size: clamp(1.125em, 1.7vw + 0.7em, 1.25em)
-
-h4
-  font-size: clamp(1em, 1.5vw + 0.6em, 1.125em)
-
-h5
-  font-size: clamp(0.95em, 1.2vw + 0.5em, 1em)
-
-h6
-  font-size: clamp(0.75em, 1.2vw + 0.5em, 0.85em)
+    @if $i == 1
+      font-weight: 600
+      border-bottom: 1px solid var(--borderColor-default)
+      padding-bottom: 0.25rem
+      letter-spacing: 0.5px

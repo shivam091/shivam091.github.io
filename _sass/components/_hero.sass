@@ -12,7 +12,7 @@
   align-items: center
   justify-content: center
   text-align: center
-  color: var(--fgColor-white)
+  color: var(--fgColor-onEmphasis)
   overflow: hidden
 
   @include overlay(rgba(13, 17, 23, 0.6))
@@ -36,13 +36,13 @@
     padding: 2rem 3rem
 
 .hero-title
-  font-size: clamp(1.5rem, 2.25vw, 2.5rem)
+  font-size: clamp(1.75rem, 5vw, 2.5rem)
   line-height: 1.2
   margin-bottom: 0.5rem
   border-bottom: none
 
 .hero-subtitle
-  font-size: clamp(1rem, 3vw, 1.25rem)
+  font-size: clamp(0.9375rem, 1.6vw, 1.25rem)
   line-height: 1.6
 
 .hero-highlight
@@ -64,10 +64,10 @@
 
 .hero-link
   padding: 0.5rem 1rem
-  font-size: clamp(0.9rem, 1.25vw, 1rem)
-  color: var(--fgColor-white)
+  font-size: clamp(0.875rem, 1.5vw, 1rem)
+  color: var(--fgColor-onEmphasis)
   border: 2px solid var(--borderColor-emphasis)
-  background-color: transparent
+  background-color: var(--bgColor-transparent)
   text-decoration: none
   border-radius: 6px
   display: inline-flex
@@ -81,7 +81,7 @@
   &:hover,
   &:focus-visible
     background-color: hsla(0, 0%, 100%, .1)
-    color: var(--fgColor-onEmphasis)
+    color: var(--fgColor-white)
     text-decoration: none
 
   @media (min-width: 1280px)

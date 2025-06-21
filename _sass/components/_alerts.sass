@@ -5,7 +5,7 @@ $alert-types: (success, danger, attention, accent)
   display: flex
   align-items: center
   padding: 1rem
-  border: 1px solid transparent
+  border: 1px solid var(--borderColor-transparent)
   border-radius: 0.5rem
   font-size: 0.95rem
   background-color: var(--bgColor-neutral-muted)
@@ -20,7 +20,7 @@ $alert-types: (success, danger, attention, accent)
       border-color: var(--borderColor-#{$type}-emphasis)
 
       &.alert-outlined
-        background-color: transparent
+        background-color: var(--bgColor-transparent)
         background-image: none
         color: var(--fgColor-#{$type})
         border-color: var(--borderColor-#{$type}-emphasis)
@@ -54,7 +54,7 @@ $alert-types: (success, danger, attention, accent)
       margin-bottom: 0
 
   &-dismiss
-    background-color: transparent
+    background-color: var(--bgColor-transparent)
     border: none
     color: inherit
     padding: 0
@@ -68,7 +68,7 @@ $alert-types: (success, danger, attention, accent)
 
     &:hover,
     &:focus
-      background-color: transparent
+      background-color: var(--bgColor-transparent)
 
       svg
         transform: scale(1.25)

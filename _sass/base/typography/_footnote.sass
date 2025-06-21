@@ -1,5 +1,5 @@
 .footnote
-  font-size: 0.75em
+  font-size: clamp(0.6875rem, 0.9vw, 0.75rem)
 
   &:before
     content: "["
@@ -8,7 +8,7 @@
     content: "]"
 
 .footnotes
-  font-size: clamp(0.75rem, 1vw, 0.875rem)
+  font-size: clamp(0.6875rem, 0.9vw, 0.75rem)
   color: var(--fgColor-muted)
   border-top: 1px solid var(--borderColor-default)
 
@@ -28,3 +28,12 @@
     p
       margin-block: 0.5rem
       display: inline
+
+.reversefootnote
+  @at-root a#{&}
+    font-size: 0.6rem
+    line-height: 1
+    position: relative
+    bottom: 0.25em
+    margin-left: 0.25em
+    border-bottom-style: none !important
