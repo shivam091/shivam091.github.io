@@ -1,5 +1,6 @@
 @use "abstracts/mixins/caret" as *
 @use "abstracts/mixins/icon-mask" as *
+@use "abstracts/mixins/transition-properties" as *
 
 .dropdown
   position: relative
@@ -9,20 +10,20 @@
   cursor: pointer
 
 .dropdown-menu
+  @include caret
+
   position: absolute
   display: none
   background-color: var(--color-bg-overlay)
-  border: 1px solid var(--color-border-overlay)
+  border: var(--border-width-default) solid var(--color-border-overlay)
   box-shadow: var(--box-shadow-floating-sm)
-  border-radius: 6px
+  border-radius: var(--border-radius-default)
   z-index: 999
   pointer-events: none
   list-style: none
   width: max-content
   min-width: 10rem
   padding: 0.5rem
-
-  @include caret
 
   &.show
     display: block
@@ -35,15 +36,17 @@
   align-items: center
   gap: 0.5rem
   color: var(--color-fg-control)
+  font-weight: var(--font-weight-medium)
   padding-block: 0.25rem
-  transition: background-color 0.3s ease
-  will-change: background-color
   background-color: var(--color-bg-control-transparent)
-  border-radius: 0.25rem
+  border-radius: var(--border-radius-small)
   width: 100%
   -webkit-tap-highlight-color: transparent
   text-align: left
   touch-action: manipulation
+  line-height: var(--line-height-tight)
+
+  @include transition-properties(background-color, $duration: var(--motion-duration-fast), $easing: var(--motion-easing-in-out))
 
   &:hover,
   &:focus
@@ -62,4 +65,4 @@
     transform: translateY(-50%)
     width: 18px
     height: 18px
-    @include icon-mask(var(--checkmark-svg), $color: var(--color-fg-success))
+    @include icon-mask(var(--icon-check-circle), $color: var(--color-fg-success))

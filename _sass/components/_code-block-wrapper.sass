@@ -1,9 +1,9 @@
 @use "abstracts/modules/no-cursor" as *
 
 .code-block
-  background-color: var(--color-bg-muted)
-  border: 1px solid var(--color-border-default)
-  border-radius: 0.5rem
+  background-color: var(--color-bg-default)
+  border: var(--border-default)
+  border-radius: var(--border-radius-default)
   overflow: hidden
   font-size: 0.9rem
   box-shadow: var(--box-shadow-floating-legacy)
@@ -12,13 +12,12 @@
   figure
     margin-block: 0
     border: none
+    border-radius: 0
 
     .gutter
       position: sticky
       left: 0
       text-align: right
-      background-color: var(--color-bg-muted)
-      border-right: 1px solid var(--color-border-default)
       z-index: 1
 
       @extend %no-cursor
@@ -30,8 +29,8 @@
   display: flex
   align-items: center
   justify-content: space-between
-  background-color: var(--color-bg-default)
-  border-bottom: 1px solid var(--color-border-muted)
+  background-color: var(--color-bg-muted)
+  border-bottom: var(--border-muted)
   padding: 0.5rem 1rem
 
   .code-block-button-group
@@ -42,9 +41,9 @@
     display: flex
     align-items: center
     justify-content: center
-    gap: 0.4rem
+    gap: 0.5rem
     flex-grow: 1
-    font-weight: 600
+    font-weight: var(--font-weight-medium)
     color: var(--color-fg-muted)
 
   .code-actions
@@ -71,11 +70,15 @@
     fill: var(--color-bg-success-emphasis)
 
 .gutter
+  background-color: var(--color-bg-muted)
+
   &.hidden
     display: none
 
   .lineno
     color: var(--color-fg-muted)
+    border-radius: 0
+    border-right: var(--border-default)
 
 [data-copy-code],
 [data-copy-link],

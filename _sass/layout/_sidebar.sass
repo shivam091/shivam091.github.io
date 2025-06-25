@@ -1,4 +1,5 @@
 @use "abstracts/mixins/overlay" as *
+@use "abstracts/mixins/transition-properties" as *
 
 .sidebar
   display: flex
@@ -28,8 +29,8 @@
     transform: translateX(-100%)
     opacity: 0
     pointer-events: none
-    transition: transform var(--sidebar-motion-duration) ease, opacity var(--sidebar-motion-duration) ease
-    will-change: transform, opacity
+
+    @include transition-properties((transform, opacity), $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
 
   body[data-sidebar="open"] &
     transform: translateX(0)
@@ -59,18 +60,20 @@
 
 .site-title
   font-size: clamp(1.0625rem, 2vw, 1.375rem)
-  font-weight: 700
+  font-weight: var(--font-weight-semi-bold)
   color: var(--color-fg-white)
   margin: 0.5rem 0
   letter-spacing: 0.5px
+  line-height: var(--line-height-title)
 
 .site-subtitle
   font-size: clamp(0.8125rem, 1.25vw, 0.9375rem)
   font-style: italic
-  font-weight: 500
+  font-weight: var(--font-weight-medium)
   color: var(--color-fg-white)
   margin-bottom: 1rem
   filter: brightness(0.8)
+  line-height: var(--line-height-relaxed)
 
 .sidebar-social
   margin-bottom: 1rem
@@ -86,7 +89,7 @@
 .social-icon
   width: clamp(1.75rem, 3vw, 2.25rem)
   height: clamp(1.75rem, 3vw, 2.25rem)
-  border-radius: 6px
+  border-radius: var(--border-radius-default)
   display: flex
   align-items: center
   justify-content: center
@@ -96,6 +99,7 @@
   display: flex
   flex-direction: column
   gap: 0.5rem
+  line-height: var(--line-height-tight)
 
 .sidebar-nav-link
   color: var(--color-fg-white)
@@ -103,16 +107,16 @@
   display: inline-flex
   align-items: center
   gap: 0.5rem
-  transition: background-color 0.3s ease, color 0.3s ease
-  will-change: background-color, color
-  border-radius: 0.5rem
+  border-radius: var(--border-radius-default)
   font-size: clamp(0.8125rem, 1.25vw, 0.9375rem)
+
+  @include transition-properties((background-color, color), $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
 
   &:hover,
   &:focus-visible
     color: var(--color-fg-on-emphasis)
     background-color: hsla(0, 0%, 100%, .1)
-    border-left: 2px solid var(--color-border-accent-emphasis)
+    border-left: var(--border-width-medium) solid var(--color-border-accent-emphasis)
     text-decoration: none
 
   @media (max-width: 768px)
@@ -121,12 +125,12 @@
 .sidebar-toggle
   position: fixed
   top: 0.5rem
-  right: var(--floating-button-right-offset)
+  right: 1rem
   z-index: 1010
   background-color: var(--color-bg-accent-emphasis)
   border: none
   padding: 0.75rem
-  border-radius: 50% !important
+  border-radius: var(--border-radius-full) !important
   cursor: pointer
   display: none
   width: 48px
@@ -136,8 +140,9 @@
     width: 24px
     height: 2px
     background-color: var(--color-fg-white)
-    transition: transform var(--sidebar-motion-duration) ease, opacity var(--sidebar-motion-duration) ease
     transform-origin: center
+
+    @include transition-properties((transform, opacity), $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
 
     &:first-of-type
       margin-top: 0
@@ -190,4 +195,6 @@
 .theme-switcher
   display: grid
   align-self: center
-  border-radius: 6px
+  border-radius: var(--border-radius-default)
+
+  @include transition-properties((background-color, color), $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))

@@ -1,15 +1,14 @@
 @use "abstracts/animations/scroll-top" as *
+@use "abstracts/mixins/transition-properties" as *
 
 .scroll-top
   position: fixed
   bottom: 2rem
-  right: var(--floating-button-right-offset)
+  right: 1rem
   z-index: 1000
-  transition: right 0.3s ease, background-color 0.3 ease, color 0.3s ease, border-color 0.3s ease
-  will-change: right, background-color, color, border-color
   width: 48px
   height: 48px
-  border-radius: 50%
+  border-radius: var(--border-radius-full)
   display: flex
   align-items: center
   justify-content: center
@@ -18,15 +17,17 @@
   pointer-events: none
   transform: translateY(20px)
 
+  @include transition-properties((right, background-color, color, border-color), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-in-out))
+
   @media (max-width: 768px)
     right: 1rem
 
   &[data-state="visible"]
-    animation: scrollTopBounceIn 0.4s both
+    animation: scrollTopBounceIn var(--motion-duration-slow) both
     pointer-events: auto
     opacity: 1
 
   &[data-state="hidden"]
-    animation: scrollTopBounceOut 0.4s both
+    animation: scrollTopBounceOut var(--motion-duration-slow) both
     pointer-events: none
     opacity: 0

@@ -1,25 +1,26 @@
 @use "abstracts/mixins/caret" as *
+@use "abstracts/mixins/transition-properties" as *
 
 .tooltip
+  @include caret
+
   position: absolute
   background-color: var(--color-bg-overlay)
-  border: 1px solid var(--color-border-overlay)
+  border: var(--border-width-default) solid var(--color-border-overlay)
   box-shadow: var(--box-shadow-floating-legacy)
   padding: 0.25rem 0.5rem
-  border-radius: 0.25rem
+  border-radius: var(--border-radius-default)
   font-size: clamp(0.6875rem, 0.9vw, 0.75rem)
   z-index: 1000
   pointer-events: none
   opacity: 0
   transform: scale(0.95)
-  transition: opacity 0.2s ease
   max-width: 250px
   width: max-content
   white-space: normal
   text-align: center
-  will-change: opacity
 
-  @include caret
+  @include transition-properties(opacity, $duration: var(--motion-duration-fast), $easing: var(--motion-easing-entrance))
 
   &.show
     opacity: 1

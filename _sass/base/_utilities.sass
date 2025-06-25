@@ -1,7 +1,7 @@
 @use "abstracts/mixins/clearfix" as *
 
 hr
-  border: 0
+  border: none
   height: 1px
   background: linear-gradient(to right, transparent, var(--color-border-default), transparent)
   margin: 1rem 0
@@ -11,8 +11,8 @@ hr
 
 :focus,
 :focus-visible
-  outline: 2px solid var(--color-outline-focus)
-  outline-offset: 2px
+  outline: var(--outline-focus-width) solid var(--color-outline-focus)
+  outline-offset: var(--outline-focus-offset)
 
 :focus:not(:focus-visible)
   outline: none

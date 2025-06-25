@@ -1,3 +1,5 @@
+@use "abstracts/mixins/transition-properties" as *
+
 #progress-bar
   position: fixed
   top: 0
@@ -6,10 +8,12 @@
   width: 0%
   background-color: var(--color-bg-accent-emphasis)
   z-index: 9999
-  transition: width 0.3s ease, opacity 0.5s ease
   opacity: 1
   pointer-events: none
 
+  @include transition-properties((width, opacity), $duration: var(--motion-duration-default), $easing: var(--motion-easing-in))
+
   &[data-state="done"]
     opacity: 0
-    transition: opacity 0.5s ease-in
+
+    @include transition-properties(opacity, $duration: var(--motion-duration-default), $easing: var(--motion-easing-in))

@@ -7,17 +7,21 @@ table
   overflow: auto
 
   th
-    font-weight: 600
+    font-weight: var(--font-weight-semi-bold)
+    line-height: var(--line-height-tight)
+
+  td
+    line-height: var(--line-height-snug)
 
   td,
   th
    padding: 6px 14px
-   border: 1px solid var(--color-border-default)
+   border: var(--border-default)
    text-align: inherit
 
   tr
     background-color: var(--color-bg-default)
-    border-top: 1px solid var(--color-border-muted)
+    border-top: var(--border-muted)
 
     &:nth-child(2n)
       background-color: var(--color-bg-muted)
@@ -29,7 +33,7 @@ table
 
   tr
     border-top: none
-    background-color: var(--color-bg-muted)
+    background-color: var(--color-bg-default)
 
   td
     vertical-align: top
