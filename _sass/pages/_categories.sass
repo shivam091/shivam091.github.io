@@ -25,13 +25,15 @@
   display: flex
   align-items: center
   justify-content: space-between
-  font-weight: 500
   gap: clamp(0.25rem, 1vw, 0.5rem)
 
 .category-title-group
   display: inline-flex
   align-items: center
   gap: clamp(0.25rem, 1vw, 0.5rem)
+
+.category-title
+  font-weight: 600
 
 .sub-categories
   background-color: var(--color-bg-default)
@@ -49,7 +51,7 @@
   padding-inline: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem)
   display: flex
   align-items: center
-  margin-bottom: 0
+  margin-block: 0
   gap: clamp(0.25rem, 1vw, 0.5rem)
   border-top: 1px solid var(--color-border-default)
 
@@ -63,5 +65,5 @@
 .category-meta,
 .posts-count
   color: var(--color-fg-muted)
-  font-weight: normal
-  vertical-align: bottom
+  font-weight: 400
+  vertical-align: baseline

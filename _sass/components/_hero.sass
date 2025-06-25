@@ -1,11 +1,13 @@
 @use "abstracts/modules/bg-cover" as *
 @use "abstracts/mixins/overlay" as *
+@use "abstracts/animations/fade-in-up" as *
+@use "abstracts/animations/bounce" as *
 
 .hero
   @extend %bg-cover
   position: relative
   width: 100%
-  height: 100vh
+  height: 100%
   min-height: 100dvh
   background-image: url("../assets/img/hero-bg.png")
   display: flex
@@ -13,6 +15,8 @@
   justify-content: center
   text-align: center
   color: var(--color-fg-on-emphasis)
+  flex-direction: column
+  padding: 1rem
   overflow: hidden
 
   @include overlay(rgba(13, 17, 23, 0.6))
@@ -24,26 +28,31 @@
   position: relative
   z-index: 2
   padding: clamp(1rem, 4vw, 2rem)
-  max-width: 90%
-  background-color: rgba(0, 0, 0, 0.4)
+  width: 100%
+  max-width: none
+  background: var(--color-bg-hero-content)
+  border: 1px solid var(--color-border-hero-content)
+  box-shadow: var(--box-shadow-hero-content-default)
   border-radius: 12px
+  max-inline-size: 45rem
+  margin-inline: auto
+  backdrop-filter: blur(8px) saturate(140%) contrast(120%)
+  animation: fadeInUp 700ms cubic-bezier(0.7, 0.1, 0.75, 0.9) both
 
-  @media (min-width: 768px)
-    max-width: 700px
-
-  @media (min-width: 1280px)
-    max-width: 800px
-    padding: 2rem 3rem
+  @media (max-width: 768px)
+    max-inline-size: 35rem
 
 .hero-title
   font-size: clamp(1.75rem, 5vw, 2.5rem)
   line-height: 1.2
   margin-bottom: 0.5rem
+  font-weight: 600
   border-bottom: none
 
 .hero-subtitle
   font-size: clamp(0.9375rem, 1.6vw, 1.25rem)
-  line-height: 1.6
+  font-weight: 400
+  opacity: 0.8
 
 .hero-highlight
   letter-spacing: 1px
@@ -54,13 +63,7 @@
   display: flex
   flex-wrap: wrap
   justify-content: center
-  gap: 0.5rem
-
-  @media (min-width: 768px)
-    gap: 0.75rem
-
-  @media (min-width: 1280px)
-    gap: 1rem
+  gap: clamp(0.5rem, 2vw, 1rem)
 
 .hero-link
   padding: 0.5rem 1rem
@@ -90,3 +93,21 @@
   @media (max-width: 480px)
     width: 100%
     text-align: center
+
+.scroll-indicator
+  position: absolute
+  bottom: 0
+  left: 50%
+  transform: translateX(-50%)
+  font-size: 1.5rem
+  color: var(--color-fg-white)
+
+  .animate-bounce
+    animation: bounce 1000ms cubic-bezier(0.34, 1.56, 0.64, 1) infinite
+
+  &-anchor
+    color: var(--color-fg-muted)
+
+    &:hover
+      color: var(--color-fg-link)
+      text-decoration: none
