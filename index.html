@@ -60,8 +60,7 @@
 <body>
   <div id="progress-bar"></div>
 
-  <main role="main" tabindex="-1">
-    <div class="hero" role="banner" aria-labelledby="hero-title">
+  <div class="hero" role="banner" aria-labelledby="hero-title">
   <div class="hero-content">
     <img src="/assets/img/profile-img.png" alt="Harshal LADHE" class="profile-pic" loading="lazy">
     <h1 id="hero-title" class="hero-title">Harshal LADHE</h1>
@@ -108,10 +107,34 @@
         Instagram
       </a>
     </nav>
+    <div class="scroll-indicator">
+      <a href="#main-content" class="scroll-indicator-anchor" role="link" data-skip-link aria-label="Skip to main content">
+        <div class="animate-bounce">↓</div>
+      </a>
+    </div>
   </div>
 </div>
 
-  </main>
+
+  <!-- <main id="main-content" class="main-content" role="main" tabindex="-1">
+  </main> -->
+
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+  <div class="container">
+    <div class="site-copyright">
+      <p>
+        <span>&copy;
+          2025 <strong class="site-name">Harshal LADHE</strong>,
+          <span data-tooltip="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." tabindex="0">Some rights reserved</span>.
+        </span>
+      </p>
+    </div>
+    <div class="site-credits">
+      Made with <span class="love" role="img" aria-label="love">&#10084;</span> and <a href="https://jekyllrb.com/">Jekyll</a>.
+    </div>
+  </div>
+</footer>
+
 
   <script src="/dist/app.js"></script>
 
