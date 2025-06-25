@@ -13,6 +13,15 @@
 
 /* Typography */
 @include emit-css-vars($typography)
+@include emit-css-vars($font-weights, $prefix: "font-weight")
+
+/* Border radii and widths */
+@include emit-css-vars($border-radii, $prefix: "border")
+@include emit-css-vars($border-widths, $prefix: "border")
+
+/* Motion */
+@include emit-css-vars($motion-durations, $prefix: "motion")
+@include emit-css-vars($motion-easings, $prefix: "motion")
 
 /* Themes */
 @include emit-css-vars($light, "[data-theme='light']")

@@ -1,4 +1,8 @@
+@use "abstracts/mixins/transition-properties" as *
+
 .page-title
   margin-top: 0rem
   border-color: var(--color-border-accent-emphasis)
   text-shadow: var(--text-shadow-contrast-soft)
+
+  @include transition-properties(text-shadow, $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))

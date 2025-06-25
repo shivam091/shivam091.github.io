@@ -1,5 +1,6 @@
 @use "abstracts/mixins/caret" as *
 @use "abstracts/mixins/icon-mask" as *
+@use "abstracts/mixins/transition-properties" as *
 
 .dropdown
   position: relative
@@ -12,9 +13,9 @@
   position: absolute
   display: none
   background-color: var(--color-bg-overlay)
-  border: 1px solid var(--color-border-overlay)
+  border: var(--border-width-default) solid var(--color-border-overlay)
   box-shadow: var(--box-shadow-floating-sm)
-  border-radius: 6px
+  border-radius: var(--border-radius-default)
   z-index: 999
   pointer-events: none
   list-style: none
@@ -35,15 +36,16 @@
   align-items: center
   gap: 0.5rem
   color: var(--color-fg-control)
+  font-weight: var(--font-weight-medium)
   padding-block: 0.25rem
-  transition: background-color 0.3s ease
-  will-change: background-color
   background-color: var(--color-bg-control-transparent)
-  border-radius: 0.25rem
+  border-radius: var(--border-radius-small)
   width: 100%
   -webkit-tap-highlight-color: transparent
   text-align: left
   touch-action: manipulation
+
+  @include transition-properties(background-color, $duration: var(--motion-duration-fast), $easing: var(--motion-easing-in-out))
 
   &:hover,
   &:focus

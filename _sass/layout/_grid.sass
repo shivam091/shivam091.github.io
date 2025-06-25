@@ -1,3 +1,5 @@
+@use "abstracts/mixins/transition-properties" as *
+
 .page-wrapper
   display: grid
   grid-template-rows: 1fr auto
@@ -10,8 +12,8 @@
   @media (max-width: 768px)
     margin-left: 0
     transform: translateX(0)
-    transition: transform var(--sidebar-motion-duration) ease
-    will-change: transform
+
+    @include transition-properties(transform, $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
 
     body[data-sidebar="open"] &
       transform: translateX(var(--wrapper-offset-sm))
