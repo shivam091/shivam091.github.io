@@ -1,7 +1,7 @@
 @use "abstracts/functions/heading-size" as *
 @use "abstracts/modules/heading" as *
 
-@for $i from 1 through 5
+@for $i from 1 through 6
   h#{$i}
     @extend %heading
 
@@ -9,7 +9,13 @@
     scroll-margin-top: 3.5rem
 
     @if $i == 1
-      font-weight: 600
+      font-weight: 700
       border-bottom: 1px solid var(--color-border-default)
       padding-bottom: 0.25rem
       letter-spacing: 0.5px
+    @else if $i == 2
+      font-weight: 600
+    @else if $i == 3 or $i == 4
+      font-weight: 500
+    @else
+      font-weight: 400

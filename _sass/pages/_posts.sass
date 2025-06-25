@@ -95,22 +95,15 @@
         align-items: center
         justify-content: center
         padding: clamp(0.25rem, 0.5vw, 0.5rem)
-        transition: color 0.2s
+        transition: color 0.2s ease
+        color: var(--color-fg-muted)
+
+        &:hover
+          color: var(--color-fg-default)
 
         svg
           width: clamp(1rem, 1.2vw, 1.4rem)
           height: clamp(1rem, 1.2vw, 1.4rem)
-
-        .icon-twitter
-          fill: var(--color-twitter)
-        .icon-facebook
-          fill: var(--color-facebook)
-        .icon-telegram
-          fill: var(--color-telegram)
-        .icon-linkedin
-          fill: var(--color-linkedin)
-        .icon-whatsapp
-          fill: var(--color-whatsapp)
 
     @media (max-width: 768px)
       flex-direction: column
