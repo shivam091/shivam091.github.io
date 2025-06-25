@@ -1,0 +1,18 @@
+@use "abstracts/mixins/transition-properties" as *
+
+.post-content
+  .header-anchor
+    margin-left: 0.5em
+    font-size: 0.8em
+    text-decoration: none
+    color: var(--color-fg-muted)
+    opacity: 0
+    @include transition-properties((color, opacity), $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
+
+    &:hover
+      color: var(--color-fg-link)
+
+  @for $i from 2 through 6
+    h#{$i}:hover .header-anchor,
+    h#{$i}:focus-within .header-anchor
+      opacity: 1
