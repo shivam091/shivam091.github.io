@@ -1,7 +1,2 @@
-@use "root"
-@use "theme-light" as *
-@use "theme-dark" as *
-@use "abstracts/mixins/theme-vars" as *
-
-@include theme-vars("light", $light-theme)
-@include theme-vars("dark", $dark-theme)
+@forward "light"
+@forward "dark"

@@ -1,0 +1,19 @@
+@use "abstracts/mixins/emit-css-vars" as *
+@use "abstracts/variables" as *
+@use "themes" as *
+
+/* Global tokens */
+@include emit-css-vars($global-tokens)
+
+/* Sidebar */
+@include emit-css-vars($sidebar, $prefix: "sidebar")
+
+/* Page wrapper offsets */
+@include emit-css-vars($page-wrapper-offsets, $prefix: "wrapper-offset")
+
+/* Typography */
+@include emit-css-vars($typography)
+
+/* Themes */
+@include emit-css-vars($light, "[data-theme='light']")
+@include emit-css-vars($dark, "[data-theme='dark']")

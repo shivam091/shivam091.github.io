@@ -11,9 +11,9 @@
 .dropdown-menu
   position: absolute
   display: block
-  background-color: var(--overlay-bgColor)
-  border: 1px solid var(--overlay-borderColor)
-  box-shadow: var(--shadow-floating-small)
+  background-color: var(--color-bg-overlay)
+  border: 1px solid var(--color-border-overlay)
+  box-shadow: var(--box-shadow-floating-sm)
   border-radius: 6px
   opacity: 0
   transition: opacity 0.3s ease
@@ -39,11 +39,11 @@
   grid-template-rows: max-content
   align-items: center
   gap: 0.5rem
-  color: var(--control-fgColor)
+  color: var(--color-fg-control)
   padding-block: .25rem
   transition: background-color 0.3s ease
   will-change: background-color
-  background-color: var(--control-transparent-bgColor)
+  background-color: var(--color-bg-control-transparent)
   border-radius: 0.25rem
   width: 100%
   -webkit-tap-highlight-color: transparent
@@ -52,8 +52,8 @@
 
   &:hover,
   &:focus
-    color: var(--control-fgColor)
-    background-color: var(--control-transparent-bgColor-hover)
+    color: var(--color-fg-control)
+    background-color: var(--color-bg-control-transparent-hover)
     text-decoration: none
 
 .dropdown-item-selected
@@ -67,4 +67,4 @@
     transform: translateY(-50%)
     width: 18px
     height: 18px
-    @include icon-mask(var(--checkmark-svg), $color: var(--fgColor-success))
+    @include icon-mask(var(--checkmark-svg), $color: var(--color-fg-success))

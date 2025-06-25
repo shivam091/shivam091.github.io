@@ -1,0 +1,30 @@
+@use "sass:list"
+@use "sass:string"
+
+// Generates a CSS custom property name with optional prefix and/or suffix.
+// If the `$key` starts with `--`, it will not be prefixed again.
+//
+// @param {String} $key - Main variable key (can be `--foo` or `foo`)
+// @param {String | Null} $prefix - Optional prefix
+// @param {String | Null} $suffix - Optional suffix
+// @return {String} Custom property name like `--prefix-key-suffix`
+@function css-var-name($key, $prefix: null, $suffix: null)
+  $stripped-key: if(string.slice($key, 1, 2) == "--", string.slice($key, 3), $key)
+
+  $parts: ()
+
+  @if $prefix != null
+    $parts: list.append($parts, $prefix, comma)
+
+  $parts: list.append($parts, $stripped-key, comma)
+
+  @if $suffix != null
+    $parts: list.append($parts, $suffix, comma)
+
+  $result: "--"
+
+  @for $i from 1 through list.length($parts)
+    $part: list.nth($parts, $i)
+    $result: $result + if($i > 1, "-", "") + $part
+
+  @return string.unquote($result)

@@ -15,7 +15,7 @@ class SidebarToggle {
     const sidebar = this.sidebarElement;
     if (!sidebar) return 0;
 
-    const durationStr = getComputedStyle(sidebar).getPropertyValue("--sidebar-transition-duration").trim();
+    const durationStr = getComputedStyle(sidebar).getPropertyValue("--sidebar-motion-duration").trim();
 
     const duration = durationStr.endsWith("ms")
       ? parseFloat(durationStr)

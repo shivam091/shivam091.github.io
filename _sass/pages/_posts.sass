@@ -5,7 +5,7 @@
   @extend %no-cursor
 
   h2
-    border-bottom: 1px solid var(--borderColor-default)
+    border-bottom: 1px solid var(--color-border-default)
     padding-bottom: 0.25rem
 
 .posts
@@ -17,9 +17,9 @@
 
   .post
     padding: clamp(1rem, 2.5vw, 1.5rem)
-    background-color: var(--bgColor-default)
+    background-color: var(--color-bg-default)
     border-radius: 0.5rem
-    border: 1px solid var(--borderColor-default)
+    border: 1px solid var(--color-border-default)
     display: flex
     flex-direction: column
     gap: clamp(0.5rem, 1vw, 0.75rem)
@@ -40,7 +40,7 @@
 
   .post-excerpt
     margin: 0
-    color: var(--fgColor-muted)
+    color: var(--color-fg-muted)
   .post-footer
     margin-top: 0
 
@@ -50,7 +50,7 @@
   align-items: center
   gap: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 1.5rem)
   font-size: clamp(0.8125rem, 1.2vw, 0.9375rem)
-  color: var(--fgColor-muted)
+  color: var(--color-fg-muted)
 
   > div
     display: inline-flex
@@ -68,11 +68,11 @@
 .post-footer
   margin-top: clamp(2rem, 5vw, 3rem)
   font-size: clamp(0.85rem, 1vw, 1rem)
-  color: var(--fgColor-muted)
+  color: var(--color-fg-muted)
 
   .post-author
     span[itemprop="name"]
-      color: var(--fgColor-default)
+      color: var(--color-fg-default)
       font-weight: 500
 
   .post-footer-bottom

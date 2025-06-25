@@ -1,7 +1,7 @@
 .categories-list
   .category
     margin-bottom: 1rem
-    border: 1px solid var(--borderColor-default)
+    border: 1px solid var(--color-border-default)
     border-radius: 0.5rem
     overflow: hidden
     transition: box-shadow 0.3s ease
@@ -18,7 +18,7 @@
       will-change: transform
 
 .category-header
-  background-color: var(--bgColor-muted)
+  background-color: var(--color-bg-muted)
   padding-block: clamp(0.25rem, 1vw, 0.5rem)
   padding-inline: clamp(0.5rem, 2vw, 1rem)
   width: 100%
@@ -34,7 +34,7 @@
   gap: clamp(0.25rem, 1vw, 0.5rem)
 
 .sub-categories
-  background-color: var(--bgColor-default)
+  background-color: var(--color-bg-default)
   display: none
   overflow: hidden
   max-height: 0
@@ -51,10 +51,10 @@
   align-items: center
   margin-bottom: 0
   gap: clamp(0.25rem, 1vw, 0.5rem)
-  border-top: 1px solid var(--borderColor-default)
+  border-top: 1px solid var(--color-border-default)
 
   &:hover
-    background-color: var(--bgColor-muted)
+    background-color: var(--color-bg-muted)
 
 .btn-category-toggle
   display: flex
@@ -62,6 +62,6 @@
 
 .category-meta,
 .posts-count
-  color: var(--fgColor-muted)
+  color: var(--color-fg-muted)
   font-weight: normal
   vertical-align: bottom

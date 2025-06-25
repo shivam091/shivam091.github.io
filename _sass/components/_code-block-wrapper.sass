@@ -1,12 +1,12 @@
 @use "abstracts/modules/no-cursor" as *
 
 .code-block
-  background-color: var(--bgColor-muted)
-  border: 1px solid var(--borderColor-default)
+  background-color: var(--color-bg-muted)
+  border: 1px solid var(--color-border-default)
   border-radius: 0.5rem
   overflow: hidden
   font-size: 0.9rem
-  box-shadow: var(--shadow-floating-legacy)
+  box-shadow: var(--box-shadow-floating-legacy)
   margin-bottom: 1.5rem
 
   figure
@@ -17,8 +17,8 @@
       position: sticky
       left: 0
       text-align: right
-      background-color: var(--bgColor-muted)
-      border-right: 1px solid var(--borderColor-default)
+      background-color: var(--color-bg-muted)
+      border-right: 1px solid var(--color-border-default)
       z-index: 1
 
       @extend %no-cursor
@@ -30,8 +30,8 @@
   display: flex
   align-items: center
   justify-content: space-between
-  background-color: var(--bgColor-default)
-  border-bottom: 1px solid var(--borderColor-muted)
+  background-color: var(--color-bg-default)
+  border-bottom: 1px solid var(--color-border-muted)
   padding: 0.5rem 1rem
 
   .code-block-button-group
@@ -45,7 +45,7 @@
     gap: 0.4rem
     flex-grow: 1
     font-weight: 600
-    color: var(--fgColor-muted)
+    color: var(--color-fg-muted)
 
   .code-actions
     display: flex
@@ -64,21 +64,21 @@
     height: 1em
 
   .code-close
-    fill: var(--bgColor-danger-emphasis)
+    fill: var(--color-bg-danger-emphasis)
   .code-minimize
-    fill: var(--bgColor-attention-emphasis)
+    fill: var(--color-bg-attention-emphasis)
   .code-maximize
-    fill: var(--bgColor-success-emphasis)
+    fill: var(--color-bg-success-emphasis)
 
 .gutter
   &.hidden
     display: none
 
   .lineno
-    color: var(--fgColor-muted)
+    color: var(--color-fg-muted)
 
 [data-copy-code],
 [data-copy-link],
 [data-copy-target]
   #icon-check
-    fill: var(--bgColor-success-emphasis)
+    fill: var(--color-bg-success-emphasis)
