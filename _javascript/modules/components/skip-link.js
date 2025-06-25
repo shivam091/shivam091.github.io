@@ -1,6 +1,6 @@
 class SkipLink {
   static get skipLinkElement() {
-    return document.getElementById("skip-link");
+    return document.querySelector("[data-skip-link]");
   }
 
   static get mainContentElement() {

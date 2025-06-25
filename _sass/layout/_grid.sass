@@ -2,19 +2,19 @@
   display: grid
   grid-template-rows: 1fr auto
   min-height: 100vh
-  margin-left: var(--layout-offset-lg)
+  margin-left: var(--wrapper-offset-lg)
 
   @media (max-width: 1024px)
-    margin-left: var(--layout-offset-md)
+    margin-left: var(--wrapper-offset-md)
 
   @media (max-width: 768px)
     margin-left: 0
     transform: translateX(0)
-    transition: transform var(--sidebar-transition-duration) ease
+    transition: transform var(--sidebar-motion-duration) ease
     will-change: transform
 
     body[data-sidebar="open"] &
-      transform: translateX(var(--layout-offset-sm))
+      transform: translateX(var(--wrapper-offset-sm))
 
 .main-content
   display: flex

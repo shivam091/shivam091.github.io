@@ -4,6 +4,7 @@
 
 .timeline-posts
   margin: 0
+  padding: 0
 
 .timeline-year,
 .timeline-post
@@ -13,13 +14,14 @@
   gap: 0.75rem
   padding-block: 0.5rem
   border-radius: 0.25rem
-  border: 1px solid var(--borderColor-transparent)
+  border: 1px solid var(--color-border-transparent)
   z-index: 2
 
 .timeline-post
-  box-shadow: var(--shadow-inset-muted)
-  background-image: linear-gradient(var(--bgColor-accent-muted), var(--bgColor-accent-muted))
-  border-color: var(--borderColor-accent-muted)
+  box-shadow: var(--box-shadow-inset-muted)
+  background-image: linear-gradient(var(--color-bg-accent-muted), var(--color-bg-accent-muted))
+  border-color: var(--color-border-accent-muted)
+  margin-bottom: 1rem
 
   @media (max-width: 768px)
     .timeline-left
@@ -31,7 +33,7 @@
   padding-right: 0.5rem
   font-weight: 500
   font-variant-numeric: tabular-nums
-  color: var(--fgColor-muted)
+  color: var(--color-fg-muted)
   white-space: nowrap
 
   @media (max-width: 768px)
@@ -41,13 +43,13 @@
 
 .timeline-year
   .timeline-left
-    color: var(--fgColor-default)
+    color: var(--color-fg-default)
 
   .timeline-seperator
     &::before
       width: 1rem
       height: 1rem
-      background: var(--bgColor-accent-emphasis)
+      background: var(--color-bg-accent-emphasis)
 
       @media (max-width: 768px)
         width: 0.75rem
@@ -65,9 +67,9 @@
     content: ""
     width: 0.75rem
     height: 0.75rem
-    background: var(--fgColor-accent)
-    border: 2px solid var(--borderColor-default)
-    box-shadow: 0 0 4px 0 var(--fgColor-neutral)
+    background: var(--color-fg-accent)
+    border: 2px solid var(--color-border-default)
+    box-shadow: 0 0 4px 0 var(--color-fg-neutral)
     border-radius: 50%
     z-index: 2
 
@@ -83,7 +85,7 @@
     transform: translate(-50%, -50%)
     width: 2px
     height: var(--timeline-separator-height)
-    background: var(--borderColor-default)
+    background: var(--color-border-default)
     z-index: 1
 
     .timeline-year:first-of-type &

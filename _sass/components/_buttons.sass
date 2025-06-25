@@ -1,20 +1,19 @@
 button
-  background-color: var(--control-transparent-bgColor)
-  color: var(--control-fgColor)
-  border: 1px solid var(--control-transparent-borderColor)
-  border-radius: 4px
+  background-color: var(--color-bg-control-transparent)
+  color: var(--color-fg-control)
+  border: 1px solid var(--color-border-control-transparent)
   padding: clamp(0.4rem, 1.2vw, 0.6rem)
   font-size: clamp(0.875rem, 1.25vw, 0.9375rem)
   font-weight: 500
 
   &:hover,
   &:focus
-    background-color: var(--control-transparent-bgColor-hover)
-    border-color: var(--control-transparent-borderColor-hover)
+    background-color: var(--color-bg-control-transparent-hover)
+    border-color: var(--color-border-control-transparent-hover)
 
   &.active
-    background-color: var(--control-transparent-bgColor-active)
-    border-color: var(--control-transparent-borderColor-active)
+    background-color: var(--color-bg-control-transparent-active)
+    border-color: var(--color-border-control-transparent-active)
 
 [type=button],
 [type=reset],
@@ -29,26 +28,27 @@ button:not(:disabled)
   cursor: pointer
 
 .btn
-  background-color: var(--control-bgColor)
-  color: var(--control-fgColor)
-  border-color: var(--control-borderColor)
+  background-color: var(--color-bg-control)
+  color: var(--color-fg-control)
+  border-color: var(--color-border-control)
+  border-radius: 4px
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out
   will-change: color, background-color, border-color
 
   &:hover,
   &:focus
-    background-color: var(--control-bgColor-hover)
-    border-color: var(--control-borderColor)
+    background-color: var(--color-bg-control-hover)
+    border-color: var(--color-border-control)
 
   &.active
-    background-color: var(--control-bgColor-active)
+    background-color: var(--color-bg-control-active)
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true]
-    background-color: var(--control-bgColor-disabled)
-    color: var(--control-fgColor-disabled)
-    border-color: var(--control-borderColor-disabled)
+    background-color: var(--color-bg-control-disabled)
+    color: var(--color-fg-control-disabled)
+    border-color: var(--color-border-control-disabled)
 
 .btn-sm
   padding: clamp(0.2rem, 0.6vw, 0.3rem)
@@ -56,23 +56,23 @@ button:not(:disabled)
   border-radius: 3px
 
 .btn-primary
-  background-color: var(--button-primary-bgColor)
-  color: var(--button-primary-fgColor)
-  border-color: var(--button-primary-borderColor)
+  background-color: var(--color-bg-button-primary)
+  color: var(--color-fg-button-primary)
+  border-color: var(--color-border-button-primary)
 
   &:hover,
   &:focus
-    background-color: var(--button-primary-bgColor-hover)
-    color: var(--button-primary-fgColor-hover)
-    border-color: var(--button-primary-borderColor-hover)
+    background-color: var(--color-bg-button-primary-hover)
+    color: var(--color-fg-button-primary-hover)
+    border-color: var(--color-border-button-primary-hover)
 
   &.active
-    background-color: var(--button-primary-bgColor-active)
-    border-color: var(--button-primary-borderColor-active)
+    background-color: var(--color-bg-button-primary-active)
+    border-color: var(--color-border-button-primary-active)
 
   &:disabled,
   &.disabled,
   &[aria-disabled=true]
-    background-color: var(--button-primary-bgColor-disabled)
-    color: var(--button-primary-fgColor-disabled)
-    border-color: var(--button-primary-borderColor-disabled)
+    background-color: var(--color-bg-button-primary-disabled)
+    color: var(--color-fg-button-primary-disabled)
+    border-color: var(--color-border-button-primary-disabled)

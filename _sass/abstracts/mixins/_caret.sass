@@ -3,57 +3,57 @@
   &::after
     content: ""
     position: absolute
-    border: 8px solid var(--borderColor-transparent)
+    border: 8px solid var(--color-border-transparent)
     z-index: -1
 
 @mixin caret-top
   &::before
-    border-top-color: var(--overlay-borderColor)
+    border-top-color: var(--color-border-overlay)
     bottom: calc(-1 * var(--tooltip-caret-size))
     left: 50%
     transform: translateX(-50%)
 
   &::after
-    border-top-color: var(--overlay-bgColor)
+    border-top-color: var(--color-bg-overlay)
     bottom: calc(-1 * var(--tooltip-caret-size) + 1.5px)
     left: 50%
     transform: translateX(-50%)
 
 @mixin caret-bottom
   &::before
-    border-bottom-color: var(--overlay-borderColor)
+    border-bottom-color: var(--color-border-overlay)
     top: calc(-1 * var(--tooltip-caret-size))
     left: 50%
     transform: translateX(-50%)
 
   &::after
-    border-bottom-color: var(--overlay-bgColor)
+    border-bottom-color: var(--color-bg-overlay)
     top: calc(-1 * var(--tooltip-caret-size) + 1.5px)
     left: 50%
     transform: translateX(-50%)
 
 @mixin caret-left
   &::before
-    border-left-color: var(--overlay-borderColor)
+    border-left-color: var(--color-border-overlay)
     right: calc(-1 * var(--tooltip-caret-size))
     top: 50%
     transform: translateY(-50%)
 
   &::after
-    border-left-color: var(--overlay-bgColor)
+    border-left-color: var(--color-bg-overlay)
     right: calc(-1 * var(--tooltip-caret-size) + 1.5px)
     top: 50%
     transform: translateY(-50%)
 
 @mixin caret-right
   &::before
-    border-right-color: var(--overlay-borderColor)
+    border-right-color: var(--color-border-overlay)
     left: calc(-1 * var(--tooltip-caret-size))
     top: 50%
     transform: translateY(-50%)
 
   &::after
-    border-right-color: var(--overlay-bgColor)
+    border-right-color: var(--color-bg-overlay)
     left: calc(-1 * var(--tooltip-caret-size) + 1.5px)
     top: 50%
     transform: translateY(-50%)

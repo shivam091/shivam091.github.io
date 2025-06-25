@@ -6,13 +6,13 @@
   position: fixed
   top: 0
   left: 0
-  width: var(--layout-offset-lg)
+  width: var(--sidebar-width-lg)
   height: 100vh
   background-image: url("./../assets/img/my-profile-img.png")
   background-position: center center
   background-repeat: no-repeat
   background-size: cover
-  color: var(--fgColor-white)
+  color: var(--color-fg-white)
   z-index: 999
   box-sizing: border-box
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5)
@@ -21,14 +21,14 @@
   @include overlay(rgba(0, 0, 0, 0.6))
 
   @media (max-width: 1024px)
-    width: var(--layout-offset-md)
+    width: var(--sidebar-width-md)
 
   @media (max-width: 768px)
-    width: var(--layout-offset-sm)
+    width: var(--sidebar-width-sm)
     transform: translateX(-100%)
     opacity: 0
     pointer-events: none
-    transition: transform var(--sidebar-transition-duration) ease, opacity var(--sidebar-transition-duration) ease
+    transition: transform var(--sidebar-motion-duration) ease, opacity var(--sidebar-motion-duration) ease
     will-change: transform, opacity
 
   body[data-sidebar="open"] &
@@ -52,25 +52,23 @@
   scrollbar-width: none
 
   @media (max-width: 768px)
-    padding: 0.75rem
+    padding: 0.5rem
 
 .sidebar-top
   text-align: center
 
-  .profile-pic
-    margin-bottom: 0.5rem
-
 .site-title
   font-size: clamp(1.0625rem, 2vw, 1.375rem)
   font-weight: 700
-  color: var(--fgColor-white)
+  color: var(--color-fg-white)
   margin: 0.5rem 0
   letter-spacing: 0.5px
 
 .site-subtitle
   font-size: clamp(0.8125rem, 1.25vw, 0.9375rem)
   font-style: italic
-  color: var(--fgColor-white)
+  font-weight: 500
+  color: var(--color-fg-white)
   margin-bottom: 1rem
   filter: brightness(0.8)
 
@@ -99,11 +97,8 @@
   flex-direction: column
   gap: 0.5rem
 
-  @media (max-width: 768px)
-    padding: 0rem 0.25rem
-
 .sidebar-nav-link
-  color: var(--fgColor-white)
+  color: var(--color-fg-white)
   padding: 0.75rem 1rem
   display: inline-flex
   align-items: center
@@ -115,9 +110,9 @@
 
   &:hover,
   &:focus-visible
-    color: var(--fgColor-onEmphasis)
+    color: var(--color-fg-on-emphasis)
     background-color: hsla(0, 0%, 100%, .1)
-    border-left: 2px solid var(--borderColor-accent-emphasis)
+    border-left: 2px solid var(--color-border-accent-emphasis)
     text-decoration: none
 
   @media (max-width: 768px)
@@ -128,10 +123,10 @@
   top: 0.5rem
   right: var(--floating-button-right-offset)
   z-index: 1010
-  background-color: var(--bgColor-accent-emphasis)
+  background-color: var(--color-bg-accent-emphasis)
   border: none
   padding: 0.75rem
-  border-radius: 50%
+  border-radius: 50% !important
   cursor: pointer
   display: none
   width: 48px
@@ -140,8 +135,8 @@
   .icon-bar
     width: 24px
     height: 2px
-    background-color: var(--fgColor-white)
-    transition: transform var(--sidebar-transition-duration) ease, opacity var(--sidebar-transition-duration) ease
+    background-color: var(--color-fg-white)
+    transition: transform var(--sidebar-motion-duration) ease, opacity var(--sidebar-motion-duration) ease
     transform-origin: center
 
     &:first-of-type
@@ -183,16 +178,16 @@
   text-align: center
   max-width: 100%
   min-width: 0
-  overflow: hidden
 
   .bottom-link
-    color: var(--fgColor-white)
+    color: var(--color-fg-white)
 
     &:hover,
     &:focus-visible
-      color: var(--fgColor-onEmphasis)
+      color: var(--color-fg-on-emphasis)
       text-decoration: none
 
 .theme-switcher
   display: grid
   align-self: center
+  border-radius: 6px
