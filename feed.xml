@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-26T13:05:01+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-06-17T22:11:25+05:30</updated><id>https://shivam091.github.io/post/2025/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/16/components"><![CDATA[<h2 id="codeblocks">Codeblocks</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-06-26T15:54:42+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-06-17T22:11:25+05:30</updated><id>https://shivam091.github.io/post/2025/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/16/components"><![CDATA[<h2 id="codeblocks">Codeblocks</h2>
 
-<div class="code-block" tabindex="0" data-copy-code="">
+<div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
       <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
@@ -436,7 +436,7 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
 
 <p>Here’s an example of a simple 3-column grid layout:</p>
 
-<div class="code-block" tabindex="0" data-copy-code="">
+<div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
       <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
@@ -489,7 +489,7 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
 <p>The <code class="language-text highlighter-rouge">fr</code> unit is a flexible length unit that allows us to create responsive grids. It distributes available space in a grid container proportionally.
 In the example above, <code class="language-text highlighter-rouge">1fr</code> means each column will take up an equal share of the available space.</p>
 
-<div class="code-block" tabindex="0" data-copy-code="">
+<div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
       <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
@@ -541,7 +541,7 @@ The total available space is divided into 3 parts, with the first column getting
 <h3 id="other-useful-properties">Other useful properties</h3>
 
 <p><strong>grid-template-areas</strong> - Defines a grid using named areas. This can make positioning easier.</p>
-<div class="code-block" tabindex="0" data-copy-code="">
+<div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
       <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
@@ -594,7 +594,7 @@ The total available space is divided into 3 parts, with the first column getting
 </div>
 
 <p><strong>justify-items</strong> - Aligns items horizontally within their grid cell.</p>
-<div class="code-block" tabindex="0" data-copy-code="">
+<div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
       <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
@@ -639,7 +639,7 @@ The total available space is divided into 3 parts, with the first column getting
 </div>
 
 <p><strong>align-items</strong> - Aligns items vertically within their grid cell.</p>
-<div class="code-block" tabindex="0" data-copy-code="">
+<div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
       <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
@@ -684,7 +684,7 @@ The total available space is divided into 3 parts, with the first column getting
 </div>
 
 <p><strong>justify-self</strong> - Aligns a specific grid item horizontally within its grid cell.</p>
-<div class="code-block" tabindex="0" data-copy-code="">
+<div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
       <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
@@ -727,7 +727,7 @@ The total available space is divided into 3 parts, with the first column getting
 </div>
 
 <p><strong>align-self</strong> - Aligns a specific grid item vertically within its grid cell.</p>
-<div class="code-block" tabindex="0" data-copy-code="">
+<div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
       <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
@@ -773,7 +773,7 @@ The total available space is divided into 3 parts, with the first column getting
 
 <p>CSS Grid makes responsive design easier than ever. You can modify your grid layout based on screen size using media queries.</p>
 
-<div class="code-block" tabindex="0" data-copy-code="">
+<div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
       <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
