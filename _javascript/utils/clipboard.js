@@ -66,6 +66,8 @@ class Clipboard {
   showFeedback() {
     const triggerer = this.button;
     const iconEl = triggerer.querySelector("use");
+    const originalIcon = iconEl?.getAttribute("href").split("#")[1];
+
     if (iconEl) {
       SvgSprite.toggle(iconEl, "#icon-check");
       iconEl.parentElement.setAttribute("id", "icon-check");
@@ -78,7 +80,7 @@ class Clipboard {
 
     setTimeout(() => {
       if (iconEl) {
-        SvgSprite.toggle(iconEl, "#icon-copy");
+        SvgSprite.toggle(iconEl, `#${originalIcon}`);
         iconEl.parentElement.setAttribute("id", "icon-copy");
       }
       triggerer.setAttribute("aria-label", originalLabel);
