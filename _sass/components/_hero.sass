@@ -2,6 +2,7 @@
 @use "abstracts/mixins/overlay" as *
 @use "abstracts/animations/fade-in-up" as *
 @use "abstracts/animations/bounce" as *
+@use "abstracts/mixins/transition-properties" as *
 
 .hero
   @extend %bg-cover
@@ -31,32 +32,33 @@
   width: 100%
   max-width: none
   background: var(--color-bg-hero-content)
-  border: 1px solid var(--color-border-hero-content)
+  border: var(--border-width-default) solid var(--color-border-hero-content)
   box-shadow: var(--box-shadow-hero-content-default)
-  border-radius: 12px
+  border-radius: var(--border-radius-large)
   max-inline-size: 45rem
   margin-inline: auto
   backdrop-filter: blur(8px) saturate(140%) contrast(120%)
-  animation: fadeInUp 700ms cubic-bezier(0.7, 0.1, 0.75, 0.9) both
+  animation: fadeInUp var(--motion-duration-extra-slow) var(--motion-easing-in) both
 
   @media (max-width: 768px)
     max-inline-size: 35rem
 
 .hero-title
   font-size: clamp(1.75rem, 5vw, 2.5rem)
-  line-height: 1.2
+  line-height: var(--line-height-title)
   margin-bottom: 0.5rem
-  font-weight: 600
+  font-weight: var(--font-weight-semi-bold)
   border-bottom: none
 
 .hero-subtitle
   font-size: clamp(0.9375rem, 1.6vw, 1.25rem)
-  font-weight: 400
+  font-weight: var(--font-weight-default)
+  line-height: var(--line-height-relaxed)
   opacity: 0.8
 
 .hero-highlight
   letter-spacing: 1px
-  border-bottom: 2px solid var(--color-border-accent-emphasis)
+  border-bottom: var(--border-width-medium) solid var(--color-border-accent-emphasis)
 
 .hero-links
   margin-top: 1.5rem
@@ -69,17 +71,18 @@
   padding: 0.5rem 1rem
   font-size: clamp(0.875rem, 1.5vw, 1rem)
   color: var(--color-fg-on-emphasis)
-  border: 2px solid var(--color-border-emphasis)
+  border: var(--border-width-medium) solid var(--color-border-emphasis)
   background-color: var(--color-bg-transparent)
   text-decoration: none
-  border-radius: 6px
+  border-radius: var(--border-radius-medium)
   display: inline-flex
   align-items: center
   gap: 0.25rem
-  transition: all 0.3s ease
+
+  @include transition-properties((background-color, color, border-color), $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
 
   svg
-    transition: all 0.3s ease
+    @include transition-properties((background-color, color, border-color), $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
 
   &:hover,
   &:focus-visible
@@ -103,7 +106,7 @@
   color: var(--color-fg-white)
 
   .animate-bounce
-    animation: bounce 1000ms cubic-bezier(0.34, 1.56, 0.64, 1) infinite
+    animation: bounce var(--motion-duration-ultra-slow) var(--motion-easing-bounce) infinite
 
   &-anchor
     color: var(--color-fg-muted)

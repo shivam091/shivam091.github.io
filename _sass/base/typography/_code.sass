@@ -2,12 +2,14 @@ code, pre, tt
   font-family: var(--font-stack-monospace)
   font-size: clamp(0.8125rem, 1.2vw, 0.9375rem)
   white-space: pre
-  border-radius: 6px
+  border-radius: var(--border-radius-default)
+  line-height: var(--line-height-code)
 
 code.highlighter-rouge
   font-size: inherit
   background-color: var(--color-bg-neutral-muted)
   padding: 0.2em 0.4em
+  line-height: var(--line-height-normal)
 
 figure.highlight,
 .highlight
@@ -25,11 +27,11 @@ kbd
   font-family: var(--font-stack-monospace)
   font-size: clamp(0.8125rem, 1.2vw, 0.9375rem)
   display: inline-block
-  padding: 0.25rem
-  line-height: 1.2
+  padding: 0.125rem 0.25rem
+  line-height: var(--line-height-tight)
   color: var(--color-fg-default)
   vertical-align: middle
   background-color: var(--color-bg-muted)
-  border: 1px solid var(--color-border-muted)
-  border-radius: 6px
+  border: var(--border-muted)
+  border-radius: var(--border-radius-default)
   box-shadow: inset 0 -2px 0 var(--color-border-muted)

@@ -10,7 +10,7 @@
 .footnotes
   font-size: clamp(0.6875rem, 0.9vw, 0.75rem)
   color: var(--color-fg-muted)
-  border-top: 1px solid var(--color-border-default)
+  border-top: var(--border-default)
 
   ol
     padding-left: 2rem
@@ -25,14 +25,14 @@
         position: absolute
         pointer-events: none
         content: ""
-        border: 0.125rem solid var(--color-border-accent-emphasis)
-        border-radius: 0.375rem
+        border: var(--border-width-medium) solid var(--color-border-accent-emphasis)
+        border-radius: var(--border-radius-default)
         inset: -0.25rem -.25rem -.25rem -1.5rem
 
 .reversefootnote
   @at-root a#{&}
     font-size: 0.6em
-    line-height: 1
+    line-height: var(--line-height-tight)
     position: relative
     bottom: 0.25em
     margin-left: 0.25em

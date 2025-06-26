@@ -1,3 +1,5 @@
+$separator-height: 4rem
+
 .timeline-wrapper
   display: flex
   flex-direction: column
@@ -13,8 +15,8 @@
   position: relative
   gap: 0.75rem
   padding-block: 0.5rem
-  border-radius: 0.25rem
-  border: 1px solid var(--color-border-transparent)
+  border-radius: var(--border-radius-default)
+  border: var(--border-width-default) solid var(--color-border-transparent)
   z-index: 2
 
 .timeline-post
@@ -31,7 +33,7 @@
   flex: 0 0 5.5rem
   text-align: right
   padding-right: 0.5rem
-  font-weight: 500
+  font-weight: var(--font-weight-medium)
   font-variant-numeric: tabular-nums
   color: var(--color-fg-muted)
   white-space: nowrap
@@ -68,9 +70,9 @@
     width: 0.75rem
     height: 0.75rem
     background: var(--color-fg-accent)
-    border: 2px solid var(--color-border-default)
+    border: var(--border-width-medium) solid var(--color-border-default)
     box-shadow: 0 0 4px 0 var(--color-fg-neutral)
-    border-radius: 50%
+    border-radius: var(--border-radius-full)
     z-index: 2
 
     @media (max-width: 768px)
@@ -84,17 +86,17 @@
     left: 50%
     transform: translate(-50%, -50%)
     width: 2px
-    height: var(--timeline-separator-height)
+    height: $separator-height
     background: var(--color-border-default)
     z-index: 1
 
     .timeline-year:first-of-type &
       transform: translate(-50%, 0)
-      height: calc(var(--timeline-separator-height) / 2)
+      height: calc($separator-height / 2)
 
     .timeline-year:last-of-type + .timeline-posts li:last-child &
       transform: translate(-50%, -100%)
-      height: calc(var(--timeline-separator-height) / 2)
+      height: calc($separator-height / 2)
 
 .timeline-right
   flex: 1

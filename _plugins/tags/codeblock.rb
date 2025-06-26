@@ -12,7 +12,7 @@ module Jekyll
       lang_label = detected_language(highlighted_code)
 
       <<~HTML
-        <div class="code-block" tabindex="0" data-copy-code>
+        <div class="code-block" data-copy-code>
           <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
             <div class="code-block-button-group" aria-hidden="true">
               <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">

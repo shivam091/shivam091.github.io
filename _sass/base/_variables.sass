@@ -2,9 +2,6 @@
 @use "abstracts/variables" as *
 @use "themes" as *
 
-/* Global tokens */
-@include emit-css-vars($global-tokens)
-
 /* Sidebar */
 @include emit-css-vars($sidebar, $prefix: "sidebar")
 
@@ -13,7 +10,31 @@
 
 /* Typography */
 @include emit-css-vars($typography)
+@include emit-css-vars($font-weights, $prefix: "font-weight")
+@include emit-css-vars($line-heights, $prefix: "line-height")
+
+/* Border radii and widths */
+@include emit-css-vars($border-radii, $prefix: "border-radius")
+@include emit-css-vars($border-widths, $prefix: "border-width")
+
+/* Borders */
+@include emit-css-vars($borders, $prefix: "border")
+
+/* Outlines */
+@include emit-css-vars($outlines, $prefix: "outline")
+
+/* Icons */
+@include emit-css-vars($icons, $prefix: "icon")
+
+/* Motion */
+@include emit-css-vars($motion-durations, $prefix: "motion-duration")
+@include emit-css-vars($motion-easings, $prefix: "motion-easing")
 
 /* Themes */
-@include emit-css-vars($light, "[data-theme='light']")
-@include emit-css-vars($dark, "[data-theme='dark']")
+@include emit-css-vars($light-colors, "[data-theme='light']", $prefix: "color")
+@include emit-css-vars($light-box-shadows, "[data-theme='light']", $prefix: "box-shadow")
+@include emit-css-vars($light-text-shadows, "[data-theme='light']", $prefix: "text-shadow")
+
+@include emit-css-vars($dark-colors, "[data-theme='dark']", $prefix: "color")
+@include emit-css-vars($dark-box-shadows, "[data-theme='dark']", $prefix: "box-shadow")
+@include emit-css-vars($dark-text-shadows, "[data-theme='dark']", $prefix: "text-shadow")

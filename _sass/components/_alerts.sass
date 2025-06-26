@@ -1,3 +1,6 @@
+@use "abstracts/modules/no-cursor" as *
+@use "abstracts/mixins/transition-properties" as *
+
 $alert-types: (success, danger, attention, accent)
 
 .alert
@@ -5,14 +8,16 @@ $alert-types: (success, danger, attention, accent)
   display: flex
   align-items: center
   padding: 1rem
-  border: 1px solid var(--color-border-transparent)
-  border-radius: 0.5rem
+  border: var(--border-width-default) solid var(--color-border-transparent)
+  border-radius: var(--border-radius-default)
   font-size: 0.95rem
   background-color: var(--color-bg-neutral-muted)
   color: var(--color-fg-default)
   gap: 1rem
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s
   margin-bottom: 0.5rem
+  line-height: var(--line-height-relaxed)
+
+  @include transition-properties((opacity, transform, visibility), $duration: var(--motion-duration-default), $easing: var(--motion-easing-in-out))
 
   @each $type in $alert-types
     &-#{$type}
@@ -36,7 +41,7 @@ $alert-types: (success, danger, attention, accent)
     visibility: hidden
 
   &-heading
-    font-weight: 600
+    font-weight: var(--font-weight-semi-bold)
     margin: 0 0 0.25rem
     font-size: 1rem
 
@@ -62,9 +67,11 @@ $alert-types: (success, danger, attention, accent)
     flex-shrink: 0
 
     svg
-      transition: transform 0.2s ease, color 0.2s ease
       pointer-events: none
-      user-select: none
+
+      @include transition-properties((transform, color), $duration: var(--motion-duration-default), $easing: var(--motion-easing-linear))
+
+      @extend %no-cursor
 
     &:hover,
     &:focus
