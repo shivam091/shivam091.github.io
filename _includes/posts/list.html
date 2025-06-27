@@ -5,11 +5,11 @@
   {% for post in posts %}
     <article class="post">
       <header class="post-header">
-        <h2 class="post-title">
+        <div class="post-title h2">
           <a href="{{ post.url | relative_url }}" title="{{ post.title }}" aria-label="Read post: {{ post.title }}">
             {{ post.title }}
           </a>
-        </h2>
+        </div>
         {% if post.excerpt %}
           <p class="post-excerpt lead">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
         {% endif %}

@@ -5,7 +5,7 @@ description: Learn more about Harshal Ladhe — Software Engineer, Open Source C
 permalink: /about
 ---
 
-## 👋 Hello there
+## Hello there 👋
 
 I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.
 
@@ -14,14 +14,14 @@ I’m a software engineer, freelancer, and lifelong learner passionate about bui
 - 🤝 Open to collaboration on Ruby on Rails open-source projects
 - 🧠 Looking for mentorship and support in back-end development
 
-## 📊 GitHub Statistics
+## GitHub Statistics
 
 ![Github Stats](https://github-readme-stats.vercel.app/api?username={{ site.author.github_username }}&count_private=true&show_icons=true&include_all_commits=true&show_owner=true)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username={{ site.author.github_username }}&hide=TeX&layout=compact&langs_count=8)
 
 ![Harshal's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username={{ site.author.github_username }}&color=000&bg_color=fff&line=0969da&point=1a7f37&area=true&area_color=59636e)
 
-## 🛠️ Skills & Tools
+## Skills & Tools
 
 - **Programming Languages & Frameworks:** Ruby 3, Rails 7
 - **Asynchronous Processing & Caching:** Sidekiq, Redis
@@ -31,15 +31,15 @@ I’m a software engineer, freelancer, and lifelong learner passionate about bui
 - **Databases:** MySQL, PostgreSQL
 - **Operating System:** Microsoft Windows, Linux – Ubuntu
 
-## 🎓 Education
+## Education
 
 I earned my **Master’s in Computer Science** from the **University of Mumbai**, where I deepened my skills in software development and problem-solving.
 
-## 💡 Philosophy
+## Philosophy
 
 I believe in writing **clean, maintainable code** and enjoy working in **collaborative, fast-paced environments**. **Minimalism** drives both my coding style and lifestyle.
 
-## 📬 Let’s Connect
+## Let’s Connect
 
 Whether you're looking for a skilled developer to join your team, need help on your next tech project, or just want to talk tech — feel free to connect through any of the platforms below!
 
