@@ -303,7 +303,7 @@
 <a href="#grid-layout-example">Grid layout example</a>
 </li>
 <li>
-<a href="#understanding-fr-fractional-units">Understanding <code class="language-text highlighter-rouge">fr</code> (Fractional Units)</a>
+<a href="#understanding-fr-fractional-units">Understanding <code class="highlighter-rouge notranslate">fr</code> (Fractional Units)</a>
 </li>
 <li>
 <a href="#other-useful-properties">Other useful properties</a>
@@ -326,20 +326,20 @@
 
 
 <article class="post-content" aria-labelledby="page-title">
-  <h2 id="introduction">Introduction<a href="#introduction" class="heading-anchor" aria-label="Permalink: Introduction">#</a>
+  <h2 id="introduction" dir="auto">Introduction<a href="#introduction" class="heading-anchor" aria-label="Permalink: Introduction">#</a>
 </h2>
 
-<p>CSS Grid is one of the most powerful tools for building web layouts. In this article, we’ll explore all the fundamentals, from basic to advanced usage.</p>
+<p dir="auto">CSS Grid is one of the most powerful tools for building web layouts. In this article, we’ll explore all the fundamentals, from basic to advanced usage.</p>
 
-<h2 id="why-css-grid">Why CSS grid?<a href="#why-css-grid" class="heading-anchor" aria-label="Permalink: Why CSS grid?">#</a>
+<h2 id="why-css-grid" dir="auto">Why CSS grid?<a href="#why-css-grid" class="heading-anchor" aria-label="Permalink: Why CSS grid?">#</a>
 </h2>
 
-<p>Grid allows you to design complex layouts using rows and columns with minimal code. Unlike flexbox, which is one-dimensional, grid is two-dimensional. This makes CSS Grid extremely powerful for both horizontal and vertical layout management.</p>
+<p dir="auto">Grid allows you to design complex layouts using rows and columns with minimal code. Unlike flexbox, which is one-dimensional, grid is two-dimensional. This makes CSS Grid extremely powerful for both horizontal and vertical layout management.</p>
 
-<h2 id="basic-terminology">Basic terminology<a href="#basic-terminology" class="heading-anchor" aria-label="Permalink: Basic terminology">#</a>
+<h2 id="basic-terminology" dir="auto">Basic terminology<a href="#basic-terminology" class="heading-anchor" aria-label="Permalink: Basic terminology">#</a>
 </h2>
 
-<ul>
+<ul dir="auto">
   <li>
 <strong>Grid Container</strong>: The parent element where grid is applied.</li>
   <li>
@@ -352,12 +352,12 @@
 <strong>Grid Cell</strong>: The intersection of a grid row and a grid column.</li>
 </ul>
 
-<h2 id="css-grid-properties">CSS grid properties<a href="#css-grid-properties" class="heading-anchor" aria-label="Permalink: CSS grid properties">#</a>
+<h2 id="css-grid-properties" dir="auto">CSS grid properties<a href="#css-grid-properties" class="heading-anchor" aria-label="Permalink: CSS grid properties">#</a>
 </h2>
 
-<p>Here are some of the most commonly used properties for defining a grid layout:</p>
+<p dir="auto">Here are some of the most commonly used properties for defining a grid layout:</p>
 
-<ul>
+<ul dir="auto">
   <li>
 <strong>display: grid;</strong> - Turns the container into a grid layout.</li>
   <li>
@@ -372,10 +372,10 @@
 <strong>grid-row</strong> - Defines how many rows an item will span.</li>
 </ul>
 
-<h3 id="grid-layout-example">Grid layout example<a href="#grid-layout-example" class="heading-anchor" aria-label="Permalink: Grid layout example">#</a>
+<h3 id="grid-layout-example" dir="auto">Grid layout example<a href="#grid-layout-example" class="heading-anchor" aria-label="Permalink: Grid layout example">#</a>
 </h3>
 
-<p>Here’s an example of a simple 3-column grid layout:</p>
+<p dir="auto">Here’s an example of a simple 3-column grid layout:</p>
 
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
@@ -426,13 +426,13 @@
 </tr></tbody></table></code></pre></figure>
 </div>
 
-<p>This layout has 3 columns of equal width (<code class="language-text highlighter-rouge">1fr</code> stands for 1 fraction of the available space), and there’s a gap of <code class="language-text highlighter-rouge">1rem</code> between both rows and columns.</p>
+<p dir="auto">This layout has 3 columns of equal width (<code class="highlighter-rouge notranslate">1fr</code> stands for 1 fraction of the available space), and there’s a gap of <code class="highlighter-rouge notranslate">1rem</code> between both rows and columns.</p>
 
-<h3 id="understanding-fr-fractional-units">Understanding <code class="language-text highlighter-rouge">fr</code> (Fractional Units)<a href="#understanding-fr-fractional-units" class="heading-anchor" aria-label="Permalink: Understanding fr (Fractional Units)">#</a>
+<h3 id="understanding-fr-fractional-units" dir="auto">Understanding <code class="highlighter-rouge notranslate">fr</code> (Fractional Units)<a href="#understanding-fr-fractional-units" class="heading-anchor" aria-label="Permalink: Understanding fr (Fractional Units)">#</a>
 </h3>
 
-<p>The <code class="language-text highlighter-rouge">fr</code> unit is a flexible length unit that allows us to create responsive grids. It distributes available space in a grid container proportionally.
-In the example above, <code class="language-text highlighter-rouge">1fr</code> means each column will take up an equal share of the available space.</p>
+<p dir="auto">The <code class="highlighter-rouge notranslate">fr</code> unit is a flexible length unit that allows us to create responsive grids. It distributes available space in a grid container proportionally.
+In the example above, <code class="highlighter-rouge notranslate">1fr</code> means each column will take up an equal share of the available space.</p>
 
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
@@ -483,13 +483,13 @@ In the example above, <code class="language-text highlighter-rouge">1fr</code> m
 </tr></tbody></table></code></pre></figure>
 </div>
 
-<p>In the above code, the first column will take up 2 fractions of the available space, and the second will take 1 fraction.
+<p dir="auto">In the above code, the first column will take up 2 fractions of the available space, and the second will take 1 fraction.
 The total available space is divided into 3 parts, with the first column getting 2 parts and the second getting 1.</p>
 
-<h3 id="other-useful-properties">Other useful properties<a href="#other-useful-properties" class="heading-anchor" aria-label="Permalink: Other useful properties">#</a>
+<h3 id="other-useful-properties" dir="auto">Other useful properties<a href="#other-useful-properties" class="heading-anchor" aria-label="Permalink: Other useful properties">#</a>
 </h3>
 
-<p><strong>grid-template-areas</strong> - Defines a grid using named areas. This can make positioning easier.</p>
+<p dir="auto"><strong>grid-template-areas</strong> - Defines a grid using named areas. This can make positioning easier.</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -545,7 +545,7 @@ The total available space is divided into 3 parts, with the first column getting
 </tr></tbody></table></code></pre></figure>
 </div>
 
-<p><strong>justify-items</strong> - Aligns items horizontally within their grid cell.</p>
+<p dir="auto"><strong>justify-items</strong> - Aligns items horizontally within their grid cell.</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -593,7 +593,7 @@ The total available space is divided into 3 parts, with the first column getting
 </tr></tbody></table></code></pre></figure>
 </div>
 
-<p><strong>align-items</strong> - Aligns items vertically within their grid cell.</p>
+<p dir="auto"><strong>align-items</strong> - Aligns items vertically within their grid cell.</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -641,7 +641,7 @@ The total available space is divided into 3 parts, with the first column getting
 </tr></tbody></table></code></pre></figure>
 </div>
 
-<p><strong>justify-self</strong> - Aligns a specific grid item horizontally within its grid cell.</p>
+<p dir="auto"><strong>justify-self</strong> - Aligns a specific grid item horizontally within its grid cell.</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -687,7 +687,7 @@ The total available space is divided into 3 parts, with the first column getting
 </tr></tbody></table></code></pre></figure>
 </div>
 
-<p><strong>align-self</strong> - Aligns a specific grid item vertically within its grid cell.</p>
+<p dir="auto"><strong>align-self</strong> - Aligns a specific grid item vertically within its grid cell.</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -733,10 +733,10 @@ The total available space is divided into 3 parts, with the first column getting
 </tr></tbody></table></code></pre></figure>
 </div>
 
-<h3 id="responsive-design-with-css-grid">Responsive design with CSS grid<a href="#responsive-design-with-css-grid" class="heading-anchor" aria-label="Permalink: Responsive design with CSS grid">#</a>
+<h3 id="responsive-design-with-css-grid" dir="auto">Responsive design with CSS grid<a href="#responsive-design-with-css-grid" class="heading-anchor" aria-label="Permalink: Responsive design with CSS grid">#</a>
 </h3>
 
-<p>CSS Grid makes responsive design easier than ever. You can modify your grid layout based on screen size using media queries.</p>
+<p dir="auto">CSS Grid makes responsive design easier than ever. You can modify your grid layout based on screen size using media queries.</p>
 
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
@@ -799,14 +799,14 @@ The total available space is divided into 3 parts, with the first column getting
 </tr></tbody></table></code></pre></figure>
 </div>
 
-<p>In this example, the grid has 3 columns on larger screens, but on screens smaller than <code class="language-text highlighter-rouge">768px</code>, the grid switches to 1 column.</p>
+<p dir="auto">In this example, the grid has 3 columns on larger screens, but on screens smaller than <code class="highlighter-rouge notranslate">768px</code>, the grid switches to 1 column.</p>
 
-<h2 id="common-css-grid-properties">Common CSS grid properties<a href="#common-css-grid-properties" class="heading-anchor" aria-label="Permalink: Common CSS grid properties">#</a>
+<h2 id="common-css-grid-properties" dir="auto">Common CSS grid properties<a href="#common-css-grid-properties" class="heading-anchor" aria-label="Permalink: Common CSS grid properties">#</a>
 </h2>
 
-<p>Here’s a simple table summarizing key grid properties:</p>
+<p dir="auto">Here’s a simple table summarizing key grid properties:</p>
 
-<table>
+<table dir="auto" role="table" class="markdown-table">
   <thead>
     <tr>
       <th>Property</th>
@@ -841,10 +841,10 @@ The total available space is divided into 3 parts, with the first column getting
   </tbody>
 </table>
 
-<h2 id="conclusion">Conclusion<a href="#conclusion" class="heading-anchor" aria-label="Permalink: Conclusion">#</a>
+<h2 id="conclusion" dir="auto">Conclusion<a href="#conclusion" class="heading-anchor" aria-label="Permalink: Conclusion">#</a>
 </h2>
 
-<p>CSS Grid makes layout development more accessible and powerful. By understanding and utilizing its properties, you can create complex layouts with minimal code. Mastering CSS Grid will significantly improve your UI skills, especially when dealing with complex designs.</p>
+<p dir="auto">CSS Grid makes layout development more accessible and powerful. By understanding and utilizing its properties, you can create complex layouts with minimal code. Mastering CSS Grid will significantly improve your UI skills, especially when dealing with complex designs.</p>
 
 </article>
 
