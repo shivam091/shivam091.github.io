@@ -272,7 +272,7 @@
     </div>
   
 
-  <div class="post-read-time" data-tooltip="247 words" data-tooltip-position="bottom" tabindex="0">
+  <div class="post-read-time" data-tooltip="255 words" data-tooltip-position="bottom" tabindex="0">
   <svg class="icon icon-clock" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-clock"></use>
 </svg>
@@ -305,7 +305,7 @@
 <h2 id="paragraphs" dir="auto">Paragraphs<a href="#paragraphs" class="header-anchor" aria-label="Permalink: Paragraphs">#</a>
 </h2>
 
-<p dir="auto">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. Nulla <em>vehicula</em>, <code>inline code</code>, <a href="https://example.com">external link</a>, and a line break:<br>
+<p dir="auto">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. Nulla <em>vehicula</em>, <code>inline code</code>, <a href="https://example.com" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://example.com" class="external-link">external link</a>, and a line break:<br>
 New line here.</p>
 
 <h2 id="blockquote" dir="auto">Blockquote<a href="#blockquote" class="header-anchor" aria-label="Permalink: Blockquote">#</a>
@@ -319,7 +319,7 @@ New line here.</p>
 <h2 id="links" dir="auto">Links<a href="#links" class="header-anchor" aria-label="Permalink: Links">#</a>
 </h2>
 
-<p dir="auto"><a href="https://example.com">External Link</a><br>
+<p dir="auto"><a href="https://example.com" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://example.com" class="external-link">External Link</a><br>
 <a href="/about/">Internal Link</a><br>
 Mailto: <a href="mailto:test@example.com">Send Email</a></p>
 
@@ -330,28 +330,28 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
 </h3>
 
 <ul dir="auto">
-  <li dir="auto">Apples</li>
-  <li dir="auto">Oranges
+  <li>Apples</li>
+  <li>Oranges
     <ul dir="auto">
-      <li dir="auto">Navel</li>
-      <li dir="auto">Blood</li>
+      <li>Navel</li>
+      <li>Blood</li>
     </ul>
   </li>
-  <li dir="auto">Bananas</li>
+  <li>Bananas</li>
 </ul>
 
 <h3 id="ordered-list" dir="auto">Ordered List<a href="#ordered-list" class="header-anchor" aria-label="Permalink: Ordered List">#</a>
 </h3>
 
 <ol dir="auto">
-  <li dir="auto">First item</li>
-  <li dir="auto">Second item
+  <li>First item</li>
+  <li>Second item
     <ol dir="auto">
-      <li dir="auto">Nested</li>
-      <li dir="auto">Nested again</li>
+      <li>Nested</li>
+      <li>Nested again</li>
     </ol>
   </li>
-  <li dir="auto">Third item</li>
+  <li>Third item</li>
 </ol>
 
 <h3 id="description-lists" dir="auto">Description Lists<a href="#description-lists" class="header-anchor" aria-label="Permalink: Description Lists">#</a>
@@ -434,18 +434,18 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
 </h2>
 
 <ul class="task-list" dir="auto">
-  <li class="task-list-item" dir="auto">
+  <li class="task-list-item">
 <input type="checkbox" class="task-list-item-checkbox" disabled checked>Create base layout</li>
-  <li class="task-list-item" dir="auto">
+  <li class="task-list-item">
 <input type="checkbox" class="task-list-item-checkbox" disabled checked>Add dark mode</li>
-  <li class="task-list-item" dir="auto">
+  <li class="task-list-item">
 <input type="checkbox" class="task-list-item-checkbox" disabled>Finalize footer</li>
 </ul>
 
 <h2 id="tables" dir="auto">Tables<a href="#tables" class="header-anchor" aria-label="Permalink: Tables">#</a>
 </h2>
 
-<table dir="auto" role="table" class="custom-table">
+<table dir="auto" role="table" class="markdown-table">
   <thead>
     <tr>
       <th style="text-align: right">Feature</th>
@@ -475,9 +475,17 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
 <h2 id="footnotes" dir="auto">Footnotes<a href="#footnotes" class="header-anchor" aria-label="Permalink: Footnotes">#</a>
 </h2>
 
-<p dir="auto">This sentence has a footnote.<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup></p>
+<p dir="auto">This sentence has a footnote.
+          <sup id="fnref:1">
+            <a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref" aria-describedby="footnote-label">1</a>
+          </sup>
+        </p>
 
-<p dir="auto">This sentence has an another footnote.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
+<p dir="auto">This sentence has an another footnote.
+          <sup id="fnref:2">
+            <a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref" aria-describedby="footnote-label">2</a>
+          </sup>
+        </p>
 
 <h2 id="misc-elements" dir="auto">Misc elements<a href="#misc-elements" class="header-anchor" aria-label="Permalink: Misc elements">#</a>
 </h2>
@@ -493,16 +501,17 @@ H<sub>2</sub>O and E = mc<sup>2</sup></p>
 
 <p dir="auto"><strong>Time Tag:</strong><br>
 <time datetime="2025-05-31">May 31, 2025</time></p>
-<div class="footnotes" role="doc-endnotes">
-  <ol dir="auto">
-    <li id="fn:1" dir="auto">
-      <p dir="auto">This is the footnote content. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">↩</a></p>
+<section class="footnotes" role="doc-endnotes" dir="auto">
+<h2 id="footnote-label" class="visually-hidden" dir="auto">Footnotes<a href="#footnotes" class="header-anchor" aria-label="Permalink: Footnotes">#</a>
+</h2>  <ol dir="auto">
+    <li id="fn:1">
+      <p dir="auto">This is the footnote content. <a href="#fnref:1" class="reverse-footnote" aria-label="Back to reference 1" role="doc-backlink">↩</a></p>
     </li>
-    <li id="fn:2" dir="auto">
-      <p dir="auto">This is the another footnote content. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">↩</a></p>
+    <li id="fn:2">
+      <p dir="auto">This is the another footnote content. <a href="#fnref:2" class="reverse-footnote" aria-label="Back to reference 2" role="doc-backlink">↩</a></p>
     </li>
   </ol>
-</div>
+</section>
 
 </article>
 
