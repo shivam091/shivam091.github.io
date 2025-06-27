@@ -1,26 +1,25 @@
-<body>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Harshal LADHE</title>
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Harshal LADHE | Software Engineer Freelancer Learner</title>
-<meta name="generator" content="Jekyll v4.4.1">
-<meta property="og:title" content="Harshal LADHE">
-<meta name="author" content="Harshal LADHE">
-<meta property="og:locale" content="en">
-<meta name="description" content="Software Engineer Freelancer Learner">
-<meta property="og:description" content="Software Engineer Freelancer Learner">
-<link rel="canonical" href="https://shivam091.github.io/">
-<meta property="og:url" content="https://shivam091.github.io/">
-<meta property="og:site_name" content="Harshal LADHE">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta property="twitter:title" content="Harshal LADHE">
+<title>Harshal LADHE</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[&quot;Harshal LADHE\n&quot;, []] | [&quot;\n&quot;, []]</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="[&quot;Harshal LADHE\n&quot;, []]" />
+<meta name="author" content="Harshal LADHE" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="[&quot;\n&quot;, []]" />
+<meta property="og:description" content="[&quot;\n&quot;, []]" />
+<link rel="canonical" href="https://shivam091.github.io/" />
+<meta property="og:url" content="https://shivam091.github.io/" />
+<meta property="og:site_name" content="[&quot;Harshal LADHE\n&quot;, []]" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[&quot;Harshal LADHE\n&quot;, []]" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Harshal LADHE"},"description":"Software Engineer Freelancer Learner","headline":"Harshal LADHE","name":"Harshal LADHE","url":"https://shivam091.github.io/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Harshal LADHE"},"description":"[&quot;\\n&quot;, []]","headline":"[&quot;Harshal LADHE\\n&quot;, []]","name":"[&quot;Harshal LADHE\\n&quot;, []]","url":"https://shivam091.github.io/"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- Favicon -->
 <link href="/assets/img/favicon.png" rel="icon">
@@ -57,8 +56,8 @@
   })();
 </script>
 
-
-
+</head>
+<body>
   <div id="progress-bar"></div>
 
   <div class="hero" role="banner" aria-labelledby="hero-title">
@@ -69,41 +68,41 @@
       I'm
       <span id="hero-highlight" class="hero-highlight typed" data-typed-items="software engineer,freelancer,lifelong learner,entrepreneur"></span>
     </p>
-    <hr>
+    <hr/>
     <nav class="hero-links" aria-label="Hero links">
       <a href="/about" class="hero-link">
-        <svg class="icon icon-info-circle" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-info-circle"></use>
+        <svg  class='icon icon-info-circle'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
 </svg>
         About
       </a>
       <a href="/assets/docs/resume.pdf" class="hero-link">
-        <svg class="icon icon-file" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-file"></use>
+        <svg  class='icon icon-file'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-file" />
 </svg>
         Resume
       </a>
       <a href="mailto:harshal.ladhe.1@gmail.com" class="hero-link" target="_blank">
-        <svg class="icon icon-envelope" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-envelope"></use>
+        <svg  class='icon icon-envelope'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-envelope" />
 </svg>
         Email me
       </a>
       <a href="https://www.github.com/shivam091" class="hero-link" target="_blank">
-        <svg class="icon icon-github" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-github"></use>
+        <svg  class='icon icon-github'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-github" />
 </svg>
         GitHub
       </a>
       <a href="https://www.linkedin.com/in/shivam091" class="hero-link" target="_blank">
-        <svg class="icon icon-linkedin" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-linkedin"></use>
+        <svg  class='icon icon-linkedin'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-linkedin" />
 </svg>
         LinkedIn
       </a>
       <a href="https://www.instagram.com/taurusian_soul" class="hero-link" target="_blank">
-        <svg class="icon icon-instagram" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-instagram"></use>
+        <svg  class='icon icon-instagram'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-instagram" />
 </svg>
         Instagram
       </a>
@@ -124,14 +123,14 @@
   <div class="container">
     <div class="site-copyright">
       <p>
-        <span>©
+        <span>&copy;
           2025 <strong class="site-name">Harshal LADHE</strong>,
           <span data-tooltip="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." tabindex="0">Some rights reserved</span>.
         </span>
       </p>
     </div>
     <div class="site-credits">
-      Made with <span class="love" role="img" aria-label="love">❤</span> and <a href="https://jekyllrb.com/">Jekyll</a>.
+      Made with <span class="love" role="img" aria-label="love">&#10084;</span> and <a href="https://jekyllrb.com/">Jekyll</a>.
     </div>
   </div>
 </footer>
@@ -139,6 +138,5 @@
 
   <script src="/dist/app.js"></script>
 
-
-
 </body>
+</html>
