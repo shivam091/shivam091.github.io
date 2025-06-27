@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "loofah"
+require "jekyll/utils"
 
 module Jekyll
   class TocTag < Liquid::Tag
@@ -10,10 +11,9 @@ module Jekyll
 
     def render(context)
       page = context.registers[:page]
-      content = page["content"]
+      content = page["content"].to_s
 
-      return "" unless content
-      return if page["toc"] == false
+      return "" if content.empty? || page["toc"] == false
 
       @min_level = page["toc_min"]&.to_i || 2
       @max_level = page["toc_max"]&.to_i || 3
@@ -39,10 +39,6 @@ module Jekyll
 
     private
 
-    def slugify(text)
-      text.downcase.strip.gsub(/[^\w\- ]+/, "").gsub(/\s+/, "-")
-    end
-
     def build_toc(headings)
       toc = +""
       stack = []
@@ -50,13 +46,14 @@ module Jekyll
 
       headings.each do |heading|
         level = heading.name[1].to_i
+        html = heading.inner_html.strip
         text = heading.text.strip
 
-        id = heading["id"] || slugify(text)
+        id = heading["id"] || Jekyll::Utils.slugify(text, mode: "default", cased: false)
         heading["id"] = id
 
         link = <<~HTML.chomp
-          <li><a href="##{id}">#{text}</a>
+          <li><a href="##{id}">#{html}</a>
         HTML
 
         if previous_level.nil?

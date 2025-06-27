@@ -10,10 +10,10 @@ permalink: /archives
   <div class="timeline">
     {% for year in posts_by_year %}
       <div class="timeline-year" role="group" aria-labelledby="year-{{ year.name }}">
-        <h2 id="year-{{ year.name }}" class="timeline-left">
+        <div id="year-{{ year.name }}" class="timeline-left h2">
           <span class="visually-hidden">Year:</span>
           {{ year.name }}
-        </h2>
+        </div>
         <div class="timeline-seperator"></div>
       </div>
       <ul class="timeline-posts" role="list" aria-labelledby="year-{{ year.name }}">

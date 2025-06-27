@@ -1,5 +1,3 @@
-@use "abstracts/modules/no-cursor" as *
-
 .code-block
   background-color: var(--color-bg-default)
   border: var(--border-default)
@@ -13,17 +11,9 @@
     margin-block: 0
     border: none
     border-radius: 0
+    background-color: var(--color-bg-default)
 
-    .gutter
-      position: sticky
-      left: 0
-      text-align: right
-      z-index: 1
 
-      @extend %no-cursor
-
-    .code
-      width: 100%
 
 .code-block-header
   display: flex
@@ -70,13 +60,10 @@
     fill: var(--color-bg-success-emphasis)
 
 .gutter
-  background-color: var(--color-bg-muted)
-
   &.hidden
     display: none
 
   .lineno
-    color: var(--color-fg-muted)
     border-radius: 0
     border-right: var(--border-default)
 

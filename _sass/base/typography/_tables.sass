@@ -1,3 +1,5 @@
+@use "abstracts/modules/no-cursor" as *
+
 table
   display: block
   margin-bottom: 1rem
@@ -15,7 +17,7 @@ table
 
   td,
   th
-   padding: 6px 14px
+   padding: 8px 16px
    border: var(--border-default)
    text-align: inherit
 
@@ -39,3 +41,17 @@ table
     vertical-align: top
     padding: 0
     border: none
+
+  .gutter
+    position: sticky
+    left: 0
+    text-align: right
+    z-index: 1
+    background-color: var(--color-bg-muted)
+    color: var(--color-fg-muted)
+
+    @extend %no-cursor
+
+  .code
+    width: 100%
+    background-color: var(--color-bg-default)

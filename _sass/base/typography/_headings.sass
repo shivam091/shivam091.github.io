@@ -2,7 +2,8 @@
 @use "abstracts/modules/heading" as *
 
 @for $i from 1 through 6
-  h#{$i}
+  h#{$i},
+  .h#{$i}
     @extend %heading
 
     font-size: heading-size($i)
