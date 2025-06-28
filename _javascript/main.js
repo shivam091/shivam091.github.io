@@ -10,6 +10,7 @@ import { Categories } from "./modules/categories";
 import { Clipboard } from "./utils/clipboard";
 import Alert from "./modules/components/alert";
 import CodeBlockUtils from "./utils/code-block-utils";
+import LazyLoader from "./modules/components/lazy-loader";
 
 import { bindHeroTyping } from "./modules/components/hero";
 
@@ -25,5 +26,6 @@ Categories.initialize();
 Clipboard.initAll();
 Alert.init();
 CodeBlockUtils.initAll();
+LazyLoader.init();
 
 bindHeroTyping();

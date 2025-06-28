@@ -1,0 +1,14 @@
+@use "abstracts/modules/bg-cover" as *
+@use "abstracts/mixins/transition-properties" as *
+
+.lazy
+  opacity: 0
+  filter: blur(2px)
+  @include transition-properties((opacity, filter), $duration: var(--motion-duration-slow), $easing: var(--motion-easing-ease))
+
+  &.loaded
+    opacity: 1
+    filter: none
+
+  &[data-bg]
+    @extend %bg-cover
