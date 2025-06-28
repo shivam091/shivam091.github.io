@@ -46,11 +46,6 @@ module Kramdown
         super
       end
 
-      def convert_codeblock(el, opts)
-        el.attr["class"] = append_class(el.attr["class"], "highlighter-rouge notranslate")
-        super
-      end
-
       def convert_codespan(el, opts)
         el.attr["class"] = append_class(el.attr["class"], "highlighter-rouge notranslate")
         super
@@ -112,7 +107,7 @@ module Kramdown
           )
 
           li = Element.new(:li, nil, {"id" => "fn:#{name}"})
-          li.children = Marshal.load(Marshal.dump(data.children))
+          li.children = data.children.map(&:dup)
 
           # Try to append the reverse link to the last paragraph
           if (last = li.children.reverse.find { |c| c.type == :p })
