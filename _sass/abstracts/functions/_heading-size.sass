@@ -1,9 +1,20 @@
-@function heading-size($i)
-  $min: 0.85rem + (5 - $i) * 0.13rem
-  $max: 1rem + (5 - $i) * 0.18rem
+@use "sass:map"
 
-  @if $i == 1
-    $min: 1.375rem
-    $max: 2rem
+$heading-sizes: (
+  h1: (min: 1.5rem, max: 2rem, vw: 3.2vw),        // 24px → 32px
+  h2: (min: 1.125rem, max: 1.75rem, vw: 3vw),     // 18px → 28px
+  h3: (min: 1rem, max: 1.5rem, vw: 2.5vw),        // 16px → 24px
+  h4: (min: 0.9375rem, max: 1.25rem, vw: 2vw),    // 15px → 20px
+  h5: (min: 0.875rem, max: 1.125rem, vw: 1.5vw),  // 14px → 18px
+  h6: (min: 0.75rem, max: 1rem, vw: 1vw)          // 12px → 16px
+);
 
-  @return clamp(#{$min}, #{0.3 + (6 - $i) * 0.5}vw, #{$max})
+// Returns a responsive font-size for heading levels h1 to h6 using `clamp()`.
+@function heading-size($level)
+  $heading: map.get($heading-sizes, h#{$level})
+
+  $min: map.get($heading, min)
+  $max: map.get($heading, max)
+  $vw: map.get($heading, vw)
+
+  @return clamp($min, $vw, $max)

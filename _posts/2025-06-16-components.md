@@ -49,22 +49,22 @@ This is default alert.
 ### With icon, heading, and dismiss
 
 {% alert type:"accent" dismissible:true %}
-<h4 class="alert-heading">Information</h4>
+<div class="alert-heading">Information</div>
 This is just for your information.
 {% endalert %}
 
 {% alert type:"success" dismissible:true %}
-<h4 class="alert-heading">Heads Up!</h4>
+<div class="alert-heading">Heads Up!</div>
 Your profile has been updated successfully.
 {% endalert %}
 
 {% alert type:"danger" dismissible:true %}
-<h4 class="alert-heading">Error :(</h4>
+<div class="alert-heading">Error :(</div>
 Failed to save your changes. Please try again.
 {% endalert %}
 
 {% alert type:"attention" dismissible:true %}
-<h4 class="alert-heading">Attention</h4>
+<div class="alert-heading">Attention</div>
 This action requires confirmation.
 {% endalert %}
 
@@ -89,7 +89,7 @@ An example outlined attention alert with an icon.
 ### With links
 
 {% alert type:"accent" %}
-<h4 class="alert-heading">Information</h4>
+<div class="alert-heading">Information</div>
 This is an <a href="#">important notification</a> that requires your attention.
 You can <a href="/settings">update your settings here</a>.
 An example showing the <code class="language-plaintext highlighter-rouge">warning</code> type prompt.

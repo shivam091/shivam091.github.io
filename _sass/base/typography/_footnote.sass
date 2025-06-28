@@ -1,5 +1,5 @@
 .footnotes
-  font-size: clamp(0.6875rem, 0.9vw, 0.75rem)
+  font-size: var(--font-size-xs)
   color: var(--color-fg-muted)
   border-top: var(--border-default)
 
@@ -21,7 +21,7 @@
         inset: -0.25rem -.25rem -.25rem -1.5rem
 
 .footnote
-  font-size: clamp(0.6875rem, 0.9vw, 0.75rem)
+  font-size: var(--font-size-xs)
 
   &:before
     content: "["
@@ -31,7 +31,7 @@
 
 .reverse-footnote
   @at-root a#{&}
-    font-size: 0.6em
+    font-size: var(--font-size-xs)
     line-height: var(--line-height-tight)
     position: relative
     bottom: 0.25em

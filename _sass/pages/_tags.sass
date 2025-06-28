@@ -16,7 +16,7 @@
     background-color: var(--color-bg-muted)
     border: var(--border-default)
     border-radius: var(--border-radius-full)
-    font-size: clamp(0.85rem, 1vw + 0.2rem, 1rem)
+    font-size: var(--font-size-sm)
     margin-bottom: 0
 
     @include transition-properties((background-color, border-color, color), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-in-out))
@@ -33,7 +33,7 @@
       padding: 0.15em 0.5em
       background-color: var(--color-bg-neutral-muted)
       color: var(--color-fg-neutral)
-      font-size: clamp(0.7rem, 0.8vw + 0.3rem, 0.85rem)
+      font-size: var(--font-size-sm)
       border-radius: var(--border-radius-pill)
       border: var(--border-neutral-muted)
       text-align: center
