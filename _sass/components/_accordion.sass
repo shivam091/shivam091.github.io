@@ -1,0 +1,185 @@
+@use "abstracts/mixins/transition-properties" as *
+
+.accordion
+  display: flex
+  flex-direction: column
+  gap: 1rem
+
+.accordion-item
+  border: var(--border-accent-muted)
+  border-radius: var(--border-radius-default)
+  overflow: hidden
+
+  @include transition-properties(box-shadow, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+
+  &[data-expanded]
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15)
+
+  &.collapsing
+    pointer-events: none
+
+.accordion-toggle
+  border-radius: var(--border-radius-full)
+
+  .icon
+    @include transition-properties(transform, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+
+    .accordion-item[data-expanded] &
+      transform: rotate(-180deg)
+
+.accordion-header
+  display: flex
+  justify-content: space-between
+  user-select: none
+  padding: 0.75rem 1rem
+  box-shadow: var(--box-shadow-inset-muted)
+  background-image: linear-gradient(var(--color-bg-accent-muted), var(--color-bg-accent-muted))
+
+  .accordion-title
+    display: inline-flex
+    align-items: center
+    gap: 0.5rem
+
+.accordion-body
+  height: 0
+  overflow: hidden
+  display: block
+  background-color: var(--color-bg-default)
+
+  @include transition-properties(height, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+
+    li
+      padding-block: 0.75rem
+      padding-inline: 2rem 1.5rem
+      margin-block: 0
+      display: flex
+      align-items: center
+      gap: clamp(0.25rem, 1vw, 0.5rem)
+      border-top: var(--border-default)
+
+      &:hover
+        background-color: var(--color-bg-muted)
+
+// .accordion
+//
+// .accordion-item
+//   border: var(--border-default)
+//   border-radius: var(--border-radius-default)
+//   margin-bottom: 1rem
+//   overflow: hidden
+//
+//   @include transition-properties(box-shadow, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+//
+//   &[data-expanded]
+//     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15)
+//
+// .accordion-toggle
+//   border-radius: var(--border-radius-full)
+//
+//   .icon
+//     @include transition-properties(transform, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+//
+//     .accordion-item[data-expanded] &
+//       transform: rotate(-180deg)
+//
+// .accordion-header
+//   display: flex
+//   justify-content: space-between
+//   user-select: none
+//   padding: 0.5rem 1rem
+//   background-color: var(--color-bg-muted)
+//   cursor: pointer
+//
+//   .accordion-title
+//     display: inline-flex
+//     align-items: center
+//     gap: 0.5rem
+//
+// .accordion-body
+//   display: none
+//   overflow: hidden
+//   background-color: var(--color-bg-default)
+//
+//   @include transition-properties(max-height, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+//
+//   .accordion-item[data-expanded] &
+//     display: block
+//
+//   ul
+//     list-style: none
+//     padding: 0
+//     margin: 0
+//
+//     li
+//       padding-block: 0.75rem
+//       padding-inline: 2rem 1.5rem
+//       margin-block: 0
+//       display: flex
+//       align-items: center
+//       gap: clamp(0.25rem, 1vw, 0.5rem)
+//       border-top: var(--border-default)
+//
+//       &:hover
+//         background-color: var(--color-bg-muted)
+
+
+//
+// .accordion
+//   border: var(--border-default)
+//   border-radius: var(--border-radius-default)
+//   margin-bottom: 1rem
+//   overflow: hidden
+//
+//   @include transition-properties(box-shadow, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+//
+//   &[data-expanded]
+//     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15)
+//
+// .accordion-toggle
+//   border-radius: var(--border-radius-full)
+//
+//   .icon
+//     @include transition-properties(transform, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+//
+//     .accordion[data-expanded] &
+//       transform: rotate(180deg)
+//
+// .accordion-header
+//   display: flex
+//   justify-content: space-between
+//   user-select: none
+//   padding: 0.5rem 1rem
+//   background-color: var(--color-bg-muted)
+//
+//   .accordion-title
+//     display: inline-flex
+//     align-items: center
+//     gap: 0.5rem
+//
+// .accordion-panel
+//   display: none
+//   max-height: 0
+//   overflow: hidden
+//   list-style: none
+//   background-color: var(--color-bg-default)
+//   padding: 0
+//   margin: 0
+//
+//   @include transition-properties(max-height, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+//
+// .accordion-item
+//   padding-block: 0.75rem
+//   padding-inline: 2rem 1.5rem
+//   margin-block: 0
+//   display: flex
+//   align-items: center
+//   gap: clamp(0.25rem, 1vw, 0.5rem)
+//   border-top: var(--border-default)
+//
+//   &:hover
+//     background-color: var(--color-bg-muted)
