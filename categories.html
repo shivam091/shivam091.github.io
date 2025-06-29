@@ -218,11 +218,14 @@
   <section class="categories-list" aria-labelledby="categories-list-heading">
   <h2 id="categories-list-heading" class="visually-hidden">Browse posts by category<a href="#browse-posts-by-category" class="heading-anchor" aria-label="Permalink: Browse posts by category">#</a>
 </h2>
-<div class="category" data-category>
-        <div class="category-header" id="toggle-0">
-          <div class="category-title-group">
-<svg class="icon icon-folder category-icon" aria-hidden="true" focusable="false">
+
+  <div class="accordion" data-accordion>
+        <div class="accordion-header" id="toggle-0">
+          <div class="accordion-title">
+<svg class="icon icon-folder" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-folder"></use>
+</svg><svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-folder-open"></use>
 </svg><div class="category-meta-info">
               <a href="/category/blogging/" class="category-title" title="View all posts in blogging">
                 blogging
@@ -233,16 +236,16 @@
             </div>
           </div>
 
-          <button type="button" class="btn btn-category-toggle" aria-expanded="false" aria-controls="sub-categories-0" aria-label="Toggle sub categories in blogging">
-            <svg id="category-toggle-icon" class="icon icon-fold-down" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-fold-down"></use>
+          <button type="button" class="btn accordion-toggle" aria-expanded="false" aria-controls="sub-categories-0" aria-label="Toggle sub categories in blogging">
+            <svg class="icon icon-arrow-down" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-arrow-down"></use>
 </svg>
           </button>
         </div>
 
         
-          <ul id="sub-categories-0" class="sub-categories" role="region" aria-labelledby="categories-list-heading toggle-0">
-            <li class="sub-category">
+          <ul id="sub-categories-0" class="accordion-panel" role="region" aria-labelledby="categories-list-heading toggle-0">
+            <li class="accordion-item">
                 <svg class="icon icon-folder" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-folder"></use>
 </svg>
@@ -250,13 +253,13 @@
                   <a href="/category/components/" class="sub-category-title" title="View posts in components">
                     components
                   </a>
-                  <small class="posts-count">
+                  <small class="category-meta">
                     1 post
 
                   </small>
                 </div>
               </li>
-            <li class="sub-category">
+            <li class="accordion-item">
                 <svg class="icon icon-folder" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-folder"></use>
 </svg>
@@ -264,7 +267,7 @@
                   <a href="/category/typography/" class="sub-category-title" title="View posts in typography">
                     typography
                   </a>
-                  <small class="posts-count">
+                  <small class="category-meta">
                     1 post
 
                   </small>
@@ -275,11 +278,13 @@
         
       </div>
   
-  <div class="category" data-category>
-        <div class="category-header" id="toggle-1">
-          <div class="category-title-group">
-<svg class="icon icon-folder category-icon" aria-hidden="true" focusable="false">
+  <div class="accordion" data-accordion>
+        <div class="accordion-header" id="toggle-1">
+          <div class="accordion-title">
+<svg class="icon icon-folder" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-folder"></use>
+</svg><svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-folder-open"></use>
 </svg><div class="category-meta-info">
               <a href="/category/css/" class="category-title" title="View all posts in css">
                 css
@@ -289,9 +294,9 @@
             </div>
           </div>
 
-          <button type="button" class="btn btn-category-toggle" disabled aria-disabled="true" aria-expanded="false" aria-controls="sub-categories-1" aria-label="Toggle sub categories in css">
-            <svg id="category-toggle-icon" class="icon icon-fold-down" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-fold-down"></use>
+          <button type="button" class="btn accordion-toggle" disabled aria-disabled="true" aria-expanded="false" aria-controls="sub-categories-1" aria-label="Toggle sub categories in css">
+            <svg class="icon icon-arrow-down" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-arrow-down"></use>
 </svg>
           </button>
         </div>
