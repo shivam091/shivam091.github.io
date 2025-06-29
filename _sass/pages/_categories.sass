@@ -1,70 +1,33 @@
+@use "abstracts/modules/clearfix"
 @use "abstracts/mixins/transition-properties" as *
 
-.categories-list
-  .category
-    margin-bottom: 1rem
-    border: var(--border-default)
-    border-radius: var(--border-radius-default)
-    overflow: hidden
-
-    @include transition-properties(box-shadow, $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
-
-    &[data-expanded]
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15)
-
-      #category-toggle-icon
-        transform: rotate(180deg)
-
-    #category-toggle-icon
-      @include transition-properties(transform, $duration: var(--motion-duration-default), $easing: var(--motion-easing-in-out))
-
-.category-header
-  background-color: var(--color-bg-muted)
-  padding-block: clamp(0.25rem, 1vw, 0.5rem)
-  padding-inline: clamp(0.5rem, 2vw, 1rem)
-  width: 100%
-  display: flex
-  align-items: center
-  justify-content: space-between
-  gap: clamp(0.25rem, 1vw, 0.5rem)
-
-.category-title-group
-  display: inline-flex
-  align-items: center
-  gap: clamp(0.25rem, 1vw, 0.5rem)
-
 .category-title
-  font-weight: var(--font-weight-semi-bold)
+  font-weight: var(--font-weight-medium)
 
-.sub-categories
-  background-color: var(--color-bg-default)
-  display: none
-  overflow: hidden
-  max-height: 0
-  list-style: none
-  margin: 0
-  padding: 0
+.sub-category-title
+  font-weight: var(--font-weight-normal)
 
-  @include transition-properties(max-height, $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
-
-.sub-category
-  padding-block: clamp(.5rem, 1.5vw, 0.75rem)
-  padding-inline: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem)
-  display: flex
-  align-items: center
-  margin-block: 0
-  gap: clamp(0.25rem, 1vw, 0.5rem)
-  border-top: var(--border-default)
-
-  &:hover
-    background-color: var(--color-bg-muted)
-
-.btn-category-toggle
-  display: flex
-  border-radius: var(--border-radius-full)
-
-.category-meta,
-.posts-count
+.category-meta
   color: var(--color-fg-muted)
   font-weight: var(--font-weight-normal)
   vertical-align: baseline
+
+.accordion-item
+  .accordion-header
+    .icon-folder-open
+      display: none
+
+    .icon-folder
+      display: block
+
+  &[data-expanded]
+    .accordion-header
+      .icon-folder
+        display: none
+
+      .icon-folder-open
+        display: block
+
+.category-meta-info,
+.sub-category-meta-info
+  @extend %clearfix

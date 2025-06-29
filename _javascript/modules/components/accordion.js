@@ -1,48 +1,119 @@
-import * as SvgSprite from "./../../utils/svg-sprite";
+import setStyles from "./../../utils/styles";
 
-class Accordion {
-  constructor(categoryItem) {
-    this.categoryItem = categoryItem;
-    this.toggleButton = categoryItem.querySelector(".btn-category-toggle");
-    this.content = categoryItem.querySelector(".sub-categories");
-    if (this.toggleButton && this.content) this.addEventListeners();
+export default class Accordion {
+  static get accordions() {
+    return document.querySelectorAll("[data-accordion]");
   }
 
-  addEventListeners() {
-    this.toggleButton.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        this.toggleButton.click();
+  static getItems(container) {
+    return container.querySelectorAll(".accordion-item");
+  }
+
+  static getHeader(item) {
+    return item.querySelector(".accordion-header");
+  }
+
+  static getToggle(item) {
+    return item.querySelector(".accordion-toggle");
+  }
+
+  static getBody(item) {
+    return item.querySelector(".accordion-body");
+  }
+
+  static isTransitioning(item) {
+    return item._isTransitioning === true;
+  }
+
+  static setTransitioning(item, value) {
+    item._isTransitioning = value;
+  }
+
+  static animateHeight(element, targetHeight, callback, startHeight = element.scrollHeight) {
+    setStyles(element, {
+      overflow: "hidden",
+      height: `${startHeight}px`,
+    });
+
+    void element.offsetHeight; // force reflow
+
+    requestAnimationFrame(() => {
+      element.style.height = `${targetHeight}px`;
+
+      const onTransitionEnd = () => {
+        element.removeEventListener("transitionend", onTransitionEnd);
+        if (callback) callback();
+      };
+
+      element.addEventListener("transitionend", onTransitionEnd, { once: true });
+    });
+  }
+
+  static expand(item) {
+    if (this.isTransitioning(item)) return;
+    this.setTransitioning(item, true);
+
+    const body = this.getBody(item);
+    setStyles(body, { display: "block" });
+
+    item.setAttribute("data-expanded", true);
+
+    this.animateHeight(body, body.scrollHeight, () => {
+      setStyles(body, { height: "auto", overflow: "visible" });
+      this.setTransitioning(item, false);
+    });
+  }
+
+  static collapse(item) {
+    if (this.isTransitioning(item)) return;
+    this.setTransitioning(item, true);
+
+    const body = this.getBody(item);
+
+    item.removeAttribute("data-expanded");
+
+    this.animateHeight(body, 0, () => {
+      setStyles(body, { display: "none" });
+      this.setTransitioning(item, false);
+    }, body.scrollHeight);
+  }
+
+  static collapseAllExcept(container, currentItem) {
+    this.getItems(container).forEach(item => {
+      if (item !== currentItem && item.hasAttribute("data-expanded")) {
+        this.collapse(item);
       }
     });
-
-    this.toggleButton.addEventListener("click", (event) => this.toggle(event));
-
-    this.content.addEventListener("transitionend", () => {
-      this.content.style.display =
-        this.content.style.maxHeight === "0px" ? "none" : "block";
-    });
   }
 
-  toggle(event) {
-    event.preventDefault();
-    const expanded = this.toggleButton.getAttribute("aria-expanded") === "true";
-    this.toggleButton.setAttribute("aria-expanded", String(!expanded));
-    this.categoryItem.toggleAttribute("data-expanded", !expanded);
+  static toggle(container, item) {
+    if (this.isTransitioning(item)) return;
 
-    const iconHref = expanded ? "#icon-folder" : "#icon-folder-open";
-    const iconEl = this.categoryItem.querySelector(".category-icon use");
-    if (iconEl) SvgSprite.toggle(iconEl, iconHref);
+    const isExpanded = item.hasAttribute("data-expanded");
+    const toggleButton = this.getToggle(item);
+    toggleButton?.setAttribute("aria-expanded", String(!isExpanded));
 
-    if (!expanded) {
-      this.content.style.display = "block";
-      this.content.style.maxHeight = `${this.content.scrollHeight}px`;
+    if (isExpanded) {
+      this.collapse(item);
     } else {
-      this.content.style.maxHeight = `${this.content.scrollHeight}px`;
-      this.content.offsetHeight; // force reflow
-      this.content.style.maxHeight = "0";
+      this.collapseAllExcept(container, item);
+      this.expand(item);
     }
   }
-}
 
-export { Accordion };
+  static bind(container, item) {
+    const toggleButton = this.getToggle(item);
+    const body = this.getBody(item);
+    if (!toggleButton || !body) return;
+
+    toggleButton.addEventListener("click", () => this.toggle(container, item));
+
+    setStyles(body, { display: "none", height: "0" });
+  }
+
+  static initialize() {
+    this.accordions.forEach(container => {
+      this.getItems(container).forEach(item => this.bind(container, item));
+    });
+  }
+}

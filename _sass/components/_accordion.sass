@@ -1,0 +1,55 @@
+@use "abstracts/modules/no-cursor"
+@use "abstracts/modules/clearfix"
+@use "abstracts/mixins/transition-properties" as *
+
+.accordion
+  display: flex
+  flex-direction: column
+  gap: clamp(0.75rem, 2vw, 1.5rem)
+
+.accordion-item
+  border: var(--border-accent-muted)
+  border-radius: var(--border-radius-default)
+  overflow: hidden
+
+  @include transition-properties(box-shadow, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+
+  &[data-expanded]
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15)
+
+.accordion-toggle
+  border-radius: var(--border-radius-full)
+
+  .icon-arrow-down
+    @include transition-properties(transform, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+
+    .accordion-item[data-expanded] &
+      transform: rotate(-180deg)
+
+.accordion-header
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  padding: 0.75rem 1rem
+  box-shadow: var(--box-shadow-inset-muted)
+  background-image: linear-gradient(var(--color-bg-accent-muted), var(--color-bg-accent-muted))
+
+  @extend %no-cursor
+
+  .accordion-title
+    display: inline-flex
+    align-items: center
+    gap: 0.5rem
+
+    @extend %clearfix
+
+    .icon
+      flex-shrink: 0
+
+.accordion-body
+  height: 0
+  overflow: hidden
+  display: block
+  background-color: var(--color-bg-default)
+
+  @include transition-properties(height, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
