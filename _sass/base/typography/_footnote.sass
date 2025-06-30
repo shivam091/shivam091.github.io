@@ -1,12 +1,12 @@
 .footnotes
-  font-size: clamp(0.6875rem, 0.9vw, 0.75rem)
+  font-size: var(--font-size-xs)
   color: var(--color-fg-muted)
   border-top: var(--border-default)
 
-  ol
-    padding-left: 1.5rem
+.footnote-list
+  padding-left: var(--fluid-space-base)
 
-  li
+  .footnote-list-item
     position: relative
 
     &:target
@@ -18,10 +18,10 @@
         content: ""
         border: var(--border-width-medium) solid var(--color-border-accent-emphasis)
         border-radius: var(--border-radius-default)
-        inset: -0.25rem -.25rem -.25rem -1.5rem
+        inset: calc(-1 * var(--space-xs)) 0.0625rem calc(-1 * var(--space-xs)) calc(-1 * var(--space-lg))
 
 .footnote
-  font-size: clamp(0.6875rem, 0.9vw, 0.75rem)
+  font-size: var(--font-size-xs)
 
   &:before
     content: "["
@@ -31,7 +31,7 @@
 
 .reverse-footnote
   @at-root a#{&}
-    font-size: 0.6em
+    font-size: var(--font-size-xs)
     line-height: var(--line-height-tight)
     position: relative
     bottom: 0.25em

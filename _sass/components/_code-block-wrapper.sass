@@ -3,17 +3,15 @@
   border: var(--border-default)
   border-radius: var(--border-radius-default)
   overflow: hidden
-  font-size: 0.9rem
+  font-size: var(--font-size-sm)
   box-shadow: var(--box-shadow-floating-legacy)
-  margin-bottom: 1rem
+  margin-bottom: var(--fluid-space-md)
 
   figure
-    margin-block: 0
+    margin-block: var(--space-none)
     border: none
-    border-radius: 0
+    border-radius: var(--border-radius-none)
     background-color: var(--color-bg-default)
-
-
 
 .code-block-header
   display: flex
@@ -21,17 +19,17 @@
   justify-content: space-between
   background-color: var(--color-bg-muted)
   border-bottom: var(--border-muted)
-  padding: 0.5rem 1rem
+  padding: var(--space-md) var(--space-base)
 
   .code-block-button-group
     display: flex
-    gap: 0.5rem
+    gap: var(--space-xs)
 
   .code-lang
     display: flex
     align-items: center
     justify-content: center
-    gap: 0.5rem
+    gap: var(--space-xs)
     flex-grow: 1
     font-weight: var(--font-weight-medium)
     color: var(--color-fg-muted)
@@ -39,7 +37,7 @@
   .code-actions
     display: flex
     align-items: center
-    gap: 0.5rem
+    gap: var(--space-sm)
 
 .code-actions
   .btn-copy,

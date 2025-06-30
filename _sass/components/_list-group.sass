@@ -1,0 +1,20 @@
+@use "abstracts/modules/list-unstyled"
+
+.list-group
+  @extend %list-unstyled
+
+  .list-group-item
+    position: relative
+    display: flex
+    align-items: center
+    gap: 0.5rem
+    padding-block: var(--space-md)
+    padding-inline: var(--space-xl) var(--space-lg)
+    margin-block: var(--space-none)
+    border-top: var(--border-default)
+
+    .icon
+      flex-shrink: 0
+
+    &:hover
+      background-color: var(--color-bg-muted)

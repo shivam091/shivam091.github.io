@@ -7,31 +7,31 @@
 
   h2
     border-bottom: var(--border-default)
-    padding-bottom: 0.25rem
+    padding-bottom: var(--space-xs)
 
 .posts
   display: flex
   flex-direction: column
-  gap: clamp(1rem, 2vw, 1.5rem)
-  margin: 0
-  padding: 0
+  gap: var(--fluid-space-base)
+  margin: var(--space-none)
+  padding: var(--space-none)
 
   .post
-    padding: clamp(1rem, 2.5vw, 1.5rem)
+    padding: var(--fluid-space-base)
     background-color: var(--color-bg-default)
     border-radius: var(--border-radius-default)
     border: var(--border-default)
     display: flex
     flex-direction: column
-    gap: clamp(0.5rem, 1vw, 0.75rem)
+    gap: var(--fluid-space-sm)
 
   .post-header
     display: flex
     flex-direction: column
-    gap: clamp(0.4rem, 1vw, 0.75rem)
+    gap: var(--fluid-space-sm)
 
   .post-title
-    margin: 0
+    margin: var(--space-none)
     max-width: 60%
 
     @extend %text-truncate
@@ -40,36 +40,32 @@
       max-width: 100%
 
   .post-excerpt
-    margin: 0
+    margin: var(--space-none)
     color: var(--color-fg-muted)
 
   .post-footer
-    margin-top: 0
+    margin-top: var(--space-none)
 
 .post-meta
   display: flex
   flex-wrap: wrap
   align-items: center
-  gap: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 1.5rem)
-  font-size: clamp(0.8125rem, 1.2vw, 0.9375rem)
+  gap: var(--fluid-space-md) var(--fluid-space-base)
+  font-size: var(--font-size-sm)
   color: var(--color-fg-muted)
 
   > div
     display: inline-flex
     align-items: center
-    gap: 0.25rem
-
-    svg
-      width: 1.5em
-      height: 1.5em
+    gap: var(--space-xs)
 
   @media (max-width: 600px)
     flex-direction: column
     align-items: flex-start
 
 .post-footer
-  margin-top: clamp(2rem, 5vw, 3rem)
-  font-size: clamp(0.85rem, 1vw, 1rem)
+  margin-top: var(--fluid-space-xl)
+  font-size: var(--font-size-sm)
   color: var(--color-fg-muted)
 
   .post-author
@@ -82,21 +78,21 @@
     justify-content: space-between
     align-items: center
     flex-wrap: wrap
-    gap: 1rem
+    gap: var(--space-base)
 
     .copyright
       flex: 1 1 auto
 
     .share-icons
       display: flex
-      gap: clamp(0.25rem, 1vw, 0.5rem)
+      gap: var(--fluid-space-xs)
       align-items: center
 
       a
         display: inline-flex
         align-items: center
         justify-content: center
-        padding: clamp(0.25rem, 0.5vw, 0.5rem)
+        padding: var(--fluid-space-xs)
         color: var(--color-fg-muted)
 
         @include transition-properties(color, $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
@@ -104,12 +100,8 @@
         &:hover
           color: var(--color-fg-default)
 
-        svg
-          width: clamp(1rem, 1.2vw, 1.4rem)
-          height: clamp(1rem, 1.2vw, 1.4rem)
-
     @media (max-width: 768px)
       flex-direction: column
       align-items: flex-start
       text-align: left
-      gap: 0.5rem
+      gap: var(--space-sm)

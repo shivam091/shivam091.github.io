@@ -4,8 +4,8 @@ button
   background-color: var(--color-bg-control-transparent)
   color: var(--color-fg-control)
   border: var(--border-width-default) solid var(--color-border-control-transparent)
-  padding: clamp(0.4rem, 1.2vw, 0.6rem)
-  font-size: clamp(0.875rem, 1.25vw, 0.9375rem)
+  padding: var(--space-sm)
+  font-size: var(--fluid-font-size-sm)
   font-weight: var(--font-weight-semi-bold)
 
   &:hover,
@@ -54,8 +54,8 @@ button:not(:disabled)
     border-color: var(--color-border-control-disabled)
 
 .btn-sm
-  padding: clamp(0.2rem, 0.6vw, 0.3rem)
-  font-size: clamp(12px, 1.2vw, 14px)
+  padding: var(--space-xs)
+  font-size: var(--fluid-font-size-xs)
   border-radius: var(--border-radius-small)
 
 .btn-primary

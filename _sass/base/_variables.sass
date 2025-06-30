@@ -8,10 +8,16 @@
 /* Page wrapper offsets */
 @include emit-css-vars($page-wrapper-offsets, $prefix: "wrapper-offset")
 
+/* Spacings */
+@include emit-css-vars($spaces, $prefix: "space")
+@include emit-css-vars($fluid-spaces, $prefix: "fluid-space")
+
 /* Typography */
 @include emit-css-vars($typography)
 @include emit-css-vars($font-weights, $prefix: "font-weight")
 @include emit-css-vars($line-heights, $prefix: "line-height")
+@include emit-css-vars($font-sizes, $prefix: "font-size")
+@include emit-css-vars($fluid-font-sizes, $prefix: "fluid-font-size")
 
 /* Border radii and widths */
 @include emit-css-vars($border-radii, $prefix: "border-radius")
@@ -25,6 +31,9 @@
 
 /* Icons */
 @include emit-css-vars($icons, $prefix: "icon")
+
+/* Sizes */
+@include emit-css-vars($sizes, $prefix: "size")
 
 /* Motion */
 @include emit-css-vars($motion-durations, $prefix: "motion-duration")

@@ -3,11 +3,11 @@
 
 .scroll-top
   position: fixed
-  bottom: 2rem
-  right: 1rem
+  bottom: var(--space-xl)
+  right: var(--space-base)
   z-index: 1000
-  width: 48px
-  height: 48px
+  width: var(--space-xxl)
+  height: var(--space-xxl)
   border-radius: var(--border-radius-full)
   display: flex
   align-items: center
@@ -20,7 +20,7 @@
   @include transition-properties((right, background-color, color, border-color), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-in-out))
 
   @media (max-width: 768px)
-    right: 1rem
+    right: var(--space-md)
 
   &[data-state="visible"]
     animation: scrollTopBounceIn var(--motion-duration-slow) both

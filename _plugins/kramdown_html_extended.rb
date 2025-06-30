@@ -46,11 +46,6 @@ module Kramdown
         super
       end
 
-      def convert_codeblock(el, opts)
-        el.attr["class"] = append_class(el.attr["class"], "highlighter-rouge notranslate")
-        super
-      end
-
       def convert_codespan(el, opts)
         el.attr["class"] = append_class(el.attr["class"], "highlighter-rouge notranslate")
         super
@@ -103,7 +98,7 @@ module Kramdown
       def footnote_content
         return "" if @footnotes.empty?
 
-        ol = Element.new(:ol)
+        ol = Element.new(:ol, nil, {class: "footnote-list"})
         attributes = {class: "footnotes", role: "doc-endnotes", dir: @global_dir}
 
         @footnotes.each do |name, data, *_|
@@ -111,8 +106,8 @@ module Kramdown
             <a href="#fnref:#{name}" class="reverse-footnote" aria-label="Back to reference #{name}" role="doc-backlink">↩</a>
           )
 
-          li = Element.new(:li, nil, {"id" => "fn:#{name}"})
-          li.children = Marshal.load(Marshal.dump(data.children))
+          li = Element.new(:li, nil, {"id" => "fn:#{name}", class: "footnote-list-item"})
+          li.children = data.children.map(&:dup)
 
           # Try to append the reverse link to the last paragraph
           if (last = li.children.reverse.find { |c| c.type == :p })

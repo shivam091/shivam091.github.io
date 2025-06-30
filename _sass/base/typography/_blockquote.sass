@@ -1,20 +1,19 @@
 @use "abstracts/mixins/break-word" as *
 
 blockquote
-  padding: 0 1em
+  padding-inline: 1em
   color: var(--color-fg-muted)
   border-left: var(--border-width-thick) solid var(--color-border-default)
-  margin-top: 0
-  margin-bottom: 1rem
+  margin-bottom: var(--space-base)
   line-height: var(--line-height-relaxed)
 
   @include break-word()
 
   p
-    padding: 0.5rem
+    padding: var(--space-sm)
 
   &:first-child
-    margin-bottom: 0
+    margin-bottom: var(--space-none)
 
   &:last-child
-    margin-top: 0
+    margin-top: var(--space-none)

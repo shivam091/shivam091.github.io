@@ -1,13 +1,13 @@
-@use "abstracts/mixins/clearfix" as *
+@use "abstracts/modules/clearfix"
 
 hr
   border: none
   height: 1px
   background: linear-gradient(to right, transparent, var(--color-border-default), transparent)
-  margin: 1rem 0
+  margin-block: var(--fluid-space-md)
 
 .clearfix
-  @include clearfix()
+  @extend %clearfix
 
 :focus,
 :focus-visible
@@ -27,7 +27,7 @@ hr
 #mask
   display: none
   position: fixed
-  inset: 0 0 0 0
+  inset: var(--space-none)
   height: 100%
   width: 100%
   z-index: 1
