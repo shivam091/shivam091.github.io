@@ -23,7 +23,7 @@
   list-style: none
   width: max-content
   min-width: 10rem
-  padding: 0.5rem
+  padding: var(--space-sm)
 
   &.show
     display: block
@@ -34,10 +34,10 @@
   grid-template-columns: auto 1fr
   grid-template-rows: max-content
   align-items: center
-  gap: 0.5rem
+  gap: var(--space-sm)
   color: var(--color-fg-control)
   font-weight: var(--font-weight-medium)
-  padding-block: 0.25rem
+  padding-block: var(--space-xs)
   background-color: var(--color-bg-control-transparent)
   border-radius: var(--border-radius-small)
   width: 100%
@@ -60,9 +60,9 @@
   &::after
     content: ""
     position: absolute
-    right: 0.5rem
+    right: var(--space-sm)
     top: 50%
     transform: translateY(-50%)
-    width: 18px
-    height: 18px
+    width: var(--size-base)
+    height: var(--size-base)
     @include icon-mask(var(--icon-check-circle), $color: var(--color-fg-success))

@@ -7,14 +7,14 @@ $alert-types: (success, danger, attention, accent)
   position: relative
   display: flex
   align-items: center
-  padding: 1rem
+  padding: var(--space-base)
   border: var(--border-width-default) solid var(--color-border-transparent)
   border-radius: var(--border-radius-default)
-  font-size: 0.95rem
+  font-size: var(--font-size-normal)
   background-color: var(--color-bg-neutral-muted)
   color: var(--color-fg-default)
-  gap: 1rem
-  margin-bottom: 0.5rem
+  gap: var(--space-base)
+  margin-bottom: var(--space-sm)
   line-height: var(--line-height-relaxed)
 
   @include transition-properties((opacity, transform, visibility), $duration: var(--motion-duration-default), $easing: var(--motion-easing-in-out))
@@ -36,14 +36,14 @@ $alert-types: (success, danger, attention, accent)
 
   &.fade-out
     opacity: 0
-    transform: translateY(-0.5rem)
+    transform: translateY(calc(-1 * var(--space-sm)))
     pointer-events: none
     visibility: hidden
 
   &-heading
     font-weight: var(--font-weight-semi-bold)
-    margin: 0 0 0.25rem
-    font-size: 1rem
+    margin-bottom: var(--space-xs)
+    font-size: var(--fluid-font-size-md)
 
   &-icon
     flex-shrink: 0
@@ -56,13 +56,13 @@ $alert-types: (success, danger, attention, accent)
     flex: 1
 
     p
-      margin-bottom: 0
+      margin-bottom: var(--space-none)
 
   &-dismiss
     background-color: var(--color-bg-transparent)
     border: none
     color: inherit
-    padding: 0
+    padding: var(--space-none)
     line-height: 1
     flex-shrink: 0
 

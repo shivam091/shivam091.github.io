@@ -11,29 +11,26 @@
 
 .skip-link
   position: absolute
-  top: -3.5rem
-  left: var(--fluid-space-md)
+  top: -100vh
+  left: auto
   z-index: 9999
-  padding: 0.5rem 1rem
+  padding: var(--space-sm) var(--space-md)
   background-color: var(--color-bg-control)
   color: var(--color-fg-control)
   border: var(--border-width-default) solid var(--color-border-control)
-  font-size: 0.875rem
   border-radius: var(--border-radius-default)
   opacity: 0
   pointer-events: none
 
-  @include transition-properties((top, opacity, background-color), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-out))
+  @include transition-properties(top, $duration: var(--motion-duration-fast), $easing: var(--motion-easing-out))
 
   &:hover
     background-color: var(--color-bg-control-hover)
 
   &:focus
-    top: var(--fluid-space-md)
+    top: var(--space-xl)
+    left: var(--space-xl)
     opacity: 1
     color: var(--color-fg-control)
     pointer-events: auto
     text-decoration: none
-
-  @media (max-width: 768px)
-    padding: 0.25rem 0.5rem

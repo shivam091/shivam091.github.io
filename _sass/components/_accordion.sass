@@ -5,7 +5,7 @@
 .accordion
   display: flex
   flex-direction: column
-  gap: clamp(0.75rem, 2vw, 1.5rem)
+  gap: var(--fluid-space-base)
 
 .accordion-item
   border: var(--border-accent-muted)
@@ -30,7 +30,7 @@
   display: flex
   justify-content: space-between
   flex-wrap: wrap
-  padding: 0.75rem 1rem
+  padding: var(--space-md) var(--space-base)
   box-shadow: var(--box-shadow-inset-muted)
   background-image: linear-gradient(var(--color-bg-accent-muted), var(--color-bg-accent-muted))
 
@@ -39,7 +39,7 @@
   .accordion-title
     display: inline-flex
     align-items: center
-    gap: 0.5rem
+    gap: var(--space-sm)
 
     @extend %clearfix
 

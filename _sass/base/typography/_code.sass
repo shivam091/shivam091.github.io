@@ -1,7 +1,7 @@
 code,
 pre
   font-family: var(--font-stack-monospace)
-  font-size: clamp(0.8125rem, 1.2vw, 0.9375rem)
+  font-size: var(--font-size-sm)
   white-space: pre
   border-radius: var(--border-radius-default)
   line-height: var(--line-height-code)
@@ -21,14 +21,14 @@ figure.highlight,
     width: 100%
 
 pre:not(:has(.rouge-table))
-  padding: 1rem
+  padding: var(--space-base)
   overflow-x: auto
 
 kbd
   font-family: var(--font-stack-monospace)
-  font-size: clamp(0.8125rem, 1.2vw, 0.9375rem)
+  font-size: var(--font-size-sm)
   display: inline-block
-  padding: 0.125rem 0.25rem
+  padding: var(--space-xxxs) var(--space-xs)
   line-height: var(--line-height-tight)
   color: var(--color-fg-default)
   vertical-align: middle

@@ -10,7 +10,7 @@
     margin-left: var(--wrapper-offset-md)
 
   @media (max-width: 768px)
-    margin-left: 0
+    margin-left: var(--space-none)
     transform: translateX(0)
 
     @include transition-properties(transform, $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
@@ -22,10 +22,10 @@
   display: flex
   align-items: center
   flex-direction: column
-  padding: 1rem
+  padding: var(--space-base)
 
   @media (max-width: 768px)
-    padding-block: 0.5rem
+    padding-block: var(--space-sm)
 
 .page-wrapper,
 .main-content

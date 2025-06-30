@@ -2,39 +2,37 @@
 
 ul,
 ol
-  margin-block: 0.5rem
+  margin-block: var(--space-sm)
   padding-left: 2em
   line-height: var(--line-height-normal)
-  font-size: clamp(0.875rem, 1.5vw, 1rem)
 
   // ol
   //   margin-block: 0.5rem
 
   li
-    margin-bottom: 0.5rem
+    margin-bottom: var(--space-sm)
 
     @include break-word()
 
 li
   &:last-of-type
-    margin-bottom: 0
+    margin-bottom: var(--space-none)
 
 dl
-  padding: 0
-  margin-top: 0
-  margin-bottom: 1rem
-  font-size: clamp(0.875rem, 1.5vw, 1rem)
+  padding: var(--space-none)
+  margin-top: var(--space-none)
+  margin-bottom: var(--space-base)
   line-height: var(--line-height-normal)
 
   dt
-    padding: 0
-    margin-top: 1rem
+    padding: var(--space-none)
+    margin-top: var(--space-base)
     font-style: italic
     font-weight: var(--font-weight-semi-bold)
 
   dd
-    padding-inline: 1rem
-    margin-bottom: 1rem
+    padding-inline: var(--space-base)
+    margin-bottom: var(--space-base)
 
     > *
       @include break-word()
@@ -44,7 +42,7 @@ dl
     list-style-type: none
 
     + .task-list-item
-      margin-top: 0.25rem
+      margin-top: var(--space-xs)
 
   .task-list-item-checkbox
     margin: 0 0.5em 0.25em -1.4em
