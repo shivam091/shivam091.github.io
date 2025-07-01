@@ -16,7 +16,11 @@
       </header>
 
       <footer class="post-footer">
-        {% include posts/meta.html post = post %}
+        <div class="post-meta">
+          {% include posts/published-at.html post = post %}
+          {% include posts/categories.html post = post %}
+          {% include posts/read-time.html post = post %}
+        </div>
       </footer>
     </article>
   {% endfor %}

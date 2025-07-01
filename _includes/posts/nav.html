@@ -1,0 +1,27 @@
+{%- assign post = include.post %}
+
+<nav class="post-nav" aria-label="Post navigation">
+  {%- if page.previous %}
+  <a href="{{ page.previous.url }}" class="post-nav-link previous" rel="previous">
+    <span class="label">Older</span>
+    <span class="title">{{ page.previous.title }}</span>
+  </a>
+  {%- else %}
+  <div class="post-nav-link previous disabled" role="link" aria-disabled="true" tabindex="-1">
+    <span class="label">Older</span>
+    <span class="title">—</span>
+  </div>
+  {%- endif %}
+
+  {%- if page.next %}
+  <a href="{{ page.next.url }}" class="post-nav-link next" rel="next">
+    <span class="label">Newer</span>
+    <span class="title">{{ page.next.title }}</span>
+  </a>
+  {%- else %}
+  <div class="post-nav-link next disabled" role="link" aria-disabled="true" tabindex="-1">
+    <span class="label">Newer</span>
+    <span class="title">—</span>
+  </div>
+  {%- endif %}
+</nav>
