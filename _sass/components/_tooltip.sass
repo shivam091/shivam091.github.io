@@ -1,5 +1,6 @@
 @use "abstracts/mixins/caret" as *
 @use "abstracts/mixins/transition-properties" as *
+@use "abstracts/mixins/breakpoints" as breakpoint
 
 .tooltip
   @include caret
@@ -30,5 +31,5 @@
     opacity: 0
     pointer-events: none
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     max-width: 180px

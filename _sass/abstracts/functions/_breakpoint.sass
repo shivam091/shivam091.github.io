@@ -1,0 +1,11 @@
+@use "sass:map"
+@use "to-em" as *
+@use "abstracts/variables/breakpoints" as *
+
+@function breakpoint($key, $use-em: false)
+  @if map.has-key($breakpoints, $key)
+    $value: map.get($breakpoints, $key)
+
+    @return if($use-em, to-em($value), $value)
+  @else
+    @error "No breakpoint found for `#{$key}`. Available keys: #{map.keys($breakpoints)}."

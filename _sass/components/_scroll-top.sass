@@ -1,5 +1,6 @@
 @use "abstracts/animations/scroll-top" as *
 @use "abstracts/mixins/transition-properties" as *
+@use "abstracts/mixins/breakpoints" as breakpoint
 
 .scroll-top
   position: fixed
@@ -19,7 +20,7 @@
 
   @include transition-properties((right, background-color, color, border-color), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-in-out))
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     right: var(--space-md)
 
   &[data-state="visible"]

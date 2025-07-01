@@ -1,0 +1,72 @@
+@use "abstracts/mixins/transition-properties" as *
+@use "abstracts/mixins/breakpoints" as breakpoint
+
+.post-nav
+  display: flex
+  flex-direction: column
+  margin-top: var(--fluid-space-lg)
+
+  @include breakpoint.min(md)
+    flex-direction: row
+    justify-content: space-between
+
+.post-nav-link
+  display: block
+  position: relative
+  flex: 1
+  padding: var(--fluid-space-lg)
+  border: var(--border-width-default) solid var(--color-border-control)
+  border-radius: var(--border-radius-medium)
+  background-color: var(--color-bg-control)
+
+  @include transition-properties((background-color, border-color, box-shadow), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-ease))
+
+  &:hover,
+  &:focus
+    background-color: var(--color-bg-control-hover)
+    box-shadow: var(--box-shadow-sm)
+    text-decoration: none
+
+  &.disabled
+    background-color: var(--color-bg-control-disabled)
+    color: var(--color-fg-control-disabled)
+    border-color: var(--color-border-control-disabled)
+    cursor: not-allowed
+    pointer-events: none
+
+    .label,
+    .title
+      color: var(--color-fg-control-disabled)
+
+  .label
+    font-size: 0.85em
+    color: var(--color-fg-control)
+    display: block
+    margin-bottom: var(--space-md)
+    text-transform: uppercase
+    letter-spacing: 0.05em
+
+  .title
+    font-size: var(--fluid-font-size-normal)
+    line-height: var(--line-height-paragraph)
+
+  &.previous,
+  &.next
+    text-align: center
+
+  &:first-child
+    border-radius: var(--border-radius-default) var(--border-radius-default) 0 0
+    inset: 0 0 -1px 0
+
+  &:last-child
+    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default)
+    inset: -1px 0 0 0
+
+  @include breakpoint.min(md)
+    &:first-child
+      border-radius: var(--border-radius-default) 0 0 var(--border-radius-default)
+      inset: 0 0 0 1px
+
+    &:last-child
+      border-radius: 0 var(--border-radius-default) var(--border-radius-default) 0
+      inset: 0 1px 0 0

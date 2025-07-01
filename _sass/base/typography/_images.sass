@@ -1,9 +1,16 @@
+@use "abstracts/mixins/breakpoints" as breakpoint
+@use "abstracts/mixins/transition-properties" as *
+
 img
   max-width: 100%
   height: auto
   object-fit: cover
   border-radius: var(--border-radius-default)
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5)
+  box-shadow: var(--box-shadow-md)
+  @include transition-properties(box-shadow, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+
+  &:hover
+    box-shadow: var(--box-shadow-lg)
 
 svg
   display: inline-block
@@ -25,6 +32,6 @@ svg
   box-shadow: var(--box-shadow-avatar)
   border: var(--border-width-default) solid var(--color-border-translucent)
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     width: var(--size-tera)
     height: var(--size-tera)
