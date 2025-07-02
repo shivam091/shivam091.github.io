@@ -1,4 +1,5 @@
 @use "abstracts/modules/clearfix"
+@use "abstracts/mixins/breakpoints" as breakpoint
 
 hr
   border: none
@@ -15,13 +16,13 @@ hr
   outline-offset: var(--outline-focus-offset)
 
 :focus:not(:focus-visible)
-  outline: none
-  box-shadow: none
+  outline: var(--outline-none)
+  box-shadow: var(--box-shadow-none)
 
 :disabled,
 .disabled,
 [aria-disabled=true]
-  box-shadow: none
+  box-shadow: var(--box-shadow-none)
   cursor: not-allowed !important
 
 #mask
@@ -33,5 +34,5 @@ hr
   z-index: 1
 
   @at-root [data-sidebar="open"] &
-    @media (max-width: 768px)
+    @include breakpoint.max(md)
       display: block

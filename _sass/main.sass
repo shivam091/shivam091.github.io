@@ -4,3 +4,27 @@
 @use "layout"
 @use "pages"
 @use "vendors"
+
+.author-box
+  display: flex
+  gap: 1rem
+  margin-top: 3rem
+  padding: 1.5rem
+  border: 1px solid #eee
+  background: #fafafa
+  border-radius: 8px
+
+  .avatar
+    width: 64px
+    height: 64px
+    border-radius: 50%
+    object-fit: cover
+
+  .author-info
+    h4
+      margin: 0 0 0.25rem
+
+    .social-links a
+      margin-right: 1rem
+      font-size: 0.9rem
+      color: #007acc

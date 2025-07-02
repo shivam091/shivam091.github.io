@@ -3,6 +3,7 @@
 @use "abstracts/animations/fade-in-up" as *
 @use "abstracts/animations/bounce" as *
 @use "abstracts/mixins/transition-properties" as *
+@use "abstracts/mixins/breakpoints" as breakpoint
 
 .hero
   @extend %bg-cover
@@ -21,7 +22,7 @@
 
   @include overlay(rgba(13, 17, 23, 0.6))
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     background-attachment: scroll
 
 .hero-content
@@ -39,7 +40,7 @@
   backdrop-filter: blur(8px) saturate(140%) contrast(120%)
   animation: fadeInUp var(--motion-duration-extra-slow) var(--motion-easing-in) both
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     max-inline-size: 35rem
 
 .hero-title
@@ -89,7 +90,7 @@
     color: var(--color-fg-white)
     text-decoration: none
 
-  @media (max-width: 480px)
+  @include breakpoint.max(sm)
     width: 100%
     text-align: center
 

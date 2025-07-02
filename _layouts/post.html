@@ -2,54 +2,36 @@
 layout: page
 ---
 
-<header class="post-header">
-  {% include posts/meta.html post = page %}
-</header>
-
-{% toc %}
-
 <article class="post-content" aria-labelledby="page-title">
-  {{ content }}
-</article>
+  <meta itemprop="datePublished" content="{{ page.published_at | date_to_xmlschema }}">
+  <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">
+  <meta itemprop="headline" content="{{ page.title }}">
+  <meta itemprop="mainEntityOfPage" content="{{ page.url | absolute_url }}">
 
-<footer class="post-footer" itemscope itemtype="https://schema.org/Person">
-  <p class="post-author">
-    <em>Written by <span itemprop="name">{{ site.author.name}}</span></em>
-  </p>
-
-  <div class="post-footer-bottom">
-    <div class="copyright">
-      This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> by the author.
+  <header class="post-header">
+    <div class="post-meta">
+      {% include posts/meta.html post = page %}
     </div>
 
-    <section aria-labelledby="share-title">
-      <h3 id="share-title" class="visually-hidden">Share this post</h3>
-      <div class="share-icons" aria-label="Share this post">
-        Share:
-        <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title | uri_escape }}"
-          aria-label="Share on Twitter" data-tooltip="Twitter" target="_blank" rel="noopener noreferrer nofollow">
-          {% icon twitter %}
-        </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
-          aria-label="Share on Facebook" data-tooltip="Facebook" target="_blank" rel="noopener noreferrer nofollow">
-          {% icon facebook %}
-        </a>
-        <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title | uri_escape }}"
-          aria-label="Share on Telegram" data-tooltip="Telegram" target="_blank" rel="noopener noreferrer nofollow">
-          {% icon telegram %}
-        </a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}"
-          aria-label="Share on LinkedIn" data-tooltip="LinkedIn" target="_blank" rel="noopener noreferrer nofollow">
-          {% icon linkedin %}
-        </a>
-        <a href="https://wa.me/?text={{ page.title | uri_escape }}%20{{ page.url | absolute_url }}"
-          aria-label="Share on WhatsApp" data-tooltip="WhatsApp" target="_blank" rel="noopener noreferrer nofollow">
-          {% icon whatsapp %}
-        </a>
-        <a href="" aria-label="Copy link" data-copy-link data-tooltip="Copy link">
-          {% icon link %}
-        </a>
+    {% include posts/author.html post = page %}
+  </header>
+
+  {% toc %}
+
+  {{ content }}
+
+  <footer class="post-footer">
+    <div class="post-footer-bottom">
+      <div class="copyright">
+        This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> by the author.
       </div>
-    </section>
-  </div>
-</footer>
+
+      <section aria-labelledby="share-title">
+        <h3 id="share-title" class="visually-hidden">Share this post</h3>
+        {% include posts/share.html post = page %}
+      </section>
+    </div>
+  </footer>
+
+  {%- include posts/nav.html post = page -%}
+</article>

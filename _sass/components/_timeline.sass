@@ -1,4 +1,5 @@
 @use "abstracts/modules/list-unstyled"
+@use "abstracts/mixins/breakpoints" as breakpoint
 
 $separator-height: var(--size-huge)
 
@@ -26,7 +27,7 @@ $separator-height: var(--size-huge)
   border-color: var(--color-border-accent-muted)
   margin-bottom: var(--space-base)
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     .timeline-left
       font-size: 0.85rem
 
@@ -38,7 +39,7 @@ $separator-height: var(--size-huge)
   color: var(--color-fg-muted)
   white-space: nowrap
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     flex: 0 0 4rem
 
 .timeline-year
@@ -50,6 +51,7 @@ $separator-height: var(--size-huge)
       width: var(--size-base)
       height: var(--size-base)
       background: var(--color-bg-accent-emphasis)
+      box-shadow: 0 0 8px 2px var(--color-fg-accent)
 
 .timeline-seperator
   flex: 0 0 2rem
@@ -65,7 +67,7 @@ $separator-height: var(--size-huge)
     height: var(--size-md)
     background: var(--color-fg-accent)
     border: var(--border-width-medium) solid var(--color-border-default)
-    box-shadow: 0 0 4px 0 var(--color-fg-neutral)
+    box-shadow: 0 0 8px 1px var(--color-fg-accent)
     border-radius: var(--border-radius-full)
     z-index: 2
 

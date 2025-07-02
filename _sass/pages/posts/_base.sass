@@ -1,6 +1,7 @@
 @use "abstracts/modules/no-cursor" as *
 @use "abstracts/modules/text-truncate" as *
 @use "abstracts/mixins/transition-properties" as *
+@use "abstracts/mixins/breakpoints" as breakpoint
 
 .post-content
   @extend %no-cursor
@@ -33,10 +34,11 @@
   .post-title
     margin: var(--space-none)
     max-width: 60%
+    color: var(--color-fg-link)
 
     @extend %text-truncate
 
-    @media (max-width: 768px)
+    @include breakpoint.max(md)
       max-width: 100%
 
   .post-excerpt
@@ -46,32 +48,10 @@
   .post-footer
     margin-top: var(--space-none)
 
-.post-meta
-  display: flex
-  flex-wrap: wrap
-  align-items: center
-  gap: var(--fluid-space-md) var(--fluid-space-base)
-  font-size: var(--font-size-sm)
-  color: var(--color-fg-muted)
-
-  > div
-    display: inline-flex
-    align-items: center
-    gap: var(--space-xs)
-
-  @media (max-width: 600px)
-    flex-direction: column
-    align-items: flex-start
-
 .post-footer
-  margin-top: var(--fluid-space-xl)
+  margin-top: var(--fluid-space-lg)
   font-size: var(--font-size-sm)
   color: var(--color-fg-muted)
-
-  .post-author
-    span[itemprop="name"]
-      color: var(--color-fg-default)
-      font-weight: var(--font-weight-medium)
 
   .post-footer-bottom
     display: flex
@@ -100,8 +80,8 @@
         &:hover
           color: var(--color-fg-default)
 
-    @media (max-width: 768px)
+    @include breakpoint.max(md)
       flex-direction: column
       align-items: flex-start
       text-align: left
-      gap: var(--space-sm)
+      gap: var(--space-md)

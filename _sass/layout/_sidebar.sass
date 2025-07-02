@@ -1,6 +1,7 @@
 @use "abstracts/modules/bg-cover" as *
 @use "abstracts/mixins/overlay" as *
 @use "abstracts/mixins/transition-properties" as *
+@use "abstracts/mixins/breakpoints" as breakpoint
 
 .sidebar
   @extend %bg-cover
@@ -15,15 +16,15 @@
   color: var(--color-fg-white)
   z-index: 999
   box-sizing: border-box
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5)
   max-height: 100vh
+  box-shadow: var(--box-shadow-md)
 
   @include overlay(rgba(0, 0, 0, 0.6))
 
-  @media (max-width: 1024px)
+  @include breakpoint.max(lg)
     width: var(--sidebar-width-md)
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     width: var(--sidebar-width-sm)
     transform: translateX(-100%)
     opacity: 0
@@ -35,6 +36,7 @@
     transform: translateX(0)
     opacity: 1
     pointer-events: auto
+    box-shadow: var(--box-shadow-lg)
 
 .sidebar-content
   flex: 1 1 auto
@@ -51,7 +53,7 @@
   -ms-overflow-style: none
   scrollbar-width: none
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     padding: var(--space-sm)
 
 .sidebar-top
@@ -90,7 +92,7 @@
   justify-content: center
   text-decoration: none
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     padding: var(--space-xs)
 
 .sidebar-nav
@@ -117,7 +119,7 @@
     border-left: var(--border-width-medium) solid var(--color-border-accent-emphasis)
     text-decoration: none
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     padding: var(--space-sm) var(--space-md)
 
 .sidebar-toggle
@@ -162,7 +164,7 @@
     .bottom-bar
       transform: translateY(-6px) rotate(-45deg)
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     display: flex
     flex-direction: column
     justify-content: center

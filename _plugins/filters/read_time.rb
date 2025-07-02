@@ -7,7 +7,7 @@ module Jekyll
 
   module ReadTimeFilter
     def read_time(input)
-      words_per_minute = @context.registers[:site].config.dig("posts", "read_time", "words_per_minute") || 200
+      words_per_minute = @context.registers[:site].config.dig("post", "read_time", "words_per_minute") || 200
       words = words(input)
 
       (words / words_per_minute.to_f).ceil

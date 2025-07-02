@@ -1,4 +1,5 @@
 @use "abstracts/mixins/transition-properties" as *
+@use "abstracts/mixins/breakpoints" as breakpoint
 
 .page-wrapper
   display: grid
@@ -6,10 +7,10 @@
   min-height: 100vh
   margin-left: var(--wrapper-offset-lg)
 
-  @media (max-width: 1024px)
+  @include breakpoint.max(lg)
     margin-left: var(--wrapper-offset-md)
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     margin-left: var(--space-none)
     transform: translateX(0)
 
@@ -24,7 +25,7 @@
   flex-direction: column
   padding: var(--space-base)
 
-  @media (max-width: 768px)
+  @include breakpoint.max(md)
     padding-block: var(--space-sm)
 
 .page-wrapper,
