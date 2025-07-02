@@ -35,7 +35,7 @@ $alert-types: (success, danger, attention, accent)
           fill: var(--color-bg-#{$type}-emphasis)
 
   &.fade-out
-    opacity: 0
+    opacity: var(--opacity-none)
     transform: translateY(calc(-1 * var(--space-sm)))
     pointer-events: none
     visibility: hidden

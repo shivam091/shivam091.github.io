@@ -14,7 +14,7 @@
   font-size: var(--font-size-xs)
   z-index: 1000
   pointer-events: none
-  opacity: 0
+  opacity: var(--opacity-none)
   transform: scale(0.95)
   max-width: 250px
   width: max-content
@@ -24,11 +24,11 @@
   @include transition-properties(opacity, $duration: var(--motion-duration-fast), $easing: var(--motion-easing-entrance))
 
   &.show
-    opacity: 1
+    opacity: var(--opacity-full)
     pointer-events: auto
 
   &.hide
-    opacity: 0
+    opacity: var(--opacity-none)
     pointer-events: none
 
   @include breakpoint.max(md)

@@ -1,11 +1,11 @@
 @keyframes scrollTopBounceIn
   from
-    opacity: 0
+    opacity: var(--opacity-none)
     transform: translateY(20px) scale(0.95)
     visibility: hidden
 
   60%
-    opacity: 1
+    opacity: var(--opacity-full)
     transform: translateY(-5px) scale(1.05)
     visibility: visible
 
@@ -15,11 +15,11 @@
 
 @keyframes scrollTopBounceOut
   from
-    opacity: 1
+    opacity: var(--opacity-full)
     transform: translateY(0) scale(1)
     visibility: visible
 
   to
-    opacity: 0
+    opacity: var(--opacity-none)
     transform: translateY(20px) scale(0.95)
     visibility: hidden
