@@ -27,14 +27,14 @@
   @include breakpoint.max(md)
     width: var(--sidebar-width-sm)
     transform: translateX(-100%)
-    opacity: 0
+    opacity: var(--opacity-none)
     pointer-events: none
 
     @include transition-properties((transform, opacity), $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
 
   body[data-sidebar="open"] &
     transform: translateX(0)
-    opacity: 1
+    opacity: var(--opacity-full)
     pointer-events: auto
     box-shadow: var(--box-shadow-lg)
 
@@ -148,7 +148,7 @@
       margin-top: var(--space-none)
 
   .middle-bar
-    opacity: 1
+    opacity: var(--opacity-full)
 
   .top-bar,
   .bottom-bar
@@ -156,7 +156,7 @@
 
   body[data-sidebar="open"] &
     .middle-bar
-      opacity: 0
+      opacity: var(--opacity-none)
 
     .top-bar
       transform: translateY(6px) rotate(45deg)

@@ -8,12 +8,12 @@
   width: 0%
   background-color: var(--color-bg-accent-emphasis)
   z-index: 9999
-  opacity: 1
+  opacity: var(--opacity-full)
   pointer-events: none
 
   @include transition-properties((width, opacity), $duration: var(--motion-duration-default), $easing: var(--motion-easing-in))
 
   &[data-state="done"]
-    opacity: 0
+    opacity: var(--opacity-none)
 
     @include transition-properties(opacity, $duration: var(--motion-duration-default), $easing: var(--motion-easing-in))

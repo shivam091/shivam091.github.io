@@ -13,7 +13,7 @@
   display: flex
   align-items: center
   justify-content: center
-  opacity: 0
+  opacity: var(--opacity-none)
   visibility: hidden
   pointer-events: none
   transform: translateY(20px)
@@ -26,9 +26,9 @@
   &[data-state="visible"]
     animation: scrollTopBounceIn var(--motion-duration-slow) both
     pointer-events: auto
-    opacity: 1
+    opacity: var(--opacity-full)
 
   &[data-state="hidden"]
     animation: scrollTopBounceOut var(--motion-duration-slow) both
     pointer-events: none
-    opacity: 0
+    opacity: var(--opacity-none)

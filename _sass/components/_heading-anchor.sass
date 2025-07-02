@@ -5,7 +5,7 @@
   font-size: 0.8em
   text-decoration: none
   color: var(--color-fg-muted)
-  opacity: 0
+  opacity: var(--opacity-none)
   @include transition-properties((color, opacity), $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
 
   &:hover
@@ -14,4 +14,4 @@
 @for $i from 2 through 6
   @at-root h#{$i}:hover .heading-anchor,
            h#{$i}:focus-within .heading-anchor
-    opacity: 1
+    opacity: var(--opacity-full)
