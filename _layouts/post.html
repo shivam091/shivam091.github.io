@@ -13,9 +13,7 @@ layout: page
       {% include posts/meta.html post = page %}
     </div>
 
-    <p class="post-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-      <em>Written by <span itemprop="name">{{ site.author.name}}</span></em>
-    </p>
+    {% include posts/author.html post = page %}
   </header>
 
   {% toc %}

@@ -1,0 +1,14 @@
+- key: system
+  label: System
+  icon: device-desktop
+  description: "Use your system’s default theme"
+
+- key: light
+  label: Light
+  icon: sun
+  description: "Use light mode"
+
+- key: dark
+  label: Dark
+  icon: moon
+  description: "Use dark mode"

@@ -5,6 +5,7 @@ date: 2025-06-07 18:40
 tags: [css, grid]
 categories: [css]
 excerpt: "CSS Grid is one of the most powerful tools for building web layouts."
+authors: [harshal]
 ---
 
 ## Introduction

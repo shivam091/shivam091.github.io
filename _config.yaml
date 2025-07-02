@@ -65,24 +65,13 @@ author:
     - lifelong learner
     - entrepreneur
   email: harshal.ladhe.1@gmail.com
-  github_username: shivam091
-  linkedin_username: shivam091
-  instagram_username: taurusian_soul
+  github: shivam091
+  linkedin: shivam091
+  instagram: taurusian_soul
   resume: /assets/docs/resume.pdf
 
-nav:
-  - { title: "Home", icon: "home", href: "/" }
-  - { title: "About", icon: "info-circle", href: "/about" }
-  - { title: "Categories", icon: "folder", href: "/categories" }
-  - { title: "Tags", icon: "tag", href: "/tags" }
-  - { title: "Posts", icon: "list", href: "/posts" }
-  - { title: "Archives", icon: "archive", href: "/archives" }
-
-color_schemes:
-  - { key: "system", display_label: "System", icon: "device-desktop" }
-  - { key: "light", display_label: "Light", icon: "sun" }
-  - { key: "dark", display_label: "Dark", icon: "moon" }
-
-posts:
+post:
+  author:
+    default: harshal
   read_time:
     words_per_minute: 180
