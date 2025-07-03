@@ -1,0 +1,16 @@
+{%- assign post = include.post -%}
+
+{% if post.image %}
+  <figure class="post-cover">
+    <img
+      src="{{ post.image.path | relative_url }}"
+      {% if post.image.width %}width="{{ post.image.width }}"{% endif %}
+      {% if post.image.height %}height="{{ post.image.height }}"{% endif %}
+      {% if post.image.alt %}alt="{{ post.image.alt }}"{% else %}alt="Post cover image"{% endif %}
+      loading="lazy"
+    >
+    {% if post.image.alt %}
+      <figcaption>{{ post.image.alt }}</figcaption>
+    {% endif %}
+  </figure>
+{% endif %}

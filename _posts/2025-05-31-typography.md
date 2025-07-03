@@ -7,6 +7,7 @@ categories: [blogging, typography]
 excerpt: This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.
 toc: false
 authors: [harshal]
+img_path: /assets/img/posts/
 ---
 
 ## Headings
@@ -120,13 +121,13 @@ Inline `console.log("Hi")` inside text.
 ### Image with Caption
 
 <figure>
-  <img src="https://via.placeholder.com/600x200" alt="Example Image">
+  <img src="{{ '/assets/img/posts/css-grid-beginner-cover-dark.png' | relative_url }}" alt="Example Image">
   <figcaption>This is a caption below the image.</figcaption>
 </figure>
 
 ### Simple Image
 
-![Alt text](/assets/img/hero-bg.png)
+![Alt text](/assets/img/posts/css-grid-beginner-cover-light.png)
 
 ## Tables
 

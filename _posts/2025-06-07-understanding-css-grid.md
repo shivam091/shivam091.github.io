@@ -6,6 +6,12 @@ tags: [css, grid]
 categories: [css]
 excerpt: "CSS Grid is one of the most powerful tools for building web layouts."
 authors: [harshal]
+img_path: /assets/img/posts/
+image:
+  path: /assets/img/posts/css-grid-beginner-cover-light.png
+  height: 512
+  width: 512
+  alt: Visual layout of CSS Grid with header, main, sidebar, and footer areas
 ---
 
 ## Introduction

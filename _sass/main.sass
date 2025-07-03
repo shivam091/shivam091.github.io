@@ -5,26 +5,39 @@
 @use "pages"
 @use "vendors"
 
-.author-box
+.post-cover
+  aspect-ratio: 40 / 21
+
+.cover-wrapper
   display: flex
-  gap: 1rem
-  margin-top: 3rem
-  padding: 1.5rem
-  border: 1px solid #eee
-  background: #fafafa
-  border-radius: 8px
+  justify-content: center
+  align-items: center
+  padding: clamp(2rem, 5vw, 4rem)
+  background-color: var(--cover-bg)
+  border-radius: var(--radius-xl)
+  overflow: hidden
+  margin-block: 1rem 2rem
+  box-shadow: var(--shadow-lg)
 
-  .avatar
-    width: 64px
-    height: 64px
-    border-radius: 50%
-    object-fit: cover
+  img
+    max-width: 100%
+    height: auto
+    border-radius: var(--radius-lg)
+    transition: filter 0.3s ease-in-out
 
-  .author-info
-    h4
-      margin: 0 0 0.25rem
 
-    .social-links a
-      margin-right: 1rem
-      font-size: 0.9rem
-      color: #007acc
+  @media (max-width: 768px)
+    padding: clamp(1rem, 4vw, 2rem)
+
+
+
+// Theme Tokens
+:root
+  --cover-bg: #f9f9fb
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08)
+
+
+[data-theme="dark"],
+  :root
+    --cover-bg: #1a1a1a
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.3)

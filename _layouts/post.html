@@ -16,10 +16,13 @@ layout: page
     {% include posts/author.html post = page %}
   </header>
 
+  {% include posts/cover-image.html post = page %}
+
   {% toc %}
 
   {{ content }}
 
+  <p class="lead">Thank you for reading!</p>
   <footer class="post-footer">
     <div class="post-footer-bottom">
       <div class="copyright">

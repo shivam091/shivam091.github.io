@@ -6,6 +6,7 @@ tags: [typography, design, styleguide]
 categories: [blogging, components]
 excerpt: This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.
 authors: [harshal]
+img_path: /assets/img/posts/
 ---
 
 ## Codeblocks
