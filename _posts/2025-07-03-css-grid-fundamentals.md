@@ -6,6 +6,11 @@ tags: [css, grid, layout, responsive, web design, frontend]
 categories: [css, beginner]
 excerpt: "A beginner-friendly guide to CSS Grid covering all essential concepts and properties."
 authors: [harshal]
+image:
+  path: /assets/img/posts/css-grid-fundamentals/cover.png
+  width: 1200
+  height: 630
+  alt: Fundamentals of CSS Grids
 ---
 
 ## Introduction
@@ -288,8 +293,8 @@ The `grid-column` and `grid-row` properties are shorthands for defining start an
 {% codeblock %}
 {% highlight css linenos %}
 .item {
-  grid-column: 2 / 4; /* shorthand */
-  grid-row: 1 / 3;    /* shorthand */
+  grid-column: 2 / 4; /* shorthand for grid-column-start and grid-column-end */
+  grid-row: 1 / 3;    /* shorthand for grid-row-start and grid-row-end */
 }
 {% endhighlight %}
 {% endcodeblock %}

@@ -85,3 +85,52 @@
       align-items: flex-start
       text-align: left
       gap: var(--space-md)
+
+
+.post
+  display: flex
+  flex-direction: column
+  background-color: var(--color-bg-default)
+  border-radius: var(--border-radius-default)
+  border: var(--border-default)
+
+  // Wrapper for content and image
+  .post-body
+    display: flex
+    flex-direction: row
+    gap: var(--space-lg)
+    align-items: stretch
+
+    @include breakpoint.max(md)
+      flex-direction: column
+
+  .post-content
+    flex: 1 1 auto
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: var(--space-lg)
+    padding: var(--fluid-space-base)
+
+  .post-image
+    flex: 0 0 200px
+    max-width: 200px
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: var(--color-bg-subtle)
+    border-radius: var(--border-radius-default)
+    overflow: hidden
+
+    img
+      width: 100%
+      height: auto
+      object-fit: cover
+      border-radius: var(--border-radius-default)
+
+    .image-placeholder
+      width: 100%
+      aspect-ratio: 1 / 1
+      background-color: var(--color-bg-subtle)
+      opacity: 0

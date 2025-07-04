@@ -4,3 +4,27 @@
 @use "layout"
 @use "pages"
 @use "vendors"
+
+.post-cover
+  width: 100%
+  overflow: hidden
+  border-radius: var(--border-radius-default)
+  box-shadow: var(--box-shadow-md)
+  position: relative
+  aspect-ratio: 16 / 9
+  width: 100%
+  overflow: hidden
+
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover            // ensures cropping without distortion
+    display: block
+    border-radius: inherit
+
+  figcaption
+    margin-top: var(--space-sm)
+    font-size: var(--font-size-xs)
+    color: var(--color-fg-muted)
+    font-style: italic
+    line-height: var(--line-height-snug)

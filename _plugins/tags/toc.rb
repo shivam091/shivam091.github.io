@@ -16,7 +16,7 @@ module Jekyll
       return "" if content.empty? || page["toc"] == false
 
       @min_level = page["toc_min"]&.to_i || 2
-      @max_level = page["toc_max"]&.to_i || 3
+      @max_level = page["toc_max"]&.to_i || 4
 
       doc = Loofah.fragment(content)
       selector = (@min_level..@max_level).map { |i| "h#{i}" }.join(",")
