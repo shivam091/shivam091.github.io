@@ -29,9 +29,9 @@ Grid allows you to design complex layouts using rows and columns with minimal co
 ### Fundamental Properties
 
 - **display: grid;** — Turns the container into a grid layout.
-- **grid-template-columns** — Defines the number and size of columns.
-- **grid-template-rows** — Defines the number and size of rows.
-- **gap** — Specifies the space between rows and columns in the grid.
+- **grid-template-columns** — Defines the number and size of columns in the grid layout.
+- **grid-template-rows** — Defines the number and size of rows in the grid layout.
+- **gap** — Sets the spacing between rows and columns of grid items.
 - **grid-column / grid-row** — Defines how many rows or columns an item will span.
 
 ### Grid Template Areas
@@ -51,9 +51,15 @@ Define a grid using named areas. This helps visually map sections of a page and 
 {% endhighlight %}
 {% endcodeblock %}
 
+<div class="grid">
+  <div class="header">header</div>
+  <div class="header">main</div>
+  <div class="header">sidebar</div>
+  <div class="header">footer</div>
+</div>
 **ASCII Illustration**
 
-```pgsql
+```
 +---------------------------------------------+
 |                   [header]                  |
 +--------------------------+------------------+
@@ -78,11 +84,27 @@ Here’s an example:
 {% highlight css linenos %}
 .grid {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr; /* Three columns: middle is twice as wide */
-  grid-template-rows: 100px auto 50px; /* Three rows: header, content, footer */
+  grid-template-columns: 1fr 2fr 1fr; /* Three columns: middle column is twice as wide as the others */
+  grid-template-rows: 100px auto 50px; /* Three rows: top is 100px, middle adapts to content, bottom is 50px */
 }
 {% endhighlight %}
 {% endcodeblock %}
+
+**ASCII Illustration**
+
+```
++------------+------------------+------------+
+|            |                  |            |
+|            |                  |            |
+|            |                  |            |
+|            |                  |            |
++------------+------------------+------------+
+|            |                  |            |
++------------+------------------+------------+
+|            |                  |            |
+|            |                  |            |
++------------+------------------+------------+
+```
 
 In this example, the first and third columns take up equal space (`1fr`), and the middle column takes up twice that space (`2fr`). The first row is 100px tall
 (e.g., a header), the second row grows to fit content (`auto`), and the third row is 50px tall (e.g., a footer).
@@ -113,10 +135,10 @@ Container-level alignment affects all grid items inside the grid. You apply thes
 
 **ASCII Illustration**
 
-```pgsql
+```
 +-------------+-------------+-------------+
 |             |             |             |
-|     [ ]     |     [ ]     |     [ ]     |
+|     [ ]     |     [ ]     |     [ ]     |  ← items in center
 |             |             |             |
 +-------------+-------------+-------------+
 |             |             |             |
@@ -136,7 +158,7 @@ Container-level alignment affects all grid items inside the grid. You apply thes
 
 **ASCII Illustration**
 
-```pgsql
+```
 +-------------+-------------+-------------+
 |             |             |             |
 |             |             |             |
@@ -167,7 +189,7 @@ Item-level alignment lets you override the container's alignment per item. These
 
 **ASCII Illustration**
 
-```pgsql
+```
 +-------------+
 |         [ ] |  ← top-right (start row, end column)
 |             |
@@ -185,12 +207,168 @@ Item-level alignment lets you override the container's alignment per item. These
 
 **ASCII Illustration**
 
-```pgsql
+```
 +-------------+
 |             |
 |             |
 | [ ]         |  ← bottom-left (end row, start column)
 +-------------+
+```
+
+### Spanning Grid Items
+
+`grid-column` and `grid-row` allow a grid item to **span across multiple columns or rows**, or start at a specific line.
+
+{% codeblock %}
+{% highlight css linenos %}
+.item {
+  grid-column: 1 / 3; /* Spans from column line 1 to column line 3 */
+  grid-row: 2 / 4;    /* Spans from row line 2 to row line 4 */
+}
+{% endhighlight %}
+{% endcodeblock %}
+
+#### Visual Illustration
+
+Suppose we define a 3×3 grid layout:
+
+{% codeblock %}
+{% highlight html linenos %}
+<div class="grid">
+  <div class="item">Spanning</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</div>
+{% endhighlight %}
+{% endcodeblock %}
+
+{% codeblock %}
+{% highlight css linenos %}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(3, 100px);   /* 3 equal rows */
+  gap: 0.5rem;
+}
+{% endhighlight %}
+{% endcodeblock %}
+
+And we place one item that spans 2 columns and 2 rows:
+
+{% codeblock %}
+{% highlight css linenos %}
+.item {
+  grid-column: 1 / 3; /* Spans from line 1 to 3, i.e., columns 1 and 2 */
+  grid-row: 2 / 4;    /* Spans from line 2 to 4, i.e., rows 2 and 3 */
+}
+{% endhighlight %}
+{% endcodeblock %}
+
+**ASCII Illustration (Grid lines shown)**
+
+```
++------------+------------+------------+
+|            |            |            |
+|   Item 2   |   Item 3   |   Item 4   |
+|            |            |            |
++------------+------------+------------+
+|            |            |            |
+|            |            |            |
+|            |            |            |
++         Spanning        +------------+
+|            |            |            |
+|            |            |            |
+|            |            |            |
++------------+------------+------------+
+```
+
+The `grid-column` and `grid-row` properties are shorthands for defining start and end positions of a grid item.
+
+{% codeblock %}
+{% highlight css linenos %}
+.item {
+  grid-column: 2 / 4; /* shorthand */
+  grid-row: 1 / 3;    /* shorthand */
+}
+{% endhighlight %}
+{% endcodeblock %}
+
+This is equivalent to:
+
+{% codeblock %}
+{% highlight css linenos %}
+.item {
+  grid-column-start: 2;
+  grid-column-end: 4;
+
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+{% endhighlight %}
+{% endcodeblock %}
+
+#### Shorthand with `span`
+
+You can also use the `span` keyword to simplify:
+
+{% codeblock %}
+{% highlight css linenos %}
+.item {
+  grid-column: span 2; /* Span 2 columns from auto-start */
+  grid-row: span 2;    /* Span 2 rows from auto-start */
+}
+{% endhighlight %}
+{% endcodeblock %}
+
+This tells the item to span **2 columns/rows** from its auto-calculated position.
+
+#### Practical Example (HTML + CSS)
+
+{% codeblock %}
+{% highlight html linenos %}
+<div class="grid">
+  <div class="item">Spanning</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</div>
+{% endhighlight %}
+{% endcodeblock %}
+
+{% codeblock %}
+{% highlight css linenos %}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  gap: 1rem;
+}
+
+.item {
+  background: #cce;
+  grid-column: 1 / 3; /* spans column 1 and 2 */
+  grid-row: 1 / 3;    /* spans row 1 and 2 */
+}
+{% endhighlight %}
+{% endcodeblock %}
+
+**ASCII Illustration**
+
+```
++------------+------------+------------+
+|            |            |            |
+|            |            |   Item 2   |
+|            |            |            |
++         Spanning        +------------+
+|            |            |            |
+|            |            |   Item 3   |
+|            |            |            |
++------------+------------+------------+
+|            |            |            |
+|  Item 4    |            |            |
+|            |            |            |
++------------+------------+------------+
 ```
 
 ## Grid Types
@@ -199,10 +377,7 @@ In CSS Grid, it’s important to understand the difference between `explicit` an
 
 ### Explicit Grids
 
-You create an explicit grid when you define rows or columns using properties like:
-
-- `grid-template-columns`
-- `grid-template-rows`
+You create an explicit grid when you define rows or columns using properties `grid-template-columns` and `grid-template-rows`.
 
 {% codeblock %}
 {% highlight css linenos %}
@@ -220,20 +395,35 @@ You create an explicit grid when you define rows or columns using properties lik
 <div class="grid">
   <div>Item 1</div>
   <div>Item 2</div>
-  <div>Item 3</div> <!-- Overflows: falls into an implicitly created row -->
+  <div>Item 3</div>
+  <div>Item 4</div>
 </div>
 {% endhighlight %}
 {% endcodeblock %}
 
-In this example, we’ve defined a grid with **2 columns and 2 rows**, but **3 items** are placed. So the 3rd item **falls into the implicit grid**.
+In this example, we’ve defined a grid with **2 columns and 2 rows**, which gives us **4 grid cells**. The 4 items are placed within this **explicit grid**.
+
+If we now add a 5th item:
+
+{% codeblock %}
+{% highlight html linenos %}
+<div class="grid">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+  <div>Item 5</div> <!-- Overflows: placed in an implicitly created 3rd row -->
+</div>
+{% endhighlight %}
+{% endcodeblock %}
+
+The 5th item doesn’t fit in the 2×2 explicit grid, so a **new row is implicitly created**.
 
 ### Implicit Grids
 
 The **implicit grid** is created automatically when content exceeds the explicitly defined tracks.
 
 CSS Grid will automatically create **extra rows or columns** to fit the overflow items.
-
-If we use the same CSS as above:
 
 {% codeblock %}
 {% highlight css linenos %}
@@ -258,25 +448,28 @@ But add **5 items**, Grid auto-creates new rows:
 {% endhighlight %}
 {% endcodeblock %}
 
-More than four items will exceed the 2×2 grid and cause new rows to be automatically created (implicitly).
+Since we didn’t define any `grid-template-rows`, the grid auto-creates rows to fit overflow items — these are **implicit rows**.
 
-You can style the **implicit tracks** using:
+You can style the **implicit rows** using:
 
 {% codeblock %}
 {% highlight css linenos %}
 .grid {
   grid-auto-rows: 100px; /* Sets height for implicit rows */
-  grid-auto-columns: 200px; /* Sets width for implicit columns (if needed) */
 }
 {% endhighlight %}
 {% endcodeblock %}
+
+{% alert type:"accent" dismissible:false markdown:true %}
+You don’t need `grid-auto-columns` unless your content triggers implicit columns — which is rare unless you're placing items
+manually in new columns or using custom placement.
+{% endalert %}
 
 ## Responsive Techniques
 
 ### Understanding `fr` (Fractional Units)
 
 The `fr` unit is a flexible length unit that allows us to create responsive grids. It distributes available space in a grid container proportionally.
-In the example above, `1fr` means each column will take up an equal share of the available space.
 
 {% codeblock %}
 {% highlight css linenos %}
@@ -377,19 +570,22 @@ In this example, the grid has 3 columns on larger screens, but on screens smalle
 
 Here’s a simple table summarizing key grid properties:
 
-| Property              | Description                                     |
-| --------------------- | ----------------------------------------------- |
-| grid-template-columns | Defines column structure                        |
-| grid-template-rows    | Defines row structure                           |
-| gap                   | Space between items                             |
-| grid-template-areas   | Defines named areas for grid items              |
-| justify-items         | Aligns items horizontally                       |
-| align-items           | Aligns items vertically                         |
-| place-items           | Shorthand for horizontal and vertical alignment |
-| grid-auto-rows        | Defines row size for implicit rows              |
-| grid-auto-columns     | Defines column size for implicit columns        |
-| grid-column           | Defines how many columns an item will span.     |
-| grid-row              | Defines how many rows an item will span.        |
+| Property              | Description                                                             |
+| --------------------- | ----------------------------------------------------------------------- |
+| grid-template-columns | Defines column structure                                                |
+| grid-template-rows    | Defines row structure                                                   |
+| gap                   | Space between items                                                     |
+| grid-template-areas   | Defines named areas for grid items                                      |
+| justify-items         | Aligns grid items horizontally                                          |
+| align-items           | Aligns grid items vertically                                            |
+| place-items           | Shorthand for horizontal and vertical alignment of grid items           |
+| justify-self          | aligns an individual item horizontally                                  |
+| align-self            | aligns an individual item vertically                                    |
+| place-self            | Shorthand for horizontal and vertical alignment of individual grid item |
+| grid-auto-rows        | Defines row size for implicit rows                                      |
+| grid-auto-columns     | Defines column size for implicit columns                                |
+| grid-column           | Defines how many columns an item will span.                             |
+| grid-row              | Defines how many rows an item will span.                                |
 
 ## Conclusion
 
