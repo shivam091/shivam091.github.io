@@ -1,0 +1,8 @@
+css-grid-fundamentals:
+  title: "CSS Grid Fundamentals"
+  description: "Learn CSS Grid layout from scratch with visual guides, real-world examples, and responsive design techniques."
+  cover: /assets/img/posts/css-grid-fundamentals/cover.png
+  parts:
+    - getting-started-with-css-grid
+    - mastering-css-grid-alignment-spanning
+    - responsive-css-grid-layouts

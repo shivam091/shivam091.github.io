@@ -6,7 +6,7 @@ require "set"
 Jekyll::Hooks.register :posts, :pre_render do |post|
   path = post.path
   return unless File.exist?(path)
-  return unless system("git", "ls-files", "--error-unmatch", path, out: File::NULL, err: File::NULL)
+  # return unless system("git", "ls-files", "--error-unmatch", path, out: File::NULL, err: File::NULL)
 
   # Full changelog with markdown support and ISO strict date+time+tz format
   log_entries = `git log --reverse --pretty="%H|%ad|%an|%ae|%B---END---" --date=iso-strict "#{path}"`

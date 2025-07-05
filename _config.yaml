@@ -15,7 +15,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-permalink: /post/:year/:month/:day/:title
+permalink: /post/:slug
 
 markdown: kramdown
 kramdown:
