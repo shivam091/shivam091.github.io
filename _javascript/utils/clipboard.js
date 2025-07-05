@@ -1,7 +1,7 @@
 import * as SvgSprite from "./svg-sprite";
-import { Tooltip } from "./../modules/components/tooltip";
+import Tooltip from "./../modules/components/tooltip";
 
-class Clipboard {
+export default class Clipboard {
   constructor(root) {
     this.root = root;
     this.isCode = root.hasAttribute("data-copy-code");
@@ -94,5 +94,3 @@ class Clipboard {
     });
   }
 }
-
-export { Clipboard };

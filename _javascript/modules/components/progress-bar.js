@@ -1,4 +1,4 @@
-class ProgressBar {
+export default class ProgressBar {
   static barElement = null;
   static progress = 0;
   static intervalId = null;
@@ -47,5 +47,3 @@ class ProgressBar {
     }, 500);
   }
 }
-
-export { ProgressBar };

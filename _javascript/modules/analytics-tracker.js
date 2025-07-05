@@ -1,4 +1,4 @@
-class AnalyticsTracker {
+export default class AnalyticsTracker {
   static get trackedElements() {
     return document.querySelectorAll("[data-analytics-event]");
   }
@@ -51,5 +51,3 @@ class AnalyticsTracker {
     this.bindEvents();
   }
 }
-
-export { AnalyticsTracker };

@@ -1,4 +1,4 @@
-class SkipLink {
+export default class SkipLink {
   static get skipLinkElement() {
     return document.querySelector("[data-skip-link]");
   }
@@ -19,5 +19,3 @@ class SkipLink {
     });
   }
 }
-
-export { SkipLink };

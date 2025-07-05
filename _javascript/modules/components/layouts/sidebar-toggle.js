@@ -1,4 +1,4 @@
-class SidebarToggle {
+export default class SidebarToggle {
   static get sidebarElement() {
     return document.getElementById("sidebar");
   }
@@ -47,5 +47,3 @@ class SidebarToggle {
     mask.addEventListener("click", this.toggleSidebar.bind(this));
   }
 }
-
-export { SidebarToggle };
