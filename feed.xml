@@ -1,4 +1,170 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-07-04T22:43:45+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">CSS Grid Fundamentals: A Beginner’s Guide</title><link href="https://shivam091.github.io/post/2025/07/04/css-grid-fundamentals" rel="alternate" type="text/html" title="CSS Grid Fundamentals: A Beginner’s Guide" /><published>2025-07-04T22:43:00+05:30</published><updated>2025-07-04T22:43:14+05:30</updated><id>https://shivam091.github.io/post/2025/07/04/css-grid-fundamentals</id><content type="html" xml:base="https://shivam091.github.io/post/2025/07/04/css-grid-fundamentals"><![CDATA[<h2 id="introduction" dir="auto">Introduction</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-07-05T13:35:55+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Mastering Grid Areas, Alignment &amp;amp; Spanning in CSS Grid</title><link href="https://shivam091.github.io/post/css-grid-alignment-spanning" rel="alternate" type="text/html" title="Mastering Grid Areas, Alignment &amp;amp; Spanning in CSS Grid" /><published>2025-07-05T10:00:00+05:30</published><updated>2025-07-05T13:33:40+05:30</updated><id>https://shivam091.github.io/post/css-grid-alignment-spanning</id><content type="html" xml:base="https://shivam091.github.io/post/css-grid-alignment-spanning"><![CDATA[<h2 id="introduction" dir="auto">Introduction</h2>
+
+<p dir="auto">Welcome to <strong>Part 2</strong> of the CSS Grid series!</p>
+
+<p dir="auto">Previously, in <a href="/css/getting-started-with-css-grid">Part 1</a>, we covered basic concepts and layout building with <code class="highlighter-rouge notranslate">display: grid</code>. In this post, we’ll dive into:</p>
+
+<ul dir="auto">
+  <li><code class="highlighter-rouge notranslate">grid-template-areas</code></li>
+  <li>Aligning content with <code class="highlighter-rouge notranslate">place-items</code> and <code class="highlighter-rouge notranslate">place-self</code></li>
+  <li>Spanning items across rows and columns</li>
+  <li>Visual diagrams and real code examples</li>
+</ul>
+
+<hr />
+
+<h2 id="grid-template-areas" dir="auto">Grid Template Areas</h2>
+
+<p dir="auto">(<em>Include full content from original “Grid Template Areas” section with styles, HTML, CodePen links and explanation</em>)</p>
+
+<hr />
+
+<h2 id="aligning-grid-items" dir="auto">Aligning Grid Items</h2>
+
+<p dir="auto">(<em>Full section from container-level and item-level alignment — include ASCII diagrams and CodePens</em>)</p>
+
+<hr />
+
+<h2 id="spanning-grid-items" dir="auto">Spanning Grid Items</h2>
+
+<p dir="auto">(<em>Full section with <code class="highlighter-rouge notranslate">grid-column</code>, <code class="highlighter-rouge notranslate">grid-row</code>, span examples and shorthand/longhand breakdown</em>)</p>
+
+<hr />
+
+<h2 id="explicit-vs-implicit-grids" dir="auto">Explicit vs Implicit Grids</h2>
+
+<p dir="auto">(<em>Move this here from end of original post — it makes more sense before responsive discussion in Part 3</em>)</p>
+
+<hr />
+
+<h2 id="conclusion" dir="auto">Conclusion</h2>
+
+<p dir="auto">With named areas, item alignment, and grid item spanning, you now have <strong>full control over your layout structure</strong>—visually and semantically.</p>
+
+<p dir="auto">In <a href="/css/responsive-css-grid-layouts">Part 3 →</a>, we’ll learn how to build fully responsive layouts using <code class="highlighter-rouge notranslate">fr</code>, <code class="highlighter-rouge notranslate">minmax()</code>, and media queries—<strong>no extra frameworks needed</strong>.</p>
+
+<hr />
+
+<p dir="auto">📚 <strong>This is Part 2 of the CSS Grid Fundamentals Series</strong></p>
+
+<p dir="auto">🔗 Previous: <a href="/css/getting-started-with-css-grid">Part 1 → Getting Started with Grid</a><br />
+🔗 Next: <a href="/css/responsive-css-grid-layouts">Part 3 → Responsive Layouts with Grid</a></p>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="beginner" /><category term="layout" /><category term="css" /><category term="grid" /><category term="layout" /><category term="grid-template-areas" /><category term="positioning" /><category term="frontend" /><summary type="html"><![CDATA[Take your CSS Grid skills to the next level by learning about named grid areas, item alignment, and how to span elements across rows or columns.]]></summary></entry><entry><title type="html">Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained</title><link href="https://shivam091.github.io/post/css-grid-responsive-layouts" rel="alternate" type="text/html" title="Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained" /><published>2025-07-05T09:00:00+05:30</published><updated>2025-07-05T13:33:40+05:30</updated><id>https://shivam091.github.io/post/css-grid-responsive-layouts</id><content type="html" xml:base="https://shivam091.github.io/post/css-grid-responsive-layouts"><![CDATA[<h2 id="introduction" dir="auto">Introduction</h2>
+
+<p dir="auto">Welcome to the final part of the CSS Grid Fundamentals series! In <a href="/css/mastering-css-grid-alignment-spanning">Part 2</a>, we covered alignment and item positioning.</p>
+
+<p dir="auto">Now, we’ll explore the responsive side of Grid, including:</p>
+
+<ul dir="auto">
+  <li>Fractional units (<code class="highlighter-rouge notranslate">fr</code>)</li>
+  <li><code class="highlighter-rouge notranslate">minmax()</code> for fluid sizing</li>
+  <li><code class="highlighter-rouge notranslate">auto-fit</code> vs <code class="highlighter-rouge notranslate">auto-fill</code></li>
+  <li>Implicit grids</li>
+  <li>Using Grid with or without media queries</li>
+</ul>
+
+<hr />
+
+<h2 id="fractional-units-fr" dir="auto">Fractional Units (<code class="highlighter-rouge notranslate">fr</code>)</h2>
+
+<p dir="auto">(<em>Include all related content and CodePen for <code class="highlighter-rouge notranslate">fr</code> and <code class="highlighter-rouge notranslate">repeat()</code></em>)</p>
+
+<hr />
+
+<h2 id="minmax-function" dir="auto">minmax() Function</h2>
+
+<p dir="auto">(<em>Detailed explanation with the card example and CodePen</em>)</p>
+
+<hr />
+
+<h2 id="auto-fit-vs-auto-fill" dir="auto">Auto-fit vs Auto-fill</h2>
+
+<p dir="auto">(<em>Full section with use case explanation and clarification</em>)</p>
+
+<hr />
+
+<h2 id="responsive-grid-with-media-queries" dir="auto">Responsive Grid with Media Queries</h2>
+
+<p dir="auto">(<em>Example with <code class="highlighter-rouge notranslate">@media</code>, 3-column to 1-column layout</em>)</p>
+
+<hr />
+
+<h2 id="quick-reference-common-grid-properties" dir="auto">Quick Reference: Common Grid Properties</h2>
+
+<p dir="auto">(<em>Include table of essential grid properties from end of original post</em>)</p>
+
+<hr />
+
+<h2 id="conclusion" dir="auto">Conclusion</h2>
+
+<p dir="auto">Congrats! You now have a <strong>complete understanding of CSS Grid</strong>—from setup to advanced responsive layouts.</p>
+
+<p dir="auto">You can now confidently use Grid to build modern UIs that are flexible, scalable, and elegant.</p>
+
+<hr />
+
+<p dir="auto">📚 <strong>This is Part 3 of the CSS Grid Fundamentals Series</strong></p>
+
+<p dir="auto">🔗 Previous: <a href="/css/mastering-css-grid-alignment-spanning">Part 2 → Grid Areas, Alignment &amp; Spanning</a></p>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="beginner" /><category term="responsive" /><category term="css" /><category term="grid" /><category term="responsive" /><category term="layout" /><category term="fr-units" /><category term="minmax" /><category term="media-queries" /><summary type="html"><![CDATA[Learn how to build truly responsive CSS Grid layouts using fractional units, the minmax() function, auto-fit vs auto-fill, and media queries.]]></summary></entry><entry><title type="html">Getting Started with CSS Grid: Learn 2D Layouts with Ease</title><link href="https://shivam091.github.io/post/css-grid-getting-started" rel="alternate" type="text/html" title="Getting Started with CSS Grid: Learn 2D Layouts with Ease" /><published>2025-07-04T22:43:00+05:30</published><updated>2025-07-05T13:33:40+05:30</updated><id>https://shivam091.github.io/post/css-grid-getting-started</id><content type="html" xml:base="https://shivam091.github.io/post/css-grid-getting-started"><![CDATA[<h2 id="introduction" dir="auto">Introduction</h2>
+
+<p dir="auto">CSS Grid is one of the most powerful layout systems in web development today. It enables you to build two-dimensional layouts using rows and columns with minimal effort. Unlike Flexbox, which is one-dimensional, Grid handles layout in <strong>both axes</strong> simultaneously.</p>
+
+<p dir="auto">This post is the first in a three-part series on CSS Grid. We’ll begin with:</p>
+
+<ul dir="auto">
+  <li>What CSS Grid is and why it’s useful</li>
+  <li>Key terminology</li>
+  <li>The most essential properties</li>
+  <li>Simple layouts to get started</li>
+</ul>
+
+<hr />
+
+<h2 id="why-css-grid" dir="auto">Why CSS Grid?</h2>
+
+<p dir="auto">CSS Grid allows complex layouts without floats, media queries, or JavaScript. It’s native, declarative, and flexible.</p>
+
+<hr />
+
+<h2 id="basic-terminology" dir="auto">Basic Terminology</h2>
+
+<ul dir="auto">
+  <li><strong>Grid Container</strong></li>
+  <li><strong>Grid Item</strong></li>
+  <li><strong>Grid Line</strong></li>
+  <li><strong>Grid Track</strong></li>
+  <li><strong>Grid Cell</strong></li>
+</ul>
+
+<p dir="auto">(<em>Detailed explanations as in original content</em>)</p>
+
+<hr />
+
+<h2 id="building-layouts-with-css-grid" dir="auto">Building Layouts with CSS Grid</h2>
+
+<h3 id="fundamental-properties" dir="auto">Fundamental Properties</h3>
+
+<ul dir="auto">
+  <li><code class="highlighter-rouge notranslate">display: grid</code></li>
+  <li><code class="highlighter-rouge notranslate">grid-template-columns</code>, <code class="highlighter-rouge notranslate">grid-template-rows</code></li>
+  <li><code class="highlighter-rouge notranslate">gap</code></li>
+  <li><code class="highlighter-rouge notranslate">grid-column</code>, <code class="highlighter-rouge notranslate">grid-row</code></li>
+</ul>
+
+<p dir="auto">(<em>Include all content under “Building Layouts…” and “Column and Row Templates” from original post, with CodePen links</em>)</p>
+
+<hr />
+
+<h2 id="conclusion" dir="auto">Conclusion</h2>
+
+<p dir="auto">You’ve just built your first layouts using CSS Grid! 🎉</p>
+
+<p dir="auto">In <a href="/css/mastering-css-grid-alignment-spanning">Part 2 →</a>, we’ll explore how to align content, use <code class="highlighter-rouge notranslate">grid-template-areas</code>, and span items across rows and columns for real-world use cases.</p>
+
+<hr />
+
+<p dir="auto">📚 <strong>This is Part 1 of the CSS Grid Fundamentals Series</strong></p>
+
+<p dir="auto">🔗 Next: <a href="/css/mastering-css-grid-alignment-spanning">Part 2 → Mastering Grid Areas, Alignment &amp; Spanning</a></p>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="beginner" /><category term="css" /><category term="grid" /><category term="layout" /><category term="web design" /><category term="frontend" /><category term="css-grid" /><summary type="html"><![CDATA[A beginner-friendly introduction to CSS Grid layout, its core concepts, and how to create your first 2D grid-based layouts with practical examples.]]></summary></entry><entry><title type="html">CSS Grid Fundamentals: A Beginner’s Guide</title><link href="https://shivam091.github.io/post/css-grid-fundamentals" rel="alternate" type="text/html" title="CSS Grid Fundamentals: A Beginner’s Guide" /><published>2025-07-04T22:43:00+05:30</published><updated>2025-07-04T22:43:14+05:30</updated><id>https://shivam091.github.io/post/css-grid-fundamentals</id><content type="html" xml:base="https://shivam091.github.io/post/css-grid-fundamentals"><![CDATA[<h2 id="introduction" dir="auto">Introduction</h2>
 
 <p dir="auto">CSS Grid is one of the most powerful layout systems available in modern web development. In this article, we’ll cover the fundamental concepts of CSS Grid and how it can be used to build responsive and flexible web layouts.</p>
 
@@ -1805,7 +1971,7 @@ and often without needing media queries.</p>
 
 <p dir="auto">By mastering the <strong>core concepts</strong>—like tracks, lines, areas, alignment, and responsiveness—you unlock the full potential of modern layout design.</p>
 
-<p dir="auto">Whether you’re building a simple card layout or a complex UI dashboard, CSS Grid can help you create adaptable, scalable structures with minimal code.</p>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="beginner" /><category term="css" /><category term="grid" /><category term="layout" /><category term="responsive" /><category term="web design" /><category term="frontend" /><summary type="html"><![CDATA[A beginner-friendly guide to CSS Grid covering all essential concepts and properties.]]></summary></entry><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-07-02T16:00:20+05:30</updated><id>https://shivam091.github.io/post/2025/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/16/components"><![CDATA[<h2 id="codeblocks" dir="auto">Codeblocks</h2>
+<p dir="auto">Whether you’re building a simple card layout or a complex UI dashboard, CSS Grid can help you create adaptable, scalable structures with minimal code.</p>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="beginner" /><category term="css" /><category term="grid" /><category term="layout" /><category term="responsive" /><category term="web design" /><category term="frontend" /><summary type="html"><![CDATA[A beginner-friendly guide to CSS Grid covering all essential concepts and properties.]]></summary></entry><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-07-05T13:33:40+05:30</updated><id>https://shivam091.github.io/post/components</id><content type="html" xml:base="https://shivam091.github.io/post/components"><![CDATA[<h2 id="codeblocks" dir="auto">Codeblocks</h2>
 
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
@@ -2208,7 +2374,7 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
 </svg>
 <svg class="icon icon-whatsapp" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-whatsapp" />
-</svg>]]></content><author><name>Harshal Ladhe</name></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Text and Typography</title><link href="https://shivam091.github.io/post/2025/05/31/typography" rel="alternate" type="text/html" title="Text and Typography" /><published>2025-05-31T01:00:00+05:30</published><updated>2025-07-04T22:21:43+05:30</updated><id>https://shivam091.github.io/post/2025/05/31/typography</id><content type="html" xml:base="https://shivam091.github.io/post/2025/05/31/typography"><![CDATA[<h2 id="headings" dir="auto">Headings</h2>
+</svg>]]></content><author><name>Harshal Ladhe</name></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Text and Typography</title><link href="https://shivam091.github.io/post/typography" rel="alternate" type="text/html" title="Text and Typography" /><published>2025-05-31T01:00:00+05:30</published><updated>2025-07-05T13:33:40+05:30</updated><id>https://shivam091.github.io/post/typography</id><content type="html" xml:base="https://shivam091.github.io/post/typography"><![CDATA[<h2 id="headings" dir="auto">Headings</h2>
 
 <h1 id="h1-heading-usually-reserved-for-post-title" dir="auto">H1 Heading (usually reserved for post title)</h1>
 <h2 id="h2-heading" dir="auto">H2 Heading</h2>
