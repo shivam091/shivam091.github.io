@@ -15,7 +15,7 @@
   @include transition-properties(box-shadow, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
 
   &[data-expanded]
-    box-shadow: var(--box-shadow-sm)
+    box-shadow: var(--box-shadow-md)
 
 .accordion-toggle
   border-radius: var(--border-radius-full)
@@ -31,7 +31,6 @@
   justify-content: space-between
   flex-wrap: wrap
   padding: var(--space-md) var(--space-base)
-  box-shadow: var(--box-shadow-inset-muted)
   background-image: linear-gradient(var(--color-bg-accent-muted), var(--color-bg-accent-muted))
 
   @extend %no-cursor

@@ -4,20 +4,25 @@ layout: page
 
 <article class="series-page">
   <header class="series-header">
-    <p class="series-description">{{ page.series_meta.description }}</p>
+    {% if page.cover %}
+      <img class="series-cover" src="{{ page.cover | relative_url }}" alt="{{ page.title }}" loading="lazy" />
+    {% endif %}
+    {% if page.series_meta.description %}
+      <p class="series-description">{{ page.series_meta.description }}</p>
+    {% endif %}
   </header>
 
   <section class="series-parts">
-    <ol class="parts-list">
+    <ol class="series-posts">
       {% for post in page.posts %}
-        <li class="part-entry">
-          <h2 class="part-title">
+        <li class="series-post-entry">
+          <h2 class="post-title">
             <a href="{{ post.url }}">{{ post.title }}</a>
           </h2>
-          <p class="part-meta">
-            Published {{ post.date | date: "%b %-d, %Y" }}
+          <p class="post-meta">
+            Part {{ post.series.part }} · {{ post.date | date: "%b %-d, %Y" }}
           </p>
-          <p class="excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
         </li>
       {% endfor %}
     </ol>
