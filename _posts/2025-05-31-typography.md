@@ -7,6 +7,8 @@ categories: [blogging, typography]
 excerpt: This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.
 toc: false
 authors: [harshal]
+series: blogging
+slug: typography
 ---
 
 ## Headings

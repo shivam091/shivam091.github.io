@@ -20,6 +20,18 @@ layout: page
 
   {{ content }}
 
+  {% if page.series %}
+    {% assign series_id = page.series %}
+    {% assign series_page = site.pages | where: "series_id", series_id | first %}
+    {% if series_page %}
+      {% assign index = series_page.posts | index_of: page %}
+      <p class="series-info">
+        📚 <a href="{{ series_page.url }}">{{ series_page.title }}</a><br />
+        Part {{ index | plus: 1 }} of {{ series_page.posts.size }}
+      </p>
+    {% endif %}
+  {% endif %}
+
   <footer class="post-footer">
     <p>I hope you’ve found this post informative and helpful. Thank you for reading!</p>
 

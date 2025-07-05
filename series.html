@@ -1,0 +1,26 @@
+---
+layout: page
+title: Blog series
+permalink: /series
+---
+
+{%- assign series_pages = site.pages | where: "layout", "series" | sort: "title" -%}
+
+<section class="series-list">
+  <div class="series-grid">
+    {% for series in series_pages %}
+      <article class="series-card">
+        <h2 class="series-title">
+          <a href="{{ series.url | relative_url }}">{{ series.title }}</a>
+        </h2>
+        <p class="series-excerpt">
+          {{ series.excerpt }}
+        </p>
+        <div class="series-meta">
+          <span>{{ series.posts.size }} part{% if series.posts.size != 1 %}s{% endif %}</span>
+          <a href="{{ series.url | relative_url }}" class="btn btn-primary">📖 View Series</a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

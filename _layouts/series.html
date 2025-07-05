@@ -1,0 +1,25 @@
+---
+layout: page
+---
+
+<article class="series-page">
+  <header class="series-header">
+    <p class="series-description">{{ page.series_meta.description }}</p>
+  </header>
+
+  <section class="series-parts">
+    <ol class="parts-list">
+      {% for post in page.posts %}
+        <li class="part-entry">
+          <h2 class="part-title">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </h2>
+          <p class="part-meta">
+            Published {{ post.date | date: "%b %-d, %Y" }}
+          </p>
+          <p class="excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+</article>

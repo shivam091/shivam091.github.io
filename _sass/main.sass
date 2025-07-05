@@ -4,3 +4,98 @@
 @use "layout"
 @use "pages"
 @use "vendors"
+
+.series-heading
+  font-size: 2rem
+  margin-bottom: 2rem
+
+
+.series-grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+  gap: 2rem
+
+
+.series-card
+  background: var(--color-bg-alt, #f9f9f9)
+  border: 1px solid var(--color-border, #ddd)
+  border-radius: 0.75rem
+  padding: 1.25rem
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  transition: border 0.3s ease
+
+
+.series-card:hover
+  border-color: var(--color-accent, #007acc)
+
+
+.series-title
+  font-size: 1.25rem
+  margin-bottom: 0.5rem
+
+
+.series-title a
+  color: var(--color-fg, #222)
+  text-decoration: none
+
+
+.series-title a:hover
+  text-decoration: underline
+
+
+.series-excerpt
+  font-size: 0.95rem
+  color: var(--color-fg-muted, #666)
+  margin-bottom: 1rem
+
+
+.series-meta
+  display: flex
+  justify-content: space-between
+  align-items: center
+  font-size: 0.9rem
+
+
+.series-btn
+  background: var(--color-accent, #007acc)
+  color: white
+  padding: 0.4rem 0.8rem
+  border-radius: 0.5rem
+  text-decoration: none
+  font-weight: 600
+  transition: background 0.3s ease
+
+
+.series-btn:hover
+  background: #005fa3
+
+
+.series-intro
+  font-size: 1rem
+  color: var(--color-fg-muted, #666)
+  margin-bottom: 2rem
+
+
+.parts-list
+  list-style: none
+  margin: 0
+  padding: 0
+
+.part-entry
+  padding: 1rem
+  margin-bottom: 1.5rem
+  border: var(--border-muted)
+  border-left: 2px solid var(--color-border-accent-emphasis)
+  background: var(--color-bg-muted)
+  border-radius: 0.5rem
+  position: relative
+
+.part-entry h2
+  font-size: 1.15rem
+  margin-bottom: 0.5rem
+
+.part-meta
+  font-size: 0.85rem
+  color: var(--color-fg-muted)

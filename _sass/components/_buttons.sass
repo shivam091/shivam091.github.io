@@ -4,9 +4,6 @@ button
   background-color: var(--color-bg-control-transparent)
   color: var(--color-fg-control)
   border: var(--border-width-default) solid var(--color-border-control-transparent)
-  padding: var(--space-sm)
-  font-size: var(--fluid-font-size-sm)
-  font-weight: var(--font-weight-semi-bold)
 
   &:hover,
   &:focus
@@ -35,6 +32,9 @@ button:not(:disabled)
   border-color: var(--color-border-control)
   border-radius: var(--border-radius-default)
   line-height: var(--line-height-tight)
+  padding: var(--space-sm)
+  font-size: var(--fluid-font-size-sm)
+  font-weight: var(--font-weight-semi-bold)
 
   @include transition-properties((background-color, color, border-color), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-in-out))
 
