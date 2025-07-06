@@ -219,29 +219,24 @@
   <section class="posts" aria-labelledby="posts-list-title">
   <h2 id="posts-list-title" class="visually-hidden">List of blog posts<a href="#list-of-blog-posts" class="heading-anchor" aria-label="Permalink: List of blog posts">#</a>
 </h2>
-  
-    <article class="card card-image-left">
-      <div class="card-media">
-        <div class="card-media-inner">
-          <img src="/assets/img/posts/css-grid-fundamentals/cover.png" alt="Card image">
-        </div>
-      </div>
-      <div class="card-body">
-        <header class="card-header">
-          <div class="card-title h2">
-            <a href="/post/components" title="Components" aria-label="Read post: Components">
+
+  <article class="post-preview card card-image-left">
+      <a href="/post/components" class="card-link" title="Components" aria-label="Read post: Components">
+        
+        <div class="card-body">
+          <header class="card-header">
+            <div class="card-title h2 post-title">
               Components
-            </a>
+            </div>
+          </header>
+          <div class="card-content">
+            
+              <p class="post-excerpt">This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.</p>
+            
           </div>
-        </header>
-        <div class="card-content">
-          
-            <p class="post-excerpt lead">This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.</p>
-          
-        </div>
-        <footer class="card-footer">
-          <div class="post-meta post-meta-main">
-            <div class="post-meta-item post-published-date">
+          <div class="card-footer">
+            <div class="post-meta post-meta-main">
+              <div class="post-meta-item post-published-date">
   <svg class="icon icon-calendar" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-calendar"></use>
 </svg>
@@ -252,21 +247,22 @@
 
 </div>
 
-            
-  <div class="post-meta-item post-categories" role="list">
-    <svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
+
+              
+                <div class="post-meta-item post-categories" role="list">
+                  <svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-folder-open"></use>
 </svg>
-    <span class="visually-hidden">Categories:</span>
-    
-      <a href="/category/blogging" class="badge" aria-label="Category: blogging" rel="category" role="listitem">blogging</a>
-    
-      <a href="/category/components" class="badge" aria-label="Category: components" rel="category" role="listitem">components</a>
-    
-  </div>
+                  <span class="visually-hidden">Categories:</span>
+                  
+                    <span class="badge" aria-label="Category: blogging" rel="category" role="listitem">blogging</span>
+                  
+                    <span class="badge" aria-label="Category: components" rel="category" role="listitem">components</span>
+                  
+                </div>
+              
 
-
-            <div class="post-meta-item post-read-time">
+              <div class="post-meta-item post-read-time">
   <svg class="icon icon-clock" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-clock"></use>
 </svg>
@@ -274,9 +270,10 @@
   <span data-tooltip="190 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
 </div>
 
+            </div>
           </div>
-        </footer>
-      </div>
+        </div>
+      </a>
     </article>
   
 </section>
