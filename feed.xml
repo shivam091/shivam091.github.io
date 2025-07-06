@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-07-06T19:42:13+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/2025/06/16/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-07-02T16:00:20+05:30</updated><id>https://shivam091.github.io/post/2025/06/16/components</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/16/components"><![CDATA[<h2 id="codeblocks" dir="auto">Codeblocks</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-07-06T20:03:55+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-07-06T19:48:55+05:30</updated><id>https://shivam091.github.io/post/components</id><content type="html" xml:base="https://shivam091.github.io/post/components"><![CDATA[<h2 id="codeblocks" dir="auto">Codeblocks</h2>
 
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
@@ -293,115 +293,7 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
 
 <svg id="custom-id" class="icon icon-folder-open custom-class" width="20" height="20" role="img" aria-label="Open folder" focusable="false">
   <use href="/assets/img/sprite.svg#icon-folder-open" />
-</svg>
-
-<h3 id="available-icons" dir="auto">Available icons</h3>
-
-<svg class="icon icon-adjust" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-adjust" />
-</svg>
-<svg class="icon icon-arrow-up" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-arrow-up" />
-</svg>
-<svg class="icon icon-bulb" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-bulb" />
-</svg>
-<svg class="icon icon-calendar" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-calendar" />
-</svg>
-<svg class="icon icon-code" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-code" />
-</svg>
-<svg class="icon icon-check" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-check" />
-</svg>
-<svg class="icon icon-circle-fill" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-circle-fill" />
-</svg>
-<svg class="icon icon-clock" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-clock" />
-</svg>
-<svg class="icon icon-copy" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-copy" />
-</svg>
-<svg class="icon icon-device-desktop" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-device-desktop" />
-</svg>
-<svg class="icon icon-emoji-sad" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-emoji-sad" />
-</svg>
-<svg class="icon icon-envelope" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-envelope" />
-</svg>
-<svg class="icon icon-exclamation-triangle" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
-</svg>
-<svg class="icon icon-facebook" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-facebook" />
-</svg>
-<svg class="icon icon-file" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-file" />
-</svg>
-<svg class="icon icon-fold-down" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-fold-down" />
-</svg>
-<svg class="icon icon-fold-up" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-fold-up" />
-</svg>
-<svg class="icon icon-folder" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-folder" />
-</svg>
-<svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-folder-open" />
-</svg>
-<svg class="icon icon-github" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-github" />
-</svg>
-<svg class="icon icon-hash" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-hash" />
-</svg>
-<svg class="icon icon-history" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-history" />
-</svg>
-<svg class="icon icon-home" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-home" />
-</svg>
-<svg class="icon icon-info-circle" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-info-circle" />
-</svg>
-<svg class="icon icon-instagram" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-instagram" />
-</svg>
-<svg class="icon icon-link" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-link" />
-</svg>
-<svg class="icon icon-list" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-list" />
-</svg>
-<svg class="icon icon-linkedin" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-linkedin" />
-</svg>
-<svg class="icon icon-moon" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-moon" />
-</svg>
-<svg class="icon icon-sun" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-sun" />
-</svg>
-<svg class="icon icon-tag" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-tag" />
-</svg>
-<svg class="icon icon-telegram" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-telegram" />
-</svg>
-<svg class="icon icon-times" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-times" />
-</svg>
-<svg class="icon icon-twitter" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-twitter" />
-</svg>
-<svg class="icon icon-whatsapp" aria-hidden="true" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-whatsapp" />
-</svg>]]></content><author><name>Harshal Ladhe</name></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/2025/06/07/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-07-02T16:00:20+05:30</updated><id>https://shivam091.github.io/post/2025/06/07/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/2025/06/07/understanding-css-grid"><![CDATA[<h2 id="introduction" dir="auto">Introduction</h2>
+</svg>]]></content><author><name>Harshal Ladhe</name></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Understanding CSS Grid: A Complete Guide</title><link href="https://shivam091.github.io/post/understanding-css-grid" rel="alternate" type="text/html" title="Understanding CSS Grid: A Complete Guide" /><published>2025-06-07T18:40:00+05:30</published><updated>2025-07-06T19:48:55+05:30</updated><id>https://shivam091.github.io/post/understanding-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/understanding-css-grid"><![CDATA[<h2 id="introduction" dir="auto">Introduction</h2>
 
 <p dir="auto">CSS Grid is one of the most powerful tools for building web layouts. In this article, we’ll explore all the fundamentals, from basic to advanced usage.</p>
 
@@ -874,7 +766,7 @@ The total available space is divided into 3 parts, with the first column getting
 
 <h2 id="conclusion" dir="auto">Conclusion</h2>
 
-<p dir="auto">CSS Grid makes layout development more accessible and powerful. By understanding and utilizing its properties, you can create complex layouts with minimal code. Mastering CSS Grid will significantly improve your UI skills, especially when dealing with complex designs.</p>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="css" /><category term="grid" /><summary type="html"><![CDATA[CSS Grid is one of the most powerful tools for building web layouts.]]></summary></entry><entry><title type="html">Text and Typography</title><link href="https://shivam091.github.io/post/2025/05/31/typography" rel="alternate" type="text/html" title="Text and Typography" /><published>2025-05-31T01:00:00+05:30</published><updated>2025-07-02T16:00:20+05:30</updated><id>https://shivam091.github.io/post/2025/05/31/typography</id><content type="html" xml:base="https://shivam091.github.io/post/2025/05/31/typography"><![CDATA[<h2 id="headings" dir="auto">Headings</h2>
+<p dir="auto">CSS Grid makes layout development more accessible and powerful. By understanding and utilizing its properties, you can create complex layouts with minimal code. Mastering CSS Grid will significantly improve your UI skills, especially when dealing with complex designs.</p>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="css" /><category term="grid" /><summary type="html"><![CDATA[CSS Grid is one of the most powerful tools for building web layouts.]]></summary></entry><entry><title type="html">Text and Typography</title><link href="https://shivam091.github.io/post/typography" rel="alternate" type="text/html" title="Text and Typography" /><published>2025-05-31T01:00:00+05:30</published><updated>2025-07-06T19:48:55+05:30</updated><id>https://shivam091.github.io/post/typography</id><content type="html" xml:base="https://shivam091.github.io/post/typography"><![CDATA[<h2 id="headings" dir="auto">Headings</h2>
 
 <h1 id="h1-heading-usually-reserved-for-post-title" dir="auto">H1 Heading (usually reserved for post title)</h1>
 <h2 id="h2-heading" dir="auto">H2 Heading</h2>
@@ -906,14 +798,20 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
 <h3 id="unordered-list" dir="auto">Unordered List</h3>
 
 <ul dir="auto">
-  <li>Apples</li>
-  <li>Oranges
+  <li>Chapter 1
     <ul dir="auto">
-      <li>Navel</li>
-      <li>Blood</li>
+      <li>Section 1
+        <ul dir="auto">
+          <li>Paragraph 1</li>
+        </ul>
+      </li>
     </ul>
   </li>
-  <li>Bananas</li>
+  <li>Chapter 2
+    <ul dir="auto">
+      <li>Section 2</li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="ordered-list" dir="auto">Ordered List</h3>
@@ -922,20 +820,34 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
   <li>First item</li>
   <li>Second item
     <ol dir="auto">
-      <li>Nested</li>
-      <li>Nested again</li>
+      <li>Nested
+        <ol dir="auto">
+          <li>Nested again</li>
+        </ol>
+      </li>
     </ol>
   </li>
   <li>Third item</li>
 </ol>
 
-<h3 id="description-lists" dir="auto">Description Lists</h3>
+<h3 id="task-list" dir="auto">Task List</h3>
 
+<ul class="task-list" dir="auto">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Job
+    <ul class="task-list" dir="auto">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Step 1</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Step 2</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Step 3</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="description-lists" dir="auto">Description Lists</h3>
 <dl>
-  <dt>HTML</dt>
-  <dd>Hypertext Markup Language</dd>
-  <dt>CSS</dt>
-  <dd>Cascading Style Sheets</dd>
+  <dt>Sun</dt>
+  <dd>the star around which the earth orbits</dd>
+  <dt>Moon</dt>
+  <dd>the natural satellite of the earth, visible by reflected light from the sun</dd>
 </dl>
 
 <h2 id="inline-elements" dir="auto">Inline Elements</h2>
@@ -998,14 +910,6 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
 
 <p dir="auto"><img src="https://via.placeholder.com/400x200" alt="Alt text" /></p>
 
-<h2 id="task-list" dir="auto">Task List</h2>
-
-<ul class="task-list" dir="auto">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Create base layout</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Add dark mode</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Finalize footer</li>
-</ul>
-
 <h2 id="tables" dir="auto">Tables</h2>
 
 <table dir="auto" role="table" class="markdown-table">
@@ -1034,6 +938,10 @@ Mailto: <a href="mailto:test@example.com">Send Email</a></p>
     </tr>
   </tbody>
 </table>
+
+<h2 id="filepath" dir="auto">Filepath</h2>
+
+<p dir="auto">Here is the <code class="filepath highlighter-rouge notranslate">/path/to/the/file.extend</code>.</p>
 
 <h2 id="footnotes" dir="auto">Footnotes</h2>
 
