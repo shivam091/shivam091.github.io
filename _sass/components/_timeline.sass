@@ -1,5 +1,7 @@
 @use "abstracts/modules/list-unstyled"
+@use "abstracts/modules/text-truncate"
 @use "abstracts/mixins/breakpoints" as breakpoint
+@use "abstracts/mixins/transition-properties" as *
 
 $separator-height: var(--size-huge)
 
@@ -22,14 +24,19 @@ $separator-height: var(--size-huge)
   z-index: 2
 
 .timeline-post
-  box-shadow: var(--box-shadow-inset-muted)
   background-image: linear-gradient(var(--color-bg-accent-muted), var(--color-bg-accent-muted))
   border-color: var(--color-border-accent-muted)
   margin-bottom: var(--space-base)
+  box-shadow: var(--box-shadow-sm)
+
+  @include transition-properties(box-shadow, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
 
   @include breakpoint.max(md)
     .timeline-left
       font-size: 0.85rem
+
+  &:hover
+    box-shadow: var(--box-shadow-md)
 
 .timeline-left
   flex: 0 0 5.5rem
@@ -45,6 +52,7 @@ $separator-height: var(--size-huge)
 .timeline-year
   .timeline-left
     color: var(--color-fg-default)
+    margin-block: var(--space-sm)
 
   .timeline-seperator
     &::before
@@ -92,6 +100,6 @@ $separator-height: var(--size-huge)
 
 .timeline-right
   flex: 1
-  word-wrap: break-word
-  overflow-wrap: anywhere
   font-weight: var(--font-weight-medium)
+
+  @extend %text-truncate

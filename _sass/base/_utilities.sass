@@ -24,6 +24,7 @@ hr
 [aria-disabled=true]
   box-shadow: var(--box-shadow-none)
   cursor: not-allowed !important
+  pointer-events: none
 
 #mask
   display: none
@@ -36,3 +37,11 @@ hr
   @at-root [data-sidebar="open"] &
     @include breakpoint.max(md)
       display: block
+
+.float-left
+  float: left
+  margin: var(--space-md) var(--space-base) var(--space-base) var(--space-none) !important
+
+.float-right
+  float: right
+  margin: var(--space-md) var(--space-none) var(--space-base) var(--space-base) !important

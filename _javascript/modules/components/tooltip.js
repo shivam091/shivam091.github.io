@@ -1,6 +1,6 @@
 import * as PopperUtils from "./../../utils/popper";
 
-class Tooltip {
+export default class Tooltip {
   static tooltipMap = new WeakMap();
 
   static get tooltipElements() {
@@ -141,5 +141,3 @@ class Tooltip {
     });
   }
 }
-
-export { Tooltip };

@@ -1,6 +1,6 @@
 import * as PopperUtils from "./../../utils/popper";
 
-class Dropdown {
+export default class Dropdown {
   static get dropdownElements() {
     return document.querySelectorAll("[data-dropdown]");
   }
@@ -76,5 +76,3 @@ class Dropdown {
     document.addEventListener("keydown", (event) => this.handleEscape(event));
   }
 }
-
-export { Dropdown };

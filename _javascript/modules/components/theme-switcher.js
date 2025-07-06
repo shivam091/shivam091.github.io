@@ -1,4 +1,4 @@
-class ThemeSwitcher {
+export default class ThemeSwitcher {
   static THEME_KEY = "theme";
 
   static get container() {
@@ -63,5 +63,3 @@ class ThemeSwitcher {
     this.setupDropdownListeners();
   }
 }
-
-export { ThemeSwitcher };

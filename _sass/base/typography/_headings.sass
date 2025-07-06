@@ -1,22 +1,23 @@
-@use "abstracts/functions/heading-size" as *
+@use "sass:map"
+@use "abstracts/variables/typography" as *
 @use "abstracts/modules/heading" as *
 
-@for $i from 1 through 6
-  h#{$i},
-  .h#{$i}
+@for $level from 1 through 6
+  h#{$level},
+  .h#{$level}
     @extend %heading
 
-    font-size: heading-size($i)
+    font-size: map.get($heading-sizes, h#{$level})
     scroll-margin-top: 3.5rem
 
-    @if $i == 1
+    @if $level == 1
       font-weight: var(--font-weight-bold)
       border-bottom: var(--border-default)
       padding-bottom: var(--fluid-space-xxxs)
       letter-spacing: 0.5px
-    @else if $i == 2
+    @else if $level == 2
       font-weight: var(--font-weight-semi-bold)
-    @else if $i == 3 or $i == 4
+    @else if $level == 3 or $level == 4
       font-weight: var(--font-weight-medium)
     @else
       font-weight: var(--font-weight-normal)

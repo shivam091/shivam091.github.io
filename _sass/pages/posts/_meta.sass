@@ -1,21 +1,23 @@
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 .post-meta
+  font-size: var(--font-size-sm)
+  color: var(--color-fg-muted)
+
+.post-meta-item
+  display: inline-flex
+  align-items: center
+  gap: var(--space-xs)
+
+.post-meta-main
   display: inline-grid
   grid-auto-flow: column
   grid-auto-columns: max-content
   justify-content: start
   align-items: center
   gap: var(--fluid-space-sm) var(--fluid-space-md)
-  font-size: var(--font-size-sm)
-  color: var(--color-fg-muted)
 
-  > .post-meta-item
-    display: inline-flex
-    align-items: center
-    gap: var(--space-xs)
-
-  @include breakpoint.max(xl)
+  @include breakpoint.max(md)
     display: grid
     grid-auto-flow: initial
     grid-template-columns: repeat(2, 1fr)
@@ -31,3 +33,11 @@
 
     > .post-meta-item:nth-child(even)
       justify-self: start
+
+.post-meta-secondary
+  display: flex
+  align-items: start
+  flex-direction: column
+  flex-wrap: wrap
+  row-gap: var(--space-sm)
+  margin-block: var(--fluid-space-lg)

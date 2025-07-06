@@ -1,4 +1,4 @@
-class ScrollTop {
+export default class ScrollTop {
   static isVisible = false;
   static ticking = false;
 
@@ -57,5 +57,3 @@ class ScrollTop {
     this.updateVisibility();
   }
 }
-
-export { ScrollTop };

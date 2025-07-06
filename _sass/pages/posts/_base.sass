@@ -1,5 +1,5 @@
 @use "abstracts/modules/no-cursor" as *
-@use "abstracts/modules/text-truncate" as *
+@use "abstracts/modules/text-clip" as *
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
@@ -17,48 +17,41 @@
   margin: var(--space-none)
   padding: var(--space-none)
 
-  .post
-    padding: var(--fluid-space-base)
-    background-color: var(--color-bg-default)
-    border-radius: var(--border-radius-default)
-    border: var(--border-default)
-    display: flex
-    flex-direction: column
-    gap: var(--fluid-space-sm)
+.post-cover
+  aspect-ratio: 16 / 9
 
-  .post-header
-    display: flex
-    flex-direction: column
-    gap: var(--fluid-space-sm)
+.post-preview
+  height: 12rem
+  max-height: 100%
 
-  .post-title
-    margin: var(--space-none)
-    max-width: 60%
-    color: var(--color-fg-link)
+  @include breakpoint.max(md)
+    height: auto
 
-    @extend %text-truncate
+.post-header
+  display: flex
+  flex-direction: column
+  gap: var(--fluid-space-sm)
 
-    @include breakpoint.max(md)
-      max-width: 100%
+.post-title
+  margin: var(--space-none)
 
-  .post-excerpt
-    margin: var(--space-none)
-    color: var(--color-fg-muted)
+.post-excerpt
+  margin: var(--space-none)
+  color: var(--color-fg-muted)
 
-  .post-footer
-    margin-top: var(--space-none)
+  @extend %text-clip
 
 .post-footer
   margin-top: var(--fluid-space-lg)
-  font-size: var(--font-size-sm)
-  color: var(--color-fg-muted)
 
-  .post-footer-bottom
+  .post-footer-content
     display: flex
     justify-content: space-between
     align-items: center
     flex-wrap: wrap
     gap: var(--space-base)
+    font-size: var(--font-size-sm)
+    color: var(--color-fg-muted)
 
     .copyright
       flex: 1 1 auto
