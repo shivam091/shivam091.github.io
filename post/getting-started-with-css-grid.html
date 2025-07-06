@@ -1,0 +1,666 @@
+<body>
+
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Getting Started with CSS Grid: Learn 2D Layouts with Ease | Harshal LADHE</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Getting Started with CSS Grid: Learn 2D Layouts with Ease | Harshal LADHE</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Getting Started with CSS Grid: Learn 2D Layouts with Ease">
+<meta name="author" content="Harshal Ladhe">
+<meta property="og:locale" content="en">
+<meta name="description" content="A beginner-friendly introduction to CSS Grid layout, its core concepts, and how to create your first 2D grid-based layouts with practical examples.">
+<meta property="og:description" content="A beginner-friendly introduction to CSS Grid layout, its core concepts, and how to create your first 2D grid-based layouts with practical examples.">
+<link rel="canonical" href="https://shivam091.github.io/post/getting-started-with-css-grid">
+<meta property="og:url" content="https://shivam091.github.io/post/getting-started-with-css-grid">
+<meta property="og:site_name" content="Harshal LADHE">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-07-06T19:00:00+05:30">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Getting Started with CSS Grid: Learn 2D Layouts with Ease">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal Ladhe"},"dateModified":"2025-07-06T22:20:48+05:30","datePublished":"2025-07-06T19:00:00+05:30","description":"A beginner-friendly introduction to CSS Grid layout, its core concepts, and how to create your first 2D grid-based layouts with practical examples.","headline":"Getting Started with CSS Grid: Learn 2D Layouts with Ease","mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/getting-started-with-css-grid"},"url":"https://shivam091.github.io/post/getting-started-with-css-grid"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- Favicon -->
+<link href="/assets/img/favicon.png" rel="icon">
+
+<!-- Preconnect for fonts -->
+
+
+<!-- Google Font or Custom Font -->
+
+
+<!-- Stylesheets -->
+<link href="/dist/style.css" rel="stylesheet">
+
+<!-- Additional head includes -->
+
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5GHEJ51PD"></script>
+
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-W5GHEJ51PD", { anonymize_ip: true });
+</script>
+
+
+
+<script type="text/javascript">
+  (function() {
+    const theme = localStorage.getItem("theme") || "system";
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.setAttribute("data-theme", theme === "system" ? (prefersDark ? "dark" : "light") : theme);
+  })();
+</script>
+
+
+
+  <div id="progress-bar"></div>
+
+  <a href="#main-content" class="skip-link" role="link" data-skip-link>Skip to main content</a>
+
+  <button class="btn btn-primary sidebar-toggle" id="sidebar-toggle" aria-label="Toggle Sidebar" aria-controls="sidebar" aria-expanded="false">
+  <span class="icon-bar top-bar"></span>
+  <span class="icon-bar middle-bar"></span>
+  <span class="icon-bar bottom-bar"></span>
+</button>
+<aside class="sidebar" id="sidebar" role="complementary" aria-label="Sidebar">
+  <div class="sidebar-content">
+    <div class="sidebar-top">
+      <a href="/">
+        <img src="/assets/img/profile-img.png" alt="Harshal LADHE" class="profile-pic" loading="lazy">
+      </a>
+      <div class="site-title">Harshal LADHE</div>
+      <div class="site-subtitle">A showcase of technical blog posts, coding insights, and open source projects.</div>
+    </div>
+    <div class="sidebar-social" role="navigation" aria-label="Social Links">
+<a href="https://www.github.com/shivam091" class="btn btn-primary social-icon" target="_blank" data-tooltip="GitHub" aria-label="GitHub">
+          <svg class="icon icon-github" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-github"></use>
+</svg>
+        </a><a href="https://www.linkedin.com/in/shivam091" class="btn btn-primary social-icon" target="_blank" data-tooltip="LinkedIn" aria-label="LinkedIn">
+          <svg class="icon icon-linkedin" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-linkedin"></use>
+</svg>
+        </a><a href="https://www.instagram.com/taurusian_soul" class="btn btn-primary social-icon" target="_blank" data-tooltip="Instagram" aria-label="Instagram">
+          <svg class="icon icon-instagram" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-instagram"></use>
+</svg>
+        </a><a href="mailto:harshal.ladhe.1@gmail.com" class="btn btn-primary social-icon" target="_blank" data-tooltip="Email " aria-label="Email ">
+          <svg class="icon icon-envelope" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-envelope"></use>
+</svg>
+        </a><a href="/assets/docs/resume.pdf" class="btn btn-primary social-icon" target="_blank" data-tooltip="Resume" aria-label="Resume" data-analytics-event="download_resume" data-analytics-label="resume.pdf" data-analytics-category="engagement">
+          <svg class="icon icon-file" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-file"></use>
+</svg>
+        </a>
+    </div>
+    <hr>
+    <nav class="sidebar-nav" role="navigation" aria-label="Main Navigation">
+      
+        
+           <a href="/" class="sidebar-nav-link">
+             <svg class="icon icon-home" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-home"></use>
+</svg>
+             Home
+           </a>
+        
+      
+        
+           <a href="/about" class="sidebar-nav-link">
+             <svg class="icon icon-info-circle" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle"></use>
+</svg>
+             About
+           </a>
+        
+      
+        
+           <a href="/categories" class="sidebar-nav-link">
+             <svg class="icon icon-folder" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-folder"></use>
+</svg>
+             Categories
+           </a>
+        
+      
+        
+           <a href="/tags" class="sidebar-nav-link">
+             <svg class="icon icon-tag" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-tag"></use>
+</svg>
+             Tags
+           </a>
+        
+      
+        
+           <a href="/posts" class="sidebar-nav-link">
+             <svg class="icon icon-list" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-list"></use>
+</svg>
+             Posts
+           </a>
+        
+      
+        
+           <a href="/archives" class="sidebar-nav-link">
+             <svg class="icon icon-archive" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-archive"></use>
+</svg>
+             Archives
+           </a>
+        
+      
+    </nav>
+    <div class="sidebar-bottom" aria-label="Preferences panel">
+      <div class="dropdown" data-dropdown data-theme-switcher>
+        <button type="button" class="dropdown-toggle theme-switcher bottom-link" aria-haspopup="true" aria-expanded="false">
+          <svg class="icon icon-adjust" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-adjust"></use>
+</svg>
+        </button>
+
+        <ul class="dropdown-menu" role="menu" aria-label="Available color schemes" data-theme-switcher-list>
+          <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use your system’s default theme" data-color-scheme="system" data-theme-switcher-list-items>
+              <svg class="icon icon-device-desktop" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-device-desktop"></use>
+</svg>
+              System
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use light mode" data-color-scheme="light" data-theme-switcher-list-items>
+              <svg class="icon icon-sun" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-sun"></use>
+</svg>
+              Light
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use dark mode" data-color-scheme="dark" data-theme-switcher-list-items>
+              <svg class="icon icon-moon" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-moon"></use>
+</svg>
+              Dark
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</aside>
+
+
+  <div class="page-wrapper">
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+      <div class="container">
+        <h1 id="page-title" class="page-title">
+  Getting Started with CSS Grid: Learn 2D Layouts with Ease
+</h1>
+
+
+<section class="page-content" aria-label="Getting Started with CSS Grid: Learn 2D Layouts with Ease">
+  <article class="post-content" aria-labelledby="page-title">
+  <meta itemprop="datePublished" content="2025-07-06T22:20:48+05:30">
+  <meta itemprop="dateModified" content="2025-07-06T22:20:48+05:30">
+  <meta itemprop="headline" content="Getting Started with CSS Grid: Learn 2D Layouts with Ease">
+  <meta itemprop="mainEntityOfPage" content="https://shivam091.github.io/post/getting-started-with-css-grid">
+
+  <header class="post-header">
+    <div class="post-meta post-meta-main" role="group" aria-label="Post metadata">
+      <div class="post-meta-item post-published-date">
+  <svg class="icon icon-calendar" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-calendar"></use>
+</svg>
+  <span class="visually-hidden">Published at:</span>
+  <time datetime="2025-07-06T22:20:48+05:30" aria-label="Published on July 06, 2025 at 10:20 PM" role="time" data-tooltip="Sun, July 06, 2025 10:20 PM" data-tooltip-position="bottom" tabindex="0">
+  July 06, 2025
+</time>
+
+</div>
+
+
+  <div class="post-meta-item post-last-modified-date">
+    <svg class="icon icon-history" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-history"></use>
+</svg>
+    <span class="visually-hidden">Last updated:</span>
+    <time datetime="2025-07-06T22:20:48+05:30" aria-label="Last updated on July 06, 2025 at 10:20 PM" role="time" data-tooltip="Sun, July 06, 2025 10:20 PM" data-tooltip-position="bottom" tabindex="0">
+  July 06, 2025
+</time>
+
+  </div>
+
+
+<div class="post-meta-item post-read-time">
+  <svg class="icon icon-clock" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-clock"></use>
+</svg>
+  <span class="visually-hidden">Estimated reading time:</span>
+  <span data-tooltip="610 words" data-tooltip-position="bottom" tabindex="0">4 min read</span>
+</div>
+
+
+    </div>
+
+    <p class="post-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+  <em>
+    Written by
+    <a href="https://github.com/shivam091" itemprop="name" rel="author" target="_blank">
+        Harshal Ladhe
+      </a>
+    
+  </em>
+</p>
+
+  </header>
+
+  
+
+
+  <div class="toc-wrapper">
+  <h2 id="toc-heading">
+    Table of contents
+  <a href="#table-of-contents" class="heading-anchor" aria-label="Permalink: Table of contents">#</a>
+</h2>
+  <nav class="toc" aria-labelledby="toc-heading" role="doc-toc">
+    <ul class="toc-level toc-level-2">
+<li>
+<a href="#introduction">Introduction</a>
+</li>
+<li>
+<a href="#why-css-grid">Why CSS Grid?</a>
+</li>
+<li>
+<a href="#basic-terminology">Basic Terminology</a>
+</li>
+<li>
+<a href="#building-layouts-with-css-grid">Building Layouts with CSS Grid</a>
+<ul class="toc-level toc-level-3">
+<li>
+<a href="#fundamental-properties">Fundamental Properties</a>
+</li>
+<li>
+<a href="#column-and-row-templates">Column and Row Templates</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#conclusion">Conclusion</a>
+</li>
+</ul>
+
+  </nav>
+</div>
+
+
+  <h2 id="introduction" dir="auto">Introduction<a href="#introduction" class="heading-anchor" aria-label="Permalink: Introduction">#</a>
+</h2>
+
+<p dir="auto">CSS Grid is one of the most powerful layout systems in web development today. It enables you to build two-dimensional layouts using rows and columns with minimal effort. Unlike Flexbox, which is one-dimensional, Grid handles layout in <strong>both axes</strong> simultaneously.</p>
+
+<p dir="auto">This post is the first in a three-part series on CSS Grid. We’ll begin with:</p>
+
+<ul dir="auto">
+  <li>What CSS Grid is and why it’s useful</li>
+  <li>Key terminology</li>
+  <li>The most essential properties</li>
+  <li>Simple layouts to get started</li>
+</ul>
+
+<h2 id="why-css-grid" dir="auto">Why CSS Grid?<a href="#why-css-grid" class="heading-anchor" aria-label="Permalink: Why CSS Grid?">#</a>
+</h2>
+
+<p dir="auto">CSS Grid allows complex layouts without floats, media queries, or JavaScript. It’s native, declarative, and flexible.</p>
+
+<h2 id="basic-terminology" dir="auto">Basic Terminology<a href="#basic-terminology" class="heading-anchor" aria-label="Permalink: Basic Terminology">#</a>
+</h2>
+
+<ul dir="auto">
+  <li>
+<strong>Grid Container:</strong> The parent element on which <code class="highlighter-rouge notranslate">display: grid</code> or <code class="highlighter-rouge notranslate">display: inline-grid</code> is applied. It defines the grid context for its children.</li>
+  <li>
+<strong>Grid Item:</strong> The direct child elements of the grid container. These are placed and aligned within the grid layout.</li>
+  <li>
+<strong>Grid Line:</strong> The horizontal or vertical dividing lines that separate grid tracks. They’re used for placing grid items.</li>
+  <li>
+<strong>Grid Track:</strong> A row or column in the grid. It’s the space between two adjacent grid lines.</li>
+  <li>
+<strong>Grid Cell:</strong> The smallest unit of a grid layout — the space at the intersection of a single row and column.</li>
+</ul>
+
+<h2 id="building-layouts-with-css-grid" dir="auto">Building Layouts with CSS Grid<a href="#building-layouts-with-css-grid" class="heading-anchor" aria-label="Permalink: Building Layouts with CSS Grid">#</a>
+</h2>
+
+<h3 id="fundamental-properties" dir="auto">Fundamental Properties<a href="#fundamental-properties" class="heading-anchor" aria-label="Permalink: Fundamental Properties">#</a>
+</h3>
+
+<ul dir="auto">
+  <li>
+<strong>display: grid;</strong> — Converts an element into a grid container, enabling grid-based layout for its direct children.</li>
+  <li>
+<strong>grid-template-columns</strong> — Defines the number and width of columns in the grid. You can specify fixed sizes, percentages, or use flexible units
+like fr (fraction of available space).</li>
+  <li>
+<strong>grid-template-rows</strong> — Defines the number and height of rows in the grid, using the same unit options as columns.</li>
+  <li>
+<strong>gap (or row-gap and column-gap)</strong> — Sets the spacing between rows and columns of grid items. A shorthand that simplifies layout spacing.</li>
+  <li>
+<strong>grid-column / grid-row</strong> — Specifies how many columns or rows an item should span, or where it should start and end within the grid.</li>
+</ul>
+
+<h3 id="column-and-row-templates" dir="auto">Column and Row Templates<a href="#column-and-row-templates" class="heading-anchor" aria-label="Permalink: Column and Row Templates">#</a>
+</h3>
+
+<p dir="auto">CSS Grid gives you precise control over your layout’s structure using the <code class="highlighter-rouge notranslate">grid-template-columns</code> and <code class="highlighter-rouge notranslate">grid-template-rows</code> properties.</p>
+
+<ul dir="auto">
+  <li>
+<strong>grid-template-columns</strong> — Defines the number and width of columns in the grid.</li>
+  <li>
+<strong>grid-template-rows</strong> — Defines the number and height of rows.</li>
+</ul>
+
+<p dir="auto">Each value you specify represents the size of a single column or row, ordered left-to-right (for columns) or top-to-bottom (for rows). You can use:</p>
+
+<ul dir="auto">
+  <li>Flexible units like <code class="highlighter-rouge notranslate">fr</code> (fraction of available space),</li>
+  <li>Fixed units like <code class="highlighter-rouge notranslate">px</code> or <code class="highlighter-rouge notranslate">em</code>,</li>
+  <li>keywords like <code class="highlighter-rouge notranslate">auto</code>, which sizes based on content.</li>
+</ul>
+
+<p dir="auto">Here’s an example:</p>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td>
+<td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* Three columns: middle column is twice as wide */</span>
+  <span class="nl">grid-template-rows</span><span class="p">:</span> <span class="m">100px</span> <span class="nb">auto</span> <span class="m">50px</span><span class="p">;</span> <span class="c">/* Three rows: fixed top &amp; bottom, flexible middle */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nx">#000</span>
+<span class="p">}</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<p dir="auto">Here’s the HTML structure:</p>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td>
+<td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<p dir="auto"><strong>Explaination:</strong></p>
+
+<ul dir="auto">
+  <li>
+    <p dir="auto">The grid has three columns: the first and third are equal in width, while the middle column is twice as wide.</p>
+  </li>
+  <li>
+    <p dir="auto">The rows are defined as:</p>
+    <ul dir="auto">
+      <li>
+<code class="highlighter-rouge notranslate">100px</code> → a fixed-height top row</li>
+      <li>
+<code class="highlighter-rouge notranslate">auto</code> → a middle row that adjusts to content</li>
+      <li>
+<code class="highlighter-rouge notranslate">50px</code> → a fixed-height footer row</li>
+    </ul>
+  </li>
+</ul>
+
+<p dir="auto">This layout gives you both <strong>predictability</strong> and <strong>flexibility</strong>, especially when paired with responsive design techniques.</p>
+
+<p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/raVEvMb" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEvMb" class="external-link">Try this on CodePen</a></p>
+
+<h2 id="conclusion" dir="auto">Conclusion<a href="#conclusion" class="heading-anchor" aria-label="Permalink: Conclusion">#</a>
+</h2>
+
+<p dir="auto">You’ve just built your first layouts using CSS Grid! 🎉</p>
+
+<p dir="auto">In <a href="/css/mastering-css-grid-alignment-spanning">Part 2 →</a>, we’ll explore how to align content, use <code class="highlighter-rouge notranslate">grid-template-areas</code>, and span items across rows and columns for real-world use cases.</p>
+
+<p dir="auto">📚 <strong>This is Part 1 of the CSS Grid Fundamentals Series</strong></p>
+
+<p dir="auto">🔗 Next: <a href="/post/mastering-css-grid-alignment-spanning">Part 2 → Mastering Grid Areas, Alignment &amp; Spanning</a></p>
+
+
+  <div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
+    
+  <div class="post-meta-item post-categories" role="list">
+    <svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-folder-open"></use>
+</svg>
+    <span class="visually-hidden">Categories:</span>
+    
+      <a href="/category/css" class="badge" aria-label="Category: css" rel="category" role="listitem">css</a>
+    
+      <a href="/category/beginner" class="badge" aria-label="Category: beginner" rel="category" role="listitem">beginner</a>
+    
+  </div>
+
+
+    
+  <div class="post-meta-item post-tags" role="list">
+    <svg class="icon icon-tag" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-tag"></use>
+</svg>
+    <span class="visually-hidden">Tags:</span>
+    
+      <a href="/tag/css" class="badge" aria-label="Tag: css" rel="tag" role="listitem">css</a>
+    
+      <a href="/tag/grid" class="badge" aria-label="Tag: grid" rel="tag" role="listitem">grid</a>
+    
+      <a href="/tag/layout" class="badge" aria-label="Tag: layout" rel="tag" role="listitem">layout</a>
+    
+      <a href="/tag/web-design" class="badge" aria-label="Tag: web design" rel="tag" role="listitem">web design</a>
+    
+      <a href="/tag/frontend" class="badge" aria-label="Tag: frontend" rel="tag" role="listitem">frontend</a>
+    
+      <a href="/tag/css-grid" class="badge" aria-label="Tag: css-grid" rel="tag" role="listitem">css-grid</a>
+    
+  </div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <p>I hope you’ve found this post informative and helpful. Thank you for reading!</p>
+    <div class="post-footer-content">
+      <div class="copyright">
+        This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> by the author.
+      </div>
+
+      <section aria-labelledby="share-title">
+        <h3 id="share-title" class="visually-hidden">Share this post<a href="#share-this-post" class="heading-anchor" aria-label="Permalink: Share this post">#</a>
+</h3>
+        <div class="share-icons" role="group" aria-label="Share this post">
+  Share:
+  <a href="https://twitter.com/intent/tweet?text=Getting%20Started%20with%20CSS%20Grid:%20Learn%202D%20Layouts%20with%20Ease&amp;url=https%3A%2F%2Fshivam091.github.io%2Fpost%2Fgetting-started-with-css-grid" target="_blank" rel="noopener noreferrer nofollow" aria-label="Share on Twitter" data-tooltip="Twitter">
+      <svg class="icon icon-twitter" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-twitter"></use>
+</svg>
+    </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?title=Getting%20Started%20with%20CSS%20Grid:%20Learn%202D%20Layouts%20with%20Ease&amp;u=https%3A%2F%2Fshivam091.github.io%2Fpost%2Fgetting-started-with-css-grid" target="_blank" rel="noopener noreferrer nofollow" aria-label="Share on Facebook" data-tooltip="Facebook">
+      <svg class="icon icon-facebook" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-facebook"></use>
+</svg>
+    </a>
+  <a href="https://t.me/share/url?url=https%3A%2F%2Fshivam091.github.io%2Fpost%2Fgetting-started-with-css-grid&amp;text=Getting%20Started%20with%20CSS%20Grid:%20Learn%202D%20Layouts%20with%20Ease" target="_blank" rel="noopener noreferrer nofollow" aria-label="Share on Telegram" data-tooltip="Telegram">
+      <svg class="icon icon-telegram" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-telegram"></use>
+</svg>
+    </a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fshivam091.github.io%2Fpost%2Fgetting-started-with-css-grid" target="_blank" rel="noopener noreferrer nofollow" aria-label="Share on LinkedIn" data-tooltip="LinkedIn">
+      <svg class="icon icon-linkedin" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-linkedin"></use>
+</svg>
+    </a>
+  <a href="https://wa.me/?text=Getting%20Started%20with%20CSS%20Grid:%20Learn%202D%20Layouts%20with%20Ease%20https%3A%2F%2Fshivam091.github.io%2Fpost%2Fgetting-started-with-css-grid" target="_blank" rel="noopener noreferrer nofollow" aria-label="Share on WhatsApp" data-tooltip="WhatsApp">
+      <svg class="icon icon-whatsapp" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-whatsapp"></use>
+</svg>
+    </a>
+  
+  <a href="" aria-label="Copy link" data-copy-link data-tooltip="Copy link">
+    <svg class="icon icon-link" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-link"></use>
+</svg>
+  </a>
+</div>
+
+      </section>
+    </div>
+  </footer>
+
+<nav class="post-nav" aria-label="Post navigation">
+  <a href="/post/understanding-css-grid" class="post-nav-link previous" rel="previous">
+    <span class="label">Older</span>
+    <span class="title">CSS Grid Fundamentals: A Beginner’s Guide</span>
+  </a>
+  <a href="/post/mastering-css-grid-alignment-spanning" class="post-nav-link next" rel="next">
+    <span class="label">Newer</span>
+    <span class="title">Mastering Grid Areas, Alignment &amp; Spanning in CSS Grid</span>
+  </a>
+</nav>
+</article>
+
+</section>
+
+      </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+  <div class="container">
+    <div class="site-copyright">
+      <p>
+        <span>©
+          2025 <strong class="site-name">Harshal LADHE</strong>,
+          <span data-tooltip="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." tabindex="0">Some rights reserved</span>.
+        </span>
+      </p>
+    </div>
+    <div class="site-credits">
+      Made with <span class="love" role="img" aria-label="love">❤</span> and <a href="https://jekyllrb.com/">Jekyll</a>.
+    </div>
+  </div>
+</footer>
+
+  </div>
+
+  <button type="button" id="scroll-top" class="btn btn-primary scroll-top" aria-label="Scroll to top" data-scroll-top>
+   <svg class="icon icon-arrow-up" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-arrow-up"></use>
+</svg>
+  </button>
+
+  <div id="mask"></div>
+
+  <script src="/dist/app.js"></script>
+
+
+
+</body>

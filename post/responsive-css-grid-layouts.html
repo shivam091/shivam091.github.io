@@ -1,0 +1,968 @@
+<body>
+
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained | Harshal LADHE</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained | Harshal LADHE</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained">
+<meta name="author" content="Harshal Ladhe">
+<meta property="og:locale" content="en">
+<meta name="description" content="Learn how to build truly responsive CSS Grid layouts using fractional units, the minmax() function, auto-fit vs auto-fill, and media queries.">
+<meta property="og:description" content="Learn how to build truly responsive CSS Grid layouts using fractional units, the minmax() function, auto-fit vs auto-fill, and media queries.">
+<link rel="canonical" href="https://shivam091.github.io/post/responsive-css-grid-layouts">
+<meta property="og:url" content="https://shivam091.github.io/post/responsive-css-grid-layouts">
+<meta property="og:site_name" content="Harshal LADHE">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2025-07-06T19:00:00+05:30">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal Ladhe"},"dateModified":"2025-07-06T22:20:48+05:30","datePublished":"2025-07-06T19:00:00+05:30","description":"Learn how to build truly responsive CSS Grid layouts using fractional units, the minmax() function, auto-fit vs auto-fill, and media queries.","headline":"Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained","mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/responsive-css-grid-layouts"},"url":"https://shivam091.github.io/post/responsive-css-grid-layouts"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- Favicon -->
+<link href="/assets/img/favicon.png" rel="icon">
+
+<!-- Preconnect for fonts -->
+
+
+<!-- Google Font or Custom Font -->
+
+
+<!-- Stylesheets -->
+<link href="/dist/style.css" rel="stylesheet">
+
+<!-- Additional head includes -->
+
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5GHEJ51PD"></script>
+
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-W5GHEJ51PD", { anonymize_ip: true });
+</script>
+
+
+
+<script type="text/javascript">
+  (function() {
+    const theme = localStorage.getItem("theme") || "system";
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.setAttribute("data-theme", theme === "system" ? (prefersDark ? "dark" : "light") : theme);
+  })();
+</script>
+
+
+
+  <div id="progress-bar"></div>
+
+  <a href="#main-content" class="skip-link" role="link" data-skip-link>Skip to main content</a>
+
+  <button class="btn btn-primary sidebar-toggle" id="sidebar-toggle" aria-label="Toggle Sidebar" aria-controls="sidebar" aria-expanded="false">
+  <span class="icon-bar top-bar"></span>
+  <span class="icon-bar middle-bar"></span>
+  <span class="icon-bar bottom-bar"></span>
+</button>
+<aside class="sidebar" id="sidebar" role="complementary" aria-label="Sidebar">
+  <div class="sidebar-content">
+    <div class="sidebar-top">
+      <a href="/">
+        <img src="/assets/img/profile-img.png" alt="Harshal LADHE" class="profile-pic" loading="lazy">
+      </a>
+      <div class="site-title">Harshal LADHE</div>
+      <div class="site-subtitle">A showcase of technical blog posts, coding insights, and open source projects.</div>
+    </div>
+    <div class="sidebar-social" role="navigation" aria-label="Social Links">
+<a href="https://www.github.com/shivam091" class="btn btn-primary social-icon" target="_blank" data-tooltip="GitHub" aria-label="GitHub">
+          <svg class="icon icon-github" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-github"></use>
+</svg>
+        </a><a href="https://www.linkedin.com/in/shivam091" class="btn btn-primary social-icon" target="_blank" data-tooltip="LinkedIn" aria-label="LinkedIn">
+          <svg class="icon icon-linkedin" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-linkedin"></use>
+</svg>
+        </a><a href="https://www.instagram.com/taurusian_soul" class="btn btn-primary social-icon" target="_blank" data-tooltip="Instagram" aria-label="Instagram">
+          <svg class="icon icon-instagram" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-instagram"></use>
+</svg>
+        </a><a href="mailto:harshal.ladhe.1@gmail.com" class="btn btn-primary social-icon" target="_blank" data-tooltip="Email " aria-label="Email ">
+          <svg class="icon icon-envelope" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-envelope"></use>
+</svg>
+        </a><a href="/assets/docs/resume.pdf" class="btn btn-primary social-icon" target="_blank" data-tooltip="Resume" aria-label="Resume" data-analytics-event="download_resume" data-analytics-label="resume.pdf" data-analytics-category="engagement">
+          <svg class="icon icon-file" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-file"></use>
+</svg>
+        </a>
+    </div>
+    <hr>
+    <nav class="sidebar-nav" role="navigation" aria-label="Main Navigation">
+      
+        
+           <a href="/" class="sidebar-nav-link">
+             <svg class="icon icon-home" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-home"></use>
+</svg>
+             Home
+           </a>
+        
+      
+        
+           <a href="/about" class="sidebar-nav-link">
+             <svg class="icon icon-info-circle" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle"></use>
+</svg>
+             About
+           </a>
+        
+      
+        
+           <a href="/categories" class="sidebar-nav-link">
+             <svg class="icon icon-folder" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-folder"></use>
+</svg>
+             Categories
+           </a>
+        
+      
+        
+           <a href="/tags" class="sidebar-nav-link">
+             <svg class="icon icon-tag" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-tag"></use>
+</svg>
+             Tags
+           </a>
+        
+      
+        
+           <a href="/posts" class="sidebar-nav-link">
+             <svg class="icon icon-list" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-list"></use>
+</svg>
+             Posts
+           </a>
+        
+      
+        
+           <a href="/archives" class="sidebar-nav-link">
+             <svg class="icon icon-archive" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-archive"></use>
+</svg>
+             Archives
+           </a>
+        
+      
+    </nav>
+    <div class="sidebar-bottom" aria-label="Preferences panel">
+      <div class="dropdown" data-dropdown data-theme-switcher>
+        <button type="button" class="dropdown-toggle theme-switcher bottom-link" aria-haspopup="true" aria-expanded="false">
+          <svg class="icon icon-adjust" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-adjust"></use>
+</svg>
+        </button>
+
+        <ul class="dropdown-menu" role="menu" aria-label="Available color schemes" data-theme-switcher-list>
+          <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use your system’s default theme" data-color-scheme="system" data-theme-switcher-list-items>
+              <svg class="icon icon-device-desktop" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-device-desktop"></use>
+</svg>
+              System
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use light mode" data-color-scheme="light" data-theme-switcher-list-items>
+              <svg class="icon icon-sun" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-sun"></use>
+</svg>
+              Light
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use dark mode" data-color-scheme="dark" data-theme-switcher-list-items>
+              <svg class="icon icon-moon" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-moon"></use>
+</svg>
+              Dark
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</aside>
+
+
+  <div class="page-wrapper">
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+      <div class="container">
+        <h1 id="page-title" class="page-title">
+  Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained
+</h1>
+
+
+<section class="page-content" aria-label="Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained">
+  <article class="post-content" aria-labelledby="page-title">
+  <meta itemprop="datePublished" content="2025-07-06T22:20:48+05:30">
+  <meta itemprop="dateModified" content="2025-07-06T22:20:48+05:30">
+  <meta itemprop="headline" content="Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained">
+  <meta itemprop="mainEntityOfPage" content="https://shivam091.github.io/post/responsive-css-grid-layouts">
+
+  <header class="post-header">
+    <div class="post-meta post-meta-main" role="group" aria-label="Post metadata">
+      <div class="post-meta-item post-published-date">
+  <svg class="icon icon-calendar" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-calendar"></use>
+</svg>
+  <span class="visually-hidden">Published at:</span>
+  <time datetime="2025-07-06T22:20:48+05:30" aria-label="Published on July 06, 2025 at 10:20 PM" role="time" data-tooltip="Sun, July 06, 2025 10:20 PM" data-tooltip-position="bottom" tabindex="0">
+  July 06, 2025
+</time>
+
+</div>
+
+
+  <div class="post-meta-item post-last-modified-date">
+    <svg class="icon icon-history" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-history"></use>
+</svg>
+    <span class="visually-hidden">Last updated:</span>
+    <time datetime="2025-07-06T22:20:48+05:30" aria-label="Last updated on July 06, 2025 at 10:20 PM" role="time" data-tooltip="Sun, July 06, 2025 10:20 PM" data-tooltip-position="bottom" tabindex="0">
+  July 06, 2025
+</time>
+
+  </div>
+
+
+<div class="post-meta-item post-read-time">
+  <svg class="icon icon-clock" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-clock"></use>
+</svg>
+  <span class="visually-hidden">Estimated reading time:</span>
+  <span data-tooltip="829 words" data-tooltip-position="bottom" tabindex="0">5 min read</span>
+</div>
+
+
+    </div>
+
+    <p class="post-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+  <em>
+    Written by
+    <a href="https://github.com/shivam091" itemprop="name" rel="author" target="_blank">
+        Harshal Ladhe
+      </a>
+    
+  </em>
+</p>
+
+  </header>
+
+  
+
+
+  <div class="toc-wrapper">
+  <h2 id="toc-heading">
+    Table of contents
+  <a href="#table-of-contents" class="heading-anchor" aria-label="Permalink: Table of contents">#</a>
+</h2>
+  <nav class="toc" aria-labelledby="toc-heading" role="doc-toc">
+    <ul class="toc-level toc-level-2">
+<li>
+<a href="#introduction">Introduction</a>
+</li>
+<li>
+<a href="#fractional-units-fr">Fractional Units (<code class="highlighter-rouge notranslate">fr</code>)</a>
+<ul class="toc-level toc-level-3">
+<li>
+<a href="#repeating-equal-columns">Repeating Equal Columns</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#minmax-function"><code class="highlighter-rouge notranslate">minmax()</code> Function</a>
+<ul class="toc-level toc-level-3">
+<li>
+<a href="#real-world-use-case-responsive-cards">Real-World Use Case: Responsive Cards</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#auto-fit-vs-auto-fill"><code class="highlighter-rouge notranslate">auto-fit</code> vs <code class="highlighter-rouge notranslate">auto-fill</code></a>
+</li>
+<li>
+<a href="#responsive-grid-with-media-queries">Responsive Grid with Media Queries</a>
+</li>
+<li>
+<a href="#quick-reference-common-grid-properties">Quick Reference: Common Grid Properties</a>
+</li>
+<li>
+<a href="#conclusion">Conclusion</a>
+</li>
+</ul>
+
+  </nav>
+</div>
+
+
+  <h2 id="introduction" dir="auto">Introduction<a href="#introduction" class="heading-anchor" aria-label="Permalink: Introduction">#</a>
+</h2>
+
+<p dir="auto">Welcome to the final part of the CSS Grid Fundamentals series! In <a href="/css/mastering-css-grid-alignment-spanning">Part 2</a>, we covered alignment and item positioning.</p>
+
+<p dir="auto">Now, we’ll explore the responsive side of Grid, including:</p>
+
+<ul dir="auto">
+  <li>Fractional units (<code class="highlighter-rouge notranslate">fr</code>)</li>
+  <li>
+<code class="highlighter-rouge notranslate">minmax()</code> for fluid sizing</li>
+  <li>
+<code class="highlighter-rouge notranslate">auto-fit</code> vs <code class="highlighter-rouge notranslate">auto-fill</code>
+</li>
+  <li>Using Grid with or without media queries</li>
+</ul>
+
+<p dir="auto">Responsive design is where <strong>CSS Grid truly shines</strong>. You can build layouts that adapt seamlessly across screen sizes—with minimal effort
+and often without needing media queries.</p>
+
+<h2 id="fractional-units-fr" dir="auto">Fractional Units (<code class="highlighter-rouge notranslate">fr</code>)<a href="#fractional-units-fr" class="heading-anchor" aria-label="Permalink: Fractional Units (fr)">#</a>
+</h2>
+
+<p dir="auto">The <code class="highlighter-rouge notranslate">fr</code> unit stands for <strong>fraction of available space</strong>. It’s a powerful tool for creating fluid, responsive layouts.</p>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td>
+<td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* First column takes 2/3, second takes 1/3 */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<p dir="auto">In this layout:</p>
+
+<ul dir="auto">
+  <li>The grid container’s space is divided into <strong>3 fractions</strong>.</li>
+  <li>The first column gets <strong>2 parts</strong>, the second column gets <strong>1 part</strong>.</li>
+</ul>
+
+<h3 id="repeating-equal-columns" dir="auto">Repeating Equal Columns<a href="#repeating-equal-columns" class="heading-anchor" aria-label="Permalink: Repeating Equal Columns">#</a>
+</h3>
+
+<p dir="auto">You can create equal-width columns easily with <code class="highlighter-rouge notranslate">repeat()</code> and <code class="highlighter-rouge notranslate">1fr</code>:</p>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td>
+<td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span> <span class="c">/* Three equal columns */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<p dir="auto">This setup creates <strong>3 columns of equal width</strong>, with a <code class="highlighter-rouge notranslate">1rem</code> gap between both columns and rows. It’s clean and scalable.</p>
+
+<p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/LEVKBqw" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/LEVKBqw" class="external-link">Try this on CodePen</a></p>
+
+<h2 id="minmax-function" dir="auto">
+<code class="highlighter-rouge notranslate">minmax()</code> Function<a href="#minmax-function" class="heading-anchor" aria-label="Permalink: minmax() Function">#</a>
+</h2>
+
+<p dir="auto"><code class="highlighter-rouge notranslate">minmax(min, max)</code> is a <strong>CSS Grid function</strong> that defines a track (row or column) with:</p>
+
+<ul dir="auto">
+  <li>A <strong>minimum size</strong> it can shrink to</li>
+  <li>A <strong>maximum size</strong> it can grow to</li>
+</ul>
+
+<p dir="auto">It’s especially useful when building <strong>responsive</strong> layouts, because it allows a column or row to be flexible—but within limits.</p>
+
+<p dir="auto"><strong>Syntax:</strong></p>
+
+<p dir="auto"><code class="highlighter-rouge notranslate">minmax(&lt;min&gt;, &lt;max&gt;)</code></p>
+
+<ul dir="auto">
+  <li>
+<strong><code class="highlighter-rouge notranslate">&lt;min&gt;</code></strong> – the smallest the track can be (can be 0, 100px, min-content, etc.)</li>
+  <li>
+<strong><code class="highlighter-rouge notranslate">&lt;max&gt;</code></strong> – the largest the track can be (can be 1fr, auto, max-content, etc.)</li>
+</ul>
+
+<h3 id="real-world-use-case-responsive-cards" dir="auto">Real-World Use Case: Responsive Cards<a href="#real-world-use-case-responsive-cards" class="heading-anchor" aria-label="Permalink: Real-World Use Case: Responsive Cards">#</a>
+</h3>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td>
+<td class="code"><pre><span class="nc">.card-grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="nb">auto-fit</span><span class="p">,</span> <span class="nf">minmax</span><span class="p">(</span><span class="m">250px</span><span class="p">,</span> <span class="m">1fr</span><span class="p">));</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td>
+<td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>Card 1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>Card 2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>Card 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>Card 4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<p dir="auto">In this example, cards are laid out in rows on large screens and they stack neatly without overflow on small screens.</p>
+
+<p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/raVEZaP" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEZaP" class="external-link">Try this on CodePen</a></p>
+
+<h2 id="auto-fit-vs-auto-fill" dir="auto">
+<code class="highlighter-rouge notranslate">auto-fit</code> vs <code class="highlighter-rouge notranslate">auto-fill</code><a href="#auto-fit-vs-auto-fill" class="heading-anchor" aria-label="Permalink: auto-fit vs auto-fill">#</a>
+</h2>
+
+<p dir="auto">Want a grid that adapts to screen width <em>without media queries</em>? Use <code class="highlighter-rouge notranslate">auto-fit</code> or <code class="highlighter-rouge notranslate">auto-fill</code> along with <code class="highlighter-rouge notranslate">minmax()</code>:</p>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td>
+<td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="nb">auto-fit</span><span class="p">,</span> <span class="nf">minmax</span><span class="p">(</span><span class="m">200px</span><span class="p">,</span> <span class="m">1fr</span><span class="p">));</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<p dir="auto"><strong>What’s happening here?</strong></p>
+
+<ul dir="auto">
+  <li>
+<code class="highlighter-rouge notranslate">minmax(200px, 1fr)</code> ensures each column is at least <code class="highlighter-rouge notranslate">200px</code> wide but can grow to fill available space.</li>
+  <li>
+<code class="highlighter-rouge notranslate">auto-fit</code> collapses empty tracks if there isn’t enough content.</li>
+  <li>
+<code class="highlighter-rouge notranslate">auto-fill</code> reserves space for empty tracks, keeping the layout structure intact.</li>
+</ul>
+
+<p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/ogXrMmv" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/ogXrMmv" class="external-link">Try this on CodePen</a></p>
+
+<p dir="auto"><strong>Clarification:</strong></p>
+<ul dir="auto">
+  <li>
+<code class="highlighter-rouge notranslate">auto-fit</code>: Shrinks or collapses unused columns when there’s no content.</li>
+  <li>
+<code class="highlighter-rouge notranslate">auto-fill</code>: Maintains the grid structure, even if columns are empty. Reserves space for empty columns.</li>
+</ul>
+
+<h2 id="responsive-grid-with-media-queries" dir="auto">Responsive Grid with Media Queries<a href="#responsive-grid-with-media-queries" class="heading-anchor" aria-label="Permalink: Responsive Grid with Media Queries">#</a>
+</h2>
+
+<p dir="auto">Although CSS Grid handles many responsive scenarios on its own, media queries can still help for more precise control.</p>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td>
+<td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span> <span class="c">/* 3 columns on large screens */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.grid</span> <span class="p">{</span>
+    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* Stacks items into a single column */</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<p dir="auto">This layout shows:</p>
+
+<ul dir="auto">
+  <li>
+<strong>3 columns</strong> on desktop screens.</li>
+  <li>A <strong>single-column stacked layout</strong> on tablets or phones (under 768px).</li>
+</ul>
+
+<p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/yyNdqwj" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNdqwj" class="external-link">Try this on CodePen</a></p>
+
+<h2 id="quick-reference-common-grid-properties" dir="auto">Quick Reference: Common Grid Properties<a href="#quick-reference-common-grid-properties" class="heading-anchor" aria-label="Permalink: Quick Reference: Common Grid Properties">#</a>
+</h2>
+
+<p dir="auto">Here’s a concise summary of essential CSS Grid properties:</p>
+
+<table dir="auto" role="table" class="markdown-table">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>grid-template-columns</td>
+      <td>Defines the number and width of columns in the grid</td>
+    </tr>
+    <tr>
+      <td>grid-template-rows</td>
+      <td>Defines the number and height of rows in the grid</td>
+    </tr>
+    <tr>
+      <td>gap</td>
+      <td>Sets spacing between rows and columns (shorthand for <code class="highlighter-rouge notranslate">row-gap</code> and <code class="highlighter-rouge notranslate">column-gap</code>)</td>
+    </tr>
+    <tr>
+      <td>grid-template-areas</td>
+      <td>Defines named areas for placing grid items visually</td>
+    </tr>
+    <tr>
+      <td>justify-items</td>
+      <td>Aligns <strong>all grid items</strong> horizontally within their cells</td>
+    </tr>
+    <tr>
+      <td>align-items</td>
+      <td>Aligns <strong>all grid items</strong> vertically within their cells</td>
+    </tr>
+    <tr>
+      <td>place-items</td>
+      <td>Shorthand for setting both <code class="highlighter-rouge notranslate">align-items</code> and <code class="highlighter-rouge notranslate">justify-items</code>
+</td>
+    </tr>
+    <tr>
+      <td>justify-self</td>
+      <td>Aligns an <strong>individual item</strong> horizontally</td>
+    </tr>
+    <tr>
+      <td>align-self</td>
+      <td>Aligns an <strong>individual item</strong> vertically</td>
+    </tr>
+    <tr>
+      <td>place-self</td>
+      <td>Shorthand for setting both <code class="highlighter-rouge notranslate">align-self</code> and <code class="highlighter-rouge notranslate">justify-self</code>
+</td>
+    </tr>
+    <tr>
+      <td>grid-auto-rows</td>
+      <td>Defines row size for <strong>implicitly created rows</strong>
+</td>
+    </tr>
+    <tr>
+      <td>grid-auto-columns</td>
+      <td>Defines column size for <strong>implicitly created columns</strong>
+</td>
+    </tr>
+    <tr>
+      <td>grid-column</td>
+      <td>Specifies how many columns an item spans or where it starts/ends</td>
+    </tr>
+    <tr>
+      <td>grid-row</td>
+      <td>Specifies how many rows an item spans or where it starts/ends</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="conclusion" dir="auto">Conclusion<a href="#conclusion" class="heading-anchor" aria-label="Permalink: Conclusion">#</a>
+</h2>
+
+<p dir="auto">Congrats! You now have a <strong>complete understanding of CSS Grid</strong>—from setup to advanced responsive layouts.</p>
+
+<p dir="auto">You can now confidently use Grid to build modern UIs that are flexible, scalable, and elegant.</p>
+
+<p dir="auto">CSS Grid gives you an incredibly powerful way to build layouts that are clean, responsive, and easy to maintain.</p>
+
+<p dir="auto">By mastering the <strong>core concepts</strong>—like tracks, lines, areas, alignment, and responsiveness—you unlock the full potential of modern layout design.</p>
+
+<p dir="auto">Whether you’re building a simple card layout or a complex UI dashboard, CSS Grid can help you create adaptable, scalable structures with minimal code.</p>
+
+<p dir="auto">📚 <strong>This is Part 3 of the CSS Grid Fundamentals Series</strong></p>
+
+<p dir="auto">🔗 Previous: <a href="/post/mastering-css-grid-alignment-spanning">Part 2 → Grid Areas, Alignment &amp; Spanning</a></p>
+
+
+  <div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
+    
+  <div class="post-meta-item post-categories" role="list">
+    <svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-folder-open"></use>
+</svg>
+    <span class="visually-hidden">Categories:</span>
+    
+      <a href="/category/css" class="badge" aria-label="Category: css" rel="category" role="listitem">css</a>
+    
+      <a href="/category/beginner" class="badge" aria-label="Category: beginner" rel="category" role="listitem">beginner</a>
+    
+      <a href="/category/responsive" class="badge" aria-label="Category: responsive" rel="category" role="listitem">responsive</a>
+    
+  </div>
+
+
+    
+  <div class="post-meta-item post-tags" role="list">
+    <svg class="icon icon-tag" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-tag"></use>
+</svg>
+    <span class="visually-hidden">Tags:</span>
+    
+      <a href="/tag/css" class="badge" aria-label="Tag: css" rel="tag" role="listitem">css</a>
+    
+      <a href="/tag/grid" class="badge" aria-label="Tag: grid" rel="tag" role="listitem">grid</a>
+    
+      <a href="/tag/responsive" class="badge" aria-label="Tag: responsive" rel="tag" role="listitem">responsive</a>
+    
+      <a href="/tag/layout" class="badge" aria-label="Tag: layout" rel="tag" role="listitem">layout</a>
+    
+      <a href="/tag/fr-units" class="badge" aria-label="Tag: fr-units" rel="tag" role="listitem">fr-units</a>
+    
+      <a href="/tag/minmax" class="badge" aria-label="Tag: minmax" rel="tag" role="listitem">minmax</a>
+    
+      <a href="/tag/media-queries" class="badge" aria-label="Tag: media-queries" rel="tag" role="listitem">media-queries</a>
+    
+  </div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <p>I hope you’ve found this post informative and helpful. Thank you for reading!</p>
+    <div class="post-footer-content">
+      <div class="copyright">
+        This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> by the author.
+      </div>
+
+      <section aria-labelledby="share-title">
+        <h3 id="share-title" class="visually-hidden">Share this post<a href="#share-this-post" class="heading-anchor" aria-label="Permalink: Share this post">#</a>
+</h3>
+        <div class="share-icons" role="group" aria-label="Share this post">
+  Share:
+  <a href="https://twitter.com/intent/tweet?text=Responsive%20CSS%20Grid%20Layouts:%20fr%20Units,%20minmax(),%20and%20auto-fit%20Explained&amp;url=https%3A%2F%2Fshivam091.github.io%2Fpost%2Fresponsive-css-grid-layouts" target="_blank" rel="noopener noreferrer nofollow" aria-label="Share on Twitter" data-tooltip="Twitter">
+      <svg class="icon icon-twitter" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-twitter"></use>
+</svg>
+    </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?title=Responsive%20CSS%20Grid%20Layouts:%20fr%20Units,%20minmax(),%20and%20auto-fit%20Explained&amp;u=https%3A%2F%2Fshivam091.github.io%2Fpost%2Fresponsive-css-grid-layouts" target="_blank" rel="noopener noreferrer nofollow" aria-label="Share on Facebook" data-tooltip="Facebook">
+      <svg class="icon icon-facebook" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-facebook"></use>
+</svg>
+    </a>
+  <a href="https://t.me/share/url?url=https%3A%2F%2Fshivam091.github.io%2Fpost%2Fresponsive-css-grid-layouts&amp;text=Responsive%20CSS%20Grid%20Layouts:%20fr%20Units,%20minmax(),%20and%20auto-fit%20Explained" target="_blank" rel="noopener noreferrer nofollow" aria-label="Share on Telegram" data-tooltip="Telegram">
+      <svg class="icon icon-telegram" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-telegram"></use>
+</svg>
+    </a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fshivam091.github.io%2Fpost%2Fresponsive-css-grid-layouts" target="_blank" rel="noopener noreferrer nofollow" aria-label="Share on LinkedIn" data-tooltip="LinkedIn">
+      <svg class="icon icon-linkedin" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-linkedin"></use>
+</svg>
+    </a>
+  <a href="https://wa.me/?text=Responsive%20CSS%20Grid%20Layouts:%20fr%20Units,%20minmax(),%20and%20auto-fit%20Explained%20https%3A%2F%2Fshivam091.github.io%2Fpost%2Fresponsive-css-grid-layouts" target="_blank" rel="noopener noreferrer nofollow" aria-label="Share on WhatsApp" data-tooltip="WhatsApp">
+      <svg class="icon icon-whatsapp" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-whatsapp"></use>
+</svg>
+    </a>
+  
+  <a href="" aria-label="Copy link" data-copy-link data-tooltip="Copy link">
+    <svg class="icon icon-link" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-link"></use>
+</svg>
+  </a>
+</div>
+
+      </section>
+    </div>
+  </footer>
+
+<nav class="post-nav" aria-label="Post navigation">
+  <a href="/post/mastering-css-grid-alignment-spanning" class="post-nav-link previous" rel="previous">
+    <span class="label">Older</span>
+    <span class="title">Mastering Grid Areas, Alignment &amp; Spanning in CSS Grid</span>
+  </a>
+  <div class="post-nav-link next disabled" role="link" aria-disabled="true" tabindex="-1">
+    <span class="label">Newer</span>
+    <span class="title">—</span>
+  </div>
+</nav>
+</article>
+
+</section>
+
+      </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+  <div class="container">
+    <div class="site-copyright">
+      <p>
+        <span>©
+          2025 <strong class="site-name">Harshal LADHE</strong>,
+          <span data-tooltip="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." tabindex="0">Some rights reserved</span>.
+        </span>
+      </p>
+    </div>
+    <div class="site-credits">
+      Made with <span class="love" role="img" aria-label="love">❤</span> and <a href="https://jekyllrb.com/">Jekyll</a>.
+    </div>
+  </div>
+</footer>
+
+  </div>
+
+  <button type="button" id="scroll-top" class="btn btn-primary scroll-top" aria-label="Scroll to top" data-scroll-top>
+   <svg class="icon icon-arrow-up" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-arrow-up"></use>
+</svg>
+  </button>
+
+  <div id="mask"></div>
+
+  <script src="/dist/app.js"></script>
+
+
+
+</body>
