@@ -1,0 +1,17 @@
+{%- assign cover_image = include.post.cover_image -%}
+
+{% if cover_image %}
+  <figure class="post-cover">
+    <img
+      src="{{ cover_image.path | relative_url }}"
+      class="img-fluid"
+      {% if cover_image.width %}width="{{ cover_image.width }}"{% endif %}
+      {% if cover_image.height %}height="{{ cover_image.height }}"{% endif %}
+      {% if cover_image.alt %}alt="{{ cover_image.alt }}"{% else %}alt="{{ post.title }}"{% endif %}
+      loading="lazy"
+    >
+    {% if cover_image.alt %}
+      <figcaption>{{ cover_image.alt }}</figcaption>
+    {% endif %}
+  </figure>
+{% endif %}
