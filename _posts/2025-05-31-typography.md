@@ -7,6 +7,7 @@ categories: [blogging, typography]
 excerpt: This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.
 toc: false
 authors: [harshal]
+slug: typography
 ---
 
 ## Headings
@@ -38,28 +39,33 @@ Mailto: [Send Email](mailto:test@example.com)
 
 ### Unordered List
 
-- Apples
-- Oranges
-  - Navel
-  - Blood
-- Bananas
+- Chapter 1
+  + Section 1
+    * Paragraph 1
+- Chapter 2
+  + Section 2
 
 ### Ordered List
 
 1. First item
 2. Second item
    1. Nested
-   2. Nested again
+      1. Nested again
 3. Third item
 
-### Description Lists
+### Task List
 
-<dl>
-  <dt>HTML</dt>
-  <dd>Hypertext Markup Language</dd>
-  <dt>CSS</dt>
-  <dd>Cascading Style Sheets</dd>
-</dl>
+- [ ] Job
+  + [x] Step 1
+  + [x] Step 2
+  + [ ] Step 3
+
+### Description Lists
+Sun
+: the star around which the earth orbits
+
+Moon
+: the natural satellite of the earth, visible by reflected light from the sun
 
 ## Inline Elements
 
@@ -123,12 +129,6 @@ Inline `console.log("Hi")` inside text.
 
 ![Alt text](https://via.placeholder.com/400x200)
 
-## Task List
-
-- [x] Create base layout
-- [x] Add dark mode
-- [ ] Finalize footer
-
 ## Tables
 
 | Feature     | Supported | Notes              |
@@ -136,6 +136,10 @@ Inline `console.log("Hi")` inside text.
 | Tables      | ✅        | Markdown & HTML    |
 | GFM         | ✅        | Supported on GitHub|
 | Footnotes   | ✅        | In Markdown config |
+
+## Filepath
+
+Here is the `/path/to/the/file.extend`{: .filepath}.
 
 ## Footnotes
 

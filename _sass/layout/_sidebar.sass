@@ -36,7 +36,6 @@
     transform: translateX(0)
     opacity: var(--opacity-full)
     pointer-events: auto
-    box-shadow: var(--box-shadow-lg)
 
 .sidebar-content
   flex: 1 1 auto
@@ -98,7 +97,7 @@
 .sidebar-nav
   display: flex
   flex-direction: column
-  gap: var(--space-sm)
+  gap: var(--space-md)
   line-height: var(--line-height-tight)
 
 .sidebar-nav-link
@@ -116,7 +115,6 @@
   &:focus-visible
     color: var(--color-fg-on-emphasis)
     background-color: hsla(0, 0%, 100%, .1)
-    border-left: var(--border-width-medium) solid var(--color-border-accent-emphasis)
     text-decoration: none
 
   @include breakpoint.max(md)

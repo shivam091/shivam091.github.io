@@ -6,6 +6,12 @@ tags: [typography, design, styleguide]
 categories: [blogging, components]
 excerpt: This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.
 authors: [harshal]
+slug: components
+cover_image:
+  path: /assets/img/posts/components/cover.png
+  width: 1200
+  height: 630
+  alt: Demonstration of layout components
 ---
 
 ## Codeblocks
@@ -109,41 +115,3 @@ This content is **processed** as _Markdown_.
 
 {% assign a = "Open folder" %}
 {% icon folder-open class:"custom-class" size:20 label:"{{ a }}" id:"custom-id" %}
-
-### Available icons
-
-{% icon adjust %}
-{% icon arrow-up %}
-{% icon bulb %}
-{% icon calendar %}
-{% icon code %}
-{% icon check %}
-{% icon circle-fill %}
-{% icon clock %}
-{% icon copy %}
-{% icon device-desktop %}
-{% icon emoji-sad %}
-{% icon envelope %}
-{% icon exclamation-triangle %}
-{% icon facebook %}
-{% icon file %}
-{% icon fold-down %}
-{% icon fold-up %}
-{% icon folder %}
-{% icon folder-open %}
-{% icon github %}
-{% icon hash %}
-{% icon history %}
-{% icon home %}
-{% icon info-circle %}
-{% icon instagram %}
-{% icon link %}
-{% icon list %}
-{% icon linkedin %}
-{% icon moon %}
-{% icon sun %}
-{% icon tag %}
-{% icon telegram %}
-{% icon times %}
-{% icon twitter %}
-{% icon whatsapp %}
