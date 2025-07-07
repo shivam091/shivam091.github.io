@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal Ladhe"},"dateModified":"2025-07-06T22:20:48+05:30","datePublished":"2025-07-06T19:00:00+05:30","description":"Learn how to build truly responsive CSS Grid layouts using fractional units, the minmax() function, auto-fit vs auto-fill, and media queries.","headline":"Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained","mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/responsive-css-grid-layouts"},"url":"https://shivam091.github.io/post/responsive-css-grid-layouts"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal Ladhe"},"dateModified":"2025-07-07T20:27:57+05:30","datePublished":"2025-07-06T19:00:00+05:30","description":"Learn how to build truly responsive CSS Grid layouts using fractional units, the minmax() function, auto-fit vs auto-fill, and media queries.","headline":"Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained","mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/responsive-css-grid-layouts"},"url":"https://shivam091.github.io/post/responsive-css-grid-layouts"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- Favicon -->
 <link href="/assets/img/favicon.png" rel="icon">
@@ -210,7 +210,7 @@
 <section class="page-content" aria-label="Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained">
   <article class="post-content" aria-labelledby="page-title">
   <meta itemprop="datePublished" content="2025-07-06T22:20:48+05:30">
-  <meta itemprop="dateModified" content="2025-07-06T22:20:48+05:30">
+  <meta itemprop="dateModified" content="2025-07-07T20:27:57+05:30">
   <meta itemprop="headline" content="Responsive CSS Grid Layouts: fr Units, minmax(), and auto-fit Explained">
   <meta itemprop="mainEntityOfPage" content="https://shivam091.github.io/post/responsive-css-grid-layouts">
 
@@ -233,8 +233,8 @@
   <use href="/assets/img/sprite.svg#icon-history"></use>
 </svg>
     <span class="visually-hidden">Last updated:</span>
-    <time datetime="2025-07-06T22:20:48+05:30" aria-label="Last updated on July 06, 2025 at 10:20 PM" role="time" data-tooltip="Sun, July 06, 2025 10:20 PM" data-tooltip-position="bottom" tabindex="0">
-  July 06, 2025
+    <time datetime="2025-07-07T20:27:57+05:30" aria-label="Last updated on July 07, 2025 at 08:27 PM" role="time" data-tooltip="Mon, July 07, 2025 08:27 PM" data-tooltip-position="bottom" tabindex="0">
+  July 07, 2025
 </time>
 
   </div>
@@ -245,7 +245,7 @@
   <use href="/assets/img/sprite.svg#icon-clock"></use>
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="829 words" data-tooltip-position="bottom" tabindex="0">5 min read</span>
+  <span data-tooltip="1607 words" data-tooltip-position="bottom" tabindex="0">9 min read</span>
 </div>
 
 
@@ -264,6 +264,13 @@
   </header>
 
   
+  <figure class="post-cover">
+    <img src="/assets/img/posts/responsive-css-grid-layouts/cover.png" class="img-fluid" width="1200" height="630" alt="2D flat illustration showing responsive layout cards resizing across breakpoints, symbolizing flexible CSS Grid with minmax, fr units, and container queries." loading="lazy">
+    
+      <figcaption>2D flat illustration showing responsive layout cards resizing across breakpoints, symbolizing flexible CSS Grid with minmax, fr units, and container queries.</figcaption>
+    
+  </figure>
+
 
 
   <div class="toc-wrapper">
@@ -299,7 +306,38 @@
 <a href="#responsive-grid-with-media-queries">Responsive Grid with Media Queries</a>
 </li>
 <li>
+<a href="#beyond-media-queries-container-queries">Beyond Media Queries: Container Queries</a>
+</li>
+<li>
+<a href="#real-world-examples">Real-World Examples</a>
+<ul class="toc-level toc-level-3">
+<li>
+<a href="#responsive-card-dashboard-media-queries">Responsive Card Dashboard (Media Queries)</a>
+</li>
+<li>
+<a href="#card-grid-with-container-queries">Card Grid with Container Queries</a>
+</li>
+</ul>
+</li>
+<li>
 <a href="#quick-reference-common-grid-properties">Quick Reference: Common Grid Properties</a>
+</li>
+<li>
+<a href="#frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</a>
+<ul class="toc-level toc-level-3">
+<li>
+<a href="#when-should-i-use-auto-fit-vs-auto-fill">When should I use <code class="highlighter-rouge notranslate">auto-fit</code> vs <code class="highlighter-rouge notranslate">auto-fill</code>?</a>
+</li>
+<li>
+<a href="#can-i-use-flexbox-and-grid-together">Can I use Flexbox and Grid together?</a>
+</li>
+<li>
+<a href="#should-i-replace-all-media-queries-with-container-queries">Should I replace all media queries with container queries?</a>
+</li>
+<li>
+<a href="#do-i-still-need-breakpoints">Do I still need breakpoints?</a>
+</li>
+</ul>
 </li>
 <li>
 <a href="#conclusion">Conclusion</a>
@@ -313,22 +351,33 @@
   <h2 id="introduction" dir="auto">Introduction<a href="#introduction" class="heading-anchor" aria-label="Permalink: Introduction">#</a>
 </h2>
 
-<p dir="auto">Welcome to the final part of the CSS Grid Fundamentals series! In <a href="/css/mastering-css-grid-alignment-spanning">Part 2</a>, we covered alignment and item positioning.</p>
+<p dir="auto">Welcome to <strong>Part 3</strong> of the CSS Grid Fundamentals Series — the final and most impactful part!</p>
 
-<p dir="auto">Now, we’ll explore the responsive side of Grid, including:</p>
+<p dir="auto">So far, we’ve explored:</p>
 
 <ul dir="auto">
-  <li>Fractional units (<code class="highlighter-rouge notranslate">fr</code>)</li>
   <li>
-<code class="highlighter-rouge notranslate">minmax()</code> for fluid sizing</li>
+<a href="/post/getting-started-with-css-grid">Part 1</a>: Grid basics, tracks, and layout structure</li>
   <li>
-<code class="highlighter-rouge notranslate">auto-fit</code> vs <code class="highlighter-rouge notranslate">auto-fill</code>
-</li>
-  <li>Using Grid with or without media queries</li>
+<a href="/post/mastering-css-grid-alignment-spanning">Part 2</a>: Grid areas, alignment, spanning, and implicit/explicit tracks</li>
 </ul>
 
-<p dir="auto">Responsive design is where <strong>CSS Grid truly shines</strong>. You can build layouts that adapt seamlessly across screen sizes—with minimal effort
-and often without needing media queries.</p>
+<p dir="auto">Now, we shift gears to what makes CSS Grid truly shine — <strong>responsiveness</strong>.</p>
+
+<p dir="auto">In this post, you’ll learn how to:</p>
+
+<ul dir="auto">
+  <li>Use fractional units (<code class="highlighter-rouge notranslate">fr</code>) for flexible sizing</li>
+  <li>Combine <code class="highlighter-rouge notranslate">minmax()</code> with <code class="highlighter-rouge notranslate">auto-fit</code> and <code class="highlighter-rouge notranslate">auto-fill</code> to create fluid, wrapping grids</li>
+  <li>Write responsive layouts with or <strong>without media queries</strong>
+</li>
+  <li>Enhance responsiveness further using <strong>container queries</strong>
+</li>
+</ul>
+
+<p dir="auto">Think of this as your guide to <strong>building adaptable, scalable layouts</strong> that behave beautifully on any screen — from a small phone to a wide desktop.</p>
+
+<p dir="auto">Whether you’re designing cards, product grids, or UI dashboards, these tools let you ditch rigid breakpoints and build with confidence.</p>
 
 <h2 id="fractional-units-fr" dir="auto">Fractional Units (<code class="highlighter-rouge notranslate">fr</code>)<a href="#fractional-units-fr" class="heading-anchor" aria-label="Permalink: Fractional Units (fr)">#</a>
 </h2>
@@ -732,6 +781,521 @@ and often without needing media queries.</p>
 
 <p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/yyNdqwj" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNdqwj" class="external-link">Try this on CodePen</a></p>
 
+<h2 id="beyond-media-queries-container-queries" dir="auto">Beyond Media Queries: Container Queries<a href="#beyond-media-queries-container-queries" class="heading-anchor" aria-label="Permalink: Beyond Media Queries: Container Queries">#</a>
+</h2>
+
+<p dir="auto">Media queries are powerful, but sometimes they’re too broad — what if you want a component to adapt <strong>based on its container size</strong>, not the entire viewport?</p>
+
+<p dir="auto">That’s where <strong>Container Queries</strong> come in. To use container queries:</p>
+
+<ol dir="auto">
+  <li>Add <code class="highlighter-rouge notranslate">container-type</code> to the parent element.</li>
+  <li>Write container-specific rules using <code class="highlighter-rouge notranslate">@container</code>.</li>
+</ol>
+
+<p dir="auto">This is especially useful for <strong>component-driven UIs</strong>, where layout responsiveness depends on parent size (e.g., sidebar, card wrapper, modal content).</p>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td>
+<td class="code"><pre><span class="c">/* Parent container with container-type enabled */</span>
+<span class="nc">.card-grid</span> <span class="p">{</span>
+  <span class="nl">container-type</span><span class="p">:</span> <span class="nb">inline-size</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">dashed</span> <span class="nx">#ccc</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Default layout (single column) */</span>
+<span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#f8f9fa</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nx">#ddd</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Container Query kicks in above 500px */</span>
+<span class="k">@container</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">500px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.card</span> <span class="p">{</span>
+    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<p dir="auto">Here’s the HTML structure:</p>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td>
+<td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Card Title<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This card layout changes based on its container size.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/yyNmQXM" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNmQXM" class="external-link">Try this on CodePen</a></p>
+
+<blockquote dir="auto">
+  <p dir="auto">Note: Most modern browsers support container queries (except older Safari/Firefox versions). Always check compatibility if building for production.</p>
+</blockquote>
+
+<h2 id="real-world-examples" dir="auto">Real-World Examples<a href="#real-world-examples" class="heading-anchor" aria-label="Permalink: Real-World Examples">#</a>
+</h2>
+
+<h3 id="responsive-card-dashboard-media-queries" dir="auto">Responsive Card Dashboard (Media Queries)<a href="#responsive-card-dashboard-media-queries" class="heading-anchor" aria-label="Permalink: Responsive Card Dashboard (Media Queries)">#</a>
+</h3>
+
+<p dir="auto">A simple dashboard grid using <code class="highlighter-rouge notranslate">grid-template-areas</code>, <code class="highlighter-rouge notranslate">minmax()</code>, and media queries.</p>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+</pre></td>
+<td class="code"><pre><span class="nc">.dashboard</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-areas</span><span class="p">:</span>
+    <span class="s1">"sidebar content"</span>
+    <span class="s1">"sidebar widgets"</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">250px</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="nl">grid-template-rows</span><span class="p">:</span> <span class="nb">auto</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1.5rem</span><span class="p">;</span>
+  <span class="nl">min-height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.sidebar</span> <span class="p">{</span>
+  <span class="nl">grid-area</span><span class="p">:</span> <span class="n">sidebar</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#f0f0f0</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.content</span> <span class="p">{</span>
+  <span class="nl">grid-area</span><span class="p">:</span> <span class="nb">content</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#fff</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.widgets</span> <span class="p">{</span>
+  <span class="nl">grid-area</span><span class="p">:</span> <span class="n">widgets</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="nb">auto-fit</span><span class="p">,</span> <span class="nf">minmax</span><span class="p">(</span><span class="m">200px</span><span class="p">,</span> <span class="m">1fr</span><span class="p">));</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.dashboard</span> <span class="p">{</span>
+    <span class="nl">grid-template-areas</span><span class="p">:</span>
+      <span class="s1">"sidebar"</span>
+      <span class="s1">"content"</span>
+      <span class="s1">"widgets"</span><span class="p">;</span>
+    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td>
+<td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dashboard"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;aside</span> <span class="na">class=</span><span class="s">"sidebar"</span><span class="nt">&gt;</span>Sidebar<span class="nt">&lt;/aside&gt;</span>
+  <span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>Main Content<span class="nt">&lt;/main&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"widgets"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"widget"</span><span class="nt">&gt;</span>Widget 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"widget"</span><span class="nt">&gt;</span>Widget 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"widget"</span><span class="nt">&gt;</span>Widget 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/yyNmQGP" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNmQGP" class="external-link">Try this on CodePen</a></p>
+
+<h3 id="card-grid-with-container-queries" dir="auto">Card Grid with Container Queries<a href="#card-grid-with-container-queries" class="heading-anchor" aria-label="Permalink: Card Grid with Container Queries">#</a>
+</h3>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td>
+<td class="code"><pre><span class="nc">.card-wrapper</span> <span class="p">{</span>
+  <span class="nl">container-type</span><span class="p">:</span> <span class="nb">inline-size</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nx">#ccc</span><span class="p">;</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dashboard-card</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-areas</span><span class="p">:</span>
+    <span class="s1">"title"</span>
+    <span class="s1">"meta"</span>
+    <span class="s1">"content"</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#f9fafb</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dashboard-card</span> <span class="nt">h2</span> <span class="p">{</span> <span class="nl">grid-area</span><span class="p">:</span> <span class="n">title</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.dashboard-card</span> <span class="nc">.meta</span> <span class="p">{</span> <span class="nl">grid-area</span><span class="p">:</span> <span class="n">meta</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.dashboard-card</span> <span class="nc">.content</span> <span class="p">{</span> <span class="nl">grid-area</span><span class="p">:</span> <span class="nb">content</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="k">@container</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">600px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.dashboard-card</span> <span class="p">{</span>
+    <span class="nl">grid-template-areas</span><span class="p">:</span>
+      <span class="s1">"title meta"</span>
+      <span class="s1">"content content"</span><span class="p">;</span>
+    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill"></use>
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code"></use>
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash"></use>
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr>
+<td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td>
+<td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-wrapper"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dashboard-card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Dashboard Title<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"meta"</span><span class="nt">&gt;</span>User • 5 mins ago<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+      This card layout changes based on container width. Resize the parent to see it adapt.
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td>
+</tr></tbody></table></code></pre></figure>
+</div>
+
+<p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/VYLoVqJ" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/VYLoVqJ" class="external-link">Try this on CodePen</a></p>
+
 <h2 id="quick-reference-common-grid-properties" dir="auto">Quick Reference: Common Grid Properties<a href="#quick-reference-common-grid-properties" class="heading-anchor" aria-label="Permalink: Quick Reference: Common Grid Properties">#</a>
 </h2>
 
@@ -808,22 +1372,58 @@ and often without needing media queries.</p>
   </tbody>
 </table>
 
+<h2 id="frequently-asked-questions-faq" dir="auto">Frequently Asked Questions (FAQ)<a href="#frequently-asked-questions-faq" class="heading-anchor" aria-label="Permalink: Frequently Asked Questions (FAQ)">#</a>
+</h2>
+
+<h3 id="when-should-i-use-auto-fit-vs-auto-fill" dir="auto">When should I use <code class="highlighter-rouge notranslate">auto-fit</code> vs <code class="highlighter-rouge notranslate">auto-fill</code>?<a href="#when-should-i-use-auto-fit-vs-auto-fill" class="heading-anchor" aria-label="Permalink: When should I use auto-fit vs auto-fill?">#</a>
+</h3>
+
+<p dir="auto">Use <strong><code class="highlighter-rouge notranslate">auto-fit</code></strong> when you want empty tracks to collapse and not reserve space — great for wrapping cards that adjust to available space.
+Use <strong><code class="highlighter-rouge notranslate">auto-fill</code></strong> if you want to maintain the column structure even when there’s no content — helpful for form fields or placeholders.</p>
+
+<h3 id="can-i-use-flexbox-and-grid-together" dir="auto">Can I use Flexbox and Grid together?<a href="#can-i-use-flexbox-and-grid-together" class="heading-anchor" aria-label="Permalink: Can I use Flexbox and Grid together?">#</a>
+</h3>
+
+<p dir="auto">Absolutely! Use <strong>Grid for layout structure</strong> (e.g., page, sections), and Flexbox for <strong>aligning content within grid items</strong> (e.g., buttons inside cards).</p>
+
+<h3 id="should-i-replace-all-media-queries-with-container-queries" dir="auto">Should I replace all media queries with container queries?<a href="#should-i-replace-all-media-queries-with-container-queries" class="heading-anchor" aria-label="Permalink: Should I replace all media queries with container queries?">#</a>
+</h3>
+
+<p dir="auto">No — container queries are best for <strong>component-based layouts</strong>. Use media queries for <strong>global changes</strong> (headers, nav, grid size) and container queries for <strong>components inside resizable areas</strong>.</p>
+
+<h3 id="do-i-still-need-breakpoints" dir="auto">Do I still need breakpoints?<a href="#do-i-still-need-breakpoints" class="heading-anchor" aria-label="Permalink: Do I still need breakpoints?">#</a>
+</h3>
+
+<p dir="auto">Yes — but you’ll need fewer. Grid’s flexibility (with <code class="highlighter-rouge notranslate">fr</code>, <code class="highlighter-rouge notranslate">minmax()</code>, and <code class="highlighter-rouge notranslate">auto-fit</code>) reduces reliance on rigid breakpoints.</p>
+
 <h2 id="conclusion" dir="auto">Conclusion<a href="#conclusion" class="heading-anchor" aria-label="Permalink: Conclusion">#</a>
 </h2>
 
-<p dir="auto">Congrats! You now have a <strong>complete understanding of CSS Grid</strong>—from setup to advanced responsive layouts.</p>
+<p dir="auto">🎉 Congratulations! You’ve completed the <strong>CSS Grid Fundamentals Series</strong>.</p>
 
-<p dir="auto">You can now confidently use Grid to build modern UIs that are flexible, scalable, and elegant.</p>
+<p dir="auto">Let’s recap what you now know:</p>
 
-<p dir="auto">CSS Grid gives you an incredibly powerful way to build layouts that are clean, responsive, and easy to maintain.</p>
+<ul dir="auto">
+  <li>✅ Part 1: The building blocks — containers, tracks, and structure</li>
+  <li>✅ Part 2: Layout precision — grid areas, alignment, spanning, and track creation</li>
+  <li>✅ Part 3: Flexibility — responsive units (<code class="highlighter-rouge notranslate">fr</code>, <code class="highlighter-rouge notranslate">minmax()</code>), smart auto-wrapping, media queries, and container queries</li>
+</ul>
 
-<p dir="auto">By mastering the <strong>core concepts</strong>—like tracks, lines, areas, alignment, and responsiveness—you unlock the full potential of modern layout design.</p>
+<p dir="auto">With these tools, you can:</p>
 
-<p dir="auto">Whether you’re building a simple card layout or a complex UI dashboard, CSS Grid can help you create adaptable, scalable structures with minimal code.</p>
+<ul dir="auto">
+  <li>Create flexible layouts <strong>without bloated media query chains</strong>
+</li>
+  <li>Build components that respond to their own size using <strong>container queries</strong>
+</li>
+  <li>Design responsive grids that scale gracefully and look professional at every breakpoint</li>
+</ul>
 
-<p dir="auto">📚 <strong>This is Part 3 of the CSS Grid Fundamentals Series</strong></p>
+<p dir="auto"><strong>CSS Grid isn’t just a layout tool</strong> — it’s a complete design system built into the browser. Mastering it means writing less CSS while building better UI.</p>
 
-<p dir="auto">🔗 Previous: <a href="/post/mastering-css-grid-alignment-spanning">Part 2 → Grid Areas, Alignment &amp; Spanning</a></p>
+<p dir="auto">🚀 Keep experimenting with combinations of Grid, Flexbox, and container queries — that’s where layout magic happens.</p>
+
+<p dir="auto">📚 This post wraps up the <a href="/series/css-grid-fundamentals/">CSS Grid Fundamentals</a> series.</p>
 
 
   <div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
@@ -919,9 +1519,9 @@ and often without needing media queries.</p>
   </footer>
 
 <nav class="post-nav" aria-label="Post navigation">
-  <a href="/post/mastering-css-grid-alignment-spanning" class="post-nav-link previous" rel="previous">
+  <a href="/post/mastering-css-grid" class="post-nav-link previous" rel="previous">
     <span class="label">Older</span>
-    <span class="title">Mastering Grid Areas, Alignment &amp; Spanning in CSS Grid</span>
+    <span class="title">Mastering CSS Grid: Grid Areas, Item Alignment &amp; Spanning</span>
   </a>
   <div class="post-nav-link next disabled" role="link" aria-disabled="true" tabindex="-1">
     <span class="label">Newer</span>
