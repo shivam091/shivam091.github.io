@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Mastering CSS Grid: Grid Areas, Item Alignment &amp; Spanning">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal Ladhe"},"dateModified":"2025-07-06T22:20:48+05:30","datePublished":"2025-07-06T19:00:00+05:30","description":"Go beyond the basics and learn how to build powerful, semantic layouts using grid areas, item alignment, and spanning in CSS Grid.","headline":"Mastering CSS Grid: Grid Areas, Item Alignment &amp; Spanning","mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/mastering-css-grid"},"url":"https://shivam091.github.io/post/mastering-css-grid"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal Ladhe"},"dateModified":"2025-07-08T20:15:19+05:30","datePublished":"2025-07-06T19:00:00+05:30","description":"Go beyond the basics and learn how to build powerful, semantic layouts using grid areas, item alignment, and spanning in CSS Grid.","headline":"Mastering CSS Grid: Grid Areas, Item Alignment &amp; Spanning","mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/mastering-css-grid"},"url":"https://shivam091.github.io/post/mastering-css-grid"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- Favicon -->
 <link href="/assets/img/favicon.png" rel="icon">
@@ -141,6 +141,15 @@
         
       
         
+           <a href="/series" class="sidebar-nav-link">
+             <svg class="icon icon-book" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-book"></use>
+</svg>
+             Series
+           </a>
+        
+      
+        
            <a href="/posts" class="sidebar-nav-link">
              <svg class="icon icon-list" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-list"></use>
@@ -210,7 +219,7 @@
 <section class="page-content" aria-label="Mastering CSS Grid: Grid Areas, Item Alignment &amp; Spanning">
   <article class="post-content" aria-labelledby="page-title">
   <meta itemprop="datePublished" content="2025-07-06T22:20:48+05:30">
-  <meta itemprop="dateModified" content="2025-07-06T22:20:48+05:30">
+  <meta itemprop="dateModified" content="2025-07-08T20:15:19+05:30">
   <meta itemprop="headline" content="Mastering CSS Grid: Grid Areas, Item Alignment &amp; Spanning">
   <meta itemprop="mainEntityOfPage" content="https://shivam091.github.io/post/mastering-css-grid">
 
@@ -233,8 +242,8 @@
   <use href="/assets/img/sprite.svg#icon-history"></use>
 </svg>
     <span class="visually-hidden">Last updated:</span>
-    <time datetime="2025-07-06T22:20:48+05:30" aria-label="Last updated on July 06, 2025 at 10:20 PM" role="time" data-tooltip="Sun, July 06, 2025 10:20 PM" data-tooltip-position="bottom" tabindex="0">
-  July 06, 2025
+    <time datetime="2025-07-08T20:15:19+05:30" aria-label="Last updated on July 08, 2025 at 08:15 PM" role="time" data-tooltip="Tue, July 08, 2025 08:15 PM" data-tooltip-position="bottom" tabindex="0">
+  July 08, 2025
 </time>
 
   </div>
@@ -245,7 +254,7 @@
   <use href="/assets/img/sprite.svg#icon-clock"></use>
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="2088 words" data-tooltip-position="bottom" tabindex="0">12 min read</span>
+  <span data-tooltip="2101 words" data-tooltip-position="bottom" tabindex="0">12 min read</span>
 </div>
 
 
@@ -264,10 +273,10 @@
   </header>
 
   
-  <figure class="post-cover">
-    <img src="/assets/img/posts/mastering-css-grid-alignment-spanning/cover.png" class="img-fluid" width="1200" height="630" alt="Alignment of grid items and item spanning" loading="lazy">
+  <figure class="cover-image">
+    <img src="/assets/img/posts/mastering-css-grid-alignment-spanning/cover.png" class="img-fluid" width="1200" height="630" alt="Stylized 2D illustration explaining advanced CSS Grid layout techniques like alignment, named grid areas, and element spanning across rows and columns" loading="lazy">
     
-      <figcaption>Alignment of grid items and item spanning</figcaption>
+      <figcaption>Stylized 2D illustration explaining advanced CSS Grid layout techniques like alignment, named grid areas, and element spanning across rows and columns</figcaption>
     
   </figure>
 
@@ -1734,12 +1743,14 @@ form what’s known as the implicit grid.</p>
 4
 5
 6
+7
 </pre></td>
 <td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 5<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- This item doesn't fit in the defined grid --&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></td>
 </tr></tbody></table></code></pre></figure>

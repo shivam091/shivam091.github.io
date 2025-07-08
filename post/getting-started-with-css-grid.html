@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Getting Started with CSS Grid: A Beginner’s Guide to 2D Layouts">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal Ladhe"},"dateModified":"2025-07-06T22:20:48+05:30","datePublished":"2025-07-06T19:00:00+05:30","description":"A beginner-friendly introduction to CSS Grid, covering core concepts and building your first 2D layouts using real-world examples.","headline":"Getting Started with CSS Grid: A Beginner’s Guide to 2D Layouts","mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/getting-started-with-css-grid"},"url":"https://shivam091.github.io/post/getting-started-with-css-grid"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal Ladhe"},"dateModified":"2025-07-08T20:15:19+05:30","datePublished":"2025-07-06T19:00:00+05:30","description":"A beginner-friendly introduction to CSS Grid, covering core concepts and building your first 2D layouts using real-world examples.","headline":"Getting Started with CSS Grid: A Beginner’s Guide to 2D Layouts","mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/getting-started-with-css-grid"},"url":"https://shivam091.github.io/post/getting-started-with-css-grid"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- Favicon -->
 <link href="/assets/img/favicon.png" rel="icon">
@@ -141,6 +141,15 @@
         
       
         
+           <a href="/series" class="sidebar-nav-link">
+             <svg class="icon icon-book" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-book"></use>
+</svg>
+             Series
+           </a>
+        
+      
+        
            <a href="/posts" class="sidebar-nav-link">
              <svg class="icon icon-list" aria-hidden="true" focusable="false">
   <use href="/assets/img/sprite.svg#icon-list"></use>
@@ -210,7 +219,7 @@
 <section class="page-content" aria-label="Getting Started with CSS Grid: A Beginner's Guide to 2D Layouts">
   <article class="post-content" aria-labelledby="page-title">
   <meta itemprop="datePublished" content="2025-07-06T22:20:48+05:30">
-  <meta itemprop="dateModified" content="2025-07-06T22:20:48+05:30">
+  <meta itemprop="dateModified" content="2025-07-08T20:15:19+05:30">
   <meta itemprop="headline" content="Getting Started with CSS Grid: A Beginner's Guide to 2D Layouts">
   <meta itemprop="mainEntityOfPage" content="https://shivam091.github.io/post/getting-started-with-css-grid">
 
@@ -233,8 +242,8 @@
   <use href="/assets/img/sprite.svg#icon-history"></use>
 </svg>
     <span class="visually-hidden">Last updated:</span>
-    <time datetime="2025-07-06T22:20:48+05:30" aria-label="Last updated on July 06, 2025 at 10:20 PM" role="time" data-tooltip="Sun, July 06, 2025 10:20 PM" data-tooltip-position="bottom" tabindex="0">
-  July 06, 2025
+    <time datetime="2025-07-08T20:15:19+05:30" aria-label="Last updated on July 08, 2025 at 08:15 PM" role="time" data-tooltip="Tue, July 08, 2025 08:15 PM" data-tooltip-position="bottom" tabindex="0">
+  July 08, 2025
 </time>
 
   </div>
@@ -245,7 +254,7 @@
   <use href="/assets/img/sprite.svg#icon-clock"></use>
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="1321 words" data-tooltip-position="bottom" tabindex="0">8 min read</span>
+  <span data-tooltip="1338 words" data-tooltip-position="bottom" tabindex="0">8 min read</span>
 </div>
 
 
@@ -264,10 +273,10 @@
   </header>
 
   
-  <figure class="post-cover">
-    <img src="/assets/img/posts/getting-started-with-css-grid/cover.png" class="img-fluid" width="1200" height="630" alt="Getting started with CSS Grids" loading="lazy">
+  <figure class="cover-image">
+    <img src="/assets/img/posts/getting-started-with-css-grid/cover.png" class="img-fluid" width="1200" height="630" alt="Flat-design digital illustration introducing CSS Grid basics with visual icons representing grid containers, tracks, and layout foundations" loading="lazy">
     
-      <figcaption>Getting started with CSS Grids</figcaption>
+      <figcaption>Flat-design digital illustration introducing CSS Grid basics with visual icons representing grid containers, tracks, and layout foundations</figcaption>
     
   </figure>
 
@@ -373,10 +382,10 @@
 <p dir="auto">Modern websites demand layout techniques that are <strong>flexible</strong>, <strong>responsive</strong>, and <strong>easy to maintain</strong>. Before Grid, developers relied on:</p>
 
 <ul dir="auto">
-  <li>Floats &amp; clears ✗</li>
-  <li>inline-block ✗</li>
-  <li>Table-based layouts ✗</li>
-  <li>Flexbox (1D only) ✓</li>
+  <li>
+<code class="highlighter-rouge notranslate">float</code>, <code class="highlighter-rouge notranslate">inline-block</code>, or table-based layouts,</li>
+  <li>JavaScript (or jQuery) to measure and equalize heights,</li>
+  <li>Flexbox for 1D layouts, which wasn’t always ideal for grid-like structures.</li>
 </ul>
 
 <p dir="auto">But none of these offered full control over <strong>2D layouts</strong>.</p>
@@ -460,7 +469,7 @@
 <h3 id="built-in-layout-superpowers" dir="auto">Built-In Layout Superpowers<a href="#built-in-layout-superpowers" class="heading-anchor" aria-label="Permalink: Built-In Layout Superpowers">#</a>
 </h3>
 
-<p dir="auto">CSS Grid includes tools that used to require hacks or JavaScript:</p>
+<p dir="auto">CSS Grid brings native support for layout patterns that once required complex CSS tricks—or even JavaScript—to implement.</p>
 
 <ul dir="auto">
   <li>Gaps (<code class="highlighter-rouge notranslate">gap</code>, <code class="highlighter-rouge notranslate">row-gap</code>, <code class="highlighter-rouge notranslate">column-gap</code>)</li>
@@ -972,9 +981,9 @@ like fr (fraction of available space).</li>
   </footer>
 
 <nav class="post-nav" aria-label="Post navigation">
-  <a href="/post/understanding-css-grid" class="post-nav-link previous" rel="previous">
+  <a href="/post/components" class="post-nav-link previous" rel="previous">
     <span class="label">Older</span>
-    <span class="title">CSS Grid Fundamentals: A Beginner’s Guide</span>
+    <span class="title">Components</span>
   </a>
   <a href="/post/mastering-css-grid" class="post-nav-link next" rel="next">
     <span class="label">Newer</span>
