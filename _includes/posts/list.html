@@ -6,24 +6,24 @@
   {% for post in posts %}
     {%- assign cover_image = post.cover_image -%}
     <article class="post-preview card card-image-left">
-      <a href="{{ post.url | relative_url }}" class="card-link" title="{{ post.title }}" aria-label="Read post: {{ post.title }}">
+      <a href="{{ post.url | relative_url }}" class="card-link" aria-label="Read post: {{ post.title }}">
         {% if cover_image %}
           <div class="card-media">
             <div class="card-media-inner">
               <img src="{{ cover_image.path | relative_url }}" class="img-fluid"
-                   {% if cover_image.alt %}alt="{{ cover_image.alt }}"{% else %}alt="{{ post.title }}"{% endif %}>
+                   {% if cover_image.alt %}alt="{{ cover_image.alt }}"{% else %}alt="Cover image for post: {{ post.title }}"{% endif %}>
             </div>
           </div>
         {% endif %}
         <div class="card-body">
           <header class="card-header">
-            <div class="card-title h2 post-title">
+            <h2 class="card-title post-title" title="{{ post.title }}">
               {{ post.title }}
-            </div>
+            </h2>
           </header>
           <div class="card-content">
             {% if post.excerpt %}
-              <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
+              <div class="post-excerpt" title="{{ post.excerpt }}">{{ post.excerpt | markdownify }}</div>
             {% endif %}
           </div>
           <div class="card-footer">
