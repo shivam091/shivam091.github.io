@@ -1,0 +1,20 @@
+{% if page.previous_series or page.next_series %}
+  <nav class="series-page-nav" aria-label="Navigate between series">
+    <ul class="series-page-links">
+      {% if page.previous_series %}
+        <li class="series-page-prev">
+          <a href="{{ page.previous_series.url | relative_url }}" class="series-page-button">
+            ← {{ page.previous_series.title }}
+          </a>
+        </li>
+      {% endif %}
+      {% if page.next_series %}
+        <li class="series-page-next">
+          <a href="{{ page.next_series.url | relative_url }}" class="series-page-button">
+            {{ page.next_series.title }} →
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}
