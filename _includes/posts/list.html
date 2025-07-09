@@ -10,7 +10,7 @@
         {% if cover_image %}
           <div class="card-media">
             <div class="card-media-inner">
-              <img src="{{ cover_image.path | relative_url }}" class="img-fluid"
+              <img data-src="{{ cover_image.path | relative_url }}" class="img-fluid shimmer lazy"
                    {% if cover_image.alt %}alt="{{ cover_image.alt }}"{% else %}alt="Cover image for post: {{ post.title }}"{% endif %}>
             </div>
           </div>

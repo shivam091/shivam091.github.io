@@ -1,0 +1,71 @@
+@use "abstracts/modules/bg-cover" as *
+@use "abstracts/mixins/transition-properties" as *
+
+// @-webkit-keyframes shimmer
+//   0%
+//     transform: translateX(-100%)
+//
+//   100%
+//     transform: translateX(100%)
+//
+// @keyframes shimmer
+//   0%
+//     transform: translateX(-100%)
+//
+//   100%
+//     transform: translateX(100%)
+//
+// .shimmer
+//   overflow: hidden
+//   position: relative
+//
+//   &::before
+//     content: ""
+//     position: absolute
+//     background: var(--color-bg-shimmer)
+//     height: 100%
+//     width: 100%
+//     -webkit-animation: shimmer 1s infinite
+//     animation: shimmer 1s infinite
+//
+// [data-src]
+//   @include transition-properties((opacity, filter), $duration: var(--motion-duration-slow), $easing: var(--motion-easing-ease))
+//
+//   &.loaded
+//     opacity: 1
+//     filter: none
+//
+//   &[data-bg]
+//     @extend %bg-cover
+
+
+@keyframes shimmer
+  100%
+    transform: translateX(100%)
+
+.shimmer
+  position: relative
+  overflow: hidden
+  background-color: var(--color-bg-muted)
+
+.shimmer::before
+  content: ""
+  position: absolute
+  inset: 0
+  background-image: var(--gradient-bg-shimmer)
+  transform: translateX(-100%)
+  animation: shimmer 1.5s infinite
+  will-change: transform
+
+/* Hide shimmer once loaded */
+.lazyloaded
+  background-color: transparent !important
+
+.lazyloading
+  filter: blur(4px)
+  transition: filter 0.4s ease
+
+.lazyloaded,
+.lazy-bg.lazyloaded
+  filter: none
+  animation: none !important
