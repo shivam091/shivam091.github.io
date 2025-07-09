@@ -8,6 +8,11 @@ excerpt: This post is a comprehensive test of various HTML elements. It includes
 toc: false
 authors: [harshal]
 slug: typography
+cover_image:
+  path: /assets/img/posts/typography/cover.png
+  width: 1200
+  height: 630
+  alt: Typography
 ---
 
 ## Headings

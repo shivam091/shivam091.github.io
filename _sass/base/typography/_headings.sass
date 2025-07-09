@@ -15,9 +15,17 @@
       border-bottom: var(--border-default)
       padding-bottom: var(--fluid-space-xxxs)
       letter-spacing: 0.5px
+
     @else if $level == 2
       font-weight: var(--font-weight-semi-bold)
     @else if $level == 3 or $level == 4
       font-weight: var(--font-weight-medium)
     @else
       font-weight: var(--font-weight-normal)
+
+  h#{$level},
+  .h#{$level}
+    @if $level == 1
+      text-wrap: pretty
+    @else
+      text-wrap: balance

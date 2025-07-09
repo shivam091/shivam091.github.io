@@ -10,7 +10,7 @@ Jekyll::Hooks.register [:pages, :posts], :post_render do |doc|
   fragment = Loofah.fragment(doc.output)
 
   # Limit to headers inside .post-content
-  fragment.css(".page-content").each do |content_block|
+  fragment.css(".post-content").each do |content_block|
     content_block.css("h2, h3, h4, h5, h6").each do |heading|
       text = heading.text.strip
 
