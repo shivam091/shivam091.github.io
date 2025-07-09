@@ -1,0 +1,17 @@
+---
+layout: page
+---
+
+<article class="series" aria-labelledby="series-list-title">
+  <h2 id="series-list-title" class="visually-hidden">List of blog posts in {{ page.title }}</h2>
+
+  {% include cover-image.html page = page %}
+
+  {% if page.description %}
+    <div class="series-description">
+      {{ page.description | markdownify }}
+    </div>
+  {% endif %}
+
+  {% include posts/list.html posts = page.posts %}
+</article>

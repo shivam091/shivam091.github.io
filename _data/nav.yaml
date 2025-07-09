@@ -14,6 +14,10 @@
   icon: tag
   href: "/tags"
 
+- title: "Series"
+  icon: book
+  href: "/series"
+
 - title: "Posts"
   icon: list
   href: "/posts"
