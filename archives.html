@@ -5,6 +5,7 @@ permalink: /archives
 ---
 
 {%- assign posts_by_year = site.posts | group_by_exp: "post", "post.published_at | date: '%Y'" -%}
+{%- assign posts_by_year = posts_by_year | sort: "name" | reverse -%}
 
 <div class="timeline-wrapper" role="list">
   <div class="timeline">
@@ -18,7 +19,8 @@ permalink: /archives
       </div>
       <ul class="timeline-posts" role="list" aria-labelledby="year-{{ year.name }}">
         <li class="visually-hidden" role="presentation">Posts for year {{ year.name }}</li>
-        {% for post in year.items %}
+        {%- assign sorted_posts = year.items | sort: "published_at" | reverse -%}
+        {% for post in sorted_posts %}
           {%- assign published_at = post.published_at -%}
           <li class="timeline-post" role="listitem">
             <div class="timeline-left">
