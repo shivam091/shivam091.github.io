@@ -19,8 +19,8 @@
     text-decoration: none
 
   &-media
-    flex: 0 0 20%
-    max-width: 20%
+    flex: 0 0 30%
+    max-width: 30%
     display: flex
     align-items: stretch
 
@@ -37,18 +37,13 @@
         object-position: center
         display: block
 
-    // large screens: image slightly larger (30%)
+    // large screens: image slightly larger (35%)
     @include breakpoint.max(xl)
-      flex: 0 0 30%
-      max-width: 30%
-
-    // Medium screens: image slightly larger (35%)
-    @include breakpoint.max(lg)
       flex: 0 0 35%
       max-width: 35%
 
-    // Small screens: image full width on top/bottom
-    @include breakpoint.max(md)
+    // Medium screens: image full width on top/bottom
+    @include breakpoint.max(lg)
       flex: 0 0 auto
       max-width: 100%
       padding: 0
@@ -78,7 +73,7 @@
   &-image-left
     flex-direction: row
 
-    @include breakpoint.max(md)
+    @include breakpoint.max(lg)
       flex-direction: column
 
       .card-media
@@ -88,7 +83,7 @@
   &-image-right
     flex-direction: row-reverse
 
-    @include breakpoint.max(md)
+    @include breakpoint.max(lg)
       flex-direction: column
 
       .card-media

@@ -1,0 +1,32 @@
+@use "abstracts/modules/text-clip" as *
+@use "abstracts/mixins/breakpoints" as breakpoint
+
+.series-list
+  display: flex
+  flex-direction: column
+  gap: var(--fluid-space-base)
+  margin: var(--space-none)
+  padding: var(--space-none)
+
+.series-preview
+  height: 15rem
+  max-height: 100%
+
+  @include breakpoint.max(lg)
+    height: auto
+
+.series-title
+  margin: var(--space-none)
+
+.series-excerpt
+  margin: var(--space-none)
+  color: var(--color-fg-muted)
+
+  @extend %text-clip
+
+.series-meta
+  font-size: var(--font-size-sm)
+  color: var(--color-fg-muted)
+
+.series-description
+  margin-bottom: var(--space-base)
