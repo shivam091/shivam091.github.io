@@ -1,0 +1,23 @@
+@use "abstracts/modules/list-unstyled"
+
+.series-nav
+  font-size: 0.9375em
+  margin-top: var(--fluid-space-base)
+  padding: var(--fluid-space-sm)
+  border: var(--border-default)
+  border-radius: var(--border-radius-small)
+
+  .series-nav-header
+    margin-bottom: var(--space-base)
+    color: var(--color-fg-muted)
+
+  .series-nav-links
+    @extend %list-unstyled
+
+    display: flex
+    gap: 0.5rem
+    flex-wrap: wrap
+    justify-content: space-between
+
+  .series-nav-item
+    margin-bottom: var(--space-none)

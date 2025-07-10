@@ -532,5 +532,3 @@ Up next in [Part 3 → Responsive CSS Grid Layouts: fr Units, minmax(), auto-fil
 - Use `fr`, `minmax()`, `auto-fit`, and `auto-fill` for fluid responsive tracks
 - Pair grid with **media** and **container** queries
 - Build **robust, flexible layouts** that adapt to any screen — no media query soup needed!
-
-📚 This post is **part 2** of the [CSS Grid Fundamentals](/series/css-grid-fundamentals) series.

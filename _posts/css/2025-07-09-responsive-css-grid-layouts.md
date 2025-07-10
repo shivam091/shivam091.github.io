@@ -410,5 +410,3 @@ With these tools, you can:
 **CSS Grid isn’t just a layout tool** — it’s a complete design system built into the browser. Mastering it means writing less CSS while building better UI.
 
 🚀 Keep experimenting with combinations of Grid, Flexbox, and container queries — that’s where layout magic happens.
-
-📚 This post wraps up the [CSS Grid Fundamentals](/series/css-grid-fundamentals) series.

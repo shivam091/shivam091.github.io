@@ -265,4 +265,3 @@ This foundation will serve you well as we move forward.
 
 🔗 **Up Next (Part 2):** [Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning](/post/mastering-css-grid) — where we dive deeper into layout techniques that let you place, span, and align items precisely.
 
-📚 This post is **part 1** of the [CSS Grid Fundamentals](/series/css-grid-fundamentals) series.

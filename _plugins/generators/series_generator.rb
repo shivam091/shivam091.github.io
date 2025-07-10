@@ -60,6 +60,19 @@ module Jekyll
           next
         end
 
+        # Annotate each post with its position and navigation
+        posts.each_with_index do |post, i|
+          post.data["series"] = {
+            "id"       => series_id,
+            "meta"     => meta,
+            "index"    => i + 1,
+            "total"    => posts.size,
+            "page_url" => "/series/#{series_id}"
+          }
+          post.data["previous_post"] = posts[i - 1] if i > 0
+          post.data["next_post"]     = posts[i + 1] if i < posts.size - 1
+        end
+
         dir  = File.join("series", series_id)
         page = SeriesPage.new(site, site.source, dir, series_id, meta, posts, index, total_series)
 

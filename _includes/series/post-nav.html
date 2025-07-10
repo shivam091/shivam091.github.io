@@ -1,0 +1,39 @@
+{%- if page.series %}
+  <nav class="series-nav" aria-label="Navigation for posts in series">
+    <header class="series-nav-header">
+      <span class="series-nav-icon" aria-hidden="true">📚</span>
+      <span class="series-nav__position">
+        This post is
+        <strong>Part {{ page.series.index }} of {{ page.series.total }}</strong>
+        in the
+        <a href="{{ '/series/' | append: page.series.id | relative_url }}" class="series-nav-title">
+          {{ page.series.meta.title }}
+        </a>
+        series.
+      </span>
+    </header>
+
+    <ul class="series-nav-links">
+      {%- if page.previous_post %}
+        <li class="series-nav-item">
+          <span class="series-nav-item-icon" aria-hidden="true">⬅️</span>
+          <a href="{{ page.previous_post.url | relative_url }}" class="series-nav-link"
+             aria-label="Previous post in series: {{ page.previous_post.title }}" rel="prev">
+            <strong>Part {{- page.previous_post.series.index }}:</strong>
+            {{ page.previous_post.title }}
+          </a>
+        </li>
+      {%- endif %}
+      {%- if page.next_post %}
+        <li class="series-nav-item">
+          <a href="{{ page.next_post.url | relative_url }}" class="series-nav-link"
+             aria-label="Next post in series: {{ page.next_post.title }}" rel="next">
+            <strong>Part {{ page.next_post.series.index }}:</strong>
+            {{ page.next_post.title -}}
+          </a>
+          <span class="series-nav-item-icon" aria-hidden="true">➡️</span>
+        </li>
+      {%- endif %}
+    </ul>
+  </nav>
+{% endif %}
