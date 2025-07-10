@@ -69,7 +69,7 @@
   <span class="icon-bar middle-bar"></span>
   <span class="icon-bar bottom-bar"></span>
 </button>
-<aside class="sidebar shimmer" id="sidebar" role="complementary" aria-label="Sidebar" data-bg="/assets/img/my-profile-img.png">
+<aside class="sidebar" id="sidebar" role="complementary" aria-label="Sidebar">
   <div class="sidebar-content">
     <div class="sidebar-top">
       <a href="/">
@@ -274,7 +274,7 @@
 
   
   <figure class="cover-image">
-    <img data-src="/assets/img/posts/typography/cover.png" class="img-fluid shimmer" width="1200" height="630" alt="Typography">
+    <img src="/assets/img/posts/typography/cover.png" class="img-fluid" width="1200" height="630" alt="Typography" loading="lazy">
     
       <figcaption>Typography</figcaption>
     
@@ -534,8 +534,24 @@ H<sub>2</sub>O and E = mc<sup>2</sup></p>
   </ol>
 </section>
 
+  <nav class="series-nav" aria-label="Series navigation">
+    <header class="series-nav-header">
+      <p class="series-meta">
+        Part 1 of 2
+        in <a href="/series/blogging">Blogging</a>
+      </p>
+    </header>
 
-  <div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
+    <ul class="series-links">
+        <li class="series-link series-link-next">
+          <a href="/post/components" class="series-nav-button" aria-label="Next post in series: Components">
+            Components ➡️
+          </a>
+        </li>
+    </ul>
+  </nav>
+
+<div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
     
   <div class="post-meta-item post-categories" role="list">
     <svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
@@ -567,29 +583,6 @@ H<sub>2</sub>O and E = mc<sup>2</sup></p>
 
 
   </div>
-
-  
-  <nav class="series-nav" aria-label="Series navigation">
-    <header class="series-nav-header">
-      <p class="series-meta">
-        Part 1 of 2
-        in <a href="/series/blogging">Blogging</a>
-      </p>
-    </header>
-
-    <ul class="series-links">
-      
-      
-        <li class="series-link series-link-next">
-          <a href="/post/components" class="series-nav-button" aria-label="Next post in series: Components">
-            Components ➡️
-          </a>
-        </li>
-      
-    </ul>
-  </nav>
-
-
 
   <footer class="post-footer">
     <p>I hope you’ve found this post informative and helpful. Thank you for reading!</p>
@@ -638,14 +631,12 @@ H<sub>2</sub>O and E = mc<sup>2</sup></p>
 
       </section>
     </div>
-  </footer>
-
-<nav class="post-nav" aria-label="Post navigation">
-  <div class="post-nav-link previous disabled" role="link" aria-disabled="true" tabindex="-1">
+  </footer><nav class="navigation" aria-label="Post navigation">
+  <div class="navigation-link disabled" role="link" aria-disabled="true" tabindex="-1">
     <span class="label">Older</span>
     <span class="title">—</span>
   </div>
-  <a href="/post/components" class="post-nav-link next" rel="next">
+  <a href="/post/components" class="navigation-link" rel="next">
     <span class="label">Newer</span>
     <span class="title">Components</span>
   </a>

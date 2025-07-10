@@ -68,7 +68,7 @@
   <span class="icon-bar middle-bar"></span>
   <span class="icon-bar bottom-bar"></span>
 </button>
-<aside class="sidebar shimmer" id="sidebar" role="complementary" aria-label="Sidebar" data-bg="/assets/img/my-profile-img.png">
+<aside class="sidebar" id="sidebar" role="complementary" aria-label="Sidebar">
   <div class="sidebar-content">
     <div class="sidebar-top">
       <a href="/">
@@ -237,7 +237,7 @@
         
           <div class="card-media">
             <div class="card-media-inner">
-              <img data-src="/assets/img/posts/typography/cover.png" class="img-fluid shimmer lazy" alt="Typography">
+              <img src="/assets/img/posts/typography/cover.png" class="img-fluid" alt="Typography">
             </div>
           </div>
         
@@ -290,6 +290,8 @@
   <span data-tooltip="306 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
 </div>
 
+
+              
             </div>
           </div>
         </div>
@@ -300,7 +302,7 @@
         
           <div class="card-media">
             <div class="card-media-inner">
-              <img data-src="/assets/img/posts/components/cover.png" class="img-fluid shimmer lazy" alt="Demonstration of layout components">
+              <img src="/assets/img/posts/components/cover.png" class="img-fluid" alt="Demonstration of layout components">
             </div>
           </div>
         
@@ -353,6 +355,8 @@
   <span data-tooltip="190 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
 </div>
 
+
+              
             </div>
           </div>
         </div>
@@ -360,23 +364,16 @@
     </article>
   
 </section>
-
-
-  
-  <nav class="series-page-nav" aria-label="Navigate between series">
-    <ul class="series-page-links">
-      
-        <li class="series-page-prev">
-          <a href="/series/css-grid-fundamentals" class="series-page-button">
-            ← CSS Grid Fundamentals
-          </a>
-        </li>
-      
-      
-    </ul>
-  </nav>
-
-
+<nav class="navigation" aria-label="Series navigation">
+  <a href="/series/css-grid-fundamentals" class="navigation-link" rel="previous">
+    <span class="label">Older</span>
+    <span class="title">CSS Grid Fundamentals</span>
+  </a>
+  <div class="navigation-link disabled" role="link" aria-disabled="true" tabindex="-1">
+    <span class="label">Newer</span>
+    <span class="title">—</span>
+  </div>
+</nav>
 </article>
 
 </section>

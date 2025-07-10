@@ -68,7 +68,7 @@
   <span class="icon-bar middle-bar"></span>
   <span class="icon-bar bottom-bar"></span>
 </button>
-<aside class="sidebar shimmer" id="sidebar" role="complementary" aria-label="Sidebar" data-bg="/assets/img/my-profile-img.png">
+<aside class="sidebar" id="sidebar" role="complementary" aria-label="Sidebar">
   <div class="sidebar-content">
     <div class="sidebar-top">
       <a href="/">
@@ -221,7 +221,7 @@
 
   
   <figure class="cover-image">
-    <img data-src="/assets/img/series/css-grid-fundamentals/cover.png" class="img-fluid shimmer" alt="Flat-design CSS Grid Fundamentals infographic showing three sections for core concepts, layout control, and responsive techniques using fr units, minmax, auto-fit, and container queries">
+    <img src="/assets/img/series/css-grid-fundamentals/cover.png" class="img-fluid" alt="Flat-design CSS Grid Fundamentals infographic showing three sections for core concepts, layout control, and responsive techniques using fr units, minmax, auto-fit, and container queries" loading="lazy">
     
       <figcaption>Flat-design CSS Grid Fundamentals infographic showing three sections for core concepts, layout control, and responsive techniques using fr units, minmax, auto-fit, and container queries</figcaption>
     
@@ -263,7 +263,7 @@
         
           <div class="card-media">
             <div class="card-media-inner">
-              <img data-src="/assets/img/posts/css/getting-started-with-css-grid/cover.png" class="img-fluid shimmer lazy" alt="Flat-design digital illustration introducing CSS Grid fundamentals, featuring icons for grid containers, tracks, and layout structures.">
+              <img src="/assets/img/posts/css/getting-started-with-css-grid/cover.png" class="img-fluid" alt="Flat-design digital illustration introducing CSS Grid fundamentals, featuring icons for grid containers, tracks, and layout structures.">
             </div>
           </div>
         
@@ -318,6 +318,8 @@
   <span data-tooltip="1324 words" data-tooltip-position="bottom" tabindex="0">8 min read</span>
 </div>
 
+
+              
             </div>
           </div>
         </div>
@@ -328,7 +330,7 @@
         
           <div class="card-media">
             <div class="card-media-inner">
-              <img data-src="/assets/img/posts/css/mastering-css-grid-alignment-spanning/cover.png" class="img-fluid shimmer lazy" alt="Stylized 2D illustration visualizing advanced CSS Grid techniques like alignment, named grid areas, and spanning elements across rows and columns.">
+              <img src="/assets/img/posts/css/mastering-css-grid-alignment-spanning/cover.png" class="img-fluid" alt="Stylized 2D illustration visualizing advanced CSS Grid techniques like alignment, named grid areas, and spanning elements across rows and columns.">
             </div>
           </div>
         
@@ -383,6 +385,8 @@
   <span data-tooltip="2051 words" data-tooltip-position="bottom" tabindex="0">12 min read</span>
 </div>
 
+
+              
             </div>
           </div>
         </div>
@@ -393,7 +397,7 @@
         
           <div class="card-media">
             <div class="card-media-inner">
-              <img data-src="/assets/img/posts/css/responsive-css-grid-layouts/cover.png" class="img-fluid shimmer lazy" alt="Colorful flat-design illustration showcasing responsive CSS Grid techniques, including fr units, minmax(), auto-fit, media queries, and container queries.">
+              <img src="/assets/img/posts/css/responsive-css-grid-layouts/cover.png" class="img-fluid" alt="Colorful flat-design illustration showcasing responsive CSS Grid techniques, including fr units, minmax(), auto-fit, media queries, and container queries.">
             </div>
           </div>
         
@@ -448,6 +452,8 @@
   <span data-tooltip="1607 words" data-tooltip-position="bottom" tabindex="0">9 min read</span>
 </div>
 
+
+              
             </div>
           </div>
         </div>
@@ -455,23 +461,16 @@
     </article>
   
 </section>
-
-
-  
-  <nav class="series-page-nav" aria-label="Navigate between series">
-    <ul class="series-page-links">
-      
-      
-        <li class="series-page-next">
-          <a href="/series/blogging" class="series-page-button">
-            Blogging →
-          </a>
-        </li>
-      
-    </ul>
-  </nav>
-
-
+<nav class="navigation" aria-label="Series navigation">
+  <div class="navigation-link disabled" role="link" aria-disabled="true" tabindex="-1">
+    <span class="label">Older</span>
+    <span class="title">—</span>
+  </div>
+  <a href="/series/blogging" class="navigation-link" rel="next">
+    <span class="label">Newer</span>
+    <span class="title">Blogging</span>
+  </a>
+</nav>
 </article>
 
 </section>

@@ -69,7 +69,7 @@
   <span class="icon-bar middle-bar"></span>
   <span class="icon-bar bottom-bar"></span>
 </button>
-<aside class="sidebar shimmer" id="sidebar" role="complementary" aria-label="Sidebar" data-bg="/assets/img/my-profile-img.png">
+<aside class="sidebar" id="sidebar" role="complementary" aria-label="Sidebar">
   <div class="sidebar-content">
     <div class="sidebar-top">
       <a href="/">
@@ -274,7 +274,7 @@
 
   
   <figure class="cover-image">
-    <img data-src="/assets/img/posts/css/getting-started-with-css-grid/cover.png" class="img-fluid shimmer" width="1200" height="630" alt="Flat-design digital illustration introducing CSS Grid fundamentals, featuring icons for grid containers, tracks, and layout structures.">
+    <img src="/assets/img/posts/css/getting-started-with-css-grid/cover.png" class="img-fluid" width="1200" height="630" alt="Flat-design digital illustration introducing CSS Grid fundamentals, featuring icons for grid containers, tracks, and layout structures." loading="lazy">
     
       <figcaption>Flat-design digital illustration introducing CSS Grid fundamentals, featuring icons for grid containers, tracks, and layout structures.</figcaption>
     
@@ -883,8 +883,24 @@ like fr (fraction of available space).</li>
 
 <p dir="auto">📚 This post is <strong>part 1</strong> of the <a href="/series/css-grid-fundamentals">CSS Grid Fundamentals</a> series.</p>
 
+  <nav class="series-nav" aria-label="Series navigation">
+    <header class="series-nav-header">
+      <p class="series-meta">
+        Part 1 of 3
+        in <a href="/series/css-grid-fundamentals">CSS Grid Fundamentals</a>
+      </p>
+    </header>
 
-  <div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
+    <ul class="series-links">
+        <li class="series-link series-link-next">
+          <a href="/post/mastering-css-grid" class="series-nav-button" aria-label="Next post in series: Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning">
+            Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning ➡️
+          </a>
+        </li>
+    </ul>
+  </nav>
+
+<div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
     
   <div class="post-meta-item post-categories" role="list">
     <svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
@@ -926,29 +942,6 @@ like fr (fraction of available space).</li>
 
 
   </div>
-
-  
-  <nav class="series-nav" aria-label="Series navigation">
-    <header class="series-nav-header">
-      <p class="series-meta">
-        Part 1 of 3
-        in <a href="/series/css-grid-fundamentals">CSS Grid Fundamentals</a>
-      </p>
-    </header>
-
-    <ul class="series-links">
-      
-      
-        <li class="series-link series-link-next">
-          <a href="/post/mastering-css-grid" class="series-nav-button" aria-label="Next post in series: Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning">
-            Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning ➡️
-          </a>
-        </li>
-      
-    </ul>
-  </nav>
-
-
 
   <footer class="post-footer">
     <p>I hope you’ve found this post informative and helpful. Thank you for reading!</p>
@@ -997,14 +990,12 @@ like fr (fraction of available space).</li>
 
       </section>
     </div>
-  </footer>
-
-<nav class="post-nav" aria-label="Post navigation">
-  <a href="/post/components" class="post-nav-link previous" rel="previous">
+  </footer><nav class="navigation" aria-label="Post navigation">
+  <a href="/post/components" class="navigation-link" rel="previous">
     <span class="label">Older</span>
     <span class="title">Components</span>
   </a>
-  <a href="/post/mastering-css-grid" class="post-nav-link next" rel="next">
+  <a href="/post/mastering-css-grid" class="navigation-link" rel="next">
     <span class="label">Newer</span>
     <span class="title">Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning</span>
   </a>

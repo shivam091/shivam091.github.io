@@ -69,7 +69,7 @@
   <span class="icon-bar middle-bar"></span>
   <span class="icon-bar bottom-bar"></span>
 </button>
-<aside class="sidebar shimmer" id="sidebar" role="complementary" aria-label="Sidebar" data-bg="/assets/img/my-profile-img.png">
+<aside class="sidebar" id="sidebar" role="complementary" aria-label="Sidebar">
   <div class="sidebar-content">
     <div class="sidebar-top">
       <a href="/">
@@ -274,7 +274,7 @@
 
   
   <figure class="cover-image">
-    <img data-src="/assets/img/posts/css/mastering-css-grid-alignment-spanning/cover.png" class="img-fluid shimmer" width="1200" height="630" alt="Stylized 2D illustration visualizing advanced CSS Grid techniques like alignment, named grid areas, and spanning elements across rows and columns.">
+    <img src="/assets/img/posts/css/mastering-css-grid-alignment-spanning/cover.png" class="img-fluid" width="1200" height="630" alt="Stylized 2D illustration visualizing advanced CSS Grid techniques like alignment, named grid areas, and spanning elements across rows and columns." loading="lazy">
     
       <figcaption>Stylized 2D illustration visualizing advanced CSS Grid techniques like alignment, named grid areas, and spanning elements across rows and columns.</figcaption>
     
@@ -1729,8 +1729,29 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 
 <p dir="auto">📚 This post is <strong>part 2</strong> of the <a href="/series/css-grid-fundamentals">CSS Grid Fundamentals</a> series.</p>
 
+  <nav class="series-nav" aria-label="Series navigation">
+    <header class="series-nav-header">
+      <p class="series-meta">
+        Part 2 of 3
+        in <a href="/series/css-grid-fundamentals">CSS Grid Fundamentals</a>
+      </p>
+    </header>
 
-  <div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
+    <ul class="series-links">
+        <li class="series-link series-link-prev">
+          <a href="/post/getting-started-with-css-grid" class="series-nav-button" aria-label="Previous post in series: Getting Started with CSS Grid: A Beginner's Guide to 2D Layouts">
+            ⬅️ Getting Started with CSS Grid: A Beginner's Guide to 2D Layouts
+          </a>
+        </li>
+        <li class="series-link series-link-next">
+          <a href="/post/responsive-css-grid-layouts" class="series-nav-button" aria-label="Next post in series: Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained">
+            Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained ➡️
+          </a>
+        </li>
+    </ul>
+  </nav>
+
+<div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
     
   <div class="post-meta-item post-categories" role="list">
     <svg class="icon icon-folder-open" aria-hidden="true" focusable="false">
@@ -1772,35 +1793,6 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 
 
   </div>
-
-  
-  <nav class="series-nav" aria-label="Series navigation">
-    <header class="series-nav-header">
-      <p class="series-meta">
-        Part 2 of 3
-        in <a href="/series/css-grid-fundamentals">CSS Grid Fundamentals</a>
-      </p>
-    </header>
-
-    <ul class="series-links">
-      
-        <li class="series-link series-link-prev">
-          <a href="/post/getting-started-with-css-grid" class="series-nav-button" aria-label="Previous post in series: Getting Started with CSS Grid: A Beginner's Guide to 2D Layouts">
-            ⬅️ Getting Started with CSS Grid: A Beginner's Guide to 2D Layouts
-          </a>
-        </li>
-      
-      
-        <li class="series-link series-link-next">
-          <a href="/post/responsive-css-grid-layouts" class="series-nav-button" aria-label="Next post in series: Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained">
-            Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained ➡️
-          </a>
-        </li>
-      
-    </ul>
-  </nav>
-
-
 
   <footer class="post-footer">
     <p>I hope you’ve found this post informative and helpful. Thank you for reading!</p>
@@ -1849,14 +1841,12 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 
       </section>
     </div>
-  </footer>
-
-<nav class="post-nav" aria-label="Post navigation">
-  <a href="/post/getting-started-with-css-grid" class="post-nav-link previous" rel="previous">
+  </footer><nav class="navigation" aria-label="Post navigation">
+  <a href="/post/getting-started-with-css-grid" class="navigation-link" rel="previous">
     <span class="label">Older</span>
     <span class="title">Getting Started with CSS Grid: A Beginner's Guide to 2D Layouts</span>
   </a>
-  <a href="/post/responsive-css-grid-layouts" class="post-nav-link next" rel="next">
+  <a href="/post/responsive-css-grid-layouts" class="navigation-link" rel="next">
     <span class="label">Newer</span>
     <span class="title">Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</span>
   </a>
