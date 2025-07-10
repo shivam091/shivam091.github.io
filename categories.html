@@ -37,9 +37,7 @@ permalink: /categories
               {% icon folder %}
               {% icon folder-open %}
               <div class="category-meta-info">
-                <a href="/category/{{ category_name | slugify | prepend: site.baseurl }}/"
-                   class="category-title" tabindex="0"
-                   title="View all posts in {{ category_name }}">
+                <a href="{{ '/category/' | append: category_name | relative_url }}" class="category-title" tabindex="0" aria-label="View all posts in {{ category_name }}">
                   {{ category_name }}
                 </a>
                 <small class="category-meta">

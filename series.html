@@ -4,7 +4,7 @@ title: Series
 permalink: /series
 ---
 
-{%- assign series_pages = site.pages | where: "layout", "series" | sort: "title" -%}
+{%- assign series_pages = site.pages | where: "layout", "series" | sort: "order" -%}
 
 <section class="series-list" aria-labelledby="series-list-title">
   <h2 id="series-list-title" class="visually-hidden">List of series</h2>

@@ -1,5 +1,6 @@
 css-grid-fundamentals:
   title: "CSS Grid Fundamentals"
+  order: 1
   excerpt: "Unlock the power of CSS Grid in this hands-on 3-part series! Learn to craft clean, responsive layouts using `fr` units , `minmax()`, `auto-fill`, `auto-fit`, and modern media & container queries — no frameworks needed."
   description: |
     🚀 **CSS Grid Fundamentals** is your all-in-one guide to mastering layout design — the modern, efficient way.
