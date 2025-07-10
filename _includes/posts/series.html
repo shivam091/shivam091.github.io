@@ -1,0 +1,23 @@
+{%- assign post = include.post -%}
+{%- assign series = post.series -%}
+{%- assign series_index = series.index -%}
+{%- assign series_total = series.total -%}
+{%- assign series_title = series.meta.title -%}
+{%- assign series_url = series.page_url -%}
+
+{% if series and page.layout != "series" %}
+<div class="post-meta-item post-series">
+  {% icon book %}
+  <span class="visually-hidden">Series:</span>
+
+  {%- if include.link == true and series_url -%}
+  <a href="{{ series_url | relative_url }}" class="badge" aria-label="Series: {{ series_title }}">
+    {{ series_title }} ({{ series_index }}/{{ series_total }})
+  </a>
+  {%- else -%}
+  <span class="badge" aria-label="Series: {{ series_title }}">
+    {{ series_title }} ({{ series_index }}/{{ series_total }})
+  </span>
+  {%- endif -%}
+</div>
+{% endif %}

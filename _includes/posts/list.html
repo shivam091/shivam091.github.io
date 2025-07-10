@@ -20,6 +20,10 @@
             <h2 class="card-title post-title" title="{{ post.title }}">
               {{ post.title }}
             </h2>
+
+            <div class="post-meta post-meta-primary">
+              {% include posts/series.html post = post %}
+            </div>
           </header>
           <div class="card-content">
             {% if post.excerpt %}
@@ -27,20 +31,10 @@
             {% endif %}
           </div>
           <div class="card-footer">
-            <div class="post-meta post-meta-main">
-              {% include posts/published-at.html post=post %}
-
-              {% if post.categories %}
-                <div class="post-meta-item post-categories" role="list">
-                  {% icon folder-open %}
-                  <span class="visually-hidden">Categories:</span>
-                  {% for category in post.categories %}
-                    <span class="badge" aria-label="Category: {{ category }}" rel="category" role="listitem">{{ category }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
-
-              {% include posts/read-time.html post=post %}
+            <div class="post-meta post-meta-primary">
+              {% include posts/published-at.html post = post %}
+              {% include posts/categories.html post = post %}
+              {% include posts/read-time.html post = post %}
             </div>
           </div>
         </div>

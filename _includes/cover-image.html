@@ -8,7 +8,7 @@
       class="img-fluid"
       {% if cover_image.width %}width="{{ cover_image.width }}"{% endif %}
       {% if cover_image.height %}height="{{ cover_image.height }}"{% endif %}
-      {% if cover_image.alt %}alt="{{ cover_image.alt }}"{% else %}alt="Cover image of {{ page.title }}"{% endif %}
+      {% if cover_image.alt %}alt="{{ cover_image.alt }}"{% else %}alt="Cover image of {% if page.layout == 'post' %}Post{% else %}Series{% endif %} {{ page.title }}"{% endif %}
       loading="lazy"
     >
     {% if cover_image.alt %}
