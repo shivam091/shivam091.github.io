@@ -2,7 +2,7 @@
 
 module Jekyll
   class SeriesPage < Page
-    def initialize(site, base, dir, series_id, meta, posts)
+    def initialize(site, base, dir, series_id, meta, posts, index, total)
       @site = site
       @base = base
       @dir  = dir
@@ -22,6 +22,8 @@ module Jekyll
         "description"   => meta["description"] || "Posts from the “#{title}” blog series.",
         "cover_image"   => meta["cover_image"],
         "posts"         => posts,
+        "series_index"  => index + 1,
+        "series_total"  => total,
         "permalink"     => "/series/#{series_id}"
       )
     end
@@ -59,7 +61,7 @@ module Jekyll
         end
 
         dir  = File.join("series", series_id)
-        page = SeriesPage.new(site, site.source, dir, series_id, meta, posts)
+        page = SeriesPage.new(site, site.source, dir, series_id, meta, posts, index, total_series)
 
         # Series-to-series navigation
         page.data["previous"] = nav_info(sorted_series, index - 1) if index > 0
