@@ -48,6 +48,10 @@ compress_html:
   ignore:
     envs: [development]
 
+collections:
+  series:
+    output: false
+
 jekyll-archives:
   enabled:
     - tags

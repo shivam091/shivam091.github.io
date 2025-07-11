@@ -21,9 +21,7 @@
               {{ post.title }}
             </h2>
 
-            <div class="post-meta post-meta-primary">
-              {% include posts/series.html post = post %}
-            </div>
+            {% include posts/series.html post = post %}
           </header>
           <div class="card-content">
             {% if post.excerpt %}
