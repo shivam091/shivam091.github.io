@@ -20,7 +20,7 @@ layout: page
 
   {% toc %}
 
-  {{ content }}
+  {{ content | anchorify_headings }}
 
   {%- include series/post-nav.html -%}
 
