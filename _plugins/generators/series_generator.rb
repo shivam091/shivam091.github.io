@@ -2,7 +2,7 @@
 
 module Jekyll
   class SeriesPage < Page
-    def initialize(site, base, dir, series_id, meta, posts, index, total)
+    def initialize(site, base, dir, series_id, content, frontmatter, posts, index, total)
       @site = site
       @base = base
       @dir  = dir
@@ -10,17 +10,17 @@ module Jekyll
 
       self.process(@name)
       self.read_yaml(File.join(base, "_layouts"), "series.html")
+      self.content = content
 
-      title = meta["title"] || series_id
+      title = frontmatter["title"] || series_id
 
       self.data.merge!(
         "layout"        => "series",
         "title"         => title,
         "series_id"     => series_id,
-        "series_meta"   => meta,
-        "excerpt"       => meta["excerpt"],
-        "description"   => meta["description"] || "Posts from the “#{title}” blog series.",
-        "cover_image"   => meta["cover_image"],
+        "series_meta"   => frontmatter,
+        "excerpt"       => frontmatter["excerpt"],
+        "cover_image"   => frontmatter["cover_image"],
         "posts"         => posts,
         "series_index"  => index + 1,
         "series_total"  => total,
@@ -34,47 +34,64 @@ module Jekyll
     priority :low
 
     def generate(site)
-      Jekyll.logger.info "▶ Series:", "Generating series..."
+      Jekyll.logger.info "▶ Series:", "Generating series pages"
 
-      series_data = site.data["series"] || {}
-      all_posts   = site.posts.docs
+      series_docs = site.collections["series"]&.docs || []
 
       # Build fast lookup for posts by slug
-      post_map = all_posts.each_with_object({}) do |post, map|
-        slug = post.data["slug"]
-        map[slug] = post if slug
+      post_map = site.posts.docs.each_with_object({}) do |post, map|
+        map[post.data["slug"]] = post if post.data["slug"]
       end
 
-      sorted_series = series_data.sort_by do |id, meta|
-        [(meta["order"] || 99_999).to_i, meta["title"].to_s.downcase]
+      # Parse _series/*.md files into series_data
+      series_data = series_docs.each_with_object({}) do |doc, hash|
+        id = doc.basename_without_ext
+        parts = doc.data["parts"] || []
+
+        if parts.empty?
+          Jekyll.logger.warn "Series '#{id}' has no defined parts."
+        end
+
+        posts = parts.map { |slug| post_map[slug] }.compact
+
+        hash[id] = {
+          "id"      => id,
+          "doc"     => doc,
+          "posts"   => posts,
+          "content" => site.find_converter_instance(Jekyll::Converters::Markdown).convert(doc.content)
+        }
       end
 
+      sorted_series = series_data.sort_by { |_, data| [data["doc"].data["order"] || 99999, data["doc"].data["title"].to_s.downcase] }
       total_series = sorted_series.size
 
-      sorted_series.each_with_index do |(series_id, meta), index|
-        slugs = meta["parts"] || []
-        posts = slugs.map { |slug| post_map[slug] }.compact
-
+      sorted_series.each_with_index do |(series_id, data), index|
+        posts = data["posts"]
         if posts.empty?
           Jekyll.logger.warn "Series '#{series_id}' has no matching posts."
           next
         end
 
-        # Annotate each post with its position and navigation
+        frontmatter = data["doc"].data
+        content     = data["content"]
+
+        # Annotate each post with series info
         posts.each_with_index do |post, i|
           post.data["series"] = {
-            "id"       => series_id,
-            "meta"     => meta,
-            "index"    => i + 1,
-            "total"    => posts.size,
-            "page_url" => "/series/#{series_id}"
+            "id"          => series_id,
+            "meta"        => frontmatter,
+            "index"       => i + 1,
+            "total"       => posts.size,
+            "page_url"    => "/series/#{series_id}",
+            "title"       => frontmatter["title"],
+            "cover_image" => frontmatter["cover_image"]
           }
           post.data["previous_post"] = posts[i - 1] if i > 0
           post.data["next_post"]     = posts[i + 1] if i < posts.size - 1
         end
 
         dir  = File.join("series", series_id)
-        page = SeriesPage.new(site, site.source, dir, series_id, meta, posts, index, total_series)
+        page = SeriesPage.new(site, site.source, dir, series_id, content, frontmatter, posts, index, total_series)
 
         # Series-to-series navigation
         page.data["previous"] = nav_info(sorted_series, index - 1) if index > 0
@@ -86,11 +103,11 @@ module Jekyll
 
     private
 
-    def nav_info(series_list, i)
-      id, meta = series_list[i]
+    def nav_info(series_list, index)
+      id, meta = series_list[index]
       {
         "url"   => "/series/#{id}",
-        "title" => meta["title"] || id
+        "title" => meta["doc"].data["title"] || id
       }
     end
   end

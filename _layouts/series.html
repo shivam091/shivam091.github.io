@@ -7,11 +7,9 @@ layout: page
 
   {% include cover-image.html page = page %}
 
-  {% if page.description %}
-    <div class="series-description">
-      {{ page.description | markdownify }}
-    </div>
-  {% endif %}
+  <div class="series-description">
+    {{ content }}
+  </div>
 
   {% include posts/list.html posts = page.posts %}
 
