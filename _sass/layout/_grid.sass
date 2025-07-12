@@ -3,30 +3,33 @@
 
 .page-wrapper
   display: grid
+  grid-template-areas: "sidebar main" "sidebar footer"
+  grid-template-columns: var(--wrapper-offset-lg) 1fr
   grid-template-rows: 1fr auto
   min-height: 100vh
-  margin-left: var(--wrapper-offset-lg)
+  overflow: hidden
 
   @include breakpoint.max(lg)
-    margin-left: var(--wrapper-offset-md)
+    grid-template-columns: var(--wrapper-offset-md) 1fr
 
   @include breakpoint.max(md)
-    margin-left: var(--space-none)
-    transform: translateX(0)
-
-    @include transition-properties(transform, $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
-
-    body[data-sidebar="open"] &
-      transform: translateX(var(--wrapper-offset-sm))
+    grid-template-columns: 1fr
+    grid-template-areas: "main" "footer"
 
 .main-content
+  grid-area: main
   display: flex
   align-items: center
   flex-direction: column
   padding: var(--space-base)
 
+  @include transition-properties(transform, $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
+
   @include breakpoint.max(md)
     padding-block: var(--space-sm)
+
+    body[data-sidebar="open"] &
+      transform: translateX(var(--wrapper-offset-sm))
 
 .page-wrapper,
 .main-content
