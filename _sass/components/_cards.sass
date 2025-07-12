@@ -26,7 +26,6 @@
 
     &-inner
       width: 100%
-      aspect-ratio: 4 / 3
       overflow: hidden
       background-color: var(--color-bg-default)
 
@@ -36,6 +35,7 @@
         object-fit: cover
         object-position: center
         display: block
+        border-radius: var(--border-radius-none)
 
     // large screens: image slightly larger (35%)
     @include breakpoint.max(xl)

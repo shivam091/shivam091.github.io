@@ -17,8 +17,10 @@ permalink: /series
         {% if cover_image %}
           <div class="card-media">
             <div class="card-media-inner">
-              <img src="{{ cover_image.path | relative_url }}" class="img-fluid"
-                   {% if cover_image.alt %}alt="{{ cover_image.alt }}"{% else %}alt="Cover image for series: {{ series.title }}"{% endif %}>
+              <figure class="lazy-wrapper">
+                <img data-src="{{ cover_image.path | relative_url }}" class="img-fluid"
+                     {% if cover_image.alt %}alt="{{ cover_image.alt }}"{% else %}alt="Cover image for series: {{ series.title }}"{% endif %}>
+              </figure>
             </div>
           </div>
         {% endif %}
