@@ -4,7 +4,7 @@
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 .sidebar
-  @extend %bg-cover
+  grid-area: sidebar
   display: flex
   flex-direction: column
   position: fixed
@@ -16,8 +16,12 @@
   color: var(--color-fg-white)
   z-index: 999
   box-sizing: border-box
-  max-height: 100vh
+  overflow-y: auto
   box-shadow: var(--box-shadow-md)
+
+  @extend %bg-cover
+
+  @include transition-properties(width, $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
 
   @include overlay(rgba(0, 0, 0, 0.6))
 
@@ -25,17 +29,17 @@
     width: var(--sidebar-width-md)
 
   @include breakpoint.max(md)
-    width: var(--sidebar-width-sm)
     transform: translateX(-100%)
+    width: var(--sidebar-width-sm)
     opacity: var(--opacity-none)
     pointer-events: none
 
     @include transition-properties((transform, opacity), $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
 
-  body[data-sidebar="open"] &
-    transform: translateX(0)
-    opacity: var(--opacity-full)
-    pointer-events: auto
+    body[data-sidebar="open"] &
+      transform: translateX(0)
+      opacity: var(--opacity-full)
+      pointer-events: auto
 
 .sidebar-content
   flex: 1 1 auto

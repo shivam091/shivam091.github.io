@@ -1,4 +1,8 @@
+@use "abstracts/mixins/transition-properties" as *
+@use "abstracts/mixins/breakpoints" as breakpoint
+
 .site-footer
+  grid-area: footer
   text-align: center
   padding: var(--fluid-space-md)
   border-top: var(--border-default)
@@ -6,6 +10,12 @@
   color: var(--color-fg-default)
   max-width: 100%
   font-size: var(--font-size-sm)
+
+  @include transition-properties(transform, $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
+
+  @include breakpoint.max(md)
+    body[data-sidebar="open"] &
+      transform: translateX(var(--wrapper-offset-sm))
 
   .site-copyright
     font-size: var(--font-size-sm)
