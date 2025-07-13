@@ -363,7 +363,6 @@
 
   <h2 id="introduction" dir="auto">Introduction<a href="#introduction" class="heading-anchor" aria-label="Permalink: Introduction">#</a>
 </h2>
-
 <p dir="auto">Welcome to <strong>Part 2</strong> of the CSS Grid Fundamentals Series!</p>
 
 <p dir="auto">In <a href="/post/getting-started-with-css-grid">Part 1</a>, you laid the groundwork — learning how to define grid containers, set up tracks, and build basic layouts.</p>
@@ -381,13 +380,12 @@
 </li>
   <li>Spanning elements across rows and columns</li>
   <li>The hidden mechanics of <strong>explicit</strong> and <strong>implicit</strong> grids</li>
-</ul>
 
+</ul>
 <p dir="auto">These are the techniques that elevate your layouts from <em>functional</em> to <em>flexible and scalable</em> — especially in real-world, component-based frontend projects.</p>
 
 <h2 id="grid-template-areas" dir="auto">Grid Template Areas<a href="#grid-template-areas" class="heading-anchor" aria-label="Permalink: Grid Template Areas">#</a>
 </h2>
-
 <p dir="auto">The <code class="highlighter-rouge notranslate">grid-template-areas</code> property allows you to define your layout using named areas, making the grid structure more readable and easier to
 maintain—especially for complex page layouts. It acts as a visual blueprint of your design and simplifies the placement of grid items.</p>
 
@@ -601,20 +599,18 @@ using the <code class="highlighter-rouge notranslate">grid-area</code> property:
   <li>Named areas like <code class="highlighter-rouge notranslate">"header"</code>, <code class="highlighter-rouge notranslate">"sidebar"</code>, <code class="highlighter-rouge notranslate">"main"</code>, and <code class="highlighter-rouge notranslate">"footer"</code> are assigned using <code class="highlighter-rouge notranslate">grid-area</code>, allowing semantic HTML elements to be positioned without relying on source order.</li>
   <li>The column layout uses <code class="highlighter-rouge notranslate">1fr 2fr 2fr</code>, giving the sidebar less space than the main content.</li>
   <li>This is a clean, semantic approach to building responsive page sections—no floats or nested containers needed.</li>
-</ul>
 
+</ul>
 <p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/JodQLgg" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/JodQLgg" class="external-link">Try this on CodePen</a></p>
 
 <h2 id="aligning-grid-items" dir="auto">Aligning Grid Items<a href="#aligning-grid-items" class="heading-anchor" aria-label="Permalink: Aligning Grid Items">#</a>
 </h2>
-
 <p dir="auto">CSS Grid not only lets you organize content into rows and columns—it also gives you precise control over <strong>how items are aligned within their grid cells</strong>.</p>
 
 <p dir="auto">Alignment can be applied at two levels:</p>
 
 <h3 id="container-level-alignment" dir="auto">Container-Level Alignment<a href="#container-level-alignment" class="heading-anchor" aria-label="Permalink: Container-Level Alignment">#</a>
 </h3>
-
 <p dir="auto">These properties are applied to the <strong>grid container</strong> and affect <strong>all items</strong> inside the grid:</p>
 
 <ul dir="auto">
@@ -624,8 +620,8 @@ using the <code class="highlighter-rouge notranslate">grid-area</code> property:
 <strong>align-items</strong> — Aligns items <strong>vertically</strong> (block axis) within each cell.</li>
   <li>
 <strong>place-items</strong> — A shorthand for combining both <code class="highlighter-rouge notranslate">align-items</code> and <code class="highlighter-rouge notranslate">justify-items</code>.</li>
-</ul>
 
+</ul>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -752,7 +748,6 @@ using the <code class="highlighter-rouge notranslate">grid-area</code> property:
 
 <h3 id="item-level-alignment" dir="auto">Item-Level Alignment<a href="#item-level-alignment" class="heading-anchor" aria-label="Permalink: Item-Level Alignment">#</a>
 </h3>
-
 <p dir="auto">While container-level alignment applies to <strong>all grid items, item-level alignment</strong> lets you override alignment <strong>per individual item</strong>.
 These properties are set directly on the grid items themselves:</p>
 
@@ -763,8 +758,8 @@ These properties are set directly on the grid items themselves:</p>
 <strong>align-self</strong> — Aligns an item <strong>vertically</strong> (block axis) within its grid cell.</li>
   <li>
 <strong>place-self</strong> — A shorthand for combining <code class="highlighter-rouge notranslate">align-self</code> and <code class="highlighter-rouge notranslate">justify-self</code>.</li>
-</ul>
 
+</ul>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -895,7 +890,6 @@ These properties are set directly on the grid items themselves:</p>
 
 <h2 id="spanning-grid-items" dir="auto">Spanning Grid Items<a href="#spanning-grid-items" class="heading-anchor" aria-label="Permalink: Spanning Grid Items">#</a>
 </h2>
-
 <p dir="auto">CSS Grid allows items to span across multiple columns or rows using <code class="highlighter-rouge notranslate">grid-column</code> and <code class="highlighter-rouge notranslate">grid-row</code>. These properties let you define
 where an item starts and ends in the grid layout.</p>
 
@@ -1073,7 +1067,6 @@ where an item starts and ends in the grid layout.</p>
 
 <h3 id="shorthand-vs-longhand" dir="auto">Shorthand vs Longhand<a href="#shorthand-vs-longhand" class="heading-anchor" aria-label="Permalink: Shorthand vs Longhand">#</a>
 </h3>
-
 <p dir="auto">The <code class="highlighter-rouge notranslate">grid-column</code> and <code class="highlighter-rouge notranslate">grid-row</code> properties are shorthands for their respective <strong>start</strong> and <strong>end</strong> lines:</p>
 
 <div class="code-block" data-copy-code="">
@@ -1180,7 +1173,6 @@ where an item starts and ends in the grid layout.</p>
 
 <h3 id="shorthand-with-span" dir="auto">Shorthand with <code class="highlighter-rouge notranslate">span</code><a href="#shorthand-with-span" class="heading-anchor" aria-label="Permalink: Shorthand with span">#</a>
 </h3>
-
 <p dir="auto">Instead of specifying <strong>start</strong> and <strong>end</strong> lines manually, you can use the <code class="highlighter-rouge notranslate">span</code> keyword to make your code simpler and more flexible:</p>
 
 <div class="code-block" data-copy-code="">
@@ -1245,13 +1237,11 @@ where an item starts and ends in the grid layout.</p>
 
 <h2 id="grid-types" dir="auto">Grid Types<a href="#grid-types" class="heading-anchor" aria-label="Permalink: Grid Types">#</a>
 </h2>
-
 <p dir="auto">In CSS Grid, it’s important to understand the two types of grids: <strong>explicit</strong> and <strong>implicit</strong>. These define how grid tracks (rows and columns)
 are created—either by the developer or automatically by the browser.</p>
 
 <h3 id="explicit-grids" dir="auto">Explicit Grids<a href="#explicit-grids" class="heading-anchor" aria-label="Permalink: Explicit Grids">#</a>
 </h3>
-
 <p dir="auto">An <strong>explicit</strong> grid is one that you define yourself using properties like <code class="highlighter-rouge notranslate">grid-template-columns</code> and <code class="highlighter-rouge notranslate">grid-template-rows</code>.</p>
 
 <div class="code-block" data-copy-code="">
@@ -1375,7 +1365,6 @@ are created—either by the developer or automatically by the browser.</p>
 
 <h3 id="implicit-grids" dir="auto">Implicit Grids<a href="#implicit-grids" class="heading-anchor" aria-label="Permalink: Implicit Grids">#</a>
 </h3>
-
 <p dir="auto">In CSS Grid, if the number of items exceeds the explicitly defined rows or columns, the browser <strong>automatically creates additional tracks</strong> — these
 form what’s known as the <strong>implicit grid</strong>.</p>
 
@@ -1386,11 +1375,10 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 <strong>grid-auto-rows</strong> – defines height of implicit rows.</li>
   <li>
 <strong>grid-auto-columns</strong> – defines width of implicit columns.</li>
-</ul>
 
+</ul>
 <h4 id="example-implicit-rows" dir="auto">Example: Implicit Rows<a href="#example-implicit-rows" class="heading-anchor" aria-label="Permalink: Example: Implicit Rows">#</a>
 </h4>
-
 <p dir="auto">Let’s say you define only 2 rows, but add 5 items:</p>
 
 <div class="code-block" data-copy-code="">
@@ -1503,8 +1491,8 @@ form what’s known as the <strong>implicit grid</strong>.</p>
   <li>The first 4 items fill the 2×2 grid.</li>
   <li>The 5th item <strong>overflows</strong> the defined rows.</li>
   <li>So, the browser <strong>creates a 3rd row automatically</strong> — this is the <strong>implicit grid</strong>.</li>
-</ul>
 
+</ul>
 <p dir="auto"><strong>Visual Illustration</strong></p>
 
 <p dir="auto">This shows what happens when items overflow the defined rows (and new <strong>implicit rows</strong> are added):</p>
@@ -1571,7 +1559,6 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 
 <h4 id="example-implicit-columns" dir="auto">Example: Implicit Columns<a href="#example-implicit-columns" class="heading-anchor" aria-label="Permalink: Example: Implicit Columns">#</a>
 </h4>
-
 <p dir="auto">Now let’s say you only define rows, and use <strong>manual placement</strong> or <strong>grid-auto-flow: column</strong> to push items into new columns:</p>
 
 <div class="code-block" data-copy-code="">
@@ -1684,8 +1671,8 @@ form what’s known as the <strong>implicit grid</strong>.</p>
   <li>Items will flow <strong>across columns</strong>, not rows.</li>
   <li>Since no <code class="highlighter-rouge notranslate">grid-template-columns</code> is defined, the browser will <strong>generate columns implicitly</strong>.</li>
   <li>Each column will now be <strong>150px wide</strong> (because of <code class="highlighter-rouge notranslate">grid-auto-columns</code>).</li>
-</ul>
 
+</ul>
 <p dir="auto"><strong>Visual Illustration</strong></p>
 
 <p dir="auto">This shows what happens when items overflow the defined columns (or <code class="highlighter-rouge notranslate">grid-auto-flow: column</code> creates new <strong>implicit columns</strong>):</p>
@@ -1725,7 +1712,6 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 
 <h2 id="conclusion" dir="auto">Conclusion<a href="#conclusion" class="heading-anchor" aria-label="Permalink: Conclusion">#</a>
 </h2>
-
 <p dir="auto">You’ve now mastered the core tools that bring <strong>power, readability, and precision</strong> to CSS Grid layouts:</p>
 
 <ul dir="auto">
@@ -1733,16 +1719,16 @@ form what’s known as the <strong>implicit grid</strong>.</p>
   <li>Item alignment ensures pixel-perfect placement in every cell.</li>
   <li>Spanning techniques let you control flow and sizing beyond automatic placement.</li>
   <li>Explicit vs. implicit grids give you confidence when your layout grows unexpectedly.</li>
-</ul>
 
+</ul>
 <p dir="auto">Up next in <a href="/post/responsive-css-grid-layouts">Part 3 → Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</a>, we’ll unlock how to:</p>
 
 <ul dir="auto">
   <li>Use <code class="highlighter-rouge notranslate">fr</code>, <code class="highlighter-rouge notranslate">minmax()</code>, <code class="highlighter-rouge notranslate">auto-fit</code>, and <code class="highlighter-rouge notranslate">auto-fill</code> for fluid responsive tracks</li>
   <li>Pair grid with <strong>media</strong> and <strong>container</strong> queries</li>
   <li>Build <strong>robust, flexible layouts</strong> that adapt to any screen — no media query soup needed!</li>
-</ul>
 
+</ul>
   <nav class="series-nav" aria-label="Navigation for posts in series">
     <header class="series-nav-header">
       <span class="series-nav-icon" aria-hidden="true">📚</span>
