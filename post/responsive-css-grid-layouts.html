@@ -59,15 +59,135 @@
 
 </head>
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <defs>
+    <!-- Segment Definitions -->
+    <g id="seg-a"><rect x="4" y="0" width="16" height="4" rx="1" /></g>
+    <g id="seg-b"><rect x="20" y="4" width="4" height="16" rx="1" /></g>
+    <g id="seg-c"><rect x="20" y="20" width="4" height="16" rx="1" /></g>
+    <g id="seg-d"><rect x="4" y="36" width="16" height="4" rx="1" /></g>
+    <g id="seg-e"><rect x="0" y="20" width="4" height="16" rx="1" /></g>
+    <g id="seg-f"><rect x="0" y="4" width="4" height="16" rx="1" /></g>
+    <g id="seg-g"><rect x="4" y="18" width="16" height="4" rx="1" /></g>
+  </defs>
+
+  <!-- Digit 0 -->
+  <symbol id="digit-0" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="on" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="off" />
+  </symbol>
+
+  <!-- Digit 1 -->
+  <symbol id="digit-1" viewBox="0 0 24 40">
+    <use href="#seg-a" class="off" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="off" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="off" />
+    <use href="#seg-g" class="off" />
+  </symbol>
+
+  <!-- Digit 2 -->
+  <symbol id="digit-2" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="off" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="on" />
+    <use href="#seg-f" class="off" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 3 -->
+  <symbol id="digit-3" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="off" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 4 -->
+  <symbol id="digit-4" viewBox="0 0 24 40">
+    <use href="#seg-a" class="off" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="off" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 5 -->
+  <symbol id="digit-5" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="off" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 6 -->
+  <symbol id="digit-6" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="off" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="on" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 7 -->
+  <symbol id="digit-7" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="off" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="off" />
+    <use href="#seg-g" class="off" />
+  </symbol>
+
+  <!-- Digit 8 -->
+  <symbol id="digit-8" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="on" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 9 -->
+  <symbol id="digit-9" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+</svg>
+
+
   <div id="progress-bar"></div>
 
   <a href="#main-content" class="skip-link" role="link" data-skip-link>Skip to main content</a>
 
   <div class="page-wrapper">
-    <header class="site-header hiddden-header">
-      <h1>Site Header</h1>
-    </header>
-
     <button class="btn btn-primary sidebar-toggle" id="sidebar-toggle" aria-label="Toggle Sidebar" aria-controls="sidebar" aria-expanded="false">
   <span class="icon-bar top-bar"></span>
   <span class="icon-bar middle-bar"></span>
@@ -1456,9 +1576,8 @@ Use <strong><code class="highlighter-rouge notranslate">auto-fill</code></strong
     </ul>
   </nav>
 
-<div class="aa">
-    <div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
-      
+<div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
+    
   <div class="post-meta-item post-categories" role="list">
     <svg  class='icon icon-folder-open'  aria-hidden='true' focusable='false'>
   <use href="/assets/img/sprite.svg#icon-folder-open" />
@@ -1474,7 +1593,7 @@ Use <strong><code class="highlighter-rouge notranslate">auto-fill</code></strong
   </div>
 
 
-      
+    
   <div class="post-meta-item post-tags" role="list">
     <svg  class='icon icon-tag'  aria-hidden='true' focusable='false'>
   <use href="/assets/img/sprite.svg#icon-tag" />
@@ -1504,12 +1623,6 @@ Use <strong><code class="highlighter-rouge notranslate">auto-fill</code></strong
   </div>
 
 
-    </div>
-
-    <div>
-      👁️ # of hits:
-      <div class="retro-counter" data-counter></div>
-    </div>
   </div>
 
   <footer class="post-footer">
@@ -1563,6 +1676,12 @@ Use <strong><code class="highlighter-rouge notranslate">auto-fill</code></strong
 
       </section>
     </div>
+
+    <section class="hit-counter-container" aria-labelledby="hit-counter-title">
+      <h3 id="hit-counter-title" class="visually-hidden">Page view counter</h3>
+      <strong><em># of hits:</em></strong>
+      <div aria-label="Retro-style hit counter, showing that TOTAL_COUNT people have visited this page." class="hit-counter" tabindex="0" data-counter></div>
+    </section>
   </footer><nav class="navigation" aria-label="Post navigation">
   <a href="/post/mastering-css-grid" class="navigation-link" rel="previous">
     <span class="label">Older</span>
