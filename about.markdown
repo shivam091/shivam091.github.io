@@ -18,7 +18,6 @@ I’m a software engineer, freelancer, and lifelong learner passionate about bui
 
 ![Github Stats](https://github-readme-stats.vercel.app/api?username={{ site.author.github }}&count_private=true&show_icons=true&include_all_commits=true&show_owner=true)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username={{ site.author.github }}&hide=TeX&layout=compact&langs_count=8)
-
 ![Harshal's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username={{ site.author.github }}&color=000&bg_color=fff&line=0969da&point=1a7f37&area=true&area_color=59636e)
 
 ## Skills & Tools
@@ -45,6 +44,5 @@ Whether you're looking for a skilled developer to join your team, need help on y
 
 [![Gmail Badge](https://img.shields.io/badge/-{{ site.author.email }}-D14836?style=flat-square&logo=Gmail&logoColor=white&link=mailto:{{ site.author.email }})](mailto:{{ site.author.email }})
 [![GitHub Badge](https://img.shields.io/badge/-Harshal%20Ladhe-181717?style=flat-square&logo=github&logoColor=white&link=https://github.com/{{ site.author.github }})](https://github.com/{{ site.author.github }})
-
 [![LinkedIn Badge](https://img.shields.io/badge/-Harshal%20Ladhe-0A66C2?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTIwLjQ3LDJIMy41M0ExLjQ1LDEuNDUsMCwwLDAsMi4wNiwzLjQzVjIwLjU3QTEuNDUsMS40NSwwLDAsMCwzLjUzLDIySDIwLjQ3YTEuNDUsMS40NSwwLDAsMCwxLjQ3LTEuNDNWMy40M0ExLjQ1LDEuNDUsMCwwLDAsMjAuNDcsMlpNOC4wOSwxOC43NGgtM3YtOWgzWk02LjU5LDguNDhoMGExLjU2LDEuNTYsMCwxLDEsMC0zLjEyLDEuNTcsMS41NywwLDEsMSwwLDMuMTJaTTE4LjkxLDE4Ljc0aC0zVjEzLjkxYzAtMS4yMS0uNDMtMi0xLjUyLTJBMS42NSwxLjY1LDAsMCwwLDEyLjg1LDEzYTIsMiwwLDAsMC0uMS43M3Y1aC0zczAtOC4xOCwwLTloM1YxMUEzLDMsMCwwLDEsMTUuNDYsOS41YzIsMCwzLjQ1LDEuMjksMy40NSw0LjA2WiIvPjwvc3ZnPg==&logoColor=white&link=https://www.linkedin.com/in/{{ site.author.linkedin }})](https://www.linkedin.com/in/{{ site.author.linkedin }})
 [![Instagram Badge](https://img.shields.io/badge/-Harshal%20Ladhe-E4405F?style=flat-square&logo=instagram&logoColor=white&link=https://instagram.com/{{ site.author.instagram }})](https://instagram.com/{{ site.author.instagram }})

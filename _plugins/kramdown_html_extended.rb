@@ -11,7 +11,6 @@ module Kramdown
 
       def initialize(root, options)
         super
-
         @global_dir = GLOBAL_DIR
       end
 
@@ -23,32 +22,75 @@ module Kramdown
 
       def convert_p(el, opts)
         add_dir_attr(el)
-        super
+
+        %Q(<p #{html_attributes(el.attr)}>#{inner(el, opts)}</p>)
+      end
+
+      def convert_img(el, indent)
+        attrs = el.attr.dup
+        real_src = attrs.delete("src")
+        lqip_src = attrs.delete("lqip")
+        alt_text = ERB::Util.html_escape(el.attr["alt"] || "")
+
+        # Lazy loading image attributes
+        lazy_attrs = {
+          "alt" => alt_text,
+          "class" => "lazy-img",
+          "data-src" => real_src,
+          "loading" => "lazy"
+        }
+
+        lazy_attrs.merge!("src" => lqip_src, "data-lqip" => true) if lqip_src
+
+        # <img> and <noscript><img>
+        lazy_img = %Q(<img #{html_attributes(lazy_attrs)} />)
+        fallback_img = %Q(<noscript><img #{html_attributes(attrs.merge({"src" => real_src, "alt" => alt_text}))} /></noscript>)
+        combined_html = %Q(#{lazy_img}\n#{fallback_img})
+
+        format_as_indented_block_html("div", {"class" => "markdown-img-wrapper lazy-wrapper"}, combined_html, indent)
       end
 
       def convert_blockquote(el, opts)
         add_dir_attr(el)
-        super
+
+        %Q(
+          <blockquote #{html_attributes(el.attr)}>
+            #{inner(el, opts)}
+          </blockquote>
+        )
       end
 
       def convert_ul(el, opts)
         add_dir_attr(el)
-        super
+
+        %Q(
+          <ul #{html_attributes(el.attr)}>
+            #{inner(el, opts)}
+          </ul>
+        )
       end
 
       def convert_ol(el, opts)
         add_dir_attr(el)
-        super
+
+        %Q(
+          <ol #{html_attributes(el.attr)}>
+            #{inner(el, opts)}
+          </ol>
+        )
       end
 
       def convert_header(el, indent)
         add_dir_attr(el)
-        super
+        level = output_header_level(el.options[:level])
+
+        %Q(<h#{level} #{html_attributes(el.attr)}>#{inner(el, indent)}</h#{level}>)
       end
 
       def convert_codespan(el, opts)
         el.attr["class"] = append_class(el.attr["class"], "highlighter-rouge notranslate")
-        super
+
+        %Q(<code #{html_attributes(el.attr)}>#{escape_html(el.value)}</code>)
       end
 
       def convert_table(el, opts)
@@ -56,7 +98,12 @@ module Kramdown
         el.attr["role"] = "table"
         el.attr["class"] = append_class(el.attr["class"], "markdown-table")
 
-        super
+        content =
+        %Q(
+          <table #{html_attributes(el.attr)}>
+            #{inner(el, opts)}
+          </table>
+        )
       end
 
       def convert_a(el, opts)
@@ -69,7 +116,7 @@ module Kramdown
           el.attr["class"] = append_class(el.attr["class"], "external-link")
         end
 
-        super
+        %Q(<a #{html_attributes(el.attr)}>#{inner(el, opts)}</a>)
       end
 
       def convert_footnote(el, _indent)

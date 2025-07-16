@@ -16,8 +16,9 @@ permalink: /series
       <a href="{{ series.url | relative_url }}" class="card-link" aria-label="Read parts of series: {{ series.title }}">
         {% if cover_image %}
           <div class="card-media">
-            <div class="card-media-inner">
-              <img src="{{ cover_image.path | relative_url }}" class="img-fluid"
+            <div class="card-media-inner lazy-wrapper">
+              <img data-src="{{ cover_image.path | relative_url }}" class="img-fluid" loading="lazy"
+                   {% if cover_image.lqip %}src="{{ cover_image.lqip }}" data-lqip="true"{% endif %}
                    {% if cover_image.alt %}alt="{{ cover_image.alt }}"{% else %}alt="Cover image for series: {{ series.title }}"{% endif %}>
             </div>
           </div>

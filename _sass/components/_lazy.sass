@@ -1,0 +1,46 @@
+@use "abstracts/mixins/transition-properties" as *
+@use "abstracts/animations/fade-in" as *
+@use "abstracts/animations/shimmer" as *
+
+.shimmer
+  position: relative
+  overflow: hidden
+  background: var(--gradient-bg-shimmer)
+
+  &::before
+    content: ""
+    position: absolute
+    inset: 0
+    background: var(--gradient-bg-shimmer-pseudo)
+    animation: shimmer var(--motion-duration-ultra-slow) var(--motion-easing-linear) infinite
+    border-radius: inherit
+    pointer-events: none
+    z-index: 1
+
+.lazy-wrapper
+  @include transition-properties(background-color, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+
+  img
+    z-index: 2
+
+    &.shadow
+      box-shadow: var(--box-shadow-md)
+
+    &[data-lqip="true"]
+      &.lazy-loading
+        filter: blur(var(--blur-md))
+
+      &.lazy-loaded,
+      &.lazy-error
+        filter: none
+        animation: fade-in var(--motion-duration-default) var(--motion-easing-in)
+
+    &:not([data-lqip="true"])
+      &.lazy-loading
+        opacity: var(--opacity-none)
+        @include transition-properties(opacity, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+
+      &.lazy-loaded,
+      &.lazy-error
+        background-color: transparent !important
+        animation: fade-in var(--motion-duration-default) var(--motion-easing-in)
