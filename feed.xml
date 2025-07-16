@@ -1,50 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-07-16T12:02:24+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Getting Started with CSS Grid: A Beginner’s Guide to 2D Layouts</title><link href="https://shivam091.github.io/post/getting-started-with-css-grid" rel="alternate" type="text/html" title="Getting Started with CSS Grid: A Beginner’s Guide to 2D Layouts" /><published>2025-07-09T15:20:00+05:30</published><updated>2025-07-10T19:06:42+05:30</updated><id>https://shivam091.github.io/post/getting-started-with-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/getting-started-with-css-grid"><![CDATA[<h2  id="the-power-of-css-grid-for-layouts" dir="auto">The Power of CSS Grid for Layouts</h2>
-<p dir="auto">Modern web layouts are more dynamic and complex than ever. Whether it’s a blog, dashboard, or product grid, developers need layout systems that are both powerful and easy to use.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shivam091.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shivam091.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-07-16T13:07:17+05:30</updated><id>https://shivam091.github.io/feed.xml</id><title type="html">Harshal LADHE</title><subtitle>Software Engineer | Freelancer | Learner</subtitle><author><name>Harshal LADHE</name><email>harshal.ladhe.1@gmail.com</email></author><entry><title type="html">Getting Started with CSS Grid: A Beginner’s Guide to 2D Layouts</title><link href="https://shivam091.github.io/post/getting-started-with-css-grid" rel="alternate" type="text/html" title="Getting Started with CSS Grid: A Beginner’s Guide to 2D Layouts" /><published>2025-07-09T15:20:00+05:30</published><updated>2025-07-10T19:06:42+05:30</updated><id>https://shivam091.github.io/post/getting-started-with-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/getting-started-with-css-grid"><![CDATA[<h2  id="the-power-of-css-grid-for-layouts" dir="auto">The Power of CSS Grid for Layouts</h2>
+<p  dir="auto">Modern web layouts are more dynamic and complex than ever. Whether it’s a blog, dashboard, or product grid, developers need layout systems that are both powerful and easy to use.</p>
+<p  dir="auto">That’s where <strong>CSS Grid</strong> shines. Unlike Flexbox, which works in only one direction at a time, CSS Grid enables true two-dimensional layouts — rows and columns — without extra hacks or hassles.</p>
+<p  dir="auto">This is the first post in a three-part series where we’ll break down CSS Grid from the ground up. You’ll learn the core concepts, understand key terminology, and build your first layout from scratch.</p>
+<p  dir="auto">By the end of this post, you’ll be able to:</p>
 
-<p dir="auto">That’s where <strong>CSS Grid</strong> shines. Unlike Flexbox, which works in only one direction at a time, CSS Grid enables true two-dimensional layouts — rows and columns — without extra hacks or hassles.</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">Define a grid container and grid items</p></li>
+  <li><p  dir="auto">Set up column and row templates</p></li>
+  <li><p  dir="auto">Use fractional units and spacing with <code  class="highlighter-rouge notranslate">gap</code></p></li>
+  <li><p  dir="auto">Build simple, scalable 2D layouts</p></li>
 
-<p dir="auto">This is the first post in a three-part series where we’ll break down CSS Grid from the ground up. You’ll learn the core concepts, understand key terminology, and build your first layout from scratch.</p>
-
-<p dir="auto">By the end of this post, you’ll be able to:</p>
-
-<ul  dir="auto">
-  <li>Define a grid container and grid items</li>
-  <li>Set up column and row templates</li>
-  <li>Use fractional units and spacing with <code  class="highlighter-rouge notranslate">gap</code></li>
-  <li>Build simple, scalable 2D layouts</li>
-
-</ul>
-<p dir="auto">Let’s dive in.</p>
-
+          </ul>
+        
+<p  dir="auto">Let’s dive in.</p>
 <h2  id="why-css-grid" dir="auto">Why CSS Grid?</h2>
-<p dir="auto">Modern websites demand layout techniques that are <strong>flexible</strong>, <strong>responsive</strong>, and <strong>easy to maintain</strong>. Before Grid, developers relied on:</p>
+<p  dir="auto">Modern websites demand layout techniques that are <strong>flexible</strong>, <strong>responsive</strong>, and <strong>easy to maintain</strong>. Before Grid, developers relied on:</p>
 
-<ul  dir="auto">
-  <li><code  class="highlighter-rouge notranslate">float</code>, <code  class="highlighter-rouge notranslate">inline-block</code>, or table-based layouts,</li>
-  <li>JavaScript (or jQuery) to measure and equalize heights,</li>
-  <li>Flexbox for 1D layouts, which wasn’t always ideal for grid-like structures.</li>
+          <ul  dir="auto">
+              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">float</code>, <code  class="highlighter-rouge notranslate">inline-block</code>, or table-based layouts,</p></li>
+  <li><p  dir="auto">JavaScript (or jQuery) to measure and equalize heights,</p></li>
+  <li><p  dir="auto">Flexbox for 1D layouts, which wasn’t always ideal for grid-like structures.</p></li>
 
-</ul>
-<p dir="auto">But none of these offered full control over <strong>2D layouts</strong>.</p>
-
-<p dir="auto">That’s where <strong>CSS Grid</strong> shines. Here’s why it’s a game changer:</p>
-
+          </ul>
+        
+<p  dir="auto">But none of these offered full control over <strong>2D layouts</strong>.</p>
+<p  dir="auto">That’s where <strong>CSS Grid</strong> shines. Here’s why it’s a game changer:</p>
 <h3  id="two-dimensional-power" dir="auto">Two-Dimensional Power</h3>
-<p dir="auto"><strong>Flexbox</strong> handles layout in <strong>one direction</strong> at a time — rows or columns. But <strong>CSS Grid</strong> enables layouts in <strong>both axes simultaneously</strong>.</p>
+<p  dir="auto"><strong>Flexbox</strong> handles layout in <strong>one direction</strong> at a time — rows or columns. But <strong>CSS Grid</strong> enables layouts in <strong>both axes simultaneously</strong>.</p>
+<p  dir="auto"><strong>Use case examples:</strong></p>
 
-<p dir="auto"><strong>Use case examples:</strong></p>
+          <ul  dir="auto">
+              <li><p  dir="auto">Product galleries</p></li>
+  <li><p  dir="auto">Dashboards</p></li>
+  <li><p  dir="auto">Magazine-style articles</p></li>
+  <li><p  dir="auto">Calendars</p></li>
+  <li><p  dir="auto">Full-page app layouts</p></li>
 
-<ul  dir="auto">
-  <li>Product galleries</li>
-  <li>Dashboards</li>
-  <li>Magazine-style articles</li>
-  <li>Calendars</li>
-  <li>Full-page app layouts</li>
-
-</ul>
+          </ul>
+        
 <h3  id="declarative-clean-predictable" dir="auto">Declarative, Clean, Predictable</h3>
-<p dir="auto">You define what the layout <strong>should look like</strong>, not how elements get there.</p>
-
+<p  dir="auto">You define what the layout <strong>should look like</strong>, not how elements get there.</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -89,33 +84,32 @@
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">The code is <strong>descriptive</strong>, like a wireframe.</p>
-
+<p  dir="auto">The code is <strong>descriptive</strong>, like a wireframe.</p>
 <h3  id="layout-without-extra-markup" dir="auto">Layout Without Extra Markup</h3>
-<p dir="auto">With floats or Flexbox, you often need wrapper <code  class="highlighter-rouge notranslate">div</code>s, utility classes, or nesting. Grid reduces that. Your HTML becomes <strong>cleaner</strong>, while CSS handles layout logic in one place.</p>
-
+<p  dir="auto">With floats or Flexbox, you often need wrapper <code  class="highlighter-rouge notranslate">div</code>s, utility classes, or nesting. Grid reduces that. Your HTML becomes <strong>cleaner</strong>, while CSS handles layout logic in one place.</p>
 <h3  id="built-in-layout-superpowers" dir="auto">Built-In Layout Superpowers</h3>
-<p dir="auto">CSS Grid brings native support for layout patterns that once required complex CSS tricks—or even JavaScript—to implement.</p>
+<p  dir="auto">CSS Grid brings native support for layout patterns that once required complex CSS tricks—or even JavaScript—to implement.</p>
 
-<ul  dir="auto">
-  <li>Gaps (<code  class="highlighter-rouge notranslate">gap</code>, <code  class="highlighter-rouge notranslate">row-gap</code>, <code  class="highlighter-rouge notranslate">column-gap</code>)</li>
-  <li>Auto item placement</li>
-  <li>Item spanning (<code  class="highlighter-rouge notranslate">grid-column</code>, <code  class="highlighter-rouge notranslate">grid-row</code>)</li>
-  <li>Template areas with <strong>named regions</strong></li>
-  <li>Layered grid items</li>
+          <ul  dir="auto">
+              <li><p  dir="auto">Gaps (<code  class="highlighter-rouge notranslate">gap</code>, <code  class="highlighter-rouge notranslate">row-gap</code>, <code  class="highlighter-rouge notranslate">column-gap</code>)</p></li>
+  <li><p  dir="auto">Auto item placement</p></li>
+  <li><p  dir="auto">Item spanning (<code  class="highlighter-rouge notranslate">grid-column</code>, <code  class="highlighter-rouge notranslate">grid-row</code>)</p></li>
+  <li><p  dir="auto">Template areas with <strong>named regions</strong></p></li>
+  <li><p  dir="auto">Layered grid items</p></li>
 
-</ul>
+          </ul>
+        
 <h3  id="naturally-responsive" dir="auto">Naturally Responsive</h3>
-<p dir="auto">CSS Grid thrives in responsive design. With units like:</p>
+<p  dir="auto">CSS Grid thrives in responsive design. With units like:</p>
 
-<ul  dir="auto">
-  <li><code  class="highlighter-rouge notranslate">fr</code> (fraction of available space)</li>
-  <li><code  class="highlighter-rouge notranslate">minmax()</code></li>
-  <li><code  class="highlighter-rouge notranslate">auto-fit</code>, <code  class="highlighter-rouge notranslate">auto-fill</code></li>
+          <ul  dir="auto">
+              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">fr</code> (fraction of available space)</p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">minmax()</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto-fit</code>, <code  class="highlighter-rouge notranslate">auto-fill</code></p></li>
 
-</ul>
-<p dir="auto">…you can build layouts that <strong>adapt seamlessly</strong>, without needing extra breakpoints.</p>
-
+          </ul>
+        
+<p  dir="auto">…you can build layouts that <strong>adapt seamlessly</strong>, without needing extra breakpoints.</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -154,26 +148,28 @@
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">Try doing that with Flexbox alone 😅</p>
+<p  dir="auto">Try doing that with Flexbox alone 😅</p>
 
-<blockquote  dir="auto">
-  <p dir="auto">Not sure what does <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">auto-fit</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, or <code  class="highlighter-rouge notranslate">auto-fill</code> mean?<br />
+          <blockquote  dir="auto">
+            <p  dir="auto">Not sure what does <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">auto-fit</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, or <code  class="highlighter-rouge notranslate">auto-fill</code> mean?<br />
 Don’t worry — we’ll cover all of these in depth in <strong><a  href="/post/responsive-css-grid-layouts">Part 3 → Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</a></strong>.</p>
-
-</blockquote>
+          </blockquote>
+        
 <h3  id="component-friendly" dir="auto">Component-Friendly</h3>
-<p dir="auto">In frameworks like React or Vue, <strong>Grid makes layout self-contained</strong> — no dependency on external wrappers or parents. It’s great for reusable components like:</p>
+<p  dir="auto">In frameworks like React or Vue, <strong>Grid makes layout self-contained</strong> — no dependency on external wrappers or parents. It’s great for reusable components like:</p>
 
-<ul  dir="auto">
-  <li>Cards</li>
-  <li>Sidebars</li>
-  <li>Media objects</li>
-  <li>Complex page sections</li>
+          <ul  dir="auto">
+              <li><p  dir="auto">Cards</p></li>
+  <li><p  dir="auto">Sidebars</p></li>
+  <li><p  dir="auto">Media objects</p></li>
+  <li><p  dir="auto">Complex page sections</p></li>
 
-</ul>
+          </ul>
+        
 <h2  id="grid-vs-flexbox-when-to-use-what" dir="auto">Grid vs. Flexbox: When to Use What?</h2>
-<table  dir="auto" role="table" class="markdown-table">
-  <thead>
+
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
     <tr>
       <th>Scenario</th>
       <th style="text-align: center">Use Grid</th>
@@ -208,12 +204,14 @@ Don’t worry — we’ll cover all of these in depth in <strong><a  href="/post
     </tr>
   </tbody>
 
-</table>
-<blockquote  dir="auto">
-  <p dir="auto"><strong>Summary</strong>: Use <strong>flexbox</strong> for 1D layout (e.g., navbars, button groups) and use <strong>grid</strong> for 2D layout (e.g., pages, cards, dashboard panels)
-and you can always combine them!</p>
+          </table>
+        
 
-</blockquote>
+          <blockquote  dir="auto">
+            <p  dir="auto"><strong>Summary</strong>: Use <strong>flexbox</strong> for 1D layout (e.g., navbars, button groups) and use <strong>grid</strong> for 2D layout (e.g., pages, cards, dashboard panels)
+and you can always combine them!</p>
+          </blockquote>
+        
 <details>
   <summary>When <em>not</em> to use CSS Grid?</summary>
   <ul>
@@ -224,47 +222,53 @@ and you can always combine them!</p>
 </details>
 
 <h2  id="basic-terminology" dir="auto">Basic Terminology</h2>
-<ul  dir="auto">
-  <li><strong>Grid Container:</strong> The parent element on which <code  class="highlighter-rouge notranslate">display: grid</code> or <code  class="highlighter-rouge notranslate">display: inline-grid</code> is applied. It defines the grid context for its children.</li>
-  <li><strong>Grid Item:</strong> The direct child elements of the grid container. These are placed and aligned within the grid layout.</li>
-  <li><strong>Grid Line:</strong> The horizontal or vertical dividing lines that separate grid tracks. They’re used for placing grid items.</li>
-  <li><strong>Grid Track:</strong> A row or column in the grid. It’s the space between two adjacent grid lines.</li>
-  <li><strong>Grid Cell:</strong> The smallest unit of a grid layout — the space at the intersection of a single row and column.</li>
 
-</ul>
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>Grid Container:</strong> The parent element on which <code  class="highlighter-rouge notranslate">display: grid</code> or <code  class="highlighter-rouge notranslate">display: inline-grid</code> is applied. It defines the grid context for its children.</p></li>
+  <li><p  dir="auto"><strong>Grid Item:</strong> The direct child elements of the grid container. These are placed and aligned within the grid layout.</p></li>
+  <li><p  dir="auto"><strong>Grid Line:</strong> The horizontal or vertical dividing lines that separate grid tracks. They’re used for placing grid items.</p></li>
+  <li><p  dir="auto"><strong>Grid Track:</strong> A row or column in the grid. It’s the space between two adjacent grid lines.</p></li>
+  <li><p  dir="auto"><strong>Grid Cell:</strong> The smallest unit of a grid layout — the space at the intersection of a single row and column.</p></li>
+
+          </ul>
+        
 <h2  id="building-layouts-with-css-grid" dir="auto">Building Layouts with CSS Grid</h2>
 <h3  id="fundamental-properties" dir="auto">Fundamental Properties</h3>
-<ul  dir="auto">
-  <li><strong>display: grid;</strong> — Converts an element into a grid container, enabling grid-based layout for its direct children.</li>
-  <li><strong>grid-template-columns</strong> — Defines the number and width of columns in the grid. You can specify fixed sizes, percentages, or use flexible units
-like fr (fraction of available space).</li>
-  <li><strong>grid-template-rows</strong> — Defines the number and height of rows in the grid, using the same unit options as columns.</li>
-  <li><strong>gap (or row-gap and column-gap)</strong> — Sets the spacing between rows and columns of grid items. A shorthand that simplifies layout spacing.</li>
-  <li><strong>grid-column / grid-row</strong> — Specifies how many columns or rows an item should span, or where it should start and end within the grid.</li>
 
-</ul>
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>display: grid;</strong> — Converts an element into a grid container, enabling grid-based layout for its direct children.</p></li>
+  <li><p  dir="auto"><strong>grid-template-columns</strong> — Defines the number and width of columns in the grid. You can specify fixed sizes, percentages, or use flexible units
+like fr (fraction of available space).</p></li>
+  <li><p  dir="auto"><strong>grid-template-rows</strong> — Defines the number and height of rows in the grid, using the same unit options as columns.</p></li>
+  <li><p  dir="auto"><strong>gap (or row-gap and column-gap)</strong> — Sets the spacing between rows and columns of grid items. A shorthand that simplifies layout spacing.</p></li>
+  <li><p  dir="auto"><strong>grid-column / grid-row</strong> — Specifies how many columns or rows an item should span, or where it should start and end within the grid.</p></li>
+
+          </ul>
+        
 <h3  id="column-and-row-templates" dir="auto">Column and Row Templates</h3>
-<p dir="auto">CSS Grid gives you precise control over your layout’s structure using the <code  class="highlighter-rouge notranslate">grid-template-columns</code> and <code  class="highlighter-rouge notranslate">grid-template-rows</code> properties.</p>
+<p  dir="auto">CSS Grid gives you precise control over your layout’s structure using the <code  class="highlighter-rouge notranslate">grid-template-columns</code> and <code  class="highlighter-rouge notranslate">grid-template-rows</code> properties.</p>
 
-<ul  dir="auto">
-  <li><strong>grid-template-columns</strong> — Defines the number and width of columns in the grid.</li>
-  <li><strong>grid-template-rows</strong> — Defines the number and height of rows.</li>
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>grid-template-columns</strong> — Defines the number and width of columns in the grid.</p></li>
+  <li><p  dir="auto"><strong>grid-template-rows</strong> — Defines the number and height of rows.</p></li>
 
-</ul>
-<p dir="auto">Each value you specify represents the size of a single column or row, ordered left-to-right (for columns) or top-to-bottom (for rows). You can use:</p>
+          </ul>
+        
+<p  dir="auto">Each value you specify represents the size of a single column or row, ordered left-to-right (for columns) or top-to-bottom (for rows). You can use:</p>
 
-<ul  dir="auto">
-  <li>Flexible units like <code  class="highlighter-rouge notranslate">fr</code> (fraction of available space),</li>
-  <li>Fixed units like <code  class="highlighter-rouge notranslate">px</code> or <code  class="highlighter-rouge notranslate">em</code>,</li>
-  <li>keywords like <code  class="highlighter-rouge notranslate">auto</code>, which sizes based on content.</li>
+          <ul  dir="auto">
+              <li><p  dir="auto">Flexible units like <code  class="highlighter-rouge notranslate">fr</code> (fraction of available space),</p></li>
+  <li><p  dir="auto">Fixed units like <code  class="highlighter-rouge notranslate">px</code> or <code  class="highlighter-rouge notranslate">em</code>,</p></li>
+  <li><p  dir="auto">keywords like <code  class="highlighter-rouge notranslate">auto</code>, which sizes based on content.</p></li>
 
-</ul>
-<blockquote  dir="auto">
-  <p dir="auto">💡 <strong>Tip:</strong> You can use <code  class="highlighter-rouge notranslate">repeat()</code> in <code  class="highlighter-rouge notranslate">grid-template-columns</code> to reduce repetition: <code  class="highlighter-rouge notranslate">repeat(3, 1fr)</code></p>
+          </ul>
+        
 
-</blockquote>
-<p dir="auto">Here’s an example:</p>
-
+          <blockquote  dir="auto">
+            <p  dir="auto">💡 <strong>Tip:</strong> You can use <code  class="highlighter-rouge notranslate">repeat()</code> in <code  class="highlighter-rouge notranslate">grid-template-columns</code> to reduce repetition: <code  class="highlighter-rouge notranslate">repeat(3, 1fr)</code></p>
+          </blockquote>
+        
+<p  dir="auto">Here’s an example:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -323,8 +327,7 @@ like fr (fraction of available space).</li>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">Here’s the HTML structure:</p>
-
+<p  dir="auto">Here’s the HTML structure:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -383,108 +386,105 @@ like fr (fraction of available space).</li>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto"><strong>Explanation:</strong></p>
+<p  dir="auto"><strong>Explanation:</strong></p>
 
-<ul  dir="auto">
+          <ul  dir="auto">
+              <li>
+<p  dir="auto">The grid has three columns: the first and third are equal in width, while the middle column is twice as wide.</p>  </li>
   <li>
-    <p dir="auto">The grid has three columns: the first and third are equal in width, while the middle column is twice as wide.</p>
-  </li>
-  <li>
-    <p dir="auto">The rows are defined as:</p>
-<ul  dir="auto">
-      <li><code  class="highlighter-rouge notranslate">150px</code> → a fixed-height top row</li>
-      <li><code  class="highlighter-rouge notranslate">auto</code> → a middle row that adjusts to content</li>
-      <li><code  class="highlighter-rouge notranslate">75px</code> → a fixed-height footer row</li>
+<p  dir="auto">The rows are defined as:</p>
+          <ul  dir="auto">
+                  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">150px</code> → a fixed-height top row</p></li>
+      <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto</code> → a middle row that adjusts to content</p></li>
+      <li><p  dir="auto"><code  class="highlighter-rouge notranslate">75px</code> → a fixed-height footer row</p></li>
 
-</ul>  </li>
+          </ul>
+          </li>
 
-</ul>
-<p dir="auto">This layout gives you both <strong>predictability</strong> and <strong>flexibility</strong>, especially when paired with responsive design techniques.</p>
-
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/raVEvMb" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEvMb" class="external-link">Try this on CodePen</a></p>
-
+          </ul>
+        
+<p  dir="auto">This layout gives you both <strong>predictability</strong> and <strong>flexibility</strong>, especially when paired with responsive design techniques.</p>
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/raVEvMb" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEvMb" class="external-link">Try this on CodePen</a></p>
 <h2  id="frequently-asked-questions-faq" dir="auto">Frequently Asked Questions (FAQ)</h2>
 <h3  id="when-should-i-use-grid-over-flexbox" dir="auto">When should I use Grid over Flexbox?</h3>
-<p dir="auto">Use <strong>CSS Grid</strong> when:</p>
-<ul  dir="auto">
-  <li>You need both rows and columns (2D layout).</li>
-  <li>You want consistent alignment across an entire section or page.</li>
-  <li>You’re building full-page layouts, dashboards, or card grids.</li>
+<p  dir="auto">Use <strong>CSS Grid</strong> when:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">You need both rows and columns (2D layout).</p></li>
+  <li><p  dir="auto">You want consistent alignment across an entire section or page.</p></li>
+  <li><p  dir="auto">You’re building full-page layouts, dashboards, or card grids.</p></li>
 
-</ul>
-<p dir="auto">Use <strong>Flexbox</strong> when:</p>
-<ul  dir="auto">
-  <li>You’re arranging items in a single row or column.</li>
-  <li>You need precise content alignment or small-scale layout logic.</li>
+          </ul>
+        
+<p  dir="auto">Use <strong>Flexbox</strong> when:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">You’re arranging items in a single row or column.</p></li>
+  <li><p  dir="auto">You need precise content alignment or small-scale layout logic.</p></li>
 
-</ul>
+          </ul>
+        
 <hr />
 
 <h3  id="is-css-grid-responsive" dir="auto">Is CSS Grid responsive?</h3>
-<p dir="auto">Absolutely! Grid works beautifully with:</p>
-<ul  dir="auto">
-  <li>Units like <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">auto</code>, and <code  class="highlighter-rouge notranslate">minmax()</code></li>
-  <li>Functions like <code  class="highlighter-rouge notranslate">auto-fit</code> and <code  class="highlighter-rouge notranslate">auto-fill</code></li>
-  <li>Media queries and even container queries</li>
+<p  dir="auto">Absolutely! Grid works beautifully with:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">Units like <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">auto</code>, and <code  class="highlighter-rouge notranslate">minmax()</code></p></li>
+  <li><p  dir="auto">Functions like <code  class="highlighter-rouge notranslate">auto-fit</code> and <code  class="highlighter-rouge notranslate">auto-fill</code></p></li>
+  <li><p  dir="auto">Media queries and even container queries</p></li>
 
-</ul>
-<blockquote  dir="auto">
-  <p dir="auto">📌 <strong>Tip:</strong> We’ll explore responsive Grid techniques in depth in <a  href="/post/responsive-css-grid-layouts">Part 3 → Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</a>.</p>
+          </ul>
+        
 
-</blockquote>
+          <blockquote  dir="auto">
+            <p  dir="auto">📌 <strong>Tip:</strong> We’ll explore responsive Grid techniques in depth in <a  href="/post/responsive-css-grid-layouts">Part 3 → Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</a>.</p>
+          </blockquote>
+        
 <hr />
 
 <h3  id="does-css-grid-work-in-all-browsers" dir="auto">Does CSS Grid work in all browsers?</h3>
-<p dir="auto">✅ <strong>Yes</strong>, all modern browsers fully support CSS Grid.<br />
+<p  dir="auto">✅ <strong>Yes</strong>, all modern browsers fully support CSS Grid.<br />
 ⚠️ <strong>IE11</strong> supports an older version, but it’s largely deprecated and not recommended for new projects.</p>
-
 <h2  id="conclusion" dir="auto">Conclusion</h2>
-<p dir="auto">🎉 Congratulations — you’ve just taken your first steps into the world of CSS Grid!</p>
+<p  dir="auto">🎉 Congratulations — you’ve just taken your first steps into the world of CSS Grid!</p>
+<p  dir="auto">Here’s a quick recap of what you’ve learned in this post:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">Why CSS Grid is a game changer for modern layouts</p></li>
+  <li><p  dir="auto">The key differences between Grid and Flexbox</p></li>
+  <li><p  dir="auto">Core terminology: containers, items, tracks, and lines</p></li>
+  <li><p  dir="auto">How to define columns and rows using units like <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">px</code>, and <code  class="highlighter-rouge notranslate">auto</code></p></li>
+  <li><p  dir="auto">How to build a clean, semantic, and scalable 2D layout from scratch</p></li>
 
-<p dir="auto">Here’s a quick recap of what you’ve learned in this post:</p>
-<ul  dir="auto">
-  <li>Why CSS Grid is a game changer for modern layouts</li>
-  <li>The key differences between Grid and Flexbox</li>
-  <li>Core terminology: containers, items, tracks, and lines</li>
-  <li>How to define columns and rows using units like <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">px</code>, and <code  class="highlighter-rouge notranslate">auto</code></li>
-  <li>How to build a clean, semantic, and scalable 2D layout from scratch</li>
+          </ul>
+        
+<p  dir="auto">You now have a solid foundation to build upon — and this is just the beginning.</p>
+<p  dir="auto">🔗 <strong>Up Next (Part 2):</strong> <a  href="/post/mastering-css-grid">Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning</a> — we’ll dive deeper into advanced techniques like:</p>
 
-</ul>
-<p dir="auto">You now have a solid foundation to build upon — and this is just the beginning.</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">Naming and using grid areas</p></li>
+  <li><p  dir="auto">Aligning and justifying items</p></li>
+  <li><p  dir="auto">Spanning items across rows and columns</p></li>
+  <li><p  dir="auto">Understanding explicit vs. implicit grids</p></li>
 
-<p dir="auto">🔗 <strong>Up Next (Part 2):</strong> <a  href="/post/mastering-css-grid">Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning</a> — we’ll dive deeper into advanced techniques like:</p>
+          </ul>
+        
+<p  dir="auto">Stay tuned — you’re just one step away from turning your layout skills from good to great 💪</p>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="beginner" /><category term="layout" /><category term="css" /><category term="grid" /><category term="css-grid" /><category term="layout" /><category term="web design" /><category term="frontend" /><category term="2d-layouts" /><summary type="html"><![CDATA[A beginner-friendly introduction to CSS Grid that covers core concepts and guides you through building your first 2D layouts with real-world examples.]]></summary></entry><entry><title type="html">Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning</title><link href="https://shivam091.github.io/post/mastering-css-grid" rel="alternate" type="text/html" title="Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning" /><published>2025-07-09T15:20:00+05:30</published><updated>2025-07-10T19:05:25+05:30</updated><id>https://shivam091.github.io/post/mastering-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/mastering-css-grid"><![CDATA[<h2  id="introduction" dir="auto">Introduction</h2>
+<p  dir="auto">Welcome to <strong>Part 2</strong> of the CSS Grid Fundamentals Series!</p>
+<p  dir="auto">In <a  href="/post/getting-started-with-css-grid">Part 1</a>, you laid the groundwork — learning how to define grid containers, set up tracks, and build basic layouts.</p>
+<p  dir="auto">Now, it’s time to go beyond the basics.</p>
+<p  dir="auto"><strong>Think of CSS Grid as your layout canvas</strong> — and in this part, you’ll pick up new tools like a <strong>ruler, compass, and highlighter</strong> to draw structure, alignment, and flow with precision.</p>
+<p  dir="auto">We’ll cover:</p>
 
-<ul  dir="auto">
-  <li>Naming and using grid areas</li>
-  <li>Aligning and justifying items</li>
-  <li>Spanning items across rows and columns</li>
-  <li>Understanding explicit vs. implicit grids</li>
+          <ul  dir="auto">
+              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">grid-template-areas</code> for clean, visual layout structure</p></li>
+  <li><p  dir="auto">Alignment techniques using <code  class="highlighter-rouge notranslate">place-items</code> and <code  class="highlighter-rouge notranslate">place-self</code></p></li>
+  <li><p  dir="auto">Spanning elements across rows and columns</p></li>
+  <li><p  dir="auto">The hidden mechanics of <strong>explicit</strong> and <strong>implicit</strong> grids</p></li>
 
-</ul>
-<p dir="auto">Stay tuned — you’re just one step away from turning your layout skills from good to great 💪</p>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="beginner" /><category term="layout" /><category term="css" /><category term="grid" /><category term="css-grid" /><category term="layout" /><category term="web design" /><category term="frontend" /><category term="2d-layouts" /><summary type="html"><![CDATA[A beginner-friendly introduction to CSS Grid that covers core concepts and guides you through building your first 2D layouts with real-world examples.]]></summary></entry><entry><title type="html">Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning</title><link href="https://shivam091.github.io/post/mastering-css-grid" rel="alternate" type="text/html" title="Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning" /><published>2025-07-09T15:20:00+05:30</published><updated>2025-07-10T19:05:25+05:30</updated><id>https://shivam091.github.io/post/mastering-css-grid</id><content type="html" xml:base="https://shivam091.github.io/post/mastering-css-grid"><![CDATA[<h2  id="introduction" dir="auto">Introduction</h2>
-<p dir="auto">Welcome to <strong>Part 2</strong> of the CSS Grid Fundamentals Series!</p>
-
-<p dir="auto">In <a  href="/post/getting-started-with-css-grid">Part 1</a>, you laid the groundwork — learning how to define grid containers, set up tracks, and build basic layouts.</p>
-
-<p dir="auto">Now, it’s time to go beyond the basics.</p>
-
-<p dir="auto"><strong>Think of CSS Grid as your layout canvas</strong> — and in this part, you’ll pick up new tools like a <strong>ruler, compass, and highlighter</strong> to draw structure, alignment, and flow with precision.</p>
-
-<p dir="auto">We’ll cover:</p>
-
-<ul  dir="auto">
-  <li><code  class="highlighter-rouge notranslate">grid-template-areas</code> for clean, visual layout structure</li>
-  <li>Alignment techniques using <code  class="highlighter-rouge notranslate">place-items</code> and <code  class="highlighter-rouge notranslate">place-self</code></li>
-  <li>Spanning elements across rows and columns</li>
-  <li>The hidden mechanics of <strong>explicit</strong> and <strong>implicit</strong> grids</li>
-
-</ul>
-<p dir="auto">These are the techniques that elevate your layouts from <em>functional</em> to <em>flexible and scalable</em> — especially in real-world, component-based frontend projects.</p>
-
+          </ul>
+        
+<p  dir="auto">These are the techniques that elevate your layouts from <em>functional</em> to <em>flexible and scalable</em> — especially in real-world, component-based frontend projects.</p>
 <h2  id="grid-template-areas" dir="auto">Grid Template Areas</h2>
-<p dir="auto">The <code  class="highlighter-rouge notranslate">grid-template-areas</code> property allows you to define your layout using named areas, making the grid structure more readable and easier to
+<p  dir="auto">The <code  class="highlighter-rouge notranslate">grid-template-areas</code> property allows you to define your layout using named areas, making the grid structure more readable and easier to
 maintain—especially for complex page layouts. It acts as a visual blueprint of your design and simplifies the placement of grid items.</p>
-
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -543,9 +543,8 @@ maintain—especially for complex page layouts. It acts as a visual blueprint of
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">Each quoted line defines a row in the grid. The repeated area names indicate how many columns that area spans. You can then assign elements to these areas
+<p  dir="auto">Each quoted line defines a row in the grid. The repeated area names indicate how many columns that area spans. You can then assign elements to these areas
 using the <code  class="highlighter-rouge notranslate">grid-area</code> property:</p>
-
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -628,8 +627,7 @@ using the <code  class="highlighter-rouge notranslate">grid-area</code> property
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">Here’s the HTML structure:</p>
-
+<p  dir="auto">Here’s the HTML structure:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -678,32 +676,31 @@ using the <code  class="highlighter-rouge notranslate">grid-area</code> property
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto"><strong>Explanation:</strong></p>
+<p  dir="auto"><strong>Explanation:</strong></p>
 
-<ul  dir="auto">
-  <li>The layout is visually defined using <code  class="highlighter-rouge notranslate">grid-template-areas</code>, making it easier to understand and modify.</li>
-  <li>The grid has <strong>3 columns</strong> and <strong>3 rows</strong>.</li>
-  <li>Named areas like <code  class="highlighter-rouge notranslate">"header"</code>, <code  class="highlighter-rouge notranslate">"sidebar"</code>, <code  class="highlighter-rouge notranslate">"main"</code>, and <code  class="highlighter-rouge notranslate">"footer"</code> are assigned using <code  class="highlighter-rouge notranslate">grid-area</code>, allowing semantic HTML elements to be positioned without relying on source order.</li>
-  <li>The column layout uses <code  class="highlighter-rouge notranslate">1fr 2fr 2fr</code>, giving the sidebar less space than the main content.</li>
-  <li>This is a clean, semantic approach to building responsive page sections—no floats or nested containers needed.</li>
+          <ul  dir="auto">
+              <li><p  dir="auto">The layout is visually defined using <code  class="highlighter-rouge notranslate">grid-template-areas</code>, making it easier to understand and modify.</p></li>
+  <li><p  dir="auto">The grid has <strong>3 columns</strong> and <strong>3 rows</strong>.</p></li>
+  <li><p  dir="auto">Named areas like <code  class="highlighter-rouge notranslate">"header"</code>, <code  class="highlighter-rouge notranslate">"sidebar"</code>, <code  class="highlighter-rouge notranslate">"main"</code>, and <code  class="highlighter-rouge notranslate">"footer"</code> are assigned using <code  class="highlighter-rouge notranslate">grid-area</code>, allowing semantic HTML elements to be positioned without relying on source order.</p></li>
+  <li><p  dir="auto">The column layout uses <code  class="highlighter-rouge notranslate">1fr 2fr 2fr</code>, giving the sidebar less space than the main content.</p></li>
+  <li><p  dir="auto">This is a clean, semantic approach to building responsive page sections—no floats or nested containers needed.</p></li>
 
-</ul>
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/JodQLgg" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/JodQLgg" class="external-link">Try this on CodePen</a></p>
-
+          </ul>
+        
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/JodQLgg" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/JodQLgg" class="external-link">Try this on CodePen</a></p>
 <h2  id="aligning-grid-items" dir="auto">Aligning Grid Items</h2>
-<p dir="auto">CSS Grid not only lets you organize content into rows and columns—it also gives you precise control over <strong>how items are aligned within their grid cells</strong>.</p>
-
-<p dir="auto">Alignment can be applied at two levels:</p>
-
+<p  dir="auto">CSS Grid not only lets you organize content into rows and columns—it also gives you precise control over <strong>how items are aligned within their grid cells</strong>.</p>
+<p  dir="auto">Alignment can be applied at two levels:</p>
 <h3  id="container-level-alignment" dir="auto">Container-Level Alignment</h3>
-<p dir="auto">These properties are applied to the <strong>grid container</strong> and affect <strong>all items</strong> inside the grid:</p>
+<p  dir="auto">These properties are applied to the <strong>grid container</strong> and affect <strong>all items</strong> inside the grid:</p>
 
-<ul  dir="auto">
-  <li><strong>justify-items</strong> — Aligns items <strong>horizontally</strong> (inline axis) within each cell.</li>
-  <li><strong>align-items</strong> — Aligns items <strong>vertically</strong> (block axis) within each cell.</li>
-  <li><strong>place-items</strong> — A shorthand for combining both <code  class="highlighter-rouge notranslate">align-items</code> and <code  class="highlighter-rouge notranslate">justify-items</code>.</li>
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>justify-items</strong> — Aligns items <strong>horizontally</strong> (inline axis) within each cell.</p></li>
+  <li><p  dir="auto"><strong>align-items</strong> — Aligns items <strong>vertically</strong> (block axis) within each cell.</p></li>
+  <li><p  dir="auto"><strong>place-items</strong> — A shorthand for combining both <code  class="highlighter-rouge notranslate">align-items</code> and <code  class="highlighter-rouge notranslate">justify-items</code>.</p></li>
 
-</ul>
+          </ul>
+        
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -750,8 +747,7 @@ using the <code  class="highlighter-rouge notranslate">grid-area</code> property
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto"><strong>Visual Reference (Centered Items)</strong></p>
-
+<p  dir="auto"><strong>Visual Reference (Centered Items)</strong></p>
 <pre><code>+-------------+-------------+-------------+
 |             |             |             |
 |     [ ]     |     [ ]     |     [ ]     |  ← centered in both directions
@@ -763,8 +759,7 @@ using the <code  class="highlighter-rouge notranslate">grid-area</code> property
 +-------------+-------------+-------------+
 </code></pre>
 
-<p dir="auto">You can also use <code  class="highlighter-rouge notranslate">place-items</code> as a shorthand:</p>
-
+<p  dir="auto">You can also use <code  class="highlighter-rouge notranslate">place-items</code> as a shorthand:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -809,8 +804,7 @@ using the <code  class="highlighter-rouge notranslate">grid-area</code> property
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto"><strong>Visual Reference (Bottom-Left Aligned)</strong></p>
-
+<p  dir="auto"><strong>Visual Reference (Bottom-Left Aligned)</strong></p>
 <pre><code>+-------------+-------------+-------------+
 |             |             |             |
 |             |             |             |
@@ -823,15 +817,16 @@ using the <code  class="highlighter-rouge notranslate">grid-area</code> property
 </code></pre>
 
 <h3  id="item-level-alignment" dir="auto">Item-Level Alignment</h3>
-<p dir="auto">While container-level alignment applies to <strong>all grid items, item-level alignment</strong> lets you override alignment <strong>per individual item</strong>.
+<p  dir="auto">While container-level alignment applies to <strong>all grid items, item-level alignment</strong> lets you override alignment <strong>per individual item</strong>.
 These properties are set directly on the grid items themselves:</p>
 
-<ul  dir="auto">
-  <li><strong>justify-self</strong> — Aligns an item <strong>horizontally</strong> (inline axis) within its grid cell.</li>
-  <li><strong>align-self</strong> — Aligns an item <strong>vertically</strong> (block axis) within its grid cell.</li>
-  <li><strong>place-self</strong> — A shorthand for combining <code  class="highlighter-rouge notranslate">align-self</code> and <code  class="highlighter-rouge notranslate">justify-self</code>.</li>
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>justify-self</strong> — Aligns an item <strong>horizontally</strong> (inline axis) within its grid cell.</p></li>
+  <li><p  dir="auto"><strong>align-self</strong> — Aligns an item <strong>vertically</strong> (block axis) within its grid cell.</p></li>
+  <li><p  dir="auto"><strong>place-self</strong> — A shorthand for combining <code  class="highlighter-rouge notranslate">align-self</code> and <code  class="highlighter-rouge notranslate">justify-self</code>.</p></li>
 
-</ul>
+          </ul>
+        
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -876,8 +871,7 @@ These properties are set directly on the grid items themselves:</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto"><strong>Visual Reference (Top-Right Alignment)</strong></p>
-
+<p  dir="auto"><strong>Visual Reference (Top-Right Alignment)</strong></p>
 <pre><code>+-------------+
 |         [ ] |  ← aligned to top-right
 |             |
@@ -885,8 +879,7 @@ These properties are set directly on the grid items themselves:</p>
 +-------------+
 </code></pre>
 
-<p dir="auto">You can also achieve the same alignment with <code  class="highlighter-rouge notranslate">place-self</code>:</p>
-
+<p  dir="auto">You can also achieve the same alignment with <code  class="highlighter-rouge notranslate">place-self</code>:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -929,8 +922,7 @@ These properties are set directly on the grid items themselves:</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto"><strong>Visual Reference (Bottom-Left Alignment)</strong></p>
-
+<p  dir="auto"><strong>Visual Reference (Bottom-Left Alignment)</strong></p>
 <pre><code>+-------------+
 |             |
 |             |
@@ -952,14 +944,11 @@ These properties are set directly on the grid items themselves:</p>
   
 </div>
 
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/bNdPMKj" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/bNdPMKj" class="external-link">Try these alignments on CodePen</a></p>
-
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/bNdPMKj" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/bNdPMKj" class="external-link">Try these alignments on CodePen</a></p>
 <h2  id="spanning-grid-items" dir="auto">Spanning Grid Items</h2>
-<p dir="auto">CSS Grid allows items to span across multiple columns or rows using <code  class="highlighter-rouge notranslate">grid-column</code> and <code  class="highlighter-rouge notranslate">grid-row</code>. These properties let you define
+<p  dir="auto">CSS Grid allows items to span across multiple columns or rows using <code  class="highlighter-rouge notranslate">grid-column</code> and <code  class="highlighter-rouge notranslate">grid-row</code>. These properties let you define
 where an item starts and ends in the grid layout.</p>
-
-<p dir="auto">Imagine a <strong>3×3</strong> grid:</p>
-
+<p  dir="auto">Imagine a <strong>3×3</strong> grid:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -1056,8 +1045,7 @@ where an item starts and ends in the grid layout.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">And you apply:</p>
-
+<p  dir="auto">And you apply:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -1102,8 +1090,7 @@ where an item starts and ends in the grid layout.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto"><strong>Visual Reference (Lines Shown)</strong></p>
-
+<p  dir="auto"><strong>Visual Reference (Lines Shown)</strong></p>
 <pre><code>+------------+------------+------------+
 |            |            |            |
 |   Item 2   |   Item 3   |   Item 4   |
@@ -1119,11 +1106,9 @@ where an item starts and ends in the grid layout.</p>
 +------------+------------+------------+
 </code></pre>
 
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/bNdPKwJ" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/bNdPKwJ" class="external-link">Try this on CodePen</a></p>
-
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/bNdPKwJ" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/bNdPKwJ" class="external-link">Try this on CodePen</a></p>
 <h3  id="shorthand-vs-longhand" dir="auto">Shorthand vs Longhand</h3>
-<p dir="auto">The <code  class="highlighter-rouge notranslate">grid-column</code> and <code  class="highlighter-rouge notranslate">grid-row</code> properties are shorthands for their respective <strong>start</strong> and <strong>end</strong> lines:</p>
-
+<p  dir="auto">The <code  class="highlighter-rouge notranslate">grid-column</code> and <code  class="highlighter-rouge notranslate">grid-row</code> properties are shorthands for their respective <strong>start</strong> and <strong>end</strong> lines:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -1168,8 +1153,7 @@ where an item starts and ends in the grid layout.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">This is functionally the same as:</p>
-
+<p  dir="auto">This is functionally the same as:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -1221,8 +1205,7 @@ where an item starts and ends in the grid layout.</p>
 </div>
 
 <h3  id="shorthand-with-span" dir="auto">Shorthand with <code  class="highlighter-rouge notranslate">span</code></h3>
-<p dir="auto">Instead of specifying <strong>start</strong> and <strong>end</strong> lines manually, you can use the <code  class="highlighter-rouge notranslate">span</code> keyword to make your code simpler and more flexible:</p>
-
+<p  dir="auto">Instead of specifying <strong>start</strong> and <strong>end</strong> lines manually, you can use the <code  class="highlighter-rouge notranslate">span</code> keyword to make your code simpler and more flexible:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -1267,10 +1250,8 @@ where an item starts and ends in the grid layout.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">This tells the grid item to span <strong>2 columns and 2 rows</strong> starting from its <strong>auto-determined position</strong> (i.e. where the browser places it in the flow).</p>
-
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/raVEKzW" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEKzW" class="external-link">Try this on CodePen</a></p>
-
+<p  dir="auto">This tells the grid item to span <strong>2 columns and 2 rows</strong> starting from its <strong>auto-determined position</strong> (i.e. where the browser places it in the flow).</p>
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/raVEKzW" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEKzW" class="external-link">Try this on CodePen</a></p>
 <details>
 <summary>When to use it?</summary>
 <ul>
@@ -1281,12 +1262,10 @@ where an item starts and ends in the grid layout.</p>
 </details>
 
 <h2  id="grid-types" dir="auto">Grid Types</h2>
-<p dir="auto">In CSS Grid, it’s important to understand the two types of grids: <strong>explicit</strong> and <strong>implicit</strong>. These define how grid tracks (rows and columns)
+<p  dir="auto">In CSS Grid, it’s important to understand the two types of grids: <strong>explicit</strong> and <strong>implicit</strong>. These define how grid tracks (rows and columns)
 are created—either by the developer or automatically by the browser.</p>
-
 <h3  id="explicit-grids" dir="auto">Explicit Grids</h3>
-<p dir="auto">An <strong>explicit</strong> grid is one that you define yourself using properties like <code  class="highlighter-rouge notranslate">grid-template-columns</code> and <code  class="highlighter-rouge notranslate">grid-template-rows</code>.</p>
-
+<p  dir="auto">An <strong>explicit</strong> grid is one that you define yourself using properties like <code  class="highlighter-rouge notranslate">grid-template-columns</code> and <code  class="highlighter-rouge notranslate">grid-template-rows</code>.</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -1383,12 +1362,9 @@ are created—either by the developer or automatically by the browser.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">In this case, you’ve explicitly created a <strong>2×2 grid</strong>, which gives you <strong>4 cells</strong>. Each of the 4 items is placed within this defined layout.</p>
-
-<p dir="auto"><strong>Visual Illustration</strong></p>
-
-<p dir="auto">This shows how the explicit grid looks like:</p>
-
+<p  dir="auto">In this case, you’ve explicitly created a <strong>2×2 grid</strong>, which gives you <strong>4 cells</strong>. Each of the 4 items is placed within this defined layout.</p>
+<p  dir="auto"><strong>Visual Illustration</strong></p>
+<p  dir="auto">This shows how the explicit grid looks like:</p>
 <pre><code>+---------+--------+    
 | Item 1  | Item 2 |    
 +---------+--------+    
@@ -1396,24 +1372,21 @@ are created—either by the developer or automatically by the browser.</p>
 +---------+--------+   
 </code></pre>
 
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/jEPjpzL" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/jEPjpzL" class="external-link">Try this on CodePen</a></p>
-
-<p dir="auto">If you place more items than your explicit tracks can hold, the grid will automatically generate new rows or columns to accommodate them — these are known as <em>implicit tracks</em>, which we’ll explore next.</p>
-
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/jEPjpzL" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/jEPjpzL" class="external-link">Try this on CodePen</a></p>
+<p  dir="auto">If you place more items than your explicit tracks can hold, the grid will automatically generate new rows or columns to accommodate them — these are known as <em>implicit tracks</em>, which we’ll explore next.</p>
 <h3  id="implicit-grids" dir="auto">Implicit Grids</h3>
-<p dir="auto">In CSS Grid, if the number of items exceeds the explicitly defined rows or columns, the browser <strong>automatically creates additional tracks</strong> — these
+<p  dir="auto">In CSS Grid, if the number of items exceeds the explicitly defined rows or columns, the browser <strong>automatically creates additional tracks</strong> — these
 form what’s known as the <strong>implicit grid</strong>.</p>
+<p  dir="auto">You can control the size of these extra rows and columns using:</p>
 
-<p dir="auto">You can control the size of these extra rows and columns using:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>grid-auto-rows</strong> – defines height of implicit rows.</p></li>
+  <li><p  dir="auto"><strong>grid-auto-columns</strong> – defines width of implicit columns.</p></li>
 
-<ul  dir="auto">
-  <li><strong>grid-auto-rows</strong> – defines height of implicit rows.</li>
-  <li><strong>grid-auto-columns</strong> – defines width of implicit columns.</li>
-
-</ul>
+          </ul>
+        
 <h4  id="example-implicit-rows" dir="auto">Example: Implicit Rows</h4>
-<p dir="auto">Let’s say you define only 2 rows, but add 5 items:</p>
-
+<p  dir="auto">Let’s say you define only 2 rows, but add 5 items:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -1512,18 +1485,17 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto"><strong>What happens?</strong></p>
+<p  dir="auto"><strong>What happens?</strong></p>
 
-<ul  dir="auto">
-  <li>The first 4 items fill the 2×2 grid.</li>
-  <li>The 5th item <strong>overflows</strong> the defined rows.</li>
-  <li>So, the browser <strong>creates a 3rd row automatically</strong> — this is the <strong>implicit grid</strong>.</li>
+          <ul  dir="auto">
+              <li><p  dir="auto">The first 4 items fill the 2×2 grid.</p></li>
+  <li><p  dir="auto">The 5th item <strong>overflows</strong> the defined rows.</p></li>
+  <li><p  dir="auto">So, the browser <strong>creates a 3rd row automatically</strong> — this is the <strong>implicit grid</strong>.</p></li>
 
-</ul>
-<p dir="auto"><strong>Visual Illustration</strong></p>
-
-<p dir="auto">This shows what happens when items overflow the defined rows (and new <strong>implicit rows</strong> are added):</p>
-
+          </ul>
+        
+<p  dir="auto"><strong>Visual Illustration</strong></p>
+<p  dir="auto">This shows what happens when items overflow the defined rows (and new <strong>implicit rows</strong> are added):</p>
 <pre><code>Explicit Grid:          Implicit Grid:
 
 +---------+--------+    +---------+--------+
@@ -1535,8 +1507,7 @@ form what’s known as the <strong>implicit grid</strong>.</p>
                         +---------+--------+
 </code></pre>
 
-<p dir="auto">By default, the height of implicit rows is <code  class="highlighter-rouge notranslate">auto</code>. You can control their size using <code  class="highlighter-rouge notranslate">grid-auto-rows</code>:</p>
-
+<p  dir="auto">By default, the height of implicit rows is <code  class="highlighter-rouge notranslate">auto</code>. You can control their size using <code  class="highlighter-rouge notranslate">grid-auto-rows</code>:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -1579,11 +1550,9 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/bNdPjMq" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/bNdPjMq" class="external-link">Try this on CodePen</a></p>
-
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/bNdPjMq" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/bNdPjMq" class="external-link">Try this on CodePen</a></p>
 <h4  id="example-implicit-columns" dir="auto">Example: Implicit Columns</h4>
-<p dir="auto">Now let’s say you only define rows, and use <strong>manual placement</strong> or <strong>grid-auto-flow: column</strong> to push items into new columns:</p>
-
+<p  dir="auto">Now let’s say you only define rows, and use <strong>manual placement</strong> or <strong>grid-auto-flow: column</strong> to push items into new columns:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -1682,18 +1651,17 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto"><strong>What happens?</strong></p>
+<p  dir="auto"><strong>What happens?</strong></p>
 
-<ul  dir="auto">
-  <li>Items will flow <strong>across columns</strong>, not rows.</li>
-  <li>Since no <code  class="highlighter-rouge notranslate">grid-template-columns</code> is defined, the browser will <strong>generate columns implicitly</strong>.</li>
-  <li>Each column will now be <strong>150px wide</strong> (because of <code  class="highlighter-rouge notranslate">grid-auto-columns</code>).</li>
+          <ul  dir="auto">
+              <li><p  dir="auto">Items will flow <strong>across columns</strong>, not rows.</p></li>
+  <li><p  dir="auto">Since no <code  class="highlighter-rouge notranslate">grid-template-columns</code> is defined, the browser will <strong>generate columns implicitly</strong>.</p></li>
+  <li><p  dir="auto">Each column will now be <strong>150px wide</strong> (because of <code  class="highlighter-rouge notranslate">grid-auto-columns</code>).</p></li>
 
-</ul>
-<p dir="auto"><strong>Visual Illustration</strong></p>
-
-<p dir="auto">This shows what happens when items overflow the defined columns (or <code  class="highlighter-rouge notranslate">grid-auto-flow: column</code> creates new <strong>implicit columns</strong>):</p>
-
+          </ul>
+        
+<p  dir="auto"><strong>Visual Illustration</strong></p>
+<p  dir="auto">This shows what happens when items overflow the defined columns (or <code  class="highlighter-rouge notranslate">grid-auto-flow: column</code> creates new <strong>implicit columns</strong>):</p>
 <pre><code>Explicit Grid:          Implicit Grid:
 
 +---------+--------+    +---------+--------+--------+
@@ -1704,10 +1672,8 @@ form what’s known as the <strong>implicit grid</strong>.</p>
                                                 ↑ implicit columns created dynamically
 </code></pre>
 
-<p dir="auto">Use <code  class="highlighter-rouge notranslate">grid-auto-columns</code> to control the width of these new columns.</p>
-
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/JodgZqM" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/JodgZqM" class="external-link">Try this on CodePen</a></p>
-
+<p  dir="auto">Use <code  class="highlighter-rouge notranslate">grid-auto-columns</code> to control the width of these new columns.</p>
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/JodgZqM" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/JodgZqM" class="external-link">Try this on CodePen</a></p>
 <div class="alert alert-accent alert-outlined" role="alert" aria-live="polite" tabindex="0">
   <div class="alert-icon">
     <svg role="img" aria-hidden="true" focusable="false">
@@ -1728,50 +1694,48 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </div>
 
 <h2  id="conclusion" dir="auto">Conclusion</h2>
-<p dir="auto">You’ve now mastered the core tools that bring <strong>power, readability, and precision</strong> to CSS Grid layouts:</p>
+<p  dir="auto">You’ve now mastered the core tools that bring <strong>power, readability, and precision</strong> to CSS Grid layouts:</p>
 
-<ul  dir="auto">
-  <li>Named areas help you design layouts visually and semantically.</li>
-  <li>Item alignment ensures pixel-perfect placement in every cell.</li>
-  <li>Spanning techniques let you control flow and sizing beyond automatic placement.</li>
-  <li>Explicit vs. implicit grids give you confidence when your layout grows unexpectedly.</li>
+          <ul  dir="auto">
+              <li><p  dir="auto">Named areas help you design layouts visually and semantically.</p></li>
+  <li><p  dir="auto">Item alignment ensures pixel-perfect placement in every cell.</p></li>
+  <li><p  dir="auto">Spanning techniques let you control flow and sizing beyond automatic placement.</p></li>
+  <li><p  dir="auto">Explicit vs. implicit grids give you confidence when your layout grows unexpectedly.</p></li>
 
-</ul>
-<p dir="auto">Up next in <a  href="/post/responsive-css-grid-layouts">Part 3 → Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</a>, we’ll unlock how to:</p>
+          </ul>
+        
+<p  dir="auto">Up next in <a  href="/post/responsive-css-grid-layouts">Part 3 → Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</a>, we’ll unlock how to:</p>
 
-<ul  dir="auto">
-  <li>Use <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, <code  class="highlighter-rouge notranslate">auto-fit</code>, and <code  class="highlighter-rouge notranslate">auto-fill</code> for fluid responsive tracks</li>
-  <li>Pair grid with <strong>media</strong> and <strong>container</strong> queries</li>
-  <li>Build <strong>robust, flexible layouts</strong> that adapt to any screen — no media query soup needed!</li>
+          <ul  dir="auto">
+              <li><p  dir="auto">Use <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, <code  class="highlighter-rouge notranslate">auto-fit</code>, and <code  class="highlighter-rouge notranslate">auto-fill</code> for fluid responsive tracks</p></li>
+  <li><p  dir="auto">Pair grid with <strong>media</strong> and <strong>container</strong> queries</p></li>
+  <li><p  dir="auto">Build <strong>robust, flexible layouts</strong> that adapt to any screen — no media query soup needed!</p></li>
 
-</ul>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="beginner" /><category term="layout" /><category term="css" /><category term="css-grid" /><category term="grid" /><category term="layout" /><category term="grid-template-areas" /><category term="grid-alignment" /><category term="frontend" /><summary type="html"><![CDATA[Take your CSS Grid skills to the next level by mastering semantic layouts with grid areas, item alignment, and element spanning techniques.]]></summary></entry><entry><title type="html">Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</title><link href="https://shivam091.github.io/post/responsive-css-grid-layouts" rel="alternate" type="text/html" title="Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained" /><published>2025-07-09T15:20:00+05:30</published><updated>2025-07-10T19:05:25+05:30</updated><id>https://shivam091.github.io/post/responsive-css-grid-layouts</id><content type="html" xml:base="https://shivam091.github.io/post/responsive-css-grid-layouts"><![CDATA[<h2  id="introduction" dir="auto">Introduction</h2>
-<p dir="auto">Welcome to <strong>Part 3</strong> of the CSS Grid Fundamentals Series — the final and most impactful part!</p>
+          </ul>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="beginner" /><category term="layout" /><category term="css" /><category term="css-grid" /><category term="grid" /><category term="layout" /><category term="grid-template-areas" /><category term="grid-alignment" /><category term="frontend" /><summary type="html"><![CDATA[Take your CSS Grid skills to the next level by mastering semantic layouts with grid areas, item alignment, and element spanning techniques.]]></summary></entry><entry><title type="html">Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</title><link href="https://shivam091.github.io/post/responsive-css-grid-layouts" rel="alternate" type="text/html" title="Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained" /><published>2025-07-09T15:20:00+05:30</published><updated>2025-07-10T19:05:25+05:30</updated><id>https://shivam091.github.io/post/responsive-css-grid-layouts</id><content type="html" xml:base="https://shivam091.github.io/post/responsive-css-grid-layouts"><![CDATA[<h2  id="introduction" dir="auto">Introduction</h2>
+<p  dir="auto">Welcome to <strong>Part 3</strong> of the CSS Grid Fundamentals Series — the final and most impactful part!</p>
+<p  dir="auto">So far, we’ve explored:</p>
 
-<p dir="auto">So far, we’ve explored:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto"><a  href="/post/getting-started-with-css-grid">Part 1</a>: Grid basics, tracks, and layout structure</p></li>
+  <li><p  dir="auto"><a  href="/post/mastering-css-grid-alignment-spanning">Part 2</a>: Grid areas, alignment, spanning, and implicit/explicit tracks</p></li>
 
-<ul  dir="auto">
-  <li><a  href="/post/getting-started-with-css-grid">Part 1</a>: Grid basics, tracks, and layout structure</li>
-  <li><a  href="/post/mastering-css-grid-alignment-spanning">Part 2</a>: Grid areas, alignment, spanning, and implicit/explicit tracks</li>
+          </ul>
+        
+<p  dir="auto">Now, we shift gears to what makes CSS Grid truly shine — <strong>responsiveness</strong>.</p>
+<p  dir="auto">In this post, you’ll learn how to:</p>
 
-</ul>
-<p dir="auto">Now, we shift gears to what makes CSS Grid truly shine — <strong>responsiveness</strong>.</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">Use fractional units (<code  class="highlighter-rouge notranslate">fr</code>) for flexible sizing</p></li>
+  <li><p  dir="auto">Combine <code  class="highlighter-rouge notranslate">minmax()</code> with <code  class="highlighter-rouge notranslate">auto-fit</code> and <code  class="highlighter-rouge notranslate">auto-fill</code> to create fluid, wrapping grids</p></li>
+  <li><p  dir="auto">Write responsive layouts with or <strong>without media queries</strong></p></li>
+  <li><p  dir="auto">Enhance responsiveness further using <strong>container queries</strong></p></li>
 
-<p dir="auto">In this post, you’ll learn how to:</p>
-
-<ul  dir="auto">
-  <li>Use fractional units (<code  class="highlighter-rouge notranslate">fr</code>) for flexible sizing</li>
-  <li>Combine <code  class="highlighter-rouge notranslate">minmax()</code> with <code  class="highlighter-rouge notranslate">auto-fit</code> and <code  class="highlighter-rouge notranslate">auto-fill</code> to create fluid, wrapping grids</li>
-  <li>Write responsive layouts with or <strong>without media queries</strong></li>
-  <li>Enhance responsiveness further using <strong>container queries</strong></li>
-
-</ul>
-<p dir="auto">Think of this as your guide to <strong>building adaptable, scalable layouts</strong> that behave beautifully on any screen — from a small phone to a wide desktop.</p>
-
-<p dir="auto">Whether you’re designing cards, product grids, or UI dashboards, these tools let you ditch rigid breakpoints and build with confidence.</p>
-
+          </ul>
+        
+<p  dir="auto">Think of this as your guide to <strong>building adaptable, scalable layouts</strong> that behave beautifully on any screen — from a small phone to a wide desktop.</p>
+<p  dir="auto">Whether you’re designing cards, product grids, or UI dashboards, these tools let you ditch rigid breakpoints and build with confidence.</p>
 <h2  id="fractional-units-fr" dir="auto">Fractional Units (<code  class="highlighter-rouge notranslate">fr</code>)</h2>
-<p dir="auto">The <code  class="highlighter-rouge notranslate">fr</code> unit stands for <strong>fraction of available space</strong>. It’s a powerful tool for creating fluid, responsive layouts.</p>
-
+<p  dir="auto">The <code  class="highlighter-rouge notranslate">fr</code> unit stands for <strong>fraction of available space</strong>. It’s a powerful tool for creating fluid, responsive layouts.</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -1818,16 +1782,16 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">In this layout:</p>
+<p  dir="auto">In this layout:</p>
 
-<ul  dir="auto">
-  <li>The grid container’s space is divided into <strong>3 fractions</strong>.</li>
-  <li>The first column gets <strong>2 parts</strong>, the second column gets <strong>1 part</strong>.</li>
+          <ul  dir="auto">
+              <li><p  dir="auto">The grid container’s space is divided into <strong>3 fractions</strong>.</p></li>
+  <li><p  dir="auto">The first column gets <strong>2 parts</strong>, the second column gets <strong>1 part</strong>.</p></li>
 
-</ul>
+          </ul>
+        
 <h3  id="repeating-equal-columns" dir="auto">Repeating Equal Columns</h3>
-<p dir="auto">You can create equal-width columns easily with <code  class="highlighter-rouge notranslate">repeat()</code> and <code  class="highlighter-rouge notranslate">1fr</code>:</p>
-
+<p  dir="auto">You can create equal-width columns easily with <code  class="highlighter-rouge notranslate">repeat()</code> and <code  class="highlighter-rouge notranslate">1fr</code>:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -1874,29 +1838,27 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">This setup creates <strong>3 columns of equal width</strong>, with a <code  class="highlighter-rouge notranslate">1rem</code> gap between both columns and rows. It’s clean and scalable.</p>
-
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/LEVKBqw" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/LEVKBqw" class="external-link">Try this on CodePen</a></p>
-
+<p  dir="auto">This setup creates <strong>3 columns of equal width</strong>, with a <code  class="highlighter-rouge notranslate">1rem</code> gap between both columns and rows. It’s clean and scalable.</p>
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/LEVKBqw" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/LEVKBqw" class="external-link">Try this on CodePen</a></p>
 <h2  id="minmax-function" dir="auto"><code  class="highlighter-rouge notranslate">minmax()</code> Function</h2>
-<p dir="auto"><code  class="highlighter-rouge notranslate">minmax(min, max)</code> is a <strong>CSS Grid function</strong> that defines a track (row or column) with:</p>
+<p  dir="auto"><code  class="highlighter-rouge notranslate">minmax(min, max)</code> is a <strong>CSS Grid function</strong> that defines a track (row or column) with:</p>
 
-<ul  dir="auto">
-  <li>A <strong>minimum size</strong> it can shrink to</li>
-  <li>A <strong>maximum size</strong> it can grow to</li>
+          <ul  dir="auto">
+              <li><p  dir="auto">A <strong>minimum size</strong> it can shrink to</p></li>
+  <li><p  dir="auto">A <strong>maximum size</strong> it can grow to</p></li>
 
-</ul>
-<p dir="auto">It’s especially useful when building <strong>responsive</strong> layouts, because it allows a column or row to be flexible—but within limits.</p>
+          </ul>
+        
+<p  dir="auto">It’s especially useful when building <strong>responsive</strong> layouts, because it allows a column or row to be flexible—but within limits.</p>
+<p  dir="auto"><strong>Syntax:</strong></p>
+<p  dir="auto"><code  class="highlighter-rouge notranslate">minmax(&lt;min&gt;, &lt;max&gt;)</code></p>
 
-<p dir="auto"><strong>Syntax:</strong></p>
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong><code  class="highlighter-rouge notranslate">&lt;min&gt;</code></strong> – the smallest the track can be (can be 0, 100px, min-content, etc.)</p></li>
+  <li><p  dir="auto"><strong><code  class="highlighter-rouge notranslate">&lt;max&gt;</code></strong> – the largest the track can be (can be 1fr, auto, max-content, etc.)</p></li>
 
-<p dir="auto"><code  class="highlighter-rouge notranslate">minmax(&lt;min&gt;, &lt;max&gt;)</code></p>
-
-<ul  dir="auto">
-  <li><strong><code  class="highlighter-rouge notranslate">&lt;min&gt;</code></strong> – the smallest the track can be (can be 0, 100px, min-content, etc.)</li>
-  <li><strong><code  class="highlighter-rouge notranslate">&lt;max&gt;</code></strong> – the largest the track can be (can be 1fr, auto, max-content, etc.)</li>
-
-</ul>
+          </ul>
+        
 <h3  id="real-world-use-case-responsive-cards" dir="auto">Real-World Use Case: Responsive Cards</h3>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
@@ -1992,13 +1954,10 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">In this example, cards are laid out in rows on large screens and they stack neatly without overflow on small screens.</p>
-
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/raVEZaP" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEZaP" class="external-link">Try this on CodePen</a></p>
-
+<p  dir="auto">In this example, cards are laid out in rows on large screens and they stack neatly without overflow on small screens.</p>
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/raVEZaP" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEZaP" class="external-link">Try this on CodePen</a></p>
 <h2  id="auto-fit-vs-auto-fill" dir="auto"><code  class="highlighter-rouge notranslate">auto-fit</code> vs <code  class="highlighter-rouge notranslate">auto-fill</code></h2>
-<p dir="auto">Want a grid that adapts to screen width <em>without media queries</em>? Use <code  class="highlighter-rouge notranslate">auto-fit</code> or <code  class="highlighter-rouge notranslate">auto-fill</code> along with <code  class="highlighter-rouge notranslate">minmax()</code>:</p>
-
+<p  dir="auto">Want a grid that adapts to screen width <em>without media queries</em>? Use <code  class="highlighter-rouge notranslate">auto-fit</code> or <code  class="highlighter-rouge notranslate">auto-fill</code> along with <code  class="highlighter-rouge notranslate">minmax()</code>:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -2045,25 +2004,25 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto"><strong>What’s happening here?</strong></p>
+<p  dir="auto"><strong>What’s happening here?</strong></p>
 
-<ul  dir="auto">
-  <li><code  class="highlighter-rouge notranslate">minmax(200px, 1fr)</code> ensures each column is at least <code  class="highlighter-rouge notranslate">200px</code> wide but can grow to fill available space.</li>
-  <li><code  class="highlighter-rouge notranslate">auto-fit</code> collapses empty tracks if there isn’t enough content.</li>
-  <li><code  class="highlighter-rouge notranslate">auto-fill</code> reserves space for empty tracks, keeping the layout structure intact.</li>
+          <ul  dir="auto">
+              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">minmax(200px, 1fr)</code> ensures each column is at least <code  class="highlighter-rouge notranslate">200px</code> wide but can grow to fill available space.</p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto-fit</code> collapses empty tracks if there isn’t enough content.</p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto-fill</code> reserves space for empty tracks, keeping the layout structure intact.</p></li>
 
-</ul>
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/ogXrMmv" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/ogXrMmv" class="external-link">Try this on CodePen</a></p>
+          </ul>
+        
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/ogXrMmv" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/ogXrMmv" class="external-link">Try this on CodePen</a></p>
+<p  dir="auto"><strong>Clarification:</strong></p>
+          <ul  dir="auto">
+              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto-fit</code>: Shrinks or collapses unused columns when there’s no content.</p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto-fill</code>: Maintains the grid structure, even if columns are empty. Reserves space for empty columns.</p></li>
 
-<p dir="auto"><strong>Clarification:</strong></p>
-<ul  dir="auto">
-  <li><code  class="highlighter-rouge notranslate">auto-fit</code>: Shrinks or collapses unused columns when there’s no content.</li>
-  <li><code  class="highlighter-rouge notranslate">auto-fill</code>: Maintains the grid structure, even if columns are empty. Reserves space for empty columns.</li>
-
-</ul>
+          </ul>
+        
 <h2  id="responsive-grid-with-media-queries" dir="auto">Responsive Grid with Media Queries</h2>
-<p dir="auto">Although CSS Grid handles many responsive scenarios on its own, media queries can still help for more precise control.</p>
-
+<p  dir="auto">Although CSS Grid handles many responsive scenarios on its own, media queries can still help for more precise control.</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -2122,27 +2081,26 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">This layout shows:</p>
+<p  dir="auto">This layout shows:</p>
 
-<ul  dir="auto">
-  <li><strong>3 columns</strong> on desktop screens.</li>
-  <li>A <strong>single-column stacked layout</strong> on tablets or phones (under 768px).</li>
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>3 columns</strong> on desktop screens.</p></li>
+  <li><p  dir="auto">A <strong>single-column stacked layout</strong> on tablets or phones (under 768px).</p></li>
 
-</ul>
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/yyNdqwj" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNdqwj" class="external-link">Try this on CodePen</a></p>
-
+          </ul>
+        
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/yyNdqwj" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNdqwj" class="external-link">Try this on CodePen</a></p>
 <h2  id="beyond-media-queries-container-queries" dir="auto">Beyond Media Queries: Container Queries</h2>
-<p dir="auto">Media queries are powerful, but sometimes they’re too broad — what if you want a component to adapt <strong>based on its container size</strong>, not the entire viewport?</p>
+<p  dir="auto">Media queries are powerful, but sometimes they’re too broad — what if you want a component to adapt <strong>based on its container size</strong>, not the entire viewport?</p>
+<p  dir="auto">That’s where <strong>Container Queries</strong> come in. To use container queries:</p>
 
-<p dir="auto">That’s where <strong>Container Queries</strong> come in. To use container queries:</p>
+          <ol  dir="auto">
+              <li><p  dir="auto">Add <code  class="highlighter-rouge notranslate">container-type</code> to the parent element.</p></li>
+  <li><p  dir="auto">Write container-specific rules using <code  class="highlighter-rouge notranslate">@container</code>.</p></li>
 
-<ol  dir="auto">
-  <li>Add <code  class="highlighter-rouge notranslate">container-type</code> to the parent element.</li>
-  <li>Write container-specific rules using <code  class="highlighter-rouge notranslate">@container</code>.</li>
-
-</ol>
-<p dir="auto">This is especially useful for <strong>component-driven UIs</strong>, where layout responsiveness depends on parent size (e.g., sidebar, card wrapper, modal content).</p>
-
+          </ol>
+        
+<p  dir="auto">This is especially useful for <strong>component-driven UIs</strong>, where layout responsiveness depends on parent size (e.g., sidebar, card wrapper, modal content).</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -2231,8 +2189,7 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">Here’s the HTML structure:</p>
-
+<p  dir="auto">Here’s the HTML structure:</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -2281,16 +2238,15 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/yyNmQXM" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNmQXM" class="external-link">Try this on CodePen</a></p>
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/yyNmQXM" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNmQXM" class="external-link">Try this on CodePen</a></p>
 
-<blockquote  dir="auto">
-  <p dir="auto">Note: Most modern browsers support container queries (except older Safari/Firefox versions). Always check compatibility if building for production.</p>
-
-</blockquote>
+          <blockquote  dir="auto">
+            <p  dir="auto">Note: Most modern browsers support container queries (except older Safari/Firefox versions). Always check compatibility if building for production.</p>
+          </blockquote>
+        
 <h2  id="real-world-examples" dir="auto">Real-World Examples</h2>
 <h3  id="responsive-card-dashboard-media-queries" dir="auto">Responsive Card Dashboard (Media Queries)</h3>
-<p dir="auto">A simple dashboard grid using <code  class="highlighter-rouge notranslate">grid-template-areas</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, and media queries.</p>
-
+<p  dir="auto">A simple dashboard grid using <code  class="highlighter-rouge notranslate">grid-template-areas</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, and media queries.</p>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -2459,8 +2415,7 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/yyNmQGP" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNmQGP" class="external-link">Try this on CodePen</a></p>
-
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/yyNmQGP" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNmQGP" class="external-link">Try this on CodePen</a></p>
 <h3  id="card-grid-with-container-queries" dir="auto">Card Grid with Container Queries</h3>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
@@ -2618,13 +2573,12 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 </pre></td></tr></tbody></table></code></pre></figure>
 </div>
 
-<p dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/VYLoVqJ" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/VYLoVqJ" class="external-link">Try this on CodePen</a></p>
-
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/VYLoVqJ" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/VYLoVqJ" class="external-link">Try this on CodePen</a></p>
 <h2  id="quick-reference-common-grid-properties" dir="auto">Quick Reference: Common Grid Properties</h2>
-<p dir="auto">Here’s a concise summary of essential CSS Grid properties:</p>
+<p  dir="auto">Here’s a concise summary of essential CSS Grid properties:</p>
 
-<table  dir="auto" role="table" class="markdown-table">
-  <thead>
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
     <tr>
       <th>Property</th>
       <th>Description</th>
@@ -2689,43 +2643,40 @@ form what’s known as the <strong>implicit grid</strong>.</p>
     </tr>
   </tbody>
 
-</table>
+          </table>
+        
 <h2  id="frequently-asked-questions-faq" dir="auto">Frequently Asked Questions (FAQ)</h2>
 <h3  id="when-should-i-use-auto-fit-vs-auto-fill" dir="auto">When should I use <code  class="highlighter-rouge notranslate">auto-fit</code> vs <code  class="highlighter-rouge notranslate">auto-fill</code>?</h3>
-<p dir="auto">Use <strong><code  class="highlighter-rouge notranslate">auto-fit</code></strong> when you want empty tracks to collapse and not reserve space — great for wrapping cards that adjust to available space.
+<p  dir="auto">Use <strong><code  class="highlighter-rouge notranslate">auto-fit</code></strong> when you want empty tracks to collapse and not reserve space — great for wrapping cards that adjust to available space.
 Use <strong><code  class="highlighter-rouge notranslate">auto-fill</code></strong> if you want to maintain the column structure even when there’s no content — helpful for form fields or placeholders.</p>
-
 <h3  id="can-i-use-flexbox-and-grid-together" dir="auto">Can I use Flexbox and Grid together?</h3>
-<p dir="auto">Absolutely! Use <strong>Grid for layout structure</strong> (e.g., page, sections), and Flexbox for <strong>aligning content within grid items</strong> (e.g., buttons inside cards).</p>
-
+<p  dir="auto">Absolutely! Use <strong>Grid for layout structure</strong> (e.g., page, sections), and Flexbox for <strong>aligning content within grid items</strong> (e.g., buttons inside cards).</p>
 <h3  id="should-i-replace-all-media-queries-with-container-queries" dir="auto">Should I replace all media queries with container queries?</h3>
-<p dir="auto">No — container queries are best for <strong>component-based layouts</strong>. Use media queries for <strong>global changes</strong> (headers, nav, grid size) and container queries for <strong>components inside resizable areas</strong>.</p>
-
+<p  dir="auto">No — container queries are best for <strong>component-based layouts</strong>. Use media queries for <strong>global changes</strong> (headers, nav, grid size) and container queries for <strong>components inside resizable areas</strong>.</p>
 <h3  id="do-i-still-need-breakpoints" dir="auto">Do I still need breakpoints?</h3>
-<p dir="auto">Yes — but you’ll need fewer. Grid’s flexibility (with <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, and <code  class="highlighter-rouge notranslate">auto-fit</code>) reduces reliance on rigid breakpoints.</p>
-
+<p  dir="auto">Yes — but you’ll need fewer. Grid’s flexibility (with <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, and <code  class="highlighter-rouge notranslate">auto-fit</code>) reduces reliance on rigid breakpoints.</p>
 <h2  id="conclusion" dir="auto">Conclusion</h2>
-<p dir="auto">🎉 Congratulations! You’ve completed the <strong>CSS Grid Fundamentals Series</strong>.</p>
+<p  dir="auto">🎉 Congratulations! You’ve completed the <strong>CSS Grid Fundamentals Series</strong>.</p>
+<p  dir="auto">Let’s recap what you now know:</p>
 
-<p dir="auto">Let’s recap what you now know:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">✅ <strong>Part 1:</strong> The building blocks — containers, tracks, and structure</p></li>
+  <li><p  dir="auto">✅ <strong>Part 2:</strong> Layout precision — grid areas, alignment, spanning, and track creation</p></li>
+  <li><p  dir="auto">✅ <strong>Part 3:</strong> Flexibility — responsive units (<code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">minmax()</code>), smart auto-wrapping, media queries, and container queries</p></li>
 
-<ul  dir="auto">
-  <li>✅ <strong>Part 1:</strong> The building blocks — containers, tracks, and structure</li>
-  <li>✅ <strong>Part 2:</strong> Layout precision — grid areas, alignment, spanning, and track creation</li>
-  <li>✅ <strong>Part 3:</strong> Flexibility — responsive units (<code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">minmax()</code>), smart auto-wrapping, media queries, and container queries</li>
+          </ul>
+        
+<p  dir="auto">With these tools, you can:</p>
 
-</ul>
-<p dir="auto">With these tools, you can:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">Create flexible layouts <strong>without bloated media query chains</strong></p></li>
+  <li><p  dir="auto">Build components that respond to their own size using <strong>container queries</strong></p></li>
+  <li><p  dir="auto">Design responsive grids that scale gracefully and look professional at every breakpoint</p></li>
 
-<ul  dir="auto">
-  <li>Create flexible layouts <strong>without bloated media query chains</strong></li>
-  <li>Build components that respond to their own size using <strong>container queries</strong></li>
-  <li>Design responsive grids that scale gracefully and look professional at every breakpoint</li>
-
-</ul>
-<p dir="auto"><strong>CSS Grid isn’t just a layout tool</strong> — it’s a complete design system built into the browser. Mastering it means writing less CSS while building better UI.</p>
-
-<p dir="auto">🚀 Keep experimenting with combinations of Grid, Flexbox, and container queries — that’s where layout magic happens.</p>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="beginner" /><category term="responsive" /><category term="css" /><category term="grid" /><category term="responsive" /><category term="layout" /><category term="fr-units" /><category term="minmax" /><category term="media-queries" /><category term="container-queries" /><category term="auto-fit" /><category term="auto-fill" /><summary type="html"><![CDATA[Learn how to build truly responsive CSS Grid layouts using `fr` units, `minmax()`, `auto-fit`, `auto-fill`, and modern media & container queries.]]></summary></entry><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-07-06T19:48:55+05:30</updated><id>https://shivam091.github.io/post/components</id><content type="html" xml:base="https://shivam091.github.io/post/components"><![CDATA[<h2  id="codeblocks" dir="auto">Codeblocks</h2>
+          </ul>
+        
+<p  dir="auto"><strong>CSS Grid isn’t just a layout tool</strong> — it’s a complete design system built into the browser. Mastering it means writing less CSS while building better UI.</p>
+<p  dir="auto">🚀 Keep experimenting with combinations of Grid, Flexbox, and container queries — that’s where layout magic happens.</p>]]></content><author><name>Harshal Ladhe</name></author><category term="css" /><category term="beginner" /><category term="responsive" /><category term="css" /><category term="grid" /><category term="responsive" /><category term="layout" /><category term="fr-units" /><category term="minmax" /><category term="media-queries" /><category term="container-queries" /><category term="auto-fit" /><category term="auto-fill" /><summary type="html"><![CDATA[Learn how to build truly responsive CSS Grid layouts using `fr` units, `minmax()`, `auto-fit`, `auto-fill`, and modern media & container queries.]]></summary></entry><entry><title type="html">Components</title><link href="https://shivam091.github.io/post/components" rel="alternate" type="text/html" title="Components" /><published>2025-06-16T18:20:00+05:30</published><updated>2025-07-06T19:48:55+05:30</updated><id>https://shivam091.github.io/post/components</id><content type="html" xml:base="https://shivam091.github.io/post/components"><![CDATA[<h2  id="codeblocks" dir="auto">Codeblocks</h2>
 <div class="code-block" data-copy-code="">
   <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
     <div class="code-block-button-group" aria-hidden="true">
@@ -3012,77 +2963,94 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
 <h2  id="icons" dir="auto">Icons</h2>
 <svg id="custom-id" class="icon icon-folder-open custom-class" width="20" height="20" role="img" aria-label="Open folder" focusable="false">
   <use href="/assets/img/sprite.svg#icon-folder-open" />
-</svg>]]></content><author><name>Harshal Ladhe</name></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Text and Typography</title><link href="https://shivam091.github.io/post/typography" rel="alternate" type="text/html" title="Text and Typography" /><published>2025-05-31T01:00:00+05:30</published><updated>2025-07-09T12:24:30+05:30</updated><id>https://shivam091.github.io/post/typography</id><content type="html" xml:base="https://shivam091.github.io/post/typography"><![CDATA[<h2  id="headings" dir="auto">Headings</h2>
+</svg>]]></content><author><name>Harshal Ladhe</name></author><category term="blogging" /><category term="components" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.]]></summary></entry><entry><title type="html">Text and Typography</title><link href="https://shivam091.github.io/post/typography" rel="alternate" type="text/html" title="Text and Typography" /><published>2025-05-31T01:00:00+05:30</published><updated>2025-07-13T15:28:51+05:30</updated><id>https://shivam091.github.io/post/typography</id><content type="html" xml:base="https://shivam091.github.io/post/typography"><![CDATA[<h2  id="headings" dir="auto">Headings</h2>
 <h1  id="h1-heading-usually-reserved-for-post-title" dir="auto">H1 Heading (usually reserved for post title)</h1><h2  id="h2-heading" dir="auto">H2 Heading</h2><h3  id="h3-heading" dir="auto">H3 Heading</h3><h4  id="h4-heading" dir="auto">H4 Heading</h4><h5  id="h5-heading" dir="auto">H5 Heading</h5><h6  id="h6-heading" dir="auto">H6 Heading</h6>
 <h2  id="paragraphs" dir="auto">Paragraphs</h2>
-<p dir="auto">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. Nulla <em>vehicula</em>, <code  class="highlighter-rouge notranslate">inline code</code>, <a  href="https://example.com" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://example.com" class="external-link">external link</a>, and a line break:<br />
+<p  dir="auto">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. Nulla <em>vehicula</em>, <code  class="highlighter-rouge notranslate">inline code</code>, <a  href="https://example.com" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://example.com" class="external-link">external link</a>, and a line break:<br />
 New line here.</p>
-
 <h2  id="blockquote" dir="auto">Blockquote</h2>
-<blockquote  dir="auto">
-  <p dir="auto">“Design is not just what it looks like and feels like. Design is how it works.”<br />
-— <em>Steve Jobs</em></p>
 
-</blockquote>
+          <blockquote  dir="auto">
+            <p  dir="auto">“Design is not just what it looks like and feels like. Design is how it works.”<br />
+— <em>Steve Jobs</em></p>
+          </blockquote>
+        
 <h2  id="links" dir="auto">Links</h2>
-<p dir="auto"><a  href="https://example.com" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://example.com" class="external-link">External Link</a><br />
+<p  dir="auto"><a  href="https://example.com" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://example.com" class="external-link">External Link</a><br />
 <a  href="/about/">Internal Link</a><br />
 Mailto: <a  href="mailto:test@example.com">Send Email</a></p>
-
 <h2  id="lists" dir="auto">Lists</h2>
 <h3  id="unordered-list" dir="auto">Unordered List</h3>
-<ul  dir="auto">
-  <li>Chapter 1
-<ul  dir="auto">
-      <li>Section 1
-<ul  dir="auto">
-          <li>Paragraph 1</li>
 
-</ul></li>
+          <ul  dir="auto">
+              <li><p  dir="auto">Chapter 1
+</p>
+          <ul  dir="auto">
+                  <li><p  dir="auto">Section 1
+</p>
+          <ul  dir="auto">
+                      <li><p  dir="auto">Paragraph 1</p></li>
 
-</ul></li>
-  <li>Chapter 2
-<ul  dir="auto">
-      <li>Section 2</li>
+          </ul>
+        </li>
 
-</ul></li>
+          </ul>
+        </li>
+  <li><p  dir="auto">Chapter 2
+</p>
+          <ul  dir="auto">
+                  <li><p  dir="auto">Section 2</p></li>
 
-</ul>
+          </ul>
+        </li>
+
+          </ul>
+        
 <h3  id="ordered-list" dir="auto">Ordered List</h3>
-<ol  dir="auto">
-  <li>First item</li>
-  <li>Second item
-<ol  dir="auto">
-      <li>Nested
-<ol  dir="auto">
-          <li>Nested again</li>
 
-</ol></li>
+          <ol  dir="auto">
+              <li><p  dir="auto">First item</p></li>
+  <li><p  dir="auto">Second item
+</p>
+          <ol  dir="auto">
+                  <li><p  dir="auto">Nested
+</p>
+          <ol  dir="auto">
+                      <li><p  dir="auto">Nested again</p></li>
 
-</ol></li>
-  <li>Third item</li>
+          </ol>
+        </li>
 
-</ol>
+          </ol>
+        </li>
+  <li><p  dir="auto">Third item</p></li>
+
+          </ol>
+        
 <h3  id="task-list" dir="auto">Task List</h3>
-<ul  class="task-list" dir="auto">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Job
-<ul  class="task-list" dir="auto">
-      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Step 1</li>
-      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Step 2</li>
-      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Step 3</li>
 
-</ul></li>
+          <ul  class="task-list" dir="auto">
+              <li class="task-list-item"><p  dir="auto"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Job
+</p>
+          <ul  class="task-list" dir="auto">
+                  <li class="task-list-item"><p  dir="auto"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Step 1</p></li>
+      <li class="task-list-item"><p  dir="auto"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Step 2</p></li>
+      <li class="task-list-item"><p  dir="auto"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Step 3</p></li>
 
-</ul>
+          </ul>
+        </li>
+
+          </ul>
+        
 <h3  id="description-lists" dir="auto">Description Lists</h3><dl>
   <dt>Sun</dt>
-  <dd>the star around which the earth orbits</dd>
+  <dd><p  dir="auto">the star around which the earth orbits</p></dd>
   <dt>Moon</dt>
-  <dd>the natural satellite of the earth, visible by reflected light from the sun</dd>
+  <dd><p  dir="auto">the natural satellite of the earth, visible by reflected light from the sun</p></dd>
 </dl>
 
 <h2  id="inline-elements" dir="auto">Inline Elements</h2>
-<p dir="auto"><strong>bold text</strong>,
+<p  dir="auto"><strong>bold text</strong>,
 <em>italic text</em>,
 <code  class="highlighter-rouge notranslate">code</code>,
 <del>strikethrough</del>,
@@ -3090,7 +3058,6 @@ Mailto: <a  href="mailto:test@example.com">Send Email</a></p>
 <small>small text</small>
 <mark>highlighted</mark> text.
 <abbr title="attribute">attr</abbr></p>
-
 <h2  id="code-blocks" dir="auto">Code Blocks</h2>
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Gemfile</span>
 <span class="n">gem</span> <span class="s1">'httparty'</span>
@@ -3117,8 +3084,7 @@ Mailto: <a  href="mailto:test@example.com">Send Email</a></p>
   <span class="vi">@temperature</span> <span class="o">=</span> <span class="n">weather_data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">]</span>
 <span class="k">end</span></code></pre></figure>
 
-<p dir="auto">Inline <code  class="highlighter-rouge notranslate">console.log("Hi")</code> inside text.</p>
-
+<p  dir="auto">Inline <code  class="highlighter-rouge notranslate">console.log("Hi")</code> inside text.</p>
 <h2  id="details--summary" dir="auto">Details / Summary</h2>
 <details>
   <summary>Click to expand</summary>
@@ -3133,14 +3099,14 @@ Mailto: <a  href="mailto:test@example.com">Send Email</a></p>
 </figure>
 
 <h3  id="simple-image" dir="auto">Simple Image</h3>
-<p dir="auto">  <div class="markdown-img-wrapper lazy-wrapper">
-<img  alt="Alt text" class="lazy-img" data-src="https://via.placeholder.com/400x200" />
+<p  dir="auto">  <div class="markdown-img-wrapper lazy-wrapper">
+<img  alt="Alt text" class="lazy-img" data-src="https://via.placeholder.com/400x200" loading="lazy" />
 <noscript><img  alt="Alt text" src="https://via.placeholder.com/400x200" /></noscript>  </div>
 </p>
-
 <h2  id="tables" dir="auto">Tables</h2>
-<table  dir="auto" role="table" class="markdown-table">
-  <thead>
+
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
     <tr>
       <th style="text-align: right">Feature</th>
       <th style="text-align: center">Supported</th>
@@ -3165,48 +3131,42 @@ Mailto: <a  href="mailto:test@example.com">Send Email</a></p>
     </tr>
   </tbody>
 
-</table>
+          </table>
+        
 <h2  id="filepath" dir="auto">Filepath</h2>
-<p dir="auto">Here is the <code  class="filepath highlighter-rouge notranslate">/path/to/the/file.extend</code>.</p>
-
+<p  dir="auto">Here is the <code  class="filepath highlighter-rouge notranslate">/path/to/the/file.extend</code>.</p>
 <h2  id="footnotes" dir="auto">Footnotes</h2>
-<p dir="auto">This sentence has a footnote.
+<p  dir="auto">This sentence has a footnote.
           <sup id="fnref:1">
             <a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref" aria-describedby="footnote-label">1</a>
           </sup>
         </p>
-
-<p dir="auto">This sentence has an another footnote.
+<p  dir="auto">This sentence has an another footnote.
           <sup id="fnref:2">
             <a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref" aria-describedby="footnote-label">2</a>
           </sup>
         </p>
-
 <h2  id="misc-elements" dir="auto">Misc elements</h2>
-<p dir="auto"><strong>Abbreviation:</strong><br />
+<p  dir="auto"><strong>Abbreviation:</strong><br />
 The abbreviation for HyperText Markup Language is <abbr title="HyperText Markup Language">HTML</abbr>.</p>
-
-<p dir="auto"><strong>Keyboard Input:</strong><br />
+<p  dir="auto"><strong>Keyboard Input:</strong><br />
 To save, press <kbd>Ctrl</kbd> + <kbd>S</kbd>.</p>
-
-<p dir="auto"><strong>Subscript/Superscript:</strong><br />
+<p  dir="auto"><strong>Subscript/Superscript:</strong><br />
 H<sub>2</sub>O and E = mc<sup>2</sup></p>
-
-<p dir="auto"><strong>Time Tag:</strong><br />
-<time datetime="2025-05-31">May 31, 2025</time></p>
-<section class="footnotes" role="doc-endnotes" dir="auto">
+<p  dir="auto"><strong>Time Tag:</strong><br />
+<time datetime="2025-05-31">May 31, 2025</time></p><section class="footnotes" role="doc-endnotes" dir="auto">
 
           <h2 id="footnote-label" class="visually-hidden" dir="auto">Footnotes</h2>
-        <ol  class="footnote-list" dir="auto">
-  <li id="fn:1" class="footnote-list-item">
-    <p dir="auto">This is the footnote content.&nbsp;
+        
+          <ol  class="footnote-list" dir="auto">
+              <li id="fn:1" class="footnote-list-item">
+<p  dir="auto">This is the footnote content.&nbsp;
             <a href="#fnref:1" class="reverse-footnote" aria-label="Back to reference 1" role="doc-backlink">↩</a>
-          </p>
-  </li>
+          </p>  </li>
   <li id="fn:2" class="footnote-list-item">
-    <p dir="auto">This is the another footnote content.&nbsp;
+<p  dir="auto">This is the another footnote content.&nbsp;
             <a href="#fnref:2" class="reverse-footnote" aria-label="Back to reference 2" role="doc-backlink">↩</a>
-          </p>
-  </li>
+          </p>  </li>
 
-</ol></section>]]></content><author><name>Harshal Ladhe</name></author><category term="blogging" /><category term="typography" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.]]></summary></entry></feed>
+          </ol>
+        </section>]]></content><author><name>Harshal Ladhe</name></author><category term="blogging" /><category term="typography" /><category term="typography" /><category term="design" /><category term="styleguide" /><summary type="html"><![CDATA[This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.]]></summary></entry></feed>
