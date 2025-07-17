@@ -79,3 +79,9 @@ post:
     default: harshal
   read_time:
     words_per_minute: 180
+
+  related:
+    tag_score: 1.0
+    category_score: 0.5
+    max_related: 3
+    fallback_to_recent: true # Optional: fallback if not enough matches

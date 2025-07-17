@@ -199,3 +199,16 @@
   border-radius: var(--border-radius-default)
 
   @include transition-properties((background-color, color), $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
+
+#mask
+  display: none
+  position: fixed
+  inset: var(--space-none)
+  height: 100%
+  width: 100%
+  z-index: 1
+
+  @at-root [data-sidebar="open"] &
+    @include breakpoint.max(md)
+      display: block
+      background-color: var(--color-bg-overlay-backdrop)

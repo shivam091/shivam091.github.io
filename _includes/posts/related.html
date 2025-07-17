@@ -1,0 +1,32 @@
+{% if page.related_posts and page.related_posts.size > 0 %}
+  <section id="related-posts" aria-labelledby="related-posts-heading">
+    <h3 id="related-posts-heading">Related Posts</h3>
+    <ul class="related-posts list-unstyled">
+      {% for post in page.related_posts %}
+        <li>
+          <article class="card">
+            <a href="{{ post.url | relative_url }}" class="card-link" aria-label="Read post: {{ post.title }}">
+              <div class="card-body">
+                <header class="card-header">
+                  <h2 class="card-title post-title">
+                    {{ post.title }}
+                  </h2>
+                </header>
+                <div class="card-content">
+                  {% if post.excerpt %}
+                    <div class="post-excerpt">{{ post.excerpt | markdownify }}</div>
+                  {% endif %}
+                </div>
+                <footer class="card-footer">
+                  <div class="post-meta">
+                    {% include posts/published-at.html post = post %}
+                  </div>
+                </footer>
+              </div>
+            </a>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}
