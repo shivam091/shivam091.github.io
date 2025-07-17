@@ -1,0 +1,43 @@
+@use "abstracts/animations/slide-down" as *
+
+.retro-counter-container
+  display: inline-flex
+  gap: var(--space-md)
+  align-items: center
+  color: var(--color-fg-muted)
+  text-align: center
+  margin-top: var(--fluid-space-base)
+  font-size: var(--fluid-font-size-lg)
+
+.retro-counter
+  display: flex
+  gap: var(--space-xs)
+  background: var(--color-bg-retro-counter)
+  padding-block: var(--space-sm)
+  padding-inline: var(--space-base)
+  border-radius: var(--border-radius-default)
+  box-shadow: var(--box-shadow-md)
+
+  .digit
+    width: var(--size-lg)
+    height: var(--size-xl)
+    animation: fade-in var(--motion-duration-default) var(--motion-easing-ease) both, slide-down var(--motion-duration-default) var(--motion-easing-ease) both
+
+    &:nth-child(1)
+      animation-delay: 0ms
+    &:nth-child(2)
+      animation-delay: 100ms
+    &:nth-child(3)
+      animation-delay: 200ms
+    &:nth-child(4)
+      animation-delay: 300ms
+    &:nth-child(5)
+      animation-delay: 400ms
+    &:nth-child(6)
+      animation-delay: 500ms
+
+use.on
+  fill: var(--color-retro-counter-segment-active)
+
+use.off
+  fill: var(--color-retro-counter-segment-inactive)

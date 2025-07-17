@@ -1,6 +1,7 @@
 @use "abstracts/modules/bg-cover" as *
 @use "abstracts/mixins/overlay" as *
-@use "abstracts/animations/fade-in-up" as *
+@use "abstracts/animations/fade-in" as *
+@use "abstracts/animations/slide-up" as *
 @use "abstracts/animations/bounce" as *
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
@@ -38,7 +39,7 @@
   max-inline-size: 45rem
   margin-inline: auto
   backdrop-filter: blur(var(--blur-lg)) saturate(140%) contrast(120%)
-  animation: fadeInUp var(--motion-duration-extra-slow) var(--motion-easing-in) both
+  animation: fade-in var(--motion-duration-extra-slow) var(--motion-easing-in) both, slide-up var(--motion-duration-extra-slow) var(--motion-easing-in) both
 
   @include breakpoint.max(md)
     max-inline-size: 35rem
