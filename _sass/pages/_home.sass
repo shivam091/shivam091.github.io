@@ -1,0 +1,45 @@
+.home-layout
+  display: grid
+  grid-template-columns: 2fr 1fr
+  grid-template-areas: "home-left home-right"
+  gap: var(--fluid-space-base)
+  align-items: start
+  box-sizing: border-box
+
+  @media (max-width: 1280px)
+    grid-template-columns: 1fr
+    grid-template-areas: "home-left" "home-right"
+
+/* Left & Right columns */
+.home-left
+  grid-area: home-left
+  display: grid
+  grid-template-rows: repeat(2, auto)
+  grid-template-areas: "pinned-posts" "featured-posts"
+  gap: var(--fluid-space-sm)
+
+.home-right
+  grid-area: home-right
+  display: grid
+  grid-template-rows: repeat(3, auto)
+  grid-template-areas: "trending-tags" "popular-categories" "recently-updated"
+  gap: var(--fluid-space-sm)
+
+.pinned-posts
+  grid-area: pinned-posts
+
+.featured-posts
+  grid-area: featured-posts
+
+.trending-tags
+  grid-area: trending-tags
+
+.popular-categories
+  grid-area: popular-categories
+
+  .posts-count
+    font-size: 0.95em
+    color: var(--color-fg-muted)
+
+.recently-updated-posts
+  grid-area: recently-updated

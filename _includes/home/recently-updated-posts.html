@@ -1,0 +1,14 @@
+{%- assign updated_posts = site.recently_updated_posts -%}
+
+{% if updated_posts and updated_posts != empty %}
+<section class="recently-updated-posts">
+  <h2 class="section">Recently Updated Posts</h2>
+  <ul class="list-unstyled">
+  {% for post in updated_posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}" class="link-muted">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+{% endif %}

@@ -1,0 +1,8 @@
+{%- assign pinned_posts = site.pinned_posts -%}
+
+{% if pinned_posts and pinned_posts != empty %}
+<section class="pinned-posts">
+  <h2 class="section">Pinned Posts</h2>
+  {% include posts/list.html posts = pinned_posts %}
+</section>
+{% endif %}

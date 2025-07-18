@@ -1,0 +1,18 @@
+{%- assign popular_categories = site.popular_categories -%}
+
+{% if popular_categories and popular_categories != empty %}
+  <section class="popular-categories">
+    <h2 class="section">Popular Categories</h2>
+    <ul class="list-unstyled">
+      {% for popular_category in popular_categories %}
+        {%- assign category = popular_category.name -%}
+        {%- assign posts_count = popular_category.posts_count -%}
+        <li class="popular-category">
+          <a href="{{ '/category/' | append: category | relative_url }}" class="link-muted">{{ category }}</a>
+          <span class="dotted-separator"></span>
+          <span class="posts-count">{% include posts/count.html post_count = posts_count %}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}

@@ -150,7 +150,7 @@ module Kramdown
 
         @footnotes.each do |name, data, *_|
           link_raw = %Q(
-            <a href="#fnref:#{name}" class="reverse-footnote" aria-label="Back to reference #{name}" role="doc-backlink">↩</a>
+            <a href="#fnref:#{name}" class="reverse-footnote" aria-label="Back to reference #{name}" role="doc-backlink">&#8617;</a>
           )
 
           li = Element.new(:li, nil, {"id" => "fn:#{name}", class: "footnote-list-item"})

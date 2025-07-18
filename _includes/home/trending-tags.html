@@ -1,0 +1,16 @@
+{%- assign trending_tags = site.trending_tags -%}
+
+{% if trending_tags and trending_tags != empty %}
+<section class="trending-tags">
+  <h2 class="section">Trending Tags</h2>
+  <ul class="tags">
+    {% for tag in trending_tags %}
+      <li class="tag">
+        <a href="{{ '/tag/' | append: tag | relative_url }}" class="tag-link link-muted" rel="tag" aria-label="Tag: {{ tag }}">
+          <span class="tag-name">#{{ tag }}</span>
+        </a>
+      </li>
+    {% endfor -%}
+  </ul>
+</section>
+{% endif %}

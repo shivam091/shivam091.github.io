@@ -4,10 +4,16 @@ a
   color: var(--color-fg-link)
   text-decoration: none
 
-  &:hover, &:focus-visible
+  &:hover
     @extend %text-underline
     text-decoration-color: var(--color-fg-link)
 
   // &:visited
   //   color: var(--color-fg-link-visited)
   //
+
+.link-muted
+  color: var(--color-fg-muted)
+
+  &:hover
+    color: var(--color-fg-link)
