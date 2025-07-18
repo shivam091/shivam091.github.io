@@ -1,0 +1,8 @@
+{%- assign featured_posts = site.data.featured_posts -%}
+
+{% if site.featured_posts.enabled and featured_posts != empty %}
+<section class="featured-posts" aria-labelledby="featured-posts-heading">
+  <h2 id="featured-posts-heading" class="section">Featured Posts</h2>
+  {% include posts/list.html posts = featured_posts %}
+</section>
+{% endif %}
