@@ -17,6 +17,9 @@ group :jekyll_plugins do
 
   # Automatically generate post archives by dates, tags, and categories
   gem "jekyll-archives", "~> 2.3"
+  
+  # Pagination gem built specially for Jekyll 3, and newer
+  gem "jekyll-paginate-v2", "~> 3.0"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

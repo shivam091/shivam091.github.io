@@ -14,6 +14,7 @@ plugins:
   - jekyll-archives
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-paginate-v2
 
 permalink: /post/:slug
 
@@ -60,6 +61,15 @@ jekyll-archives:
   permalinks:
     tag: /tag/:name/
     category: /category/:name/
+
+pagination:
+  enabled: true
+  title: ":title - Page :num"
+  permalink: pretty
+  trail:
+    before: 2
+    after: 2
+  sort_reverse: true
 
 author:
   name: Harshal LADHE
