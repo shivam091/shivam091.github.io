@@ -1,9 +1,11 @@
-{% if page.related_posts and page.related_posts.size > 0 %}
+{%- assign related_posts = page.related_posts -%}
+
+{% if site.related_post.enabled and related_posts != empty %}
   <section id="related-posts" aria-labelledby="related-posts-heading">
     <h3 id="related-posts-heading">Related Posts</h3>
     <ul class="related-posts list-unstyled">
-      {% for post in page.related_posts %}
-        <li>
+      {% for post in related_posts %}
+        <li class="related-post">
           <article class="card">
             <a href="{{ post.url | relative_url }}" class="card-link" aria-label="Read post: {{ post.title }}">
               <div class="card-body">
@@ -14,7 +16,7 @@
                 </header>
                 <div class="card-content">
                   {% if post.excerpt %}
-                    <div class="post-excerpt">{{ post.excerpt | markdownify }}</div>
+                    <div class="post-excerpt" title="{{ post.excerpt | escape }}">{{ post.excerpt | markdownify }}</div>
                   {% endif %}
                 </div>
                 <footer class="card-footer">
