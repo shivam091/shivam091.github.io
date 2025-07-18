@@ -1,0 +1,8 @@
+{%- assign pinned_posts = site.data.pinned_posts -%}
+
+{% if site.pinned_posts.enabled and pinned_posts != empty %}
+<section class="pinned-posts" aria-labelledby="pinned-posts-heading">
+  <h2 id="pinned-posts-heading" class="section">Pinned Posts</h2>
+  {% include posts/list.html posts = pinned_posts %}
+</section>
+{% endif %}
