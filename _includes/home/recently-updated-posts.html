@@ -1,0 +1,14 @@
+{%- assign recently_updated_posts = site.data.recently_updated_posts -%}
+
+{% if site.recently_updated_posts.enabled and recently_updated_posts != empty %}
+<section class="recently-updated-posts" aria-labelledby="recent-posts-heading">
+  <h2 id="recent-posts-heading" class="section">Recently Updated</h2>
+  <ol class="recently-updated-list">
+  {% for post in recently_updated_posts %}
+    <li class="recently-updated-post">
+      <a href="{{ post.url | relative_url }}" class="link-muted">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+  </ol>
+</section>
+{% endif %}
