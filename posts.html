@@ -2,6 +2,12 @@
 layout: page
 title: Posts
 permalink: /posts
+pagination:
+  enabled: true
+  permalink: /page/:num/
+  per_page: 5
 ---
 
-{% include posts/list.html posts = site.posts %}
+{% include posts/list.html posts = paginator.posts %}
+
+{% include pagination.html %}

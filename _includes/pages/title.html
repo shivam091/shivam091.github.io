@@ -1,12 +1,3 @@
-{%- if page.url contains "/tag/" -%}
-  {%- assign title = "Posts tagged with: " | append: page.title -%}
-{%- elsif page.url contains "/category/" -%}
-  {%- assign title = "Posts in category: " | append: page.title -%}
-{%- else -%}
-  {%- assign current_nav = site.nav | where: "href", page.url | first -%}
-  {%- assign title = page.title -%}
-{%- endif -%}
-
 <h1 id="page-title" class="page-title">
-  {{ title }}
+  {% include page-title.html %}
 </h1>

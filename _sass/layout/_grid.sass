@@ -21,12 +21,12 @@
   display: flex
   align-items: center
   flex-direction: column
-  padding: var(--space-base)
+  padding: var(--fluid-space-sm)
 
   @include transition-properties(transform, $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
 
   @include breakpoint.max(md)
-    padding-block: var(--space-sm)
+    padding-block: var(--space-xs)
 
     body[data-sidebar="open"] &
       transform: translateX(var(--wrapper-offset-sm))
