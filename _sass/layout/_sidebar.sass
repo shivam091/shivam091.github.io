@@ -18,7 +18,7 @@
   box-sizing: border-box
   overflow-y: auto
   box-shadow: var(--box-shadow-md)
-  padding: var(--fluid-space-sm)
+  padding: var(--fluid-space-md)
 
   @extend %bg-cover
 
@@ -34,7 +34,6 @@
     width: var(--sidebar-width-sm)
     opacity: var(--opacity-none)
     pointer-events: none
-    padding: var(--space-xs)
 
     @include transition-properties((transform, opacity), $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
 
@@ -50,6 +49,7 @@
   min-height: 0
   overflow-y: auto
   min-width: 0
+  padding: var(--space-sm)
 
   &::-webkit-scrollbar
     display: none
@@ -59,7 +59,6 @@
 
 .sidebar-top
   text-align: center
-  padding-block: var(--space-sm)
 
 .site-title
   font-size: var(--fluid-font-size-md)
@@ -187,8 +186,7 @@
   .bottom-link
     color: var(--color-fg-white)
 
-    &:hover,
-    &:focus-visible
+    &:hover
       color: var(--color-fg-on-emphasis)
       text-decoration: none
 
