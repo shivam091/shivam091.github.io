@@ -9,8 +9,20 @@
 
   {% include hero.html %}
 
-  <!-- <main id="main-content" class="main-content" role="main" tabindex="-1">
-  </main> -->
+  <main id="main-content" class="main-content" role="main" tabindex="-1">
+    <div class="home-layout">
+      <aside class="home-left">
+        {% include home/pinned-posts.html %}
+        {% include home/featured-posts.html %}
+      </aside>
+
+      <aside class="home-right">
+        {% include home/trending-tags.html %}
+        {% include home/popular-categories.html %}
+        {% include home/recently-updated-posts.html %}
+      </aside>
+    </div>
+  </main>
 
   {% include footer.html %}
 
