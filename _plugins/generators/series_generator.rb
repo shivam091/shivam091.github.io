@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require_relative "./../helpers/posts_helper"
+require_relative "./../helpers/logger_helper"
+
 module Jekyll
   class SeriesPage < Page
     def initialize(site, base, dir, series_id, content, frontmatter, posts, index, total)
@@ -30,18 +33,18 @@ module Jekyll
   end
 
   class SeriesGenerator < Generator
+    include PostsHelper, LoggerHelper
+
     safe true
-    priority :low
+    priority :high
 
     def generate(site)
-      Jekyll.logger.info "▶ Series:", "Generating series pages"
+      info("▶ SeriesGenerator:", "Generating series pages")
 
       series_docs = site.collections["series"]&.docs || []
 
       # Build fast lookup for posts by slug
-      post_map = site.posts.docs.each_with_object({}) do |post, map|
-        map[post.data["slug"]] = post if post.data["slug"]
-      end
+      slug_map = build_slug_map(site.posts.docs)
 
       # Parse _series/*.md files into series_data
       series_data = series_docs.each_with_object({}) do |doc, hash|
@@ -49,10 +52,10 @@ module Jekyll
         parts = doc.data["parts"] || []
 
         if parts.empty?
-          Jekyll.logger.warn "Series '#{id}' has no defined parts."
+          warn("Series '#{id}' has no defined parts.")
         end
 
-        posts = parts.map { |slug| post_map[slug] }.compact
+        posts = parts.map { |slug| slug_map[slug] }.compact
 
         hash[id] = {
           "id"      => id,
@@ -62,13 +65,18 @@ module Jekyll
         }
       end
 
-      sorted_series = series_data.sort_by { |_, data| [data["doc"].data["order"] || 99999, data["doc"].data["title"].to_s.downcase] }
+      sorted_series = series_data.sort_by { |_, data|
+        [
+          data["doc"].data["order"] || 99999,
+          data["doc"].data["title"].to_s.downcase
+        ]
+      }
       total_series = sorted_series.size
 
       sorted_series.each_with_index do |(series_id, data), index|
         posts = data["posts"]
         if posts.empty?
-          Jekyll.logger.warn "Series '#{series_id}' has no matching posts."
+          warn("Series '#{series_id}' has no matching posts.")
           next
         end
 
@@ -86,6 +94,8 @@ module Jekyll
             "title"       => frontmatter["title"],
             "cover_image" => frontmatter["cover_image"]
           }
+
+          # Post-to-post navigation
           post.data["previous_post"] = posts[i - 1] if i > 0
           post.data["next_post"]     = posts[i + 1] if i < posts.size - 1
         end
