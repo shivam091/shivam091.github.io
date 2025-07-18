@@ -11,26 +11,23 @@
 
 .skip-link
   position: absolute
-  top: -100vh
-  left: auto
+  top: var(--space-xl)
+  left: var(--space-xl)
   z-index: 9999
   padding: var(--space-sm) var(--space-md)
-  background-color: var(--color-bg-control)
-  color: var(--color-fg-control)
-  border: var(--border-width-default) solid var(--color-border-control)
-  border-radius: var(--border-radius-default)
   opacity: var(--opacity-none)
   pointer-events: none
+  transform: translateY(-100vh)
+  border: var(--border-width-default) solid var(--color-border-control)
+  border-radius: var(--border-radius-default)
 
-  @include transition-properties(top, $duration: var(--motion-duration-fast), $easing: var(--motion-easing-ease))
-
-  &:hover
-    background-color: var(--color-bg-control-hover)
+  @include transition-properties((transform, opacity), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-ease))
 
   &:focus
-    top: var(--space-xl)
-    left: var(--space-xl)
-    opacity: var(--opacity-full)
     color: var(--color-fg-control)
+    background-color: var(--color-bg-control-hover)
+    border-color: var(--color-border-control)
+    transform: translateY(0)
+    opacity: var(--opacity-full)
     pointer-events: auto
     text-decoration: none
