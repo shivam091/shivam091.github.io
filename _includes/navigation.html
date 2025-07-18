@@ -1,8 +1,12 @@
+{%- assign previous = page.previous -%}
+{%- assign next = page.next -%}
+
+{% if previous or next %}
 <nav class="navigation" aria-label="{% if page.layout == 'post' %}Post{% else %}Series{% endif %} navigation">
-  {%- if page.previous %}
-  <a href="{{ page.previous.url }}" class="navigation-link" rel="previous">
+  {%- if previous %}
+  <a href="{{ previous.url }}" class="navigation-link" rel="previous">
     <span class="label">Older</span>
-    <span class="title">{{ page.previous.title }}</span>
+    <span class="title">{{ previous.title }}</span>
   </a>
   {%- else %}
   <div class="navigation-link disabled" role="link" aria-disabled="true" tabindex="-1">
@@ -11,10 +15,10 @@
   </div>
   {%- endif %}
 
-  {%- if page.next %}
-  <a href="{{ page.next.url }}" class="navigation-link" rel="next">
+  {%- if next %}
+  <a href="{{ next.url }}" class="navigation-link" rel="next">
     <span class="label">Newer</span>
-    <span class="title">{{ page.next.title }}</span>
+    <span class="title">{{ next.title }}</span>
   </a>
   {%- else %}
   <div class="navigation-link disabled" role="link" aria-disabled="true" tabindex="-1">
@@ -23,3 +27,4 @@
   </div>
   {%- endif %}
 </nav>
+{% endif %}
