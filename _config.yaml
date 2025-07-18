@@ -90,8 +90,30 @@ post:
   read_time:
     words_per_minute: 180
 
-  related:
-    tag_score: 1.0
-    category_score: 0.5
-    max_related: 3
-    fallback_to_recent: true # Optional: fallback if not enough matches
+pinned_posts:
+  enabled: true
+
+featured_posts:
+  enabled: true
+
+recently_updated_posts:
+  enabled: true
+  limit: 5
+
+popular_categories:
+  enabled: true
+  limit: 5
+
+trending_tags:
+  enabled: true
+  limit: 10
+  max_posts: 15
+  decay_strategy: exponential # log or linear
+  normalization: true
+
+related_post:
+  enabled: true
+  limit: 3
+  tag_score: 1.0
+  category_score: 0.5
+  fallback_to_recent: true # Optional: fallback if not enough matches
