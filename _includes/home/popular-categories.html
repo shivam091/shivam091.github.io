@@ -1,0 +1,20 @@
+{%- assign popular_categories = site.data.popular_categories -%}
+
+{% if site.popular_categories.enabled and popular_categories != empty %}
+<section class="popular-categories" aria-labelledby="popular-categories-heading">
+  <h2 id="popular-categories-heading" class="section">Popular Categories</h2>
+  <ul class="list-unstyled">
+    {% for popular_category in popular_categories %}
+      {%- assign category = popular_category.name -%}
+      {%- assign posts_count = popular_category.posts_count -%}
+      {%- assign category_slug = category | slugify -%}
+      <li class="popular-category">
+        <a href="{{ '/category/' | append: category_slug | relative_url }}" class="link-muted"
+           aria-label="Category: {{ category }}">{{ category }}</a>
+        <span class="dotted-separator"></span>
+        <span class="posts-count">{% include posts/count.html post_count = posts_count %}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
