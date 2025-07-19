@@ -37,7 +37,8 @@ permalink: /categories
               {% icon folder %}
               {% icon folder-open %}
               <div class="category-meta-info">
-                <a href="{{ '/category/' | append: category_name | relative_url }}" class="category-title" tabindex="0" aria-label="View all posts in {{ category_name }}">
+                {%- assign category_slug = category_name | slugify -%}
+                <a href="{{ '/category/' | append: category_slug | relative_url }}" class="category-title" tabindex="0" aria-label="View all posts in {{ category_name }}">
                   {{ category_name }}
                 </a>
                 <small class="category-meta">
@@ -64,7 +65,8 @@ permalink: /categories
                   <li class="list-group-item">
                     {% icon folder %}
                     <div class="sub-category-meta-info">
-                      <a href="/category/{{ sub_category | slugify | prepend: site.baseurl }}/"
+                      {%- assign sub_category_slug = sub_category | slugify -%}
+                      <a href="{{ '/category/' | append: sub_category_slug | relative_url }}"
                          class="sub-category-title"
                          title="View posts in {{ sub_category }}">
                         {{ sub_category }}

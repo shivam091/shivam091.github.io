@@ -95,3 +95,19 @@ post:
     category_score: 0.5
     max_related: 3
     fallback_to_recent: true # Optional: fallback if not enough matches
+
+home:
+  pinned_posts:
+    enabled: true
+  featured_posts:
+    enabled: true
+  popular_categories:
+    enabled: true
+    limit: 5
+  recently_updated_posts:
+    enabled: true
+    limit: 5
+  trending_tags:
+    enabled: true
+    max_tags: 10
+    max_posts: 15
