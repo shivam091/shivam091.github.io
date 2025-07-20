@@ -92,6 +92,8 @@ post:
     default: harshal
   read_time:
     words_per_minute: 180
+  retro_counter:
+    enabled: true
 
 pinned_posts:
   enabled: true
