@@ -1,0 +1,15 @@
+{% if site.breadcrumbs.enabled and page.breadcrumbs %}
+<nav aria-label="Breadcrumb">
+  <ul class="breadcrumbs">
+    {% for crumb in page.breadcrumbs %}
+      <li class="breadcrumb-item" {% if forloop.last %} aria-current="page"{% endif %}>
+        {% if forloop.last %}
+          <span>{{ crumb.title }}</span>
+        {% else %}
+          <a href="{{ crumb.url | relative_url }}">{{ crumb.title }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}
