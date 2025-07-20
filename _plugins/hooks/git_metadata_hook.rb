@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-require "time"
-require "set"
-
 Jekyll::Hooks.register :site, :post_read do |site|
-  site.posts.docs.each do |post|
-    path = post.path
+  all_pages = site.pages + site.posts.docs
+
+  all_pages.each do |page|
+    path = page.path
     return unless File.exist?(path)
     return unless system("git", "ls-files", "--error-unmatch", path, out: File::NULL, err: File::NULL)
 
@@ -48,8 +47,8 @@ Jekyll::Hooks.register :site, :post_read do |site|
       }
     end
 
-    post.data["published_at"] = published_at
-    post.data["last_modified_at"] = last_modified_at
-    post.data["changelog"] = changelog unless changelog.empty?
+    page.data["published_at"] = published_at
+    page.data["last_modified_at"] = last_modified_at
+    page.data["changelog"] = changelog unless changelog.empty?
   end
 end
