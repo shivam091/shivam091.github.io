@@ -26,3 +26,12 @@
     event: download_resume
     label: resume.pdf
     category: engagement
+
+- type: feed
+  label: Feed
+  icon: feed
+  href: "/feed.xml"
+  analytics:
+    event: subscribe_feed
+    label: RSS Feed
+    category: engagement
