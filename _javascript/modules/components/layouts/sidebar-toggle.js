@@ -30,11 +30,11 @@ export default class SidebarToggle {
     const toggleButton = this.toggleButtonElement;
     if (!toggleButton) return;
 
-    const isOpen = document.body.getAttribute("data-sidebar") === "open";
+    const isOpen = document.documentElement.getAttribute("data-sidebar") === "open";
     const nextState = isOpen ? "close" : "open";
 
     toggleButton.setAttribute("aria-expanded", String(nextState === "open"));
-    document.body.setAttribute("data-sidebar", nextState);
+    document.documentElement.setAttribute("data-sidebar", nextState);
   }
 
   static initialize() {

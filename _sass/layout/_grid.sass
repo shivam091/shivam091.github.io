@@ -26,7 +26,7 @@
   @include transition-properties(transform, $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
 
   @include breakpoint.max(md)
-    body[data-sidebar="open"] &
+    @at-root [data-sidebar="open"] &
       transform: translateX(var(--wrapper-offset-sm))
 
 .page-wrapper,
