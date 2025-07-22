@@ -9,7 +9,9 @@
 
   {% include hero.html %}
 
+
   <main id="main-content" class="main-content" role="main" tabindex="-1">
+    {% include clouds.html %}
     <div class="home-layout">
       <aside class="home-left">
         {% include home/pinned-posts.html %}
@@ -22,7 +24,9 @@
         {% include home/recently-updated-posts.html %}
       </aside>
     </div>
+    {% include sky.html %}
   </main>
+
 
   {% include footer.html %}
 

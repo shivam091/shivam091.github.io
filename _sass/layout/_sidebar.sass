@@ -8,10 +8,10 @@
   display: flex
   flex-direction: column
   position: fixed
-  top: var(--space-none)
+  top: var(--height-header)
   left: var(--space-none)
   width: var(--sidebar-width-lg)
-  height: 100vh
+  height: calc(100vh - var(--height-header))
   background-image: url("./../assets/img/my-profile-img.png")
   color: var(--color-fg-white)
   z-index: 999
@@ -30,6 +30,8 @@
     width: var(--sidebar-width-md)
 
   @include breakpoint.max(md)
+    top: 0
+    height: 100vh
     transform: translateX(-100%)
     width: var(--sidebar-width-sm)
     opacity: var(--opacity-none)
