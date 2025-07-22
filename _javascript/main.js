@@ -36,3 +36,9 @@ RetroCounter.initAll("[data-retro-counter]", {
 });
 
 bindHeroTyping();
+document.addEventListener("scroll", () => {
+  const clouds = document.querySelector(".clouds svg");
+  const scrollY = window.scrollY;
+  const offset = scrollY * 0.2; // adjust parallax strength here (e.g., 0.1–0.3)
+  clouds.style.setProperty("--parallax-offset", `${offset}px`);
+});
