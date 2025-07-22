@@ -42,3 +42,43 @@ document.addEventListener("scroll", () => {
   const offset = scrollY * 0.2; // adjust parallax strength here (e.g., 0.1–0.3)
   clouds.style.setProperty("--parallax-offset", `${offset}px`);
 });
+
+// let ticking = false;
+//
+// window.addEventListener("scroll", () => {
+//   if (!ticking) {
+//     window.requestAnimationFrame(() => {
+//       const scrollTop = window.scrollY;
+//       const maxScroll = 300;
+//       const offset = Math.min(scrollTop * 0.4, maxScroll);
+//
+//       document.documentElement.style.setProperty('--cloud-scroll-offset', `${offset}px`);
+//       document.documentElement.dataset.frozen = scrollTop >= maxScroll;
+//       ticking = false;
+//     });
+//
+//     ticking = true;
+//   }
+//
+// });
+// window.addEventListener('scroll', () => {
+//   const scrollY = window.scrollY;
+//   const maxScroll = 200;
+//   const offset = Math.min(scrollY * 0.2, maxScroll); // Parallax effect
+//   document.documentElement.style.setProperty('--cloud-offset', `${offset}px`);
+// });
+//
+// document.addEventListener("scroll", () => {
+//   const scrollY = window.scrollY;
+//   const skyEl = document.querySelector(".sky-bottom");
+//
+//   const freezeAt = 1200; // scrollY px where effect "freezes"
+//   const maxOffset = 50; // max cloud movement
+//
+//   if (scrollY < freezeAt) {
+//     const offset = Math.min(scrollY / 10, maxOffset);
+//     skyEl.style.setProperty("--cloud-offset", `${offset}px`);
+//   } else {
+//     skyEl.style.setProperty("--cloud-offset", `${maxOffset}px`);
+//   }
+// });
