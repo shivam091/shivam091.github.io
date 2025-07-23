@@ -1,26 +1,35 @@
-.home-layout
+.home-grid
+  display: grid
+  grid-template-rows: 100vh auto auto
+  grid-template-areas: "hero" "content" "footer"
+
+.home-content
+  grid-area: content
+  padding: var(--fluid-space-md)
+
+.content-grid
   display: grid
   grid-template-columns: 2fr 1fr
-  grid-template-areas: "home-left home-right"
+  grid-template-areas: "content-primary content-sidebar"
   gap: var(--fluid-space-base)
   align-items: start
   box-sizing: border-box
 
   @media (max-width: 1280px)
     grid-template-columns: 1fr
-    grid-template-areas: "home-left" "home-right"
+    grid-template-areas: "content-primary" "content-sidebar"
     gap: var(--space-none)
 
 /* Left & Right columns */
-.home-left
-  grid-area: home-left
+.content-primary
+  grid-area: content-primary
   display: grid
   grid-template-rows: repeat(2, auto)
   grid-template-areas: "pinned-posts" "featured-posts"
   gap: var(--fluid-space-sm)
 
-.home-right
-  grid-area: home-right
+.content-sidebar
+  grid-area: content-sidebar
   display: grid
   grid-template-rows: repeat(3, auto)
   grid-template-areas: "trending-tags" "popular-categories" "recently-updated"
