@@ -84,6 +84,9 @@ author:
   instagram: taurusian_soul
   resume: /assets/docs/resume.pdf
 
+breadcrumbs:
+  enabled: true
+
 post:
   author:
     default: harshal
