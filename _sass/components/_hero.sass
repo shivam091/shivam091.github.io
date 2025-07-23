@@ -6,11 +6,10 @@
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
-.hero
-  @extend %bg-cover
+.hero-banner
+  grid-area: hero
   position: relative
   width: 100%
-  min-height: 100dvh
   background-image: url("../assets/img/hero-bg.png")
   display: flex
   align-items: center
@@ -21,12 +20,14 @@
   padding: var(--fluid-space-base)
   overflow: hidden
 
+  @extend %bg-cover
+
   @include overlay(rgba(13, 17, 23, 0.6))
 
   @include breakpoint.max(md)
     background-attachment: scroll
 
-.hero-content
+.hero-inner
   position: relative
   z-index: 2
   padding: var(--fluid-space-lg)
@@ -44,14 +45,14 @@
   @include breakpoint.max(md)
     max-inline-size: 35rem
 
-.hero-title
+.hero-heading
   font-size: var(--fluid-font-size-xxl)
   line-height: var(--line-height-title)
   margin-bottom: var(--space-sm)
   font-weight: var(--font-weight-semi-bold)
   border-bottom: none
 
-.hero-subtitle
+.hero-subheading
   font-size: var(--fluid-font-size-lg)
   font-weight: var(--font-weight-normal)
   line-height: var(--line-height-relaxed)
@@ -61,14 +62,14 @@
   letter-spacing: 1px
   border-bottom: var(--border-width-medium) solid var(--color-border-accent-emphasis)
 
-.hero-links
+.hero-cta-group
   margin-top: var(--fluid-space-base)
   display: flex
   flex-wrap: wrap
   justify-content: center
   gap: var(--fluid-space-sm)
 
-.hero-link
+.hero-cta
   padding: var(--space-md) var(--space-base)
   font-size: var(--fluid-font-size-normal)
   color: var(--color-fg-on-emphasis)
@@ -95,7 +96,7 @@
     width: 100%
     text-align: center
 
-.scroll-indicator
+.hero-scroll-indicator
   position: absolute
   bottom: var(--space-none)
   left: 50%

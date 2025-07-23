@@ -1,15 +1,15 @@
-<div class="hero" role="banner" aria-labelledby="hero-title">
-  <div class="hero-content">
+<div class="hero-banner" role="banner" aria-labelledby="hero-title">
+  <div class="hero-inner">
     <img src="{{ '/assets/img/profile-img.png' | relative_url }}" alt="{{ site.author.name }}" class="profile-pic" loading="lazy">
-    <h1 id="hero-title" class="hero-title">Hi, I'm {{ site.author.name }} 👋</h1>
-    <p class="hero-subtitle lead">
+    <h1 id="hero-title" class="hero-heading">Hi, I'm {{ site.author.name }} 👋</h1>
+    <p class="hero-subheading lead">
       I'm
       {% assign role_list = site.author.roles | join: "," -%}
       <span id="hero-highlight" class="hero-highlight typed" data-typed-items="{{ role_list }}"></span>
     </p>
     <hr/>
-    <nav class="hero-links" aria-label="Hero links">
-      <a href="/about" class="hero-link">
+    <nav class="hero-cta-group" aria-label="Hero links">
+      <a href="/about" class="hero-cta">
         {% icon info-circle %}
         About
       </a>
@@ -19,7 +19,7 @@
           {%- assign link = link | relative_url -%}
         {%- endif -%}
 
-        <a href="{{ link }}" class="hero-link" target="_blank"
+        <a href="{{ link }}" class="hero-cta" target="_blank"
            {% if entry.analytics %}
              data-analytics-event="{{ entry.analytics.event }}"
              data-analytics-label="{{ entry.analytics.label }}"
@@ -31,8 +31,8 @@
       {%- endfor %}
     </nav>
   </div>
-  <div class="scroll-indicator">
-    <button class="scroll-indicator-anchor" data-skip-link aria-label="Skip to main content">
+  <div class="hero-scroll-indicator">
+    <button class="scroll-indicator-anchor" data-skip-link data-skip-to="#main-content" aria-label="Skip to main content">
       <div class="animate-bounce">{% icon arrow-down %}</div>
     </button>
   </div>
