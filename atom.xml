@@ -5,7 +5,7 @@
   <subtitle>Software Engineer | Freelancer | Learner</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-07-23T20:28:11+05:30</updated>
+  <updated>2025-07-23T21:40:27+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -1015,27 +1015,35 @@ Use <strong><code  class="highlighter-rouge notranslate">auto-fill</code></stron
         
 <p  dir="auto"><strong>CSS Grid isn’t just a layout tool</strong> — it’s a complete design system built into the browser. Mastering it means writing less CSS while building better UI.</p>
 <p  dir="auto">🚀 Keep experimenting with combinations of Grid, Flexbox, and container queries — that’s where layout magic happens.</p>]]></content>
-      <category term="auto-fill" />
+
     
-      <category term="auto-fit" />
+      <category term="css" scheme="urn:taxonomy:tag" />
     
-      <category term="beginner" />
+      <category term="grid" scheme="urn:taxonomy:tag" />
     
-      <category term="container-queries" />
+      <category term="responsive" scheme="urn:taxonomy:tag" />
     
-      <category term="css" />
+      <category term="layout" scheme="urn:taxonomy:tag" />
     
-      <category term="fr-units" />
+      <category term="fr-units" scheme="urn:taxonomy:tag" />
     
-      <category term="grid" />
+      <category term="minmax" scheme="urn:taxonomy:tag" />
     
-      <category term="layout" />
+      <category term="media-queries" scheme="urn:taxonomy:tag" />
     
-      <category term="media-queries" />
+      <category term="container-queries" scheme="urn:taxonomy:tag" />
     
-      <category term="minmax" />
+      <category term="auto-fit" scheme="urn:taxonomy:tag" />
     
-      <category term="responsive" />
+      <category term="auto-fill" scheme="urn:taxonomy:tag" />
+    
+
+    
+      <category term="css" scheme="urn:taxonomy:category" />
+    
+      <category term="beginner" scheme="urn:taxonomy:category" />
+    
+      <category term="responsive" scheme="urn:taxonomy:category" />
     
   </entry>
   
@@ -2315,21 +2323,29 @@ form what’s known as the <strong>implicit grid</strong>.</p>
 
           </ul>
         ]]></content>
-      <category term="beginner" />
+
     
-      <category term="css" />
+      <category term="css" scheme="urn:taxonomy:tag" />
     
-      <category term="css-grid" />
+      <category term="css-grid" scheme="urn:taxonomy:tag" />
     
-      <category term="frontend" />
+      <category term="grid" scheme="urn:taxonomy:tag" />
     
-      <category term="grid" />
+      <category term="layout" scheme="urn:taxonomy:tag" />
     
-      <category term="grid-alignment" />
+      <category term="grid-template-areas" scheme="urn:taxonomy:tag" />
     
-      <category term="grid-template-areas" />
+      <category term="grid-alignment" scheme="urn:taxonomy:tag" />
     
-      <category term="layout" />
+      <category term="frontend" scheme="urn:taxonomy:tag" />
+    
+
+    
+      <category term="css" scheme="urn:taxonomy:category" />
+    
+      <category term="beginner" scheme="urn:taxonomy:category" />
+    
+      <category term="layout" scheme="urn:taxonomy:category" />
     
   </entry>
   
@@ -2831,21 +2847,29 @@ like fr (fraction of available space).</p></li>
           </ul>
         
 <p  dir="auto">Stay tuned — you’re just one step away from turning your layout skills from good to great 💪</p>]]></content>
-      <category term="2d-layouts" />
+
     
-      <category term="beginner" />
+      <category term="css" scheme="urn:taxonomy:tag" />
     
-      <category term="css" />
+      <category term="grid" scheme="urn:taxonomy:tag" />
     
-      <category term="css-grid" />
+      <category term="css-grid" scheme="urn:taxonomy:tag" />
     
-      <category term="frontend" />
+      <category term="layout" scheme="urn:taxonomy:tag" />
     
-      <category term="grid" />
+      <category term="web design" scheme="urn:taxonomy:tag" />
     
-      <category term="layout" />
+      <category term="frontend" scheme="urn:taxonomy:tag" />
     
-      <category term="web design" />
+      <category term="2d-layouts" scheme="urn:taxonomy:tag" />
+    
+
+    
+      <category term="css" scheme="urn:taxonomy:category" />
+    
+      <category term="beginner" scheme="urn:taxonomy:category" />
+    
+      <category term="layout" scheme="urn:taxonomy:category" />
     
   </entry>
   
@@ -3167,15 +3191,19 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
   <use href="/assets/img/sprite.svg#icon-folder-open" />
 </svg>
 ]]></content>
-      <category term="blogging" />
+
     
-      <category term="components" />
+      <category term="typography" scheme="urn:taxonomy:tag" />
     
-      <category term="design" />
+      <category term="design" scheme="urn:taxonomy:tag" />
     
-      <category term="styleguide" />
+      <category term="styleguide" scheme="urn:taxonomy:tag" />
     
-      <category term="typography" />
+
+    
+      <category term="blogging" scheme="urn:taxonomy:category" />
+    
+      <category term="components" scheme="urn:taxonomy:category" />
     
   </entry>
   
@@ -3416,13 +3444,19 @@ H<sub>2</sub>O and E = mc<sup>2</sup></p>
           </ol>
         </section>
 ]]></content>
-      <category term="blogging" />
+
     
-      <category term="design" />
+      <category term="typography" scheme="urn:taxonomy:tag" />
     
-      <category term="styleguide" />
+      <category term="design" scheme="urn:taxonomy:tag" />
     
-      <category term="typography" />
+      <category term="styleguide" scheme="urn:taxonomy:tag" />
+    
+
+    
+      <category term="blogging" scheme="urn:taxonomy:category" />
+    
+      <category term="typography" scheme="urn:taxonomy:category" />
     
   </entry>
   
