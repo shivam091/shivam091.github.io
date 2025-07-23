@@ -36,6 +36,9 @@ exclude:
   - README.md
   - LICENSE.md
 
+sitemap:
+  minify: true
+
 sass:
   sass_dir: _sass
   style: compressed
