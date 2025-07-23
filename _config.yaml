@@ -12,7 +12,6 @@ timezone: Asia/Kolkata
 
 plugins:
   - jekyll-archives
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate-v2
 
@@ -38,6 +37,13 @@ exclude:
 
 sitemap:
   minify: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      excerpt_separator: "<!--more-->"
 
 sass:
   sass_dir: _sass
@@ -86,6 +92,7 @@ author:
   linkedin: shivam091
   instagram: taurusian_soul
   resume: /assets/docs/resume.pdf
+  url: "https://shivam091.github.io"
 
 breadcrumbs:
   enabled: true
