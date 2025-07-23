@@ -3,19 +3,23 @@ export default class SkipLink {
     return document.querySelector("[data-skip-link]");
   }
 
-  static get mainContentElement() {
-    return document.getElementById("main-content");
-  }
-
   static initialize() {
     const skipLink = this.skipLinkElement;
-    const mainContent = this.mainContentElement;
+    const targetSelector = skipLink.getAttribute("data-skip-to");
+    const targetElement = document.querySelector(targetSelector);
 
-    if (!skipLink || !mainContent) return;
+    if (!targetElement) return;
 
     skipLink.addEventListener("click", (event) => {
       event.preventDefault();
-      mainContent.focus();
+
+      // Make sure the target is focusable
+      if (!targetElement.hasAttribute("tabindex")) {
+        targetElement.setAttribute("tabindex", "-1");
+      }
+
+      targetElement.focus({ preventScroll: true });
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 }
