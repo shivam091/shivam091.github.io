@@ -1,0 +1,3463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en">
+  <generator uri="https://jekyllrb.com" version="4.3.3">Jekyll</generator>
+  <title>Harshal LADHE</title>
+  <subtitle>Software Engineer | Freelancer | Learner</subtitle>
+  <id>https://shivam091.github.io/</id>
+  <icon>https://shivam091.github.io/img/favicon.png</icon>
+  <updated>2025-07-24T13:25:50+05:30</updated>
+  <rights>© 2025 Harshal LADHE</rights>
+
+  <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
+  <link rel="self" type="application/atom+xml" href="https://shivam091.github.io/atom.xml" />
+
+  
+  <author>
+    <name>Harshal LADHE</name>
+    <email>harshal.ladhe.1@gmail.com</email>
+    <uri>https://shivam091.github.io</uri>
+  </author>
+  
+
+  
+  <entry xml:lang="en">
+    <title>Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</title>
+    <link rel="alternate" type="text/html" href="https://shivam091.github.io/post/responsive-css-grid-layouts" />
+    <id>https://shivam091.github.io/post/responsive-css-grid-layouts</id>
+
+    <published>2025-07-09T15:21:11+05:30</published>
+    <updated>2025-07-10T19:05:25+05:30</updated>
+
+    
+    <media:thumbnail
+      url="https://shivam091.github.io/assets/img/posts/css/responsive-css-grid-layouts/cover.png"
+      width="1200"
+      height="630" />
+    
+
+    
+    
+      
+        
+        <author>
+          <name>Harshal Ladhe</name>
+          <uri>https://github.com/shivam091</uri>
+        </author>
+      
+    
+
+    <summary type="html">
+      Learn how to build truly responsive CSS Grid layouts using `fr` units, `minmax()`, `auto-fit`, `auto-fill`, and modern media &amp; container queries.
+    </summary>
+    <content type="html"><![CDATA[<h2  id="introduction" dir="auto">Introduction</h2>
+<p  dir="auto">Welcome to <strong>Part 3</strong> of the CSS Grid Fundamentals Series — the final and most impactful part!</p>
+<p  dir="auto">So far, we’ve explored:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><a  href="/post/getting-started-with-css-grid">Part 1</a>: Grid basics, tracks, and layout structure</p></li>
+  <li><p  dir="auto"><a  href="/post/mastering-css-grid-alignment-spanning">Part 2</a>: Grid areas, alignment, spanning, and implicit/explicit tracks</p></li>
+
+          </ul>
+        
+<p  dir="auto">Now, we shift gears to what makes CSS Grid truly shine — <strong>responsiveness</strong>.</p>
+<p  dir="auto">In this post, you’ll learn how to:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Use fractional units (<code  class="highlighter-rouge notranslate">fr</code>) for flexible sizing</p></li>
+  <li><p  dir="auto">Combine <code  class="highlighter-rouge notranslate">minmax()</code> with <code  class="highlighter-rouge notranslate">auto-fit</code> and <code  class="highlighter-rouge notranslate">auto-fill</code> to create fluid, wrapping grids</p></li>
+  <li><p  dir="auto">Write responsive layouts with or <strong>without media queries</strong></p></li>
+  <li><p  dir="auto">Enhance responsiveness further using <strong>container queries</strong></p></li>
+
+          </ul>
+        
+<p  dir="auto">Think of this as your guide to <strong>building adaptable, scalable layouts</strong> that behave beautifully on any screen — from a small phone to a wide desktop.</p>
+<p  dir="auto">Whether you’re designing cards, product grids, or UI dashboards, these tools let you ditch rigid breakpoints and build with confidence.</p>
+<h2  id="fractional-units-fr" dir="auto">Fractional Units (<code  class="highlighter-rouge notranslate">fr</code>)</h2>
+<p  dir="auto">The <code  class="highlighter-rouge notranslate">fr</code> unit stands for <strong>fraction of available space</strong>. It’s a powerful tool for creating fluid, responsive layouts.</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* First column takes 2/3, second takes 1/3 */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">In this layout:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">The grid container’s space is divided into <strong>3 fractions</strong>.</p></li>
+  <li><p  dir="auto">The first column gets <strong>2 parts</strong>, the second column gets <strong>1 part</strong>.</p></li>
+
+          </ul>
+        
+<h3  id="repeating-equal-columns" dir="auto">Repeating Equal Columns</h3>
+<p  dir="auto">You can create equal-width columns easily with <code  class="highlighter-rouge notranslate">repeat()</code> and <code  class="highlighter-rouge notranslate">1fr</code>:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span> <span class="c">/* Three equal columns */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">This setup creates <strong>3 columns of equal width</strong>, with a <code  class="highlighter-rouge notranslate">1rem</code> gap between both columns and rows. It’s clean and scalable.</p>
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/LEVKBqw" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/LEVKBqw" class="external-link">Try this on CodePen</a></p>
+<h2  id="minmax-function" dir="auto"><code  class="highlighter-rouge notranslate">minmax()</code> Function</h2>
+<p  dir="auto"><code  class="highlighter-rouge notranslate">minmax(min, max)</code> is a <strong>CSS Grid function</strong> that defines a track (row or column) with:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">A <strong>minimum size</strong> it can shrink to</p></li>
+  <li><p  dir="auto">A <strong>maximum size</strong> it can grow to</p></li>
+
+          </ul>
+        
+<p  dir="auto">It’s especially useful when building <strong>responsive</strong> layouts, because it allows a column or row to be flexible—but within limits.</p>
+<p  dir="auto"><strong>Syntax:</strong></p>
+<p  dir="auto"><code  class="highlighter-rouge notranslate">minmax(&lt;min&gt;, &lt;max&gt;)</code></p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong><code  class="highlighter-rouge notranslate">&lt;min&gt;</code></strong> – the smallest the track can be (can be 0, 100px, min-content, etc.)</p></li>
+  <li><p  dir="auto"><strong><code  class="highlighter-rouge notranslate">&lt;max&gt;</code></strong> – the largest the track can be (can be 1fr, auto, max-content, etc.)</p></li>
+
+          </ul>
+        
+<h3  id="real-world-use-case-responsive-cards" dir="auto">Real-World Use Case: Responsive Cards</h3>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nc">.card-grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="nb">auto-fit</span><span class="p">,</span> <span class="nf">minmax</span><span class="p">(</span><span class="m">250px</span><span class="p">,</span> <span class="m">1fr</span><span class="p">));</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>Card 1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>Card 2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>Card 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>Card 4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">In this example, cards are laid out in rows on large screens and they stack neatly without overflow on small screens.</p>
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/raVEZaP" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEZaP" class="external-link">Try this on CodePen</a></p>
+<h2  id="auto-fit-vs-auto-fill" dir="auto"><code  class="highlighter-rouge notranslate">auto-fit</code> vs <code  class="highlighter-rouge notranslate">auto-fill</code></h2>
+<p  dir="auto">Want a grid that adapts to screen width <em>without media queries</em>? Use <code  class="highlighter-rouge notranslate">auto-fit</code> or <code  class="highlighter-rouge notranslate">auto-fill</code> along with <code  class="highlighter-rouge notranslate">minmax()</code>:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="nb">auto-fit</span><span class="p">,</span> <span class="nf">minmax</span><span class="p">(</span><span class="m">200px</span><span class="p">,</span> <span class="m">1fr</span><span class="p">));</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto"><strong>What’s happening here?</strong></p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">minmax(200px, 1fr)</code> ensures each column is at least <code  class="highlighter-rouge notranslate">200px</code> wide but can grow to fill available space.</p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto-fit</code> collapses empty tracks if there isn’t enough content.</p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto-fill</code> reserves space for empty tracks, keeping the layout structure intact.</p></li>
+
+          </ul>
+        
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/ogXrMmv" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/ogXrMmv" class="external-link">Try this on CodePen</a></p>
+<p  dir="auto"><strong>Clarification:</strong></p>
+          <ul  dir="auto">
+              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto-fit</code>: Shrinks or collapses unused columns when there’s no content.</p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto-fill</code>: Maintains the grid structure, even if columns are empty. Reserves space for empty columns.</p></li>
+
+          </ul>
+        
+<h2  id="responsive-grid-with-media-queries" dir="auto">Responsive Grid with Media Queries</h2>
+<p  dir="auto">Although CSS Grid handles many responsive scenarios on its own, media queries can still help for more precise control.</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span> <span class="c">/* 3 columns on large screens */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.grid</span> <span class="p">{</span>
+    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* Stacks items into a single column */</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">This layout shows:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>3 columns</strong> on desktop screens.</p></li>
+  <li><p  dir="auto">A <strong>single-column stacked layout</strong> on tablets or phones (under 768px).</p></li>
+
+          </ul>
+        
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/yyNdqwj" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNdqwj" class="external-link">Try this on CodePen</a></p>
+<h2  id="beyond-media-queries-container-queries" dir="auto">Beyond Media Queries: Container Queries</h2>
+<p  dir="auto">Media queries are powerful, but sometimes they’re too broad — what if you want a component to adapt <strong>based on its container size</strong>, not the entire viewport?</p>
+<p  dir="auto">That’s where <strong>Container Queries</strong> come in. To use container queries:</p>
+
+          <ol  dir="auto">
+              <li><p  dir="auto">Add <code  class="highlighter-rouge notranslate">container-type</code> to the parent element.</p></li>
+  <li><p  dir="auto">Write container-specific rules using <code  class="highlighter-rouge notranslate">@container</code>.</p></li>
+
+          </ol>
+        
+<p  dir="auto">This is especially useful for <strong>component-driven UIs</strong>, where layout responsiveness depends on parent size (e.g., sidebar, card wrapper, modal content).</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="code"><pre><span class="c">/* Parent container with container-type enabled */</span>
+<span class="nc">.card-grid</span> <span class="p">{</span>
+  <span class="nl">container-type</span><span class="p">:</span> <span class="nb">inline-size</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">dashed</span> <span class="nx">#ccc</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Default layout (single column) */</span>
+<span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#f8f9fa</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nx">#ddd</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Container Query kicks in above 500px */</span>
+<span class="k">@container</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">500px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.card</span> <span class="p">{</span>
+    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">Here’s the HTML structure:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Card Title<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This card layout changes based on its container size.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/yyNmQXM" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNmQXM" class="external-link">Try this on CodePen</a></p>
+
+          <blockquote  dir="auto">
+            <p  dir="auto">Note: Most modern browsers support container queries (except older Safari/Firefox versions). Always check compatibility if building for production.</p>
+          </blockquote>
+        
+<h2  id="real-world-examples" dir="auto">Real-World Examples</h2>
+<h3  id="responsive-card-dashboard-media-queries" dir="auto">Responsive Card Dashboard (Media Queries)</h3>
+<p  dir="auto">A simple dashboard grid using <code  class="highlighter-rouge notranslate">grid-template-areas</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, and media queries.</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+</pre></td><td class="code"><pre><span class="nc">.dashboard</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-areas</span><span class="p">:</span>
+    <span class="s1">"sidebar content"</span>
+    <span class="s1">"sidebar widgets"</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">250px</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="nl">grid-template-rows</span><span class="p">:</span> <span class="nb">auto</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1.5rem</span><span class="p">;</span>
+  <span class="nl">min-height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.sidebar</span> <span class="p">{</span>
+  <span class="nl">grid-area</span><span class="p">:</span> <span class="n">sidebar</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#f0f0f0</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.content</span> <span class="p">{</span>
+  <span class="nl">grid-area</span><span class="p">:</span> <span class="nb">content</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#fff</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.widgets</span> <span class="p">{</span>
+  <span class="nl">grid-area</span><span class="p">:</span> <span class="n">widgets</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="nb">auto-fit</span><span class="p">,</span> <span class="nf">minmax</span><span class="p">(</span><span class="m">200px</span><span class="p">,</span> <span class="m">1fr</span><span class="p">));</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.dashboard</span> <span class="p">{</span>
+    <span class="nl">grid-template-areas</span><span class="p">:</span>
+      <span class="s1">"sidebar"</span>
+      <span class="s1">"content"</span>
+      <span class="s1">"widgets"</span><span class="p">;</span>
+    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dashboard"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;aside</span> <span class="na">class=</span><span class="s">"sidebar"</span><span class="nt">&gt;</span>Sidebar<span class="nt">&lt;/aside&gt;</span>
+  <span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>Main Content<span class="nt">&lt;/main&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"widgets"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"widget"</span><span class="nt">&gt;</span>Widget 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"widget"</span><span class="nt">&gt;</span>Widget 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"widget"</span><span class="nt">&gt;</span>Widget 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/yyNmQGP" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/yyNmQGP" class="external-link">Try this on CodePen</a></p>
+<h3  id="card-grid-with-container-queries" dir="auto">Card Grid with Container Queries</h3>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="code"><pre><span class="nc">.card-wrapper</span> <span class="p">{</span>
+  <span class="nl">container-type</span><span class="p">:</span> <span class="nb">inline-size</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nx">#ccc</span><span class="p">;</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dashboard-card</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-areas</span><span class="p">:</span>
+    <span class="s1">"title"</span>
+    <span class="s1">"meta"</span>
+    <span class="s1">"content"</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#f9fafb</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.dashboard-card</span> <span class="nt">h2</span> <span class="p">{</span> <span class="nl">grid-area</span><span class="p">:</span> <span class="n">title</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.dashboard-card</span> <span class="nc">.meta</span> <span class="p">{</span> <span class="nl">grid-area</span><span class="p">:</span> <span class="n">meta</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.dashboard-card</span> <span class="nc">.content</span> <span class="p">{</span> <span class="nl">grid-area</span><span class="p">:</span> <span class="nb">content</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="k">@container</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">600px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.dashboard-card</span> <span class="p">{</span>
+    <span class="nl">grid-template-areas</span><span class="p">:</span>
+      <span class="s1">"title meta"</span>
+      <span class="s1">"content content"</span><span class="p">;</span>
+    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-wrapper"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dashboard-card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Dashboard Title<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"meta"</span><span class="nt">&gt;</span>User • 5 mins ago<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+      This card layout changes based on container width. Resize the parent to see it adapt.
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/VYLoVqJ" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/VYLoVqJ" class="external-link">Try this on CodePen</a></p>
+<h2  id="quick-reference-common-grid-properties" dir="auto">Quick Reference: Common Grid Properties</h2>
+<p  dir="auto">Here’s a concise summary of essential CSS Grid properties:</p>
+
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>grid-template-columns</td>
+      <td>Defines the number and width of columns in the grid</td>
+    </tr>
+    <tr>
+      <td>grid-template-rows</td>
+      <td>Defines the number and height of rows in the grid</td>
+    </tr>
+    <tr>
+      <td>gap</td>
+      <td>Sets spacing between rows and columns (shorthand for <code  class="highlighter-rouge notranslate">row-gap</code> and <code  class="highlighter-rouge notranslate">column-gap</code>)</td>
+    </tr>
+    <tr>
+      <td>grid-template-areas</td>
+      <td>Defines named areas for placing grid items visually</td>
+    </tr>
+    <tr>
+      <td>justify-items</td>
+      <td>Aligns <strong>all grid items</strong> horizontally within their cells</td>
+    </tr>
+    <tr>
+      <td>align-items</td>
+      <td>Aligns <strong>all grid items</strong> vertically within their cells</td>
+    </tr>
+    <tr>
+      <td>place-items</td>
+      <td>Shorthand for setting both <code  class="highlighter-rouge notranslate">align-items</code> and <code  class="highlighter-rouge notranslate">justify-items</code></td>
+    </tr>
+    <tr>
+      <td>justify-self</td>
+      <td>Aligns an <strong>individual item</strong> horizontally</td>
+    </tr>
+    <tr>
+      <td>align-self</td>
+      <td>Aligns an <strong>individual item</strong> vertically</td>
+    </tr>
+    <tr>
+      <td>place-self</td>
+      <td>Shorthand for setting both <code  class="highlighter-rouge notranslate">align-self</code> and <code  class="highlighter-rouge notranslate">justify-self</code></td>
+    </tr>
+    <tr>
+      <td>grid-auto-rows</td>
+      <td>Defines row size for <strong>implicitly created rows</strong></td>
+    </tr>
+    <tr>
+      <td>grid-auto-columns</td>
+      <td>Defines column size for <strong>implicitly created columns</strong></td>
+    </tr>
+    <tr>
+      <td>grid-column</td>
+      <td>Specifies how many columns an item spans or where it starts/ends</td>
+    </tr>
+    <tr>
+      <td>grid-row</td>
+      <td>Specifies how many rows an item spans or where it starts/ends</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h2  id="frequently-asked-questions-faq" dir="auto">Frequently Asked Questions (FAQ)</h2>
+<h3  id="when-should-i-use-auto-fit-vs-auto-fill" dir="auto">When should I use <code  class="highlighter-rouge notranslate">auto-fit</code> vs <code  class="highlighter-rouge notranslate">auto-fill</code>?</h3>
+<p  dir="auto">Use <strong><code  class="highlighter-rouge notranslate">auto-fit</code></strong> when you want empty tracks to collapse and not reserve space — great for wrapping cards that adjust to available space.
+Use <strong><code  class="highlighter-rouge notranslate">auto-fill</code></strong> if you want to maintain the column structure even when there’s no content — helpful for form fields or placeholders.</p>
+<h3  id="can-i-use-flexbox-and-grid-together" dir="auto">Can I use Flexbox and Grid together?</h3>
+<p  dir="auto">Absolutely! Use <strong>Grid for layout structure</strong> (e.g., page, sections), and Flexbox for <strong>aligning content within grid items</strong> (e.g., buttons inside cards).</p>
+<h3  id="should-i-replace-all-media-queries-with-container-queries" dir="auto">Should I replace all media queries with container queries?</h3>
+<p  dir="auto">No — container queries are best for <strong>component-based layouts</strong>. Use media queries for <strong>global changes</strong> (headers, nav, grid size) and container queries for <strong>components inside resizable areas</strong>.</p>
+<h3  id="do-i-still-need-breakpoints" dir="auto">Do I still need breakpoints?</h3>
+<p  dir="auto">Yes — but you’ll need fewer. Grid’s flexibility (with <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, and <code  class="highlighter-rouge notranslate">auto-fit</code>) reduces reliance on rigid breakpoints.</p>
+<h2  id="conclusion" dir="auto">Conclusion</h2>
+<p  dir="auto">🎉 Congratulations! You’ve completed the <strong>CSS Grid Fundamentals Series</strong>.</p>
+<p  dir="auto">Let’s recap what you now know:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">✅ <strong>Part 1:</strong> The building blocks — containers, tracks, and structure</p></li>
+  <li><p  dir="auto">✅ <strong>Part 2:</strong> Layout precision — grid areas, alignment, spanning, and track creation</p></li>
+  <li><p  dir="auto">✅ <strong>Part 3:</strong> Flexibility — responsive units (<code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">minmax()</code>), smart auto-wrapping, media queries, and container queries</p></li>
+
+          </ul>
+        
+<p  dir="auto">With these tools, you can:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Create flexible layouts <strong>without bloated media query chains</strong></p></li>
+  <li><p  dir="auto">Build components that respond to their own size using <strong>container queries</strong></p></li>
+  <li><p  dir="auto">Design responsive grids that scale gracefully and look professional at every breakpoint</p></li>
+
+          </ul>
+        
+<p  dir="auto"><strong>CSS Grid isn’t just a layout tool</strong> — it’s a complete design system built into the browser. Mastering it means writing less CSS while building better UI.</p>
+<p  dir="auto">🚀 Keep experimenting with combinations of Grid, Flexbox, and container queries — that’s where layout magic happens.</p>]]></content>
+
+    
+      <category term="css" scheme="urn:taxonomy:tag" />
+    
+      <category term="grid" scheme="urn:taxonomy:tag" />
+    
+      <category term="responsive" scheme="urn:taxonomy:tag" />
+    
+      <category term="layout" scheme="urn:taxonomy:tag" />
+    
+      <category term="fr-units" scheme="urn:taxonomy:tag" />
+    
+      <category term="minmax" scheme="urn:taxonomy:tag" />
+    
+      <category term="media-queries" scheme="urn:taxonomy:tag" />
+    
+      <category term="container-queries" scheme="urn:taxonomy:tag" />
+    
+      <category term="auto-fit" scheme="urn:taxonomy:tag" />
+    
+      <category term="auto-fill" scheme="urn:taxonomy:tag" />
+    
+
+    
+      <category term="css" scheme="urn:taxonomy:category" />
+    
+      <category term="beginner" scheme="urn:taxonomy:category" />
+    
+      <category term="responsive" scheme="urn:taxonomy:category" />
+    
+  </entry>
+  
+  <entry xml:lang="en">
+    <title>Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning</title>
+    <link rel="alternate" type="text/html" href="https://shivam091.github.io/post/mastering-css-grid" />
+    <id>https://shivam091.github.io/post/mastering-css-grid</id>
+
+    <published>2025-07-09T15:21:11+05:30</published>
+    <updated>2025-07-10T19:05:25+05:30</updated>
+
+    
+    <media:thumbnail
+      url="https://shivam091.github.io/assets/img/posts/css/mastering-css-grid-alignment-spanning/cover.png"
+      width="1200"
+      height="630" />
+    
+
+    
+    
+      
+        
+        <author>
+          <name>Harshal Ladhe</name>
+          <uri>https://github.com/shivam091</uri>
+        </author>
+      
+    
+
+    <summary type="html">
+      Take your CSS Grid skills to the next level by mastering semantic layouts with grid areas, item alignment, and element spanning techniques.
+    </summary>
+    <content type="html"><![CDATA[<h2  id="introduction" dir="auto">Introduction</h2>
+<p  dir="auto">Welcome to <strong>Part 2</strong> of the CSS Grid Fundamentals Series!</p>
+<p  dir="auto">In <a  href="/post/getting-started-with-css-grid">Part 1</a>, you laid the groundwork — learning how to define grid containers, set up tracks, and build basic layouts.</p>
+<p  dir="auto">Now, it’s time to go beyond the basics.</p>
+<p  dir="auto"><strong>Think of CSS Grid as your layout canvas</strong> — and in this part, you’ll pick up new tools like a <strong>ruler, compass, and highlighter</strong> to draw structure, alignment, and flow with precision.</p>
+<p  dir="auto">We’ll cover:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">grid-template-areas</code> for clean, visual layout structure</p></li>
+  <li><p  dir="auto">Alignment techniques using <code  class="highlighter-rouge notranslate">place-items</code> and <code  class="highlighter-rouge notranslate">place-self</code></p></li>
+  <li><p  dir="auto">Spanning elements across rows and columns</p></li>
+  <li><p  dir="auto">The hidden mechanics of <strong>explicit</strong> and <strong>implicit</strong> grids</p></li>
+
+          </ul>
+        
+<p  dir="auto">These are the techniques that elevate your layouts from <em>functional</em> to <em>flexible and scalable</em> — especially in real-world, component-based frontend projects.</p>
+<h2  id="grid-template-areas" dir="auto">Grid Template Areas</h2>
+<p  dir="auto">The <code  class="highlighter-rouge notranslate">grid-template-areas</code> property allows you to define your layout using named areas, making the grid structure more readable and easier to
+maintain—especially for complex page layouts. It acts as a visual blueprint of your design and simplifies the placement of grid items.</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-areas</span><span class="p">:</span>
+    <span class="s1">"header header header"</span>
+    <span class="s1">"sidebar main main"</span>
+    <span class="s1">"footer footer footer"</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span> <span class="m">2fr</span> <span class="m">2fr</span><span class="p">;</span>
+  <span class="nl">grid-template-rows</span><span class="p">:</span> <span class="nb">auto</span> <span class="m">1fr</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">Each quoted line defines a row in the grid. The repeated area names indicate how many columns that area spans. You can then assign elements to these areas
+using the <code  class="highlighter-rouge notranslate">grid-area</code> property:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="code"><pre><span class="nc">.header</span> <span class="p">{</span>
+  <span class="nl">grid-area</span><span class="p">:</span> <span class="n">header</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#f8b400</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.main</span> <span class="p">{</span>
+  <span class="nl">grid-area</span><span class="p">:</span> <span class="n">main</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#4caf50</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.sidebar</span> <span class="p">{</span>
+  <span class="nl">grid-area</span><span class="p">:</span> <span class="n">sidebar</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#2196f3</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.footer</span> <span class="p">{</span>
+  <span class="nl">grid-area</span><span class="p">:</span> <span class="n">footer</span><span class="p">;</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="nx">#9c27b0</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">Here’s the HTML structure:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>Header<span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;aside</span> <span class="na">class=</span><span class="s">"sidebar"</span><span class="nt">&gt;</span>Sidebar<span class="nt">&lt;/aside&gt;</span>
+  <span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"main"</span><span class="nt">&gt;</span>Main Content<span class="nt">&lt;/main&gt;</span>
+  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"footer"</span><span class="nt">&gt;</span>Footer<span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto"><strong>Explanation:</strong></p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">The layout is visually defined using <code  class="highlighter-rouge notranslate">grid-template-areas</code>, making it easier to understand and modify.</p></li>
+  <li><p  dir="auto">The grid has <strong>3 columns</strong> and <strong>3 rows</strong>.</p></li>
+  <li><p  dir="auto">Named areas like <code  class="highlighter-rouge notranslate">"header"</code>, <code  class="highlighter-rouge notranslate">"sidebar"</code>, <code  class="highlighter-rouge notranslate">"main"</code>, and <code  class="highlighter-rouge notranslate">"footer"</code> are assigned using <code  class="highlighter-rouge notranslate">grid-area</code>, allowing semantic HTML elements to be positioned without relying on source order.</p></li>
+  <li><p  dir="auto">The column layout uses <code  class="highlighter-rouge notranslate">1fr 2fr 2fr</code>, giving the sidebar less space than the main content.</p></li>
+  <li><p  dir="auto">This is a clean, semantic approach to building responsive page sections—no floats or nested containers needed.</p></li>
+
+          </ul>
+        
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/JodQLgg" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/JodQLgg" class="external-link">Try this on CodePen</a></p>
+<h2  id="aligning-grid-items" dir="auto">Aligning Grid Items</h2>
+<p  dir="auto">CSS Grid not only lets you organize content into rows and columns—it also gives you precise control over <strong>how items are aligned within their grid cells</strong>.</p>
+<p  dir="auto">Alignment can be applied at two levels:</p>
+<h3  id="container-level-alignment" dir="auto">Container-Level Alignment</h3>
+<p  dir="auto">These properties are applied to the <strong>grid container</strong> and affect <strong>all items</strong> inside the grid:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>justify-items</strong> — Aligns items <strong>horizontally</strong> (inline axis) within each cell.</p></li>
+  <li><p  dir="auto"><strong>align-items</strong> — Aligns items <strong>vertically</strong> (block axis) within each cell.</p></li>
+  <li><p  dir="auto"><strong>place-items</strong> — A shorthand for combining both <code  class="highlighter-rouge notranslate">align-items</code> and <code  class="highlighter-rouge notranslate">justify-items</code>.</p></li>
+
+          </ul>
+        
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">justify-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="c">/* Horizontally center all grid items within their cells */</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>   <span class="c">/* Vertically center all grid items within their cells */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto"><strong>Visual Reference (Centered Items)</strong></p>
+<pre><code>+-------------+-------------+-------------+
+|             |             |             |
+|     [ ]     |     [ ]     |     [ ]     |  ← centered in both directions
+|             |             |             |
++-------------+-------------+-------------+
+|             |             |             |
+|     [ ]     |     [ ]     |     [ ]     |
+|             |             |             |
++-------------+-------------+-------------+
+</code></pre>
+
+<p  dir="auto">You can also use <code  class="highlighter-rouge notranslate">place-items</code> as a shorthand:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">place-items</span><span class="p">:</span> <span class="nb">end</span> <span class="nb">start</span><span class="p">;</span> <span class="c">/* Aligns all grid items to the bottom (block-end) and left (inline-start) */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto"><strong>Visual Reference (Bottom-Left Aligned)</strong></p>
+<pre><code>+-------------+-------------+-------------+
+|             |             |             |
+|             |             |             |
+| [ ]         | [ ]         | [ ]         |  ← bottom-left alignment
++-------------+-------------+-------------+
+|             |             |             |
+|             |             |             |
+| [ ]         | [ ]         | [ ]         |
++-------------+-------------+-------------+
+</code></pre>
+
+<h3  id="item-level-alignment" dir="auto">Item-Level Alignment</h3>
+<p  dir="auto">While container-level alignment applies to <strong>all grid items, item-level alignment</strong> lets you override alignment <strong>per individual item</strong>.
+These properties are set directly on the grid items themselves:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>justify-self</strong> — Aligns an item <strong>horizontally</strong> (inline axis) within its grid cell.</p></li>
+  <li><p  dir="auto"><strong>align-self</strong> — Aligns an item <strong>vertically</strong> (block axis) within its grid cell.</p></li>
+  <li><p  dir="auto"><strong>place-self</strong> — A shorthand for combining <code  class="highlighter-rouge notranslate">align-self</code> and <code  class="highlighter-rouge notranslate">justify-self</code>.</p></li>
+
+          </ul>
+        
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">justify-self</span><span class="p">:</span> <span class="nb">end</span><span class="p">;</span> <span class="c">/* Aligns this item to the right (inline-end) of its cell */</span>
+  <span class="nl">align-self</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span> <span class="c">/* Aligns this item to the top (block-start) of its cell */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto"><strong>Visual Reference (Top-Right Alignment)</strong></p>
+<pre><code>+-------------+
+|         [ ] |  ← aligned to top-right
+|             |
+|             |
++-------------+
+</code></pre>
+
+<p  dir="auto">You can also achieve the same alignment with <code  class="highlighter-rouge notranslate">place-self</code>:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">place-self</span><span class="p">:</span> <span class="nb">end</span> <span class="nb">start</span><span class="p">;</span> <span class="c">/* Aligns this item to the bottom (block-end) and left (inline-start) */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto"><strong>Visual Reference (Bottom-Left Alignment)</strong></p>
+<pre><code>+-------------+
+|             |
+|             |
+| [ ]         |  ← aligned to bottom-left
++-------------+
+</code></pre>
+
+<div class="alert alert-accent alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <p><strong>Pro Tip</strong>: You can override grid container alignment (<code>place-items</code>, <code>align-items</code>, <code>justify-items</code>) on a per-item basis using <code>place-self</code>, <code>align-self</code>, or <code>justify-self</code>.</p>
+
+  </div>
+  
+</div>
+
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/bNdPMKj" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/bNdPMKj" class="external-link">Try these alignments on CodePen</a></p>
+<h2  id="spanning-grid-items" dir="auto">Spanning Grid Items</h2>
+<p  dir="auto">CSS Grid allows items to span across multiple columns or rows using <code  class="highlighter-rouge notranslate">grid-column</code> and <code  class="highlighter-rouge notranslate">grid-row</code>. These properties let you define
+where an item starts and ends in the grid layout.</p>
+<p  dir="auto">Imagine a <strong>3×3</strong> grid:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Spanning<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">1fr</span><span class="p">);</span> <span class="c">/* 3 equal columns */</span>
+  <span class="nl">grid-template-rows</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">100px</span><span class="p">);</span>   <span class="c">/* 3 equal rows */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">And you apply:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">grid-column</span><span class="p">:</span> <span class="m">1</span> <span class="o">/</span> <span class="m">3</span><span class="p">;</span> <span class="c">/* Spans from column line 1 to 3 → covers columns 1 and 2 */</span>
+  <span class="nl">grid-row</span><span class="p">:</span> <span class="m">2</span> <span class="o">/</span> <span class="m">4</span><span class="p">;</span>    <span class="c">/* Spans from row line 2 to 4 → covers rows 2 and 3 */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto"><strong>Visual Reference (Lines Shown)</strong></p>
+<pre><code>+------------+------------+------------+
+|            |            |            |
+|   Item 2   |   Item 3   |   Item 4   |
+|            |            |            |
++------------+------------+------------+
+|            |            |            |
+|            |            |            |
+|            |            |            |
++         Spanning        +------------+
+|            |            |            |
+|            |            |            |
+|            |            |            |
++------------+------------+------------+
+</code></pre>
+
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/bNdPKwJ" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/bNdPKwJ" class="external-link">Try this on CodePen</a></p>
+<h3  id="shorthand-vs-longhand" dir="auto">Shorthand vs Longhand</h3>
+<p  dir="auto">The <code  class="highlighter-rouge notranslate">grid-column</code> and <code  class="highlighter-rouge notranslate">grid-row</code> properties are shorthands for their respective <strong>start</strong> and <strong>end</strong> lines:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">grid-column</span><span class="p">:</span> <span class="m">2</span> <span class="o">/</span> <span class="m">4</span><span class="p">;</span>
+  <span class="nl">grid-row</span><span class="p">:</span> <span class="m">1</span> <span class="o">/</span> <span class="m">3</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">This is functionally the same as:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">grid-column-start</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+  <span class="nl">grid-column-end</span><span class="p">:</span> <span class="m">4</span><span class="p">;</span>
+
+  <span class="nl">grid-row-start</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="nl">grid-row-end</span><span class="p">:</span> <span class="m">3</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<h3  id="shorthand-with-span" dir="auto">Shorthand with <code  class="highlighter-rouge notranslate">span</code></h3>
+<p  dir="auto">Instead of specifying <strong>start</strong> and <strong>end</strong> lines manually, you can use the <code  class="highlighter-rouge notranslate">span</code> keyword to make your code simpler and more flexible:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">grid-column</span><span class="p">:</span> <span class="nb">span</span> <span class="m">2</span><span class="p">;</span> <span class="c">/* Span 2 columns from auto-start */</span>
+  <span class="nl">grid-row</span><span class="p">:</span> <span class="nb">span</span> <span class="m">2</span><span class="p">;</span>    <span class="c">/* Span 2 rows from auto-start */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">This tells the grid item to span <strong>2 columns and 2 rows</strong> starting from its <strong>auto-determined position</strong> (i.e. where the browser places it in the flow).</p>
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/raVEKzW" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEKzW" class="external-link">Try this on CodePen</a></p>
+<details>
+<summary>When to use it?</summary>
+<ul>
+  <li>You <strong>don’t need to control exact start/end line numbers</strong>.</li>
+  <li>You want the browser to determine the position automatically.</li>
+  <li>You're working with <strong>auto-placed items</strong> in a dynamic or responsive layout.</li>
+</ul>
+</details>
+
+<h2  id="grid-types" dir="auto">Grid Types</h2>
+<p  dir="auto">In CSS Grid, it’s important to understand the two types of grids: <strong>explicit</strong> and <strong>implicit</strong>. These define how grid tracks (rows and columns)
+are created—either by the developer or automatically by the browser.</p>
+<h3  id="explicit-grids" dir="auto">Explicit Grids</h3>
+<p  dir="auto">An <strong>explicit</strong> grid is one that you define yourself using properties like <code  class="highlighter-rouge notranslate">grid-template-columns</code> and <code  class="highlighter-rouge notranslate">grid-template-rows</code>.</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span> <span class="m">1fr</span><span class="p">;</span>   <span class="c">/* Two equal-width columns */</span>
+  <span class="nl">grid-template-rows</span><span class="p">:</span> <span class="m">100px</span> <span class="m">100px</span><span class="p">;</span>  <span class="c">/* Two fixed-height rows */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">In this case, you’ve explicitly created a <strong>2×2 grid</strong>, which gives you <strong>4 cells</strong>. Each of the 4 items is placed within this defined layout.</p>
+<p  dir="auto"><strong>Visual Illustration</strong></p>
+<p  dir="auto">This shows how the explicit grid looks like:</p>
+<pre><code>+---------+--------+    
+| Item 1  | Item 2 |    
++---------+--------+    
+| Item 3  | Item 4 |    
++---------+--------+   
+</code></pre>
+
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/jEPjpzL" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/jEPjpzL" class="external-link">Try this on CodePen</a></p>
+<p  dir="auto">If you place more items than your explicit tracks can hold, the grid will automatically generate new rows or columns to accommodate them — these are known as <em>implicit tracks</em>, which we’ll explore next.</p>
+<h3  id="implicit-grids" dir="auto">Implicit Grids</h3>
+<p  dir="auto">In CSS Grid, if the number of items exceeds the explicitly defined rows or columns, the browser <strong>automatically creates additional tracks</strong> — these
+form what’s known as the <strong>implicit grid</strong>.</p>
+<p  dir="auto">You can control the size of these extra rows and columns using:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>grid-auto-rows</strong> – defines height of implicit rows.</p></li>
+  <li><p  dir="auto"><strong>grid-auto-columns</strong> – defines width of implicit columns.</p></li>
+
+          </ul>
+        
+<h4  id="example-implicit-rows" dir="auto">Example: Implicit Rows</h4>
+<p  dir="auto">Let’s say you define only 2 rows, but add 5 items:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="nl">grid-template-rows</span><span class="p">:</span> <span class="m">100px</span> <span class="m">100px</span><span class="p">;</span> <span class="c">/* Explicit: only 2 rows defined */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 5<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- This item doesn't fit in the defined grid --&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto"><strong>What happens?</strong></p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">The first 4 items fill the 2×2 grid.</p></li>
+  <li><p  dir="auto">The 5th item <strong>overflows</strong> the defined rows.</p></li>
+  <li><p  dir="auto">So, the browser <strong>creates a 3rd row automatically</strong> — this is the <strong>implicit grid</strong>.</p></li>
+
+          </ul>
+        
+<p  dir="auto"><strong>Visual Illustration</strong></p>
+<p  dir="auto">This shows what happens when items overflow the defined rows (and new <strong>implicit rows</strong> are added):</p>
+<pre><code>Explicit Grid:          Implicit Grid:
+
++---------+--------+    +---------+--------+
+| Item 1  | Item 2 |    | Item 1  | Item 2 |
++---------+--------+    +---------+--------+
+| Item 3  | Item 4 |    | Item 3  | Item 4 |
++---------+--------+    +---------+--------+
+                        | Item 5  |   —    | ← auto-created implicit row
+                        +---------+--------+
+</code></pre>
+
+<p  dir="auto">By default, the height of implicit rows is <code  class="highlighter-rouge notranslate">auto</code>. You can control their size using <code  class="highlighter-rouge notranslate">grid-auto-rows</code>:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">grid-auto-rows</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span> <span class="c">/* Applies height to all implicit rows */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/bNdPjMq" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/bNdPjMq" class="external-link">Try this on CodePen</a></p>
+<h4  id="example-implicit-columns" dir="auto">Example: Implicit Columns</h4>
+<p  dir="auto">Now let’s say you only define rows, and use <strong>manual placement</strong> or <strong>grid-auto-flow: column</strong> to push items into new columns:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-rows</span><span class="p">:</span> <span class="m">100px</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">grid-auto-flow</span><span class="p">:</span> <span class="nb">column</span><span class="p">;</span> <span class="c">/* Place items column-wise */</span>
+  <span class="nl">grid-auto-columns</span><span class="p">:</span> <span class="m">150px</span><span class="p">;</span> <span class="c">/* Width for any implicitly created columns */</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 5<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- This item doesn't fit in the defined grid --&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto"><strong>What happens?</strong></p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Items will flow <strong>across columns</strong>, not rows.</p></li>
+  <li><p  dir="auto">Since no <code  class="highlighter-rouge notranslate">grid-template-columns</code> is defined, the browser will <strong>generate columns implicitly</strong>.</p></li>
+  <li><p  dir="auto">Each column will now be <strong>150px wide</strong> (because of <code  class="highlighter-rouge notranslate">grid-auto-columns</code>).</p></li>
+
+          </ul>
+        
+<p  dir="auto"><strong>Visual Illustration</strong></p>
+<p  dir="auto">This shows what happens when items overflow the defined columns (or <code  class="highlighter-rouge notranslate">grid-auto-flow: column</code> creates new <strong>implicit columns</strong>):</p>
+<pre><code>Explicit Grid:          Implicit Grid:
+
++---------+--------+    +---------+--------+--------+
+| Item 1  | Item 2 |    | Item 1  | Item 2 | Item 5 |
++---------+--------+    +---------+--------+--------+
+| Item 3  | Item 4 |    | Item 3  | Item 4 |        |
++---------+--------+    +---------+--------+--------+
+                                                ↑ implicit columns created dynamically
+</code></pre>
+
+<p  dir="auto">Use <code  class="highlighter-rouge notranslate">grid-auto-columns</code> to control the width of these new columns.</p>
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/JodgZqM" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/JodgZqM" class="external-link">Try this on CodePen</a></p>
+<div class="alert alert-accent alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <p>Tip: You rarely need to use <code>grid-auto-columns</code> unless:</p>
+
+<ul>
+  <li>You’re manually placing items across columns (e.g. <code>grid-column: 4</code>)</li>
+  <li>You use <code>grid-auto-flow: column</code> and want to control generated column width</li>
+</ul>
+
+  </div>
+  
+</div>
+
+<h2  id="conclusion" dir="auto">Conclusion</h2>
+<p  dir="auto">You’ve now mastered the core tools that bring <strong>power, readability, and precision</strong> to CSS Grid layouts:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Named areas help you design layouts visually and semantically.</p></li>
+  <li><p  dir="auto">Item alignment ensures pixel-perfect placement in every cell.</p></li>
+  <li><p  dir="auto">Spanning techniques let you control flow and sizing beyond automatic placement.</p></li>
+  <li><p  dir="auto">Explicit vs. implicit grids give you confidence when your layout grows unexpectedly.</p></li>
+
+          </ul>
+        
+<p  dir="auto">Up next in <a  href="/post/responsive-css-grid-layouts">Part 3 → Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</a>, we’ll unlock how to:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Use <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, <code  class="highlighter-rouge notranslate">auto-fit</code>, and <code  class="highlighter-rouge notranslate">auto-fill</code> for fluid responsive tracks</p></li>
+  <li><p  dir="auto">Pair grid with <strong>media</strong> and <strong>container</strong> queries</p></li>
+  <li><p  dir="auto">Build <strong>robust, flexible layouts</strong> that adapt to any screen — no media query soup needed!</p></li>
+
+          </ul>
+        ]]></content>
+
+    
+      <category term="css" scheme="urn:taxonomy:tag" />
+    
+      <category term="css-grid" scheme="urn:taxonomy:tag" />
+    
+      <category term="grid" scheme="urn:taxonomy:tag" />
+    
+      <category term="layout" scheme="urn:taxonomy:tag" />
+    
+      <category term="grid-template-areas" scheme="urn:taxonomy:tag" />
+    
+      <category term="grid-alignment" scheme="urn:taxonomy:tag" />
+    
+      <category term="frontend" scheme="urn:taxonomy:tag" />
+    
+
+    
+      <category term="css" scheme="urn:taxonomy:category" />
+    
+      <category term="beginner" scheme="urn:taxonomy:category" />
+    
+      <category term="layout" scheme="urn:taxonomy:category" />
+    
+  </entry>
+  
+  <entry xml:lang="en">
+    <title>Getting Started with CSS Grid: A Beginner&apos;s Guide to 2D Layouts</title>
+    <link rel="alternate" type="text/html" href="https://shivam091.github.io/post/getting-started-with-css-grid" />
+    <id>https://shivam091.github.io/post/getting-started-with-css-grid</id>
+
+    <published>2025-07-09T15:21:11+05:30</published>
+    <updated>2025-07-10T19:06:42+05:30</updated>
+
+    
+    <media:thumbnail
+      url="https://shivam091.github.io/assets/img/posts/css/getting-started-with-css-grid/cover.png"
+      width="1200"
+      height="630" />
+    
+
+    
+    
+      
+        
+        <author>
+          <name>Harshal Ladhe</name>
+          <uri>https://github.com/shivam091</uri>
+        </author>
+      
+    
+
+    <summary type="html">
+      A beginner-friendly introduction to CSS Grid that covers core concepts and guides you through building your first 2D layouts with real-world examples.
+    </summary>
+    <content type="html"><![CDATA[<h2  id="the-power-of-css-grid-for-layouts" dir="auto">The Power of CSS Grid for Layouts</h2>
+<p  dir="auto">Modern web layouts are more dynamic and complex than ever. Whether it’s a blog, dashboard, or product grid, developers need layout systems that are both powerful and easy to use.</p>
+<p  dir="auto">That’s where <strong>CSS Grid</strong> shines. Unlike Flexbox, which works in only one direction at a time, CSS Grid enables true two-dimensional layouts — rows and columns — without extra hacks or hassles.</p>
+<p  dir="auto">This is the first post in a three-part series where we’ll break down CSS Grid from the ground up. You’ll learn the core concepts, understand key terminology, and build your first layout from scratch.</p>
+<p  dir="auto">By the end of this post, you’ll be able to:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Define a grid container and grid items</p></li>
+  <li><p  dir="auto">Set up column and row templates</p></li>
+  <li><p  dir="auto">Use fractional units and spacing with <code  class="highlighter-rouge notranslate">gap</code></p></li>
+  <li><p  dir="auto">Build simple, scalable 2D layouts</p></li>
+
+          </ul>
+        
+<p  dir="auto">Let’s dive in.</p>
+<h2  id="why-css-grid" dir="auto">Why CSS Grid?</h2>
+<p  dir="auto">Modern websites demand layout techniques that are <strong>flexible</strong>, <strong>responsive</strong>, and <strong>easy to maintain</strong>. Before Grid, developers relied on:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">float</code>, <code  class="highlighter-rouge notranslate">inline-block</code>, or table-based layouts,</p></li>
+  <li><p  dir="auto">JavaScript (or jQuery) to measure and equalize heights,</p></li>
+  <li><p  dir="auto">Flexbox for 1D layouts, which wasn’t always ideal for grid-like structures.</p></li>
+
+          </ul>
+        
+<p  dir="auto">But none of these offered full control over <strong>2D layouts</strong>.</p>
+<p  dir="auto">That’s where <strong>CSS Grid</strong> shines. Here’s why it’s a game changer:</p>
+<h3  id="two-dimensional-power" dir="auto">Two-Dimensional Power</h3>
+<p  dir="auto"><strong>Flexbox</strong> handles layout in <strong>one direction</strong> at a time — rows or columns. But <strong>CSS Grid</strong> enables layouts in <strong>both axes simultaneously</strong>.</p>
+<p  dir="auto"><strong>Use case examples:</strong></p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Product galleries</p></li>
+  <li><p  dir="auto">Dashboards</p></li>
+  <li><p  dir="auto">Magazine-style articles</p></li>
+  <li><p  dir="auto">Calendars</p></li>
+  <li><p  dir="auto">Full-page app layouts</p></li>
+
+          </ul>
+        
+<h3  id="declarative-clean-predictable" dir="auto">Declarative, Clean, Predictable</h3>
+<p  dir="auto">You define what the layout <strong>should look like</strong>, not how elements get there.</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">The code is <strong>descriptive</strong>, like a wireframe.</p>
+<h3  id="layout-without-extra-markup" dir="auto">Layout Without Extra Markup</h3>
+<p  dir="auto">With floats or Flexbox, you often need wrapper <code  class="highlighter-rouge notranslate">div</code>s, utility classes, or nesting. Grid reduces that. Your HTML becomes <strong>cleaner</strong>, while CSS handles layout logic in one place.</p>
+<h3  id="built-in-layout-superpowers" dir="auto">Built-In Layout Superpowers</h3>
+<p  dir="auto">CSS Grid brings native support for layout patterns that once required complex CSS tricks—or even JavaScript—to implement.</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Gaps (<code  class="highlighter-rouge notranslate">gap</code>, <code  class="highlighter-rouge notranslate">row-gap</code>, <code  class="highlighter-rouge notranslate">column-gap</code>)</p></li>
+  <li><p  dir="auto">Auto item placement</p></li>
+  <li><p  dir="auto">Item spanning (<code  class="highlighter-rouge notranslate">grid-column</code>, <code  class="highlighter-rouge notranslate">grid-row</code>)</p></li>
+  <li><p  dir="auto">Template areas with <strong>named regions</strong></p></li>
+  <li><p  dir="auto">Layered grid items</p></li>
+
+          </ul>
+        
+<h3  id="naturally-responsive" dir="auto">Naturally Responsive</h3>
+<p  dir="auto">CSS Grid thrives in responsive design. With units like:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">fr</code> (fraction of available space)</p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">minmax()</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto-fit</code>, <code  class="highlighter-rouge notranslate">auto-fill</code></p></li>
+
+          </ul>
+        
+<p  dir="auto">…you can build layouts that <strong>adapt seamlessly</strong>, without needing extra breakpoints.</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">grid-template-columns</span><span class="o">:</span> <span class="nt">repeat</span><span class="o">(</span><span class="nt">auto-fit</span><span class="o">,</span> <span class="nt">minmax</span><span class="o">(</span><span class="err">200</span><span class="nt">px</span><span class="o">,</span> <span class="err">1</span><span class="nt">fr</span><span class="o">));</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">Try doing that with Flexbox alone 😅</p>
+
+          <blockquote  dir="auto">
+            <p  dir="auto">Not sure what does <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">auto-fit</code>, <code  class="highlighter-rouge notranslate">minmax()</code>, or <code  class="highlighter-rouge notranslate">auto-fill</code> mean?<br />
+Don’t worry — we’ll cover all of these in depth in <strong><a  href="/post/responsive-css-grid-layouts">Part 3 → Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</a></strong>.</p>
+          </blockquote>
+        
+<h3  id="component-friendly" dir="auto">Component-Friendly</h3>
+<p  dir="auto">In frameworks like React or Vue, <strong>Grid makes layout self-contained</strong> — no dependency on external wrappers or parents. It’s great for reusable components like:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Cards</p></li>
+  <li><p  dir="auto">Sidebars</p></li>
+  <li><p  dir="auto">Media objects</p></li>
+  <li><p  dir="auto">Complex page sections</p></li>
+
+          </ul>
+        
+<h2  id="grid-vs-flexbox-when-to-use-what" dir="auto">Grid vs. Flexbox: When to Use What?</h2>
+
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Scenario</th>
+      <th style="text-align: center">Use Grid</th>
+      <th style="text-align: center">Use Flexbox</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Page layout (header, sidebar, content)</td>
+      <td style="text-align: center">✓</td>
+      <td style="text-align: center">✗</td>
+    </tr>
+    <tr>
+      <td>Navbar with links</td>
+      <td style="text-align: center">✗</td>
+      <td style="text-align: center">✓</td>
+    </tr>
+    <tr>
+      <td>Gallery or card grid</td>
+      <td style="text-align: center">✓</td>
+      <td style="text-align: center">✗</td>
+    </tr>
+    <tr>
+      <td>Single row of buttons</td>
+      <td style="text-align: center">✗</td>
+      <td style="text-align: center">✓</td>
+    </tr>
+    <tr>
+      <td>Calendar or table layout</td>
+      <td style="text-align: center">✓</td>
+      <td style="text-align: center">✗</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+
+          <blockquote  dir="auto">
+            <p  dir="auto"><strong>Summary</strong>: Use <strong>flexbox</strong> for 1D layout (e.g., navbars, button groups) and use <strong>grid</strong> for 2D layout (e.g., pages, cards, dashboard panels)
+and you can always combine them!</p>
+          </blockquote>
+        
+<details>
+  <summary>When <em>not</em> to use CSS Grid?</summary>
+  <ul>
+    <li>If you just need a horizontal or vertical alignment — use Flexbox.</li>
+    <li>If the layout is linear and small-scale (e.g. tag chips, breadcrumbs), Grid might be overkill.</li>
+    <li>Old browser support? Flexbox may be safer. (Grid has great support though!)</li>
+  </ul>
+</details>
+
+<h2  id="basic-terminology" dir="auto">Basic Terminology</h2>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>Grid Container:</strong> The parent element on which <code  class="highlighter-rouge notranslate">display: grid</code> or <code  class="highlighter-rouge notranslate">display: inline-grid</code> is applied. It defines the grid context for its children.</p></li>
+  <li><p  dir="auto"><strong>Grid Item:</strong> The direct child elements of the grid container. These are placed and aligned within the grid layout.</p></li>
+  <li><p  dir="auto"><strong>Grid Line:</strong> The horizontal or vertical dividing lines that separate grid tracks. They’re used for placing grid items.</p></li>
+  <li><p  dir="auto"><strong>Grid Track:</strong> A row or column in the grid. It’s the space between two adjacent grid lines.</p></li>
+  <li><p  dir="auto"><strong>Grid Cell:</strong> The smallest unit of a grid layout — the space at the intersection of a single row and column.</p></li>
+
+          </ul>
+        
+<h2  id="building-layouts-with-css-grid" dir="auto">Building Layouts with CSS Grid</h2>
+<h3  id="fundamental-properties" dir="auto">Fundamental Properties</h3>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>display: grid;</strong> — Converts an element into a grid container, enabling grid-based layout for its direct children.</p></li>
+  <li><p  dir="auto"><strong>grid-template-columns</strong> — Defines the number and width of columns in the grid. You can specify fixed sizes, percentages, or use flexible units
+like fr (fraction of available space).</p></li>
+  <li><p  dir="auto"><strong>grid-template-rows</strong> — Defines the number and height of rows in the grid, using the same unit options as columns.</p></li>
+  <li><p  dir="auto"><strong>gap (or row-gap and column-gap)</strong> — Sets the spacing between rows and columns of grid items. A shorthand that simplifies layout spacing.</p></li>
+  <li><p  dir="auto"><strong>grid-column / grid-row</strong> — Specifies how many columns or rows an item should span, or where it should start and end within the grid.</p></li>
+
+          </ul>
+        
+<h3  id="column-and-row-templates" dir="auto">Column and Row Templates</h3>
+<p  dir="auto">CSS Grid gives you precise control over your layout’s structure using the <code  class="highlighter-rouge notranslate">grid-template-columns</code> and <code  class="highlighter-rouge notranslate">grid-template-rows</code> properties.</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto"><strong>grid-template-columns</strong> — Defines the number and width of columns in the grid.</p></li>
+  <li><p  dir="auto"><strong>grid-template-rows</strong> — Defines the number and height of rows.</p></li>
+
+          </ul>
+        
+<p  dir="auto">Each value you specify represents the size of a single column or row, ordered left-to-right (for columns) or top-to-bottom (for rows). You can use:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Flexible units like <code  class="highlighter-rouge notranslate">fr</code> (fraction of available space),</p></li>
+  <li><p  dir="auto">Fixed units like <code  class="highlighter-rouge notranslate">px</code> or <code  class="highlighter-rouge notranslate">em</code>,</p></li>
+  <li><p  dir="auto">keywords like <code  class="highlighter-rouge notranslate">auto</code>, which sizes based on content.</p></li>
+
+          </ul>
+        
+
+          <blockquote  dir="auto">
+            <p  dir="auto">💡 <strong>Tip:</strong> You can use <code  class="highlighter-rouge notranslate">repeat()</code> in <code  class="highlighter-rouge notranslate">grid-template-columns</code> to reduce repetition: <code  class="highlighter-rouge notranslate">repeat(3, 1fr)</code></p>
+          </blockquote>
+        
+<p  dir="auto">Here’s an example:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      CSS
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="nc">.grid</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+  <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span> <span class="m">2fr</span> <span class="m">1fr</span><span class="p">;</span> <span class="c">/* Three columns: middle column is twice as wide */</span>
+  <span class="nl">grid-template-rows</span><span class="p">:</span> <span class="m">150px</span> <span class="nb">auto</span> <span class="m">75px</span><span class="p">;</span> <span class="c">/* Three rows: fixed top &amp; bottom, flexible middle */</span>
+  <span class="nl">gap</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.item</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nx">#000</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto">Here’s the HTML structure:</p>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      HTML
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 5<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 7<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 8<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Item 9<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<p  dir="auto"><strong>Explanation:</strong></p>
+
+          <ul  dir="auto">
+              <li>
+<p  dir="auto">The grid has three columns: the first and third are equal in width, while the middle column is twice as wide.</p>  </li>
+  <li>
+<p  dir="auto">The rows are defined as:</p>
+          <ul  dir="auto">
+                  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">150px</code> → a fixed-height top row</p></li>
+      <li><p  dir="auto"><code  class="highlighter-rouge notranslate">auto</code> → a middle row that adjusts to content</p></li>
+      <li><p  dir="auto"><code  class="highlighter-rouge notranslate">75px</code> → a fixed-height footer row</p></li>
+
+          </ul>
+          </li>
+
+          </ul>
+        
+<p  dir="auto">This layout gives you both <strong>predictability</strong> and <strong>flexibility</strong>, especially when paired with responsive design techniques.</p>
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/raVEvMb" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEvMb" class="external-link">Try this on CodePen</a></p>
+<h2  id="frequently-asked-questions-faq" dir="auto">Frequently Asked Questions (FAQ)</h2>
+<h3  id="when-should-i-use-grid-over-flexbox" dir="auto">When should I use Grid over Flexbox?</h3>
+<p  dir="auto">Use <strong>CSS Grid</strong> when:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">You need both rows and columns (2D layout).</p></li>
+  <li><p  dir="auto">You want consistent alignment across an entire section or page.</p></li>
+  <li><p  dir="auto">You’re building full-page layouts, dashboards, or card grids.</p></li>
+
+          </ul>
+        
+<p  dir="auto">Use <strong>Flexbox</strong> when:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">You’re arranging items in a single row or column.</p></li>
+  <li><p  dir="auto">You need precise content alignment or small-scale layout logic.</p></li>
+
+          </ul>
+        
+<hr />
+
+<h3  id="is-css-grid-responsive" dir="auto">Is CSS Grid responsive?</h3>
+<p  dir="auto">Absolutely! Grid works beautifully with:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">Units like <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">auto</code>, and <code  class="highlighter-rouge notranslate">minmax()</code></p></li>
+  <li><p  dir="auto">Functions like <code  class="highlighter-rouge notranslate">auto-fit</code> and <code  class="highlighter-rouge notranslate">auto-fill</code></p></li>
+  <li><p  dir="auto">Media queries and even container queries</p></li>
+
+          </ul>
+        
+
+          <blockquote  dir="auto">
+            <p  dir="auto">📌 <strong>Tip:</strong> We’ll explore responsive Grid techniques in depth in <a  href="/post/responsive-css-grid-layouts">Part 3 → Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</a>.</p>
+          </blockquote>
+        
+<hr />
+
+<h3  id="does-css-grid-work-in-all-browsers" dir="auto">Does CSS Grid work in all browsers?</h3>
+<p  dir="auto">✅ <strong>Yes</strong>, all modern browsers fully support CSS Grid.<br />
+⚠️ <strong>IE11</strong> supports an older version, but it’s largely deprecated and not recommended for new projects.</p>
+<h2  id="conclusion" dir="auto">Conclusion</h2>
+<p  dir="auto">🎉 Congratulations — you’ve just taken your first steps into the world of CSS Grid!</p>
+<p  dir="auto">Here’s a quick recap of what you’ve learned in this post:</p>
+          <ul  dir="auto">
+              <li><p  dir="auto">Why CSS Grid is a game changer for modern layouts</p></li>
+  <li><p  dir="auto">The key differences between Grid and Flexbox</p></li>
+  <li><p  dir="auto">Core terminology: containers, items, tracks, and lines</p></li>
+  <li><p  dir="auto">How to define columns and rows using units like <code  class="highlighter-rouge notranslate">fr</code>, <code  class="highlighter-rouge notranslate">px</code>, and <code  class="highlighter-rouge notranslate">auto</code></p></li>
+  <li><p  dir="auto">How to build a clean, semantic, and scalable 2D layout from scratch</p></li>
+
+          </ul>
+        
+<p  dir="auto">You now have a solid foundation to build upon — and this is just the beginning.</p>
+<p  dir="auto">🔗 <strong>Up Next (Part 2):</strong> <a  href="/post/mastering-css-grid">Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning</a> — we’ll dive deeper into advanced techniques like:</p>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Naming and using grid areas</p></li>
+  <li><p  dir="auto">Aligning and justifying items</p></li>
+  <li><p  dir="auto">Spanning items across rows and columns</p></li>
+  <li><p  dir="auto">Understanding explicit vs. implicit grids</p></li>
+
+          </ul>
+        
+<p  dir="auto">Stay tuned — you’re just one step away from turning your layout skills from good to great 💪</p>]]></content>
+
+    
+      <category term="css" scheme="urn:taxonomy:tag" />
+    
+      <category term="grid" scheme="urn:taxonomy:tag" />
+    
+      <category term="css-grid" scheme="urn:taxonomy:tag" />
+    
+      <category term="layout" scheme="urn:taxonomy:tag" />
+    
+      <category term="web design" scheme="urn:taxonomy:tag" />
+    
+      <category term="frontend" scheme="urn:taxonomy:tag" />
+    
+      <category term="2d-layouts" scheme="urn:taxonomy:tag" />
+    
+
+    
+      <category term="css" scheme="urn:taxonomy:category" />
+    
+      <category term="beginner" scheme="urn:taxonomy:category" />
+    
+      <category term="layout" scheme="urn:taxonomy:category" />
+    
+  </entry>
+  
+  <entry xml:lang="en">
+    <title>Components</title>
+    <link rel="alternate" type="text/html" href="https://shivam091.github.io/post/components" />
+    <id>https://shivam091.github.io/post/components</id>
+
+    <published>2025-06-16T19:10:40+05:30</published>
+    <updated>2025-07-06T19:48:55+05:30</updated>
+
+    
+    <media:thumbnail
+      url="https://shivam091.github.io/assets/img/posts/components/cover.png"
+      width="1200"
+      height="630" />
+    
+
+    
+    
+      
+        
+        <author>
+          <name>Harshal Ladhe</name>
+          <uri>https://github.com/shivam091</uri>
+        </author>
+      
+    
+
+    <summary type="html">
+      This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.
+    </summary>
+    <content type="html"><![CDATA[<h2  id="codeblocks" dir="auto">Codeblocks</h2>
+<div class="code-block" data-copy-code="">
+  <div class="code-block-header" role="region" aria-labelledby="code-lang-label">
+    <div class="code-block-button-group" aria-hidden="true">
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-close">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-minimize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+      <svg role="img" aria-hidden="true" focusable="false" class="code-block-action code-maximize">
+        <use href="/assets/img/sprite.svg#icon-circle-fill" />
+      </svg>
+    </div>
+    <div class="code-lang" id="code-lang-label">
+      <svg role="img" aria-hidden="true" focusable="false">
+        <use href="/assets/img/sprite.svg#icon-code" />
+      </svg>
+      <span class="visually-hidden">Code language:</span>
+      Ruby
+    </div>
+    <div class="code-actions">
+      <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-hash" />
+        </svg>
+      </button>
+      <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
+        <svg role="img" aria-hidden="true" focusable="false">
+          <use href="/assets/img/sprite.svg#icon-copy" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="code"><pre><span class="c1"># Gemfile</span>
+<span class="n">gem</span> <span class="s1">'httparty'</span>
+
+<span class="c1"># app/services/weather_api.rb</span>
+<span class="nb">require</span> <span class="s1">'httparty'</span>
+
+<span class="k">class</span> <span class="nc">WeatherApi</span>
+  <span class="no">API_KEY</span> <span class="o">=</span> <span class="s1">'your_api_key'</span>
+  <span class="no">BASE_URL</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather'</span>
+
+  <span class="k">def</span> <span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">BASE_URL</span><span class="si">}</span><span class="s2">?q=</span><span class="si">#{</span><span class="n">city</span><span class="si">}</span><span class="s2">&amp;appid=</span><span class="si">#{</span><span class="no">API_KEY</span><span class="si">}</span><span class="s2">&amp;units=metric"</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="no">HTTParty</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="s2">"API Error: </span><span class="si">#{</span><span class="n">response</span><span class="p">.</span><span class="nf">code</span><span class="si">}</span><span class="s2">"</span> <span class="k">unless</span> <span class="n">response</span><span class="p">.</span><span class="nf">success?</span>
+    <span class="n">response</span><span class="p">.</span><span class="nf">parsed_body</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># app/controllers/weather_controller.rb</span>
+<span class="k">def</span> <span class="nf">show</span>
+  <span class="n">city</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:city</span><span class="p">]</span>
+  <span class="n">weather_data</span> <span class="o">=</span> <span class="no">WeatherApi</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+  <span class="vi">@temperature</span> <span class="o">=</span> <span class="n">weather_data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">]</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+</div>
+
+<h2  id="alerts" dir="auto">Alerts</h2>
+<h3  id="default" dir="auto">Default</h3>
+<div class="alert alert-accent" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    This is default alert.
+  </div>
+  
+</div>
+
+<h3  id="with-icon-heading-and-dismiss" dir="auto">With icon, heading, and dismiss</h3>
+<div class="alert alert-accent alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <div class="alert-heading">Information</div>
+This is just for your information.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-success alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-bulb" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <div class="alert-heading">Heads Up!</div>
+Your profile has been updated successfully.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-danger alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-times" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <div class="alert-heading">Error :(</div>
+Failed to save your changes. Please try again.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-attention alert-dismissible" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <div class="alert-heading">Attention</div>
+This action requires confirmation.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<h3  id="with-icon-outline-and-dismiss" dir="auto">With icon, outline, and dismiss</h3>
+<div class="alert alert-accent alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined accent alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-success alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-bulb" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined success alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-danger alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-times" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined danger alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<div class="alert alert-attention alert-dismissible alert-outlined" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-exclamation-triangle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    An example outlined attention alert with an icon.
+  </div>
+  <button type="button" class="alert-dismiss" aria-label="Dismiss">
+  <svg role="img" aria-hidden="true" focusable="false">
+    <use href="/assets/img/sprite.svg#icon-times" />
+  </svg>
+</button>
+
+</div>
+
+<h3  id="with-links" dir="auto">With links</h3>
+<div class="alert alert-accent" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <div class="alert-heading">Information</div>
+This is an <a href="#">important notification</a> that requires your attention.
+You can <a href="/settings">update your settings here</a>.
+An example showing the <code class="language-plaintext highlighter-rouge">warning</code> type prompt.
+  </div>
+  
+</div>
+
+<h3  id="markdown-support" dir="auto">Markdown support</h3>
+<div class="alert alert-danger" role="alert" aria-live="polite" tabindex="0">
+  <div class="alert-icon">
+    <svg role="img" aria-hidden="true" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-times" />
+</svg>
+
+  </div>
+  <div class="alert-content">
+    <h3 class="alert-heading" id="markdown-enabled-alert">Markdown enabled alert</h3>
+
+<p>This content is <strong>processed</strong> as <em>Markdown</em>.</p>
+
+  </div>
+  
+</div>
+
+<h2  id="icons" dir="auto">Icons</h2>
+<svg id="custom-id" class="icon icon-folder-open custom-class" width="20" height="20" role="img" aria-label="Open folder" focusable="false">
+  <use href="/assets/img/sprite.svg#icon-folder-open" />
+</svg>
+]]></content>
+
+    
+      <category term="typography" scheme="urn:taxonomy:tag" />
+    
+      <category term="design" scheme="urn:taxonomy:tag" />
+    
+      <category term="styleguide" scheme="urn:taxonomy:tag" />
+    
+
+    
+      <category term="blogging" scheme="urn:taxonomy:category" />
+    
+      <category term="components" scheme="urn:taxonomy:category" />
+    
+  </entry>
+  
+  <entry xml:lang="en">
+    <title>Text and Typography</title>
+    <link rel="alternate" type="text/html" href="https://shivam091.github.io/post/typography" />
+    <id>https://shivam091.github.io/post/typography</id>
+
+    <published>2025-06-07T18:47:49+05:30</published>
+    <updated>2025-07-09T12:24:30+05:30</updated>
+
+    
+    <media:thumbnail
+      url="https://shivam091.github.io/assets/img/posts/typography/cover.png"
+      width="1200"
+      height="630" />
+    
+
+    
+    
+      
+        
+        <author>
+          <name>Harshal Ladhe</name>
+          <uri>https://github.com/shivam091</uri>
+        </author>
+      
+    
+
+    <summary type="html">
+      This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.
+    </summary>
+    <content type="html"><![CDATA[<h2  id="headings" dir="auto">Headings</h2>
+<h1  id="h1-heading-usually-reserved-for-post-title" dir="auto">H1 Heading (usually reserved for post title)</h1><h2  id="h2-heading" dir="auto">H2 Heading</h2><h3  id="h3-heading" dir="auto">H3 Heading</h3><h4  id="h4-heading" dir="auto">H4 Heading</h4><h5  id="h5-heading" dir="auto">H5 Heading</h5><h6  id="h6-heading" dir="auto">H6 Heading</h6>
+<h2  id="paragraphs" dir="auto">Paragraphs</h2>
+<p  dir="auto">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. Nulla <em>vehicula</em>, <code  class="highlighter-rouge notranslate">inline code</code>, <a  href="https://example.com" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://example.com" class="external-link">external link</a>, and a line break:<br />
+New line here.</p>
+<h2  id="blockquote" dir="auto">Blockquote</h2>
+
+          <blockquote  dir="auto">
+            <p  dir="auto">“Design is not just what it looks like and feels like. Design is how it works.”<br />
+— <em>Steve Jobs</em></p>
+          </blockquote>
+        
+<h2  id="links" dir="auto">Links</h2>
+<p  dir="auto"><a  href="https://example.com" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://example.com" class="external-link">External Link</a><br />
+<a  href="/about/">Internal Link</a><br />
+Mailto: <a  href="mailto:test@example.com">Send Email</a></p>
+<h2  id="lists" dir="auto">Lists</h2>
+<h3  id="unordered-list" dir="auto">Unordered List</h3>
+
+          <ul  dir="auto">
+              <li><p  dir="auto">Chapter 1
+</p>
+          <ul  dir="auto">
+                  <li><p  dir="auto">Section 1
+</p>
+          <ul  dir="auto">
+                      <li><p  dir="auto">Paragraph 1</p></li>
+
+          </ul>
+        </li>
+
+          </ul>
+        </li>
+  <li><p  dir="auto">Chapter 2
+</p>
+          <ul  dir="auto">
+                  <li><p  dir="auto">Section 2</p></li>
+
+          </ul>
+        </li>
+
+          </ul>
+        
+<h3  id="ordered-list" dir="auto">Ordered List</h3>
+
+          <ol  dir="auto">
+              <li><p  dir="auto">First item</p></li>
+  <li><p  dir="auto">Second item
+</p>
+          <ol  dir="auto">
+                  <li><p  dir="auto">Nested
+</p>
+          <ol  dir="auto">
+                      <li><p  dir="auto">Nested again</p></li>
+
+          </ol>
+        </li>
+
+          </ol>
+        </li>
+  <li><p  dir="auto">Third item</p></li>
+
+          </ol>
+        
+<h3  id="task-list" dir="auto">Task List</h3>
+
+          <ul  class="task-list" dir="auto">
+              <li class="task-list-item"><p  dir="auto"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Job
+</p>
+          <ul  class="task-list" dir="auto">
+                  <li class="task-list-item"><p  dir="auto"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Step 1</p></li>
+      <li class="task-list-item"><p  dir="auto"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Step 2</p></li>
+      <li class="task-list-item"><p  dir="auto"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Step 3</p></li>
+
+          </ul>
+        </li>
+
+          </ul>
+        
+<h3  id="description-lists" dir="auto">Description Lists</h3><dl>
+  <dt>Sun</dt>
+  <dd><p  dir="auto">the star around which the earth orbits</p></dd>
+  <dt>Moon</dt>
+  <dd><p  dir="auto">the natural satellite of the earth, visible by reflected light from the sun</p></dd>
+</dl>
+
+<h2  id="inline-elements" dir="auto">Inline Elements</h2>
+<p  dir="auto"><strong>bold text</strong>,
+<em>italic text</em>,
+<code  class="highlighter-rouge notranslate">code</code>,
+<del>strikethrough</del>,
+<u>underlined</u>,
+<small>small text</small>
+<mark>highlighted</mark> text.
+<abbr title="attribute">attr</abbr></p>
+<h2  id="code-blocks" dir="auto">Code Blocks</h2>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Gemfile</span>
+<span class="n">gem</span> <span class="s1">'httparty'</span>
+
+<span class="c1"># app/services/weather_api.rb</span>
+<span class="nb">require</span> <span class="s1">'httparty'</span>
+
+<span class="k">class</span> <span class="nc">WeatherApi</span>
+  <span class="no">API_KEY</span> <span class="o">=</span> <span class="s1">'your_api_key'</span>
+  <span class="no">BASE_URL</span> <span class="o">=</span> <span class="s1">'https://api.openweathermap.org/data/2.5/weather'</span>
+
+  <span class="k">def</span> <span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">BASE_URL</span><span class="si">}</span><span class="s2">?q=</span><span class="si">#{</span><span class="n">city</span><span class="si">}</span><span class="s2">&amp;appid=</span><span class="si">#{</span><span class="no">API_KEY</span><span class="si">}</span><span class="s2">&amp;units=metric"</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="no">HTTParty</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="s2">"API Error: </span><span class="si">#{</span><span class="n">response</span><span class="p">.</span><span class="nf">code</span><span class="si">}</span><span class="s2">"</span> <span class="k">unless</span> <span class="n">response</span><span class="p">.</span><span class="nf">success?</span>
+    <span class="n">response</span><span class="p">.</span><span class="nf">parsed_body</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># app/controllers/weather_controller.rb</span>
+<span class="k">def</span> <span class="nf">show</span>
+  <span class="n">city</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:city</span><span class="p">]</span>
+  <span class="n">weather_data</span> <span class="o">=</span> <span class="no">WeatherApi</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">fetch_weather</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+  <span class="vi">@temperature</span> <span class="o">=</span> <span class="n">weather_data</span><span class="p">[</span><span class="s1">'main'</span><span class="p">][</span><span class="s1">'temp'</span><span class="p">]</span>
+<span class="k">end</span></code></pre></figure>
+
+<p  dir="auto">Inline <code  class="highlighter-rouge notranslate">console.log("Hi")</code> inside text.</p>
+<h2  id="details--summary" dir="auto">Details / Summary</h2>
+<details>
+  <summary>Click to expand</summary>
+  <p>This is hidden content revealed with HTML <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags.</p>
+</details>
+
+<h2  id="figures-and-images" dir="auto">Figures and Images</h2>
+<h3  id="image-with-caption" dir="auto">Image with Caption</h3>
+<figure>
+  <img src="https://via.placeholder.com/600x200" alt="Example Image" />
+  <figcaption>This is a caption below the image.</figcaption>
+</figure>
+
+<h3  id="simple-image" dir="auto">Simple Image</h3>
+<p  dir="auto">  <div class="markdown-img-wrapper lazy-wrapper">
+<img  alt="Alt text" class="lazy-img" data-src="https://via.placeholder.com/400x200" loading="lazy" />
+<noscript><img  alt="Alt text" src="https://via.placeholder.com/400x200" /></noscript>  </div>
+</p>
+<h2  id="tables" dir="auto">Tables</h2>
+
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th style="text-align: right">Feature</th>
+      <th style="text-align: center">Supported</th>
+      <th style="text-align: left">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">Tables</td>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: left">Markdown &amp; HTML</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">GFM</td>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: left">Supported on GitHub</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">Footnotes</td>
+      <td style="text-align: center">✅</td>
+      <td style="text-align: left">In Markdown config</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h2  id="filepath" dir="auto">Filepath</h2>
+<p  dir="auto">Here is the <code  class="filepath highlighter-rouge notranslate">/path/to/the/file.extend</code>.</p>
+<h2  id="footnotes" dir="auto">Footnotes</h2>
+<p  dir="auto">This sentence has a footnote.
+          <sup id="fnref:1">
+            <a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref" aria-describedby="footnote-label">1</a>
+          </sup>
+        </p>
+<p  dir="auto">This sentence has an another footnote.
+          <sup id="fnref:2">
+            <a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref" aria-describedby="footnote-label">2</a>
+          </sup>
+        </p>
+<h2  id="misc-elements" dir="auto">Misc elements</h2>
+<p  dir="auto"><strong>Abbreviation:</strong><br />
+The abbreviation for HyperText Markup Language is <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+<p  dir="auto"><strong>Keyboard Input:</strong><br />
+To save, press <kbd>Ctrl</kbd> + <kbd>S</kbd>.</p>
+<p  dir="auto"><strong>Subscript/Superscript:</strong><br />
+H<sub>2</sub>O and E = mc<sup>2</sup></p>
+<p  dir="auto"><strong>Time Tag:</strong><br />
+<time datetime="2025-05-31">May 31, 2025</time></p><section class="footnotes" role="doc-endnotes" dir="auto">
+
+          <h2 id="footnote-label" class="visually-hidden" dir="auto">Footnotes</h2>
+        
+          <ol  class="footnote-list" dir="auto">
+              <li id="fn:1" class="footnote-list-item">
+<p  dir="auto">This is the footnote content.&nbsp;
+            <a href="#fnref:1" class="reverse-footnote" aria-label="Back to reference 1" role="doc-backlink">&#8617;</a>
+          </p>  </li>
+  <li id="fn:2" class="footnote-list-item">
+<p  dir="auto">This is the another footnote content.&nbsp;
+            <a href="#fnref:2" class="reverse-footnote" aria-label="Back to reference 2" role="doc-backlink">&#8617;</a>
+          </p>  </li>
+
+          </ol>
+        </section>
+]]></content>
+
+    
+      <category term="typography" scheme="urn:taxonomy:tag" />
+    
+      <category term="design" scheme="urn:taxonomy:tag" />
+    
+      <category term="styleguide" scheme="urn:taxonomy:tag" />
+    
+
+    
+      <category term="blogging" scheme="urn:taxonomy:category" />
+    
+      <category term="typography" scheme="urn:taxonomy:category" />
+    
+  </entry>
+  
+</feed>
