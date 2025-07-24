@@ -1,0 +1,67 @@
+@use "abstracts/mixins/breakpoints" as breakpoint
+@use "abstracts/mixins/transition-properties" as *
+
+$color-swap-duration: 350ms
+$sky-gradient: linear-gradient(to bottom, var(--color-sky-from), var(--color-sky-to))
+$sky-gradient-subtle: linear-gradient(to top, hsl(from var(--color-sky-subtle) h s l / .925), var(--color-sky-subtle))
+$color-swap-timing-function: cubic-bezier(0.41, 0.1, 0.13, 1)
+$sky-from-duration: calc($color-swap-duration + 500ms)
+$sky-to-duration: calc($color-swap-duration + 350ms)
+$sky-duration: calc($color-swap-duration + 300ms)
+$swoop-duration: calc($color-swap-duration + 200ms)
+$first-swoop-duration: calc($color-swap-duration + 120ms)
+$second-swoop-duration: calc($color-swap-duration + 240ms)
+
+// @keyframes cloudDrift
+//   0%
+//     transform: translateX(0)
+//   100%
+//     transform: translateX(-20%)
+//
+// .cloud-layers .cloud-shapes
+//   animation: cloudDrift 60s linear infinite
+
+.sky-banner-top
+  display: flex
+  flex-direction: column
+  isolation: isolate
+  overflow: hidden
+  overflow: clip
+  max-height: 100vh
+
+  .cloud-layers
+    position: absolute
+    inset: 0 0 auto
+    padding-top: 3rem
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
+    background: $sky-gradient
+    overflow: hidden
+    overflow: clip
+    z-index: -1
+    @include transition-properties(background, $duration: $sky-from-duration, $easing: $color-swap-timing-function)
+
+    .cloud-shapes
+      display: block
+      max-width: revert
+      width: 100%
+      min-width: 5120px
+      height: 100%
+      overflow: visible
+      transform: translateY(1px)
+
+      @include breakpoint.between(sm, md)
+        min-width: 670vw
+
+      .background-clouds
+        fill: var(--color-cloud-500)
+        @include transition-properties(fill, $duration: $first-swoop-duration, $easing: $color-swap-timing-function)
+
+      .midground-clouds
+        fill: var(--color-cloud-300)
+        @include transition-properties(fill, $duration: $second-swoop-duration, $easing: $color-swap-timing-function)
+
+      .foreground-clouds
+        fill: var(--color-bg-default)
