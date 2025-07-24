@@ -9,6 +9,8 @@
 
   <button type="button" class="skip-link" data-skip-link data-skip-to="#main-content">Skip to main content</button>
 
+  {% include sky-top.html %}
+
   <div class="page-wrapper">
     {% include sidebar.html %}
 
@@ -22,6 +24,8 @@
 
     {% include footer.html %}
   </div>
+
+  {% include sky-bottom.html %}
 
   <button type="button" id="scroll-top" class="btn btn-primary scroll-top" aria-label="Scroll to top" data-scroll-top>
    {% icon arrow-up %}
