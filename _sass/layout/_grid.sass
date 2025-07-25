@@ -3,9 +3,9 @@
 
 .page-wrapper
   display: grid
-  grid-template-areas: "sidebar main" "sidebar footer"
+  grid-template-areas: "header header" "sidebar main" "sidebar footer"
   grid-template-columns: var(--wrapper-offset-lg) 1fr
-  grid-template-rows: 1fr auto
+  grid-template-rows: var(--height-header) 1fr auto
   min-height: 100vh
   overflow: hidden
   z-index: 0
@@ -15,7 +15,7 @@
 
   @include breakpoint.max(md)
     grid-template-columns: 1fr
-    grid-template-areas: "main" "footer"
+    grid-template-areas: "header" "main" "footer"
 
 .main-content
   grid-area: main

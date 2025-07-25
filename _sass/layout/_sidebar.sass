@@ -8,9 +8,9 @@
   display: flex
   flex-direction: column
   position: fixed
-  inset: 0 auto 0 0
+  inset: var(--height-header) auto 0 0
   width: var(--sidebar-width-lg)
-  height: 100dvh
+  height: calc(100dvh - var(--height-header))
   background-image: url("./../assets/img/my-profile-img.png")
   color: var(--color-fg-white)
   z-index: 999
@@ -29,6 +29,9 @@
     width: var(--sidebar-width-md)
 
   @include breakpoint.max(md)
+    inset: 0 auto 0 0
+    height: 100dvh
+
     transform: translateX(-100%)
     width: var(--sidebar-width-sm)
     opacity: var(--opacity-none)
