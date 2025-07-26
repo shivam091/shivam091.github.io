@@ -1,0 +1,104 @@
+@use "abstracts/mixins/transition-properties" as *
+@use "abstracts/mixins/breakpoints" as breakpoint
+
+// body[data-header="hidden"] .site-header
+//   transform: translateY(-100%)
+
+.site-header
+  --fade-to-color: var(--color-bg-muted)
+  --extended-by: 100px
+  --cutoff: calc(100% - var(--extended-by))
+
+  grid-area: header
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  position: sticky
+  inset: var(--space-none)
+  z-index: 3
+  height: 5rem
+  opacity: var(--opacity-full)
+  padding: var(--fluid-space-md)
+  background: var(--color-bg-transparent)
+
+  @include transition-properties((background, backdrop-filter), $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+
+  @include breakpoint.max(md)
+    flex-direction: column
+    align-items: flex-start
+    gap: var(--space-sm)
+
+.header-scrolled
+  background: linear-gradient(to top, hsl(from var(--color-sky-subtle) h s l / 0.7), var(--color-sky-subtle))
+  backdrop-filter: blur(var(--blur-md))
+
+.site-logo
+  display: flex
+  align-items: center
+  gap: var(--space-sm)
+  font-weight: var(--font-weight-bold)
+  font-size: var(--font-size-md)
+  margin-inline: var(--space-none) var(--space-md)
+  color: var(--color-fg-default)
+
+  &:hover
+    text-decoration: none
+
+  .site-name
+    font-size: var(--font-size-md)
+    font-weight: var(--font-weight-medium)
+    letter-spacing: 0.02em
+
+.nav-links
+  display: flex
+  gap: var(--space-sm)
+  flex: 1 1
+  width: 100%
+
+  .nav-link
+    display: inline-flex
+    align-items: center
+    gap: var(--space-sm)
+    text-decoration: none
+    font-size: var(--font-size-sm)
+    color: var(--color-fg-default)
+    padding-block: var(--space-xs)
+    padding-inline: var(--space-sm)
+
+    &:hover,
+    &:focus
+      background-color: var(--color-bg-hover)
+      color: var(--color-fg-accent)
+
+  @include breakpoint.max(md)
+    justify-content: flex-end
+
+  @include breakpoint.max(sm)
+    justify-content: center
+
+.header-actions
+  display: flex
+  align-items: center
+  gap: var(--space-sm)
+
+  button
+    border-radius: var(--border-radius-default)
+
+    @include transition-properties((background-color, color), $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
+
+  @include breakpoint.max(sm)
+    display: none
+
+.site-header .container
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  gap: var(--space-md)
+
+  @include breakpoint.max(md)
+    gap: var(--space-sm)
+
+  @include breakpoint.max(sm)
+    flex-direction: column
+    gap: var(--space-xs)

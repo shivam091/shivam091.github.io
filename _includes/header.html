@@ -1,0 +1,46 @@
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo">
+      <img src="{{ '/assets/img/smiling_face.png' | relative_url }}" alt="{{ site.author.name }}" class="avatar" loading="lazy">
+      <span class="site-name">Harshal V. LADHE</span>
+    </a>
+
+    <nav class="nav-links" role="navigation" aria-label="Main Navigation">
+      {% for item in site.data.main_nav %}
+        {% if item.href contains "http" %}
+           <a href="{{ item.href }}" class="nav-link" target="_blank" rel="noopener noreferrer" {% if page.url == item.href %} aria-current="page" {% endif %}>
+             {{ item.title }}
+           </a>
+        {% else %}
+           <a href="{{ item.href | relative_url }}" class="nav-link" {% if page.url == item.href %} aria-current="page" {% endif %}>
+             {{ item.title }}
+           </a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+
+    <div class="header-actions">
+      <button class="search-toggle" aria-label="Search">
+        {% icon search %}
+      </button>
+
+      <div class="dropdown" data-dropdown data-theme-switcher>
+        <button type="button" class="dropdown-toggle theme-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Toggle color scheme">
+          {% icon adjust %}
+        </button>
+
+        <ul class="dropdown-menu" role="menu" aria-label="Available color schemes" data-popper-placement="static" data-theme-switcher-list>
+        {%- for item in site.data.color_schemes %}
+          <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="{{ item.description | default: item.label }}"
+                    data-color-scheme="{{ item.key }}" data-theme-switcher-list-items>
+              {% icon {{ item.icon }} %}
+              {{ item.label }}
+            </button>
+          </li>
+        {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
