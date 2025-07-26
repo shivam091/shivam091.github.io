@@ -3,31 +3,59 @@
 
 .site-footer
   grid-area: footer
-  text-align: center
-  padding: var(--fluid-space-md)
-  // border-top: var(--border-default)
-  // background-color: var(--color-bg-muted)
   background: var(--color-bg-transparent)
-  color: var(--color-fg-default)
-  max-width: 100%
+  color: var(--color-fg-footer)
   font-size: var(--font-size-sm)
+  padding: var(--fluid-space-md)
+  margin-block-start: var(--space-base)
 
-  @include transition-properties(transform, $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
+  .footer-container
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+    grid-template-areas: "misc social" "legal credits"
+    row-gap: var(--space-base)
+    column-gap: var(--space-md)
+    align-items: center
 
-  @include breakpoint.max(md)
-    @at-root [data-sidebar="open"] &
-      transform: translateX(var(--wrapper-offset-sm))
+    @include breakpoint.max(md)
+      grid-template-columns: 1fr
+      grid-template-areas: "misc" "legal" "social" "credits"
 
-  .site-copyright
-    font-size: var(--font-size-sm)
+  .footer-section
+    display: flex
+    gap: var(--space-base)
+    flex-wrap: wrap
 
-    p
-      margin-block: var(--space-none)
+    @include breakpoint.max(md)
+      justify-content: center
 
-  .site-credits
-    margin-top: var(--space-xxs)
-    font-size: var(--font-size-xs)
-    color: var(--color-fg-muted)
+  .footer-links
+    grid-area: misc
 
-    .love
-      color: var(--color-bg-danger-emphasis)
+  .footer-social
+    grid-area: social
+    justify-content: flex-end
+    gap: var(--space-base)
+
+    @include breakpoint.max(md)
+      justify-content: center
+
+  .footer-legal
+    grid-area: legal
+
+  .footer-credits
+    grid-area: credits
+    justify-content: flex-end
+
+    @include breakpoint.max(md)
+      justify-content: center
+
+  .footer-link
+    color: inherit
+    text-decoration: none
+    @include transition-properties(color, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+    padding-block: var(--space-xxs)
+
+    &:hover
+      color: var(--color-fg-default)
