@@ -1,9 +1,11 @@
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
+$header-height: 5rem
+
 .page-wrapper
   display: grid
-  grid-template-rows: auto 1fr auto
+  grid-template-rows: $header-height 1fr auto
   grid-template-areas: "header" "main" "footer"
   position: relative
   min-height: 100dvh
@@ -13,6 +15,7 @@
   padding: var(--fluid-space-md)
   overflow-x: hidden
   max-width: 100dvw
+  scroll-margin-block-start: $header-height
 
 .container
   width: 100%
@@ -24,3 +27,11 @@
   max-width: 65ch
   margin-inline: auto
   padding-inline: var(--space-base)
+
+.home-grid
+  display: grid
+  grid-template-rows: $header-height auto 1fr auto
+  grid-template-areas: "header" "hero" "main" "footer"
+
+  @include breakpoint.min(lg)
+    grid-template-rows: $header-height calc(100vh - $header-height) 1fr auto
