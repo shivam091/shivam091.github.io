@@ -1,6 +1,6 @@
 @use "abstracts/mixins/breakpoints" as breakpoint
 @use "abstracts/mixins/scroll-lock" as *
-  
+
 html
   height: 100%
   width: 100%
@@ -22,7 +22,6 @@ body
   line-height: var(--line-height-normal)
   color: var(--color-fg-default)
   background-color: var(--color-bg-default)
-  overflow-x: hidden
   -webkit-font-smoothing: antialiased
 
   @include breakpoint.max(md)
