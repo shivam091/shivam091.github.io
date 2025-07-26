@@ -79,29 +79,27 @@
   <div class="page-wrapper">
     <header class="site-header">
   <div class="container">
-    <div class="site-brand">
+    <a href="/" class="site-logo">
       <span class="site-name">Harshal V. LADHE</span>
-    </div>
+    </a>
 
     <nav class="nav-links" role="navigation" aria-label="Main site links">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/posts">Posts</a>
-      <a href="/series">Series</a>
-      <a href="/projects">Projects</a>
-      <a href="/goodies">Goodies</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/posts" class="nav-link">Posts</a>
+      <a href="/series" class="nav-link">Series</a>
+      <a href="/projects" class="nav-link">Projects</a>
+      <a href="/goodies" class="nav-link">Goodies</a>
     </nav>
 
     <div class="header-actions">
       <button class="search-toggle" aria-label="Search">
-        🔍
-      </button>
-      <button class="theme-toggle" aria-label="Toggle theme">
-        🌓
+        <svg  class='icon icon-search'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-search" />
+</svg>
       </button>
 
       <div class="dropdown" data-dropdown data-theme-switcher>
-        <button type="button" class="dropdown-toggle theme-switcher bottom-link" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="dropdown-toggle theme-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Toggle color scheme">
           <svg  class='icon icon-adjust'  aria-hidden='true' focusable='false'>
   <use href="/assets/img/sprite.svg#icon-adjust" />
 </svg>
