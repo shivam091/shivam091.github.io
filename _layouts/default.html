@@ -7,21 +7,20 @@
 <body>
   <div id="progress-bar"></div>
 
-  <button type="button" class="skip-link" data-skip-link data-skip-to="#main-content">Skip to main content</button>
 
   {% include sky-top.html %}
+  <button type="button" class="skip-link" data-skip-link data-skip-to="#main-content">Skip to main content</button>
 
-  <div class="page-wrapper">
+  <div class="container">
+    <div class="page-wrapper">
     {% include header.html %}
-    {% include sidebar.html %}
 
-    <main id="main-content" class="main-content" role="main" tabindex="-1">
-      <div class="container">
+      <main id="main-content" class="main-content" role="main" tabindex="-1">
         {% include breadcrumbs.html %}
 
         {{ content }}
-      </div>
-    </main>
+      </main>
+    </div>
 
     {% include footer.html %}
   </div>

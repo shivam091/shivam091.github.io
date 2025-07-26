@@ -1,27 +1,36 @@
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
+// .page-wrapper
+//   display: grid
+//   grid-template-areas: "header header" "sidebar main" "sidebar footer"
+//   grid-template-columns: var(--wrapper-offset-lg) 1fr
+//   grid-template-rows: var(--height-header) 1fr auto
+//   min-height: 100vh
+//   overflow: hidden
+//   z-index: 0
+//
+//   @include breakpoint.max(lg)
+//     grid-template-columns: var(--wrapper-offset-md) 1fr
+//
+//   @include breakpoint.max(md)
+//     grid-template-columns: 1fr
+//     grid-template-areas: "header" "main" "footer"
+
 .page-wrapper
   display: grid
-  grid-template-areas: "header header" "sidebar main" "sidebar footer"
-  grid-template-columns: var(--wrapper-offset-lg) 1fr
+  grid-template-areas: "header" "main" "footer"
+  grid-template-columns: 1fr
   grid-template-rows: var(--height-header) 1fr auto
   min-height: 100vh
   overflow: hidden
   z-index: 0
 
-  @include breakpoint.max(lg)
-    grid-template-columns: var(--wrapper-offset-md) 1fr
-
-  @include breakpoint.max(md)
-    grid-template-columns: 1fr
-    grid-template-areas: "header" "main" "footer"
-
 .main-content
   grid-area: main
-  display: flex
-  align-items: center
-  flex-direction: column
+  // display: flex
+  // align-items: center
+  // flex-direction: column
   padding: var(--fluid-space-md)
 
   @include transition-properties(transform, $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
