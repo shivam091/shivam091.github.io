@@ -30,15 +30,16 @@
         </button>
 
         <ul class="dropdown-menu" role="menu" aria-label="Available color schemes" data-popper-placement="static" data-theme-switcher-list>
-        {%- for item in site.data.color_schemes %}
-          <li>
-            <button type="button" class="dropdown-item" role="menuitem" aria-label="{{ item.description | default: item.label }}"
-                    data-color-scheme="{{ item.key }}" data-theme-switcher-list-items>
-              {% icon {{ item.icon }} %}
-              {{ item.label }}
-            </button>
-          </li>
-        {%- endfor %}
+          <div class="dropdown-arrow" data-popper-arrow aria-hidden="true"></div>
+          {%- for item in site.data.color_schemes %}
+            <li>
+              <button type="button" class="dropdown-item" role="menuitem" aria-label="{{ item.description | default: item.label }}"
+                      data-color-scheme="{{ item.key }}" data-theme-switcher-list-items>
+                {% icon {{ item.icon }} %}
+                {{ item.label }}
+              </button>
+            </li>
+          {%- endfor %}
         </ul>
       </div>
     </div>
