@@ -65,3 +65,55 @@ $second-swoop-duration: calc($color-swap-duration + 240ms)
 
       .foreground-clouds
         fill: var(--color-bg-default)
+
+.sky-banner-bottom
+  position: relative
+  inset: auto 0 0 0
+  height: 350px
+  z-index: -1
+  margin-top: -350px
+  pointer-events: none
+  overflow: hidden
+  overflow: clip
+  background: linear-gradient(to bottom, var(--color-sky-from), var(--color-sky-to))
+
+  @include transition-properties(background, $duration: $sky-from-duration, $easing: $color-swap-timing-function)
+
+  .cloud-layers-top-overlay
+    display: block
+    position: absolute
+    inset: auto 50% 0 auto
+    height: 50%
+    width: 100%
+    z-index: 1
+
+    @include breakpoint.between(sm, md)
+      inset: auto 30% 0 auto
+
+    .bottom-cloud-overlay
+      fill: var(--color-sky-bottom)
+      @include transition-properties(fill, $duration: $first-swoop-duration, $easing: $color-swap-timing-function)
+
+  .cloud-layers-bottom
+    position: absolute
+    inset: 0 0 auto 0
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
+    overflow: hidden
+    overflow: clip
+    margin-top: -1px
+
+    .cloud-shapes-bottom
+      display: block
+      margin-top: -1px
+      width: 100%
+      height: 100%
+      max-width: revert
+      min-width: 5120px
+      overflow: visible
+
+      .bottom-background-clouds
+        fill: var(--color-bg-default)
+        @include transition-properties(fill, $duration: $sky-to-duration, $easing: $color-swap-timing-function)
