@@ -1,3 +1,5 @@
+import HeaderGlassEffect from "./layout/header-glass-effect";
+import HeaderDrawer from "./layout/header-drawer";
 import ThemeSwitcher from "./modules/components/theme-switcher";
 import AnalyticsTracker from "./modules/analytics-tracker";
 import ScrollTop from "./modules/components/scroll-top";
@@ -15,6 +17,8 @@ import RetroCounter from "./components/retro-counter";
 
 import { bindHeroTyping } from "./modules/components/hero";
 
+HeaderGlassEffect.initialize();
+HeaderDrawer.initialize();
 ThemeSwitcher.initialize();
 AnalyticsTracker.initialize();
 ScrollTop.initialize();
