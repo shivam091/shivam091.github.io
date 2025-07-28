@@ -1,73 +1,88 @@
-$caret-size: 16px
+$caret-size: 1rem
+$caret-offset: 0.09375rem
 
 @mixin caret-base
+  position: absolute
+  pointer-events: none
+  width: $caret-size
+  height: $caret-size
+
   &::before,
   &::after
     content: ""
     position: absolute
+    width: 0
+    height: 0
     border: var(--border-width-extra-thick) solid var(--color-border-transparent)
     z-index: -1
 
 @mixin caret-top
   &::before
     border-top-color: var(--color-border-overlay)
-    bottom: calc(-1 * $caret-size)
+    bottom: 0
     left: 50%
     transform: translateX(-50%)
 
   &::after
     border-top-color: var(--color-bg-overlay)
-    bottom: calc(-1 * $caret-size + 1.5px)
+    bottom: $caret-offset
     left: 50%
     transform: translateX(-50%)
 
 @mixin caret-bottom
   &::before
     border-bottom-color: var(--color-border-overlay)
-    top: calc(-1 * $caret-size)
+    top: 0
     left: 50%
     transform: translateX(-50%)
 
   &::after
     border-bottom-color: var(--color-bg-overlay)
-    top: calc(-1 * $caret-size + 1.5px)
+    top: $caret-offset
     left: 50%
     transform: translateX(-50%)
 
 @mixin caret-left
   &::before
     border-left-color: var(--color-border-overlay)
-    right: calc(-1 * $caret-size)
+    right: 0
     top: 50%
     transform: translateY(-50%)
 
   &::after
     border-left-color: var(--color-bg-overlay)
-    right: calc(-1 * $caret-size + 1.5px)
+    right: $caret-offset
     top: 50%
     transform: translateY(-50%)
 
 @mixin caret-right
   &::before
     border-right-color: var(--color-border-overlay)
-    left: calc(-1 * $caret-size)
+    left: 0
     top: 50%
     transform: translateY(-50%)
 
   &::after
     border-right-color: var(--color-bg-overlay)
-    left: calc(-1 * $caret-size + 1.5px)
+    left: $caret-offset
     top: 50%
     transform: translateY(-50%)
 
 @mixin caret
   @include caret-base
 
-  &[data-popper-placement="top"]
+  [data-popper-placement^="top"] > &
+    bottom: calc(-1 * $caret-size)
     @include caret-top
-  &[data-popper-placement="bottom"]
+
+  [data-popper-placement^="bottom"] > &
+    top: calc(-1 * $caret-size)
     @include caret-bottom
-  &[data-popper-placement="left"]
+
+  [data-popper-placement^="left"] > &
+    right: calc(-1 * $caret-size)
     @include caret-left
-  &[data-popper-placement="right"]
+
+  [data-popper-placement^="right"] > &
+    left: calc(-1 * $caret-size)
     @include caret-right

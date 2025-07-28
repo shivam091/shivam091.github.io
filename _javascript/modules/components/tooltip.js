@@ -22,6 +22,11 @@ export default class Tooltip {
     el.setAttribute("aria-live", "polite");
     el.setAttribute("aria-hidden", "true");
 
+    const arrow = document.createElement("div");
+    arrow.className = "tooltip-arrow";
+    arrow.setAttribute("data-popper-arrow", "");
+    el.appendChild(arrow);
+
     return el;
   }
 

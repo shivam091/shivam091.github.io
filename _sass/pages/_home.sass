@@ -1,11 +1,12 @@
+@use "abstracts/mixins/breakpoints" as breakpoint
+
 .home-grid
   display: grid
-  grid-template-rows: 100vh auto auto
-  grid-template-areas: "hero" "content" "footer"
+  grid-template-rows: repeat(3, auto)
+  grid-template-areas: "hero" "main" "footer"
 
-.home-content
-  grid-area: content
-  padding: var(--fluid-space-md)
+  @include breakpoint.min(lg)
+    grid-template-rows: 100dvh repeat(2, auto)
 
 .content-grid
   display: grid
@@ -15,7 +16,7 @@
   align-items: start
   box-sizing: border-box
 
-  @media (max-width: 1280px)
+  @include breakpoint.max(xl)
     grid-template-columns: 1fr
     grid-template-areas: "content-primary" "content-sidebar"
     gap: var(--space-none)

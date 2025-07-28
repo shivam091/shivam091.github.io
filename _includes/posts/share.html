@@ -4,7 +4,7 @@
 
 <div class="share-icons" role="group" aria-label="Share this post">
   Share:
-  {% for share in site.data.share.platforms %}
+  {% for share in site.data.posts.share.platforms %}
     {%- assign link = share.link | replace: "TITLE", title | replace: "URL", url -%}
 
     <a href="{{ link }}" target="_blank" rel="noopener noreferrer nofollow"
