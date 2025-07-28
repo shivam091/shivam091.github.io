@@ -1,41 +1,27 @@
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
+$viewport-padding: var(--fluid-space-md)
+
 .page-wrapper
-  display: grid
-  grid-template-areas: "sidebar main" "sidebar footer"
-  grid-template-columns: var(--wrapper-offset-lg) 1fr
-  grid-template-rows: 1fr auto
-  min-height: 100vh
-  overflow: hidden
-  z-index: 0
-
-  @include breakpoint.max(lg)
-    grid-template-columns: var(--wrapper-offset-md) 1fr
-
-  @include breakpoint.max(md)
-    grid-template-columns: 1fr
-    grid-template-areas: "main" "footer"
-
-.main-content
-  grid-area: main
   display: flex
-  align-items: center
   flex-direction: column
-  padding: var(--fluid-space-md)
+  min-height: 100dvh
+  position: relative
 
-  @include transition-properties(transform, $duration: var(--sidebar-motion-duration), $easing: var(--motion-easing-entrance))
-
-  @include breakpoint.max(md)
-    @at-root [data-sidebar="open"] &
-      transform: translateX(var(--wrapper-offset-sm))
-
-.page-wrapper,
 .main-content
-  max-width: 100vw
+  flex: 1
+  padding: $viewport-padding
   overflow-x: hidden
+  max-width: 100dvw
 
 .container
   width: 100%
-  max-width: clamp(600px, 90%, 1200px)
+  max-width: clamp(var(--min-width, 37.5rem), 90%, var(--max-width, 75rem))
   margin-inline: auto
+
+.content-wrapper
+  width: 100%
+  max-width: 65ch
+  margin-inline: auto
+  padding-inline: var(--space-base)
