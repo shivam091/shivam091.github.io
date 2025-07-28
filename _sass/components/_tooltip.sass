@@ -3,8 +3,6 @@
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 .tooltip
-  @include caret
-
   position: absolute
   background-color: var(--color-bg-overlay)
   border: var(--border-width-default) solid var(--color-border-overlay)
@@ -33,3 +31,6 @@
 
   @include breakpoint.max(md)
     max-width: 180px
+
+.tooltip-arrow
+  @include caret

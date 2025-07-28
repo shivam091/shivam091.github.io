@@ -8,6 +8,7 @@
   display: inline-flex
   align-items: center
   gap: var(--space-xs)
+  flex-wrap: wrap
 
 .post-meta-primary
   display: inline-grid
@@ -29,9 +30,6 @@
     grid-template-columns: 1fr
 
     > .post-meta-item
-      justify-self: start
-
-    > .post-meta-item:nth-child(even)
       justify-self: start
 
 .post-meta-secondary

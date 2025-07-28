@@ -33,7 +33,7 @@ export default class ThemeSwitcher {
       const isChecked = itemTheme === selectedTheme;
 
       item.classList.toggle("dropdown-item-selected", isChecked);
-      item.setAttribute("aria-checked", isChecked);
+      item.setAttribute("aria-selected", isChecked);
     });
   }
 
