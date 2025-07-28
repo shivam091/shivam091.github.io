@@ -1,0 +1,92 @@
+@use "abstracts/mixins/transition-properties" as *
+@use "abstracts/mixins/breakpoints" as breakpoint
+
+$header-height: 5rem
+
+.site-header
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  position: sticky
+  inset: var(--space-none)
+  z-index: 10
+  height: $header-height
+  padding: var(--fluid-space-md)
+  background: var(--color-bg-transparent)
+  color: var(--color-fg-accent-on-emphasis)
+  gap: var(--space-md)
+
+  @include transition-properties((background, backdrop-filter), $duration: 350ms, $easing: cubic-bezier(0.41, 0.1, 0.13, 1))
+
+  @include breakpoint.max(md)
+    gap: var(--space-sm)
+    justify-content: space-between
+
+.glassy-backdrop
+  --glass-color: hsl(from var(--color-sky-subtle) h s l / var(--glass-opacity, var(--opacity-none)))
+  background: var(--glass-color)
+  backdrop-filter: blur(var(--blur-amount, 0px))
+
+[data-is-over-threshold]
+  --glass-color: hsl(from var(--color-bg-default) h s l / var(--glass-opacity, var(--opacity-none)))
+
+.site-logo
+  display: flex
+  align-items: center
+  gap: var(--space-sm)
+  font-weight: var(--font-weight-bold)
+  font-size: var(--font-size-md)
+  color: inherit
+
+  &:hover
+    color: var(--color-fg-default)
+    text-decoration: none
+
+  .site-name
+    font-size: var(--font-size-md)
+    font-weight: var(--font-weight-medium)
+    letter-spacing: 0.02em
+
+.nav-links
+  display: flex
+  gap: var(--space-sm)
+  flex: 1 1
+  width: 100%
+
+  .nav-link
+    display: inline-flex
+    align-items: center
+    gap: var(--space-sm)
+    text-decoration: none
+    font-size: var(--font-size-sm)
+    color: inherit
+    padding-block: var(--space-xs)
+    padding-inline: var(--space-sm)
+
+    &:hover
+      color: var(--color-fg-default)
+
+  @include breakpoint.max(md)
+    display: none
+
+.header-actions
+  display: flex
+  align-items: center
+  gap: var(--space-sm)
+
+  .header-action
+    border-radius: var(--border-radius-default)
+    background-color: var(--color-bg-control-transparent)
+    color: inherit
+    border: var(--border-width-default) solid var(--color-border-control-transparent)
+    padding: var(--space-sm)
+    font-size: var(--fluid-font-size-sm)
+    font-weight: var(--font-weight-semi-bold)
+
+    @include transition-properties((background-color, color), $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
+
+    &:hover,
+    &:focus
+      background-color: var(--color-bg-control-transparent)
+      border-color: var(--color-border-control-transparent-hover)
