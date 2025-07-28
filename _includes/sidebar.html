@@ -26,6 +26,7 @@
 
         <a href="{{ link }}" class="btn btn-primary social-icon" target="_blank"
            data-tooltip="{{ title }}" aria-label="{{ title }}"
+           {% if entry.type == 'atom' %}rel="alternate" type="application/atom+xml"{% endif %}
            {% if entry.analytics %}
              data-analytics-event="{{ entry.analytics.event }}"
              data-analytics-label="{{ entry.analytics.label }}"

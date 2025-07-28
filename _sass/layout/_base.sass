@@ -1,9 +1,17 @@
+@use "abstracts/mixins/breakpoints" as breakpoint
+@use "abstracts/mixins/scroll-lock" as *
+
 html
   height: 100%
   width: 100%
   scroll-behavior: smooth
+  scrollbar-width: thin
   overflow-x: hidden
   scrollbar-gutter: stable
+
+  @include breakpoint.max(md)
+    &[data-sidebar="open"]
+      @include scroll-lock
 
 body
   min-height: 100vh
@@ -16,6 +24,10 @@ body
   background-color: var(--color-bg-default)
   overflow-x: hidden
   -webkit-font-smoothing: antialiased
+
+  @include breakpoint.max(md)
+    @at-root [data-sidebar="open"] &
+      @include scroll-lock
 
 [data-theme=light]
   color-scheme: light

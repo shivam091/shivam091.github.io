@@ -26,3 +26,12 @@
     event: download_resume
     label: resume.pdf
     category: engagement
+
+- type: atom
+  label: Atom Feed
+  icon: atom
+  href: "/atom.xml"
+  analytics:
+    event: subscribe_feed
+    label: Atom Feed
+    category: engagement
