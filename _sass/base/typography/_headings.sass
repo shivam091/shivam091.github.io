@@ -8,14 +8,9 @@
     @extend %heading
 
     font-size: map.get($heading-sizes, h#{$level})
-    scroll-margin-top: 3.5rem
 
     @if $level == 1
       font-weight: var(--font-weight-bold)
-      border-bottom: var(--border-default)
-      padding-bottom: var(--fluid-space-xxxs)
-      letter-spacing: 0.5px
-
     @else if $level == 2
       font-weight: var(--font-weight-semi-bold)
     @else if $level == 3 or $level == 4

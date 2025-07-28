@@ -45,6 +45,14 @@
   @include breakpoint.max(md)
     max-inline-size: 35rem
 
+  .avatar
+    width: var(--size-exa)
+    height: var(--size-exa)
+
+    @include breakpoint.max(md)
+      width: var(--size-tera)
+      height: var(--size-tera)
+
 .hero-heading
   font-size: var(--fluid-font-size-xxl)
   line-height: var(--line-height-title)
