@@ -9,12 +9,12 @@
 
   {% include sky-top.html %}
 
-  <div class="home-grid">
-    {% include header.html %}
-    {% include hero.html %}
+  <div class="container">
+    <div class="home-grid">
+      {% include header.html %}
+      {% include hero.html %}
 
-    <main id="main-content" class="main-content" role="main" tabindex="-1">
-      <div class="container">
+      <main id="main-content" class="main-content" role="main" tabindex="-1">
         <div class="content-grid">
           {% include home/pinned-posts.html %}
           {% include home/featured-posts.html %}
@@ -22,8 +22,8 @@
           {% include home/popular-categories.html %}
           {% include home/recently-updated-posts.html %}
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
 
     {% include footer.html %}
   </div>
