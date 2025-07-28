@@ -7,13 +7,15 @@
 <body>
   <div id="progress-bar"></div>
 
-  <button type="button" class="skip-link" data-skip-link>Skip to main content</button>
+  <button type="button" class="skip-link" data-skip-link data-skip-to="#main-content">Skip to main content</button>
 
   <div class="page-wrapper">
     {% include sidebar.html %}
 
     <main id="main-content" class="main-content" role="main" tabindex="-1">
       <div class="container">
+        {% include breadcrumbs.html %}
+
         {{ content }}
       </div>
     </main>

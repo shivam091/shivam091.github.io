@@ -1,0 +1,41 @@
+name: Ping Sitemap on Search Engines
+
+on:
+  schedule:
+    - cron: "0 0 * * *"        # Every day midnight at 00:00 UTC (05:30 IST)
+  workflow_dispatch:           # Allows manual trigger
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    name: Ping Search Engines
+    env:
+      SITEMAP_URL: ${{ secrets.SITEMAP_URL }}
+
+    steps:
+      - name: Verify sitemap is publicly accessible
+        run: |
+          echo "🔍 Verifying sitemap fetch:"
+          curl -I "$SITEMAP_URL" || (echo "❌ Sitemap fetch failed" && exit 1)
+
+      - name: Ping Search Engines
+        run: |
+          set -e
+          echo "📡 Pinging sitemap: $SITEMAP_URL"
+          echo
+
+          declare -A ENGINES=(
+            ["Yandex"]="https://yandex.com/ping?sitemap=$SITEMAP_URL"
+          )
+
+          for engine in "${!ENGINES[@]}"; do
+            url="${ENGINES[$engine]}"
+            echo "🔗 Pinging $engine ..."
+
+            if curl -s --head --fail "$url"; then
+              curl -s "$url" && echo "✅ $engine pinged successfully!"
+            else
+              echo "⚠️ $engine did not return a success status (might not support sitemap ping)."
+            fi
+            echo
+          done

@@ -12,7 +12,6 @@ timezone: Asia/Kolkata
 
 plugins:
   - jekyll-archives
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate-v2
 
@@ -35,6 +34,16 @@ include:
 exclude:
   - README.md
   - LICENSE.md
+
+sitemap:
+  minify: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      excerpt_separator: "<!--more-->"
 
 sass:
   sass_dir: _sass
@@ -83,12 +92,18 @@ author:
   linkedin: shivam091
   instagram: taurusian_soul
   resume: /assets/docs/resume.pdf
+  url: "https://shivam091.github.io"
+
+breadcrumbs:
+  enabled: true
 
 post:
   author:
     default: harshal
   read_time:
     words_per_minute: 180
+  retro_counter:
+    enabled: true
 
 pinned_posts:
   enabled: true
