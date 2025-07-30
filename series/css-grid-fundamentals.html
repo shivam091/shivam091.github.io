@@ -79,6 +79,8 @@
 
 </head>
 <body>
+  <div id="drawer-mask" class="drawer-mask" hidden></div>
+
   <div id="progress-bar"></div>
 
   <button type="button" class="skip-link" data-skip-link data-skip-to="#main-content">Skip to main content</button>
@@ -96,6 +98,18 @@
 
 
   <div class="container">
+    <nav id="header-drawer" class="header-drawer" aria-label="Main Navigation">
+      <div class="drawer-content">
+        
+          <a class="drawer-link" href="/about">About</a>
+        
+          <a class="drawer-link" href="/posts">Posts</a>
+        
+          <a class="drawer-link" href="/series">Series</a>
+        
+      </div>
+    </nav>
+
     <div class="page-wrapper">
       <header class="site-header">
   <a href="/" class="site-logo">
@@ -170,6 +184,14 @@
           </li>
       </ul>
     </div>
+
+    <button class="header-action toggle-menu" aria-label="Toogle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="s1wls44k">
+        <line x1="3" y1="5" x2="21" y2="5" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="19" x2="21" y2="19" />
+      </svg>
+    </button>
   </div>
 </header>
 
