@@ -1,0 +1,17 @@
+@use "abstracts/mixins/transition-properties" as *
+
+#mask
+  position: fixed
+  inset: var(--space-none)
+  height: 100%
+  width: 100%
+  z-index: 998
+  opacity: var(--opacity-none)
+  pointer-events: none
+
+  @include transition-properties((background-color, opacity), $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
+
+  // @at-root [data-drawer="open"] &
+  //   opacity: var(--opacity-full)
+  //   pointer-events: auto
+  //   background-color: var(--color-bg-overlay-backdrop)
