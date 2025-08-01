@@ -7,26 +7,35 @@
 <body>
   <div id="progress-bar"></div>
 
-  <div class="home-grid">
-    {% include hero.html %}
+  <button type="button" class="skip-link" data-skip-link data-skip-to="#main-content">Skip to main content</button>
 
-    <main id="main-content" class="main-content" role="main" tabindex="-1">
-      <div class="content-grid">
-        <aside class="content-primary">
+  {% include layout/header-drawer.html %}
+
+  {% include home/banner.html %}
+
+  <div class="container">
+    <div class="page-wrapper" data-glass-trigger>
+      {% include header.html %}
+
+      <main id="main-content" class="main-content" role="main" tabindex="-1" data-glass-trigger>
+        <div class="content-grid">
           {% include home/pinned-posts.html %}
           {% include home/featured-posts.html %}
-        </aside>
-
-        <aside class="content-sidebar">
           {% include home/trending-tags.html %}
           {% include home/popular-categories.html %}
           {% include home/recently-updated-posts.html %}
-        </aside>
-      </div>
-    </main>
+        </div>
+      </main>
 
-    {% include footer.html %}
+      {% include footer.html %}
+    </div>
   </div>
+
+  {% include sky-banner-bottom.html %}
+
+  <button type="button" id="scroll-top" class="btn btn-primary scroll-top" aria-label="Scroll to top" data-scroll-top>
+   {% icon arrow-up %}
+  </button>
 
   {% include scripts.html %}
 </body>
