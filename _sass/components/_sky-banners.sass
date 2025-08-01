@@ -1,16 +1,6 @@
 @use "abstracts/mixins/breakpoints" as breakpoint
 @use "abstracts/mixins/transition-properties" as *
-
-$color-swap-duration: 350ms
-$sky-gradient: linear-gradient(to bottom, var(--color-sky-from), var(--color-sky-to))
-$sky-gradient-subtle: linear-gradient(to top, hsl(from var(--color-sky-subtle) h s l / .925), var(--color-sky-subtle))
-$color-swap-timing-function: cubic-bezier(0.41, 0.1, 0.13, 1)
-$sky-from-duration: calc($color-swap-duration + 500ms)
-$sky-to-duration: calc($color-swap-duration + 350ms)
-$sky-duration: calc($color-swap-duration + 300ms)
-$swoop-duration: calc($color-swap-duration + 200ms)
-$first-swoop-duration: calc($color-swap-duration + 120ms)
-$second-swoop-duration: calc($color-swap-duration + 240ms)
+@use "abstracts/variables/globals" as *
 
 // @keyframes cloudDrift
 //   0%
@@ -66,6 +56,7 @@ $second-swoop-duration: calc($color-swap-duration + 240ms)
 
       .foreground-clouds
         fill: var(--color-bg-default)
+        @include transition-properties(fill, $duration: $sky-to-duration, $easing: $color-swap-timing-function)
 
 .sky-banner-bottom
   position: absolute

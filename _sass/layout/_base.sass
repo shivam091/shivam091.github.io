@@ -1,5 +1,7 @@
 @use "abstracts/mixins/breakpoints" as breakpoint
 @use "abstracts/mixins/scroll-lock" as *
+@use "abstracts/mixins/transition-properties" as *
+@use "abstracts/variables/globals" as *
 
 html
   height: 100%
@@ -20,8 +22,10 @@ body
   font-weight: var(--font-weight-normal)
   line-height: var(--line-height-normal)
   color: var(--color-fg-default)
-  background-color: var(--color-bg-default)
+  background: var(--color-bg-default)
   -webkit-font-smoothing: antialiased
+  position: relative
+  @include transition-properties(background, $duration: $sky-to-duration, $easing: $color-swap-timing-function)
 
 [data-theme=light]
   color-scheme: light
