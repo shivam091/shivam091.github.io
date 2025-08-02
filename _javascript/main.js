@@ -35,3 +35,28 @@ RetroCounter.initAll("[data-retro-counter]", {
   debug: false,
 });
 
+const root = document.documentElement;
+
+let targetX = 0;
+let targetY = 0;
+let currentX = 0;
+let currentY = 0;
+const ease = 0.1; // smaller = smoother
+
+// Track mouse position
+document.addEventListener('mousemove', (e) => {
+  targetX = e.clientX;
+  targetY = e.clientY;
+});
+
+// Animate smooth movement
+function animate() {
+  currentX += (targetX - currentX) * ease;
+  currentY += (targetY - currentY) * ease;
+
+  root.style.setProperty('--cursorX', `${currentX}px`);
+  root.style.setProperty('--cursorY', `${currentY}px`);
+
+  requestAnimationFrame(animate);
+}
+animate();

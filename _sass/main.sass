@@ -4,3 +4,25 @@
 @use "layout"
 @use "pages"
 @use "vendors"
+
+@media (hover: hover)
+  body
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACQSURBVHgBhZA9CsQgEIVnxCJHSJkjpFGw8wh7xD2KtRbmCClzhAVRdx6YLsQHyoifP/MxjeSct1KKl3Jl5kXG2Vo7rLUH9hlTSgmAp+cEY0zgGOMupz/0Eq31V0l2mqTW6lXvfaN5VoC/GSXMgqevGQgDSpSEGQhNyjl3Sv0GB7jkewVNMIDmxr8v6TaMi+gPLrNAA0C8lG8AAAAASUVORK5CYII='), auto
+
+  :root
+    cursor: none
+    --cursorX: 0px
+    --cursorY: 0px
+
+  :root:before
+    content: ''
+    display: block
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1000
+    pointer-events: none
+    background: radial-gradient(circle 16vmax at var(--cursorX) var(--cursorY), rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.8) 100%)
+    transition: background-position 0.1s linear
