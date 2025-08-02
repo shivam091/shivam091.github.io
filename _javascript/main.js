@@ -7,15 +7,12 @@ import ProgressBar from "./modules/components/progress-bar";
 import SkipLink from "./modules/components/skip-link";
 import Tooltip from "./modules/components/tooltip";
 import Dropdown from "./modules/components/dropdown";
-import SidebarToggle from "./modules/components/layouts/sidebar-toggle";
 import Accordion from "./modules/components/accordion";
 import Clipboard from "./utils/clipboard";
 import Alert from "./modules/components/alert";
 import CodeBlockUtils from "./utils/code-block-utils";
 import LazyLoader from "./modules/components/lazy-loader";
 import RetroCounter from "./components/retro-counter";
-
-import { bindHeroTyping } from "./modules/components/hero";
 
 HeaderGlassEffect.initialize();
 HeaderDrawer.initialize();
@@ -26,7 +23,6 @@ ProgressBar.initialize();
 SkipLink.initialize();
 Tooltip.initialize();
 Dropdown.initialize();
-SidebarToggle.initialize();
 Accordion.initialize();
 Clipboard.initAll();
 Alert.init();
@@ -39,4 +35,3 @@ RetroCounter.initAll("[data-retro-counter]", {
   debug: false,
 });
 
-bindHeroTyping();
