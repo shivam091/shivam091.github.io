@@ -13,6 +13,7 @@ import Alert from "./modules/components/alert";
 import CodeBlockUtils from "./utils/code-block-utils";
 import LazyLoader from "./modules/components/lazy-loader";
 import RetroCounter from "./components/retro-counter";
+import ParallaxEffect from "./modules/components/parallax_effect";
 
 HeaderGlassEffect.initialize();
 HeaderDrawer.initialize();
@@ -35,3 +36,6 @@ RetroCounter.initAll("[data-retro-counter]", {
   debug: false,
 });
 
+ParallaxEffect.initAll("[data-parallax]", {
+  parallaxStrength: 0.25,
+});
