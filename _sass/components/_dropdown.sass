@@ -10,8 +10,6 @@
   cursor: pointer
 
 .dropdown-menu
-  @include caret
-
   position: absolute
   display: none
   background-color: var(--color-bg-overlay)
@@ -28,6 +26,9 @@
   &.show
     display: block
     pointer-events: auto
+
+.dropdown-arrow
+  @include caret
 
 .dropdown-item
   display: grid

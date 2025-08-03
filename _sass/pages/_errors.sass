@@ -1,4 +1,5 @@
 @use "abstracts/mixins/breakpoints" as breakpoint
+@use "abstracts/animations/fade-in" as *
 
 .error-page
   width: 100%
@@ -7,14 +8,7 @@
   display: flex
   flex-direction: column
   align-items: flex-start
-
-  @include breakpoint.max(md)
-    margin-inline: auto
-    align-items: center
-    max-width: 90%
-
-    & > *
-      text-align: center
+  animation: fade-in .75s ease-in .2s both
 
 .error-title
   font-size: var(--fluid-font-size-xxl)

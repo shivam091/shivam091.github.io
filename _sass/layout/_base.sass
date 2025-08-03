@@ -1,5 +1,7 @@
 @use "abstracts/mixins/breakpoints" as breakpoint
 @use "abstracts/mixins/scroll-lock" as *
+@use "abstracts/mixins/transition-properties" as *
+@use "abstracts/variables/globals" as *
 
 html
   height: 100%
@@ -9,9 +11,8 @@ html
   overflow-x: hidden
   scrollbar-gutter: stable
 
-  @include breakpoint.max(md)
-    &[data-sidebar="open"]
-      @include scroll-lock
+  &[data-drawer="open"]
+    @include scroll-lock
 
 body
   min-height: 100vh
@@ -21,13 +22,10 @@ body
   font-weight: var(--font-weight-normal)
   line-height: var(--line-height-normal)
   color: var(--color-fg-default)
-  background-color: var(--color-bg-default)
-  overflow-x: hidden
+  background: var(--color-bg-default)
   -webkit-font-smoothing: antialiased
-
-  @include breakpoint.max(md)
-    @at-root [data-sidebar="open"] &
-      @include scroll-lock
+  position: relative
+  @include transition-properties(background, $duration: $sky-to-duration, $easing: $color-swap-timing-function)
 
 [data-theme=light]
   color-scheme: light

@@ -9,18 +9,22 @@
 
   <button type="button" class="skip-link" data-skip-link data-skip-to="#main-content">Skip to main content</button>
 
-  <div class="page-wrapper">
-    {% include sidebar.html %}
+  {% include layout/header-drawer.html %}
 
-    <main id="main-content" class="main-content" role="main" tabindex="-1">
-      <div class="container">
+  {% include sky-banner-top.html %}
+
+  <div class="container">
+    <div class="page-wrapper" data-glass-trigger>
+      {% include header.html %}
+
+      <main id="main-content" class="main-content" role="main" tabindex="-1">
         {% include breadcrumbs.html %}
 
         {{ content }}
-      </div>
-    </main>
+      </main>
 
-    {% include footer.html %}
+      {% include footer.html %}
+    </div>
   </div>
 
   <button type="button" id="scroll-top" class="btn btn-primary scroll-top" aria-label="Scroll to top" data-scroll-top>
@@ -28,6 +32,8 @@
   </button>
 
   <div id="mask"></div>
+
+  {% include sky-banner-bottom.html %}
 
   {% include scripts.html %}
 </body>

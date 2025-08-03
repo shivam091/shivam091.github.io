@@ -10,6 +10,12 @@ const defaultModifiers = [
 ];
 
 export function createInstance(target, popperElement, options = {}) {
+  const arrow = popperElement.querySelector("[data-popper-arrow]");
+
+  if (arrow) {
+    defaultModifiers.push({ name: "arrow", options: { element: arrow, padding: 5 } });
+  }
+
   const defaultOptions = {
     placement: options.placement || "top",
     modifiers: options.modifiers || defaultModifiers,

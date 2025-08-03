@@ -1,16 +1,53 @@
 <footer class="site-footer" role="contentinfo" aria-label="Site footer">
-  <div class="container">
-    <div class="site-copyright">
-      <p>
-        <span>
-          {{- "&copy;" }}
-          {{ "now" | date: "%Y" }} <strong class="site-name">{{ site.title }}</strong>,
-          <span data-tooltip="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." tabindex="0">Some rights reserved</span>.
-        </span>
-      </p>
+  <div class="footer-grid">
+    <nav class="footer-section footer-links" aria-label="General navigation">
+      {% for item in site.data.quick_links %}
+      {% if item.href contains "http" %}
+       <a href="{{ item.href }}" class="footer-link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+      {% else %}
+       <a href="{{ item.href | relative_url }}" class="footer-link">{{ item.title }}</a>
+      {% endif %}
+      {% endfor %}
+    </nav>
+
+    <div class="footer-section footer-social" aria-label="Social links">
+      {%- for entry in site.data.contact %}
+        {%- assign link = entry.href | replace: "VALUE", site.author[entry.type] -%}
+        {%- if entry.type == "resume" -%}
+          {%- assign link = link | relative_url -%}
+        {%- endif -%}
+
+        {%- assign title = entry.label -%}
+        {%- if entry.type == "email" -%}
+          {%- assign title = title | append: " " | append: value -%}
+        {%- endif -%}
+
+        <a href="{{ link }}" class="footer-link" target="_blank"
+           data-tooltip="{{ title }}" aria-label="{{ title }}"
+           {% if entry.type == 'atom' %}rel="alternate" type="application/atom+xml"{% endif %}
+           {% if entry.analytics %}
+             data-analytics-event="{{ entry.analytics.event }}"
+             data-analytics-label="{{ entry.analytics.label }}"
+             data-analytics-category="{{ entry.analytics.category }}"
+           {% endif %}>
+          {% icon {{ entry.icon }} %}
+        </a>
+      {%- endfor %}
     </div>
-    <div class="site-credits">
-      Made with <span class="love" role="img" aria-label="love">&#10084;</span> and <a href="https://jekyllrb.com/">Jekyll</a>.
+
+    <nav class="footer-section footer-legal" aria-label="Legal links">
+      {% for item in site.data.legal_links %}
+      <a href="{{ item.href | relative_url }}" class="footer-link">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="footer-section footer-credits">
+      <span>
+        {{- "&copy;" }}
+        {{ "now" | date: "%Y" }} <strong class="site-name">{{ site.title }}</strong>,
+        <span data-tooltip="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." tabindex="0">Some rights reserved</span>.
+        Built with &#10084; and <a href="https://jekyllrb.com/">Jekyll</a>.
+      </span>
     </div>
   </div>
 </footer>
