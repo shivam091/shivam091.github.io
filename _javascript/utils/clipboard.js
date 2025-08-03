@@ -28,7 +28,7 @@ export default class Clipboard {
     } else if (this.isCode) {
       return this.root.querySelector("td.code > pre");
     } else if (this.isLink) {
-      return this.root.getAttribute("href") || window.location.href;
+      return this.root.getAttribute("data-copy-url") || this.root.getAttribute("href") || window.location.href;
     }
     return null;
   }
@@ -67,29 +67,34 @@ export default class Clipboard {
     const triggerer = this.button;
     const iconEl = triggerer.querySelector("use");
     const originalIcon = iconEl?.getAttribute("href").split("#")[1];
+    const originalLabel = triggerer.getAttribute("data-tooltip") || "";
 
     if (iconEl) {
-      SvgSprite.toggle(iconEl, "#icon-check");
+      SvgSprite.setUseHref(iconEl, "#icon-check");
       iconEl.parentElement.setAttribute("id", "icon-check");
     }
 
-    const originalLabel = triggerer.getAttribute("data-tooltip") || "";
     triggerer.setAttribute("aria-label", "Copied!");
+    triggerer.setAttribute("data-tooltip", "Copied!");
 
-    Tooltip.update(triggerer, "Copied!");
+    Tooltip.update(triggerer);
 
     setTimeout(() => {
       if (iconEl) {
-        SvgSprite.toggle(iconEl, `#${originalIcon}`);
+        SvgSprite.setUseHref(iconEl, `#${originalIcon}`);
         iconEl.parentElement.setAttribute("id", "icon-copy");
       }
       triggerer.setAttribute("aria-label", originalLabel);
-      Tooltip.update(triggerer, originalLabel);
+      triggerer.setAttribute("data-tooltip", originalLabel);
+
+      Tooltip.update(triggerer);
     }, 1500);
   }
 
   static initAll() {
-    document.querySelectorAll("[data-copy-code], [data-copy-link], [data-copy-target]").forEach(el => {
+    const selectors = "[data-copy-code], [data-copy-link], [data-copy-target]";
+
+    document.querySelectorAll(selectors).forEach(el => {
       new Clipboard(el);
     });
   }
