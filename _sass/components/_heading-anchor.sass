@@ -1,3 +1,4 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/transition-properties" as *
 
 .heading-anchor
@@ -5,8 +6,8 @@
   font-size: 0.8em
   text-decoration: none
   color: var(--color-fg-muted)
-  opacity: var(--opacity-none)
-  @include transition-properties((color, opacity), $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
+  opacity: $opacity-none
+  @include transition-properties((color, opacity), $duration: $motion-duration-default, $easing: $motion-easing-smooth)
 
   &:hover
     color: var(--color-fg-link)
@@ -14,4 +15,4 @@
 @for $i from 2 through 6
   @at-root h#{$i}:hover .heading-anchor,
            h#{$i}:focus-within .heading-anchor
-    opacity: var(--opacity-full)
+    opacity: $opacity-full

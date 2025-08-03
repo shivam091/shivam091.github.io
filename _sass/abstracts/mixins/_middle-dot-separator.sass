@@ -1,11 +1,13 @@
-@mixin middle-dot-separator($size: 0.25rem, $gap: var(--space-md), $opacity: var(--opacity-medium))
+@use "abstracts/tokens" as *
+
+@mixin middle-dot-separator($size: 0.25rem, $gap: $space-md, $opacity: $opacity-medium)
   &:not(:last-child)::after
     content: ""
     display: inline-block
     width: $size
     height: $size
     background: currentColor
-    border-radius: var(--border-radius-full)
+    border-radius: $border-radius-full
     margin-inline: $gap
     opacity: $opacity
     vertical-align: middle

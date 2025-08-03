@@ -1,3 +1,4 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/no-cursor" as *
 @use "abstracts/mixins/transition-properties" as *
 
@@ -7,17 +8,17 @@ $alert-types: (success, danger, attention, accent)
   position: relative
   display: flex
   align-items: center
-  padding: var(--space-base)
-  border: var(--border-width-default) solid var(--color-border-transparent)
-  border-radius: var(--border-radius-default)
-  font-size: var(--font-size-normal)
+  padding: $space-base
+  border: $border-width-default solid var(--color-border-transparent)
+  border-radius: $border-radius-default
+  font-size: $font-size-base
   background-color: var(--color-bg-neutral-muted)
   color: var(--color-fg-default)
-  gap: var(--space-base)
-  margin-bottom: var(--space-sm)
-  line-height: var(--line-height-relaxed)
+  gap: $space-base
+  margin-bottom: $space-sm
+  line-height: $line-height-relaxed
 
-  @include transition-properties((opacity, transform, visibility), $duration: var(--motion-duration-default), $easing: var(--motion-easing-in-out))
+  @include transition-properties((opacity, transform, visibility), $duration: $motion-duration-default, $easing: $motion-easing-in-out)
 
   @each $type in $alert-types
     &-#{$type}
@@ -35,15 +36,15 @@ $alert-types: (success, danger, attention, accent)
           fill: var(--color-bg-#{$type}-emphasis)
 
   &.fade-out
-    opacity: var(--opacity-none)
-    transform: translateY(calc(-1 * var(--space-sm)))
+    opacity: $opacity-none
+    transform: translateY(calc(-1 * $space-sm))
     pointer-events: none
     visibility: hidden
 
   &-heading
-    font-weight: var(--font-weight-semi-bold)
-    margin-block: var(--space-xs)
-    font-size: var(--fluid-font-size-md)
+    font-weight: $font-weight-semi-bold
+    margin-block: $space-xs
+    font-size: $fluid-font-size-md
 
   &-icon
     flex-shrink: 0
@@ -56,20 +57,20 @@ $alert-types: (success, danger, attention, accent)
     flex: 1
 
     p
-      margin-block: var(--space-sm)
+      margin-block: $space-sm
 
   &-dismiss
     background-color: var(--color-bg-transparent)
     border: none
     color: inherit
-    padding: var(--space-none)
+    padding: $space-none
     line-height: 1
     flex-shrink: 0
 
     svg
       pointer-events: none
 
-      @include transition-properties((transform, color), $duration: var(--motion-duration-default), $easing: var(--motion-easing-linear))
+      @include transition-properties((transform, color), $duration: $motion-duration-default, $easing: $motion-easing-linear)
 
       @extend %no-cursor
 

@@ -1,16 +1,18 @@
+@use "abstracts/tokens" as *
+
 .code-block
   background-color: var(--color-bg-default)
-  border: var(--border-default)
-  border-radius: var(--border-radius-default)
+  border: $border-default
+  border-radius: $border-radius-default
   overflow: hidden
-  font-size: var(--font-size-sm)
+  font-size: $font-size-sm
   box-shadow: var(--box-shadow-floating-legacy)
-  margin-block: var(--fluid-space-md)
+  margin-block: $fluid-space-md
 
   figure
-    margin-block: var(--space-none)
+    margin-block: $space-none
     border: none
-    border-radius: var(--border-radius-none)
+    border-radius: $border-radius-none
     background-color: var(--color-bg-default)
 
 .code-block-header
@@ -18,26 +20,26 @@
   align-items: center
   justify-content: space-between
   background-color: var(--color-bg-muted)
-  border-bottom: var(--border-muted)
-  padding: var(--space-sm) var(--space-md)
+  border-bottom: $border-muted
+  padding: $space-sm $space-md
 
   .code-block-button-group
     display: flex
-    gap: var(--space-xs)
+    gap: $space-xs
 
   .code-lang
     display: flex
     align-items: center
     justify-content: center
-    gap: var(--space-xs)
+    gap: $space-xs
     flex-grow: 1
-    font-weight: var(--font-weight-medium)
+    font-weight: $font-weight-medium
     color: var(--color-fg-muted)
 
   .code-actions
     display: flex
     align-items: center
-    gap: var(--space-sm)
+    gap: $space-sm
 
 .code-actions
   .btn-copy,
@@ -63,7 +65,7 @@
 
   .lineno
     border-radius: 0
-    border-right: var(--border-default)
+    border-right: $border-default
 
 [data-copy-code],
 [data-copy-link],

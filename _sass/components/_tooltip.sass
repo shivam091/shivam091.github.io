@@ -1,3 +1,4 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/caret" as *
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
@@ -5,28 +6,28 @@
 .tooltip
   position: absolute
   background-color: var(--color-bg-overlay)
-  border: var(--border-width-default) solid var(--color-border-overlay)
+  border: $border-width-default solid var(--color-border-overlay)
   box-shadow: var(--box-shadow-floating-legacy)
-  padding: var(--space-xs) var(--space-sm)
-  border-radius: var(--border-radius-default)
-  font-size: var(--font-size-xs)
+  padding: $space-xs $space-sm
+  border-radius: $border-radius-default
+  font-size: $font-size-xs
   z-index: 1000
   pointer-events: none
-  opacity: var(--opacity-none)
+  opacity: $opacity-none
   transform: scale(0.95)
   max-width: 250px
   width: max-content
   white-space: normal
   text-align: center
 
-  @include transition-properties(opacity, $duration: var(--motion-duration-fast), $easing: var(--motion-easing-entrance))
+  @include transition-properties(opacity, $duration: $motion-duration-fast, $easing: $motion-easing-entrance)
 
   &.show
-    opacity: var(--opacity-full)
+    opacity: $opacity-full
     pointer-events: auto
 
   &.hide
-    opacity: var(--opacity-none)
+    opacity: $opacity-none
     pointer-events: none
 
   @include breakpoint.max(md)

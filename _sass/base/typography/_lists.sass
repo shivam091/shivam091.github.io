@@ -1,38 +1,39 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/break-word" as *
 
 ul,
 ol
-  margin-block: var(--space-sm)
+  margin-block: $space-sm
   padding-left: 2em
-  line-height: var(--line-height-normal)
+  line-height: $line-height-base
 
   // ol
   //   margin-block: 0.5rem
 
   li
-    margin-bottom: var(--space-sm)
+    margin-bottom: $space-sm
 
     @include break-word()
 
 li
   &:last-of-type
-    margin-bottom: var(--space-none)
+    margin-bottom: $space-none
 
 dl
-  padding: var(--space-none)
-  margin-top: var(--space-none)
-  margin-bottom: var(--space-base)
-  line-height: var(--line-height-normal)
+  padding: $space-none
+  margin-top: $space-none
+  margin-bottom: $space-base
+  line-height: $line-height-base
 
   dt
-    padding: var(--space-none)
-    margin-top: var(--space-base)
+    padding: $space-none
+    margin-top: $space-base
     font-style: italic
-    font-weight: var(--font-weight-semi-bold)
+    font-weight: $font-weight-semi-bold
 
   dd
-    padding-inline: var(--space-base)
-    margin-bottom: var(--space-base)
+    padding-inline: $space-base
+    margin-bottom: $space-base
 
     > *
       @include break-word()

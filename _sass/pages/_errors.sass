@@ -1,3 +1,4 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 @use "abstracts/animations/fade-in" as *
 
@@ -11,14 +12,14 @@
   animation: fade-in .75s ease-in .2s both
 
 .error-title
-  font-size: var(--fluid-font-size-xxl)
+  font-size: $fluid-font-size-xxl
   color: var(--color-fg-danger)
-  margin-block: var(--space-base)
-  line-height: var(--line-height-title)
+  margin-block: $space-base
+  line-height: $line-height-title
 
 .error-icon svg
-  width: var(--size-tera)
-  height: var(--size-tera)
+  width: $size-tera
+  height: $size-tera
   fill: var(--color-bg-danger-emphasis)
 
 .error-desc

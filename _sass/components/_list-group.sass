@@ -1,3 +1,4 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/list-unstyled"
 
 .list-group
@@ -8,10 +9,10 @@
     display: flex
     align-items: center
     gap: 0.5rem
-    padding-block: var(--space-md)
-    padding-inline: var(--space-xl) var(--space-lg)
-    margin-block: var(--space-none)
-    border-top: var(--border-default)
+    padding-block: $space-md
+    padding-inline: $space-xl $space-lg
+    margin-block: $space-none
+    border-top: $border-default
 
     .icon
       flex-shrink: 0
