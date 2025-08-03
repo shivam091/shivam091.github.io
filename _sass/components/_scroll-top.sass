@@ -1,34 +1,35 @@
+@use "abstracts/tokens" as *
 @use "abstracts/animations/scroll-top" as *
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 .scroll-top
   position: fixed
-  bottom: var(--space-xl)
-  right: var(--space-base)
+  bottom: $space-xl
+  right: $space-base
   z-index: 1000
-  width: var(--space-xxl)
-  height: var(--space-xxl)
-  border-radius: var(--border-radius-full)
+  width: $space-xxl
+  height: $space-xxl
+  border-radius: $border-radius-full
   display: flex
   align-items: center
   justify-content: center
-  opacity: var(--opacity-none)
+  opacity: $opacity-none
   visibility: hidden
   pointer-events: none
   transform: translateY(20px)
 
-  @include transition-properties((right, background-color, color, border-color), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-in-out))
+  @include transition-properties((right, background-color, color, border-color), $duration: $motion-duration-fast, $easing: $motion-easing-in-out)
 
   @include breakpoint.max(md)
-    right: var(--space-md)
+    right: $space-md
 
   &[data-state="visible"]
-    animation: scrollTopBounceIn var(--motion-duration-slow) both
+    animation: scrollTopBounceIn $motion-duration-slow both
     pointer-events: auto
-    opacity: var(--opacity-full)
+    opacity: $opacity-full
 
   &[data-state="hidden"]
-    animation: scrollTopBounceOut var(--motion-duration-slow) both
+    animation: scrollTopBounceOut $motion-duration-slow both
     pointer-events: none
-    opacity: var(--opacity-none)
+    opacity: $opacity-none

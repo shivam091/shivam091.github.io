@@ -1,3 +1,4 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 .card
@@ -5,9 +6,9 @@
   flex-direction: row
   flex-wrap: nowrap
   background: var(--color-bg-muted)
-  border: var(--border-muted)
+  border: $border-muted
   color: var(--color-fg-default)
-  border-radius: var(--border-radius-default)
+  border-radius: $border-radius-default
   overflow: hidden
   height: 100%
 
@@ -54,21 +55,21 @@
 
   &-body
     flex: 1 1 auto
-    padding: var(--space-base)
+    padding: $space-base
     display: flex
     flex-direction: column
     min-width: 0
 
   &-header
-    margin-bottom: var(--space-sm)
+    margin-bottom: $space-sm
 
   &-title
-    font-size: var(--font-size-lg)
-    margin-top: var(--space-none)
+    font-size: $font-size-lg
+    margin-top: $space-none
 
   &-content
     flex-grow: 1
-    margin-bottom: var(--space-sm)
+    margin-bottom: $space-sm
 
   // Image left layout
   &-image-left

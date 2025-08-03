@@ -1,6 +1,7 @@
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/animations/fade-in" as *
 @use "abstracts/animations/shimmer" as *
+@use "abstracts/tokens" as *
 
 .shimmer
   position: relative
@@ -12,13 +13,13 @@
     position: absolute
     inset: 0
     background: var(--gradient-bg-shimmer-pseudo)
-    animation: shimmer var(--motion-duration-ultra-slow) var(--motion-easing-linear) infinite
+    animation: shimmer $motion-duration-ultra-slow $motion-easing-linear infinite
     border-radius: inherit
     pointer-events: none
     z-index: 1
 
 .lazy-wrapper
-  @include transition-properties(background-color, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+  @include transition-properties(background-color, $duration: $motion-duration-default, $easing: $motion-easing-ease)
 
   img
     z-index: 2
@@ -28,19 +29,19 @@
 
     &[data-lqip="true"]
       &.lazy-loading
-        filter: blur(var(--blur-md))
+        filter: blur($blur-md)
 
       &.lazy-loaded,
       &.lazy-error
         filter: none
-        animation: fade-in var(--motion-duration-default) var(--motion-easing-in)
+        animation: fade-in $motion-duration-default $motion-easing-in
 
     &:not([data-lqip="true"])
       &.lazy-loading
-        opacity: var(--opacity-none)
-        @include transition-properties(opacity, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+        opacity: $opacity-none
+        @include transition-properties(opacity, $duration: $motion-duration-default, $easing: $motion-easing-ease)
 
       &.lazy-loaded,
       &.lazy-error
         background-color: transparent !important
-        animation: fade-in var(--motion-duration-default) var(--motion-easing-in)
+        animation: fade-in $motion-duration-default $motion-easing-in

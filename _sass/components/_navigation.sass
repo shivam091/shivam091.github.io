@@ -1,10 +1,11 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 .navigation
   display: flex
   flex-direction: column
-  margin-top: var(--fluid-space-lg)
+  margin-top: $fluid-space-lg
 
   @include breakpoint.min(md)
     flex-direction: row
@@ -14,13 +15,13 @@
   display: block
   position: relative
   flex: 1
-  padding: var(--fluid-space-md)
-  border: var(--border-width-default) solid var(--color-border-control)
-  border-radius: var(--border-radius-medium)
+  padding: $fluid-space-md
+  border: $border-width-default solid var(--color-border-control)
+  border-radius: $border-radius-md
   background-color: var(--color-bg-control)
   text-align: center
 
-  @include transition-properties((background-color, border-color, box-shadow), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-ease))
+  @include transition-properties((background-color, border-color, box-shadow), $duration: $motion-duration-fast, $easing: $motion-easing-ease)
 
   &:hover,
   &:focus
@@ -40,28 +41,28 @@
   .label
     color: var(--color-fg-control)
     display: block
-    margin-bottom: var(--space-sm)
+    margin-bottom: $space-sm
     text-transform: uppercase
     letter-spacing: 0.05em
-    font-weight: var(--font-weight-bold)
+    font-weight: $font-weight-bold
 
   .title
     font-size: 0.9em
-    line-height: var(--line-height-paragraph)
+    line-height: $line-height-paragraph
 
   &:first-child
-    border-radius: var(--border-radius-default) var(--border-radius-default) 0 0
+    border-radius: $border-radius-default $border-radius-default 0 0
     inset: 0 0 -1px 0
 
   &:last-child
-    border-radius: 0 0 var(--border-radius-default) var(--border-radius-default)
+    border-radius: 0 0 $border-radius-default $border-radius-default
     inset: -1px 0 0 0
 
   @include breakpoint.min(md)
     &:first-child
-      border-radius: var(--border-radius-default) 0 0 var(--border-radius-default)
+      border-radius: $border-radius-default 0 0 $border-radius-default
       inset: 0 0 0 1px
 
     &:last-child
-      border-radius: 0 var(--border-radius-default) var(--border-radius-default) 0
+      border-radius: 0 $border-radius-default $border-radius-default 0
       inset: 0 1px 0 0

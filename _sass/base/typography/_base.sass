@@ -1,3 +1,5 @@
+@use "abstracts/tokens" as *
+
 mark
   background-color: var(--color-bg-attention-muted)
   color: var(--color-fg-default)
@@ -8,23 +10,23 @@ abbr[title]
   border-bottom: none
 
 .lead
-  font-size: var(--fluid-font-size-lg)
-  font-weight: var(--font-weight-light)
-  line-height: var(--line-height-relaxed)
+  font-size: $fluid-font-size-lg
+  font-weight: $font-weight-light
+  line-height: $line-height-relaxed
 
 .note
   min-height: 17px
-  margin: var(--space-xs) var(--space-none) var(--space-xxs)
-  font-size: var(--font-size-sm)
+  margin: $space-xs $space-none $space-xxs
+  font-size: $font-size-sm
   color: var(--color-fg-muted)
 
 .initialism
-  font-size: var(--font-size-xs)
+  font-size: $font-size-xs
   text-transform: uppercase
 
 small
-  font-size: var(--font-size-xs)
-  line-height: var(--line-height-tight)
+  font-size: $font-size-xs
+  line-height: $line-height-tight
 
 ::selection
   background-color: var(--color-bg-selection)

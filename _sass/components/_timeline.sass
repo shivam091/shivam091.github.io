@@ -1,9 +1,10 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/list-unstyled"
 @use "abstracts/modules/text-truncate"
 @use "abstracts/mixins/breakpoints" as breakpoint
 @use "abstracts/mixins/transition-properties" as *
 
-$separator-height: var(--size-huge)
+$separator-height: $size-huge
 
 .timeline-wrapper
   display: flex
@@ -17,20 +18,20 @@ $separator-height: var(--size-huge)
   display: flex
   align-items: center
   position: relative
-  gap: var(--space-sm)
-  padding-inline: var(--space-sm)
-  padding-block: var(--space-sm)
-  border-radius: var(--border-radius-default)
-  border: var(--border-width-default) solid var(--color-border-transparent)
+  gap: $space-sm
+  padding-inline: $space-sm
+  padding-block: $space-sm
+  border-radius: $border-radius-default
+  border: $border-width-default solid var(--color-border-transparent)
   z-index: 2
 
 .timeline-post
   background-image: linear-gradient(var(--color-bg-accent-muted), var(--color-bg-accent-muted))
   border-color: var(--color-border-accent-muted)
-  margin-bottom: var(--space-base)
+  margin-bottom: $space-base
   box-shadow: var(--box-shadow-sm)
 
-  @include transition-properties(box-shadow, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+  @include transition-properties(box-shadow, $duration: $motion-duration-default, $easing: $motion-easing-ease)
 
   @include breakpoint.max(md)
     .timeline-left
@@ -42,7 +43,7 @@ $separator-height: var(--size-huge)
 .timeline-left
   flex: 0 0 5.5rem
   text-align: right
-  font-weight: var(--font-weight-medium)
+  font-weight: $font-weight-medium
   font-variant-numeric: tabular-nums
   color: var(--color-fg-muted)
   white-space: nowrap
@@ -53,12 +54,12 @@ $separator-height: var(--size-huge)
 .timeline-year
   .timeline-left
     color: var(--color-fg-default)
-    margin-block: var(--space-sm)
+    margin-block: $space-sm
 
   .timeline-seperator
     &::before
-      width: var(--size-base)
-      height: var(--size-base)
+      width: $size-base
+      height: $size-base
       background: var(--color-bg-accent-emphasis)
       box-shadow: 0 0 8px 2px var(--color-fg-accent)
 
@@ -72,12 +73,12 @@ $separator-height: var(--size-huge)
 
   &::before
     content: ""
-    width: var(--size-md)
-    height: var(--size-md)
+    width: $size-md
+    height: $size-md
     background: var(--color-fg-accent)
-    border: var(--border-width-medium) solid var(--color-border-default)
+    border: $border-width-medium solid var(--color-border-default)
     box-shadow: 0 0 8px 1px var(--color-fg-accent)
-    border-radius: var(--border-radius-full)
+    border-radius: $border-radius-full
     z-index: 2
 
   &::after
@@ -86,7 +87,7 @@ $separator-height: var(--size-huge)
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
-    width: var(--size-xxxs)
+    width: $size-xxxs
     height: $separator-height
     background: var(--color-border-default)
     z-index: 1
@@ -101,6 +102,6 @@ $separator-height: var(--size-huge)
 
 .timeline-right
   flex: 1
-  font-weight: var(--font-weight-medium)
+  font-weight: $font-weight-medium
 
   @extend %text-truncate

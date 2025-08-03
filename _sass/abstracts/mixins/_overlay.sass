@@ -1,8 +1,10 @@
+@use "abstracts/tokens" as *
+
 @mixin overlay($color: rgba(0, 0, 0, 0.6))
   &::before
     content: ""
     position: absolute
-    inset: var(--space-none)
+    inset: $space-none
     background: linear-gradient(to bottom right, $color, $color)
     z-index: 1
 

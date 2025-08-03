@@ -1,14 +1,15 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/list-unstyled"
 
 .series-nav
   font-size: 0.9375em
-  margin-top: var(--fluid-space-base)
-  padding: var(--fluid-space-sm)
+  margin-top: $fluid-space-base
+  padding: $fluid-space-sm
   border: 1px dotted var(--color-border-muted)
-  border-radius: var(--border-radius-small)
+  border-radius: $border-radius-sm
 
   .series-nav-header
-    margin-bottom: var(--space-base)
+    margin-bottom: $space-base
     color: var(--color-fg-muted)
 
   .series-nav-links
@@ -20,4 +21,4 @@
     justify-content: space-between
 
   .series-nav-item
-    margin-bottom: var(--space-none)
+    margin-bottom: $space-none

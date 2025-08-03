@@ -1,53 +1,13 @@
 @use "abstracts/mixins/emit-css-vars" as *
-@use "abstracts/variables" as *
 @use "themes" as *
 
-/* Spacings */
-@include emit-css-vars($spaces, $prefix: "space")
-@include emit-css-vars($fluid-spaces, $prefix: "fluid-space")
-
-/* Typography */
-@include emit-css-vars($typography)
-@include emit-css-vars($font-weights, $prefix: "font-weight")
-@include emit-css-vars($line-heights, $prefix: "line-height")
-@include emit-css-vars($font-sizes, $prefix: "font-size")
-@include emit-css-vars($fluid-font-sizes, $prefix: "fluid-font-size")
-
-/* Border radii and widths */
-@include emit-css-vars($border-radii, $prefix: "border-radius")
-@include emit-css-vars($border-widths, $prefix: "border-width")
-
-/* Borders */
-@include emit-css-vars($borders, $prefix: "border")
-
-/* Outlines */
-@include emit-css-vars($outlines, $prefix: "outline")
-
-/* Opacities */
-@include emit-css-vars($opacities, $prefix: "opacity")
-
-/* Blurs */
-@include emit-css-vars($blurs, $prefix: "blur")
-
-/* Icons */
-@include emit-css-vars($icons, $prefix: "icon")
-
-/* Box shadows */
-@include emit-css-vars($box-shadows, $prefix: "box-shadow")
-
-/* Sizes */
-@include emit-css-vars($sizes, $prefix: "size")
-
-/* Motion */
-@include emit-css-vars($motion-durations, $prefix: "motion-duration")
-@include emit-css-vars($motion-easings, $prefix: "motion-easing")
-
-/* Themes */
+/* Light color scheme */
 @include emit-css-vars($light-colors, "[data-theme='light']", $prefix: "color")
 @include emit-css-vars($light-box-shadows, "[data-theme='light']", $prefix: "box-shadow")
 @include emit-css-vars($light-text-shadows, "[data-theme='light']", $prefix: "text-shadow")
 @include emit-css-vars($light-gradients, "[data-theme='light']", $prefix: "gradient")
 
+/* Dark color scheme */
 @include emit-css-vars($dark-colors, "[data-theme='dark']", $prefix: "color")
 @include emit-css-vars($dark-box-shadows, "[data-theme='dark']", $prefix: "box-shadow")
 @include emit-css-vars($dark-text-shadows, "[data-theme='dark']", $prefix: "text-shadow")

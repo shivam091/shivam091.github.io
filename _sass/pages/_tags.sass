@@ -1,39 +1,40 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/list-unstyled"
 @use "abstracts/mixins/transition-properties" as *
 
 .tags
   display: flex
   flex-wrap: wrap
-  gap: var(--fluid-space-md)
+  gap: $fluid-space-md
 
   @extend %list-unstyled
 
   .tag
     display: inline-flex
     align-items: center
-    gap: var(--space-sm)
-    padding: var(--space-sm) var(--space-md)
+    gap: $space-sm
+    padding: $space-sm $space-md
     background-color: var(--color-bg-muted)
-    border: var(--border-default)
-    border-radius: var(--border-radius-full)
-    font-size: var(--font-size-sm)
-    margin-bottom: var(--space-none)
+    border: $border-default
+    border-radius: $border-radius-full
+    font-size: $font-size-sm
+    margin-bottom: $space-none
 
-    @include transition-properties((background-color, border-color, color), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-in-out))
+    @include transition-properties((background-color, border-color, color), $duration: $motion-duration-fast, $easing: $motion-easing-in-out)
 
     &:hover
       background-color: var(--color-bg-control-transparent-hover)
 
     .tag-name
-      font-weight: var(--font-weight-medium)
+      font-weight: $font-weight-medium
 
     .tag-count
       display: inline-block
       min-width: 1.6em
-      padding: var(--space-xxs) var(space-sm)
+      padding: $space-xxs var(space-sm)
       background-color: var(--color-bg-neutral-muted)
       color: var(--color-fg-neutral)
-      font-size: var(--font-size-sm)
-      border-radius: var(--border-radius-pill)
-      border: var(--border-neutral-muted)
+      font-size: $font-size-sm
+      border-radius: $border-radius-pill
+      border: $border-neutral-muted
       text-align: center
