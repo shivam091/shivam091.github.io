@@ -1,9 +1,9 @@
 import HamburgerMorph from "./../animations/hamburger-morph";
+import { COLOR_SWAP_TRANSITION } from "./../constants/motion";
 
 export default class HeaderDrawer {
   static drawer = document.getElementById("header-drawer");
   static toggleButton = document.querySelector(".toggle-menu");
-  static animationTiming = { duration: 300, easing: "cubic-bezier(0.17, 0.67, 0.51, 1)", fill: "forwards" };
   static animationFrames = [
     { opacity: 0, transform: "translateX(25%)" },
     { opacity: 1, transform: "translateX(0)" }
@@ -22,7 +22,7 @@ export default class HeaderDrawer {
 
     this.animation.playbackRate = 1;
     this.animation.play();
-    this.hamburger?.animateMorph(0, 1, this.animationTiming.duration);
+    this.hamburger?.animateMorph(0, 1, COLOR_SWAP_TRANSITION.duration);
 
     // Focus first link in drawer
     this.focusableElements[0]?.focus();
@@ -35,7 +35,7 @@ export default class HeaderDrawer {
     this.toggleButton?.setAttribute("aria-expanded", "false");
 
     this.animation.reverse();
-    this.hamburger?.animateMorph(1, 0, this.animationTiming.duration);
+    this.hamburger?.animateMorph(1, 0, COLOR_SWAP_TRANSITION.duration);
 
     // Restore focus to toggle button
     if (restoreFocus) this.lastFocused?.focus();
@@ -71,7 +71,7 @@ export default class HeaderDrawer {
     );
 
     this.hamburger = new HamburgerMorph(this.toggleButton);
-    this.animation = this.drawer.animate(this.animationFrames, this.animationTiming);
+    this.animation = this.drawer.animate(this.animationFrames, COLOR_SWAP_TRANSITION);
     this.animation.pause();
     this.animation.currentTime = 0;
 
