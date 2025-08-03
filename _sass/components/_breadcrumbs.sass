@@ -1,24 +1,25 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/list-unstyled" as *
 
 .breadcrumbs
   display: flex
   align-items: center
   flex-wrap: wrap
-  font-size: var(--font-size-sm)
+  font-size: $font-size-sm
   color: var(--color-fg-muted)
-  margin-bottom: var(--space-base)
+  margin-bottom: $space-base
 
   @extend %list-unstyled
 
   .breadcrumb-item
     display: flex
     align-items: center
-    margin-bottom: var(--space-none)
+    margin-bottom: $space-none
 
     &:not([aria-current="page"])
-      font-weight: var(--font-weight-medium)
+      font-weight: $font-weight-medium
 
     &:not(:last-child)::after
       content: "\00bb"
-      margin-inline: var(--space-sm)
+      margin-inline: $space-sm
       color: var(--color-fg-neutral)

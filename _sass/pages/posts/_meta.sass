@@ -1,13 +1,14 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 .post-meta
-  font-size: var(--font-size-sm)
+  font-size: $font-size-sm
   color: var(--color-fg-muted)
 
 .post-meta-item
   display: inline-flex
   align-items: center
-  gap: var(--space-xs)
+  gap: $space-xs
   flex-wrap: wrap
 
 .post-meta-primary
@@ -16,7 +17,7 @@
   grid-auto-columns: max-content
   justify-content: start
   align-items: center
-  gap: var(--fluid-space-sm) var(--fluid-space-md)
+  gap: $fluid-space-sm $fluid-space-md
 
   @include breakpoint.max(lg)
     display: grid
@@ -37,5 +38,5 @@
   align-items: start
   flex-direction: column
   flex-wrap: wrap
-  row-gap: var(--space-sm)
-  margin-block: var(--fluid-space-lg)
+  row-gap: $space-sm
+  margin-block: $fluid-space-lg

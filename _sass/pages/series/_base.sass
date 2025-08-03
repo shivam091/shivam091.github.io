@@ -1,12 +1,13 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/text-clip" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 .series-list
   display: flex
   flex-direction: column
-  gap: var(--fluid-space-base)
-  margin: var(--space-none)
-  padding: var(--space-none)
+  gap: $fluid-space-base
+  margin: $space-none
+  padding: $space-none
 
 .series-preview
   height: 15rem
@@ -16,17 +17,17 @@
     height: auto
 
 .series-title
-  margin: var(--space-none)
+  margin: $space-none
 
 .series-excerpt
-  margin: var(--space-none)
+  margin: $space-none
   color: var(--color-fg-muted)
 
   @extend %text-clip
 
 .series-meta
-  font-size: var(--font-size-sm)
+  font-size: $font-size-sm
   color: var(--color-fg-muted)
 
 .series-description
-  margin-bottom: var(--space-base)
+  margin-bottom: $space-base

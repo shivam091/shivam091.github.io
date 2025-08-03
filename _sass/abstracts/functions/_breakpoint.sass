@@ -1,6 +1,6 @@
 @use "sass:map"
 @use "to-em" as *
-@use "abstracts/variables/breakpoints" as *
+@use "abstracts/tokens/breakpoints" as *
 
 @function breakpoint($key, $use-em: false)
   @if map.has-key($breakpoints, $key)

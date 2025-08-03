@@ -1,7 +1,8 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
-$viewport-padding: var(--fluid-space-md)
+$viewport-padding: $fluid-space-md
 
 .page-wrapper
   position: relative
@@ -25,4 +26,4 @@ $viewport-padding: var(--fluid-space-md)
   width: 100%
   max-width: 65ch
   margin-inline: auto
-  padding-inline: var(--space-base)
+  padding-inline: $space-base

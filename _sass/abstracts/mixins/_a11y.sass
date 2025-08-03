@@ -1,7 +1,9 @@
+@use "abstracts/tokens" as *
+
 @mixin visually-hidden()
   width: 1px !important
   height: 1px !important
-  padding: var(--space-none) !important
+  padding: $space-none !important
   margin: -1px !important
   overflow: hidden !important
   clip: rect(0, 0, 0, 0) !important

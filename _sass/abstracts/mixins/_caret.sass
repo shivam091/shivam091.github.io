@@ -1,3 +1,5 @@
+@use "abstracts/tokens" as *
+
 $caret-size: 1rem
 $caret-offset: 0.09375rem
 
@@ -13,7 +15,7 @@ $caret-offset: 0.09375rem
     position: absolute
     width: 0
     height: 0
-    border: var(--border-width-extra-thick) solid var(--color-border-transparent)
+    border: $border-width-extra-thick solid var(--color-border-transparent)
     z-index: -1
 
 @mixin caret-top

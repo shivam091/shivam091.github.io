@@ -1,18 +1,19 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 .site-footer
   background: var(--color-bg-transparent)
   color: var(--color-fg-accent-on-emphasis)
-  font-size: var(--font-size-sm)
-  padding: var(--fluid-space-md)
-  margin-block-start: var(--space-base)
+  font-size: $font-size-sm
+  padding: $fluid-space-md
+  margin-block-start: $space-base
 
   .footer-grid
     display: grid
     grid-template-columns: repeat(2, 1fr)
     grid-template-rows: repeat(2, 1fr)
     grid-template-areas: "misc social" "legal credits"
-    gap: var(--space-base) var(--space-md)
+    gap: $space-base $space-md
     align-items: center
 
     @include breakpoint.max(md)
@@ -21,7 +22,7 @@
 
   .footer-section
     display: flex
-    gap: var(--space-base)
+    gap: $space-base
     flex-wrap: wrap
 
     @include breakpoint.max(md)
@@ -33,7 +34,7 @@
   .footer-social
     grid-area: social
     justify-content: end
-    gap: var(--space-base)
+    gap: $space-base
 
     @include breakpoint.max(md)
       justify-content: center
@@ -51,7 +52,7 @@
   .footer-link
     color: inherit
     text-decoration: none
-    padding-block: var(--space-xxs)
+    padding-block: $space-xxs
 
     &:hover
       color: var(--color-fg-default)

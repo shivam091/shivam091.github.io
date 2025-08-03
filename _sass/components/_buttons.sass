@@ -1,12 +1,13 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/transition-properties" as *
 
 button
   background-color: var(--color-bg-control-transparent)
   color: var(--color-fg-control)
-  border: var(--border-width-default) solid var(--color-border-control-transparent)
-  padding: var(--space-sm)
-  font-size: var(--fluid-font-size-sm)
-  font-weight: var(--font-weight-semi-bold)
+  border: $border-width-default solid var(--color-border-control-transparent)
+  padding: $space-sm
+  font-size: $fluid-font-size-sm
+  font-weight: $font-weight-semi-bold
 
   &:hover,
   &:focus
@@ -33,13 +34,13 @@ button:not(:disabled)
   background-color: var(--color-bg-control)
   color: var(--color-fg-control)
   border-color: var(--color-border-control)
-  border-radius: var(--border-radius-default)
-  line-height: var(--line-height-tight)
-  padding: var(--space-sm)
-  font-size: var(--fluid-font-size-sm)
-  font-weight: var(--font-weight-semi-bold)
+  border-radius: $border-radius-default
+  line-height: $line-height-tight
+  padding: $space-sm
+  font-size: $fluid-font-size-sm
+  font-weight: $font-weight-semi-bold
 
-  @include transition-properties((background-color, color, border-color), $duration: var(--motion-duration-fast), $easing: var(--motion-easing-in-out))
+  @include transition-properties((background-color, color, border-color), $duration: $motion-duration-fast, $easing: $motion-easing-in-out)
 
   &:hover,
   &:focus
@@ -57,9 +58,9 @@ button:not(:disabled)
     border-color: var(--color-border-control-disabled)
 
 .btn-sm
-  padding: var(--space-xs)
-  font-size: var(--fluid-font-size-xs)
-  border-radius: var(--border-radius-small)
+  padding: $space-xs
+  font-size: $fluid-font-size-xs
+  border-radius: $border-radius-sm
 
 .btn-primary
   background-color: var(--color-bg-button-primary)

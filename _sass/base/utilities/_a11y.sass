@@ -1,15 +1,17 @@
+@use "abstracts/tokens" as *
+
 :focus,
 :focus-visible
-  outline: var(--outline-focus-width) solid var(--color-outline-focus)
-  outline-offset: var(--outline-focus-offset)
+  outline: $outline-focus-width solid var(--color-outline-focus)
+  outline-offset: $outline-focus-offset
 
 :focus:not(:focus-visible)
-  outline: var(--outline-none)
-  box-shadow: var(--box-shadow-none)
+  outline: none
+  box-shadow: $box-shadow-none
 
 :disabled,
 .disabled,
 [aria-disabled=true]
-  box-shadow: var(--box-shadow-none)
+  box-shadow: $box-shadow-none
   cursor: not-allowed !important
   pointer-events: none

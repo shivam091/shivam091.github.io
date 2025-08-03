@@ -1,19 +1,21 @@
+@use "abstracts/tokens" as *
+
 figure
   display: block
-  margin-block: var(--space-base)
+  margin-block: $space-base
   margin-inline: auto
   max-width: 100%
-  border: var(--border-default)
-  border-radius: var(--border-radius-default)
+  border: $border-default
+  border-radius: $border-radius-default
   box-shadow: var(--box-shadow-md)
 
   img
-    border-start-start-radius: var(--border-radius-default)
-    border-start-end-radius: var(--border-radius-default)
+    border-start-start-radius: $border-radius-default
+    border-start-end-radius: $border-radius-default
 
   figcaption
-    font-size: var(--font-size-xs)
+    font-size: $font-size-xs
     color: var(--color-fg-muted)
     font-style: italic
-    line-height: var(--line-height-snug)
-    padding: var(--space-md)
+    line-height: $line-height-snug
+    padding: $space-md

@@ -1,15 +1,16 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/clearfix"
 @use "abstracts/mixins/transition-properties" as *
 
 .category-title
-  font-weight: var(--font-weight-medium)
+  font-weight: $font-weight-medium
 
 .sub-category-title
-  font-weight: var(--font-weight-normal)
+  font-weight: $font-weight-base
 
 .category-meta
   color: var(--color-fg-muted)
-  font-weight: var(--font-weight-normal)
+  font-weight: $font-weight-base
   vertical-align: baseline
 
 .accordion-item
