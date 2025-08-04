@@ -1,6 +1,6 @@
-{%- assign post = include.post -%}
-{%- assign words = post.content | words -%}
-{%- assign read_time = post.content | read_time -%}
+{%- assign post_content = post.content | default: page.content -%}
+{%- assign words = post_content | words -%}
+{%- assign read_time = post_content | read_time -%}
 
 <div class="post-meta-item post-read-time">
   {% icon clock %}

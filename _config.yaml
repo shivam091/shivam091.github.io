@@ -1,8 +1,10 @@
 title: Harshal LADHE
 
-description: Software Engineer | Freelancer | Learner
+description: "I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech."
 
 url: "https://shivam091.github.io"
+
+tagline: "A showcase of my technical blog posts, coding insights, and open source projects."
 
 # The language of the webpage
 lang: en
@@ -94,12 +96,7 @@ author:
   resume: /assets/docs/resume.pdf
   url: "https://shivam091.github.io"
 
-breadcrumbs:
-  enabled: true
-
 post:
-  author:
-    default: harshal
   read_time:
     words_per_minute: 180
   retro_counter:

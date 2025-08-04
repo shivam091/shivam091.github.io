@@ -6,7 +6,6 @@ tags: [typography, design, styleguide]
 categories: [blogging, typography]
 excerpt: This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.
 toc: false
-authors: [harshal]
 slug: typography
 cover_image:
   path: /assets/img/posts/typography/cover.png

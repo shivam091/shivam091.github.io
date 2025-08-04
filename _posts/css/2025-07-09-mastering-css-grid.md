@@ -5,7 +5,6 @@ date: 2025-07-09 15:20
 tags: [css, css-grid, grid, layout, grid-template-areas, grid-alignment, frontend]
 categories: [css, beginner, layout]
 excerpt: "Take your CSS Grid skills to the next level by mastering semantic layouts with grid areas, item alignment, and element spanning techniques."
-authors: [harshal]
 series: css-grid-fundamentals
 slug: mastering-css-grid
 cover_image:

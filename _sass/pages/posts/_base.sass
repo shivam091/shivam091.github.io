@@ -5,7 +5,24 @@
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
+.post-layout
+  display: grid
+  grid-template-columns: 80ch 1fr
+  grid-template-areas: "post-content toc"
+  column-gap: $space-xl
+
+  @include breakpoint.max(xl)
+    grid-template-columns: 70ch 1fr
+    column-gap: $space-md
+
+  @include breakpoint.max(lg)
+    grid-template-columns: 1fr
+    grid-template-areas: "toc" "post-content"
+
 .post-content
+  grid-area: post-content
+  overflow-x: hidden
+  min-width: 0
   @extend %no-cursor
 
   h1,
@@ -19,10 +36,11 @@
   margin: $space-none
   padding: $space-none
 
-.post-series
-  font-size: $font-size-sm
-  color: var(--color-fg-muted)
-  margin-top: $fluid-space-sm
+.post-preview
+  .post-series
+    font-size: $font-size-sm
+    color: var(--color-fg-muted)
+    margin-top: $fluid-space-sm
 
 .post-header
   display: flex

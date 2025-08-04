@@ -23,7 +23,6 @@ module Jekyll
         "series_id"     => series_id,
         "series_meta"   => frontmatter,
         "excerpt"       => frontmatter["excerpt"],
-        "cover_image"   => frontmatter["cover_image"],
         "posts"         => posts,
         "series_index"  => index + 1,
         "series_total"  => total,
@@ -92,7 +91,6 @@ module Jekyll
             "total"       => posts.size,
             "page_url"    => "/series/#{series_id}",
             "title"       => frontmatter["title"],
-            "cover_image" => frontmatter["cover_image"]
           }
 
           # Post-to-post navigation

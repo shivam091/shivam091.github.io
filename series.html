@@ -10,37 +10,27 @@ permalink: /series
   <h2 id="series-list-title" class="visually-hidden">List of series</h2>
 
   {% for series in series_pages %}
-    {%- assign cover_image = series.cover_image -%}
     {%- assign series_post_count = series.posts | size -%}
-    <article class="series-preview card card-image-left">
-      <a href="{{ series.url | relative_url }}" class="card-link" aria-label="Read parts of series: {{ series.title }}">
-        {% if cover_image %}
-          <div class="card-media">
-            <div class="card-media-inner lazy-wrapper">
-              <img data-src="{{ cover_image.path | relative_url }}" class="img-fluid" loading="lazy"
-                   {% if cover_image.lqip %}src="{{ cover_image.lqip }}" data-lqip="true"{% endif %}
-                   {% if cover_image.alt %}alt="{{ cover_image.alt }}"{% else %}alt="Cover image for series: {{ series.title }}"{% endif %}>
-            </div>
-          </div>
+    <article class="card">
+      <header class="card-header">
+        <h2 class="card-title series-title" title="{{ series.title }}">
+          <a href="{{ series.url | relative_url }}" class="card-link" aria-label="View parts of series: {{ series.title }}">
+            {{ series.title }}
+          </a>
+        </h2>
+      </header>
+
+      <div class="card-body">
+        {% if series.excerpt %}
+          <div class="series-excerpt" title="{{ series.excerpt | escape  }}">{{ series.excerpt | markdownify }}</div>
         {% endif %}
-        <div class="card-body">
-          <header class="card-header">
-            <h2 class="card-title series-title" title="{{ series.title }}">
-              {{ series.title }}
-            </h2>
-          </header>
-          <div class="card-content">
-            {% if series.excerpt %}
-              <div class="series-excerpt" title="{{ series.excerpt }}">{{ series.excerpt | markdownify }}</div>
-            {% endif %}
-          </div>
-          <div class="card-footer">
-            <div class="series-meta">
-              {{ series_post_count }} part{% if series_post_count != 1 %}s{% endif %}
-            </div>
-          </div>
+      </div>
+
+      <footer class="card-footer">
+        <div class="series-meta">
+          {{ series_post_count }} part{% if series_post_count != 1 %}s{% endif %}
         </div>
-      </a>
+      </footer>
     </article>
   {% endfor %}
 </section>

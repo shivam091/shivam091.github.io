@@ -5,7 +5,6 @@ date: 2025-07-09 15:20
 tags: [css, grid, css-grid, layout, web design, frontend, 2d-layouts]
 categories: [css, beginner, layout]
 excerpt: "A beginner-friendly introduction to CSS Grid that covers core concepts and guides you through building your first 2D layouts with real-world examples."
-authors: [harshal]
 series: css-grid-fundamentals
 slug: getting-started-with-css-grid
 cover_image:
