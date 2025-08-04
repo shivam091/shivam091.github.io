@@ -1,0 +1,45 @@
+@use "sass:string"
+
+/// Convert a string to kebab-case in Sass
+///
+/// 1. Converts uppercase letters to lowercase and prefixes them with a dash
+///    - Example: `camelCase` → `camel-case`
+/// 2. Converts spaces, underscores, and dots into dashes
+///    - Example: `My Value_test` → `my-value-test`
+/// 3. Avoids duplicate dashes
+/// 4. Removes any trailing dash
+///
+/// @param {String} $str - Input string (can be camelCase, snake_case, spaced, etc.)
+/// @return {String} - Kebab-cased string (string, unquoted)
+///
+/// @example
+///   .#{kebab-case("ButtonPrimary")} { color: red }
+///   // Generates: .button-primary { color: red }
+
+@function kebab-case($str)
+  $len: string.length($str)
+  $result: ""
+
+  @for $i from 1 through $len
+    $char: string.slice($str, $i, $i)   // Current character
+    $lower: string.to-lower-case($char)
+
+    @if $i > 1 and $char != $lower and string.slice($str, $i - 1, $i - 1) != "-"
+      // Case 1: Uppercase → dash + lowercase (unless first character)
+      $result: $result + "-" + $lower
+
+    @else if ($char == " " or $char == "_" or $char == ".")
+      // Case 2: Separator characters → dash
+      // Avoid duplicate dashes
+      @if string.slice($result, string.length($result), string.length($result)) != "-"
+        $result: $result + "-"
+
+    @else
+      // Case 3: Normal character → just append lowercase
+      $result: $result + $lower
+
+  // Trim trailing dash if exists
+  @if string.slice($result, string.length($result), string.length($result)) == "-"
+    $result: string.slice($result, 1, string.length($result) - 1)
+
+  @return string.unquote($result)
