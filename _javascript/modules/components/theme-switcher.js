@@ -1,3 +1,5 @@
+import { applyThemeVars } from "./../../utils/theme-utils";
+
 export default class ThemeSwitcher {
   static THEME_KEY = "theme";
 
@@ -24,6 +26,7 @@ export default class ThemeSwitcher {
     const actualTheme = this.getEffectiveTheme(theme);
     document.documentElement.setAttribute("data-theme", actualTheme);
     localStorage.setItem(this.THEME_KEY, theme);
+    applyThemeVars(actualTheme === "dark");
     this.updateDropdown(theme);
   }
 
