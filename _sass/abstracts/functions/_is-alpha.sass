@@ -1,0 +1,4 @@
+/// Check if a single character is a letter (a-z or A-Z)
+@function is-alpha($char)
+  $lower: string.to-lower-case($char)
+  @return str-index("abcdefghijklmnopqrstuvwxyz", $lower) != null
