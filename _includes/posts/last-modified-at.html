@@ -1,5 +1,4 @@
-{%- assign post = include.post -%}
-{%- assign last_modified_at = post.last_modified_at -%}
+{%- assign last_modified_at = page.last_modified_at -%}
 
 {% if last_modified_at %}
   <div class="post-meta-item post-last-modified-date">

@@ -105,6 +105,10 @@ post:
   retro_counter:
     enabled: true
 
+# Used for cover images of posts and series
+cover_image:
+  enabled: true
+
 pinned_posts:
   enabled: true
 

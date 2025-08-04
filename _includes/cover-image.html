@@ -1,7 +1,6 @@
-{%- assign page = include.page -%}
 {%- assign cover_image = page.cover_image -%}
 
-{% if cover_image %}
+{% if site.cover_image.enabled and cover_image %}
   <figure class="cover-image lazy-wrapper">
     <img
       data-src="{{ cover_image.path | relative_url }}"

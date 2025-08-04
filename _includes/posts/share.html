@@ -1,4 +1,3 @@
-{%- assign post = include.post -%}
 {%- assign title = post.title | uri_escape -%}
 {%- assign url = post.url | absolute_url | url_encode -%}
 
@@ -7,12 +6,12 @@
   {% for share in site.data.posts.share.platforms %}
     {%- assign link = share.link | replace: "TITLE", title | replace: "URL", url -%}
 
-    <a href="{{ link }}" target="_blank" rel="noopener noreferrer nofollow"
+    <a href="{{ link }}" class="share-link" target="_blank" rel="noopener noreferrer nofollow"
        aria-label="Share on {{ share.type }}" data-tooltip="{{ share.type }}">
       {% icon {{ share.icon }} %}
     </a>
   {% endfor %}
-  <a href="" aria-label="Copy link" data-copy-link data-tooltip="Copy link">
+  <button class="share-link" aria-label="Copy link" data-copy-link data-copy-url="{{ post.url | absolute_url }}" data-tooltip="Copy link">
     {% icon link %}
-  </a>
+  </button>
 </div>

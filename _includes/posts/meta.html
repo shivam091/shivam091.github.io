@@ -1,6 +1,4 @@
-{%- assign post = include.post -%}
-
-{% include posts/published-at.html post = post %}
-{% include posts/last-modified-at.html post = post %}
-{% include posts/read-time.html post = post %}
-{% include posts/series.html post = post link = true %}
+{% include posts/published-at.html %}
+{% include posts/last-modified-at.html %}
+{% include posts/read-time.html %}
+{% include posts/series.html post = page link = true %}
