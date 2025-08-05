@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en">
   <generator uri="https://jekyllrb.com" version="4.3.3">Jekyll</generator>
   <title>Harshal LADHE</title>
-  <subtitle>Software Engineer | Freelancer | Learner</subtitle>
+  <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-05T16:13:39+05:30</updated>
+  <updated>2025-08-05T16:17:52+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
