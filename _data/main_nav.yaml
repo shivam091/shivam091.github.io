@@ -1,7 +1,3 @@
-- title: "About"
-  icon: info-circle
-  href: "/about"
-
 - title: "Posts"
   icon: list
   href: "/posts"
@@ -9,3 +5,7 @@
 - title: "Series"
   icon: book
   href: "/series"
+
+- title: "About"
+  icon: info-circle
+  href: "/about"

@@ -4,18 +4,15 @@
 .list-group
   @extend %list-unstyled
 
-  .list-group-item
-    position: relative
-    display: flex
-    align-items: center
-    gap: 0.5rem
-    padding-block: $space-md
-    padding-inline: $space-xl $space-lg
-    margin-block: $space-none
-    border-top: $border-default
+.list-group-item
+  position: relative
+  display: flex
+  align-items: center
+  gap: 0.5rem
+  padding-block: $space-md
+  padding-inline: $space-base
+  margin-block: $space-none
+  border-top: $border-default
 
-    .icon
-      flex-shrink: 0
-
-    &:hover
-      background-color: var(--color-bg-muted)
+  &:hover
+    background-color: var(--color-bg-muted)
