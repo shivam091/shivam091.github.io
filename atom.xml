@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-05T16:17:52+05:30</updated>
+  <updated>2025-08-05T22:07:45+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -28,6 +28,11 @@
     <published>2025-07-09T15:21:11+05:30</published>
     <updated>2025-08-05T12:05:49+05:30</updated>
 
+    
+    <media:thumbnail
+      url="https://shivam091.github.io/assets/img/posts/css/responsive-css-grid-layouts/cover.png"
+      width="1200"
+      height="630" />
     
 
     <summary type="html">
@@ -1037,6 +1042,11 @@ Use <strong><code  class="highlighter-rouge notranslate">auto-fill</code></stron
     <published>2025-07-09T15:21:11+05:30</published>
     <updated>2025-08-05T12:05:49+05:30</updated>
 
+    
+    <media:thumbnail
+      url="https://shivam091.github.io/assets/img/posts/css/mastering-css-grid-alignment-spanning/cover.png"
+      width="1200"
+      height="630" />
     
 
     <summary type="html">
@@ -2322,6 +2332,11 @@ form what’s known as the <strong>implicit grid</strong>.</p>
     <updated>2025-08-05T12:05:49+05:30</updated>
 
     
+    <media:thumbnail
+      url="https://shivam091.github.io/assets/img/posts/css/getting-started-with-css-grid/cover.png"
+      width="1200"
+      height="630" />
+    
 
     <summary type="html">
       A beginner-friendly introduction to CSS Grid that covers core concepts and guides you through building your first 2D layouts with real-world examples.
@@ -2828,6 +2843,11 @@ like fr (fraction of available space).</p></li>
     <updated>2025-08-05T12:05:49+05:30</updated>
 
     
+    <media:thumbnail
+      url="https://shivam091.github.io/assets/img/posts/components/cover.png"
+      width="1200"
+      height="630" />
+    
 
     <summary type="html">
       This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.
@@ -3143,6 +3163,11 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
     <published>2025-06-07T18:47:49+05:30</published>
     <updated>2025-08-05T12:05:49+05:30</updated>
 
+    
+    <media:thumbnail
+      url="https://shivam091.github.io/assets/img/posts/typography/cover.png"
+      width="1200"
+      height="630" />
     
 
     <summary type="html">
