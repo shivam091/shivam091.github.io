@@ -272,33 +272,6 @@
 
 
       <main id="main-content" class="main-content" role="main" tabindex="-1">
-        
-<nav aria-label="Breadcrumb">
-  <ul class="breadcrumbs">
-    
-      <li class="breadcrumb-item" >
-        
-          <a href="/">Home</a>
-        
-      </li>
-    
-      <li class="breadcrumb-item" >
-        
-          <a href="/posts">Posts</a>
-        
-      </li>
-    
-      <li class="breadcrumb-item"  aria-current="page">
-        
-          <span>Components</span>
-        
-      </li>
-    
-  </ul>
-</nav>
-
-
-
         <h1 id="page-title" class="page-title">
   Components
 
@@ -1149,6 +1122,36 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
 
 
   <script src="/dist/app.js"></script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://shivam091.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Posts",
+      "item": "https://shivam091.github.io/posts"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Components",
+      "item": "https://shivam091.github.io/post/components"
+    }
+  ]
+}
+</script>
+
+
 
 </body>
 </html>

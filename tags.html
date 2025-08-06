@@ -266,27 +266,6 @@
 
 
       <main id="main-content" class="main-content" role="main" tabindex="-1">
-        
-<nav aria-label="Breadcrumb">
-  <ul class="breadcrumbs">
-    
-      <li class="breadcrumb-item" >
-        
-          <a href="/">Home</a>
-        
-      </li>
-    
-      <li class="breadcrumb-item"  aria-current="page">
-        
-          <span>Tags</span>
-        
-      </li>
-    
-  </ul>
-</nav>
-
-
-
         <h1 id="page-title" class="page-title">
   Tags
 
@@ -542,6 +521,30 @@
 
 
   <script src="/dist/app.js"></script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://shivam091.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tags",
+      "item": "https://shivam091.github.io/tags"
+    }
+  ]
+}
+</script>
+
+
 
 </body>
 </html>

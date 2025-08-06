@@ -266,27 +266,6 @@
 
 
       <main id="main-content" class="main-content" role="main" tabindex="-1">
-        
-<nav aria-label="Breadcrumb">
-  <ul class="breadcrumbs">
-    
-      <li class="breadcrumb-item" >
-        
-          <a href="/">Home</a>
-        
-      </li>
-    
-      <li class="breadcrumb-item"  aria-current="page">
-        
-          <span>Page not found</span>
-        
-      </li>
-    
-  </ul>
-</nav>
-
-
-
         <main class="error-page" role="main" aria-labelledby="error-title" tabindex="-1">
   <div class="error-icon" aria-hidden="true">
     <svg  class='icon icon-emoji-sad'  aria-hidden='true' focusable='false'>
@@ -422,6 +401,30 @@
 
 
   <script src="/dist/app.js"></script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://shivam091.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Page not found",
+      "item": "https://shivam091.github.io/404.html"
+    }
+  ]
+}
+</script>
+
+
 
 </body>
 </html>
