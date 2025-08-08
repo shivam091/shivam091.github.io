@@ -2058,15 +2058,203 @@ form what’s known as the <strong>implicit grid</strong>.</p>
         <li class="related-post">
           <article class="card">
             <header class="card-header">
-              <h2 class="card-title post-title" title="Text and Typography">
-                <a href="/post/typography" class="card-link" aria-label="Read post: Text and Typography">
-                  Text and Typography
+              <h2 class="card-title post-title" title="Mastering JavaScript Operators: A Complete Guide with Examples">
+                <a href="/post/mastering-js-operators" class="card-link" aria-label="Read post: Mastering JavaScript Operators: A Complete Guide with Examples">
+                  Mastering JavaScript Operators: A Complete Guide with Examples
                 </a>
               </h2>
             </header>
             <div class="card-body">
               
-                <div class="post-excerpt" title="This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more."><p  dir="auto">This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.</p></div>
+                <div class="post-excerpt" title="&lt;p  dir=&quot;auto&quot;&gt;JavaScript operators are the &lt;strong&gt;symbols and keywords&lt;/strong&gt; that perform operations on values and variables.&lt;br /&gt;
+Whether you’re adding numbers, comparing values, or accessing properties safely, &lt;strong&gt;operators are the building blocks&lt;/strong&gt; of your code.&lt;/p&gt;
+&lt;p  dir=&quot;auto&quot;&gt;In this guide, we’ll explore &lt;strong&gt;all major JavaScript operators&lt;/strong&gt; with clear explanations and examples.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2  id=&quot;-1-assignment-operators&quot; dir=&quot;auto&quot;&gt;📌 1. Assignment Operators&lt;/h2&gt;
+&lt;p  dir=&quot;auto&quot;&gt;Assignment operators assign values to variables.&lt;/p&gt;
+
+          &lt;table  dir=&quot;auto&quot; role=&quot;table&quot; class=&quot;markdown-table&quot;&gt;
+              &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Operator&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Example&lt;/th&gt;
+      &lt;th&gt;Explanation&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Assignment&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x = 5&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Assigns 5 to &lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;+=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Addition Assignment&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x += 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x = x + 2&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;-=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Subtraction Assignment&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x -= 3&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x = x - 3&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;*=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Multiplication Assignment&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x *= 4&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x = x * 4&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;/=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Division Assignment&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x /= 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x = x / 2&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;%=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Remainder Assignment&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x %= 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x = x % 2&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;**=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Exponentiation Assignment&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x **= 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x = x ** 2&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;&amp;amp;&amp;amp;=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Logical AND Assignment&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x &amp;amp;&amp;amp;= y&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Assigns &lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;y&lt;/code&gt; if &lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x&lt;/code&gt; is truthy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;||=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Logical OR Assignment&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x ||= y&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Assigns &lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;y&lt;/code&gt; if &lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x&lt;/code&gt; is falsy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;??=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Nullish Assignment&lt;/td&gt;
+      &lt;td&gt;&lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x ??= y&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;Assigns &lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;y&lt;/code&gt; if &lt;code  class=&quot;highlighter-rouge notranslate&quot;&gt;x&lt;/code&gt; is nullish&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+
+          &lt;/table&gt;
+        
+&lt;hr /&gt;
+
+&lt;h2  id=&quot;-2-arithmetic-operators&quot; dir=&quot;auto&quot;&gt;📌 2. Arithmetic Operators&lt;/h2&gt;
+&lt;p  dir=&quot;auto&quot;&gt;Arithmetic operators perform &lt;strong&gt;basic math operations&lt;/strong&gt;.&lt;/p&gt;
+&lt;p  dir=&quot;auto&quot;&gt;```js
+let a = 10, b = 3;&lt;/p&gt;
+&lt;p  dir=&quot;auto&quot;&gt;console.log(a + b); // 13  (Addition)
+console.log(a - b); // 7   (Subtraction)
+console.log(a * b); // 30  (Multiplication)
+console.log(a / b); // 3.33… (Division)
+console.log(a % b); // 1   (Remainder)
+console.log(a ** b); // 1000 (Exponentiation)&lt;/p&gt;"><p dir="auto">JavaScript operators are the <strong>symbols and keywords</strong> that perform operations on values and variables.<br />
+Whether you’re adding numbers, comparing values, or accessing properties safely, <strong>operators are the building blocks</strong> of your code.</p>
+<p dir="auto">In this guide, we’ll explore <strong>all major JavaScript operators</strong> with clear explanations and examples.</p>
+<hr />
+
+<h2 id="-1-assignment-operators" dir="auto">📌 1. Assignment Operators</h2>
+<p dir="auto">Assignment operators assign values to variables.</p>
+
+<pre><code>      &lt;table  dir="auto" role="table" class="markdown-table"&gt;
+          &lt;thead&gt;
+&lt;tr&gt;
+  &lt;th&gt;Operator&lt;/th&gt;
+  &lt;th&gt;Name&lt;/th&gt;
+  &lt;th&gt;Example&lt;/th&gt;
+  &lt;th&gt;Explanation&lt;/th&gt;
+&lt;/tr&gt;
+</code></pre>
+<p  dir="auto">&lt;/thead&gt;</p><tbody>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">=</code></td>
+      <td>Assignment</td>
+      <td><code class="highlighter-rouge notranslate">x = 5</code></td>
+      <td>Assigns 5 to <code class="highlighter-rouge notranslate">x</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">+=</code></td>
+      <td>Addition Assignment</td>
+      <td><code class="highlighter-rouge notranslate">x += 2</code></td>
+      <td><code class="highlighter-rouge notranslate">x = x + 2</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">-=</code></td>
+      <td>Subtraction Assignment</td>
+      <td><code class="highlighter-rouge notranslate">x -= 3</code></td>
+      <td><code class="highlighter-rouge notranslate">x = x - 3</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">*=</code></td>
+      <td>Multiplication Assignment</td>
+      <td><code class="highlighter-rouge notranslate">x *= 4</code></td>
+      <td><code class="highlighter-rouge notranslate">x = x * 4</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">/=</code></td>
+      <td>Division Assignment</td>
+      <td><code class="highlighter-rouge notranslate">x /= 2</code></td>
+      <td><code class="highlighter-rouge notranslate">x = x / 2</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">%=</code></td>
+      <td>Remainder Assignment</td>
+      <td><code class="highlighter-rouge notranslate">x %= 2</code></td>
+      <td><code class="highlighter-rouge notranslate">x = x % 2</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">**=</code></td>
+      <td>Exponentiation Assignment</td>
+      <td><code class="highlighter-rouge notranslate">x **= 2</code></td>
+      <td><code class="highlighter-rouge notranslate">x = x ** 2</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">&amp;&amp;=</code></td>
+      <td>Logical AND Assignment</td>
+      <td><code class="highlighter-rouge notranslate">x &amp;&amp;= y</code></td>
+      <td>Assigns <code class="highlighter-rouge notranslate">y</code> if <code class="highlighter-rouge notranslate">x</code> is truthy</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">||=</code></td>
+      <td>Logical OR Assignment</td>
+      <td><code class="highlighter-rouge notranslate">x ||= y</code></td>
+      <td>Assigns <code class="highlighter-rouge notranslate">y</code> if <code class="highlighter-rouge notranslate">x</code> is falsy</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">??=</code></td>
+      <td>Nullish Assignment</td>
+      <td><code class="highlighter-rouge notranslate">x ??= y</code></td>
+      <td>Assigns <code class="highlighter-rouge notranslate">y</code> if <code class="highlighter-rouge notranslate">x</code> is nullish</td>
+    </tr>
+  </tbody>
+
+<pre><code>      &lt;/table&gt;
+</code></pre>
+
+<hr />
+
+<h2 id="-2-arithmetic-operators" dir="auto">📌 2. Arithmetic Operators</h2>
+<p dir="auto">Arithmetic operators perform <strong>basic math operations</strong>.</p>
+<p dir="auto">```js
+let a = 10, b = 3;</p>
+<p dir="auto">console.log(a + b); // 13  (Addition)
+console.log(a - b); // 7   (Subtraction)
+console.log(a * b); // 30  (Multiplication)
+console.log(a / b); // 3.33… (Division)
+console.log(a % b); // 1   (Remainder)
+console.log(a ** b); // 1000 (Exponentiation)</p>
+</div>
               
             </div>
             <footer class="card-footer">
@@ -2076,8 +2264,8 @@ form what’s known as the <strong>implicit grid</strong>.</p>
   <use href="/assets/img/sprite.svg#icon-calendar" />
 </svg>
   <span class="visually-hidden">Published at:</span>
-  <time datetime='2025-06-07T18:47:49+05:30' aria-label='Published on June 07, 2025 at 06:47 PM' role='time' data-tooltip='Sat, June 07, 2025 06:47 PM' data-tooltip-position='bottom' tabindex='0'>
-  June 07, 2025
+  <time datetime='2025-08-08T16:25:41+05:30' aria-label='Published on August 08, 2025 at 04:25 PM' role='time' data-tooltip='Fri, August 08, 2025 04:25 PM' data-tooltip-position='bottom' tabindex='0'>
+  August 08, 2025
 </time>
 
 </div>
