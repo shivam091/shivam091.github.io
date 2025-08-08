@@ -1,0 +1,15 @@
+@use "sass:meta"
+@use "sass:map"
+
+@function flatten-map($map, $prefix: null) 
+  $result: ()
+
+  @each $key, $value in $map
+    $var-name: if($prefix, "#{$prefix}-#{$key}", "#{$key}")
+
+    @if meta.type-of($value) == "map"
+      $result: map.merge($result, flatten-map($value, $var-name))
+    @else
+      $result: map.merge($result, ($var-name: $value))
+
+  @return $result

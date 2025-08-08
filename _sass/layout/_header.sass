@@ -13,7 +13,7 @@
   height: $header-height
   padding: $fluid-space-md
   background: var(--color-bg-transparent)
-  color: var(--color-fg-accent-on-emphasis)
+  color: var(--color-fg-accent-muted)
   gap: $space-md
 
   @include transition-properties((background, backdrop-filter), $duration: 350ms, $easing: cubic-bezier(0.41, 0.1, 0.13, 1))
@@ -25,7 +25,7 @@
     height: auto
 
 .glassy-backdrop
-  --glass-color: hsl(from var(--color-sky-subtle) h s l / var(--glass-opacity, $opacity-none))
+  --glass-color: hsl(from var(--color-bg-sky-subtle) h s l / var(--glass-opacity, $opacity-none))
   background: var(--glass-color)
   backdrop-filter: blur(var(--blur-amount, $blur-none))
 
@@ -83,8 +83,6 @@
     padding: $space-sm
     font-size: $fluid-font-size-sm
     font-weight: $font-weight-semi-bold
-
-    @include transition-properties((background-color, color), $duration: $motion-duration-default, $easing: $motion-easing-smooth)
 
     &:hover,
     &:focus

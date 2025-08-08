@@ -8,6 +8,11 @@
   icon: sun
   description: "Use light mode"
 
+- key: soft-dark
+  label: Soft Dark
+  icon: eclipse
+  description: "Use soft dark mode"
+
 - key: dark
   label: Dark
   icon: moon
