@@ -1,33 +1,41 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/clearfix"
+@use "abstracts/modules/text-truncate"
 @use "abstracts/mixins/transition-properties" as *
 
-.category-title
-  font-weight: var(--font-weight-medium)
+.categories-list
+  .category-title
+    font-weight: $font-weight-medium
 
-.sub-category-title
-  font-weight: var(--font-weight-normal)
+  .post-title
+    @extend %text-truncate
+    font-size: $font-size-sm
+    font-weight: $font-weight-base
 
-.category-meta
-  color: var(--color-fg-muted)
-  font-weight: var(--font-weight-normal)
-  vertical-align: baseline
+  .post-published-at,
+  .post-count
+    font-size: $font-size-sm
+    color: var(--color-fg-muted)
+    text-align: end
 
-.accordion-item
-  .accordion-header
-    .icon-folder-open
-      display: none
+  .post-published-at
+    flex: 0 0 auto
 
-    .icon-folder
-      display: block
+  .post-count
+    flex: 1 1 auto
 
-  &[data-expanded]
+  .accordion-item
     .accordion-header
-      .icon-folder
+      .icon-folder-open
         display: none
 
-      .icon-folder-open
+      .icon-folder
         display: block
 
-.category-meta-info,
-.sub-category-meta-info
-  @extend %clearfix
+    &[data-expanded]
+      .accordion-header
+        .icon-folder
+          display: none
+
+        .icon-folder-open
+          display: block

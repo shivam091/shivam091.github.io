@@ -13,6 +13,9 @@ import Alert from "./modules/components/alert";
 import CodeBlockUtils from "./utils/code-block-utils";
 import LazyLoader from "./modules/components/lazy-loader";
 import RetroCounter from "./components/retro-counter";
+import Scrollspy from "./components/scroll-spy";
+
+import { bindHeroTyped } from "./components/hero";
 
 HeaderGlassEffect.initialize();
 HeaderDrawer.initialize();
@@ -35,3 +38,9 @@ RetroCounter.initAll("[data-retro-counter]", {
   debug: false,
 });
 
+new Scrollspy(".toc-wrapper", {
+  activeClass: "active",
+  rootMargin: "80px 0px -70% 0px"
+});
+
+bindHeroTyped();

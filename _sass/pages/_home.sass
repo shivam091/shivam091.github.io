@@ -1,3 +1,4 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 .content-grid
@@ -5,7 +6,7 @@
   grid-template-columns: repeat(2, 1fr)
   grid-template-rows: repeat(4, auto)
   grid-template-areas: "pinned-posts pinned-posts" "featured-posts featured-posts" "trending-tags popular-categories" "recently-updated recently-updated"
-  gap: var(--fluid-space-sm) var(--fluid-space-base)
+  gap: $fluid-space-sm $fluid-space-base
   align-items: start
   box-sizing: border-box
 

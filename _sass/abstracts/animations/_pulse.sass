@@ -1,12 +1,14 @@
+@use "abstracts/tokens" as *
+
 @keyframes pulse
   0%
     transform: scale(1)
-    opacity: var(--opaciy-medium)
+    opacity: $opacity-medium
 
   50%
     transform: scale(1.2)
-    opacity: var(--opaciy-full)
+    opacity: $opacity-full
 
   100%
     transform: scale(1)
-    opacity: var(--opaciy-medium)
+    opacity: $opacity-medium

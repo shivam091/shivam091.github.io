@@ -5,8 +5,8 @@
 // using shared duration, easing function, and optional delay.
 //
 // @param {List} $props - List of CSS properties to animate (e.g., `top`, `opacity`).
-// @param {String} $duration - Transition duration (default: `var(--motion-duration-fast)`).
-// @param {String} $easing - Transition timing function (default: `var(--motion-easing-out)`).
+// @param {String} $duration - Transition duration (default: `$motion-duration-fast`).
+// @param {String} $easing - Transition timing function (default: `$motion-easing-out`).
 // @param {String | Null} $delay - Optional transition delay (default: `null`).
 //
 // @example scss
@@ -15,7 +15,7 @@
 //   @include transition-properties((transform, opacity), 0.3s, ease-in-out);
 //
 //   @include transition-properties((height, opacity), 0.5s, ease, 100ms);
-@mixin transition-properties($props, $duration: var(--motion-duration-default), $easing: var(--motion-easing-default), $delay: null)
+@mixin transition-properties($props, $duration: $motion-duration-default, $easing: $motion-easing-default, $delay: null)
   $transitions: ()
 
   @each $prop in $props

@@ -1,3 +1,4 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 img
@@ -10,9 +11,6 @@ img
 .img-link
   color: var(--color-bg-transparent)
   display: inline-flex
-
-.cover-image
-  aspect-ratio: 16 / 9
 
 .markdown-img-wrapper
   overflow: auto
@@ -31,13 +29,11 @@ svg
   vertical-align: middle
 
 .avatar
-  width: var(--size-xxxl)
-  height: var(--size-xxxl)
-  border-radius: var(--border-radius-full)
+  width: $size-xxxl
+  height: $size-xxxl
+  border-radius: $border-radius-full
   object-fit: cover
-  box-shadow: var(--box-shadow-avatar)
-  border: var(--border-width-default) solid var(--color-border-translucent)
 
   @include breakpoint.max(md)
-    width: var(--size-xl)
-    height: var(--size-xl)
+    width: $size-xl
+    height: $size-xl

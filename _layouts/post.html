@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<article class="post-content" aria-labelledby="page-title">
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting" aria-labelledby="page-title">
   <meta itemprop="datePublished" content="{{ page.published_at | date_to_xmlschema }}">
   <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">
   <meta itemprop="headline" content="{{ page.title }}">
@@ -12,15 +12,15 @@ layout: page
     <div class="post-meta post-meta-primary" role="group" aria-label="Post metadata">
       {% include posts/meta.html post = page %}
     </div>
-
-    {% include posts/author.html post = page %}
   </header>
 
-  {% include cover-image.html page = page %}
+  <div class="post-layout">
+    <div class="post-content" itemprop="articleBody">
+      {{ content | anchorify_headings }}
+    </div>
 
-  {% toc %}
-
-  {{ content | anchorify_headings }}
+    {% toc %}
+  </div>
 
   {%- include series/post-nav.html -%}
 
@@ -31,14 +31,17 @@ layout: page
 
   <footer class="post-footer">
     <p>I hope you’ve found this post informative and helpful. Thank you for reading!</p>
+
     <div class="post-footer-content">
       <div class="copyright">
-        This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> by the author.
+        This post is licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>
+        by the author.
       </div>
 
       <section aria-labelledby="share-title">
         <h3 id="share-title" class="visually-hidden">Share this post</h3>
-        {% include posts/share.html post = page %}
+        {% include posts/share.html post = post %}
       </section>
     </div>
   </footer>
@@ -47,5 +50,4 @@ layout: page
 </article>
 
 {% include posts/related.html %}
-
 {%- include navigation.html -%}

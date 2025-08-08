@@ -1,6 +1,6 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 @use "abstracts/mixins/transition-properties" as *
-@use "abstracts/variables/globals" as *
 
 // @keyframes cloudDrift
 //   0%
@@ -22,8 +22,8 @@
 
   .cloud-layers
     position: absolute
-    inset: var(--space-none) var(--space-none) auto
-    padding-top: var(--space-xxl)
+    inset: $space-none $space-none auto
+    padding-top: $space-xxl
     display: flex
     flex-direction: column
     justify-content: flex-end
@@ -56,11 +56,11 @@
 
       .foreground-clouds
         fill: var(--color-bg-default)
-        @include transition-properties(fill, $duration: $sky-to-duration, $easing: $color-swap-timing-function)
+        @include transition-properties(fill, $duration: $color-swap-duration, $easing: $color-swap-timing-function)
 
 .sky-banner-bottom
   position: absolute
-  inset: auto var(--space-none) var(--space-none)
+  inset: auto $space-none $space-none
   height: 350px
   width: 100%
   z-index: -1
@@ -74,7 +74,7 @@
   .cloud-layers-top-overlay
     display: block
     position: absolute
-    inset: auto 30% var(--space-none) auto
+    inset: auto 30% $space-none auto
     height: 60%
     width: 100%
     z-index: 1
@@ -108,4 +108,4 @@
 
       .bottom-background-clouds
         fill: var(--color-bg-default)
-        @include transition-properties(fill, $duration: $sky-to-duration, $easing: $color-swap-timing-function)
+        @include transition-properties(fill, $duration: $color-swap-duration, $easing: $color-swap-timing-function)

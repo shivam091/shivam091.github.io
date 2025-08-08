@@ -53,7 +53,7 @@ module Jekyll
         heading["id"] = id
 
         link = <<~HTML.chomp
-          <li><a href="##{id}">#{html}</a>
+          <li><a href="##{id}" class="toc-link toc-link-level-#{level}">#{html}</a>
         HTML
 
         if previous_level.nil?
