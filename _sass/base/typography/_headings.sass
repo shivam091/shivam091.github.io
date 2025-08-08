@@ -1,5 +1,5 @@
 @use "sass:map"
-@use "abstracts/variables/typography" as *
+@use "abstracts/tokens/typography" as *
 @use "abstracts/modules/heading" as *
 
 @for $level from 1 through 6
@@ -10,13 +10,13 @@
     font-size: map.get($heading-sizes, h#{$level})
 
     @if $level == 1
-      font-weight: var(--font-weight-bold)
+      font-weight: $font-weight-bold
     @else if $level == 2
-      font-weight: var(--font-weight-semi-bold)
+      font-weight: $font-weight-semi-bold
     @else if $level == 3 or $level == 4
-      font-weight: var(--font-weight-medium)
+      font-weight: $font-weight-medium
     @else
-      font-weight: var(--font-weight-normal)
+      font-weight: $font-weight-base
 
   h#{$level},
   .h#{$level}

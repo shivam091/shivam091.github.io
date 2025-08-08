@@ -1,25 +1,26 @@
+@use "abstracts/tokens" as *
 @use "abstracts/animations/slide-down" as *
 
 .retro-counter-container
   display: inline-flex
-  gap: var(--space-md)
+  gap: $space-md
   align-items: center
   color: var(--color-fg-muted)
   text-align: center
-  margin-top: var(--fluid-space-base)
-  font-size: var(--fluid-font-size-lg)
+  margin-top: $fluid-space-base
+  font-size: $fluid-font-size-lg
 
 .retro-counter
   display: flex
-  gap: var(--space-xs)
+  gap: $space-xs
   background: var(--color-bg-retro-counter)
-  border-radius: var(--border-radius-default)
+  border-radius: $border-radius-default
   border: 5px solid var(--color-bg-retro-counter)
 
   .digit
-    width: var(--size-lg)
-    height: var(--size-xl)
-    animation: fade-in var(--motion-duration-default) var(--motion-easing-ease) both, slide-down var(--motion-duration-default) var(--motion-easing-ease) both
+    width: $size-lg
+    height: $size-xl
+    animation: fade-in $motion-duration-default $motion-easing-ease both, slide-down $motion-duration-default $motion-easing-ease both
 
     &:nth-child(1)
       animation-delay: 0ms

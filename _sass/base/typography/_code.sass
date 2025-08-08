@@ -1,21 +1,23 @@
+@use "abstracts/tokens" as *
+
 code,
 pre
-  font-family: var(--font-stack-monospace)
-  font-size: var(--font-size-sm)
+  font-family: $font-stack-monospace
+  font-size: $font-size-sm
   white-space: pre
-  border-radius: var(--border-radius-default)
-  line-height: var(--line-height-code)
+  border-radius: $border-radius-default
+  line-height: $line-height-code
 
 code.highlighter-rouge,
 .alert code
   font-size: inherit
   background-color: var(--color-bg-neutral-muted)
   padding: 0.2em 0.4em 0.1em
-  line-height: var(--line-height-normal)
+  line-height: $line-height-base
 
 code.filepath
   background-color: inherit
-  font-weight: var(--font-weight-semi-bold)
+  font-weight: $font-weight-semi-bold
   padding: 0
 
 figure.highlight,
@@ -27,18 +29,18 @@ figure.highlight,
     width: 100%
 
 pre:not(:has(.rouge-table))
-  padding: var(--space-base)
+  padding: $space-base
   overflow-x: auto
 
 kbd
-  font-family: var(--font-stack-monospace)
-  font-size: var(--font-size-sm)
+  font-family: $font-stack-monospace
+  font-size: $font-size-sm
   display: inline-block
-  padding: var(--space-xxxs) var(--space-xs)
-  line-height: var(--line-height-tight)
+  padding: $space-xxxs $space-xs
+  line-height: $line-height-tight
   color: var(--color-fg-default)
   vertical-align: middle
   background-color: var(--color-bg-muted)
-  border: var(--border-muted)
-  border-radius: var(--border-radius-default)
+  border: $border-muted
+  border-radius: $border-radius-default
   box-shadow: inset 0 -2px 0 var(--color-border-muted)

@@ -1,10 +1,32 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/section" as *
 @use "abstracts/modules/no-cursor" as *
 @use "abstracts/modules/text-clip" as *
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
+.post-layout
+  display: grid
+  grid-template-columns: 80ch 1fr
+  grid-template-areas: "post-content toc"
+  column-gap: $space-xl
+
+  @include breakpoint.max(xl)
+    grid-template-columns: 70ch 1fr
+    column-gap: $space-md
+
+  @include breakpoint.max(lg)
+    grid-template-columns: 1fr
+    grid-template-areas: "toc" "post-content"
+
+  &:not(:has(.toc-wrapper))
+    grid-template-columns: 1fr !important
+    grid-template-areas: "post-content"
+
 .post-content
+  grid-area: post-content
+  overflow-x: hidden
+  min-width: 0
   @extend %no-cursor
 
   h1,
@@ -14,46 +36,40 @@
 .posts
   display: flex
   flex-direction: column
-  gap: var(--fluid-space-base)
-  margin: var(--space-none)
-  padding: var(--space-none)
+  gap: $fluid-space-base
+  margin: $space-none
+  padding: $space-none
 
 .post-preview
-  height: 15rem
-  max-height: 100%
-
-  @include breakpoint.max(lg)
-    height: auto
-
   .post-series
-    font-size: var(--font-size-sm)
+    font-size: $font-size-sm
     color: var(--color-fg-muted)
-    margin-top: var(--fluid-space-sm)
+    margin-top: $fluid-space-sm
 
 .post-header
   display: flex
   flex-direction: column
-  gap: var(--fluid-space-sm)
+  gap: $fluid-space-sm
 
 .post-title
-  margin: var(--space-none)
+  margin: $space-none
 
 .post-excerpt
-  margin: var(--space-none)
+  margin: $space-none
   color: var(--color-fg-muted)
 
   @extend %text-clip
 
 .post-footer
-  margin-top: var(--fluid-space-lg)
+  margin-top: $fluid-space-lg
 
   .post-footer-content
     display: flex
     justify-content: space-between
     align-items: center
     flex-wrap: wrap
-    gap: var(--space-base)
-    font-size: var(--font-size-sm)
+    gap: $space-base
+    font-size: $font-size-sm
     color: var(--color-fg-muted)
 
     .copyright
@@ -61,23 +77,26 @@
 
     .share-icons
       display: flex
-      gap: var(--fluid-space-xs)
+      gap: $fluid-space-xs
       align-items: center
 
-      a
+      .share-link
         display: inline-flex
         align-items: center
         justify-content: center
-        padding: var(--fluid-space-xs)
+        padding: $fluid-space-xs
         color: var(--color-fg-muted)
+        font-size: 1em
 
-        @include transition-properties(color, $duration: var(--motion-duration-default), $easing: var(--motion-easing-smooth))
+        @include transition-properties(color, $duration: $motion-duration-default, $easing: $motion-easing-smooth)
 
-        &:hover
+        &:hover,
+        &:focus
+          background-color: var(--color-bg-transparent)
           color: var(--color-fg-default)
 
     @include breakpoint.max(md)
       flex-direction: column
       align-items: flex-start
       text-align: left
-      gap: var(--space-md)
+      gap: $space-base

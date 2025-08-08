@@ -1,13 +1,15 @@
+@use "abstracts/tokens" as *
+
 .pagination-wrapper
   display: flex
   justify-content: space-between
   align-items: center
-  margin-block: var(--fluid-space-base) var(--fluid-space-sm)
+  margin-block: $fluid-space-base $fluid-space-sm
   flex-direction: row
 
   @media (max-width: 1024px)
     flex-direction: column-reverse
-    gap: var(--space-sm)
+    gap: $space-sm
 
 .pagination
   display: flex
@@ -20,22 +22,22 @@
     flex-wrap: wrap
     align-items: center
     color: var(--color-fg-muted)
-    font-size: var(--font-size-sm)
+    font-size: $font-size-sm
     text-align: center
 
 .page-link
-  padding: var(--space-sm) var(--space-md)
+  padding: $space-sm $space-md
   background-color: var(--color-bg-control)
   color: var(--color-fg-control)
-  border: var(--border-default)
-  font-size: var(--font-size-sm)
+  border: $border-default
+  font-size: $font-size-sm
   margin-left: -1px
 
   &:first-child
-    border-radius: var(--border-radius-small) 0 0 var(--border-radius-small)
+    border-radius: $border-radius-sm 0 0 $border-radius-sm
 
   &:last-child
-    border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0
+    border-radius: 0 $border-radius-sm $border-radius-sm 0
 
   &.active
     background-color: var(--color-bg-accent-emphasis)

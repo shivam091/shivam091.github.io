@@ -2,13 +2,12 @@
 layout: post
 title: "Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained"
 date: 2025-07-09 15:20
-tags: [css, grid, responsive, layout, fr-units, minmax, media-queries, container-queries, auto-fit, auto-fill]
-categories: [css, beginner, responsive]
+tags: [css, grid, beginner, responsive, layout, fr-units, minmax, media-queries, container-queries, auto-fit, auto-fill]
+categories: [CSS]
 excerpt: "Learn how to build truly responsive CSS Grid layouts using `fr` units, `minmax()`, `auto-fit`, `auto-fill`, and modern media & container queries."
-authors: [harshal]
 series: css-grid-fundamentals
 slug: responsive-css-grid-layouts
-cover_image:
+image:
   path: /assets/img/posts/css/responsive-css-grid-layouts/cover.png
   width: 1200
   height: 630

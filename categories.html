@@ -12,76 +12,49 @@ permalink: /categories
   <div class="accordion" data-accordion>
     {%- for category in sorted_categories %}
       {%- assign category_name = category[0] -%}
+      {%- assign category_slug = category_name | slugify -%}
       {%- assign posts = category[1] -%}
-      {%- assign first_post = posts[0] -%}
+      {%- assign post_count = posts.size -%}
 
-      {% if category_name == first_post.categories[0] %}
-        {%- assign sub_categories = "" | split: "" -%}
-
-        {% for post in posts %}
-          {%- assign sub_category = post.categories[1] -%}
-          {% if sub_category %}
-            {% unless sub_categories contains sub_category %}
-              {%- assign sub_categories = sub_categories | push: sub_category -%}
-            {% endunless %}
-          {% endif %}
-        {% endfor %}
-
-        {%- assign sub_categories = sub_categories | sort -%}
-        {%- assign post_count = posts.size -%}
-        {%- assign category_count = sub_categories.size -%}
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              {% icon folder %}
-              {% icon folder-open %}
-              <div class="category-meta-info">
-                {%- assign category_slug = category_name | slugify -%}
-                <a href="{{ '/category/' | append: category_slug | relative_url }}" class="category-title" tabindex="0" aria-label="View all posts in {{ category_name }}">
-                  {{ category_name }}
-                </a>
-                <small class="category-meta">
-                  {%- if category_count > 0 -%}
-                    {% include categories/count.html category_count = category_count %}
-                  {%- endif -%}
-                  {% include posts/count.html post_count = post_count %}
-                </small>
-              </div>
-            </div>
-            <button type="button" class="btn-sm accordion-toggle" aria-expanded="false"
-                    aria-label="Toggle sub categories in {{ category_name }}"
-                    {% if category_count == 0 %}disabled aria-disabled="true"{% endif %}
-                    aria-controls="accordion-body-{{ category_name | slugify }}">
-              {% icon arrow-down %}
-            </button>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            {% icon folder %}
+            {% icon folder-open %}
+            <a href="{{ '/category/' | append: category_slug | relative_url }}" class="category-title" tabindex="0"
+               aria-label="View all posts in {{ category_name }}">
+              {{ category_name }}
+            </a>
           </div>
-
-          {% if category_count > 0 %}
-            <div class="accordion-body" id="accordion-body-{{ category_name | slugify }}">
-              <ul class="list-group">
-                {% for sub_category in sub_categories %}
-                  {%- assign sub_category_post_count = site.categories[sub_category] | size -%}
-                  <li class="list-group-item">
-                    {% icon folder %}
-                    <div class="sub-category-meta-info">
-                      {%- assign sub_category_slug = sub_category | slugify -%}
-                      <a href="{{ '/category/' | append: sub_category_slug | relative_url }}"
-                         class="sub-category-title"
-                         title="View posts in {{ sub_category }}">
-                        {{ sub_category }}
-                      </a>
-                      <small class="category-meta">
-                        {% include posts/count.html post_count = sub_category_post_count %}
-                      </small>
-                    </div>
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
+          <span class="post-count">
+            <span class="badge" aria-label="Total {{ post_count }} posts in {{ category_name }} category">
+              {% include posts/count.html post_count = post_count %}
+            </span>
+          </span>
+          <button type="button" class="btn-sm accordion-toggle" aria-expanded="false"
+                  aria-label="Toggle all posts of {{ category_name }}"
+                  aria-controls="{{ category_name | slugify }}-posts">
+            {% icon arrow-down %}
+          </button>
         </div>
-      {% endif %}
+
+        <div class="accordion-body" id="{{ category_name | slugify }}-posts">
+          <ul class="list-group">
+            {% for post in posts %}
+              {%- assign published_at = post.published_at -%}
+              <li class="list-group-item">
+                <a href="{{ post.url | relative_url }}" class="post-title" title="{{ post.title }}" aria-label="Read post: {{ post.title }}">
+                  {{ post.title }}
+                </a>
+                <span class="dotted-separator"></span>
+                <span class="post-published-at">
+                  {% timestamp {{ published_at }}, label:"Published on {{ published_at | date: "%B %d, %Y" }} at {{ published_at | date: '%I:%M %p' }}" %}
+                </span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     {% endfor %}
   </div>
 </section>

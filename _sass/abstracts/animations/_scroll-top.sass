@@ -1,11 +1,13 @@
+@use "abstracts/tokens" as *
+
 @keyframes scrollTopBounceIn
   from
-    opacity: var(--opacity-none)
+    opacity: $opacity-none
     transform: translateY(20px) scale(0.95)
     visibility: hidden
 
   60%
-    opacity: var(--opacity-full)
+    opacity: $opacity-full
     transform: translateY(-5px) scale(1.05)
     visibility: visible
 
@@ -15,11 +17,11 @@
 
 @keyframes scrollTopBounceOut
   from
-    opacity: var(--opacity-full)
+    opacity: $opacity-full
     transform: translateY(0) scale(1)
     visibility: visible
 
   to
-    opacity: var(--opacity-none)
+    opacity: $opacity-none
     transform: translateY(20px) scale(0.95)
     visibility: hidden

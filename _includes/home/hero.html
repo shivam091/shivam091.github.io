@@ -1,0 +1,11 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-heading">Hi, I'm {{ site.author.name }} 👋</h1>
+    <div class="hero-subheading">{{ site.tagline }}</div>
+    <p class="hero-typed">
+      I'm
+      {% assign role_list = site.author.roles | join: "," -%}
+      <span id="hero-highlight" class="hero-highlight typed" data-typed-items="{{ role_list }}"></span>
+    </p>
+  </div>
+</section>

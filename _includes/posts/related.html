@@ -7,25 +7,23 @@
       {% for post in related_posts %}
         <li class="related-post">
           <article class="card">
-            <a href="{{ post.url | relative_url }}" class="card-link" aria-label="Read post: {{ post.title }}">
-              <div class="card-body">
-                <header class="card-header">
-                  <h2 class="card-title post-title">
-                    {{ post.title }}
-                  </h2>
-                </header>
-                <div class="card-content">
-                  {% if post.excerpt %}
-                    <div class="post-excerpt" title="{{ post.excerpt | escape }}">{{ post.excerpt | markdownify }}</div>
-                  {% endif %}
-                </div>
-                <footer class="card-footer">
-                  <div class="post-meta">
-                    {% include posts/published-at.html post = post %}
-                  </div>
-                </footer>
+            <header class="card-header">
+              <h2 class="card-title post-title" title="{{ post.title }}">
+                <a href="{{ post.url | relative_url }}" class="card-link" aria-label="Read post: {{ post.title }}">
+                  {{ post.title }}
+                </a>
+              </h2>
+            </header>
+            <div class="card-body">
+              {% if post.excerpt %}
+                <div class="post-excerpt" title="{{ post.excerpt | escape }}">{{ post.excerpt | markdownify }}</div>
+              {% endif %}
+            </div>
+            <footer class="card-footer">
+              <div class="post-meta">
+                {% include posts/published-at.html post = post %}
               </div>
-            </a>
+            </footer>
           </article>
         </li>
       {% endfor %}

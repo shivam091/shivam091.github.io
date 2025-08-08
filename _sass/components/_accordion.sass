@@ -1,3 +1,4 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/no-cursor"
 @use "abstracts/modules/clearfix"
 @use "abstracts/mixins/transition-properties" as *
@@ -5,32 +6,34 @@
 .accordion
   display: flex
   flex-direction: column
-  gap: var(--fluid-space-base)
+  gap: $fluid-space-base
 
 .accordion-item
-  border: var(--border-accent-muted)
-  border-radius: var(--border-radius-default)
+  border: $border-accent-muted
+  border-radius: $border-radius-default
   overflow: hidden
 
-  @include transition-properties(box-shadow, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+  @include transition-properties(box-shadow, $duration: $motion-duration-default, $easing: $motion-easing-ease)
 
   &[data-expanded]
     box-shadow: var(--box-shadow-md)
 
 .accordion-toggle
-  border-radius: var(--border-radius-full)
+  border-radius: $border-radius-full
 
   .icon-arrow-down
-    @include transition-properties(transform, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+    @include transition-properties(transform, $duration: $motion-duration-default, $easing: $motion-easing-ease)
 
     .accordion-item[data-expanded] &
       transform: rotate(-180deg)
 
 .accordion-header
   display: flex
+  align-items: center
   justify-content: space-between
   flex-wrap: wrap
-  padding: var(--space-md) var(--space-base)
+  gap: $space-sm
+  padding: $space-md $space-base
   background-image: linear-gradient(var(--color-bg-accent-muted), var(--color-bg-accent-muted))
 
   @extend %no-cursor
@@ -38,7 +41,7 @@
   .accordion-title
     display: inline-flex
     align-items: center
-    gap: var(--space-sm)
+    gap: $space-sm
 
     @extend %clearfix
 
@@ -51,4 +54,4 @@
   display: block
   background-color: var(--color-bg-default)
 
-  @include transition-properties(height, $duration: var(--motion-duration-default), $easing: var(--motion-easing-ease))
+  @include transition-properties(height, $duration: $motion-duration-default, $easing: $motion-easing-ease)

@@ -1,4 +1,5 @@
 import * as PopperUtils from "./../../utils/popper";
+import * as DomUtils from "./../../utils/dom";
 
 export default class Tooltip {
   static tooltipMap = new WeakMap();
@@ -7,27 +8,31 @@ export default class Tooltip {
     return document.querySelectorAll("[data-tooltip]");
   }
 
-  static generateId() {
-    return `tooltip-${Math.random().toString(36).slice(2, 11)}`;
-  }
+  static createTooltipContainer(text) {
+    const id = DomUtils.generateId("tooltip");
 
-  static createElement(text) {
-    const el = document.createElement("div");
-    const id = this.generateId();
+    const content = DomUtils.createElement("div", {
+      className: "tooltip-content",
+      text
+    });
 
-    el.className = "tooltip";
-    el.id = id;
-    el.innerHTML = text;
-    el.setAttribute("role", "tooltip");
-    el.setAttribute("aria-live", "polite");
-    el.setAttribute("aria-hidden", "true");
+    const arrow = DomUtils.createElement("div", {
+      className: "tooltip-arrow",
+      attrs: { "data-popper-arrow": "" }
+    });
 
-    const arrow = document.createElement("div");
-    arrow.className = "tooltip-arrow";
-    arrow.setAttribute("data-popper-arrow", "");
-    el.appendChild(arrow);
+    const container = DomUtils.createElement("div", {
+      id,
+      className: "tooltip",
+      attrs: {
+        role: "presentation",
+        "aria-live": "polite",
+        "aria-hidden": "true"
+      },
+      children: [content, arrow]
+    });
 
-    return el;
+    return container;
   }
 
   static getTooltipDelay(target) {
@@ -42,7 +47,7 @@ export default class Tooltip {
     if (!tooltipText) return;
 
     const delay = this.getTooltipDelay(target);
-    const tooltip = this.createElement(tooltipText);
+    const tooltip = this.createTooltipContainer(tooltipText);
 
     document.body.appendChild(tooltip);
 
@@ -59,14 +64,18 @@ export default class Tooltip {
     }
   }
 
-  static update(target, newText) {
-    if (!target || !newText) return;
+  static update(target) {
+    if (!target) return;
 
-    target.setAttribute("data-tooltip", newText);
+    const tooltipText = target.getAttribute("data-tooltip");
+
+    if (!tooltipText) return;
 
     const tooltip = this.tooltipMap.get(target);
     if (tooltip) {
-      tooltip.innerHTML = newText;
+      const content = tooltip.querySelector(".tooltip-content") || tooltip;
+      content.textContent = tooltipText;
+
       PopperUtils.updateInstance(tooltip);
     }
   }

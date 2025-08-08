@@ -1,7 +1,9 @@
+@use "abstracts/tokens" as *
+
 .highlight
-  border-radius: var(--border-radius-default)
+  border-radius: $border-radius-default
   overflow-x: auto
-  border: var(--border-muted)
+  border: $border-muted
 
   .c, .cm, .c1
     color: var(--color-code-syntax-comment) /* Comment */
@@ -10,7 +12,7 @@
   .cp, .cs
     color: var(--color-code-syntax-comment)
     font-style: italic
-    font-weight: var(--font-weight-bold)
+    font-weight: $font-weight-bold
 
   .err
     color: var(--color-code-syntax-error-text) /* Error */
@@ -18,11 +20,11 @@
 
   .k, .kc, .kd, .kn, .kp, .kr, .ow
     color: var(--color-code-syntax-keyword) /* Keyword */
-    font-weight: var(--font-weight-bold)
+    font-weight: $font-weight-bold
 
   .kt
     color: var(--color-code-syntax-namespace) /* Type / Namespace */
-    font-weight: var(--font-weight-bold)
+    font-weight: $font-weight-bold
 
   .m, .mf, .mh, .mi, .mo, .il
     color: var(--color-code-syntax-number) /* Number */
@@ -41,18 +43,18 @@
 
   .nc
     color: var(--color-code-syntax-namespace) /* Class */
-    font-weight: var(--font-weight-bold)
+    font-weight: $font-weight-bold
 
   .nd
     color: var(--color-code-syntax-decorator) /* Decorator */
-    font-weight: var(--font-weight-bold)
+    font-weight: $font-weight-bold
 
   .ni, .nn
     color: var(--color-code-syntax-entity) /* Entity */
 
   .ne, .nf, .nl
     color: var(--color-code-syntax-function) /* Function */
-    font-weight: var(--font-weight-bold)
+    font-weight: $font-weight-bold
 
   .nt
     color: var(--color-code-syntax-tag) /* Tag */
@@ -75,7 +77,7 @@
     color: var(--color-code-syntax-meta) /* Prompt */
 
   .gs
-    font-weight: var(--font-weight-bold) /* Strong */
+    font-weight: $font-weight-bold /* Strong */
 
   .ge
     font-style: italic /* Emphasis */

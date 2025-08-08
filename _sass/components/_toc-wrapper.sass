@@ -1,0 +1,27 @@
+@use "abstracts/mixins/breakpoints" as breakpoint
+@use "abstracts/tokens" as *
+
+.toc-wrapper
+  grid-area: toc
+  position: sticky
+  top: calc($header-height + $space-lg)
+  max-height: calc(100vh - $header-height - $space-lg)
+  padding-inline: $space-sm
+  align-self: start
+  font-size: $font-size-sm
+  overflow-y: auto
+  scrollbar-width: thin
+
+  @include breakpoint.max(lg)
+    position: relative
+    top: 0
+    max-height: none
+    overflow-y: visible
+
+  .toc-link
+    color: var(--color-fg-muted)
+    text-decoration: none
+
+    &.active
+      color: var(--color-fg-link)
+      font-weight: $font-weight-semi-bold

@@ -2,13 +2,12 @@
 layout: post
 title: "Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning"
 date: 2025-07-09 15:20
-tags: [css, css-grid, grid, layout, grid-template-areas, grid-alignment, frontend]
-categories: [css, beginner, layout]
+tags: [css, css-grid, grid, beginner, layout, grid-template-areas, grid-alignment, frontend]
+categories: [CSS]
 excerpt: "Take your CSS Grid skills to the next level by mastering semantic layouts with grid areas, item alignment, and element spanning techniques."
-authors: [harshal]
 series: css-grid-fundamentals
 slug: mastering-css-grid
-cover_image:
+image:
   path: /assets/img/posts/css/mastering-css-grid-alignment-spanning/cover.png
   width: 1200
   height: 630

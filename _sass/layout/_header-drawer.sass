@@ -1,23 +1,23 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 @use "abstracts/modules/list-unstyled" as *
-@use "abstracts/variables/globals" as *
 
 .header-drawer
   position: fixed
   display: flex
   flex-direction: column
-  inset: $header-height var(--space-sm) var(--space-sm)
+  inset: $header-height $space-sm $space-sm
   z-index: 999
   box-shadow: var(--box-shadow-md)
   box-sizing: border-box
-  border-radius: var(--border-radius-default)
-  padding-inline: var(--fluid-space-md)
+  border-radius: $border-radius-default
+  padding-inline: $fluid-space-md
   background: var(--color-bg-default)
   color: var(--color-fg-accent-on-emphasis)
   overflow-y: auto
   pointer-events: none
-  opacity: var(--opacity-none)
+  opacity: $opacity-none
   transform: translateX(25%)
 
   @at-root [data-drawer="open"] &
@@ -27,7 +27,7 @@
     display: flex
     flex: 1 1 auto
     flex-direction: column
-    gap: var(--space-md)
+    gap: $space-md
     overflow-y: auto
     -ms-overflow-style: none
     scrollbar-width: none
@@ -38,29 +38,29 @@
   .drawer-navigation
     display: flex
     flex-direction: column
-    line-height: var(--line-height-tight)
+    line-height: $line-height-tight
 
     .nav-list
       @extend %list-unstyled
 
     .nav-item
-      padding-block: var(--space-xs)
-      margin-bottom: var(--space-none)
-      border-bottom: var(--border-muted)
+      padding-block: $space-xs
+      margin-bottom: $space-none
+      border-bottom: $border-muted
 
     .nav-link
       display: flex
       align-items: center
-      gap: var(--space-sm)
-      padding-block: var(--space-md)
-      padding-inline: var(--space-sm)
-      font-size: var(--font-size-sm)
+      gap: $space-sm
+      padding-block: $space-md
+      padding-inline: $space-sm
+      font-size: $font-size-sm
       color: inherit
       text-decoration: none
 
 .drawer-visuals
   position: relative
-  border-radius: var(--border-radius-medium)
+  border-radius: $border-radius-md
   overflow: hidden
   overflow: clip
   aspect-ratio: 18 / 10
@@ -92,7 +92,7 @@
 
 .quick-links
   position: absolute
-  right: var(--space-sm)
+  right: $space-sm
   display: flex
   flex-direction: column
   gap: 0
@@ -103,7 +103,7 @@
   .footer-links
     display: flex
     justify-content: space-evenly
-    font-size: var(--font-size-xs)
+    font-size: $font-size-xs
 
     @extend %list-unstyled
 
@@ -112,9 +112,9 @@
 
     .footer-link
       display: block
-      padding: var(--space-sm)
+      padding: $space-sm
       color: inherit
-      font-weight: var(--font-weight-medium)
+      font-weight: $font-weight-medium
       text-align: center
 
       &:hover
@@ -123,9 +123,9 @@
 
 .quick-link
   display: block
-  padding: var(--space-sm)
+  padding: $space-sm
   color: inherit
-  font-size: var(--font-size-sm)
+  font-size: $font-size-sm
   text-align: right
 
   &:hover

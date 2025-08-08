@@ -1,15 +1,16 @@
+@use "abstracts/tokens" as *
 @use "abstracts/mixins/transition-properties" as *
 
 .badge
   display: inline-block
-  padding: var(--space-xs) var(--space-sm)
-  font-size: var(--fluid-font-size-xs)
-  font-weight: var(--font-weight-medium)
-  line-height: var(--line-height-tight)
+  padding: $space-xs $space-sm
+  font-size: $fluid-font-size-xs
+  font-weight: $font-weight-medium
+  line-height: $line-height-tight
   text-align: center
   white-space: nowrap
   vertical-align: middle
   background-color: var(--color-bg-muted)
   color: var(--color-fg-muted)
-  border: var(--border-muted)
-  border-radius: var(--border-radius-default)
+  border: $border-muted
+  border-radius: $border-radius-default

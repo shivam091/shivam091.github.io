@@ -1,36 +1,37 @@
+@use "abstracts/tokens" as *
 @use "abstracts/modules/no-cursor" as *
 
 table
   display: block
-  margin-bottom: var(--space-base)
+  margin-bottom: $space-base
   width: max-content
   max-width: 100%
   border-collapse: collapse
   overflow: auto
 
   th
-    font-weight: var(--font-weight-semi-bold)
-    line-height: var(--line-height-tight)
+    font-weight: $font-weight-semi-bold
+    line-height: $line-height-tight
 
   td
-    line-height: var(--line-height-snug)
+    line-height: $line-height-snug
 
   td,
   th
-   padding: var(--space-sm) var(--space-md)
-   border: var(--border-default)
+   padding: $space-sm $space-md
+   border: $border-default
    text-align: inherit
 
   tr
     background-color: var(--color-bg-default)
-    border-top: var(--border-muted)
+    border-top: $border-muted
 
     &:nth-child(2n)
       background-color: var(--color-bg-muted)
 
 .rouge-table
   table-layout: fixed
-  margin-bottom: var(--space-none)
+  margin-bottom: $space-none
   width: 100%
 
   tr
@@ -39,12 +40,12 @@ table
 
   td
     vertical-align: top
-    padding: var(--space-none)
+    padding: $space-none
     border: none
 
   .gutter
     position: sticky
-    left: var(--space-none)
+    left: $space-none
     text-align: right
     z-index: 1
     background-color: var(--color-bg-muted)

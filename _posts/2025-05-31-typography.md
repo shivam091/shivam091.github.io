@@ -3,12 +3,11 @@ layout: post
 title: "Text and Typography"
 date: 2025-05-31 01:00
 tags: [typography, design, styleguide]
-categories: [blogging, typography]
+categories: [General]
 excerpt: This post is a comprehensive test of various HTML elements. It includes headings, paragraphs, lists, tables, forms, code, and more.
 toc: false
-authors: [harshal]
 slug: typography
-cover_image:
+image:
   path: /assets/img/posts/typography/cover.png
   width: 1200
   height: 630
