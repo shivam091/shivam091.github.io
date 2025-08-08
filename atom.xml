@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-08T22:28:38+05:30</updated>
+  <updated>2025-08-08T22:42:52+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -31,8 +31,7 @@
     
 
     <summary type="html">
-      JavaScript operators are the symbols and keywords that perform operations on values and variables.
-Whether you’re adding numbers, comparing values, or access...
+      Learn every JavaScript operator with clear syntax, use cases, and examples—from arithmetic to optional chaining, bitwise, and beyond.
     </summary>
     <content type="html"><![CDATA[<p  dir="auto">JavaScript operators are the <strong>symbols and keywords</strong> that perform operations on values and variables.<br />
 Whether you’re adding numbers, comparing values, or accessing properties safely, <strong>operators are the building blocks</strong> of your code.</p>
