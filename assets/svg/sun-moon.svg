@@ -1,0 +1,35 @@
+<svg version="1.0" role="img" class="icon icon-sun-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- mask to create a crescent by subtracting a shifted circle -->
+    <mask id="crescent-mask-24">
+      <!-- white = visible, black = hidden -->
+      <rect width="100%" height="100%" fill="black"/>
+      <circle cx="9.8" cy="12" r="4.6" fill="white"/>
+      <!-- subtract: shifted circle -->
+      <circle cx="11.8" cy="12" r="4.2" fill="black"/>
+    </mask>
+  </defs>
+
+  <!-- rays (subtle, soft) -->
+  <g fill="none" stroke="var(--icon-rays, hsl(214 76% 59%))" stroke-width="1.25" stroke-linecap="round" opacity="0.95">
+    <line x1="12" y1="1.8" x2="12" y2="4.4"/>
+    <line x1="12" y1="19.6" x2="12" y2="22.2"/>
+    <line x1="1.8" y1="12" x2="4.4" y2="12"/>
+    <line x1="19.6" y1="12" x2="22.2" y2="12"/>
+    <line x1="4.2" y1="4.2" x2="6.2" y2="6.2"/>
+    <line x1="17.8" y1="17.8" x2="19.8" y2="19.8"/>
+    <line x1="17.8" y1="6.2" x2="19.8" y2="4.2"/>
+    <line x1="4.2" y1="19.8" x2="6.2" y2="17.8"/>
+  </g>
+
+  <!-- sun body -->
+  <circle cx="12" cy="12" r="4.2" fill="var(--icon-sun, hsl(48 100% 50%))" opacity="0.98"/>
+
+  <!-- crescent moon clipped against mask -->
+  <g mask="url(#crescent-mask-24)">
+    <circle cx="9.8" cy="12" r="4.6" fill="var(--icon-moon, hsl(210 19% 85%))" opacity="0.98"/>
+  </g>
+
+  <!-- subtle outline -->
+  <circle cx="12" cy="12" r="4.2" fill="none" stroke="color-mix(in srgb, var(--icon-outline, #000) 8%, transparent)" stroke-width="0.3" opacity="0.6"/>
+</svg>

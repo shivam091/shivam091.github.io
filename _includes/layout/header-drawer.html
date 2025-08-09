@@ -5,7 +5,7 @@
         {% for item in site.data.main_nav %}
         <li class="nav-item">
            <a href="{{ item.href | relative_url }}" class="nav-link" {% if page.url == item.href %} aria-current="page" {% endif %}>
-             {% icon {{item.icon}} %}
+             {% svg {{item.icon}} %}
              {{ item.title }}
            </a>
         </li>

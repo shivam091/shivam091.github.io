@@ -3,7 +3,7 @@
 {%- assign read_time = post.content | read_time -%}
 
 <div class="post-meta-item post-read-time">
-  {% icon clock %}
+  {% svg clock %}
   <span class="visually-hidden">Estimated reading time:</span>
   <span data-tooltip="{{ words }} words" data-tooltip-position="bottom" tabindex="0">{{ read_time }} min read</span>
 </div>
