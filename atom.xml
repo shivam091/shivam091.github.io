@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-09T16:12:19+05:30</updated>
+  <updated>2025-08-09T19:12:03+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -47,50 +47,112 @@
 
           </ul>
         
+<h2  id="arithmetic-operators" dir="auto">Arithmetic Operators</h2>
+<h3  id="-addition" dir="auto"><code  class="highlighter-rouge notranslate">+</code> Addition</h3>
+<p  dir="auto">This operator adds two numbers together, or concatenates two strings together. If a number and a string are used together, it performs a concatenation.</p>
+<p  dir="auto">Less commonly, it can be used as a unary operator(opens in new tab), to try and convert a string containing digits to a number. It’s a somewhat
+obscure trick, and it’s generally better to use the Number()(opens in new tab) helper instead.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 8</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">World</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// "Hello World"</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">3</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// '53'</span>
+
+<span class="c1">// As a unary operator</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">+</span><span class="dl">'</span><span class="s1">5</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">+</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// NaN</span></code></pre></figure>
+
+<h3  id="--subtraction" dir="auto"><code  class="highlighter-rouge notranslate">-</code> Subtraction</h3>
+<p  dir="auto">This operator subtracts the right operand from the left. It’s a mathematical operator.</p>
+<p  dir="auto">As a unary operator, it can also be used to signify that a number is negative—for example <code  class="highlighter-rouge notranslate">-5</code> isn’t subtracting anything, it’s indicating that this
+number’s value is negative 5.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// 6</span>
+
+<span class="c1">// As a unary operator</span>
+<span class="kd">const</span> <span class="nx">negNum</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="nx">negNum</span><span class="p">);</span> <span class="c1">// 0</span></code></pre></figure>
+
+<h3  id="-multiplication" dir="auto"><code  class="highlighter-rouge notranslate">*</code> Multiplication</h3>
+<p  dir="auto">This operator performs a mathematical multiplication operation.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="mi">7</span><span class="p">);</span> <span class="c1">// 42</span></code></pre></figure>
+
+<h3  id="-division" dir="auto"><code  class="highlighter-rouge notranslate">/</code> Division</h3>
+<p  dir="auto">This operator divides the left operand by the right.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// 1.25</span></code></pre></figure>
+
+<h3  id="-remainder-modulo" dir="auto"><code  class="highlighter-rouge notranslate">%</code> Remainder (Modulo)</h3>
+<p  dir="auto">This operator is in the same mathematical family as Addition (<code  class="highlighter-rouge notranslate">+</code>) or Multiplication (<code  class="highlighter-rouge notranslate">*</code>).</p>
+<p  dir="auto">It evaluates to the remainder of dividing the left operand by the right.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">8</span> <span class="o">%</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// 0</span></code></pre></figure>
+
+<h3  id="-exponentiation" dir="auto"><code  class="highlighter-rouge notranslate">**</code> Exponentiation</h3>
+<p  dir="auto">This operator raises the left operand to the power of the right.</p>
+<p  dir="auto"><em>Compatibility: ES2016+</em></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 4</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">**</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 8</span></code></pre></figure>
+
+<h2  id="logical-operators" dir="auto">Logical Operators</h2>
+<h3  id="-logical-and" dir="auto"><code  class="highlighter-rouge notranslate">&amp;&amp;</code> Logical AND</h3>
+<h3  id="-logical-or" dir="auto"><code  class="highlighter-rouge notranslate">||</code> Logical OR</h3>
+<h3  id="-logical-not" dir="auto"><code  class="highlighter-rouge notranslate">!</code> Logical NOT</h3>
+<h3  id="-double-not" dir="auto"><code  class="highlighter-rouge notranslate">!!</code> Double NOT</h3>
+<h2  id="bitwise-operators" dir="auto">Bitwise Operators</h2>
+<h3  id="-bitwise-and" dir="auto"><code  class="highlighter-rouge notranslate">&amp;</code> Bitwise AND</h3>
+<h3  id="-bitwise-or" dir="auto"><code  class="highlighter-rouge notranslate">|</code> Bitwise OR</h3>
+<h3  id="-bitwise-xor" dir="auto"><code  class="highlighter-rouge notranslate">^</code> Bitwise XOR</h3>
+<h3  id="-bitwise-not" dir="auto"><code  class="highlighter-rouge notranslate">~</code> Bitwise NOT</h3>
+<h3  id="-left-shift" dir="auto"><code  class="highlighter-rouge notranslate">&lt;&lt;</code> Left Shift</h3>
+<h3  id="-right-shift" dir="auto"><code  class="highlighter-rouge notranslate">&gt;&gt;</code> Right Shift</h3>
+<h3  id="unsigned-right-shift" dir="auto"><code  class="highlighter-rouge notranslate">&gt;&gt;&gt;</code>(Unsigned Right Shift</h3>
 <h2  id="assignment-operators" dir="auto">Assignment Operators</h2>
 <p  dir="auto">Assignment operators assign values to variables.</p>
-<h3  id="-assignment" dir="auto"><code  class="highlighter-rouge notranslate">=</code> Assignment</h3>
+<h3  id="arithmetic-assignment-operators" dir="auto">Arithmetic Assignment Operators</h3>
+<h4  id="-assignment" dir="auto"><code  class="highlighter-rouge notranslate">=</code> Assignment</h4>
 <p  dir="auto">Assigns a value to a variable.</p>
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 10</span></code></pre></figure>
 
-<h3  id="-addition-assignment" dir="auto"><code  class="highlighter-rouge notranslate">+=</code> Addition Assignment</h3>
+<h4  id="-addition-assignment" dir="auto"><code  class="highlighter-rouge notranslate">+=</code> Addition Assignment</h4>
 <p  dir="auto">This operator adds a value to the variable, and overwrites that variable’s value with the result.</p>
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="nx">x</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 12 (10 + 2)</span></code></pre></figure>
 
-<h3  id="--subtraction-assignment" dir="auto"><code  class="highlighter-rouge notranslate">-=</code> Subtraction Assignment</h3>
+<h4  id="--subtraction-assignment" dir="auto"><code  class="highlighter-rouge notranslate">-=</code> Subtraction Assignment</h4>
 <p  dir="auto">This operator subtracts a value from the variable, and overwrites that variable’s value with the result.</p>
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="nx">x</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 8 (10 - 2)</span></code></pre></figure>
 
-<h3  id="-multiplication-assignment" dir="auto"><code  class="highlighter-rouge notranslate">*=</code> Multiplication Assignment</h3>
+<h4  id="-multiplication-assignment" dir="auto"><code  class="highlighter-rouge notranslate">*=</code> Multiplication Assignment</h4>
 <p  dir="auto">This operator multiplies a variable by a value, and overwrites that variable’s value with the result.</p>
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="nx">x</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 20 (10 * 2)</span></code></pre></figure>
 
-<h3  id="-division-assignment" dir="auto"><code  class="highlighter-rouge notranslate">/=</code> Division Assignment</h3>
+<h4  id="-division-assignment" dir="auto"><code  class="highlighter-rouge notranslate">/=</code> Division Assignment</h4>
 <p  dir="auto">This operator divides a variable by a value, and overwrites that variable’s value with the result.</p>
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="nx">x</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 5 (10 / 2)</span></code></pre></figure>
 
-<h3  id="-remainder-assignment" dir="auto"><code  class="highlighter-rouge notranslate">%=</code> Remainder Assignment</h3>
+<h4  id="-remainder-assignment" dir="auto"><code  class="highlighter-rouge notranslate">%=</code> Remainder Assignment</h4>
 <p  dir="auto">This operator assigns the remainder after division, and overwrites that variable’s value with the result.</p>
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="nx">x</span> <span class="o">%=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 2 (10 %= 4)</span></code></pre></figure>
 
-<h3  id="-exponentiation-assignment" dir="auto"><code  class="highlighter-rouge notranslate">**=</code> Exponentiation Assignment</h3>
+<h4  id="-exponentiation-assignment" dir="auto"><code  class="highlighter-rouge notranslate">**=</code> Exponentiation Assignment</h4>
 <p  dir="auto">This operator applies an exponentiation (bringing the value to the power of X), an assigns the result to the affected variable.</p>
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="nx">x</span> <span class="o">**=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 100 (10 ** 2)</span></code></pre></figure>
 
-<h3  id="-logical-and-assignment" dir="auto"><code  class="highlighter-rouge notranslate">&amp;&amp;=</code> Logical AND Assignment</h3>
+<h3  id="logical-assignment-operators" dir="auto">Logical Assignment Operators</h3>
+<h4  id="-logical-and-assignment" dir="auto"><code  class="highlighter-rouge notranslate">&amp;&amp;=</code> Logical AND Assignment</h4>
 <p  dir="auto">This operator assigns a value to a variable, but only if that variable already holds a <code  class="highlighter-rouge notranslate">truthy</code> value.</p>
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -100,7 +162,7 @@
 
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 0, 2</span></code></pre></figure>
 
-<h3  id="-logical-or-assignment" dir="auto"><code  class="highlighter-rouge notranslate">||=</code> Logical OR Assignment</h3>
+<h4  id="-logical-or-assignment" dir="auto"><code  class="highlighter-rouge notranslate">||=</code> Logical OR Assignment</h4>
 <p  dir="auto">This operator assigns a value to a variable, but only if that variable already holds a <code  class="highlighter-rouge notranslate">falsy</code> value.</p>
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -110,7 +172,7 @@
 
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 2, 1</span></code></pre></figure>
 
-<h3  id="-logical-nullish-assignment" dir="auto"><code  class="highlighter-rouge notranslate">??=</code> Logical Nullish Assignment</h3>
+<h4  id="-logical-nullish-assignment" dir="auto"><code  class="highlighter-rouge notranslate">??=</code> Logical Nullish Assignment</h4>
 <p  dir="auto">This operator updates a variable with a new value, but only if that variable currently holds a “nullish” value (either <code  class="highlighter-rouge notranslate">null</code> or <code  class="highlighter-rouge notranslate">undefined</code>).
 This operator is also known as <em><strong>Nullish Coalescing Assignment</strong></em>.</p>
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -123,93 +185,39 @@ This operator is also known as <em><strong>Nullish Coalescing Assignment</strong
 
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span><span class="p">);</span> <span class="c1">// 0, 2, 2</span></code></pre></figure>
 
-
-          <table  dir="auto" role="table" class="markdown-table">
-              <thead>
-    <tr>
-      <th>Operator</th>
-      <th>Name</th>
-      <th>Example</th>
-      <th>Explanation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code  class="highlighter-rouge notranslate">=</code></td>
-      <td>Assignment</td>
-      <td><code  class="highlighter-rouge notranslate">x = 5</code></td>
-      <td>Assigns 5 to <code  class="highlighter-rouge notranslate">x</code></td>
-    </tr>
-    <tr>
-      <td><code  class="highlighter-rouge notranslate">+=</code></td>
-      <td>Addition Assignment</td>
-      <td><code  class="highlighter-rouge notranslate">x += 2</code></td>
-      <td><code  class="highlighter-rouge notranslate">x = x + 2</code></td>
-    </tr>
-    <tr>
-      <td><code  class="highlighter-rouge notranslate">-=</code></td>
-      <td>Subtraction Assignment</td>
-      <td><code  class="highlighter-rouge notranslate">x -= 3</code></td>
-      <td><code  class="highlighter-rouge notranslate">x = x - 3</code></td>
-    </tr>
-    <tr>
-      <td><code  class="highlighter-rouge notranslate">*=</code></td>
-      <td>Multiplication Assignment</td>
-      <td><code  class="highlighter-rouge notranslate">x *= 4</code></td>
-      <td><code  class="highlighter-rouge notranslate">x = x * 4</code></td>
-    </tr>
-    <tr>
-      <td><code  class="highlighter-rouge notranslate">/=</code></td>
-      <td>Division Assignment</td>
-      <td><code  class="highlighter-rouge notranslate">x /= 2</code></td>
-      <td><code  class="highlighter-rouge notranslate">x = x / 2</code></td>
-    </tr>
-    <tr>
-      <td><code  class="highlighter-rouge notranslate">%=</code></td>
-      <td>Remainder Assignment</td>
-      <td><code  class="highlighter-rouge notranslate">x %= 2</code></td>
-      <td><code  class="highlighter-rouge notranslate">x = x % 2</code></td>
-    </tr>
-    <tr>
-      <td><code  class="highlighter-rouge notranslate">**=</code></td>
-      <td>Exponentiation Assignment</td>
-      <td><code  class="highlighter-rouge notranslate">x **= 2</code></td>
-      <td><code  class="highlighter-rouge notranslate">x = x ** 2</code></td>
-    </tr>
-    <tr>
-      <td><code  class="highlighter-rouge notranslate">&amp;&amp;=</code></td>
-      <td>Logical AND Assignment</td>
-      <td><code  class="highlighter-rouge notranslate">x &amp;&amp;= y</code></td>
-      <td>Assigns <code  class="highlighter-rouge notranslate">y</code> if <code  class="highlighter-rouge notranslate">x</code> is truthy</td>
-    </tr>
-    <tr>
-      <td><code  class="highlighter-rouge notranslate">||=</code></td>
-      <td>Logical OR Assignment</td>
-      <td><code  class="highlighter-rouge notranslate">x ||= y</code></td>
-      <td>Assigns <code  class="highlighter-rouge notranslate">y</code> if <code  class="highlighter-rouge notranslate">x</code> is falsy</td>
-    </tr>
-    <tr>
-      <td><code  class="highlighter-rouge notranslate">??=</code></td>
-      <td>Nullish Assignment</td>
-      <td><code  class="highlighter-rouge notranslate">x ??= y</code></td>
-      <td>Assigns <code  class="highlighter-rouge notranslate">y</code> if <code  class="highlighter-rouge notranslate">x</code> is nullish</td>
-    </tr>
-  </tbody>
-
-          </table>
-        
-<hr />
-
-<h2  id="-2-arithmetic-operators" dir="auto">📌 2. Arithmetic Operators</h2>
-<p  dir="auto">Arithmetic operators perform <strong>basic math operations</strong>.</p>
-<p  dir="auto">```js
-let a = 10, b = 3;</p>
-<p  dir="auto">console.log(a + b); // 13  (Addition)
-console.log(a - b); // 7   (Subtraction)
-console.log(a * b); // 30  (Multiplication)
-console.log(a / b); // 3.33… (Division)
-console.log(a % b); // 1   (Remainder)
-console.log(a ** b); // 1000 (Exponentiation)</p>]]></content>
+<h3  id="bitwise-assignment-operators" dir="auto">Bitwise Assignment Operators</h3>
+<h4  id="-bitwise-and-assignment" dir="auto"><code  class="highlighter-rouge notranslate">&amp;=</code> Bitwise AND Assignment</h4>
+<h4  id="-bitwise-or-assignment" dir="auto"><code  class="highlighter-rouge notranslate">|=</code> Bitwise OR Assignment</h4>
+<h4  id="-bitwise-xor-assignment" dir="auto"><code  class="highlighter-rouge notranslate">^=</code> Bitwise XOR Assignment</h4>
+<h4  id="-left-shift-assignment" dir="auto"><code  class="highlighter-rouge notranslate">&lt;&lt;=</code> Left Shift Assignment</h4>
+<h4  id="-right-shift-assignment" dir="auto"><code  class="highlighter-rouge notranslate">&gt;&gt;=</code> Right Shift Assignment</h4>
+<h4  id="-unsigned-right-shift-assignment" dir="auto"><code  class="highlighter-rouge notranslate">&gt;&gt;&gt;=</code> Unsigned Right Shift Assignment</h4>
+<h2  id="comparison-operators" dir="auto">Comparison Operators</h2>
+<h3  id="-equality" dir="auto"><code  class="highlighter-rouge notranslate">==</code> Equality</h3>
+<h3  id="-strict-equality" dir="auto"><code  class="highlighter-rouge notranslate">===</code> Strict Equality</h3>
+<h3  id="-inequality" dir="auto"><code  class="highlighter-rouge notranslate">!=</code> Inequality</h3>
+<h3  id="-strict-inequality" dir="auto"><code  class="highlighter-rouge notranslate">!==</code> Strict Inequality</h3>
+<h3  id="-greater-than" dir="auto"><code  class="highlighter-rouge notranslate">&gt;</code> Greater Than</h3>
+<h3  id="-less-than" dir="auto"><code  class="highlighter-rouge notranslate">&lt;</code> Less Than</h3>
+<h3  id="-greater-than-or-equal-to" dir="auto"><code  class="highlighter-rouge notranslate">&gt;=</code> Greater Than or Equal To</h3>
+<h3  id="-less-than-or-equal-to" dir="auto"><code  class="highlighter-rouge notranslate">&lt;=</code> Less Than or Equal To</h3>
+<h2  id="unary-operators" dir="auto">Unary Operators</h2>
+<h3  id="-increment" dir="auto"><code  class="highlighter-rouge notranslate">++</code> Increment</h3>
+<h3  id="---decrement" dir="auto"><code  class="highlighter-rouge notranslate">--</code> Decrement</h3>
+<h3  id="typeof" dir="auto"><code  class="highlighter-rouge notranslate">typeof</code></h3>
+<h3  id="delete" dir="auto"><code  class="highlighter-rouge notranslate">delete</code></h3>
+<h3  id="void" dir="auto"><code  class="highlighter-rouge notranslate">void</code></h3>
+<h2  id="miscellaneous-operators" dir="auto">Miscellaneous Operators</h2>
+<h3  id="--ternary" dir="auto"><code  class="highlighter-rouge notranslate">? :</code> Ternary</h3>
+<h3  id="-comma" dir="auto"><code  class="highlighter-rouge notranslate">,</code> Comma</h3>
+<h3  id="-optional-chaining" dir="auto"><code  class="highlighter-rouge notranslate">?.</code> Optional Chaining</h3>
+<h3  id="-nullish-coalescing" dir="auto"><code  class="highlighter-rouge notranslate">??</code> Nullish Coalescing</h3>
+<h3  id="-restspread" dir="auto"><code  class="highlighter-rouge notranslate">...</code> Rest/Spread</h3>
+<h3  id="-property-accessor" dir="auto"><code  class="highlighter-rouge notranslate">.</code> Property Accessor</h3>
+<h3  id="-pipeline" dir="auto"><code  class="highlighter-rouge notranslate">|&gt;</code> Pipeline</h3>
+<h3  id="-arrow" dir="auto"><code  class="highlighter-rouge notranslate">=&gt;</code> Arrow</h3>
+<h2  id="conclusion" dir="auto">Conclusion</h2>
+<p  dir="auto">JavaScript operators are powerful tools for transforming, comparing, and assigning values. From simple arithmetic to advanced optional chaining, knowing them well improves both the clarity and efficiency of your code. With new operators being added to the language (like pipeline and logical assignment), staying updated is key to writing modern JavaScript.</p>]]></content>
 
     
       <category term="javascript" scheme="urn:taxonomy:tag" />
@@ -223,6 +231,10 @@ console.log(a ** b); // 1000 (Exponentiation)</p>]]></content>
       <category term="programming" scheme="urn:taxonomy:tag" />
     
       <category term="webdev" scheme="urn:taxonomy:tag" />
+    
+      <category term="es6+" scheme="urn:taxonomy:tag" />
+    
+      <category term="frontend" scheme="urn:taxonomy:tag" />
     
 
     
