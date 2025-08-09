@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-09T19:12:03+05:30</updated>
+  <updated>2025-08-09T21:52:12+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -50,8 +50,8 @@
 <h2  id="arithmetic-operators" dir="auto">Arithmetic Operators</h2>
 <h3  id="-addition" dir="auto"><code  class="highlighter-rouge notranslate">+</code> Addition</h3>
 <p  dir="auto">This operator adds two numbers together, or concatenates two strings together. If a number and a string are used together, it performs a concatenation.</p>
-<p  dir="auto">Less commonly, it can be used as a unary operator(opens in new tab), to try and convert a string containing digits to a number. It’s a somewhat
-obscure trick, and it’s generally better to use the Number()(opens in new tab) helper instead.</p>
+<p  dir="auto">Less commonly, it can be used as a unary operator, to try and convert a string containing digits to a number. It’s a somewhat
+obscure trick, and it’s generally better to use the <code  class="highlighter-rouge notranslate">Number()</code> helper instead.</p>
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 8</span>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello </span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">World</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// "Hello World"</span>
 
@@ -96,17 +96,106 @@ number’s value is negative 5.</p>
 
 <h2  id="logical-operators" dir="auto">Logical Operators</h2>
 <h3  id="-logical-and" dir="auto"><code  class="highlighter-rouge notranslate">&amp;&amp;</code> Logical AND</h3>
+<p  dir="auto">This operator is commonly used to check if all supplied values are truthy.</p>
+<p  dir="auto">It also works as a control-flow operator: it will return the first falsy value. If none of the values are falsy, it will return the final value.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// As a logical operator:</span>
+<span class="k">if </span><span class="p">(</span><span class="nx">someCondition</span> <span class="o">&amp;&amp;</span> <span class="nx">someOtherCondition</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Code here is only run if both variables are true, or truthy.</span>
+<span class="p">}</span>
+
+<span class="c1">// As a control flow operator:</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="mi">4</span><span class="p">);</span>         <span class="c1">// 0, since it's the first falsy value</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="mi">4</span><span class="p">);</span>         <span class="c1">// 4, since neither value is falsy</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="mi">3</span><span class="p">);</span>    <span class="c1">// 3, since all values are truthy</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="dl">''</span> <span class="o">&amp;&amp;</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// '', the first falsy value</span></code></pre></figure>
+
 <h3  id="-logical-or" dir="auto"><code  class="highlighter-rouge notranslate">||</code> Logical OR</h3>
+<p  dir="auto">This operator is commonly used to check if either supplied value is truthy.</p>
+<p  dir="auto">It also works as a control-flow operator: it will return the first truthy value. If none of the values are truthy, it will return the final value.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// As a logical operator:</span>
+<span class="k">if </span><span class="p">(</span><span class="nx">someCondition</span> <span class="o">||</span> <span class="nx">someOtherCondition</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Code here is only run if at least one of</span>
+  <span class="c1">// the two variables hold truthy values.</span>
+<span class="p">}</span>
+
+<span class="c1">// As a control flow operator:</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">0</span> <span class="o">||</span> <span class="mi">4</span><span class="p">);</span>      <span class="c1">// 4, since it's the first truthy value</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">||</span> <span class="mi">4</span><span class="p">);</span>      <span class="c1">// 2, since it's the first truthy value</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">''</span> <span class="o">||</span> <span class="mi">0</span><span class="p">);</span>     <span class="c1">// 0, since no values are truthy</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">||</span> <span class="mi">2</span> <span class="o">||</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 1, since it found a truthy value right away!</span></code></pre></figure>
+
 <h3  id="-logical-not" dir="auto"><code  class="highlighter-rouge notranslate">!</code> Logical NOT</h3>
+<p  dir="auto">This operator, colloquially known as a bang, negates a boolean value.
+False becomes true, true becomes false.</p>
+<p  dir="auto">It also works on non-boolean values. Any falsy value will evaluate to <code  class="highlighter-rouge notranslate">true</code>, and likewise any truthy value will evaluate to <code  class="highlighter-rouge notranslate">false</code>.</p>
+<p  dir="auto">It can be repeated to turn any truthy value to true, and any falsy value to false.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">!</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">!</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// true</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">!</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">!</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// false</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">!!</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">!!</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// true</span></code></pre></figure>
+
+<p  dir="auto">When placed at the end of a variable, this symbol acts as the TypeScript <em>Non-null Assertion Operator</em> instead.</p>
 <h3  id="-double-not" dir="auto"><code  class="highlighter-rouge notranslate">!!</code> Double NOT</h3>
+<p  dir="auto">This operator converts any value to strict boolean (true/false).</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">!!</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// true</span>
+<span class="o">!!</span><span class="mi">0</span><span class="p">;</span>     <span class="c1">// false</span></code></pre></figure>
+
 <h2  id="bitwise-operators" dir="auto">Bitwise Operators</h2>
+<p  dir="auto">Bitwise operators operate on 32-bit integer representations of numbers.</p>
+
+          <blockquote  dir="auto">
+            <p  dir="auto">Caution: Bitwise operators coerce to 32-bit signed integers — not suitable for very large integers.</p>
+          </blockquote>
+        
 <h3  id="-bitwise-and" dir="auto"><code  class="highlighter-rouge notranslate">&amp;</code> Bitwise AND</h3>
+<p  dir="auto">This operator performs a bitwise AND operation on each bit of two integers</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">&amp;</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 1  (0101 &amp; 0011 = 0001)</span></code></pre></figure>
+
+<p  dir="auto">Not to be confused with the Logical AND operator (<code  class="highlighter-rouge notranslate">&amp;&amp;</code>)</p>
 <h3  id="-bitwise-or" dir="auto"><code  class="highlighter-rouge notranslate">|</code> Bitwise OR</h3>
+<p  dir="auto">This operator performs a bitwise OR operation on each bit of two integers.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">|</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 7 (0101 | 0011 = 0111)</span></code></pre></figure>
+
+<p  dir="auto">Not to be confused with the Logical OR operator (<code  class="highlighter-rouge notranslate">||</code>)</p>
 <h3  id="-bitwise-xor" dir="auto"><code  class="highlighter-rouge notranslate">^</code> Bitwise XOR</h3>
+<p  dir="auto">This operator performs a bitwise exclusive OR on each bit of two integers.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">^</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 6 (0101 ^ 0011 = 0110)</span></code></pre></figure>
+
 <h3  id="-bitwise-not" dir="auto"><code  class="highlighter-rouge notranslate">~</code> Bitwise NOT</h3>
+<p  dir="auto">This operator inverts all the bits of the value it’s called with (two’s complement).</p>
+<p  dir="auto">check ex</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">~</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// -6</span>
+<span class="c1">// ~00000000000000000000000000000101</span>
+<span class="c1">// = 11111111111111111111111111111010 (-6)</span></code></pre></figure>
+
 <h3  id="-left-shift" dir="auto"><code  class="highlighter-rouge notranslate">&lt;&lt;</code> Left Shift</h3>
+<p  dir="auto">This operator shifts bits to the left, adding zeros on the right.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">&lt;&lt;</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 10 (0101 &lt;&lt; 0001 = 1010)</span></code></pre></figure>
+
 <h3  id="-right-shift" dir="auto"><code  class="highlighter-rouge notranslate">&gt;&gt;</code> Right Shift</h3>
-<h3  id="unsigned-right-shift" dir="auto"><code  class="highlighter-rouge notranslate">&gt;&gt;&gt;</code>(Unsigned Right Shift</h3>
+<p  dir="auto">This operator shifts bits to the right, preserving sign bit.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">&gt;&gt;</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 2 (0101 &gt;&gt; 0001 = 0010)</span></code></pre></figure>
+
+<h3  id="-unsigned-right-shift" dir="auto"><code  class="highlighter-rouge notranslate">&gt;&gt;&gt;</code> Unsigned Right Shift</h3>
+<p  dir="auto">This operator shifts bits to the right, filling with zeros, ignoring sign.</p>
+<p  dir="auto">check ex</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 2147483645</span>
+<span class="o">-</span><span class="mi">5</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// large positive number (treats bits as unsigned)</span></code></pre></figure>
+
 <h2  id="assignment-operators" dir="auto">Assignment Operators</h2>
 <p  dir="auto">Assignment operators assign values to variables.</p>
 <h3  id="arithmetic-assignment-operators" dir="auto">Arithmetic Assignment Operators</h3>
@@ -194,7 +283,21 @@ This operator is also known as <em><strong>Nullish Coalescing Assignment</strong
 <h4  id="-unsigned-right-shift-assignment" dir="auto"><code  class="highlighter-rouge notranslate">&gt;&gt;&gt;=</code> Unsigned Right Shift Assignment</h4>
 <h2  id="comparison-operators" dir="auto">Comparison Operators</h2>
 <h3  id="-equality" dir="auto"><code  class="highlighter-rouge notranslate">==</code> Equality</h3>
+<p  dir="auto">This operator checks to see if two values are equivalent.</p>
+<p  dir="auto">Unlike the <em>strict equality operator</em> (<code  class="highlighter-rouge notranslate">===</code>), this operator ignores the type and focuses exclusively on the value.
+For example, the number <code  class="highlighter-rouge notranslate">10</code> is considered equivalent to the string “10”.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">==</span> <span class="mi">11</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">==</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">10</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// true</span></code></pre></figure>
+
 <h3  id="-strict-equality" dir="auto"><code  class="highlighter-rouge notranslate">===</code> Strict Equality</h3>
+<p  dir="auto">This operator checks to see if two values are equivalent.</p>
+<p  dir="auto">Unlike the <em>equality operator</em> (<code  class="highlighter-rouge notranslate">==</code>), this operator checks the type as well as the value.
+For example, the number <code  class="highlighter-rouge notranslate">10</code> is not considered equivalent to the string “10”.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">===</span> <span class="mi">11</span><span class="p">);</span> <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">===</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">10</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// false</span></code></pre></figure>
+
 <h3  id="-inequality" dir="auto"><code  class="highlighter-rouge notranslate">!=</code> Inequality</h3>
 <h3  id="-strict-inequality" dir="auto"><code  class="highlighter-rouge notranslate">!==</code> Strict Inequality</h3>
 <h3  id="-greater-than" dir="auto"><code  class="highlighter-rouge notranslate">&gt;</code> Greater Than</h3>
@@ -203,7 +306,23 @@ This operator is also known as <em><strong>Nullish Coalescing Assignment</strong
 <h3  id="-less-than-or-equal-to" dir="auto"><code  class="highlighter-rouge notranslate">&lt;=</code> Less Than or Equal To</h3>
 <h2  id="unary-operators" dir="auto">Unary Operators</h2>
 <h3  id="-increment" dir="auto"><code  class="highlighter-rouge notranslate">++</code> Increment</h3>
+<p  dir="auto">This operator is meant to be used on variables that hold numbers. When used, it increases that variable’s value by 1.</p>
+<p  dir="auto">This is commonly used in conjunction with <code  class="highlighter-rouge notranslate">while</code> loops, or anywhere that requires a counter.</p>
+<p  dir="auto">It’s functionally equivalent to <code  class="highlighter-rouge notranslate">x = x + 1</code>;</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">x</span><span class="o">++</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 4</span></code></pre></figure>
+
 <h3  id="---decrement" dir="auto"><code  class="highlighter-rouge notranslate">--</code> Decrement</h3>
+<p  dir="auto">This operator is meant to be used on variables that hold numbers. When used, it decreases that variable’s value by 1.</p>
+<p  dir="auto">This is commonly used in conjunction with <code  class="highlighter-rouge notranslate">while</code> loops, or anywhere that requires a counter.</p>
+<p  dir="auto">It’s functionally equivalent to <code  class="highlighter-rouge notranslate">x = x - 1</code>;</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">x</span><span class="o">--</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 2</span></code></pre></figure>
+
 <h3  id="typeof" dir="auto"><code  class="highlighter-rouge notranslate">typeof</code></h3>
 <h3  id="delete" dir="auto"><code  class="highlighter-rouge notranslate">delete</code></h3>
 <h3  id="void" dir="auto"><code  class="highlighter-rouge notranslate">void</code></h3>
@@ -235,6 +354,8 @@ This operator is also known as <em><strong>Nullish Coalescing Assignment</strong
       <category term="es6+" scheme="urn:taxonomy:tag" />
     
       <category term="frontend" scheme="urn:taxonomy:tag" />
+    
+      <category term="cheatsheet" scheme="urn:taxonomy:tag" />
     
 
     
