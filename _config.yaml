@@ -96,6 +96,11 @@ author:
   resume: /assets/docs/resume.pdf
   url: "https://shivam091.github.io"
 
+svg_tag:
+  directory: "assets/svg"   # folder for SVGs
+  base_class: "icon"        # default CSS class
+  default_size: 24          # default width/height
+
 post:
   read_time:
     words_per_minute: 180
