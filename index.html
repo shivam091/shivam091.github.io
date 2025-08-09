@@ -385,15 +385,6 @@
             </button>
           </li>
           <li>
-            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use soft dark mode"
-                    data-color-scheme="soft-dark" data-theme-switcher-list-items>
-              <svg  class='icon icon-sun-moon'  aria-hidden='true' focusable='false'>
-  <use href="/assets/img/sprite.svg#icon-sun-moon" />
-</svg>
-              Soft Dark
-            </button>
-          </li>
-          <li>
             <button type="button" class="dropdown-item" role="menuitem" aria-label="Use dark mode"
                     data-color-scheme="dark" data-theme-switcher-list-items>
               <svg  class='icon icon-moon'  aria-hidden='true' focusable='false'>
@@ -414,14 +405,11 @@
     </a>
 
     <button class="header-action toggle-menu" aria-label="Toggle menu" aria-controls="header-drawer">
-      <?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.0" icon-hamburger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class='icon icon-hamburger' width='24' height='24' aria-hidden='true' focusable='false'>
-  <line x1="3" y1="5" x2="21" y2="5" />
-  <line x1="3" y1="12" x2="21" y2="12" />
-  <line x1="3" y1="19" x2="21" y2="19" />
-</svg>
-
+      <svg class="icon icon-hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="5" x2="21" y2="5" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="19" x2="21" y2="19" />
+      </svg>
     </button>
   </div>
 </header>
@@ -642,12 +630,6 @@
 <section class="trending-tags" aria-labelledby="trending-tags-heading">
   <h2 id="trending-tags-heading" class="section">Trending Tags</h2>
   <ul class="tags">
-    <li class="tag"><a href="/tag/frontend" class="tag-link link-muted"
-           rel="tag" aria-label="Tag: frontend">
-          <span class="tag-name">#frontend</span>
-        </a>
-        <span class="tag-count">3</span>
-      </li>
     <li class="tag"><a href="/tag/css" class="tag-link link-muted"
            rel="tag" aria-label="Tag: css">
           <span class="tag-name">#css</span>
@@ -696,9 +678,15 @@
         </a>
         <span class="tag-count">2</span>
       </li>
-    <li class="tag"><a href="/tag/javascript" class="tag-link link-muted"
-           rel="tag" aria-label="Tag: javascript">
-          <span class="tag-name">#javascript</span>
+    <li class="tag"><a href="/tag/frontend" class="tag-link link-muted"
+           rel="tag" aria-label="Tag: frontend">
+          <span class="tag-name">#frontend</span>
+        </a>
+        <span class="tag-count">2</span>
+      </li>
+    <li class="tag"><a href="/tag/web-design" class="tag-link link-muted"
+           rel="tag" aria-label="Tag: web design">
+          <span class="tag-name">#web design</span>
         </a>
         <span class="tag-count">1</span>
       </li>
@@ -724,13 +712,6 @@
         <span class="posts-count">2 posts
 </span>
       </li>
-    <li class="popular-category">
-        <a href="/category/javascript" class="link-muted"
-           aria-label="Category: JavaScript">JavaScript</a>
-        <span class="dotted-separator"></span>
-        <span class="posts-count">1 post
-</span>
-      </li>
     
   </ul>
 </section>
@@ -740,10 +721,6 @@
 <section class="recently-updated-posts" aria-labelledby="recent-posts-heading">
   <h2 id="recent-posts-heading" class="section">Recently Updated</h2>
   <ol class="recently-updated-list">
-  
-    <li class="recently-updated-post">
-      <a href="/post/mastering-js-operators" class="link-muted">Mastering JavaScript Operators: A Complete Guide with Examples</a>
-    </li>
   
     <li class="recently-updated-post">
       <a href="/post/typography" class="link-muted">Text and Typography</a>
@@ -759,6 +736,10 @@
   
     <li class="recently-updated-post">
       <a href="/post/mastering-css-grid" class="link-muted">Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning</a>
+    </li>
+  
+    <li class="recently-updated-post">
+      <a href="/post/responsive-css-grid-layouts" class="link-muted">Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</a>
     </li>
   
   </ol>
