@@ -96,6 +96,9 @@ author:
   resume: /assets/docs/resume.pdf
   url: "https://shivam091.github.io"
 
+svg_tag:
+  directory: "assets/svg"
+
 post:
   read_time:
     words_per_minute: 180

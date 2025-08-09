@@ -109,8 +109,3 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
 
 This content is **processed** as _Markdown_.
 {% endalert %}
-
-## Icons
-
-{% assign a = "Open folder" %}
-{% icon folder-open class:"custom-class" size:20 label:"{{ a }}" id:"custom-id" %}

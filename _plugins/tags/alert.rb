@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
+require_relative "./../helpers/svg_helper"
+
 module Jekyll
   class Alert < Liquid::Block
+    include SvgHelper
+
     ICON_MAP = {
       accent: "info-circle",
       success: "bulb",
@@ -44,12 +48,12 @@ module Jekyll
       <<~HTML
         <div class="#{classes}" role="alert" aria-live="polite" tabindex="0">
           <div class="alert-icon">
-            #{alert_icon}
+            #{alert_icon(context)}
           </div>
           <div class="alert-content">
             #{content}
           </div>
-          #{dismiss_button}
+          #{dismiss_button(context)}
         </div>
       HTML
     end
@@ -64,11 +68,9 @@ module Jekyll
       classes.join(" ")
     end
 
-    def alert_icon
+    def alert_icon(context)
       <<~HTML
-        <svg role="img" aria-hidden="true" focusable="false">
-          <use href="/assets/img/sprite.svg#icon-#{icon_href}" />
-        </svg>
+        #{inline_svg(context, "#{icon_href}.svg")}
       HTML
     end
 
@@ -76,14 +78,12 @@ module Jekyll
       ICON_MAP.fetch(@type.to_sym)
     end
 
-    def dismiss_button
+    def dismiss_button(context)
       return "" unless @dismissible
 
       <<~HTML
         <button type="button" class="alert-dismiss" aria-label="Dismiss">
-          <svg role="img" aria-hidden="true" focusable="false">
-            <use href="/assets/img/sprite.svg#icon-times" />
-          </svg>
+          #{inline_svg(context, "times.svg")}
         </button>
       HTML
     end
