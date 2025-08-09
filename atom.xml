@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-09T15:14:46+05:30</updated>
+  <updated>2025-08-09T16:12:19+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -33,13 +33,96 @@
     <summary type="html">
       Learn every JavaScript operator with clear syntax, use cases, and examples—from arithmetic to optional chaining, bitwise, and beyond.
     </summary>
-    <content type="html"><![CDATA[<p  dir="auto">JavaScript operators are the <strong>symbols and keywords</strong> that perform operations on values and variables.<br />
-Whether you’re adding numbers, comparing values, or accessing properties safely, <strong>operators are the building blocks</strong> of your code.</p>
-<p  dir="auto">In this guide, we’ll explore <strong>all major JavaScript operators</strong> with clear explanations and examples.</p>
-<hr />
+    <content type="html"><![CDATA[<h2  id="introduction" dir="auto">Introduction</h2>
+<p  dir="auto">JavaScript offers a wide range of operators that help you write clean, expressive, and efficient code.</p>
+<p  dir="auto">Whether you’re comparing values, assigning variables, performing calculations, or safely accessing deeply nested properties—<strong>operators are essential to mastering JavaScript.</strong></p>
+<p  dir="auto">In this guide, we’ll break down <strong>all JavaScript operators</strong> grouped by category, with <strong>clear syntax and real-world examples</strong> for each.</p>
+<h2  id="what-youll-learn" dir="auto">What You’ll Learn</h2>
 
-<h2  id="-1-assignment-operators" dir="auto">📌 1. Assignment Operators</h2>
+          <ul  dir="auto">
+              <li><p  dir="auto">All JS operators categorized for easy understanding</p></li>
+  <li><p  dir="auto">Clear code examples and use cases</p></li>
+  <li><p  dir="auto">Modern syntax like <code  class="highlighter-rouge notranslate">??</code>, <code  class="highlighter-rouge notranslate">?.</code>, <code  class="highlighter-rouge notranslate">|&gt;</code>, and more</p></li>
+  <li><p  dir="auto">Tips and best practices for clean coding</p></li>
+
+          </ul>
+        
+<h2  id="assignment-operators" dir="auto">Assignment Operators</h2>
 <p  dir="auto">Assignment operators assign values to variables.</p>
+<h3  id="-assignment" dir="auto"><code  class="highlighter-rouge notranslate">=</code> Assignment</h3>
+<p  dir="auto">Assigns a value to a variable.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 10</span></code></pre></figure>
+
+<h3  id="-addition-assignment" dir="auto"><code  class="highlighter-rouge notranslate">+=</code> Addition Assignment</h3>
+<p  dir="auto">This operator adds a value to the variable, and overwrites that variable’s value with the result.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 12 (10 + 2)</span></code></pre></figure>
+
+<h3  id="--subtraction-assignment" dir="auto"><code  class="highlighter-rouge notranslate">-=</code> Subtraction Assignment</h3>
+<p  dir="auto">This operator subtracts a value from the variable, and overwrites that variable’s value with the result.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 8 (10 - 2)</span></code></pre></figure>
+
+<h3  id="-multiplication-assignment" dir="auto"><code  class="highlighter-rouge notranslate">*=</code> Multiplication Assignment</h3>
+<p  dir="auto">This operator multiplies a variable by a value, and overwrites that variable’s value with the result.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 20 (10 * 2)</span></code></pre></figure>
+
+<h3  id="-division-assignment" dir="auto"><code  class="highlighter-rouge notranslate">/=</code> Division Assignment</h3>
+<p  dir="auto">This operator divides a variable by a value, and overwrites that variable’s value with the result.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 5 (10 / 2)</span></code></pre></figure>
+
+<h3  id="-remainder-assignment" dir="auto"><code  class="highlighter-rouge notranslate">%=</code> Remainder Assignment</h3>
+<p  dir="auto">This operator assigns the remainder after division, and overwrites that variable’s value with the result.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">%=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 2 (10 %= 4)</span></code></pre></figure>
+
+<h3  id="-exponentiation-assignment" dir="auto"><code  class="highlighter-rouge notranslate">**=</code> Exponentiation Assignment</h3>
+<p  dir="auto">This operator applies an exponentiation (bringing the value to the power of X), an assigns the result to the affected variable.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">**=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 100 (10 ** 2)</span></code></pre></figure>
+
+<h3  id="-logical-and-assignment" dir="auto"><code  class="highlighter-rouge notranslate">&amp;&amp;=</code> Logical AND Assignment</h3>
+<p  dir="auto">This operator assigns a value to a variable, but only if that variable already holds a <code  class="highlighter-rouge notranslate">truthy</code> value.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nx">x</span> <span class="o">&amp;&amp;=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// No effect, since 0 is falsy</span>
+<span class="nx">y</span> <span class="o">&amp;&amp;=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Assigns 2, since 1 is truthy</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 0, 2</span></code></pre></figure>
+
+<h3  id="-logical-or-assignment" dir="auto"><code  class="highlighter-rouge notranslate">||=</code> Logical OR Assignment</h3>
+<p  dir="auto">This operator assigns a value to a variable, but only if that variable already holds a <code  class="highlighter-rouge notranslate">falsy</code> value.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nx">x</span> <span class="o">||=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Assigns 2, since 0 is falsy</span>
+<span class="nx">y</span> <span class="o">||=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Has no effect, since 'y' held a truthy value</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 2, 1</span></code></pre></figure>
+
+<h3  id="-logical-nullish-assignment" dir="auto"><code  class="highlighter-rouge notranslate">??=</code> Logical Nullish Assignment</h3>
+<p  dir="auto">This operator updates a variable with a new value, but only if that variable currently holds a “nullish” value (either <code  class="highlighter-rouge notranslate">null</code> or <code  class="highlighter-rouge notranslate">undefined</code>).
+This operator is also known as <em><strong>Nullish Coalescing Assignment</strong></em>.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">z</span><span class="p">;</span>
+
+<span class="nx">x</span> <span class="o">??=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Has no effect, since 'x' already holds a value</span>
+<span class="nx">y</span> <span class="o">??=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Updates 'y' to hold this new value</span>
+<span class="nx">z</span> <span class="o">??=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Updates 'z' to hold this new value (by not assigning 'z' a value initially, it was considered undefined).</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span><span class="p">);</span> <span class="c1">// 0, 2, 2</span></code></pre></figure>
+
 
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
@@ -133,9 +216,13 @@ console.log(a ** b); // 1000 (Exponentiation)</p>]]></content>
     
       <category term="operators" scheme="urn:taxonomy:tag" />
     
+      <category term="syntax" scheme="urn:taxonomy:tag" />
+    
       <category term="tutorial" scheme="urn:taxonomy:tag" />
     
-      <category term="examples" scheme="urn:taxonomy:tag" />
+      <category term="programming" scheme="urn:taxonomy:tag" />
+    
+      <category term="webdev" scheme="urn:taxonomy:tag" />
     
 
     

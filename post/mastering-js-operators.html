@@ -321,7 +321,7 @@
   <use href="/assets/img/sprite.svg#icon-clock" />
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="227 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
+  <span data-tooltip="689 words" data-tooltip-position="bottom" tabindex="0">4 min read</span>
 </div>
 
 
@@ -332,14 +332,119 @@
 
   <div class="post-layout">
     <div class="post-content" itemprop="articleBody">
-      <p dir="auto">JavaScript operators are the <strong>symbols and keywords</strong> that perform operations on values and variables.<br>
-Whether you’re adding numbers, comparing values, or accessing properties safely, <strong>operators are the building blocks</strong> of your code.</p>
-<p dir="auto">In this guide, we’ll explore <strong>all major JavaScript operators</strong> with clear explanations and examples.</p>
-<hr>
+      <h2 id="introduction" dir="auto">Introduction<a href="#introduction" class="heading-anchor" aria-label="Permalink: Introduction">#</a>
+</h2>
+<p dir="auto">JavaScript offers a wide range of operators that help you write clean, expressive, and efficient code.</p>
+<p dir="auto">Whether you’re comparing values, assigning variables, performing calculations, or safely accessing deeply nested properties—<strong>operators are essential to mastering JavaScript.</strong></p>
+<p dir="auto">In this guide, we’ll break down <strong>all JavaScript operators</strong> grouped by category, with <strong>clear syntax and real-world examples</strong> for each.</p>
+<h2 id="what-youll-learn" dir="auto">What You’ll Learn<a href="#what-youll-learn" class="heading-anchor" aria-label="Permalink: What You’ll Learn">#</a>
+</h2>
 
-<h2 id="-1-assignment-operators" dir="auto">📌 1. Assignment Operators<a href="#-1-assignment-operators" class="heading-anchor" aria-label="Permalink: 📌 1. Assignment Operators">#</a>
+          <ul dir="auto">
+              <li><p dir="auto">All JS operators categorized for easy understanding</p></li>
+  <li><p dir="auto">Clear code examples and use cases</p></li>
+  <li><p dir="auto">Modern syntax like <code class="highlighter-rouge notranslate">??</code>, <code class="highlighter-rouge notranslate">?.</code>, <code class="highlighter-rouge notranslate">|&gt;</code>, and more</p></li>
+  <li><p dir="auto">Tips and best practices for clean coding</p></li>
+
+          </ul>
+        
+<h2 id="assignment-operators" dir="auto">Assignment Operators<a href="#assignment-operators" class="heading-anchor" aria-label="Permalink: Assignment Operators">#</a>
 </h2>
 <p dir="auto">Assignment operators assign values to variables.</p>
+<h3 id="-assignment" dir="auto">
+<code class="highlighter-rouge notranslate">=</code> Assignment<a href="#-assignment" class="heading-anchor" aria-label="Permalink: = Assignment">#</a>
+</h3>
+<p dir="auto">Assigns a value to a variable.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 10</span></code></pre></figure>
+
+<h3 id="-addition-assignment" dir="auto">
+<code class="highlighter-rouge notranslate">+=</code> Addition Assignment<a href="#-addition-assignment" class="heading-anchor" aria-label="Permalink: += Addition Assignment">#</a>
+</h3>
+<p dir="auto">This operator adds a value to the variable, and overwrites that variable’s value with the result.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 12 (10 + 2)</span></code></pre></figure>
+
+<h3 id="--subtraction-assignment" dir="auto">
+<code class="highlighter-rouge notranslate">-=</code> Subtraction Assignment<a href="#--subtraction-assignment" class="heading-anchor" aria-label="Permalink: -= Subtraction Assignment">#</a>
+</h3>
+<p dir="auto">This operator subtracts a value from the variable, and overwrites that variable’s value with the result.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 8 (10 - 2)</span></code></pre></figure>
+
+<h3 id="-multiplication-assignment" dir="auto">
+<code class="highlighter-rouge notranslate">*=</code> Multiplication Assignment<a href="#-multiplication-assignment" class="heading-anchor" aria-label="Permalink: *= Multiplication Assignment">#</a>
+</h3>
+<p dir="auto">This operator multiplies a variable by a value, and overwrites that variable’s value with the result.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 20 (10 * 2)</span></code></pre></figure>
+
+<h3 id="-division-assignment" dir="auto">
+<code class="highlighter-rouge notranslate">/=</code> Division Assignment<a href="#-division-assignment" class="heading-anchor" aria-label="Permalink: /= Division Assignment">#</a>
+</h3>
+<p dir="auto">This operator divides a variable by a value, and overwrites that variable’s value with the result.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 5 (10 / 2)</span></code></pre></figure>
+
+<h3 id="-remainder-assignment" dir="auto">
+<code class="highlighter-rouge notranslate">%=</code> Remainder Assignment<a href="#-remainder-assignment" class="heading-anchor" aria-label="Permalink: %= Remainder Assignment">#</a>
+</h3>
+<p dir="auto">This operator assigns the remainder after division, and overwrites that variable’s value with the result.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">%=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 2 (10 %= 4)</span></code></pre></figure>
+
+<h3 id="-exponentiation-assignment" dir="auto">
+<code class="highlighter-rouge notranslate">**=</code> Exponentiation Assignment<a href="#-exponentiation-assignment" class="heading-anchor" aria-label="Permalink: **= Exponentiation Assignment">#</a>
+</h3>
+<p dir="auto">This operator applies an exponentiation (bringing the value to the power of X), an assigns the result to the affected variable.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">**=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 100 (10 ** 2)</span></code></pre></figure>
+
+<h3 id="-logical-and-assignment" dir="auto">
+<code class="highlighter-rouge notranslate">&amp;&amp;=</code> Logical AND Assignment<a href="#-logical-and-assignment" class="heading-anchor" aria-label="Permalink: &amp;&amp;= Logical AND Assignment">#</a>
+</h3>
+<p dir="auto">This operator assigns a value to a variable, but only if that variable already holds a <code class="highlighter-rouge notranslate">truthy</code> value.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nx">x</span> <span class="o">&amp;&amp;=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// No effect, since 0 is falsy</span>
+<span class="nx">y</span> <span class="o">&amp;&amp;=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Assigns 2, since 1 is truthy</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 0, 2</span></code></pre></figure>
+
+<h3 id="-logical-or-assignment" dir="auto">
+<code class="highlighter-rouge notranslate">||=</code> Logical OR Assignment<a href="#-logical-or-assignment" class="heading-anchor" aria-label="Permalink: ||= Logical OR Assignment">#</a>
+</h3>
+<p dir="auto">This operator assigns a value to a variable, but only if that variable already holds a <code class="highlighter-rouge notranslate">falsy</code> value.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nx">x</span> <span class="o">||=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Assigns 2, since 0 is falsy</span>
+<span class="nx">y</span> <span class="o">||=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Has no effect, since 'y' held a truthy value</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 2, 1</span></code></pre></figure>
+
+<h3 id="-logical-nullish-assignment" dir="auto">
+<code class="highlighter-rouge notranslate">??=</code> Logical Nullish Assignment<a href="#-logical-nullish-assignment" class="heading-anchor" aria-label="Permalink: ??= Logical Nullish Assignment">#</a>
+</h3>
+<p dir="auto">This operator updates a variable with a new value, but only if that variable currently holds a “nullish” value (either <code class="highlighter-rouge notranslate">null</code> or <code class="highlighter-rouge notranslate">undefined</code>).
+This operator is also known as <em><strong>Nullish Coalescing Assignment</strong></em>.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">z</span><span class="p">;</span>
+
+<span class="nx">x</span> <span class="o">??=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Has no effect, since 'x' already holds a value</span>
+<span class="nx">y</span> <span class="o">??=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Updates 'y' to hold this new value</span>
+<span class="nx">z</span> <span class="o">??=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Updates 'z' to hold this new value (by not assigning 'z' a value initially, it was considered undefined).</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span><span class="p">);</span> <span class="c1">// 0, 2, 2</span></code></pre></figure>
+
 
           <table dir="auto" role="table" class="markdown-table">
               <thead>
@@ -437,7 +542,33 @@ console.log(a ** b); // 1000 (Exponentiation)</p>
   </h2>
   <nav class="toc" aria-labelledby="toc-heading" role="doc-toc">
     <ul class="toc-level toc-level-2">
-<li><a href="#-1-assignment-operators" class="toc-link toc-link-level-2">📌 1. Assignment Operators</a>
+<li><a href="#introduction" class="toc-link toc-link-level-2">Introduction</a>
+</li>
+<li><a href="#what-youll-learn" class="toc-link toc-link-level-2">What You’ll Learn</a>
+</li>
+<li><a href="#assignment-operators" class="toc-link toc-link-level-2">Assignment Operators</a>
+<ul class="toc-level toc-level-3">
+<li><a href="#-assignment" class="toc-link toc-link-level-3"><code class="highlighter-rouge notranslate">=</code> Assignment</a>
+</li>
+<li><a href="#-addition-assignment" class="toc-link toc-link-level-3"><code class="highlighter-rouge notranslate">+=</code> Addition Assignment</a>
+</li>
+<li><a href="#--subtraction-assignment" class="toc-link toc-link-level-3"><code class="highlighter-rouge notranslate">-=</code> Subtraction Assignment</a>
+</li>
+<li><a href="#-multiplication-assignment" class="toc-link toc-link-level-3"><code class="highlighter-rouge notranslate">*=</code> Multiplication Assignment</a>
+</li>
+<li><a href="#-division-assignment" class="toc-link toc-link-level-3"><code class="highlighter-rouge notranslate">/=</code> Division Assignment</a>
+</li>
+<li><a href="#-remainder-assignment" class="toc-link toc-link-level-3"><code class="highlighter-rouge notranslate">%=</code> Remainder Assignment</a>
+</li>
+<li><a href="#-exponentiation-assignment" class="toc-link toc-link-level-3"><code class="highlighter-rouge notranslate">**=</code> Exponentiation Assignment</a>
+</li>
+<li><a href="#-logical-and-assignment" class="toc-link toc-link-level-3"><code class="highlighter-rouge notranslate">&amp;&amp;=</code> Logical AND Assignment</a>
+</li>
+<li><a href="#-logical-or-assignment" class="toc-link toc-link-level-3"><code class="highlighter-rouge notranslate">||=</code> Logical OR Assignment</a>
+</li>
+<li><a href="#-logical-nullish-assignment" class="toc-link toc-link-level-3"><code class="highlighter-rouge notranslate">??=</code> Logical Nullish Assignment</a>
+</li>
+</ul>
 </li>
 <li><a href="#-2-arithmetic-operators" class="toc-link toc-link-level-2">📌 2. Arithmetic Operators</a>
 </li>
@@ -471,9 +602,13 @@ console.log(a ** b); // 1000 (Exponentiation)</p>
     
       <a href="/tag/operators" class="badge" aria-label="Tag: operators" rel="tag" role="listitem">operators</a>
     
+      <a href="/tag/syntax" class="badge" aria-label="Tag: syntax" rel="tag" role="listitem">syntax</a>
+    
       <a href="/tag/tutorial" class="badge" aria-label="Tag: tutorial" rel="tag" role="listitem">tutorial</a>
     
-      <a href="/tag/examples" class="badge" aria-label="Tag: examples" rel="tag" role="listitem">examples</a>
+      <a href="/tag/programming" class="badge" aria-label="Tag: programming" rel="tag" role="listitem">programming</a>
+    
+      <a href="/tag/webdev" class="badge" aria-label="Tag: webdev" rel="tag" role="listitem">webdev</a>
     
   </div>
 
