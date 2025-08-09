@@ -321,7 +321,7 @@
   <use href="/assets/img/sprite.svg#icon-clock" />
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="1765 words" data-tooltip-position="bottom" tabindex="0">10 min read</span>
+  <span data-tooltip="1931 words" data-tooltip-position="bottom" tabindex="0">11 min read</span>
 </div>
 
 
@@ -531,8 +531,9 @@ False becomes true, true becomes false.</p>
 </h3>
 <p dir="auto">This operator shifts bits to the right, filling with zeros, ignoring sign.</p>
 <p dir="auto">check ex</p>
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 2147483645</span>
-<span class="o">-</span><span class="mi">5</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// large positive number (treats bits as unsigned)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// -5 &gt;&gt;&gt; 1 = 2147483645</span></code></pre></figure>
 
 <h2 id="assignment-operators" dir="auto">Assignment Operators<a href="#assignment-operators" class="heading-anchor" aria-label="Permalink: Assignment Operators">#</a>
 </h2>
@@ -640,21 +641,51 @@ This operator is also known as <em><strong>Nullish Coalescing Assignment</strong
 <h4 id="-bitwise-and-assignment" dir="auto">
 <code class="highlighter-rouge notranslate">&amp;=</code> Bitwise AND Assignment<a href="#-bitwise-and-assignment" class="heading-anchor" aria-label="Permalink: &amp;= Bitwise AND Assignment">#</a>
 </h4>
+<p dir="auto">This operator performs a bitwise AND operation to a variable, and overwrites the result into the same variable.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">&amp;=</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 1</span></code></pre></figure>
+
 <h4 id="-bitwise-or-assignment" dir="auto">
 <code class="highlighter-rouge notranslate">|=</code> Bitwise OR Assignment<a href="#-bitwise-or-assignment" class="heading-anchor" aria-label="Permalink: |= Bitwise OR Assignment">#</a>
 </h4>
+<p dir="auto">This operator performs a bitwise OR operation on a variable, and assigns the result to that same variable.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">|=</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 7</span></code></pre></figure>
+
 <h4 id="-bitwise-xor-assignment" dir="auto">
 <code class="highlighter-rouge notranslate">^=</code> Bitwise XOR Assignment<a href="#-bitwise-xor-assignment" class="heading-anchor" aria-label="Permalink: ^= Bitwise XOR Assignment">#</a>
 </h4>
+<p dir="auto">This operator performs a bitwise XOR operation on a variable, and assigns the result to that same variable.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">^=</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 6</span></code></pre></figure>
+
 <h4 id="-left-shift-assignment" dir="auto">
 <code class="highlighter-rouge notranslate">&lt;&lt;=</code> Left Shift Assignment<a href="#-left-shift-assignment" class="heading-anchor" aria-label="Permalink: &lt;&lt;= Left Shift Assignment">#</a>
 </h4>
+<p dir="auto">This operator performs a bitwise left shift operation on a variable, and overwrites the variable with this new value.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">&lt;&lt;=</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 10</span></code></pre></figure>
+
 <h4 id="-right-shift-assignment" dir="auto">
 <code class="highlighter-rouge notranslate">&gt;&gt;=</code> Right Shift Assignment<a href="#-right-shift-assignment" class="heading-anchor" aria-label="Permalink: &gt;&gt;= Right Shift Assignment">#</a>
 </h4>
+<p dir="auto">This operator performs a bitwise right shift operation on a variable, and overwrites the variable with this new value (sign-preserving).</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 2</span></code></pre></figure>
+
 <h4 id="-unsigned-right-shift-assignment" dir="auto">
 <code class="highlighter-rouge notranslate">&gt;&gt;&gt;=</code> Unsigned Right Shift Assignment<a href="#-unsigned-right-shift-assignment" class="heading-anchor" aria-label="Permalink: &gt;&gt;&gt;= Unsigned Right Shift Assignment">#</a>
 </h4>
+<p dir="auto">This operator performs a unsigned bitwise right shift (unsigned) operation on a variable, and overwrites the variable with this new value .</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">&gt;&gt;&gt;=</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 2147483645</span></code></pre></figure>
+
 <h2 id="comparison-operators" dir="auto">Comparison Operators<a href="#comparison-operators" class="heading-anchor" aria-label="Permalink: Comparison Operators">#</a>
 </h2>
 <h3 id="-equality" dir="auto">
