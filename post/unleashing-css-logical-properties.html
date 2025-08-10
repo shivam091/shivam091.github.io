@@ -322,7 +322,7 @@
   <use href="/assets/img/sprite.svg#icon-clock" />
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="223 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
+  <span data-tooltip="447 words" data-tooltip-position="bottom" tabindex="0">3 min read</span>
 </div>
 
 
@@ -365,6 +365,202 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
 
           </ol>
         
+<h2 id="categories-of-logical-properties" dir="auto">Categories of Logical Properties<a href="#categories-of-logical-properties" class="heading-anchor" aria-label="Permalink: Categories of Logical Properties">#</a>
+</h2>
+<p dir="auto">Logical properties can be grouped into several categories:</p>
+<h3 id="1-dimensions" dir="auto">1. Dimensions<a href="#1-dimensions" class="heading-anchor" aria-label="Permalink: 1. Dimensions">#</a>
+</h3>
+
+          <ul dir="auto">
+              <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-size</code> → Logical width</p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-size</code> → Logical height</p></li>
+
+          </ul>
+        
+<h3 id="2-margins" dir="auto">2. Margins<a href="#2-margins" class="heading-anchor" aria-label="Permalink: 2. Margins">#</a>
+</h3>
+
+          <ul dir="auto">
+              <li><p dir="auto"><code class="highlighter-rouge notranslate">margin-inline-start</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">margin-inline-end</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">margin-block-start</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">margin-block-end</code></p></li>
+
+          </ul>
+        
+<h3 id="3-padding" dir="auto">3. Padding<a href="#3-padding" class="heading-anchor" aria-label="Permalink: 3. Padding">#</a>
+</h3>
+
+          <ul dir="auto">
+              <li><p dir="auto"><code class="highlighter-rouge notranslate">padding-inline-start</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">padding-inline-end</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">padding-block-start</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">padding-block-end</code></p></li>
+
+          </ul>
+        
+<h3 id="4-borders" dir="auto">4. Borders<a href="#4-borders" class="heading-anchor" aria-label="Permalink: 4. Borders">#</a>
+</h3>
+
+          <ul dir="auto">
+              <li><p dir="auto"><code class="highlighter-rouge notranslate">border-inline-start</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-inline-end</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-block-start</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-block-end</code></p></li>
+
+          </ul>
+        
+<h3 id="5-offsets-positioning" dir="auto">5. Offsets (Positioning)<a href="#5-offsets-positioning" class="heading-anchor" aria-label="Permalink: 5. Offsets (Positioning)">#</a>
+</h3>
+
+          <ul dir="auto">
+              <li><p dir="auto"><code class="highlighter-rouge notranslate">inset-inline-start</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">inset-inline-end</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">inset-block-start</code></p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">inset-block-end</code></p></li>
+
+          </ul>
+        
+<h2 id="logical-properties-vs-physical-equivalents" dir="auto">Logical Properties vs Physical Equivalents<a href="#logical-properties-vs-physical-equivalents" class="heading-anchor" aria-label="Permalink: Logical Properties vs Physical Equivalents">#</a>
+</h2>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Logical Property</th>
+      <th>Physical Equivalent (LTR, Horizontal)</th>
+      <th>Physical Equivalent (RTL, Horizontal)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">inline-size</code></td>
+      <td><code class="highlighter-rouge notranslate">width</code></td>
+      <td><code class="highlighter-rouge notranslate">width</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">block-size</code></td>
+      <td><code class="highlighter-rouge notranslate">height</code></td>
+      <td><code class="highlighter-rouge notranslate">height</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">margin-inline-start</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-left</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-right</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">margin-inline-end</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-right</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-left</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">margin-block-start</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-top</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-top</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">margin-block-end</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-bottom</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">padding-inline-start</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-left</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-right</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">padding-inline-end</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-right</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-left</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">padding-block-start</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-top</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-top</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">padding-block-end</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-bottom</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">border-inline-start</code></td>
+      <td><code class="highlighter-rouge notranslate">border-left</code></td>
+      <td><code class="highlighter-rouge notranslate">border-right</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">border-inline-end</code></td>
+      <td><code class="highlighter-rouge notranslate">border-right</code></td>
+      <td><code class="highlighter-rouge notranslate">border-left</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">border-block-start</code></td>
+      <td><code class="highlighter-rouge notranslate">border-top</code></td>
+      <td><code class="highlighter-rouge notranslate">border-top</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">border-block-end</code></td>
+      <td><code class="highlighter-rouge notranslate">border-bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">border-bottom</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">inset-inline-start</code></td>
+      <td><code class="highlighter-rouge notranslate">left</code></td>
+      <td><code class="highlighter-rouge notranslate">right</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">inset-inline-end</code></td>
+      <td><code class="highlighter-rouge notranslate">right</code></td>
+      <td><code class="highlighter-rouge notranslate">left</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">inset-block-start</code></td>
+      <td><code class="highlighter-rouge notranslate">top</code></td>
+      <td><code class="highlighter-rouge notranslate">top</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">inset-block-end</code></td>
+      <td><code class="highlighter-rouge notranslate">bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">bottom</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h2 id="fallbacks-for-non-supporting-browsers" dir="auto">Fallbacks for Non-Supporting Browsers<a href="#fallbacks-for-non-supporting-browsers" class="heading-anchor" aria-label="Permalink: Fallbacks for Non-Supporting Browsers">#</a>
+</h2>
+<p dir="auto">If you need to support older browsers that don’t recognize logical properties, you can provide physical property fallbacks
+before your logical properties.</p>
+<p dir="auto"><strong>Without Logical Properties (LTR &amp; RTL handled separately):</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* LTR stylesheet */</span>
+<span class="nc">.article</span> <span class="p">{</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="nx">black</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* RTL stylesheet */</span>
+<span class="nc">.article</span> <span class="p">{</span>
+  <span class="nl">padding-right</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="nx">black</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p dir="auto"><strong>With Logical Properties (Single stylesheet):</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.article</span> <span class="p">{</span>
+  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+  <span class="py">margin-block-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="py">border-block-end</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="nx">black</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p dir="auto"><strong>Hybrid Approach (Fallback + Logical):</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.article</span> <span class="p">{</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span> <span class="c">/* Fallback */</span>
+  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span> <span class="c">/* Logical */</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* Fallback */</span>
+  <span class="py">margin-block-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* Logical */</span>
+<span class="p">}</span></code></pre></figure>
+
 
     </div>
 
@@ -379,6 +575,24 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
 <li><a href="#why-css-logical-properties-matter" class="toc-link toc-link-level-2">Why CSS Logical Properties Matter</a>
 </li>
 <li><a href="#benefits-of-using-logical-properties" class="toc-link toc-link-level-2">Benefits of using Logical Properties</a>
+</li>
+<li><a href="#categories-of-logical-properties" class="toc-link toc-link-level-2">Categories of Logical Properties</a>
+<ul class="toc-level toc-level-3">
+<li><a href="#1-dimensions" class="toc-link toc-link-level-3">1. Dimensions</a>
+</li>
+<li><a href="#2-margins" class="toc-link toc-link-level-3">2. Margins</a>
+</li>
+<li><a href="#3-padding" class="toc-link toc-link-level-3">3. Padding</a>
+</li>
+<li><a href="#4-borders" class="toc-link toc-link-level-3">4. Borders</a>
+</li>
+<li><a href="#5-offsets-positioning" class="toc-link toc-link-level-3">5. Offsets (Positioning)</a>
+</li>
+</ul>
+</li>
+<li><a href="#logical-properties-vs-physical-equivalents" class="toc-link toc-link-level-2">Logical Properties vs Physical Equivalents</a>
+</li>
+<li><a href="#fallbacks-for-non-supporting-browsers" class="toc-link toc-link-level-2">Fallbacks for Non-Supporting Browsers</a>
 </li>
 </ul>
 
