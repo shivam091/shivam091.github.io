@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-10T19:22:32+05:30</updated>
+  <updated>2025-08-10T19:57:58+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -180,27 +180,89 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
         
 <h3  id="borders" dir="auto">Borders</h3>
 
-          <ul  dir="auto">
-              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-start</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-end</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-start</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-end</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-start-width</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-start-color</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-start-style</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-end-width</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-end-color</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-end-style</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-start-width</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-start-color</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-start-style</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-end-width</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-end-color</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-end-style</code></p></li>
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-inline-start</code></strong></td>
+      <td>Border on the start side of the inline axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-inline-end</code></strong></td>
+      <td>Border on the end side of the inline axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-inline</code></strong></td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">border-inline-start</code> and <code  class="highlighter-rouge notranslate">border-inline-end</code>.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-block-start</code></strong></td>
+      <td>Border on the start side of the block axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-block-end</code></strong></td>
+      <td>Border on the end side of the block axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-block</code></strong></td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">border-block-start</code> and <code  class="highlighter-rouge notranslate">border-block-end</code>.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-inline-start-width</code></strong></td>
+      <td>Width of inline start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-inline-start-color</code></strong></td>
+      <td>Color of inline start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-inline-start-style</code></strong></td>
+      <td>Style of inline start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-inline-end-width</code></strong></td>
+      <td>Width of inline end border.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-inline-end-color</code></strong></td>
+      <td>Color of inline end border.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-inline-end-style</code></strong></td>
+      <td>Style of inline end border.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-block-start-width</code></strong></td>
+      <td>Width of block start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-block-start-color</code></strong></td>
+      <td>Color of block start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-block-start-style</code></strong></td>
+      <td>Style of block start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-block-end-width</code></strong></td>
+      <td>Width of block border.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-block-end-color</code></strong></td>
+      <td>Color of block border.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-block-end-style</code></strong></td>
+      <td>Style of block border.</td>
+    </tr>
+  </tbody>
 
-          </ul>
+          </table>
         
 <h3  id="border-radius" dir="auto">Border Radius</h3>
 
@@ -438,46 +500,70 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
         
 <h2  id="fallbacks-for-non-supporting-browsers" dir="auto">Fallbacks for Non-Supporting Browsers</h2>
 <p  dir="auto">If you need to support older browsers that don’t recognize logical properties, you can provide physical property fallbacks
-before your logical properties.</p>
+before your logical properties. Some older browsers (e.g., IE) don’t support logical properties. You can provide fallbacks:</p>
 <p  dir="auto"><strong>Without Logical Properties (LTR &amp; RTL handled separately):</strong></p>
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* LTR stylesheet */</span>
-<span class="nc">.article</span> <span class="p">{</span>
-  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
-  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-  <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="nx">black</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* LTR */</span>
+<span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="c">/* RTL stylesheet */</span>
-<span class="nc">.article</span> <span class="p">{</span>
-  <span class="nl">padding-right</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
-  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-  <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="nx">black</span><span class="p">;</span>
+<span class="c">/* RTL */</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">dir</span><span class="o">=</span><span class="s1">"rtl"</span><span class="o">]</span> <span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">margin-right</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding-right</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <p  dir="auto"><strong>With Logical Properties (Single stylesheet):</strong></p>
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.article</span> <span class="p">{</span>
-  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
-  <span class="py">margin-block-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-  <span class="py">border-block-end</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="nx">black</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
+  <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <p  dir="auto"><strong>Hybrid Approach (Fallback + Logical):</strong></p>
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.article</span> <span class="p">{</span>
-  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span> <span class="c">/* Fallback */</span>
-  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span> <span class="c">/* Logical */</span>
-  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* Fallback */</span>
-  <span class="py">margin-block-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* Logical */</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
+  <span class="c">/* Fallbacks */</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+
+  <span class="c">/* Logical properties override when supported */</span>
+  <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
+
+<p  dir="auto">Or use <strong>PostCSS Logical</strong> plugin to generate physical equivalents automatically.</p>
+<h2  id="quick-ascii-cheatsheet" dir="auto">Quick ASCII Cheatsheet</h2>
+<pre><code>Writing Mode: horizontal-tb (default)
+-------------------------------------
+block-start    = top
+block-end      = bottom
+inline-start   = left (LTR) / right (RTL)
+inline-end     = right (LTR) / left (RTL)
+
+Writing Mode: vertical-rl
+-------------------------------------
+block-start    = right
+block-end      = left
+inline-start   = top
+inline-end     = bottom
+</code></pre>
 
 <h2  id="conclusion" dir="auto">Conclusion</h2>
 <p  dir="auto">CSS Logical Properties are the future of responsive, internationalized web design. They eliminate the need for duplicating styles
 for different writing directions and ensure your layout adapts naturally to any language or script.</p>
-<p  dir="auto">By embracing these properties now, you’re building for a web that’s truly global—without the extra headaches.</p>]]></content>
+<p  dir="auto">By embracing these properties now, you’re building for a web that’s truly global—without the extra headaches.</p>
+<p  dir="auto">CSS Logical Properties remove the need to write separate LTR and RTL styles.
+They make your layouts <strong>direction-aware</strong>, <strong>international-ready</strong>, and <strong>easier to maintain</strong>.</p>]]></content>
 
     
       <category term="css" scheme="urn:taxonomy:tag" />
     
-      <category term="web development" scheme="urn:taxonomy:tag" />
+      <category term="web-development" scheme="urn:taxonomy:tag" />
     
       <category term="layout" scheme="urn:taxonomy:tag" />
     
@@ -485,11 +571,13 @@ for different writing directions and ensure your layout adapts naturally to any 
     
       <category term="rtl" scheme="urn:taxonomy:tag" />
     
-      <category term="logical properties" scheme="urn:taxonomy:tag" />
+      <category term="logical-properties" scheme="urn:taxonomy:tag" />
     
-      <category term="writing modes" scheme="urn:taxonomy:tag" />
+      <category term="writing-modes" scheme="urn:taxonomy:tag" />
     
       <category term="internationalization" scheme="urn:taxonomy:tag" />
+    
+      <category term="i18n" scheme="urn:taxonomy:tag" />
     
       <category term="frontend" scheme="urn:taxonomy:tag" />
     

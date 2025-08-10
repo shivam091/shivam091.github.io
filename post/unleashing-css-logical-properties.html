@@ -322,7 +322,7 @@
   <use href="/assets/img/sprite.svg#icon-clock" />
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="923 words" data-tooltip-position="bottom" tabindex="0">6 min read</span>
+  <span data-tooltip="1115 words" data-tooltip-position="bottom" tabindex="0">7 min read</span>
 </div>
 
 
@@ -488,27 +488,89 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
 <h3 id="borders" dir="auto">Borders<a href="#borders" class="heading-anchor" aria-label="Permalink: Borders">#</a>
 </h3>
 
-          <ul dir="auto">
-              <li><p dir="auto"><code class="highlighter-rouge notranslate">border-inline-start</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-inline-end</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-inline</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-block-start</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-block-end</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-block</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-inline-start-width</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-inline-start-color</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-inline-start-style</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-inline-end-width</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-inline-end-color</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-inline-end-style</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-block-start-width</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-block-start-color</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-block-start-style</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-block-end-width</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-block-end-color</code></p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">border-block-end-style</code></p></li>
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-start</code></strong></td>
+      <td>Border on the start side of the inline axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-end</code></strong></td>
+      <td>Border on the end side of the inline axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">border-inline-start</code> and <code class="highlighter-rouge notranslate">border-inline-end</code>.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-start</code></strong></td>
+      <td>Border on the start side of the block axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-end</code></strong></td>
+      <td>Border on the end side of the block axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-block</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">border-block-start</code> and <code class="highlighter-rouge notranslate">border-block-end</code>.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-start-width</code></strong></td>
+      <td>Width of inline start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-start-color</code></strong></td>
+      <td>Color of inline start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-start-style</code></strong></td>
+      <td>Style of inline start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-end-width</code></strong></td>
+      <td>Width of inline end border.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-end-color</code></strong></td>
+      <td>Color of inline end border.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-end-style</code></strong></td>
+      <td>Style of inline end border.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-start-width</code></strong></td>
+      <td>Width of block start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-start-color</code></strong></td>
+      <td>Color of block start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-start-style</code></strong></td>
+      <td>Style of block start border.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-end-width</code></strong></td>
+      <td>Width of block border.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-end-color</code></strong></td>
+      <td>Color of block border.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-end-style</code></strong></td>
+      <td>Style of block border.</td>
+    </tr>
+  </tbody>
 
-          </ul>
+          </table>
         
 <h3 id="border-radius" dir="auto">Border Radius<a href="#border-radius" class="heading-anchor" aria-label="Permalink: Border Radius">#</a>
 </h3>
@@ -751,42 +813,67 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
 <h2 id="fallbacks-for-non-supporting-browsers" dir="auto">Fallbacks for Non-Supporting Browsers<a href="#fallbacks-for-non-supporting-browsers" class="heading-anchor" aria-label="Permalink: Fallbacks for Non-Supporting Browsers">#</a>
 </h2>
 <p dir="auto">If you need to support older browsers that don’t recognize logical properties, you can provide physical property fallbacks
-before your logical properties.</p>
+before your logical properties. Some older browsers (e.g., IE) don’t support logical properties. You can provide fallbacks:</p>
 <p dir="auto"><strong>Without Logical Properties (LTR &amp; RTL handled separately):</strong></p>
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* LTR stylesheet */</span>
-<span class="nc">.article</span> <span class="p">{</span>
-  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
-  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-  <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="nx">black</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* LTR */</span>
+<span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="c">/* RTL stylesheet */</span>
-<span class="nc">.article</span> <span class="p">{</span>
-  <span class="nl">padding-right</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
-  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-  <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="nx">black</span><span class="p">;</span>
+<span class="c">/* RTL */</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">dir</span><span class="o">=</span><span class="s1">"rtl"</span><span class="o">]</span> <span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">margin-right</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding-right</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <p dir="auto"><strong>With Logical Properties (Single stylesheet):</strong></p>
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.article</span> <span class="p">{</span>
-  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
-  <span class="py">margin-block-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-  <span class="py">border-block-end</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="nx">black</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
+  <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <p dir="auto"><strong>Hybrid Approach (Fallback + Logical):</strong></p>
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.article</span> <span class="p">{</span>
-  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span> <span class="c">/* Fallback */</span>
-  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span> <span class="c">/* Logical */</span>
-  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* Fallback */</span>
-  <span class="py">margin-block-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* Logical */</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
+  <span class="c">/* Fallbacks */</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+
+  <span class="c">/* Logical properties override when supported */</span>
+  <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
+
+<p dir="auto">Or use <strong>PostCSS Logical</strong> plugin to generate physical equivalents automatically.</p>
+<h2 id="quick-ascii-cheatsheet" dir="auto">Quick ASCII Cheatsheet<a href="#quick-ascii-cheatsheet" class="heading-anchor" aria-label="Permalink: Quick ASCII Cheatsheet">#</a>
+</h2>
+<pre><code>Writing Mode: horizontal-tb (default)
+-------------------------------------
+block-start    = top
+block-end      = bottom
+inline-start   = left (LTR) / right (RTL)
+inline-end     = right (LTR) / left (RTL)
+
+Writing Mode: vertical-rl
+-------------------------------------
+block-start    = right
+block-end      = left
+inline-start   = top
+inline-end     = bottom
+</code></pre>
 
 <h2 id="conclusion" dir="auto">Conclusion<a href="#conclusion" class="heading-anchor" aria-label="Permalink: Conclusion">#</a>
 </h2>
 <p dir="auto">CSS Logical Properties are the future of responsive, internationalized web design. They eliminate the need for duplicating styles
 for different writing directions and ensure your layout adapts naturally to any language or script.</p>
 <p dir="auto">By embracing these properties now, you’re building for a web that’s truly global—without the extra headaches.</p>
+<p dir="auto">CSS Logical Properties remove the need to write separate LTR and RTL styles.
+They make your layouts <strong>direction-aware</strong>, <strong>international-ready</strong>, and <strong>easier to maintain</strong>.</p>
     </div>
 
     <div class="toc-wrapper">
@@ -823,6 +910,8 @@ for different writing directions and ensure your layout adapts naturally to any 
 </li>
 <li><a href="#fallbacks-for-non-supporting-browsers" class="toc-link toc-link-level-2">Fallbacks for Non-Supporting Browsers</a>
 </li>
+<li><a href="#quick-ascii-cheatsheet" class="toc-link toc-link-level-2">Quick ASCII Cheatsheet</a>
+</li>
 <li><a href="#conclusion" class="toc-link toc-link-level-2">Conclusion</a>
 </li>
 </ul>
@@ -853,7 +942,7 @@ for different writing directions and ensure your layout adapts naturally to any 
     
       <a href="/tag/css" class="badge" aria-label="Tag: css" rel="tag" role="listitem">css</a>
     
-      <a href="/tag/web-development" class="badge" aria-label="Tag: web development" rel="tag" role="listitem">web development</a>
+      <a href="/tag/web-development" class="badge" aria-label="Tag: web-development" rel="tag" role="listitem">web-development</a>
     
       <a href="/tag/layout" class="badge" aria-label="Tag: layout" rel="tag" role="listitem">layout</a>
     
@@ -861,11 +950,13 @@ for different writing directions and ensure your layout adapts naturally to any 
     
       <a href="/tag/rtl" class="badge" aria-label="Tag: rtl" rel="tag" role="listitem">rtl</a>
     
-      <a href="/tag/logical-properties" class="badge" aria-label="Tag: logical properties" rel="tag" role="listitem">logical properties</a>
+      <a href="/tag/logical-properties" class="badge" aria-label="Tag: logical-properties" rel="tag" role="listitem">logical-properties</a>
     
-      <a href="/tag/writing-modes" class="badge" aria-label="Tag: writing modes" rel="tag" role="listitem">writing modes</a>
+      <a href="/tag/writing-modes" class="badge" aria-label="Tag: writing-modes" rel="tag" role="listitem">writing-modes</a>
     
       <a href="/tag/internationalization" class="badge" aria-label="Tag: internationalization" rel="tag" role="listitem">internationalization</a>
+    
+      <a href="/tag/i18n" class="badge" aria-label="Tag: i18n" rel="tag" role="listitem">i18n</a>
     
       <a href="/tag/frontend" class="badge" aria-label="Tag: frontend" rel="tag" role="listitem">frontend</a>
     
