@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-10T19:04:45+05:30</updated>
+  <updated>2025-08-10T19:22:32+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -64,59 +64,260 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
         
 <h2  id="categories-of-logical-properties" dir="auto">Categories of Logical Properties</h2>
 <p  dir="auto">Logical properties can be grouped into several categories:</p>
-<h3  id="1-dimensions" dir="auto">1. Dimensions</h3>
+<h3  id="dimensions" dir="auto">Dimensions</h3>
 
-          <ul  dir="auto">
-              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">inline-size</code> → Logical width</p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">block-size</code> → Logical height</p></li>
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">inline-size</code></strong></td>
+      <td>Sets the size of an element along the <em>inline</em> axis (width in horizontal writing, height in vertical writing). Equivalent to <code  class="highlighter-rouge notranslate">width</code> in LTR/RTL horizontal writing.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">block-size</code></strong></td>
+      <td>Sets the size of an element along the <em>block</em> axis (height in horizontal writing, width in vertical writing). Equivalent to <code  class="highlighter-rouge notranslate">height</code> in horizontal writing.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">min-inline-size</code></strong></td>
+      <td>Minimum size in the inline direction.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">max-inline-size</code></strong></td>
+      <td>Maximum size in the inline direction.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">min-block-size</code></strong></td>
+      <td>Minimum size in the block direction.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">max-block-size</code></strong></td>
+      <td>Maximum size in the block direction.</td>
+    </tr>
+  </tbody>
 
-          </ul>
+          </table>
         
-<h3  id="2-margins" dir="auto">2. Margins</h3>
+<h3  id="margins" dir="auto">Margins</h3>
 
-          <ul  dir="auto">
-              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">margin-inline-start</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">margin-inline-end</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">margin-block-start</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">margin-block-end</code></p></li>
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">margin-inline-start</code></strong></td>
+      <td>Margin before the element along the <em>inline</em> axis (left margin in LTR, right margin in RTL).</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">margin-inline-end</code></strong></td>
+      <td>Margin after the element along the <em>inline</em> axis (right margin in LTR, left margin in RTL).</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">margin-inline</code></strong></td>
+      <td>Shorthand for setting both <code  class="highlighter-rouge notranslate">margin-inline-start</code> and <code  class="highlighter-rouge notranslate">margin-inline-end</code>.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">margin-block-start</code></strong></td>
+      <td>Margin before the element along the <em>block</em> axis (top margin in horizontal writing, left margin in vertical writing).</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">margin-block-end</code></strong></td>
+      <td>Margin after the element along the <em>block</em> axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">margin-block</code></strong></td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">margin-block-start</code> and <code  class="highlighter-rouge notranslate">margin-block-end</code>.</td>
+    </tr>
+  </tbody>
 
-          </ul>
+          </table>
         
-<h3  id="3-padding" dir="auto">3. Padding</h3>
+<h3  id="padding" dir="auto">Padding</h3>
 
-          <ul  dir="auto">
-              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">padding-inline-start</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">padding-inline-end</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">padding-block-start</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">padding-block-end</code></p></li>
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">padding-inline-start</code></strong></td>
+      <td>Padding before the element along the inline axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">padding-inline-end</code></strong></td>
+      <td>Padding after the element along the inline axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">padding-inline</code></strong></td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">padding-inline-start</code> and <code  class="highlighter-rouge notranslate">padding-inline-end</code>.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">padding-block-start</code></strong></td>
+      <td>Padding before the element along the block axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">padding-block-end</code></strong></td>
+      <td>Padding after the element along the block axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">padding-block</code></strong></td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">padding-block-start</code> and <code  class="highlighter-rouge notranslate">padding-block-end</code>.</td>
+    </tr>
+  </tbody>
 
-          </ul>
+          </table>
         
-<h3  id="4-borders" dir="auto">4. Borders</h3>
+<h3  id="borders" dir="auto">Borders</h3>
 
           <ul  dir="auto">
               <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-start</code></p></li>
   <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-end</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline</code></p></li>
   <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-start</code></p></li>
   <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-end</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-start-width</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-start-color</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-start-style</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-end-width</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-end-color</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-inline-end-style</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-start-width</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-start-color</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-start-style</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-end-width</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-end-color</code></p></li>
+  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">border-block-end-style</code></p></li>
 
           </ul>
         
-<h3  id="5-offsets-positioning" dir="auto">5. Offsets (Positioning)</h3>
+<h3  id="border-radius" dir="auto">Border Radius</h3>
 
-          <ul  dir="auto">
-              <li><p  dir="auto"><code  class="highlighter-rouge notranslate">inset-inline-start</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">inset-inline-end</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">inset-block-start</code></p></li>
-  <li><p  dir="auto"><code  class="highlighter-rouge notranslate">inset-block-end</code></p></li>
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-start-start-radius</code></strong></td>
+      <td>Radius for the corner where block-start and inline-start meet.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-start-end-radius</code></strong></td>
+      <td>Radius for the corner where block-start and inline-end meet.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-end-start-radius</code></strong></td>
+      <td>Radius for the corner where block-end and inline-start meet.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">border-end-end-radius</code></strong></td>
+      <td>Radius for the corner where block-end and inline-end meet.</td>
+    </tr>
+  </tbody>
 
-          </ul>
+          </table>
+        
+<h3  id="positioning--offsets" dir="auto">Positioning / Offsets</h3>
+
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">inset-inline-start</code></strong></td>
+      <td>Offset from the start edge of the inline axis (like <code  class="highlighter-rouge notranslate">left</code> in LTR).</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">inset-inline-end</code></strong></td>
+      <td>Offset from the end edge of the inline axis (like <code  class="highlighter-rouge notranslate">right</code> in LTR).</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">inset-block-start</code></strong></td>
+      <td>Offset from the start edge of the block axis (like <code  class="highlighter-rouge notranslate">top</code> in horizontal writing).</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">inset-block-end</code></strong></td>
+      <td>Offset from the end edge of the block axis (like <code  class="highlighter-rouge notranslate">bottom</code> in horizontal writing).</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">inset-inline</code></strong></td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">inset-inline-start</code> and <code  class="highlighter-rouge notranslate">inset-inline-end</code>.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">inset-block</code></strong></td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">inset-block-start</code> and <code  class="highlighter-rouge notranslate">inset-block-end</code>.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">inset</code></strong></td>
+      <td>Shorthand for all four logical inset properties.</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3  id="floats--text-alignment" dir="auto">Floats &amp; Text Alignment</h3>
+
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">float: inline-start</code></strong></td>
+      <td>Floats an element to the start side of the inline axis (like <code  class="highlighter-rouge notranslate">float: left</code> in LTR).</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">float: inline-end</code></strong></td>
+      <td>Floats an element to the end side of the inline axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">clear: inline-start</code></strong></td>
+      <td>Prevents floating elements on the start side.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">clear: inline-end</code></strong></td>
+      <td>Prevents floating elements on the end side.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">text-align: start</code></strong></td>
+      <td>Aligns text to the start side of the inline axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code  class="highlighter-rouge notranslate">text-align: end</code></strong></td>
+      <td>Aligns text to the end side of the inline axis.</td>
+    </tr>
+  </tbody>
+
+          </table>
         
 <h2  id="logical-properties-vs-physical-equivalents" dir="auto">Logical Properties vs Physical Equivalents</h2>
 
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
+      <th>#</th>
       <th>Logical Property</th>
       <th>Physical Equivalent (LTR, Horizontal)</th>
       <th>Physical Equivalent (RTL, Horizontal)</th>
@@ -124,91 +325,109 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
   </thead>
   <tbody>
     <tr>
+      <td>1</td>
       <td><code  class="highlighter-rouge notranslate">inline-size</code></td>
       <td><code  class="highlighter-rouge notranslate">width</code></td>
       <td><code  class="highlighter-rouge notranslate">width</code></td>
     </tr>
     <tr>
+      <td>2</td>
       <td><code  class="highlighter-rouge notranslate">block-size</code></td>
       <td><code  class="highlighter-rouge notranslate">height</code></td>
       <td><code  class="highlighter-rouge notranslate">height</code></td>
     </tr>
     <tr>
+      <td>3</td>
       <td><code  class="highlighter-rouge notranslate">margin-inline-start</code></td>
       <td><code  class="highlighter-rouge notranslate">margin-left</code></td>
       <td><code  class="highlighter-rouge notranslate">margin-right</code></td>
     </tr>
     <tr>
+      <td>4</td>
       <td><code  class="highlighter-rouge notranslate">margin-inline-end</code></td>
       <td><code  class="highlighter-rouge notranslate">margin-right</code></td>
       <td><code  class="highlighter-rouge notranslate">margin-left</code></td>
     </tr>
     <tr>
+      <td>5</td>
       <td><code  class="highlighter-rouge notranslate">margin-block-start</code></td>
       <td><code  class="highlighter-rouge notranslate">margin-top</code></td>
       <td><code  class="highlighter-rouge notranslate">margin-top</code></td>
     </tr>
     <tr>
+      <td>6</td>
       <td><code  class="highlighter-rouge notranslate">margin-block-end</code></td>
       <td><code  class="highlighter-rouge notranslate">margin-bottom</code></td>
       <td><code  class="highlighter-rouge notranslate">margin-bottom</code></td>
     </tr>
     <tr>
+      <td>7</td>
       <td><code  class="highlighter-rouge notranslate">padding-inline-start</code></td>
       <td><code  class="highlighter-rouge notranslate">padding-left</code></td>
       <td><code  class="highlighter-rouge notranslate">padding-right</code></td>
     </tr>
     <tr>
+      <td>8</td>
       <td><code  class="highlighter-rouge notranslate">padding-inline-end</code></td>
       <td><code  class="highlighter-rouge notranslate">padding-right</code></td>
       <td><code  class="highlighter-rouge notranslate">padding-left</code></td>
     </tr>
     <tr>
+      <td>9</td>
       <td><code  class="highlighter-rouge notranslate">padding-block-start</code></td>
       <td><code  class="highlighter-rouge notranslate">padding-top</code></td>
       <td><code  class="highlighter-rouge notranslate">padding-top</code></td>
     </tr>
     <tr>
+      <td>10</td>
       <td><code  class="highlighter-rouge notranslate">padding-block-end</code></td>
       <td><code  class="highlighter-rouge notranslate">padding-bottom</code></td>
       <td><code  class="highlighter-rouge notranslate">padding-bottom</code></td>
     </tr>
     <tr>
+      <td>11</td>
       <td><code  class="highlighter-rouge notranslate">border-inline-start</code></td>
       <td><code  class="highlighter-rouge notranslate">border-left</code></td>
       <td><code  class="highlighter-rouge notranslate">border-right</code></td>
     </tr>
     <tr>
+      <td>12</td>
       <td><code  class="highlighter-rouge notranslate">border-inline-end</code></td>
       <td><code  class="highlighter-rouge notranslate">border-right</code></td>
       <td><code  class="highlighter-rouge notranslate">border-left</code></td>
     </tr>
     <tr>
+      <td>13</td>
       <td><code  class="highlighter-rouge notranslate">border-block-start</code></td>
       <td><code  class="highlighter-rouge notranslate">border-top</code></td>
       <td><code  class="highlighter-rouge notranslate">border-top</code></td>
     </tr>
     <tr>
+      <td>14</td>
       <td><code  class="highlighter-rouge notranslate">border-block-end</code></td>
       <td><code  class="highlighter-rouge notranslate">border-bottom</code></td>
       <td><code  class="highlighter-rouge notranslate">border-bottom</code></td>
     </tr>
     <tr>
+      <td>15</td>
       <td><code  class="highlighter-rouge notranslate">inset-inline-start</code></td>
       <td><code  class="highlighter-rouge notranslate">left</code></td>
       <td><code  class="highlighter-rouge notranslate">right</code></td>
     </tr>
     <tr>
+      <td>16</td>
       <td><code  class="highlighter-rouge notranslate">inset-inline-end</code></td>
       <td><code  class="highlighter-rouge notranslate">right</code></td>
       <td><code  class="highlighter-rouge notranslate">left</code></td>
     </tr>
     <tr>
+      <td>17</td>
       <td><code  class="highlighter-rouge notranslate">inset-block-start</code></td>
       <td><code  class="highlighter-rouge notranslate">top</code></td>
       <td><code  class="highlighter-rouge notranslate">top</code></td>
     </tr>
     <tr>
+      <td>18</td>
       <td><code  class="highlighter-rouge notranslate">inset-block-end</code></td>
       <td><code  class="highlighter-rouge notranslate">bottom</code></td>
       <td><code  class="highlighter-rouge notranslate">bottom</code></td>
@@ -250,7 +469,10 @@ before your logical properties.</p>
   <span class="py">margin-block-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* Logical */</span>
 <span class="p">}</span></code></pre></figure>
 
-]]></content>
+<h2  id="conclusion" dir="auto">Conclusion</h2>
+<p  dir="auto">CSS Logical Properties are the future of responsive, internationalized web design. They eliminate the need for duplicating styles
+for different writing directions and ensure your layout adapts naturally to any language or script.</p>
+<p  dir="auto">By embracing these properties now, you’re building for a web that’s truly global—without the extra headaches.</p>]]></content>
 
     
       <category term="css" scheme="urn:taxonomy:tag" />
