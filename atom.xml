@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-10T15:46:32+05:30</updated>
+  <updated>2025-08-10T18:53:20+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -19,6 +19,75 @@
   </author>
   
 
+  
+  <entry xml:lang="en">
+    <title>Unleashing CSS Logical Properties: Future-Proof Your Layouts</title>
+    <link rel="alternate" type="text/html" href="https://shivam091.github.io/post/unleashing-css-logical-properties" />
+    <id>https://shivam091.github.io/post/unleashing-css-logical-properties</id>
+
+    <published>2025-08-10T18:52:49+05:30</published>
+    <updated>2025-08-10T18:52:49+05:30</updated>
+
+    
+
+    <summary type="html">
+      Master CSS Logical Properties to create truly global, adaptable web layouts—no more messy RTL hacks or duplicate stylesheets.
+    </summary>
+    <content type="html"><![CDATA[<h2  id="introduction" dir="auto">Introduction</h2>
+<p  dir="auto">In the ever-expanding world of web design, creating layouts that seamlessly adapt to multiple languages and writing modes
+is no longer optional—it’s essential. CSS Logical Properties provide a powerful, future-proof way to style elements that
+respect the writing mode, text direction, and physical orientation of the content.</p>
+<p  dir="auto">From right-to-left (RTL) languages like Arabic and Hebrew, to vertical writing in Japanese, logical properties allow your
+design to work everywhere without having to write separate stylesheets for each case.</p>
+<h2  id="why-css-logical-properties-matter" dir="auto">Why CSS Logical Properties Matter</h2>
+<p  dir="auto">Traditionally, CSS positioning and spacing used <strong>physical properties</strong> like <code  class="highlighter-rouge notranslate">margin-left</code>, <code  class="highlighter-rouge notranslate">padding-top</code>, and <code  class="highlighter-rouge notranslate">width</code>.
+While effective, these are tied to the <em>visual</em> layout and don’t adapt automatically to changes in writing mode or direction.</p>
+<p  dir="auto"><strong>With physical properties:</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Physical properties */</span>
+<span class="nt">margin-left</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span> <span class="c">/* Always on the left side */</span></code></pre></figure>
+
+<p  dir="auto">In an RTL layout, <code  class="highlighter-rouge notranslate">margin-left</code> still applies to the left side, which might not be the “start” of the text anymore.</p>
+<p  dir="auto"><strong>With logical properties:</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Logical equivalent */</span>
+<span class="nt">margin-inline-start</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span> <span class="c">/* Adapts to start side based on writing mode */</span></code></pre></figure>
+
+<p  dir="auto">This ensures your layout is writing-mode-aware.</p>
+<h2  id="benefits-of-using-logical-properties" dir="auto">Benefits of using Logical Properties</h2>
+
+          <ol  dir="auto">
+              <li><p  dir="auto"><strong>Internationalization Ready:</strong> - No need for separate RTL stylesheets.</p></li>
+  <li><p  dir="auto"><strong>Consistent Layouts:</strong> - Automatically adjusts for vertical writing.</p></li>
+  <li><p  dir="auto"><strong>Cleaner Code:</strong> - Reduced redundancy and easier maintenance.</p></li>
+  <li><p  dir="auto"><strong>Future-Proof:</strong> - As more languages and writing systems are supported, your layout is already compatible.</p></li>
+
+          </ol>
+        
+]]></content>
+
+    
+      <category term="css" scheme="urn:taxonomy:tag" />
+    
+      <category term="web development" scheme="urn:taxonomy:tag" />
+    
+      <category term="layout" scheme="urn:taxonomy:tag" />
+    
+      <category term="responsive" scheme="urn:taxonomy:tag" />
+    
+      <category term="rtl" scheme="urn:taxonomy:tag" />
+    
+      <category term="logical properties" scheme="urn:taxonomy:tag" />
+    
+      <category term="writing modes" scheme="urn:taxonomy:tag" />
+    
+      <category term="internationalization" scheme="urn:taxonomy:tag" />
+    
+      <category term="frontend" scheme="urn:taxonomy:tag" />
+    
+
+    
+      <category term="CSS" scheme="urn:taxonomy:category" />
+    
+  </entry>
   
   <entry xml:lang="en">
     <title>Mastering JavaScript Operators: A Complete Guide with Examples</title>
