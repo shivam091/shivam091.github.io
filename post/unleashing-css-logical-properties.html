@@ -322,7 +322,7 @@
   <use href="/assets/img/sprite.svg#icon-clock" />
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="1333 words" data-tooltip-position="bottom" tabindex="0">8 min read</span>
+  <span data-tooltip="1810 words" data-tooltip-position="bottom" tabindex="0">11 min read</span>
 </div>
 
 
@@ -340,6 +340,15 @@ is no longer optional—it’s essential. CSS Logical Properties provide a power
 respect the writing mode, text direction, and physical orientation of the content.</p>
 <p dir="auto">From right-to-left (RTL) languages like Arabic and Hebrew, to vertical writing in Japanese, logical properties allow your
 design to work everywhere without having to write separate stylesheets for each case.</p>
+<p dir="auto">Logical properties are CSS properties that adapt to the writing direction (ltr or rtl) and text flow (horizontal-tb, vertical-rl, etc.). Instead of tying layout to fixed physical directions (left, right, top, bottom), they reference logical directions: start, end, inline, and block.</p>
+<p dir="auto">Example:</p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Instead of */</span>
+<span class="nt">padding-left</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span>
+
+<span class="c">/* Use */</span>
+<span class="nt">padding-inline-start</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span>
+<span class="nt">If</span> <span class="nt">the</span> <span class="nt">document</span> <span class="nt">switches</span> <span class="nt">to</span> <span class="nt">RTL</span><span class="o">,</span> <span class="nt">padding-inline-start</span> <span class="nt">automatically</span> <span class="nt">applies</span> <span class="nt">to</span> <span class="nt">the</span> <span class="nt">right</span> <span class="nt">instead</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">left</span> <span class="err">—</span> <span class="nt">no</span> <span class="nt">extra</span> <span class="nt">styles</span> <span class="nt">needed</span><span class="o">.</span></code></pre></figure>
+
 <h2 id="why-css-logical-properties-matter" dir="auto">Why CSS Logical Properties Matter<a href="#why-css-logical-properties-matter" class="heading-anchor" aria-label="Permalink: Why CSS Logical Properties Matter">#</a>
 </h2>
 <p dir="auto">Traditionally, CSS positioning and spacing used <strong>physical properties</strong> like <code class="highlighter-rouge notranslate">margin-left</code>, <code class="highlighter-rouge notranslate">padding-top</code>, and <code class="highlighter-rouge notranslate">width</code>.
@@ -367,6 +376,23 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
         
 <h2 id="understanding-inline-vs-block-axes" dir="auto">Understanding Inline vs Block Axes<a href="#understanding-inline-vs-block-axes" class="heading-anchor" aria-label="Permalink: Understanding Inline vs Block Axes">#</a>
 </h2>
+<h2 id="tooling-frameworks--support" dir="auto">Tooling, Frameworks &amp; Support<a href="#tooling-frameworks--support" class="heading-anchor" aria-label="Permalink: Tooling, Frameworks &amp; Support">#</a>
+</h2>
+<p dir="auto">✅ Tailwind CSS: Optional plugins available
+✅ SCSS: You can write mixins to auto-generate logical + physical fallbacks
+✅ CSS-in-JS: Logical props work naturally with styled-components and Emotion
+✅ Browser support: Chrome, Edge, Firefox, Safari (last 3 years)</p>
+<h2 id="accessibility--performance-benefits" dir="auto">Accessibility &amp; Performance Benefits<a href="#accessibility--performance-benefits" class="heading-anchor" aria-label="Permalink: Accessibility &amp; Performance Benefits">#</a>
+</h2>
+
+          <ul dir="auto">
+              <li><p dir="auto">Automatic support for bidirectional UIs</p></li>
+  <li><p dir="auto">Fewer media or direction-specific overrides</p></li>
+  <li><p dir="auto">Better compatibility with screen readers in vertical/RTL contexts</p></li>
+  <li><p dir="auto">Easier localization and internationalization (i18n)</p></li>
+
+          </ul>
+        
 <h2 id="categories-of-logical-properties" dir="auto">Categories of Logical Properties<a href="#categories-of-logical-properties" class="heading-anchor" aria-label="Permalink: Categories of Logical Properties">#</a>
 </h2>
 <p dir="auto">Logical properties can be grouped into several categories:</p>
@@ -383,27 +409,27 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
   <tbody>
     <tr>
       <td><strong><code class="highlighter-rouge notranslate">inline-size</code></strong></td>
-      <td>Sets the size of an element along the <em>inline</em> axis (width in horizontal writing, height in vertical writing). Equivalent to <code class="highlighter-rouge notranslate">width</code> in LTR/RTL horizontal writing.</td>
+      <td>Logical width of an element’s inline axis (varies with writing mode).</td>
     </tr>
     <tr>
       <td><strong><code class="highlighter-rouge notranslate">block-size</code></strong></td>
-      <td>Sets the size of an element along the <em>block</em> axis (height in horizontal writing, width in vertical writing). Equivalent to <code class="highlighter-rouge notranslate">height</code> in horizontal writing.</td>
+      <td>Logical height of an element’s block axis.</td>
     </tr>
     <tr>
       <td><strong><code class="highlighter-rouge notranslate">min-inline-size</code></strong></td>
-      <td>Minimum size in the inline direction.</td>
+      <td>Minimum allowed size in the inline axis.</td>
     </tr>
     <tr>
       <td><strong><code class="highlighter-rouge notranslate">max-inline-size</code></strong></td>
-      <td>Maximum size in the inline direction.</td>
+      <td>Maximum allowed size in the inline axis.</td>
     </tr>
     <tr>
       <td><strong><code class="highlighter-rouge notranslate">min-block-size</code></strong></td>
-      <td>Minimum size in the block direction.</td>
+      <td>Minimum allowed size in the block axis.</td>
     </tr>
     <tr>
       <td><strong><code class="highlighter-rouge notranslate">max-block-size</code></strong></td>
-      <td>Maximum size in the block direction.</td>
+      <td>Maximum allowed size in the block axis.</td>
     </tr>
   </tbody>
 
@@ -560,15 +586,15 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
     </tr>
     <tr>
       <td><strong><code class="highlighter-rouge notranslate">border-block-end-width</code></strong></td>
-      <td>Width of block border.</td>
+      <td>Width of block end border.</td>
     </tr>
     <tr>
       <td><strong><code class="highlighter-rouge notranslate">border-block-end-color</code></strong></td>
-      <td>Color of block border.</td>
+      <td>Color of block end border.</td>
     </tr>
     <tr>
       <td><strong><code class="highlighter-rouge notranslate">border-block-end-style</code></strong></td>
-      <td>Style of block border.</td>
+      <td>Style of block end border.</td>
     </tr>
   </tbody>
 
@@ -648,7 +674,7 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
 
           </table>
         
-<h3 id="floats--text-alignment" dir="auto">Floats &amp; Text Alignment<a href="#floats--text-alignment" class="heading-anchor" aria-label="Permalink: Floats &amp; Text Alignment">#</a>
+<h3 id="floats--clears" dir="auto">Floats &amp; Clears<a href="#floats--clears" class="heading-anchor" aria-label="Permalink: Floats &amp; Clears">#</a>
 </h3>
 
           <table dir="auto" role="table" class="markdown-table">
@@ -675,6 +701,21 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
       <td><strong><code class="highlighter-rouge notranslate">clear: inline-end</code></strong></td>
       <td>Prevents floating elements on the end side.</td>
     </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="text-alignment" dir="auto">Text Alignment<a href="#text-alignment" class="heading-anchor" aria-label="Permalink: Text Alignment">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><strong><code class="highlighter-rouge notranslate">text-align: start</code></strong></td>
       <td>Aligns text to the start side of the inline axis.</td>
@@ -682,6 +723,177 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
     <tr>
       <td><strong><code class="highlighter-rouge notranslate">text-align: end</code></strong></td>
       <td>Aligns text to the end side of the inline axis.</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="tables" dir="auto">Tables<a href="#tables" class="heading-anchor" aria-label="Permalink: Tables">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">caption-side: block-start</code></strong></td>
+      <td>Places table caption before table block axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">caption-side: block-end</code></strong></td>
+      <td>Places table caption after table block axis.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">caption-side: inline-start</code></strong></td>
+      <td>Places caption at inline start of table.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">caption-side: inline-end</code></strong></td>
+      <td>Places caption at inline end of table.</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="backgrounds" dir="auto">Backgrounds<a href="#backgrounds" class="heading-anchor" aria-label="Permalink: Backgrounds">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">background-position: start</code></strong></td>
+      <td>Places background image at inline start horizontally.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">background-position: end</code></strong></td>
+      <td>Places background image at inline end horizontally.</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="scroll-snap--spacing" dir="auto">Scroll Snap &amp; Spacing<a href="#scroll-snap--spacing" class="heading-anchor" aria-label="Permalink: Scroll Snap &amp; Spacing">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-inline-start</code></strong></td>
+      <td>Scroll margin at inline start edge.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-inline-end</code></strong></td>
+      <td>Scroll margin at inline end edge.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-inline</code></strong></td>
+      <td>Shorthand for inline scroll margins.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-block-start</code></strong></td>
+      <td>Scroll margin at block start edge.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-block-end</code></strong></td>
+      <td>Scroll margin at block end edge.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-block</code></strong></td>
+      <td>Shorthand for block scroll margins.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-inline-start</code></strong></td>
+      <td>Scroll padding at inline start edge.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-inline-end</code></strong></td>
+      <td>Scroll padding at inline end edge.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-inline</code></strong></td>
+      <td>Shorthand for inline scroll paddings.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-block-start</code></strong></td>
+      <td>Scroll padding at block start edge.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-block-end</code></strong></td>
+      <td>Scroll padding at block end edge.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-block</code></strong></td>
+      <td>Shorthand for block scroll paddings.</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="resizing" dir="auto">Resizing<a href="#resizing" class="heading-anchor" aria-label="Permalink: Resizing">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">resize: block</code></strong></td>
+      <td>Allows resize in block axis only.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">resize: inline</code></strong></td>
+      <td>Allows resize in inline axis only.</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="transform-origin" dir="auto">Transform Origin<a href="#transform-origin" class="heading-anchor" aria-label="Permalink: Transform Origin">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">transform-origin: inline-start</code></strong></td>
+      <td>Sets transform origin at inline start side.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">transform-origin: inline-end</code></strong></td>
+      <td>Sets transform origin at inline end side.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">transform-origin: block-start</code></strong></td>
+      <td>Sets transform origin at block start side.</td>
+    </tr>
+    <tr>
+      <td><strong><code class="highlighter-rouge notranslate">transform-origin: block-end</code></strong></td>
+      <td>Sets transform origin at block end side.</td>
     </tr>
   </tbody>
 
@@ -695,7 +907,7 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
               <thead>
     <tr>
       <th>#</th>
-      <th>Logical Property</th>
+      <th>Logical Property / Value</th>
       <th>Physical LTR Equivalent</th>
       <th>Physical RTL Equivalent</th>
     </tr>
@@ -1019,6 +1231,150 @@ While effective, these are tied to the <em>visual</em> layout and don’t adapt 
       <td>text-align: right</td>
       <td>text-align: left</td>
     </tr>
+    <tr>
+      <td>54</td>
+      <td>caption-side: block-start</td>
+      <td>caption-side: top</td>
+      <td>caption-side: top</td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>caption-side: block-end</td>
+      <td>caption-side: bottom</td>
+      <td>caption-side: bottom</td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>caption-side: inline-start</td>
+      <td>caption-side: left</td>
+      <td>caption-side: right</td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>caption-side: inline-end</td>
+      <td>caption-side: right</td>
+      <td>caption-side: left</td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>background-position: start</td>
+      <td>background-position: left</td>
+      <td>background-position: right</td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>background-position: end</td>
+      <td>background-position: right</td>
+      <td>background-position: left</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>scroll-margin-inline-start</td>
+      <td>scroll-margin-left</td>
+      <td>scroll-margin-right</td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>scroll-margin-inline-end</td>
+      <td>scroll-margin-right</td>
+      <td>scroll-margin-left</td>
+    </tr>
+    <tr>
+      <td>62</td>
+      <td>scroll-margin-inline</td>
+      <td>scroll-margin-left + scroll-margin-right</td>
+      <td>scroll-margin-right + scroll-margin-left</td>
+    </tr>
+    <tr>
+      <td>63</td>
+      <td>scroll-margin-block-start</td>
+      <td>scroll-margin-top</td>
+      <td>scroll-margin-top</td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>scroll-margin-block-end</td>
+      <td>scroll-margin-bottom</td>
+      <td>scroll-margin-bottom</td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>scroll-margin-block</td>
+      <td>scroll-margin-top + scroll-margin-bottom</td>
+      <td>scroll-margin-top + scroll-margin-bottom</td>
+    </tr>
+    <tr>
+      <td>66</td>
+      <td>scroll-padding-inline-start</td>
+      <td>scroll-padding-left</td>
+      <td>scroll-padding-right</td>
+    </tr>
+    <tr>
+      <td>67</td>
+      <td>scroll-padding-inline-end</td>
+      <td>scroll-padding-right</td>
+      <td>scroll-padding-left</td>
+    </tr>
+    <tr>
+      <td>68</td>
+      <td>scroll-padding-inline</td>
+      <td>scroll-padding-left + scroll-padding-right</td>
+      <td>scroll-padding-right + scroll-padding-left</td>
+    </tr>
+    <tr>
+      <td>69</td>
+      <td>scroll-padding-block-start</td>
+      <td>scroll-padding-top</td>
+      <td>scroll-padding-top</td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>scroll-padding-block-end</td>
+      <td>scroll-padding-bottom</td>
+      <td>scroll-padding-bottom</td>
+    </tr>
+    <tr>
+      <td>71</td>
+      <td>scroll-padding-block</td>
+      <td>scroll-padding-top + scroll-padding-bottom</td>
+      <td>scroll-padding-top + scroll-padding-bottom</td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>resize: block</td>
+      <td>resize: vertical</td>
+      <td>resize: vertical</td>
+    </tr>
+    <tr>
+      <td>73</td>
+      <td>resize: inline</td>
+      <td>resize: horizontal</td>
+      <td>resize: horizontal</td>
+    </tr>
+    <tr>
+      <td>74</td>
+      <td>transform-origin: inline-start</td>
+      <td>transform-origin: left</td>
+      <td>transform-origin: right</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>transform-origin: inline-end</td>
+      <td>transform-origin: right</td>
+      <td>transform-origin: left</td>
+    </tr>
+    <tr>
+      <td>76</td>
+      <td>transform-origin: block-start</td>
+      <td>transform-origin: top</td>
+      <td>transform-origin: top</td>
+    </tr>
+    <tr>
+      <td>77</td>
+      <td>transform-origin: block-end</td>
+      <td>transform-origin: bottom</td>
+      <td>transform-origin: bottom</td>
+    </tr>
   </tbody>
 
           </table>
@@ -1103,6 +1459,10 @@ They make your layouts <strong>direction-aware</strong>, <strong>international-r
 </li>
 <li><a href="#understanding-inline-vs-block-axes" class="toc-link toc-link-level-2">Understanding Inline vs Block Axes</a>
 </li>
+<li><a href="#tooling-frameworks--support" class="toc-link toc-link-level-2">Tooling, Frameworks &amp; Support</a>
+</li>
+<li><a href="#accessibility--performance-benefits" class="toc-link toc-link-level-2">Accessibility &amp; Performance Benefits</a>
+</li>
 <li><a href="#categories-of-logical-properties" class="toc-link toc-link-level-2">Categories of Logical Properties</a>
 <ul class="toc-level toc-level-3">
 <li><a href="#dimensions" class="toc-link toc-link-level-3">Dimensions</a>
@@ -1117,7 +1477,19 @@ They make your layouts <strong>direction-aware</strong>, <strong>international-r
 </li>
 <li><a href="#positioning--offsets" class="toc-link toc-link-level-3">Positioning / Offsets</a>
 </li>
-<li><a href="#floats--text-alignment" class="toc-link toc-link-level-3">Floats &amp; Text Alignment</a>
+<li><a href="#floats--clears" class="toc-link toc-link-level-3">Floats &amp; Clears</a>
+</li>
+<li><a href="#text-alignment" class="toc-link toc-link-level-3">Text Alignment</a>
+</li>
+<li><a href="#tables" class="toc-link toc-link-level-3">Tables</a>
+</li>
+<li><a href="#backgrounds" class="toc-link toc-link-level-3">Backgrounds</a>
+</li>
+<li><a href="#scroll-snap--spacing" class="toc-link toc-link-level-3">Scroll Snap &amp; Spacing</a>
+</li>
+<li><a href="#resizing" class="toc-link toc-link-level-3">Resizing</a>
+</li>
+<li><a href="#transform-origin" class="toc-link toc-link-level-3">Transform Origin</a>
 </li>
 </ul>
 </li>
