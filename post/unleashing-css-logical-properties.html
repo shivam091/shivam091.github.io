@@ -322,7 +322,7 @@
   <use href="/assets/img/sprite.svg#icon-clock" />
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="2447 words" data-tooltip-position="bottom" tabindex="0">14 min read</span>
+  <span data-tooltip="2500 words" data-tooltip-position="bottom" tabindex="0">14 min read</span>
 </div>
 
 
@@ -1537,15 +1537,18 @@ inline-start   = top
 inline-end     = bottom
 </code></pre>
 
-<h2 id="practical-tips--reminders" dir="auto">Practical Tips / Reminders<a href="#practical-tips--reminders" class="heading-anchor" aria-label="Permalink: Practical Tips / Reminders">#</a>
+<h2 id="practical-tips--reminders" dir="auto">Practical Tips &amp; Reminders<a href="#practical-tips--reminders" class="heading-anchor" aria-label="Permalink: Practical Tips &amp; Reminders">#</a>
 </h2>
 
           <ul dir="auto">
-              <li><p dir="auto">Use <code class="highlighter-rouge notranslate">direction: rtl</code> to flip inline start/end for horizontal text (Arabic/Hebrew).</p></li>
-  <li><p dir="auto">Use <code class="highlighter-rouge notranslate">writing-mode</code> to switch to vertical flows — then <code class="highlighter-rouge notranslate">inline</code> and <code class="highlighter-rouge notranslate">block</code> axes swap roles.</p></li>
-  <li><p dir="auto">Logical properties (<code class="highlighter-rouge notranslate">margin-inline-start</code>, <code class="highlighter-rouge notranslate">padding-block</code>, <code class="highlighter-rouge notranslate">inline-size</code>, etc.) let you write one set of styles that adapt automatically to direction and writing mode.</p></li>
-  <li><p dir="auto">For older browser support, place physical fallbacks before logical properties:</p></li>
-  <li><p dir="auto">Don’t mix physical and logical properties while writing stylesheets, maintain uniformity.</p></li>
+              <li><p dir="auto"><strong>Set</strong> <code class="highlighter-rouge notranslate">direction: rtl</code> to flip <code class="highlighter-rouge notranslate">inline-start</code>/<code class="highlighter-rouge notranslate">inline-end</code> for horizontal text layouts (e.g., Arabic, Hebrew).</p></li>
+  <li><p dir="auto"><strong>Use</strong> <code class="highlighter-rouge notranslate">writing-mode</code> to switch to vertical flows — note that the <code class="highlighter-rouge notranslate">inline</code> and <code class="highlighter-rouge notranslate">block</code> axes swap roles.</p></li>
+  <li><p dir="auto"><strong>Prefer logical properties</strong> (<code class="highlighter-rouge notranslate">margin-inline-start</code>, <code class="highlighter-rouge notranslate">padding-block</code>, <code class="highlighter-rouge notranslate">inline-size</code>, etc.) to write one set of styles that adapt automatically to direction and writing mode.</p></li>
+  <li><p dir="auto"><strong>Leverage</strong> <code class="highlighter-rouge notranslate">text-align: start</code> / <code class="highlighter-rouge notranslate">end</code> for automatic alignment in both LTR and RTL contexts.</p></li>
+  <li><p dir="auto"><strong>Use logical positioning</strong> (<code class="highlighter-rouge notranslate">inset-inline</code>, <code class="highlighter-rouge notranslate">inset-block</code>) instead of fixed <code class="highlighter-rouge notranslate">top</code>, <code class="highlighter-rouge notranslate">right</code>, <code class="highlighter-rouge notranslate">bottom</code>, <code class="highlighter-rouge notranslate">left</code>.</p></li>
+  <li><p dir="auto"><strong>For older browsers</strong>, include physical property fallbacks <em>before</em> logical properties for safe degradation.</p></li>
+  <li><p dir="auto"><strong>Maintain consistency</strong> — avoid mixing physical and logical properties in the same context unless intentionally providing fallbacks.</p></li>
+  <li><p dir="auto"><strong>Check browser support</strong> on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" class="external-link">MDN’s compatibility tables</a> before relying on less common logical properties.</p></li>
 
           </ul>
         
@@ -1618,7 +1621,7 @@ They make your layouts <strong>direction-aware</strong>, <strong>international-r
 </li>
 <li><a href="#quick-ascii-cheatsheet" class="toc-link toc-link-level-2">Quick ASCII Cheatsheet</a>
 </li>
-<li><a href="#practical-tips--reminders" class="toc-link toc-link-level-2">Practical Tips / Reminders</a>
+<li><a href="#practical-tips--reminders" class="toc-link toc-link-level-2">Practical Tips &amp; Reminders</a>
 </li>
 <li><a href="#conclusion" class="toc-link toc-link-level-2">Conclusion</a>
 </li>
