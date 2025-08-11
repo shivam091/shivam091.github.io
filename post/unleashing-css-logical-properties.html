@@ -322,7 +322,7 @@
   <use href="/assets/img/sprite.svg#icon-clock" />
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="2537 words" data-tooltip-position="bottom" tabindex="0">15 min read</span>
+  <span data-tooltip="2617 words" data-tooltip-position="bottom" tabindex="0">15 min read</span>
 </div>
 
 
@@ -400,11 +400,12 @@ tied to the visual layout and can’t adapt automatically when the writing mode 
 </h3>
 <pre><code>+-----------------------------------------+
 | inline-start                 inline-end |
-|    (left)       &lt;-- inline --&gt; (right)  |
+|    (left)         ← inline →   (right)  |
 | block-start (top)                       |
-|        |                                |
-|        v                                |
-|     block-end (bottom)                  |
+|                                         |
+|        ↓                                |
+|                                         |
+| block-end (bottom)                      |
 +-----------------------------------------+
 </code></pre>
 
@@ -412,11 +413,12 @@ tied to the visual layout and can’t adapt automatically when the writing mode 
 </h3>
 <pre><code>+-----------------------------------------+
 | inline-end                 inline-start |
-|   (left)       &lt;-- inline --&gt;  (right)  |
+|   (left)          ← inline →   (right)  |
 | block-start (top)                       |
-|        |                                |
-|        v                                |
-|     block-end (bottom)                  |
+|                                         |
+|        ↓                                |
+|                                         |
+| block-end (bottom)                      |
 +-----------------------------------------+
 </code></pre>
 
@@ -428,24 +430,26 @@ tied to the visual layout and can’t adapt automatically when the writing mode 
 <h3 id="vertical-rl" dir="auto">vertical-rl<a href="#vertical-rl" class="heading-anchor" aria-label="Permalink: vertical-rl">#</a>
 </h3>
 <pre><code>+----------------+
-| block-start -&gt; |  (right)
+| block-start  → |  (right)
 | inline-start   |  (top)
-|       |        |
-|       v        |
+|                |
+|       ↓        |
+|                |
 | inline-end     |  (bottom)
-| block-end   &lt;- |  (left)
+| block-end    ← |  (left)
 +----------------+
 </code></pre>
 
 <h3 id="vertical-lr" dir="auto">vertical-lr<a href="#vertical-lr" class="heading-anchor" aria-label="Permalink: vertical-lr">#</a>
 </h3>
 <pre><code>+----------------+
-| block-start &lt;- |  (left)
+| block-start  ← |  (left)
 | inline-start   |  (top)
-|       |        |
-|       v        |
+|                |
+|       ↓        |
+|                |
 | inline-end     |  (bottom)
-| block-end   -&gt; |  (right)
+| block-end    → |  (right)
 +----------------+
 </code></pre>
 
@@ -1515,6 +1519,30 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
 
           </table>
         
+<h2 id="interactive-example" dir="auto">Interactive Example<a href="#interactive-example" class="heading-anchor" aria-label="Permalink: Interactive Example">#</a>
+</h2>
+<p dir="auto">Now that we’ve seen the different categories of logical properties, let’s try a small live example to see them in action.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Logical padding &amp; margin example --&gt;</span>
+<span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"card-header"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"avatar"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Logical padding <span class="ni">&amp;amp;</span> margin<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"meta"</span><span class="nt">&gt;</span>Uses <span class="nt">&lt;code&gt;</span>padding-inline<span class="nt">&lt;/code&gt;</span> <span class="ni">&amp;amp;</span> <span class="nt">&lt;code&gt;</span>margin-block<span class="nt">&lt;/code&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
+    Logical properties adapt based on writing mode <span class="err">&amp;</span> direction.
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/article&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
+  <span class="py">padding-block</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="py">padding-inline</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/NPGavRO" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/NPGavRO" class="external-link">View Full Interactive Demo on CodePen</a></p>
 <h2 id="practical-adoption--tips" dir="auto">Practical Adoption &amp; Tips<a href="#practical-adoption--tips" class="heading-anchor" aria-label="Permalink: Practical Adoption &amp; Tips">#</a>
 </h2>
 <h3 id="best-practices--reminders" dir="auto">Best Practices &amp; Reminders<a href="#best-practices--reminders" class="heading-anchor" aria-label="Permalink: Best Practices &amp; Reminders">#</a>
@@ -1678,6 +1706,8 @@ writing directions, ensuring your layouts adapt naturally to any language or scr
 <li><a href="#offset-motion-path" class="toc-link toc-link-level-3">Offset (Motion Path)</a>
 </li>
 </ul>
+</li>
+<li><a href="#interactive-example" class="toc-link toc-link-level-2">Interactive Example</a>
 </li>
 <li><a href="#practical-adoption--tips" class="toc-link toc-link-level-2">Practical Adoption &amp; Tips</a>
 <ul class="toc-level toc-level-3">

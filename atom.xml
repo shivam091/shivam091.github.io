@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-11T18:49:53+05:30</updated>
+  <updated>2025-08-11T19:42:38+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -95,22 +95,24 @@ tied to the visual layout and can’t adapt automatically when the writing mode 
 <h3  id="horizontal-tb-ltr-typical-english" dir="auto">horizontal-tb (LTR) (typical English)</h3>
 <pre><code>+-----------------------------------------+
 | inline-start                 inline-end |
-|    (left)       &lt;-- inline --&gt; (right)  |
+|    (left)         ← inline →   (right)  |
 | block-start (top)                       |
-|        |                                |
-|        v                                |
-|     block-end (bottom)                  |
+|                                         |
+|        ↓                                |
+|                                         |
+| block-end (bottom)                      |
 +-----------------------------------------+
 </code></pre>
 
 <h3  id="horizontal-tb-rtl-arabic-hebrew" dir="auto">horizontal-tb (RTL) (Arabic, Hebrew)</h3>
 <pre><code>+-----------------------------------------+
 | inline-end                 inline-start |
-|   (left)       &lt;-- inline --&gt;  (right)  |
+|   (left)          ← inline →   (right)  |
 | block-start (top)                       |
-|        |                                |
-|        v                                |
-|     block-end (bottom)                  |
+|                                         |
+|        ↓                                |
+|                                         |
+| block-end (bottom)                      |
 +-----------------------------------------+
 </code></pre>
 
@@ -121,23 +123,25 @@ tied to the visual layout and can’t adapt automatically when the writing mode 
         
 <h3  id="vertical-rl" dir="auto">vertical-rl</h3>
 <pre><code>+----------------+
-| block-start -&gt; |  (right)
+| block-start  → |  (right)
 | inline-start   |  (top)
-|       |        |
-|       v        |
+|                |
+|       ↓        |
+|                |
 | inline-end     |  (bottom)
-| block-end   &lt;- |  (left)
+| block-end    ← |  (left)
 +----------------+
 </code></pre>
 
 <h3  id="vertical-lr" dir="auto">vertical-lr</h3>
 <pre><code>+----------------+
-| block-start &lt;- |  (left)
+| block-start  ← |  (left)
 | inline-start   |  (top)
-|       |        |
-|       v        |
+|                |
+|       ↓        |
+|                |
 | inline-end     |  (bottom)
-| block-end   -&gt; |  (right)
+| block-end    → |  (right)
 +----------------+
 </code></pre>
 
@@ -1122,6 +1126,29 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
 
           </table>
         
+<h2  id="interactive-example" dir="auto">Interactive Example</h2>
+<p  dir="auto">Now that we’ve seen the different categories of logical properties, let’s try a small live example to see them in action.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Logical padding &amp; margin example --&gt;</span>
+<span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"card-header"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"avatar"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Logical padding <span class="ni">&amp;amp;</span> margin<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"meta"</span><span class="nt">&gt;</span>Uses <span class="nt">&lt;code&gt;</span>padding-inline<span class="nt">&lt;/code&gt;</span> <span class="ni">&amp;amp;</span> <span class="nt">&lt;code&gt;</span>margin-block<span class="nt">&lt;/code&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
+    Logical properties adapt based on writing mode <span class="err">&amp;</span> direction.
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/article&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
+  <span class="py">padding-block</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="py">padding-inline</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/NPGavRO" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/NPGavRO" class="external-link">View Full Interactive Demo on CodePen</a></p>
 <h2  id="practical-adoption--tips" dir="auto">Practical Adoption &amp; Tips</h2>
 <h3  id="best-practices--reminders" dir="auto">Best Practices &amp; Reminders</h3>
 
