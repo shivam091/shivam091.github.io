@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-11T09:56:50+05:30</updated>
+  <updated>2025-08-11T11:36:06+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -203,12 +203,13 @@ Mode: vertical-rl
         
 <h2  id="categories-of-logical-properties" dir="auto">Categories of Logical Properties</h2>
 <p  dir="auto">Logical properties can be grouped into several categories:</p>
-<h3  id="dimensions" dir="auto">Dimensions</h3>
+<h3  id="dimension" dir="auto">Dimension</h3>
 
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property</th>
       <th>Description</th>
       <th>Physical LTR Equivalent</th>
       <th>Physical RTL Equivalent</th>
@@ -216,38 +217,44 @@ Mode: vertical-rl
   </thead>
   <tbody>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">inline-size</code></strong></td>
-      <td>Logical width of an element’s inline axis (varies with writing mode).</td>
+      <td>1</td>
+      <td>inline-size</td>
+      <td>Logical width in the inline axis</td>
       <td>width</td>
       <td>width</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">block-size</code></strong></td>
-      <td>Logical height of an element’s block axis.</td>
+      <td>2</td>
+      <td>block-size</td>
+      <td>Logical height in the block axis</td>
       <td>height</td>
       <td>height</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">min-inline-size</code></strong></td>
-      <td>Minimum allowed size in the inline axis.</td>
+      <td>3</td>
+      <td>min-inline-size</td>
+      <td>Minimum width in the inline axis</td>
       <td>min-width</td>
       <td>min-width</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">max-inline-size</code></strong></td>
-      <td>Maximum allowed size in the inline axis.</td>
+      <td>4</td>
+      <td>max-inline-size</td>
+      <td>Maximum width in the inline axis</td>
       <td>max-width</td>
       <td>max-width</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">min-block-size</code></strong></td>
-      <td>Minimum allowed size in the block axis.</td>
+      <td>5</td>
+      <td>min-block-size</td>
+      <td>Minimum height in the block axis</td>
       <td>min-height</td>
       <td>min-height</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">max-block-size</code></strong></td>
-      <td>Maximum allowed size in the block axis.</td>
+      <td>6</td>
+      <td>max-block-size</td>
+      <td>Maximum height in the block axis</td>
       <td>max-height</td>
       <td>max-height</td>
     </tr>
@@ -255,39 +262,60 @@ Mode: vertical-rl
 
           </table>
         
-<h3  id="margins" dir="auto">Margins</h3>
+<h3  id="margin" dir="auto">Margin</h3>
 
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property</th>
       <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">margin-inline-start</code></strong></td>
-      <td>Margin before the element along the <em>inline</em> axis (left margin in LTR, right margin in RTL).</td>
+      <td>1</td>
+      <td>margin-inline-start</td>
+      <td>Margin at the start of the inline axis</td>
+      <td>margin-left</td>
+      <td>margin-right</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">margin-inline-end</code></strong></td>
-      <td>Margin after the element along the <em>inline</em> axis (right margin in LTR, left margin in RTL).</td>
+      <td>2</td>
+      <td>margin-inline-end</td>
+      <td>Margin at the end of the inline axis</td>
+      <td>margin-right</td>
+      <td>margin-left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">margin-inline</code></strong></td>
-      <td>Shorthand for setting both <code  class="highlighter-rouge notranslate">margin-inline-start</code> and <code  class="highlighter-rouge notranslate">margin-inline-end</code>.</td>
+      <td>3</td>
+      <td>margin-inline</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">margin-inline-start</code> and <code  class="highlighter-rouge notranslate">margin-inline-end</code></td>
+      <td>margin-left + margin-right</td>
+      <td>margin-right + margin-left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">margin-block-start</code></strong></td>
-      <td>Margin before the element along the <em>block</em> axis (top margin in horizontal writing, left margin in vertical writing).</td>
+      <td>4</td>
+      <td>margin-block-start</td>
+      <td>Margin at the start of the block axis</td>
+      <td>margin-top</td>
+      <td>margin-top</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">margin-block-end</code></strong></td>
-      <td>Margin after the element along the <em>block</em> axis.</td>
+      <td>5</td>
+      <td>margin-block-end</td>
+      <td>Margin at the end of the block axis</td>
+      <td>margin-bottom</td>
+      <td>margin-bottom</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">margin-block</code></strong></td>
-      <td>Shorthand for both <code  class="highlighter-rouge notranslate">margin-block-start</code> and <code  class="highlighter-rouge notranslate">margin-block-end</code>.</td>
+      <td>6</td>
+      <td>margin-block</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">margin-block-start</code> and <code  class="highlighter-rouge notranslate">margin-block-end</code></td>
+      <td>margin-top + margin-bottom</td>
+      <td>margin-top + margin-bottom</td>
     </tr>
   </tbody>
 
@@ -298,34 +326,55 @@ Mode: vertical-rl
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property</th>
       <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">padding-inline-start</code></strong></td>
-      <td>Padding before the element along the inline axis.</td>
+      <td>1</td>
+      <td>padding-inline-start</td>
+      <td>Padding at the start of the inline axis</td>
+      <td>padding-left</td>
+      <td>padding-right</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">padding-inline-end</code></strong></td>
-      <td>Padding after the element along the inline axis.</td>
+      <td>2</td>
+      <td>padding-inline-end</td>
+      <td>Padding at the end of the inline axis</td>
+      <td>padding-right</td>
+      <td>padding-left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">padding-inline</code></strong></td>
-      <td>Shorthand for both <code  class="highlighter-rouge notranslate">padding-inline-start</code> and <code  class="highlighter-rouge notranslate">padding-inline-end</code>.</td>
+      <td>3</td>
+      <td>padding-inline</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">padding-inline-start</code> and <code  class="highlighter-rouge notranslate">padding-inline-end</code></td>
+      <td>padding-left + padding-right</td>
+      <td>padding-right + padding-left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">padding-block-start</code></strong></td>
-      <td>Padding before the element along the block axis.</td>
+      <td>4</td>
+      <td>padding-block-start</td>
+      <td>Padding at the start of the block axis</td>
+      <td>padding-top</td>
+      <td>padding-top</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">padding-block-end</code></strong></td>
-      <td>Padding after the element along the block axis.</td>
+      <td>5</td>
+      <td>padding-block-end</td>
+      <td>Padding at the end of the block axis</td>
+      <td>padding-bottom</td>
+      <td>padding-bottom</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">padding-block</code></strong></td>
-      <td>Shorthand for both <code  class="highlighter-rouge notranslate">padding-block-start</code> and <code  class="highlighter-rouge notranslate">padding-block-end</code>.</td>
+      <td>6</td>
+      <td>padding-block</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">padding-block-start</code> and <code  class="highlighter-rouge notranslate">padding-block-end</code></td>
+      <td>padding-top + padding-bottom</td>
+      <td>padding-top + padding-bottom</td>
     </tr>
   </tbody>
 
@@ -336,82 +385,139 @@ Mode: vertical-rl
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property</th>
       <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-inline-start</code></strong></td>
-      <td>Border on the start side of the inline axis.</td>
+      <td>1</td>
+      <td>border-inline-start</td>
+      <td>Border at the start of the inline axis</td>
+      <td>border-left</td>
+      <td>border-right</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-inline-end</code></strong></td>
-      <td>Border on the end side of the inline axis.</td>
+      <td>2</td>
+      <td>border-inline-end</td>
+      <td>Border at the end of the inline axis</td>
+      <td>border-right</td>
+      <td>border-left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-inline</code></strong></td>
-      <td>Shorthand for both <code  class="highlighter-rouge notranslate">border-inline-start</code> and <code  class="highlighter-rouge notranslate">border-inline-end</code>.</td>
+      <td>3</td>
+      <td>border-inline</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">border-inline-start</code> and <code  class="highlighter-rouge notranslate">border-inline-end</code></td>
+      <td>border-left + border-right</td>
+      <td>border-right + border-left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-block-start</code></strong></td>
-      <td>Border on the start side of the block axis.</td>
+      <td>4</td>
+      <td>border-block-start</td>
+      <td>Border at the start of the block axis</td>
+      <td>border-top</td>
+      <td>border-top</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-block-end</code></strong></td>
-      <td>Border on the end side of the block axis.</td>
+      <td>5</td>
+      <td>border-block-end</td>
+      <td>Border at the end of the block axis</td>
+      <td>border-bottom</td>
+      <td>border-bottom</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-block</code></strong></td>
-      <td>Shorthand for both <code  class="highlighter-rouge notranslate">border-block-start</code> and <code  class="highlighter-rouge notranslate">border-block-end</code>.</td>
+      <td>6</td>
+      <td>border-block</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">border-block-start</code> and <code  class="highlighter-rouge notranslate">border-block-end</code></td>
+      <td>border-top + border-bottom</td>
+      <td>border-top + border-bottom</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-inline-start-width</code></strong></td>
-      <td>Width of inline start border.</td>
+      <td>7</td>
+      <td>border-inline-start-width</td>
+      <td>Width of the border at inline-start</td>
+      <td>border-left-width</td>
+      <td>border-right-width</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-inline-start-color</code></strong></td>
-      <td>Color of inline start border.</td>
+      <td>8</td>
+      <td>border-inline-start-color</td>
+      <td>Color of the border at inline-start</td>
+      <td>border-left-color</td>
+      <td>border-right-color</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-inline-start-style</code></strong></td>
-      <td>Style of inline start border.</td>
+      <td>9</td>
+      <td>border-inline-start-style</td>
+      <td>Style of the border at inline-start</td>
+      <td>border-left-style</td>
+      <td>border-right-style</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-inline-end-width</code></strong></td>
-      <td>Width of inline end border.</td>
+      <td>10</td>
+      <td>border-inline-end-width</td>
+      <td>Width of the border at inline-end</td>
+      <td>border-right-width</td>
+      <td>border-left-width</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-inline-end-color</code></strong></td>
-      <td>Color of inline end border.</td>
+      <td>11</td>
+      <td>border-inline-end-color</td>
+      <td>Color of the border at inline-end</td>
+      <td>border-right-color</td>
+      <td>border-left-color</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-inline-end-style</code></strong></td>
-      <td>Style of inline end border.</td>
+      <td>12</td>
+      <td>border-inline-end-style</td>
+      <td>Style of the border at inline-end</td>
+      <td>border-right-style</td>
+      <td>border-left-style</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-block-start-width</code></strong></td>
-      <td>Width of block start border.</td>
+      <td>13</td>
+      <td>border-block-start-width</td>
+      <td>Width of the border at block-start</td>
+      <td>border-top-width</td>
+      <td>border-top-width</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-block-start-color</code></strong></td>
-      <td>Color of block start border.</td>
+      <td>14</td>
+      <td>border-block-start-color</td>
+      <td>Color of the border at block-start</td>
+      <td>border-top-color</td>
+      <td>border-top-color</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-block-start-style</code></strong></td>
-      <td>Style of block start border.</td>
+      <td>15</td>
+      <td>border-block-start-style</td>
+      <td>Style of the border at block-start</td>
+      <td>border-top-style</td>
+      <td>border-top-style</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-block-end-width</code></strong></td>
-      <td>Width of block end border.</td>
+      <td>16</td>
+      <td>border-block-end-width</td>
+      <td>Width of the border at block-end</td>
+      <td>border-bottom-width</td>
+      <td>border-bottom-width</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-block-end-color</code></strong></td>
-      <td>Color of block end border.</td>
+      <td>17</td>
+      <td>border-block-end-color</td>
+      <td>Color of the border at block-end</td>
+      <td>border-bottom-color</td>
+      <td>border-bottom-color</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-block-end-style</code></strong></td>
-      <td>Style of block end border.</td>
+      <td>18</td>
+      <td>border-block-end-style</td>
+      <td>Style of the border at block-end</td>
+      <td>border-bottom-style</td>
+      <td>border-bottom-style</td>
     </tr>
   </tbody>
 
@@ -422,26 +528,41 @@ Mode: vertical-rl
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property</th>
       <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-start-start-radius</code></strong></td>
-      <td>Radius for the corner where block-start and inline-start meet.</td>
+      <td>1</td>
+      <td>border-start-start-radius</td>
+      <td>Radius for the corner where block-start and inline-start meet</td>
+      <td>border-top-left-radius</td>
+      <td>border-top-right-radius</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-start-end-radius</code></strong></td>
-      <td>Radius for the corner where block-start and inline-end meet.</td>
+      <td>2</td>
+      <td>border-start-end-radius</td>
+      <td>Radius for the corner where block-start and inline-end meet</td>
+      <td>border-top-right-radius</td>
+      <td>border-top-left-radius</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-end-start-radius</code></strong></td>
-      <td>Radius for the corner where block-end and inline-start meet.</td>
+      <td>3</td>
+      <td>border-end-start-radius</td>
+      <td>Radius for the corner where block-end and inline-start meet</td>
+      <td>border-bottom-left-radius</td>
+      <td>border-bottom-right-radius</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">border-end-end-radius</code></strong></td>
-      <td>Radius for the corner where block-end and inline-end meet.</td>
+      <td>4</td>
+      <td>border-end-end-radius</td>
+      <td>Radius for the corner where block-end and inline-end meet</td>
+      <td>border-bottom-right-radius</td>
+      <td>border-bottom-left-radius</td>
     </tr>
   </tbody>
 
@@ -452,38 +573,62 @@ Mode: vertical-rl
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property</th>
       <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">inset-inline-start</code></strong></td>
-      <td>Offset from the start edge of the inline axis (like <code  class="highlighter-rouge notranslate">left</code> in LTR).</td>
+      <td>1</td>
+      <td>inset-inline-start</td>
+      <td>Offset from the inline-start edge</td>
+      <td>left</td>
+      <td>right</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">inset-inline-end</code></strong></td>
-      <td>Offset from the end edge of the inline axis (like <code  class="highlighter-rouge notranslate">right</code> in LTR).</td>
+      <td>2</td>
+      <td>inset-inline-end</td>
+      <td>Offset from the inline-end edge</td>
+      <td>right</td>
+      <td>left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">inset-block-start</code></strong></td>
-      <td>Offset from the start edge of the block axis (like <code  class="highlighter-rouge notranslate">top</code> in horizontal writing).</td>
+      <td>3</td>
+      <td>inset-inline</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">inset-inline-start</code> and <code  class="highlighter-rouge notranslate">inset-inline-end</code></td>
+      <td>left + right</td>
+      <td>right + left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">inset-block-end</code></strong></td>
-      <td>Offset from the end edge of the block axis (like <code  class="highlighter-rouge notranslate">bottom</code> in horizontal writing).</td>
+      <td>4</td>
+      <td>inset-block-start</td>
+      <td>Offset from the block-start edge</td>
+      <td>top</td>
+      <td>top</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">inset-inline</code></strong></td>
-      <td>Shorthand for both <code  class="highlighter-rouge notranslate">inset-inline-start</code> and <code  class="highlighter-rouge notranslate">inset-inline-end</code>.</td>
+      <td>5</td>
+      <td>inset-block-end</td>
+      <td>Offset from the block-end edge</td>
+      <td>bottom</td>
+      <td>bottom</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">inset-block</code></strong></td>
-      <td>Shorthand for both <code  class="highlighter-rouge notranslate">inset-block-start</code> and <code  class="highlighter-rouge notranslate">inset-block-end</code>.</td>
+      <td>6</td>
+      <td>inset-block</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">inset-block-start</code> and <code  class="highlighter-rouge notranslate">inset-block-end</code></td>
+      <td>top + bottom</td>
+      <td>top + bottom</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">inset</code></strong></td>
-      <td>Shorthand for all four logical inset properties.</td>
+      <td>7</td>
+      <td>inset</td>
+      <td>Shorthand for all four logical inset properties</td>
+      <td>top + right + bottom + left</td>
+      <td>top + left + bottom + right</td>
     </tr>
   </tbody>
 
@@ -494,26 +639,41 @@ Mode: vertical-rl
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property / Value</th>
       <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">float: inline-start</code></strong></td>
+      <td>1</td>
+      <td>float: inline-start</td>
       <td>Floats an element to the start side of the inline axis (like <code  class="highlighter-rouge notranslate">float: left</code> in LTR).</td>
+      <td>float: left</td>
+      <td>float: right</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">float: inline-end</code></strong></td>
+      <td>2</td>
+      <td>float: inline-end</td>
       <td>Floats an element to the end side of the inline axis.</td>
+      <td>float: right</td>
+      <td>float: left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">clear: inline-start</code></strong></td>
+      <td>3</td>
+      <td>clear: inline-start</td>
       <td>Prevents floating elements on the start side.</td>
+      <td>clear: left</td>
+      <td>clear: right</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">clear: inline-end</code></strong></td>
+      <td>4</td>
+      <td>clear: inline-end</td>
       <td>Prevents floating elements on the end side.</td>
+      <td>clear: right</td>
+      <td>clear: left</td>
     </tr>
   </tbody>
 
@@ -524,18 +684,27 @@ Mode: vertical-rl
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property / Value</th>
       <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>1</td>
       <td><strong><code  class="highlighter-rouge notranslate">text-align: start</code></strong></td>
       <td>Aligns text to the start side of the inline axis.</td>
+      <td>text-align: left</td>
+      <td>text-align: right</td>
     </tr>
     <tr>
+      <td>2</td>
       <td><strong><code  class="highlighter-rouge notranslate">text-align: end</code></strong></td>
       <td>Aligns text to the end side of the inline axis.</td>
+      <td>text-align: right</td>
+      <td>text-align: left</td>
     </tr>
   </tbody>
 
@@ -576,80 +745,159 @@ Mode: vertical-rl
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property / Value</th>
       <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">background-position: start</code></strong></td>
-      <td>Places background image at inline start horizontally.</td>
+      <td>1</td>
+      <td>background-position-inline</td>
+      <td>Background position along inline axis</td>
+      <td>background-position-x</td>
+      <td>background-position-x</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">background-position: end</code></strong></td>
+      <td>2</td>
+      <td>background-position-block</td>
+      <td>Background position along block axis</td>
+      <td>background-position-y</td>
+      <td>background-position-y</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>background-position: start</td>
+      <td>Places background image at inline start horizontally.</td>
+      <td>background-position: left</td>
+      <td>background-position: right</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>background-position: end</td>
       <td>Places background image at inline end horizontally.</td>
+      <td>background-position: right</td>
+      <td>background-position: left</td>
     </tr>
   </tbody>
 
           </table>
         
-<h3  id="scroll-snap--spacing" dir="auto">Scroll Snap &amp; Spacing</h3>
+<h3  id="scroll-margin" dir="auto">Scroll Margin</h3>
 
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property</th>
       <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-margin-inline-start</code></strong></td>
-      <td>Scroll margin at inline start edge.</td>
+      <td>1</td>
+      <td>scroll-margin-inline-start</td>
+      <td>Scroll margin at inline start edge</td>
+      <td>scroll-margin-left</td>
+      <td>scroll-margin-right</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-margin-inline-end</code></strong></td>
-      <td>Scroll margin at inline end edge.</td>
+      <td>2</td>
+      <td>scroll-margin-inline-end</td>
+      <td>Scroll margin at inline end edge</td>
+      <td>scroll-margin-right</td>
+      <td>scroll-margin-left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-margin-inline</code></strong></td>
-      <td>Shorthand for inline scroll margins.</td>
+      <td>3</td>
+      <td>scroll-margin-inline</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">inline-start</code> and <code  class="highlighter-rouge notranslate">inline-end</code></td>
+      <td>scroll-margin-left + scroll-margin-right</td>
+      <td>scroll-margin-right + scroll-margin-left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-margin-block-start</code></strong></td>
-      <td>Scroll margin at block start edge.</td>
+      <td>4</td>
+      <td>scroll-margin-block-start</td>
+      <td>Scroll margin at block start edge</td>
+      <td>scroll-margin-top</td>
+      <td>scroll-margin-top</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-margin-block-end</code></strong></td>
-      <td>Scroll margin at block end edge.</td>
+      <td>5</td>
+      <td>scroll-margin-block-end</td>
+      <td>Scroll margin at block end edge</td>
+      <td>scroll-margin-bottom</td>
+      <td>scroll-margin-bottom</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-margin-block</code></strong></td>
-      <td>Shorthand for block scroll margins.</td>
+      <td>6</td>
+      <td>scroll-margin-block</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">block-start</code> and <code  class="highlighter-rouge notranslate">block-end</code></td>
+      <td>scroll-margin-top + scroll-margin-bottom</td>
+      <td>scroll-margin-top + scroll-margin-bottom</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3  id="scroll-padding" dir="auto">Scroll Padding</h3>
+
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>scroll-padding-inline-start</td>
+      <td>Scroll padding at inline start edge</td>
+      <td>scroll-padding-left</td>
+      <td>scroll-padding-right</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-padding-inline-start</code></strong></td>
-      <td>Scroll padding at inline start edge.</td>
+      <td>2</td>
+      <td>scroll-padding-inline-end</td>
+      <td>Scroll padding at inline end edge</td>
+      <td>scroll-padding-right</td>
+      <td>scroll-padding-left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-padding-inline-end</code></strong></td>
-      <td>Scroll padding at inline end edge.</td>
+      <td>3</td>
+      <td>scroll-padding-inline</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">inline-start</code> and <code  class="highlighter-rouge notranslate">inline-end</code></td>
+      <td>scroll-padding-left + scroll-padding-right</td>
+      <td>scroll-padding-right + scroll-padding-left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-padding-inline</code></strong></td>
-      <td>Shorthand for inline scroll paddings.</td>
+      <td>4</td>
+      <td>scroll-padding-block-start</td>
+      <td>Scroll padding at block start edge</td>
+      <td>scroll-padding-top</td>
+      <td>scroll-padding-top</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-padding-block-start</code></strong></td>
-      <td>Scroll padding at block start edge.</td>
+      <td>5</td>
+      <td>scroll-padding-block-end</td>
+      <td>Scroll padding at block end edge</td>
+      <td>scroll-padding-bottom</td>
+      <td>scroll-padding-bottom</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-padding-block-end</code></strong></td>
-      <td>Scroll padding at block end edge.</td>
-    </tr>
-    <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">scroll-padding-block</code></strong></td>
-      <td>Shorthand for block scroll paddings.</td>
+      <td>6</td>
+      <td>scroll-padding-block</td>
+      <td>Shorthand for both <code  class="highlighter-rouge notranslate">block-start</code> and <code  class="highlighter-rouge notranslate">block-end</code></td>
+      <td>scroll-padding-top + scroll-padding-bottom</td>
+      <td>scroll-padding-top + scroll-padding-bottom</td>
     </tr>
   </tbody>
 
@@ -660,18 +908,58 @@ Mode: vertical-rl
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property / Value</th>
       <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">resize: block</code></strong></td>
+      <td>1</td>
+      <td>resize: block</td>
       <td>Allows resize in block axis only.</td>
+      <td>resize: vertical</td>
+      <td>resize: vertical</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">resize: inline</code></strong></td>
+      <td>2</td>
+      <td>resize: inline</td>
       <td>Allows resize in inline axis only.</td>
+      <td>resize: horizontal</td>
+      <td>resize: horizontal</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3  id="overscroll-behavior" dir="auto">Overscroll Behavior</h3>
+
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>overscroll-behavior-inline</td>
+      <td>Overscroll behavior in inline axis</td>
+      <td>overscroll-behavior-x</td>
+      <td>overscroll-behavior-x</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>overscroll-behavior-block</td>
+      <td>Overscroll behavior in block axis</td>
+      <td>overscroll-behavior-y</td>
+      <td>overscroll-behavior-y</td>
     </tr>
   </tbody>
 
@@ -682,26 +970,86 @@ Mode: vertical-rl
           <table  dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
-      <th>Property</th>
+      <th>#</th>
+      <th>Logical Property / Value</th>
       <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">transform-origin: inline-start</code></strong></td>
+      <td>1</td>
+      <td>transform-origin: inline-start</td>
       <td>Sets transform origin at inline start side.</td>
+      <td>transform-origin: left</td>
+      <td>transform-origin: right</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">transform-origin: inline-end</code></strong></td>
+      <td>2</td>
+      <td>transform-origin: inline-end</td>
       <td>Sets transform origin at inline end side.</td>
+      <td>transform-origin: right</td>
+      <td>transform-origin: left</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">transform-origin: block-start</code></strong></td>
+      <td>3</td>
+      <td>transform-origin: block-start</td>
       <td>Sets transform origin at block start side.</td>
+      <td>transform-origin: top</td>
+      <td>transform-origin: top</td>
     </tr>
     <tr>
-      <td><strong><code  class="highlighter-rouge notranslate">transform-origin: block-end</code></strong></td>
+      <td>4</td>
+      <td>transform-origin: block-end</td>
       <td>Sets transform origin at block end side.</td>
+      <td>transform-origin: bottom</td>
+      <td>transform-origin: bottom</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3  id="offset-motion-path" dir="auto">Offset (Motion Path)</h3>
+
+          <table  dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>offset-inline-start</td>
+      <td>Starting offset position in inline axis</td>
+      <td>offset-left</td>
+      <td>offset-right</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>offset-inline-end</td>
+      <td>Ending offset position in inline axis</td>
+      <td>offset-right</td>
+      <td>offset-left</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>offset-block-start</td>
+      <td>Starting offset position in block axis</td>
+      <td>offset-top</td>
+      <td>offset-top</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>offset-block-end</td>
+      <td>Ending offset position in block axis</td>
+      <td>offset-bottom</td>
+      <td>offset-bottom</td>
     </tr>
   </tbody>
 
