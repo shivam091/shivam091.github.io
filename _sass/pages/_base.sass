@@ -1,11 +1,17 @@
 @use "abstracts/tokens" as *
 @use "abstracts/mixins/transition-properties" as *
 
-.page-title
-  text-shadow: var(--text-shadow-contrast-soft)
-  letter-spacing: 0.5px
+.page-title-wrapper
+  min-height: 225px
+  display: flex
+  align-items: flex-end
 
-  @include transition-properties(text-shadow, $duration: $motion-duration-default, $easing: $motion-easing-smooth)
+  .page-title
+    text-shadow: var(--text-shadow-contrast-soft)
+    letter-spacing: 0.5px
+    margin-block: $space-none
+
+    @include transition-properties(text-shadow, $duration: $motion-duration-default, $easing: $motion-easing-smooth)
 
 .page-content
   margin-block-start: $space-xl

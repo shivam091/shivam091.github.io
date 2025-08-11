@@ -84,6 +84,12 @@
       fill: var(--color-sky-bottom)
       @include transition-properties(fill, $duration: $first-swoop-duration, $easing: $color-swap-timing-function)
 
+    @include breakpoint.between(sm, md)
+      inset: auto 50% 0 auto
+      height: 100%
+      width: 260vw
+      transform: translate(80px)
+
   .cloud-layers-bottom
     position: absolute
     inset: 0 0 auto
