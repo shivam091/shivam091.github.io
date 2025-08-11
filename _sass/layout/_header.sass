@@ -1,4 +1,5 @@
 @use "abstracts/tokens" as *
+@use "abstracts/animations/drop-icon" as *
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
@@ -83,15 +84,25 @@
     padding: $space-sm
     font-size: $fluid-font-size-sm
     font-weight: $font-weight-semi-bold
-
-    @include transition-properties((background-color, color), $duration: $motion-duration-default, $easing: $motion-easing-smooth)
+    animation: drop-icon calc(0.5s + var(--index) * 0.1s) cubic-bezier(0.17, 0.67, 0.2, 1) both
+    animation-delay: calc(var(--index) * 0.1s)
 
     &:hover,
     &:focus
       background-color: var(--color-bg-control-transparent)
       border-color: var(--color-border-control-transparent-hover)
 
+.search-toggle
+  --index: 1
+
+.theme-toggle
+  --index: 2
+
+.atom-feed
+  --index: 3
+
 .toggle-menu
+  --index: 4
   display: none
 
   @include breakpoint.max(md)

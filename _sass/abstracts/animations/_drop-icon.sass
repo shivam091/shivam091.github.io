@@ -1,0 +1,10 @@
+@use "abstracts/tokens" as *
+
+@keyframes drop-icon
+  0%
+    opacity: $opacity-none
+    transform: translateY(calc(-1 * $space-sm))
+
+  100%
+    opacity: $opacity-full
+    transform: translateY(0)
