@@ -322,7 +322,7 @@
   <use href="/assets/img/sprite.svg#icon-clock" />
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="2794 words" data-tooltip-position="bottom" tabindex="0">16 min read</span>
+  <span data-tooltip="2447 words" data-tooltip-position="bottom" tabindex="0">14 min read</span>
 </div>
 
 
@@ -335,12 +335,17 @@
     <div class="post-content" itemprop="articleBody">
       <h2 id="introduction" dir="auto">Introduction<a href="#introduction" class="heading-anchor" aria-label="Permalink: Introduction">#</a>
 </h2>
-<p dir="auto">In the ever-expanding world of web design, creating layouts that seamlessly adapt to multiple languages and writing modes
-is no longer optional—it’s essential. CSS Logical Properties provide a powerful, future-proof way to style elements that
-respect the writing mode, text direction, and physical orientation of the content.</p>
-<p dir="auto">From right-to-left (RTL) languages like Arabic and Hebrew, to vertical writing in Japanese, logical properties allow your
-design to work everywhere without having to write separate stylesheets for each case.</p>
-<p dir="auto">Logical properties are CSS properties that adapt to the writing direction (ltr or rtl) and text flow (horizontal-tb, vertical-rl, etc.). Instead of tying layout to fixed physical directions (left, right, top, bottom), they reference logical directions: start, end, inline, and block.</p>
+
+          <blockquote dir="auto">
+            <p dir="auto">Designing for multiple languages shouldn’t mean rewriting your CSS for every direction or writing mode. CSS Logical Properties
+let your layouts adapt automatically to RTL, vertical text, and more — with just one set of styles.</p>
+          </blockquote>
+        
+<p dir="auto">In modern web design, layouts must seamlessly adapt to different languages and writing modes — <strong>CSS Logical Properties</strong> offer a future-proof way
+to style elements that respect <strong>writing direction</strong>, <strong>text flow</strong>, and <strong>orientation</strong>.</p>
+<p dir="auto">Whether it’s <strong>right-to-left (RTL)</strong> languages like Arabic and Hebrew, or vertical writing in Japanese, logical properties let you create one
+stylesheet that works everywhere.</p>
+<p dir="auto">Instead of tying layout to fixed physical directions (<code class="highlighter-rouge notranslate">left</code>, <code class="highlighter-rouge notranslate">right</code>, <code class="highlighter-rouge notranslate">top</code>, <code class="highlighter-rouge notranslate">bottom</code>), they use logical directions: <strong>start</strong>, <strong>end</strong>, <strong>inline</strong>, and <strong>block</strong>.</p>
 <p dir="auto"><strong>Example:</strong></p>
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Instead of */</span>
 <span class="nt">padding-left</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span>
@@ -348,31 +353,46 @@ design to work everywhere without having to write separate stylesheets for each 
 <span class="c">/* Use */</span>
 <span class="nt">padding-inline-start</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span></code></pre></figure>
 
-<p dir="auto">If the document switches to RTL, padding-inline-start automatically applies to the right instead of the left — no extra styles needed.</p>
+<p dir="auto">If the document switches to RTL, <code class="highlighter-rouge notranslate">padding-inline-start</code> automatically applies to the right — no extra styles needed.</p>
 <h2 id="why-css-logical-properties-matter" dir="auto">Why CSS Logical Properties Matter<a href="#why-css-logical-properties-matter" class="heading-anchor" aria-label="Permalink: Why CSS Logical Properties Matter">#</a>
 </h2>
-<p dir="auto">Traditionally, CSS positioning and spacing used <strong>physical properties</strong> like <code class="highlighter-rouge notranslate">margin-left</code>, <code class="highlighter-rouge notranslate">padding-top</code>, and <code class="highlighter-rouge notranslate">width</code>.
-While effective, these are tied to the <em>visual</em> layout and don’t adapt automatically to changes in writing mode or direction.</p>
+<p dir="auto">Traditionally, CSS positioning and spacing relied on physical properties like <code class="highlighter-rouge notranslate">margin-left</code>, <code class="highlighter-rouge notranslate">padding-top</code>, and <code class="highlighter-rouge notranslate">width</code>. While effective, these are
+tied to the visual layout and can’t adapt automatically when the writing mode or text direction changes.</p>
 <p dir="auto"><strong>With physical properties:</strong></p>
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Physical properties */</span>
 <span class="nt">margin-left</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span> <span class="c">/* Always on the left side */</span></code></pre></figure>
 
-<p dir="auto">In an RTL layout, <code class="highlighter-rouge notranslate">margin-left</code> still applies to the left side, which might not be the “start” of the text anymore.</p>
+<p dir="auto">In an RTL layout, <code class="highlighter-rouge notranslate">margin-left</code> still applies to the left side — which may no longer be the “start” of the text.</p>
 <p dir="auto"><strong>With logical properties:</strong></p>
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Logical equivalent */</span>
 <span class="nt">margin-inline-start</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span> <span class="c">/* Adapts to start side based on writing mode */</span></code></pre></figure>
 
-<p dir="auto">This ensures your layout is writing-mode-aware.</p>
-<h2 id="benefits-of-using-logical-properties" dir="auto">Benefits of using Logical Properties<a href="#benefits-of-using-logical-properties" class="heading-anchor" aria-label="Permalink: Benefits of using Logical Properties">#</a>
+<p dir="auto">This ensures your layout is <strong>writing-mode-aware</strong>.</p>
+<p dir="auto"><strong>Browser support:</strong></p>
+<p dir="auto">Logical properties are supported in all major browsers — Chrome, Edge, Firefox, and Safari — over the last 3 years, making them ready for production.</p>
+<h2 id="benefits-of-logical-properties" dir="auto">Benefits of Logical Properties<a href="#benefits-of-logical-properties" class="heading-anchor" aria-label="Permalink: Benefits of Logical Properties">#</a>
 </h2>
 
           <ol dir="auto">
-              <li><p dir="auto"><strong>Internationalization Ready:</strong> - No need for separate RTL stylesheets.</p></li>
-  <li><p dir="auto"><strong>Consistent Layouts:</strong> - Automatically adjusts for vertical writing.</p></li>
-  <li><p dir="auto"><strong>Cleaner Code:</strong> - Reduced redundancy and easier maintenance.</p></li>
-  <li><p dir="auto"><strong>Future-Proof:</strong> - As more languages and writing systems are supported, your layout is already compatible.</p></li>
+              <li><p dir="auto"><strong>Internationalization Ready</strong> – Works for RTL and vertical writing without needing separate stylesheets.</p></li>
+  <li><p dir="auto"><strong>Consistent Layouts</strong> – Automatically adjusts for writing mode changes, keeping design predictable.</p></li>
+  <li><p dir="auto"><strong>Cleaner Code</strong> – Reduces redundancy and removes the need for duplicated directional styles.</p></li>
+  <li><p dir="auto"><strong>Accessibility Friendly</strong> – Plays nicely with screen readers in RTL and vertical text contexts.</p></li>
+  <li><p dir="auto"><strong>Performance Friendly</strong> – Fewer overrides and media queries improve maintainability.</p></li>
+  <li><p dir="auto"><strong>Future-Proof</strong> – Ready for expanded language and writing system support as browsers evolve.</p></li>
 
           </ol>
+        
+<h2 id="practical-adoption-tools--workflow" dir="auto">Practical Adoption: Tools &amp; Workflow<a href="#practical-adoption-tools--workflow" class="heading-anchor" aria-label="Permalink: Practical Adoption: Tools &amp; Workflow">#</a>
+</h2>
+
+          <ul dir="auto">
+              <li><p dir="auto"><strong>Tailwind CSS</strong> – Optional plugins available to generate logical properties.</p></li>
+  <li><p dir="auto"><strong>SCSS</strong> – Create mixins to auto-generate logical + physical fallbacks.</p></li>
+  <li><p dir="auto"><strong>CSS-in-JS</strong> – Works naturally with styled-components and Emotion.</p></li>
+  <li><p dir="auto"><strong>PostCSS Logical</strong> – Automatically generates physical equivalents for older browsers.</p></li>
+
+          </ul>
         
 <h2 id="understanding-inline-vs-block-axes" dir="auto">Understanding Inline vs Block Axes<a href="#understanding-inline-vs-block-axes" class="heading-anchor" aria-label="Permalink: Understanding Inline vs Block Axes">#</a>
 </h2>
@@ -486,28 +506,6 @@ Mode: vertical-rl
   <span class="nl">direction</span><span class="p">:</span> <span class="nb">rtl</span><span class="p">;</span> <span class="c">/* often paired for some vertical flows */</span>
 <span class="p">}</span></code></pre></figure>
 
-<h2 id="tooling-frameworks--support" dir="auto">Tooling, Frameworks &amp; Support<a href="#tooling-frameworks--support" class="heading-anchor" aria-label="Permalink: Tooling, Frameworks &amp; Support">#</a>
-</h2>
-
-          <ul dir="auto">
-              <li><p dir="auto"><strong>Tailwind CSS:</strong> Optional plugins available</p></li>
-  <li><p dir="auto"><strong>SCSS:</strong> You can write mixins to auto-generate logical + physical fallbacks</p></li>
-  <li><p dir="auto"><strong>CSS-in-JS:</strong> Logical props work naturally with styled-components and Emotion</p></li>
-  <li><p dir="auto"><strong>Browser support:</strong> Chrome, Edge, Firefox, Safari (last 3 years)</p></li>
-
-          </ul>
-        
-<h2 id="accessibility--performance-benefits" dir="auto">Accessibility &amp; Performance Benefits<a href="#accessibility--performance-benefits" class="heading-anchor" aria-label="Permalink: Accessibility &amp; Performance Benefits">#</a>
-</h2>
-
-          <ul dir="auto">
-              <li><p dir="auto">Automatic support for bidirectional UIs</p></li>
-  <li><p dir="auto">Fewer media or direction-specific overrides</p></li>
-  <li><p dir="auto">Better compatibility with screen readers in vertical/RTL contexts</p></li>
-  <li><p dir="auto">Easier localization and internationalization (i18n)</p></li>
-
-          </ul>
-        
 <h2 id="categories-of-logical-properties" dir="auto">Categories of Logical Properties<a href="#categories-of-logical-properties" class="heading-anchor" aria-label="Permalink: Categories of Logical Properties">#</a>
 </h2>
 <p dir="auto">Logical properties can be grouped into several categories:</p>
@@ -1458,490 +1456,10 @@ Mode: vertical-rl
 
           </table>
         
-<h2 id="logical-properties-vs-physical-equivalents" dir="auto">Logical Properties vs Physical Equivalents<a href="#logical-properties-vs-physical-equivalents" class="heading-anchor" aria-label="Permalink: Logical Properties vs Physical Equivalents">#</a>
-</h2>
-<p dir="auto">This table gives all logical properties with exact LTR and RTL physical equivalents.</p>
-
-          <table dir="auto" role="table" class="markdown-table">
-              <thead>
-    <tr>
-      <th>#</th>
-      <th>Logical Property / Value</th>
-      <th>Physical LTR Equivalent</th>
-      <th>Physical RTL Equivalent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>inline-size</td>
-      <td>width</td>
-      <td>width</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>block-size</td>
-      <td>height</td>
-      <td>height</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>min-inline-size</td>
-      <td>min-width</td>
-      <td>min-width</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>max-inline-size</td>
-      <td>max-width</td>
-      <td>max-width</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>min-block-size</td>
-      <td>min-height</td>
-      <td>min-height</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>max-block-size</td>
-      <td>max-height</td>
-      <td>max-height</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>margin-inline-start</td>
-      <td>margin-left</td>
-      <td>margin-right</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>margin-inline-end</td>
-      <td>margin-right</td>
-      <td>margin-left</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>margin-inline</td>
-      <td>margin-left + margin-right</td>
-      <td>margin-right + margin-left</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>margin-block-start</td>
-      <td>margin-top</td>
-      <td>margin-top</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>margin-block-end</td>
-      <td>margin-bottom</td>
-      <td>margin-bottom</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>margin-block</td>
-      <td>margin-top + margin-bottom</td>
-      <td>margin-top + margin-bottom</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>padding-inline-start</td>
-      <td>padding-left</td>
-      <td>padding-right</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>padding-inline-end</td>
-      <td>padding-right</td>
-      <td>padding-left</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>padding-inline</td>
-      <td>padding-left + padding-right</td>
-      <td>padding-right + padding-left</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>padding-block-start</td>
-      <td>padding-top</td>
-      <td>padding-top</td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td>padding-block-end</td>
-      <td>padding-bottom</td>
-      <td>padding-bottom</td>
-    </tr>
-    <tr>
-      <td>18</td>
-      <td>padding-block</td>
-      <td>padding-top + padding-bottom</td>
-      <td>padding-top + padding-bottom</td>
-    </tr>
-    <tr>
-      <td>19</td>
-      <td>border-inline-start</td>
-      <td>border-left</td>
-      <td>border-right</td>
-    </tr>
-    <tr>
-      <td>20</td>
-      <td>border-inline-end</td>
-      <td>border-right</td>
-      <td>border-left</td>
-    </tr>
-    <tr>
-      <td>21</td>
-      <td>border-inline</td>
-      <td>border-left + border-right</td>
-      <td>border-right + border-left</td>
-    </tr>
-    <tr>
-      <td>22</td>
-      <td>border-block-start</td>
-      <td>border-top</td>
-      <td>border-top</td>
-    </tr>
-    <tr>
-      <td>23</td>
-      <td>border-block-end</td>
-      <td>border-bottom</td>
-      <td>border-bottom</td>
-    </tr>
-    <tr>
-      <td>24</td>
-      <td>border-block</td>
-      <td>border-top + border-bottom</td>
-      <td>border-top + border-bottom</td>
-    </tr>
-    <tr>
-      <td>25</td>
-      <td>border-inline-start-width</td>
-      <td>border-left-width</td>
-      <td>border-right-width</td>
-    </tr>
-    <tr>
-      <td>26</td>
-      <td>border-inline-start-color</td>
-      <td>border-left-color</td>
-      <td>border-right-color</td>
-    </tr>
-    <tr>
-      <td>27</td>
-      <td>border-inline-start-style</td>
-      <td>border-left-style</td>
-      <td>border-right-style</td>
-    </tr>
-    <tr>
-      <td>28</td>
-      <td>border-inline-end-width</td>
-      <td>border-right-width</td>
-      <td>border-left-width</td>
-    </tr>
-    <tr>
-      <td>29</td>
-      <td>border-inline-end-color</td>
-      <td>border-right-color</td>
-      <td>border-left-color</td>
-    </tr>
-    <tr>
-      <td>30</td>
-      <td>border-inline-end-style</td>
-      <td>border-right-style</td>
-      <td>border-left-style</td>
-    </tr>
-    <tr>
-      <td>31</td>
-      <td>border-block-start-width</td>
-      <td>border-top-width</td>
-      <td>border-top-width</td>
-    </tr>
-    <tr>
-      <td>32</td>
-      <td>border-block-start-color</td>
-      <td>border-top-color</td>
-      <td>border-top-color</td>
-    </tr>
-    <tr>
-      <td>33</td>
-      <td>border-block-start-style</td>
-      <td>border-top-style</td>
-      <td>border-top-style</td>
-    </tr>
-    <tr>
-      <td>34</td>
-      <td>border-block-end-width</td>
-      <td>border-bottom-width</td>
-      <td>border-bottom-width</td>
-    </tr>
-    <tr>
-      <td>35</td>
-      <td>border-block-end-color</td>
-      <td>border-bottom-color</td>
-      <td>border-bottom-color</td>
-    </tr>
-    <tr>
-      <td>36</td>
-      <td>border-block-end-style</td>
-      <td>border-bottom-style</td>
-      <td>border-bottom-style</td>
-    </tr>
-    <tr>
-      <td>37</td>
-      <td>border-start-start-radius</td>
-      <td>border-top-left-radius</td>
-      <td>border-top-right-radius</td>
-    </tr>
-    <tr>
-      <td>38</td>
-      <td>border-start-end-radius</td>
-      <td>border-top-right-radius</td>
-      <td>border-top-left-radius</td>
-    </tr>
-    <tr>
-      <td>39</td>
-      <td>border-end-start-radius</td>
-      <td>border-bottom-left-radius</td>
-      <td>border-bottom-right-radius</td>
-    </tr>
-    <tr>
-      <td>40</td>
-      <td>border-end-end-radius</td>
-      <td>border-bottom-right-radius</td>
-      <td>border-bottom-left-radius</td>
-    </tr>
-    <tr>
-      <td>41</td>
-      <td>inset-inline-start</td>
-      <td>left</td>
-      <td>right</td>
-    </tr>
-    <tr>
-      <td>42</td>
-      <td>inset-inline-end</td>
-      <td>right</td>
-      <td>left</td>
-    </tr>
-    <tr>
-      <td>43</td>
-      <td>inset-block-start</td>
-      <td>top</td>
-      <td>top</td>
-    </tr>
-    <tr>
-      <td>44</td>
-      <td>inset-block-end</td>
-      <td>bottom</td>
-      <td>bottom</td>
-    </tr>
-    <tr>
-      <td>45</td>
-      <td>inset-inline</td>
-      <td>left + right</td>
-      <td>right + left</td>
-    </tr>
-    <tr>
-      <td>46</td>
-      <td>inset-block</td>
-      <td>top + bottom</td>
-      <td>top + bottom</td>
-    </tr>
-    <tr>
-      <td>47</td>
-      <td>inset</td>
-      <td>top + right + bottom + left</td>
-      <td>top + left + bottom + right</td>
-    </tr>
-    <tr>
-      <td>48</td>
-      <td>float: inline-start</td>
-      <td>float: left</td>
-      <td>float: right</td>
-    </tr>
-    <tr>
-      <td>49</td>
-      <td>float: inline-end</td>
-      <td>float: right</td>
-      <td>float: left</td>
-    </tr>
-    <tr>
-      <td>50</td>
-      <td>clear: inline-start</td>
-      <td>clear: left</td>
-      <td>clear: right</td>
-    </tr>
-    <tr>
-      <td>51</td>
-      <td>clear: inline-end</td>
-      <td>clear: right</td>
-      <td>clear: left</td>
-    </tr>
-    <tr>
-      <td>52</td>
-      <td>text-align: start</td>
-      <td>text-align: left</td>
-      <td>text-align: right</td>
-    </tr>
-    <tr>
-      <td>53</td>
-      <td>text-align: end</td>
-      <td>text-align: right</td>
-      <td>text-align: left</td>
-    </tr>
-    <tr>
-      <td>54</td>
-      <td>caption-side: block-start</td>
-      <td>caption-side: top</td>
-      <td>caption-side: top</td>
-    </tr>
-    <tr>
-      <td>55</td>
-      <td>caption-side: block-end</td>
-      <td>caption-side: bottom</td>
-      <td>caption-side: bottom</td>
-    </tr>
-    <tr>
-      <td>56</td>
-      <td>caption-side: inline-start</td>
-      <td>caption-side: left</td>
-      <td>caption-side: right</td>
-    </tr>
-    <tr>
-      <td>57</td>
-      <td>caption-side: inline-end</td>
-      <td>caption-side: right</td>
-      <td>caption-side: left</td>
-    </tr>
-    <tr>
-      <td>58</td>
-      <td>background-position: start</td>
-      <td>background-position: left</td>
-      <td>background-position: right</td>
-    </tr>
-    <tr>
-      <td>59</td>
-      <td>background-position: end</td>
-      <td>background-position: right</td>
-      <td>background-position: left</td>
-    </tr>
-    <tr>
-      <td>60</td>
-      <td>scroll-margin-inline-start</td>
-      <td>scroll-margin-left</td>
-      <td>scroll-margin-right</td>
-    </tr>
-    <tr>
-      <td>61</td>
-      <td>scroll-margin-inline-end</td>
-      <td>scroll-margin-right</td>
-      <td>scroll-margin-left</td>
-    </tr>
-    <tr>
-      <td>62</td>
-      <td>scroll-margin-inline</td>
-      <td>scroll-margin-left + scroll-margin-right</td>
-      <td>scroll-margin-right + scroll-margin-left</td>
-    </tr>
-    <tr>
-      <td>63</td>
-      <td>scroll-margin-block-start</td>
-      <td>scroll-margin-top</td>
-      <td>scroll-margin-top</td>
-    </tr>
-    <tr>
-      <td>64</td>
-      <td>scroll-margin-block-end</td>
-      <td>scroll-margin-bottom</td>
-      <td>scroll-margin-bottom</td>
-    </tr>
-    <tr>
-      <td>65</td>
-      <td>scroll-margin-block</td>
-      <td>scroll-margin-top + scroll-margin-bottom</td>
-      <td>scroll-margin-top + scroll-margin-bottom</td>
-    </tr>
-    <tr>
-      <td>66</td>
-      <td>scroll-padding-inline-start</td>
-      <td>scroll-padding-left</td>
-      <td>scroll-padding-right</td>
-    </tr>
-    <tr>
-      <td>67</td>
-      <td>scroll-padding-inline-end</td>
-      <td>scroll-padding-right</td>
-      <td>scroll-padding-left</td>
-    </tr>
-    <tr>
-      <td>68</td>
-      <td>scroll-padding-inline</td>
-      <td>scroll-padding-left + scroll-padding-right</td>
-      <td>scroll-padding-right + scroll-padding-left</td>
-    </tr>
-    <tr>
-      <td>69</td>
-      <td>scroll-padding-block-start</td>
-      <td>scroll-padding-top</td>
-      <td>scroll-padding-top</td>
-    </tr>
-    <tr>
-      <td>70</td>
-      <td>scroll-padding-block-end</td>
-      <td>scroll-padding-bottom</td>
-      <td>scroll-padding-bottom</td>
-    </tr>
-    <tr>
-      <td>71</td>
-      <td>scroll-padding-block</td>
-      <td>scroll-padding-top + scroll-padding-bottom</td>
-      <td>scroll-padding-top + scroll-padding-bottom</td>
-    </tr>
-    <tr>
-      <td>72</td>
-      <td>resize: block</td>
-      <td>resize: vertical</td>
-      <td>resize: vertical</td>
-    </tr>
-    <tr>
-      <td>73</td>
-      <td>resize: inline</td>
-      <td>resize: horizontal</td>
-      <td>resize: horizontal</td>
-    </tr>
-    <tr>
-      <td>74</td>
-      <td>transform-origin: inline-start</td>
-      <td>transform-origin: left</td>
-      <td>transform-origin: right</td>
-    </tr>
-    <tr>
-      <td>75</td>
-      <td>transform-origin: inline-end</td>
-      <td>transform-origin: right</td>
-      <td>transform-origin: left</td>
-    </tr>
-    <tr>
-      <td>76</td>
-      <td>transform-origin: block-start</td>
-      <td>transform-origin: top</td>
-      <td>transform-origin: top</td>
-    </tr>
-    <tr>
-      <td>77</td>
-      <td>transform-origin: block-end</td>
-      <td>transform-origin: bottom</td>
-      <td>transform-origin: bottom</td>
-    </tr>
-  </tbody>
-
-          </table>
-        
 <h2 id="fallbacks-for-non-supporting-browsers" dir="auto">Fallbacks for Non-Supporting Browsers<a href="#fallbacks-for-non-supporting-browsers" class="heading-anchor" aria-label="Permalink: Fallbacks for Non-Supporting Browsers">#</a>
 </h2>
-<p dir="auto">If you need to support older browsers that don’t recognize logical properties, you can provide physical property fallbacks
-before your logical properties. Some older browsers (e.g., IE) don’t support logical properties. You can provide fallbacks:</p>
+<p dir="auto">If you need to support older browsers that don’t recognize logical properties, you can define physical property fallbacks first, followed by
+your logical properties. This ensures that browsers without logical property support (e.g., Internet Explorer) still display layouts correctly.</p>
 <p dir="auto"><strong>Without Logical Properties (LTR &amp; RTL handled separately):</strong></p>
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* LTR */</span>
 <span class="nc">.card</span> <span class="p">{</span>
@@ -1966,7 +1484,7 @@ before your logical properties. Some older browsers (e.g., IE) don’t support l
 
 <p dir="auto"><strong>Hybrid Approach (Fallback + Logical):</strong></p>
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
-  <span class="c">/* Fallbacks */</span>
+  <span class="c">/* Physical property fallbacks */</span>
   <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
   <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
   <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
@@ -1977,7 +1495,31 @@ before your logical properties. Some older browsers (e.g., IE) don’t support l
   <span class="nl">text-align</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p dir="auto">Or use <strong>PostCSS Logical</strong> plugin to generate physical equivalents automatically.</p>
+<p dir="auto"><strong><code class="highlighter-rouge notranslate">@supports</code>-Based Approach (Clean separation)</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Physical property fallbacks */</span>
+<span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Apply logical properties only if supported */</span>
+<span class="k">@supports</span> <span class="p">(</span><span class="n">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.card</span> <span class="p">{</span>
+    <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p dir="auto"><strong>Why use <code class="highlighter-rouge notranslate">@supports?</code></strong></p>
+          <ul dir="auto">
+              <li><p dir="auto">Keeps fallback styles intact for older browsers without relying solely on cascade overrides.</p></li>
+  <li><p dir="auto">Ensures logical properties are parsed only when supported.</p></li>
+  <li><p dir="auto">Makes debugging easier by clearly separating legacy and modern styles.</p></li>
+
+          </ul>
+        
 <h2 id="quick-ascii-cheatsheet" dir="auto">Quick ASCII Cheatsheet<a href="#quick-ascii-cheatsheet" class="heading-anchor" aria-label="Permalink: Quick ASCII Cheatsheet">#</a>
 </h2>
 <pre><code>Writing Mode: horizontal-tb (default)
@@ -2026,17 +1568,15 @@ They make your layouts <strong>direction-aware</strong>, <strong>international-r
 </li>
 <li><a href="#why-css-logical-properties-matter" class="toc-link toc-link-level-2">Why CSS Logical Properties Matter</a>
 </li>
-<li><a href="#benefits-of-using-logical-properties" class="toc-link toc-link-level-2">Benefits of using Logical Properties</a>
+<li><a href="#benefits-of-logical-properties" class="toc-link toc-link-level-2">Benefits of Logical Properties</a>
+</li>
+<li><a href="#practical-adoption-tools--workflow" class="toc-link toc-link-level-2">Practical Adoption: Tools &amp; Workflow</a>
 </li>
 <li><a href="#understanding-inline-vs-block-axes" class="toc-link toc-link-level-2">Understanding Inline vs Block Axes</a>
 <ul class="toc-level toc-level-3">
 <li><a href="#short-examples-css--show-behavior" class="toc-link toc-link-level-3">Short examples (CSS) — show behavior</a>
 </li>
 </ul>
-</li>
-<li><a href="#tooling-frameworks--support" class="toc-link toc-link-level-2">Tooling, Frameworks &amp; Support</a>
-</li>
-<li><a href="#accessibility--performance-benefits" class="toc-link toc-link-level-2">Accessibility &amp; Performance Benefits</a>
 </li>
 <li><a href="#categories-of-logical-properties" class="toc-link toc-link-level-2">Categories of Logical Properties</a>
 <ul class="toc-level toc-level-3">
@@ -2073,8 +1613,6 @@ They make your layouts <strong>direction-aware</strong>, <strong>international-r
 <li><a href="#offset-motion-path" class="toc-link toc-link-level-3">Offset (Motion Path)</a>
 </li>
 </ul>
-</li>
-<li><a href="#logical-properties-vs-physical-equivalents" class="toc-link toc-link-level-2">Logical Properties vs Physical Equivalents</a>
 </li>
 <li><a href="#fallbacks-for-non-supporting-browsers" class="toc-link toc-link-level-2">Fallbacks for Non-Supporting Browsers</a>
 </li>
