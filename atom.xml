@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-11T19:42:38+05:30</updated>
+  <updated>2025-08-11T19:46:40+05:30</updated>
   <rights>© 2025 Harshal LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -1149,8 +1149,7 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
 <span class="p">}</span></code></pre></figure>
 
 <p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/NPGavRO" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/NPGavRO" class="external-link">View Full Interactive Demo on CodePen</a></p>
-<h2  id="practical-adoption--tips" dir="auto">Practical Adoption &amp; Tips</h2>
-<h3  id="best-practices--reminders" dir="auto">Best Practices &amp; Reminders</h3>
+<h2  id="best-practices--reminders" dir="auto">Best Practices &amp; Reminders</h2>
 
           <ul  dir="auto">
               <li><p  dir="auto"><strong>Fallbacks first</strong> — For older browsers, write the physical property first, then override with the logical equivalent.</p></li>
@@ -1162,16 +1161,6 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
   <li><p  dir="auto"><strong>Alignment shortcuts</strong> — Use <code  class="highlighter-rouge notranslate">text-align: start</code> / <code  class="highlighter-rouge notranslate">end</code> for automatic LTR/RTL alignment.</p></li>
   <li><p  dir="auto"><strong>Logical positioning</strong> — Replace fixed sides (<code  class="highlighter-rouge notranslate">top</code>, <code  class="highlighter-rouge notranslate">right</code>, <code  class="highlighter-rouge notranslate">bottom</code>, <code  class="highlighter-rouge notranslate">left</code>) with <code  class="highlighter-rouge notranslate">inset-block</code> / <code  class="highlighter-rouge notranslate">inset-inline</code>.</p></li>
   <li><p  dir="auto"><strong>Check compatibility</strong> — Always verify on <a  href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" class="external-link">MDN’s compatibility tables</a> before relying on lesser-known logical props.</p></li>
-
-          </ul>
-        
-<h3  id="tools--workflow" dir="auto">Tools &amp; Workflow</h3>
-
-          <ul  dir="auto">
-              <li><p  dir="auto"><strong>Tailwind CSS</strong> – Optional plugins available to generate logical properties.</p></li>
-  <li><p  dir="auto"><strong>SCSS</strong> – Create mixins to auto-generate logical + physical fallbacks.</p></li>
-  <li><p  dir="auto"><strong>CSS-in-JS</strong> – Works naturally with styled-components and Emotion.</p></li>
-  <li><p  dir="auto"><strong>PostCSS Logical</strong> – Automatically generates physical equivalents for older browsers.</p></li>
 
           </ul>
         
