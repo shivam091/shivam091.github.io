@@ -322,7 +322,7 @@
   <use href="/assets/img/sprite.svg#icon-clock" />
 </svg>
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="2500 words" data-tooltip-position="bottom" tabindex="0">14 min read</span>
+  <span data-tooltip="2537 words" data-tooltip-position="bottom" tabindex="0">15 min read</span>
 </div>
 
 
@@ -383,127 +383,171 @@ tied to the visual layout and can’t adapt automatically when the writing mode 
 
           </ol>
         
-<h2 id="practical-adoption-tools--workflow" dir="auto">Practical Adoption: Tools &amp; Workflow<a href="#practical-adoption-tools--workflow" class="heading-anchor" aria-label="Permalink: Practical Adoption: Tools &amp; Workflow">#</a>
-</h2>
-
-          <ul dir="auto">
-              <li><p dir="auto"><strong>Tailwind CSS</strong> – Optional plugins available to generate logical properties.</p></li>
-  <li><p dir="auto"><strong>SCSS</strong> – Create mixins to auto-generate logical + physical fallbacks.</p></li>
-  <li><p dir="auto"><strong>CSS-in-JS</strong> – Works naturally with styled-components and Emotion.</p></li>
-  <li><p dir="auto"><strong>PostCSS Logical</strong> – Automatically generates physical equivalents for older browsers.</p></li>
-
-          </ul>
-        
 <h2 id="understanding-inline-vs-block-axes" dir="auto">Understanding Inline vs Block Axes<a href="#understanding-inline-vs-block-axes" class="heading-anchor" aria-label="Permalink: Understanding Inline vs Block Axes">#</a>
 </h2>
-<p dir="auto"><strong>Inline axis</strong> is the direction in which text flows.</p>
-<p dir="auto">In horizontal writing modes (most western languages): inline flow is left → right (LTR) or right → left (RTL).
-In vertical writing modes (e.g., <code class="highlighter-rouge notranslate">writing-mode: vertical-rl</code>), inline flow goes top → bottom (or bottom → top depending on mode).</p>
-<p dir="auto"><strong>Block axis</strong> is the direction perpendicular to the inline axis — usually the direction in which blocks (paragraphs, divs) stack.</p>
-<p dir="auto">In horizontal writing modes: block axis is top → bottom.
-In vertical writing modes: block axis becomes left ↔ right depending on <code class="highlighter-rouge notranslate">writing-mode</code>.</p>
-<p dir="auto"><strong>Key idea:</strong> logical properties reference <code class="highlighter-rouge notranslate">inline</code> / <code class="highlighter-rouge notranslate">block</code> and <code class="highlighter-rouge notranslate">start</code> / <code class="highlighter-rouge notranslate">end</code>.</p>
-
+<p dir="auto"><strong>Inline axis</strong> — the direction in which text flows.
+<strong>Block axis</strong> — the direction perpendicular to the inline axis, where blocks (paragraphs, divs) stack.</p>
+<p dir="auto"><strong>Key idea</strong>: Logical properties use <code class="highlighter-rouge notranslate">inline</code> / <code class="highlighter-rouge notranslate">block</code> combined with <code class="highlighter-rouge notranslate">start</code> / <code class="highlighter-rouge notranslate">end</code>:</p>
           <ul dir="auto">
-              <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-start</code> - the leading edge of the inline axis (left in LTR, right in RTL, top in some vertical modes).</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-end</code> - the trailing edge of the inline axis.</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-start</code> - the leading edge of the block axis (top in horizontal writing).</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-end</code> - the trailing edge of the block axis.</p></li>
+              <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-start</code> – leading edge of the inline axis (left in LTR, right in RTL, top in some vertical modes).</p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-end</code> – trailing edge of the inline axis.</p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-start</code> – leading edge of the block axis (top in horizontal writing).</p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-end</code> – trailing edge of the block axis.</p></li>
 
           </ul>
         
-<p dir="auto"><strong>Visual References</strong></p>
-<p dir="auto">Horizontal writing, LTR (typical English)</p>
+<h3 id="horizontal-tb-ltr-typical-english" dir="auto">horizontal-tb (LTR) (typical English)<a href="#horizontal-tb-ltr-typical-english" class="heading-anchor" aria-label="Permalink: horizontal-tb (LTR) (typical English)">#</a>
+</h3>
 <pre><code>+-----------------------------------------+
 | inline-start                 inline-end |
-|   (start/left)   &lt;-- inline axis --&gt;    |
-|                                         |
-| block-start (top)  -- block axis --&gt;    |
-|                                         |
+|    (left)       &lt;-- inline --&gt; (right)  |
+| block-start (top)                       |
+|        |                                |
+|        v                                |
+|     block-end (bottom)                  |
 +-----------------------------------------+
 </code></pre>
 
-
-          <ul dir="auto">
-              <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-start</code> = left</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-end</code> = right</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-start</code> = top</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-end</code> = bottom</p></li>
-
-          </ul>
-        
-<p dir="auto">Horizontal writing, RTL (Arabic/Hebrew)</p>
+<h3 id="horizontal-tb-rtl-arabic-hebrew" dir="auto">horizontal-tb (RTL) (Arabic, Hebrew)<a href="#horizontal-tb-rtl-arabic-hebrew" class="heading-anchor" aria-label="Permalink: horizontal-tb (RTL) (Arabic, Hebrew)">#</a>
+</h3>
 <pre><code>+-----------------------------------------+
 | inline-end                 inline-start |
-|   (end/left?)   &lt;-- inline axis --&gt;     |
-|                                         |
-| block-start (top)  -- block axis --&gt;    |
-|                                         |
+|   (left)       &lt;-- inline --&gt;  (right)  |
+| block-start (top)                       |
+|        |                                |
+|        v                                |
+|     block-end (bottom)                  |
 +-----------------------------------------+
 </code></pre>
 
 
-          <ul dir="auto">
-              <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-start</code> = right</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-end</code> = left</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-start</code> = top</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-end</code> = bottom</p></li>
-
-          </ul>
+          <blockquote dir="auto">
+            <p dir="auto">In RTL: inline axis flows <strong>right</strong> → <strong>left</strong>, so <code class="highlighter-rouge notranslate">inline-start</code> = right, <code class="highlighter-rouge notranslate">inline-end</code> = left.</p>
+          </blockquote>
         
-<p dir="auto">Vertical writing, writing-mode: vertical-rl</p>
+<h3 id="vertical-rl" dir="auto">vertical-rl<a href="#vertical-rl" class="heading-anchor" aria-label="Permalink: vertical-rl">#</a>
+</h3>
 <pre><code>+----------------+
-| block-start -&gt; |  ← block axis goes left-to-right
-| inline-start   |  ← inline axis goes top-to-bottom
-| inline         |
-| inline         |
-| block-end   &lt;- |
+| block-start -&gt; |  (right)
+| inline-start   |  (top)
+|       |        |
+|       v        |
+| inline-end     |  (bottom)
+| block-end   &lt;- |  (left)
 +----------------+
 </code></pre>
 
-
-          <ul dir="auto">
-              <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-start</code> = top</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-end</code> = bottom</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-start</code> = right</p></li>
-  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-end</code> = left</p></li>
-
-          </ul>
-        
-<p dir="auto">Compact cheat (mapping summary)</p>
-<pre><code>Mode: horizontal-tb (default)
-  inline: left &lt;—&gt; right
-  block: top  &lt;—&gt; bottom
-
-Mode: vertical-rl
-  inline: top  &lt;—&gt; bottom
-  block: right &lt;—&gt; left
+<h3 id="vertical-lr" dir="auto">vertical-lr<a href="#vertical-lr" class="heading-anchor" aria-label="Permalink: vertical-lr">#</a>
+</h3>
+<pre><code>+----------------+
+| block-start &lt;- |  (left)
+| inline-start   |  (top)
+|       |        |
+|       v        |
+| inline-end     |  (bottom)
+| block-end   -&gt; |  (right)
++----------------+
 </code></pre>
 
-<h3 id="short-examples-css--show-behavior" dir="auto">Short examples (CSS) — show behavior<a href="#short-examples-css--show-behavior" class="heading-anchor" aria-label="Permalink: Short examples (CSS) — show behavior">#</a>
+<h3 id="quick-reference-logical-vs-physical-mappings" dir="auto">Quick Reference: Logical vs Physical Mappings<a href="#quick-reference-logical-vs-physical-mappings" class="heading-anchor" aria-label="Permalink: Quick Reference: Logical vs Physical Mappings">#</a>
 </h3>
-<p dir="auto">Example A — inline / block sizing</p>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Writing mode</th>
+      <th>Inline axis</th>
+      <th>Block axis</th>
+      <th>inline-start</th>
+      <th>inline-end</th>
+      <th>block-start</th>
+      <th>block-end</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="highlighter-rouge notranslate">horizontal-tb</code> LTR</td>
+      <td>left → right</td>
+      <td>top → bottom</td>
+      <td>left</td>
+      <td>right</td>
+      <td>top</td>
+      <td>bottom</td>
+    </tr>
+    <tr>
+      <td>
+<code class="highlighter-rouge notranslate">horizontal-tb</code> RTL</td>
+      <td>right → left</td>
+      <td>top → bottom</td>
+      <td>right</td>
+      <td>left</td>
+      <td>top</td>
+      <td>bottom</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">vertical-rl</code></td>
+      <td>top → bottom</td>
+      <td>right → left</td>
+      <td>top</td>
+      <td>bottom</td>
+      <td>right</td>
+      <td>left</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">vertical-lr</code></td>
+      <td>top → bottom</td>
+      <td>left → right</td>
+      <td>top</td>
+      <td>bottom</td>
+      <td>left</td>
+      <td>right</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<p dir="auto"><strong>Visual key:</strong></p>
+<pre><code>horizontal-tb (LTR)         horizontal-tb (RTL)         vertical-rl               vertical-lr
+------------------          ------------------          ------------------        ------------------
+block-start = top           block-start = top           block-start = right       block-start = left
+block-end   = bottom        block-end   = bottom        block-end   = left        block-end   = right
+inline-start = left         inline-start = right        inline-start = top        inline-start = top
+inline-end   = right        inline-end   = left         inline-end   = bottom     inline-end   = bottom
+</code></pre>
+
+
+          <blockquote dir="auto">
+            <p dir="auto">Think of <code class="highlighter-rouge notranslate">inline-*</code> as “text flow direction” and <code class="highlighter-rouge notranslate">block-*</code> as “line stacking direction.”</p>
+          </blockquote>
+        
+<h3 id="short-examples" dir="auto">Short Examples<a href="#short-examples" class="heading-anchor" aria-label="Permalink: Short Examples">#</a>
+</h3>
+<p dir="auto"><strong>Example 1 — Inline / Block sizing</strong></p>
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.box</span> <span class="p">{</span>
-  <span class="py">inline-size</span><span class="p">:</span> <span class="m">40ch</span><span class="p">;</span>   <span class="c">/* width in horizontal writing, height in some vertical modes */</span>
-  <span class="py">block-size</span><span class="p">:</span> <span class="m">10rem</span><span class="p">;</span>   <span class="c">/* height in horizontal writing, width in some vertical modes */</span>
-  <span class="py">padding-inline</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
-  <span class="py">padding-block</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+  <span class="py">inline-size</span><span class="p">:</span> <span class="m">40ch</span><span class="p">;</span>    <span class="c">/* horizontal-tb: width; vertical-rl/lr: height */</span>
+  <span class="py">block-size</span><span class="p">:</span> <span class="m">10rem</span><span class="p">;</span>    <span class="c">/* horizontal-tb: height; vertical-rl/lr: width */</span>
+  <span class="py">padding-inline</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* horizontal-tb: left &amp; right; vertical: top &amp; bottom */</span>
+  <span class="py">padding-block</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span><span class="c">/* horizontal-tb: top &amp; bottom; vertical: right &amp; left */</span>
 <span class="p">}</span></code></pre></figure>
 
-<p dir="auto">Example B — margin and direction-aware offsets</p>
+<p dir="auto"><strong>Example 2 — Direction-aware margins</strong></p>
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
-  <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* left in LTR, right in RTL */</span>
-  <span class="py">margin-block-start</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>  <span class="c">/* top in horizontal writing */</span>
+  <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* horizontal LTR: left; horizontal RTL: right; vertical: top */</span>
+  <span class="py">margin-block-start</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>  <span class="c">/* horizontal: top; vertical-rl: right; vertical-lr: left */</span>
 <span class="p">}</span></code></pre></figure>
 
-<p dir="auto">Example C — switching writing modes (demo)</p>
+<p dir="auto"><strong>Example 3 — Switching writing modes</strong></p>
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Default: horizontal LTR */</span>
-<span class="nc">.article</span> <span class="p">{</span> <span class="nl">writing-mode</span><span class="p">:</span> <span class="n">horizontal-tb</span><span class="p">;</span> <span class="nl">direction</span><span class="p">:</span> <span class="nb">ltr</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.article</span> <span class="p">{</span>
+  <span class="nl">writing-mode</span><span class="p">:</span> <span class="n">horizontal-tb</span><span class="p">;</span>
+  <span class="nl">direction</span><span class="p">:</span> <span class="nb">ltr</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="c">/* Vertical (Japanese-style) */</span>
+<span class="c">/* Vertical (e.g., Japanese-style) */</span>
 <span class="nc">.vertical</span> <span class="p">{</span>
   <span class="nl">writing-mode</span><span class="p">:</span> <span class="n">vertical-rl</span><span class="p">;</span>
-  <span class="nl">direction</span><span class="p">:</span> <span class="nb">rtl</span><span class="p">;</span> <span class="c">/* often paired for some vertical flows */</span>
+  <span class="nl">direction</span><span class="p">:</span> <span class="nb">rtl</span><span class="p">;</span> <span class="c">/* common for certain East Asian vertical layouts */</span>
 <span class="p">}</span></code></pre></figure>
 
 <h2 id="categories-of-logical-properties" dir="auto">Categories of Logical Properties<a href="#categories-of-logical-properties" class="heading-anchor" aria-label="Permalink: Categories of Logical Properties">#</a>
@@ -863,6 +907,11 @@ Mode: vertical-rl
 
           </table>
         
+
+          <blockquote dir="auto">
+            <p dir="auto">Note — be aware that border shorthand logical equivalents (<code class="highlighter-rouge notranslate">border-inline</code>, <code class="highlighter-rouge notranslate">border-block</code>) are not supported in older Safari.</p>
+          </blockquote>
+        
 <h3 id="border-radius" dir="auto">Border Radius<a href="#border-radius" class="heading-anchor" aria-label="Permalink: Border Radius">#</a>
 </h3>
 
@@ -990,6 +1039,11 @@ Mode: vertical-rl
 
           </table>
         
+
+          <blockquote dir="auto">
+            <p dir="auto">Note — <code class="highlighter-rouge notranslate">inset-*</code> and <code class="highlighter-rouge notranslate">block/inline-size</code> have less support in older mobile browsers and pre-Chromium Edge.</p>
+          </blockquote>
+        
 <h3 id="floats--clears" dir="auto">Floats &amp; Clears<a href="#floats--clears" class="heading-anchor" aria-label="Permalink: Floats &amp; Clears">#</a>
 </h3>
 
@@ -1067,6 +1121,11 @@ Mode: vertical-rl
   </tbody>
 
           </table>
+        
+
+          <blockquote dir="auto">
+            <p dir="auto">Note: <code class="highlighter-rouge notranslate">text-align: start/end</code> is not supported in IE11, needs fallback.</p>
+          </blockquote>
         
 <h3 id="tables" dir="auto">Tables<a href="#tables" class="heading-anchor" aria-label="Permalink: Tables">#</a>
 </h3>
@@ -1456,6 +1515,35 @@ Mode: vertical-rl
 
           </table>
         
+<h2 id="practical-adoption--tips" dir="auto">Practical Adoption &amp; Tips<a href="#practical-adoption--tips" class="heading-anchor" aria-label="Permalink: Practical Adoption &amp; Tips">#</a>
+</h2>
+<h3 id="best-practices--reminders" dir="auto">Best Practices &amp; Reminders<a href="#best-practices--reminders" class="heading-anchor" aria-label="Permalink: Best Practices &amp; Reminders">#</a>
+</h3>
+
+          <ul dir="auto">
+              <li><p dir="auto"><strong>Fallbacks first</strong> — For older browsers, write the physical property first, then override with the logical equivalent.</p></li>
+  <li><p dir="auto"><strong>Be consistent</strong> — Avoid mixing physical and logical for the same property unless intentionally layering fallbacks.</p></li>
+  <li><p dir="auto"><strong>Test multiple flows</strong> — Check both <code class="highlighter-rouge notranslate">horizontal-tb</code> and <code class="highlighter-rouge notranslate">vertical-rl</code> modes to catch axis-mapping quirks.</p></li>
+  <li><p dir="auto"><strong>Prefer explicit props</strong> — Use individual logical properties (<code class="highlighter-rouge notranslate">margin-inline-start</code>) over shorthands for better browser reach.</p></li>
+  <li><p dir="auto"><strong>Switch direction</strong> — Use <code class="highlighter-rouge notranslate">direction: rtl</code> for horizontal RTL layouts (Arabic, Hebrew).</p></li>
+  <li><p dir="auto"><strong>Change flow</strong> — Use <code class="highlighter-rouge notranslate">writing-mode</code> for vertical layouts; remember that <code class="highlighter-rouge notranslate">inline</code> and <code class="highlighter-rouge notranslate">block</code> axes swap roles.</p></li>
+  <li><p dir="auto"><strong>Alignment shortcuts</strong> — Use <code class="highlighter-rouge notranslate">text-align: start</code> / <code class="highlighter-rouge notranslate">end</code> for automatic LTR/RTL alignment.</p></li>
+  <li><p dir="auto"><strong>Logical positioning</strong> — Replace fixed sides (<code class="highlighter-rouge notranslate">top</code>, <code class="highlighter-rouge notranslate">right</code>, <code class="highlighter-rouge notranslate">bottom</code>, <code class="highlighter-rouge notranslate">left</code>) with <code class="highlighter-rouge notranslate">inset-block</code> / <code class="highlighter-rouge notranslate">inset-inline</code>.</p></li>
+  <li><p dir="auto"><strong>Check compatibility</strong> — Always verify on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" class="external-link">MDN’s compatibility tables</a> before relying on lesser-known logical props.</p></li>
+
+          </ul>
+        
+<h3 id="tools--workflow" dir="auto">Tools &amp; Workflow<a href="#tools--workflow" class="heading-anchor" aria-label="Permalink: Tools &amp; Workflow">#</a>
+</h3>
+
+          <ul dir="auto">
+              <li><p dir="auto"><strong>Tailwind CSS</strong> – Optional plugins available to generate logical properties.</p></li>
+  <li><p dir="auto"><strong>SCSS</strong> – Create mixins to auto-generate logical + physical fallbacks.</p></li>
+  <li><p dir="auto"><strong>CSS-in-JS</strong> – Works naturally with styled-components and Emotion.</p></li>
+  <li><p dir="auto"><strong>PostCSS Logical</strong> – Automatically generates physical equivalents for older browsers.</p></li>
+
+          </ul>
+        
 <h2 id="fallbacks-for-non-supporting-browsers" dir="auto">Fallbacks for Non-Supporting Browsers<a href="#fallbacks-for-non-supporting-browsers" class="heading-anchor" aria-label="Permalink: Fallbacks for Non-Supporting Browsers">#</a>
 </h2>
 <p dir="auto">If you need to support older browsers that don’t recognize logical properties, you can define physical property fallbacks first, followed by
@@ -1520,45 +1608,11 @@ your logical properties. This ensures that browsers without logical property sup
 
           </ul>
         
-<h2 id="quick-ascii-cheatsheet" dir="auto">Quick ASCII Cheatsheet<a href="#quick-ascii-cheatsheet" class="heading-anchor" aria-label="Permalink: Quick ASCII Cheatsheet">#</a>
-</h2>
-<pre><code>Writing Mode: horizontal-tb (default)
--------------------------------------
-block-start    = top
-block-end      = bottom
-inline-start   = left (LTR) / right (RTL)
-inline-end     = right (LTR) / left (RTL)
-
-Writing Mode: vertical-rl
--------------------------------------
-block-start    = right
-block-end      = left
-inline-start   = top
-inline-end     = bottom
-</code></pre>
-
-<h2 id="practical-tips--reminders" dir="auto">Practical Tips &amp; Reminders<a href="#practical-tips--reminders" class="heading-anchor" aria-label="Permalink: Practical Tips &amp; Reminders">#</a>
-</h2>
-
-          <ul dir="auto">
-              <li><p dir="auto"><strong>Set</strong> <code class="highlighter-rouge notranslate">direction: rtl</code> to flip <code class="highlighter-rouge notranslate">inline-start</code>/<code class="highlighter-rouge notranslate">inline-end</code> for horizontal text layouts (e.g., Arabic, Hebrew).</p></li>
-  <li><p dir="auto"><strong>Use</strong> <code class="highlighter-rouge notranslate">writing-mode</code> to switch to vertical flows — note that the <code class="highlighter-rouge notranslate">inline</code> and <code class="highlighter-rouge notranslate">block</code> axes swap roles.</p></li>
-  <li><p dir="auto"><strong>Prefer logical properties</strong> (<code class="highlighter-rouge notranslate">margin-inline-start</code>, <code class="highlighter-rouge notranslate">padding-block</code>, <code class="highlighter-rouge notranslate">inline-size</code>, etc.) to write one set of styles that adapt automatically to direction and writing mode.</p></li>
-  <li><p dir="auto"><strong>Leverage</strong> <code class="highlighter-rouge notranslate">text-align: start</code> / <code class="highlighter-rouge notranslate">end</code> for automatic alignment in both LTR and RTL contexts.</p></li>
-  <li><p dir="auto"><strong>Use logical positioning</strong> (<code class="highlighter-rouge notranslate">inset-inline</code>, <code class="highlighter-rouge notranslate">inset-block</code>) instead of fixed <code class="highlighter-rouge notranslate">top</code>, <code class="highlighter-rouge notranslate">right</code>, <code class="highlighter-rouge notranslate">bottom</code>, <code class="highlighter-rouge notranslate">left</code>.</p></li>
-  <li><p dir="auto"><strong>For older browsers</strong>, include physical property fallbacks <em>before</em> logical properties for safe degradation.</p></li>
-  <li><p dir="auto"><strong>Maintain consistency</strong> — avoid mixing physical and logical properties in the same context unless intentionally providing fallbacks.</p></li>
-  <li><p dir="auto"><strong>Check browser support</strong> on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" class="external-link">MDN’s compatibility tables</a> before relying on less common logical properties.</p></li>
-
-          </ul>
-        
 <h2 id="conclusion" dir="auto">Conclusion<a href="#conclusion" class="heading-anchor" aria-label="Permalink: Conclusion">#</a>
 </h2>
-<p dir="auto">CSS Logical Properties are the future of responsive, internationalized web design. They eliminate the need for duplicating styles
-for different writing directions and ensure your layout adapts naturally to any language or script.</p>
-<p dir="auto">By embracing these properties now, you’re building for a web that’s truly global—without the extra headaches.</p>
-<p dir="auto">CSS Logical Properties remove the need to write separate LTR and RTL styles.
-They make your layouts <strong>direction-aware</strong>, <strong>international-ready</strong>, and <strong>easier to maintain</strong>.</p>
+<p dir="auto">CSS Logical Properties are the future of responsive, internationalized web design. They eliminate the need for duplicate styles for different
+writing directions, ensuring your layouts adapt naturally to any language or script.</p>
+<p dir="auto">By adopting them now, you’re creating layouts that are <strong>direction-aware</strong>, <strong>international-ready</strong>, and <strong>easy to maintain</strong>—without the extra headaches.</p>
     </div>
 
     <div class="toc-wrapper">
@@ -1573,11 +1627,19 @@ They make your layouts <strong>direction-aware</strong>, <strong>international-r
 </li>
 <li><a href="#benefits-of-logical-properties" class="toc-link toc-link-level-2">Benefits of Logical Properties</a>
 </li>
-<li><a href="#practical-adoption-tools--workflow" class="toc-link toc-link-level-2">Practical Adoption: Tools &amp; Workflow</a>
-</li>
 <li><a href="#understanding-inline-vs-block-axes" class="toc-link toc-link-level-2">Understanding Inline vs Block Axes</a>
 <ul class="toc-level toc-level-3">
-<li><a href="#short-examples-css--show-behavior" class="toc-link toc-link-level-3">Short examples (CSS) — show behavior</a>
+<li><a href="#horizontal-tb-ltr-typical-english" class="toc-link toc-link-level-3">horizontal-tb (LTR) (typical English)</a>
+</li>
+<li><a href="#horizontal-tb-rtl-arabic-hebrew" class="toc-link toc-link-level-3">horizontal-tb (RTL) (Arabic, Hebrew)</a>
+</li>
+<li><a href="#vertical-rl" class="toc-link toc-link-level-3">vertical-rl</a>
+</li>
+<li><a href="#vertical-lr" class="toc-link toc-link-level-3">vertical-lr</a>
+</li>
+<li><a href="#quick-reference-logical-vs-physical-mappings" class="toc-link toc-link-level-3">Quick Reference: Logical vs Physical Mappings</a>
+</li>
+<li><a href="#short-examples" class="toc-link toc-link-level-3">Short Examples</a>
 </li>
 </ul>
 </li>
@@ -1617,11 +1679,15 @@ They make your layouts <strong>direction-aware</strong>, <strong>international-r
 </li>
 </ul>
 </li>
+<li><a href="#practical-adoption--tips" class="toc-link toc-link-level-2">Practical Adoption &amp; Tips</a>
+<ul class="toc-level toc-level-3">
+<li><a href="#best-practices--reminders" class="toc-link toc-link-level-3">Best Practices &amp; Reminders</a>
+</li>
+<li><a href="#tools--workflow" class="toc-link toc-link-level-3">Tools &amp; Workflow</a>
+</li>
+</ul>
+</li>
 <li><a href="#fallbacks-for-non-supporting-browsers" class="toc-link toc-link-level-2">Fallbacks for Non-Supporting Browsers</a>
-</li>
-<li><a href="#quick-ascii-cheatsheet" class="toc-link toc-link-level-2">Quick ASCII Cheatsheet</a>
-</li>
-<li><a href="#practical-tips--reminders" class="toc-link toc-link-level-2">Practical Tips &amp; Reminders</a>
 </li>
 <li><a href="#conclusion" class="toc-link toc-link-level-2">Conclusion</a>
 </li>
