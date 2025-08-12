@@ -1,0 +1,2234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Unleashing CSS Logical Properties: Future-Proof Your Layouts
+ | Harshal LADHE</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Unleashing CSS Logical Properties: Future-Proof Your Layouts | Harshal LADHE</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Unleashing CSS Logical Properties: Future-Proof Your Layouts" />
+<meta name="author" content="Harshal LADHE" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Learn how CSS Logical Properties help you build layouts that adapt seamlessly to different writing modes, including RTL and vertical text. Includes comparisons, fallbacks, and a visual cheat sheet." />
+<meta property="og:description" content="Learn how CSS Logical Properties help you build layouts that adapt seamlessly to different writing modes, including RTL and vertical text. Includes comparisons, fallbacks, and a visual cheat sheet." />
+<link rel="canonical" href="https://shivam091.github.io/post/unleashing-css-logical-properties" />
+<meta property="og:url" content="https://shivam091.github.io/post/unleashing-css-logical-properties" />
+<meta property="og:site_name" content="Harshal LADHE" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-10T18:28:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Unleashing CSS Logical Properties: Future-Proof Your Layouts" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal LADHE","url":"https://shivam091.github.io"},"dateModified":"2025-08-10T18:52:49+05:30","datePublished":"2025-08-10T18:28:00+05:30","description":"Learn how CSS Logical Properties help you build layouts that adapt seamlessly to different writing modes, including RTL and vertical text. Includes comparisons, fallbacks, and a visual cheat sheet.","headline":"Unleashing CSS Logical Properties: Future-Proof Your Layouts","mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/unleashing-css-logical-properties"},"url":"https://shivam091.github.io/post/unleashing-css-logical-properties"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+<link rel="icon" type="image/png" href="/assets/img/icons/favicon.png">
+<link rel="manifest" href="/assets/img/icons/manifest.json">
+
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/img/icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Preconnect for fonts -->
+
+
+<!-- Google Font or Custom Font -->
+
+
+<!-- Stylesheets -->
+<link href="/dist/style.css" rel="stylesheet">
+
+<!-- Additional head includes -->
+
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5GHEJ51PD"></script>
+
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-W5GHEJ51PD", { anonymize_ip: true });
+</script>
+
+
+
+<script type="text/javascript">
+  (function() {
+    const theme = localStorage.getItem("theme") || "system";
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.setAttribute("data-theme", theme === "system" ? (prefersDark ? "dark" : "light") : theme);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <button type="button" class="skip-link" data-skip-link data-skip-to="#main-content">Skip to main content</button>
+
+  <div id="header-drawer" class="header-drawer" role="dialog" aria-modal="true" aria-label="Main Menu" tabindex="-1">
+  <div class="drawer-container">
+    <nav class="drawer-navigation" role="navigation" aria-label="Main Navigation">
+      <ul class="nav-list">
+        
+        <li class="nav-item">
+           <a href="/posts" class="nav-link" >
+             <svg  class='icon icon-list'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-list" />
+</svg>
+             Posts
+           </a>
+        </li>
+        
+        <li class="nav-item">
+           <a href="/series" class="nav-link" >
+             <svg  class='icon icon-book'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-book" />
+</svg>
+             Series
+           </a>
+        </li>
+        
+        <li class="nav-item">
+           <a href="/about" class="nav-link" >
+             <svg  class='icon icon-info-circle'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-info-circle" />
+</svg>
+             About
+           </a>
+        </li>
+        
+      </ul>
+    </nav>
+    <div class="drawer-visuals">
+      <svg viewBox="0 0 788 265" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="visual-cloud-shape" focusable="false" aria-hidden="true">
+        <path d="M681.771 38.1111C693.771 38.1111 688.271 -2.38884 759.771 0.111155C770.228 0.476802 779.338 1.54837 787.271 3.11155V264.111H0.770948C0.770948 264.111 -9.72906 229.611 46.7709 192.611C103.271 155.611 148.271 182.611 153.271 181.611C158.271 180.611 153.771 139.111 230.771 123.111C307.771 107.111 322.771 138.111 332.271 136.111C341.771 134.111 336.771 87.6111 405.271 74.1111C473.771 60.6112 497.771 89.1112 505.771 88.1111C513.771 87.1111 510.271 37.1111 574.271 21.6111C638.271 6.11115 669.771 38.1111 681.771 38.1111Z" class="visual-cloud-path" />
+      </svg>
+      <svg viewBox="0 0 740 100" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="visual-base-shape" focusable="false" aria-hidden="true">
+        <path d="M230 74.9998C221.5 71.9995 190.5 22.4998 69 18.4998C45.6329 17.7305 25.6317 19.3469 8.56594 22.4598C4.15502 23.2644 0 19.9389 0 15.4552V108H740V60.9843C740 65.0822 736.496 68.3004 732.408 68.01C729.819 67.8261 727.184 67.6558 724.5 67.4998C595.5 59.9998 582 95 573.5 94.9998C565 94.9995 532 58.9998 406 47.4998C280 35.9998 238.5 78 230 74.9998Z" class="visual-base-path" />
+      </svg>
+      <ul class="quick-links">
+        
+        <li><a class="quick-link" href="/categories">Categories</a></li>
+        
+        <li><a class="quick-link" href="/tags">Tags</a></li>
+        
+        <li><a class="quick-link" href="/archives">Archives</a></li>
+        
+        <li><a class="quick-link" href="/contact">Contact</a></li>
+        
+      </ul>
+    </div>
+    <footer class="drawer-footer">
+      <ul class="footer-links" aria-label="Legal links">
+        
+        <li class="footer-item">
+          <a href="/terms-of-use" class="footer-link">Terms of Use</a>
+        </li>
+        
+        <li class="footer-item">
+          <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+        </li>
+        
+        <li class="footer-item">
+          <a href="/code-of-conduct" class="footer-link">Code of Conduct</a>
+        </li>
+        
+      </ul>
+    </footer>
+  </div>
+</div>
+
+
+  <div class="sky-banner-top" aria-hidden="true">
+  <div class="cloud-layers" role="presentation">
+    <svg width="5120" height="225" viewBox="0 0 5120 225" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="cloud-shapes" data-sky-shapes focusable="false" aria-hidden="true">
+      <path d="M2436 28.9999C2329.5 34.4998 2347.5 132.5 2333 132.5C2318.5 132.5 2240.5 120 2240.5 120L2156.5 160.5L2079 114L1932.5 168L1854.5 104.5L1780 132.5L1638 90.9999C1638 90.9999 1555 139 1540.5 132.5C1526 126 1520.5 -11.5 1439.5 -24.0001C1358.5 -36.5002 1350.5 14.5 1340 13.4999C1329.5 12.4998 1306 -51.0001 1225 -49.0001C1144 -47.0001 1122 4.99988 1101.5 1.99988C1081 -1.00012 1092 -30.5001 957 -29.5001C822 -28.5001 827.5 22.4999 810 20.4999C792.5 18.4999 810 -29.5001 702 -24.0001C594 -18.5001 588 76.4999 588 76.4999L489 104.5L147 111L-20.5 76.4999V212.5H5141V-7.50012C5141 -7.50012 5141 -48 5085 -41.5001C5010 -41.5001 4995.19 28.9999 4986.5 28.9999C4973 28.9999 4964.5 -19 4874.5 -22.0001C4784.5 -25.0002 4758 28.9999 4744.5 23.4999C4731 17.9999 4719.5 -39.5 4626.5 -41.5001C4533.5 -43.5002 4552.5 23.4999 4540 23.4999C4527.5 23.4999 4510 -28 4419 -28.0001C4328 -28.0002 4340 43.4999 4326.5 43.4999C4313 43.4999 4309 13.4999 4230 28.9999C4151 44.4999 4126 123.5 4126 123.5L4034 63.9999L3919.5 150L3848 91.9999L3686 123.5L3610.5 76.4999C3610.5 76.4999 3374.5 91.9999 3342.5 91.9999C3310.5 91.9999 3326 14.5 3219.5 13.4999C3113 12.4998 3142.5 65 3128 63.9999C3113.5 62.9998 3086 25 2994.5 25C2903 25 2884.5 53.3387 2875 51.4999C2865.5 49.6611 2863.5 3.99988 2720 13.4999C2576.5 22.9999 2583 76.5 2570.5 76.4999C2558 76.4998 2542.5 23.5 2436 28.9999Z" class="background-clouds" />
+      <path d="M1819.52 94.9435C1816.05 95.3354 1787.96 65.5454 1740.98 60.4498C1694 55.3542 1684 83.9128 1679.73 83.1288C1675.45 82.3447 1667.53 41.8563 1620.5 40C1576.17 38.2501 1557.5 64.3141 1550.12 64.314C1542.75 64.3139 1535 32.8097 1477.5 31.0116C1420 29.2135 1403 65.9622 1397.48 65.9622C1391.97 65.9622 1384.89 56.4569 1341.5 54.1227C1292.87 51.5064 1300.5 74 1276 73C1251.5 72 1267 35.3079 1213 35.3079C1159 35.3079 1152.5 66.8755 1147.22 66.6658C1141.93 66.4562 1155.52 40.6061 1106.22 29.8203C1043.5 16.1012 1001 61.9622 992 61.5702C983 61.1783 952.5 29.8203 897.756 35.3079C843.011 40.7956 850.5 64.706 846.876 64.314C843.251 63.922 834.5 38.0518 781.67 35.3079C728.84 32.564 725.5 54.5147 720.417 54.1227C715.333 53.7306 699.871 28.1474 623.5 28.1474C559.41 28.1474 547.404 68.6258 541 67.8418C534.596 67.0578 529.5 43.1474 484.788 43.1474C386.5 43.1474 376.358 67.8418 372 67.8418C367.642 67.8418 343.786 32.9562 302.5 29.8203C245.877 25.5195 221.877 50.8519 211 48.5C200.123 46.1481 188.812 -15.6335 153.821 -21.1364C111.372 -27.812 74 35.3079 68.8563 35.3079C66.4159 35.3079 54 6.9321 2 8.5C-18.5366 7.26916 -23.6973 23.7594 -24.7587 28.5412C-24.9483 29.3952 -25 30.2591 -25 31.134V178.369C-25 189.415 -16.0458 198.369 -5.00006 198.369H5125C5136.05 198.369 5145 189.415 5145 178.369V85.7669C5145 81.2657 5143.44 76.8907 5139.79 74.2543C5128.71 66.2521 5097.73 50.8318 5025.95 54.1227C4949 57.6505 4973.91 78.817 4943.46 78.817C4913 78.817 4932.64 47.4591 4864 47.4591C4813.52 47.4591 4800 73.3295 4792.3 72.9374C4784.6 72.5454 4782.58 42.7555 4711.5 54.1227C4640.42 65.4899 4664 101.944 4657.94 101.944C4651.87 101.943 4622.18 65.1227 4589.77 64.314C4560 63.5715 4526.5 92.9281 4522.58 92.9281C4518.67 92.9281 4511.22 55.2987 4432.5 57.6505C4353.78 60.0023 4362.5 92.9281 4356.11 92.9281C4349.73 92.9281 4339.03 64.7061 4288.5 67.0579C4237.97 69.4097 4223 98.1195 4217.8 96.9435C4212.6 95.7675 4209.03 67.5305 4163.5 54.1227C4106.26 37.2678 4074 73.7214 4069.6 72.9374C4065.21 72.1534 4064.85 41.4026 4002.42 40.7956C3940 40.1885 3935.69 67.0579 3931 67.0579C3926.31 67.0578 3917.35 32.2561 3862.5 35C3807.65 37.7439 3799.5 64.314 3792.48 64.314C3785.46 64.314 3780 47.4591 3728.26 47.4591C3676.53 47.4591 3667.5 64.314 3658.12 64.314C3648.74 64.314 3663.53 72.5455 3588 72.9374C3512.47 73.3293 3513.5 72.9374 3504.49 72.9374C3495.48 72.9374 3501 31.4591 3430.39 31.4591C3372 31.4591 3372.27 48.314 3363 48.314C3353.73 48.314 3352 21.5796 3289.12 20.7956C3226.23 20.0116 3206 72.9374 3194.27 72.9374C3182.54 72.9374 3180 42.4591 3094.98 49.1227C3044.78 53.057 3020.63 70.7587 3009.26 84.5992C3002.25 93.1282 2990.93 100.074 2980.02 98.3621C2952.17 93.9887 2901.06 88.6922 2869.73 101.944C2845.11 112.354 2823.69 138.022 2811.58 154.943C2805.34 163.655 2793.56 167.079 2783.76 162.748C2762.93 153.539 2727.21 139.819 2698.81 139.573C2671.87 139.339 2622.48 150.058 2595.61 156.422C2585.17 158.893 2574.35 152.882 2568.76 143.731C2558.1 126.303 2535.74 101.949 2494 101.959C2448.72 101.97 2444.94 123 2433 123C2421.06 123 2427.95 103.959 2360.4 85.9281C2268.5 61.3999 2243.5 103.48 2232 101.959C2220.49 100.437 2216.5 45.7691 2109 54.1227C2028.5 60.3776 2015 92.9281 2009 92.9281C2003 92.9281 1989.5 66.7935 1915.85 64.314C1835.5 61.609 1823 94.5516 1819.52 94.9435Z" class="midground-clouds" />
+      <path d="M1886.89 102.5C1750 108 1716 173 1699.5 173C1683 173 1666.15 97.9407 1601.06 75.9997C1554.8 60.4091 1487.98 76.0195 1459.2 84.1928C1450.25 86.7338 1440.64 85.5242 1432.63 80.7951C1402.81 63.1909 1325.89 22.2278 1269.75 31.4997C1196.57 43.584 1137.82 124.5 1119.34 124.5C1100.85 124.5 1020.69 -0.888998 945.936 31.4997C916.035 44.4558 899.5 88.4997 884.971 88.4997C870.443 88.4997 792 31.4997 650.608 59.9997C501.794 89.9957 508.19 153 494.199 152C480.207 151 465.405 51.4021 329.294 31.4997C172 8.49984 164.602 90.4999 150.001 91.4997C143.165 91.9678 151.882 28.9814 60.5004 21.4998C-24.9948 14.5002 -25 43.4964 -25 43.4997V43.4999V195C-25 211.568 -11.238 225 5.3305 225H5114.67C5131.24 225 5145 211.568 5145 195V133.542C5145 111.61 5121.89 97.25 5102 106.501C5093.3 110.551 5083.1 110.254 5074.54 105.903C5047.98 92.4088 4987.54 64.0285 4941.62 59.9997C4881.15 54.6951 4798.63 87.4635 4761.6 103.95C4749.9 109.159 4736.08 107.015 4726.32 98.7121C4704.05 79.7453 4662.2 47.8936 4625.8 41.4997C4561.86 30.2692 4478.62 96.3872 4446.48 124.65C4438.02 132.085 4426.31 134.793 4415.42 131.909C4388.84 124.864 4334.87 113 4273 113C4171 113 4150.58 158 4133.09 163C4115.6 168 4087.4 77.818 3937.7 59.9997C3788 42.1814 3742.81 136 3725.82 129C3708.83 122 3710.33 59.9997 3601.39 41.4997C3523.31 28.239 3454.72 51.7146 3422.14 66.075C3409.95 71.4451 3394.36 70.6604 3381.52 67.1582C3367.94 63.4575 3346.25 59.9997 3312.56 59.9997C3240.1 59.9997 3170.5 129 3155.65 129C3140.8 129 3086 59.9997 2933.78 59.9997C2781.56 59.9997 2751 129 2738.39 129C2725.79 129 2728 100.5 2595 100.5C2523.87 100.5 2468.76 130.782 2441.46 149.522C2429.96 157.417 2414.14 158.851 2401.23 153.564C2384.84 146.85 2357.89 137.77 2316.64 129C2215.8 107.559 2123.41 132.924 2091.81 143.39C2084.34 145.862 2076.22 145.813 2068.88 143.006C2037.8 131.129 1949.71 99.9756 1886.89 102.5Z" class="foreground-clouds" />
+    </svg>
+  </div>
+</div>
+
+
+  <div class="container">
+    <div class="page-wrapper" data-glass-trigger>
+      <header class="site-header">
+  <a href="/" class="site-logo">
+    <img src="/assets/img/smiling-face.png" alt="Harshal LADHE" class="avatar" loading="lazy">
+    <span class="site-name">Harshal LADHE</span>
+  </a>
+
+  <nav class="nav-links" role="navigation" aria-label="Main Navigation">
+    
+      
+         <a href="/posts" class="nav-link" >
+           Posts
+         </a>
+      
+    
+      
+         <a href="/series" class="nav-link" >
+           Series
+         </a>
+      
+    
+      
+         <a href="/about" class="nav-link" >
+           About
+         </a>
+      
+    
+  </nav>
+
+  <div class="header-actions">
+    <button class="header-action search-toggle" aria-label="Search">
+      <svg  class='icon icon-search'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-search" />
+</svg>
+    </button>
+
+    <div class="dropdown" data-dropdown data-theme-switcher>
+      <button type="button" class="dropdown-toggle header-action theme-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Toggle color scheme">
+        <svg  class='icon icon-adjust'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-adjust" />
+</svg>
+      </button>
+
+      <ul class="dropdown-menu" role="menu" aria-label="Available color schemes" data-theme-switcher-list>
+        <div class="dropdown-arrow" data-popper-arrow aria-hidden="true"></div>
+          <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use your system’s default theme"
+                    data-color-scheme="system" data-theme-switcher-list-items>
+              <svg  class='icon icon-device-desktop'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-device-desktop" />
+</svg>
+              System
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use light mode"
+                    data-color-scheme="light" data-theme-switcher-list-items>
+              <svg  class='icon icon-sun'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-sun" />
+</svg>
+              Light
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use soft dark mode"
+                    data-color-scheme="soft-dark" data-theme-switcher-list-items>
+              <svg  class='icon icon-sun-moon'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-sun-moon" />
+</svg>
+              Soft Dark
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use dark mode"
+                    data-color-scheme="dark" data-theme-switcher-list-items>
+              <svg  class='icon icon-moon'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-moon" />
+</svg>
+              Dark
+            </button>
+          </li>
+      </ul>
+    </div>
+
+    <a href="/atom.xml" class="header-action atom-feed" aria-label="Atom Feed" target="_blank"
+       rel="alternate" type="application/atom+xml" data-analytics-event="subscribe_feed" data-analytics-label="Atom Feed"
+       data-analytics-category="engagement">
+       <svg  class='icon icon-atom'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-atom" />
+</svg>
+    </a>
+
+    <button class="header-action toggle-menu" aria-label="Toggle menu" aria-controls="header-drawer">
+      <?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.0" icon-hamburger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class='icon icon-hamburger' width='24' height='24' aria-hidden='true' focusable='false'>
+  <line x1="3" y1="5" x2="21" y2="5" />
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="19" x2="21" y2="19" />
+</svg>
+
+    </button>
+  </div>
+</header>
+
+
+      <main id="main-content" class="main-content" role="main" tabindex="-1">
+        <h1 id="page-title" class="page-title">
+  Unleashing CSS Logical Properties: Future-Proof Your Layouts
+
+</h1>
+
+
+<section class="page-content" aria-label="Unleashing CSS Logical Properties: Future-Proof Your Layouts">
+  <article class="post" itemscope itemtype="https://schema.org/BlogPosting" aria-labelledby="page-title">
+  <meta itemprop="datePublished" content="2025-08-10T18:52:49+05:30">
+  <meta itemprop="dateModified" content="2025-08-10T18:52:49+05:30">
+  <meta itemprop="headline" content="Unleashing CSS Logical Properties: Future-Proof Your Layouts">
+  <meta itemprop="mainEntityOfPage" content="https://shivam091.github.io/post/unleashing-css-logical-properties">
+
+  <header class="post-header">
+    <div class="post-meta post-meta-primary" role="group" aria-label="Post metadata">
+      <div class="post-meta-item post-published-date">
+  <svg  class='icon icon-calendar'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-calendar" />
+</svg>
+  <span class="visually-hidden">Published at:</span>
+  <time datetime='2025-08-10T18:52:49+05:30' aria-label='Published on August 10, 2025 at 06:52 PM' role='time' data-tooltip='Sun, August 10, 2025 06:52 PM' data-tooltip-position='bottom' tabindex='0'>
+  August 10, 2025
+</time>
+
+</div>
+
+
+  <div class="post-meta-item post-last-modified-date">
+    <svg  class='icon icon-history'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-history" />
+</svg>
+    <span class="visually-hidden">Last updated:</span>
+    <time datetime='2025-08-10T18:52:49+05:30' aria-label='Last updated on August 10, 2025 at 06:52 PM' role='time' data-tooltip='Sun, August 10, 2025 06:52 PM' data-tooltip-position='bottom' tabindex='0'>
+  August 10, 2025
+</time>
+
+  </div>
+
+
+<div class="post-meta-item post-read-time">
+  <svg  class='icon icon-clock'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-clock" />
+</svg>
+  <span class="visually-hidden">Estimated reading time:</span>
+  <span data-tooltip="2572 words" data-tooltip-position="bottom" tabindex="0">15 min read</span>
+</div>
+
+
+
+
+    </div>
+  </header>
+
+  <div class="post-layout">
+    <div class="post-content" itemprop="articleBody">
+      <h2 id="introduction" dir="auto">Introduction<a href="#introduction" class="heading-anchor" aria-label="Permalink: Introduction">#</a>
+</h2>
+
+          <blockquote dir="auto">
+            <p dir="auto">Designing for multiple languages shouldn’t mean rewriting your CSS for every direction or writing mode. CSS Logical Properties
+let your layouts adapt automatically to RTL, vertical text, and more — with just one set of styles.</p>
+          </blockquote>
+        
+<p dir="auto">In modern web design, layouts must seamlessly adapt to different languages and writing modes — <strong>CSS Logical Properties</strong> offer a future-proof way
+to style elements that respect <strong>writing direction</strong>, <strong>text flow</strong>, and <strong>orientation</strong>.</p>
+<p dir="auto">Whether it’s <strong>right-to-left (RTL)</strong> languages like Arabic and Hebrew, or vertical writing in Japanese, logical properties let you create one
+stylesheet that works everywhere.</p>
+<p dir="auto">Instead of tying layout to fixed physical directions (<code class="highlighter-rouge notranslate">left</code>, <code class="highlighter-rouge notranslate">right</code>, <code class="highlighter-rouge notranslate">top</code>, <code class="highlighter-rouge notranslate">bottom</code>), they use logical directions: <strong>start</strong>, <strong>end</strong>, <strong>inline</strong>, and <strong>block</strong>.</p>
+<p dir="auto"><strong>Example:</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Instead of */</span>
+<span class="nt">padding-left</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span>
+
+<span class="c">/* Use */</span>
+<span class="nt">padding-inline-start</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span></code></pre></figure>
+
+<p dir="auto">If the document switches to RTL, <code class="highlighter-rouge notranslate">padding-inline-start</code> automatically applies to the right — no extra styles needed.</p>
+<h2 id="why-css-logical-properties-matter" dir="auto">Why CSS Logical Properties Matter<a href="#why-css-logical-properties-matter" class="heading-anchor" aria-label="Permalink: Why CSS Logical Properties Matter">#</a>
+</h2>
+<p dir="auto">Traditionally, CSS positioning and spacing relied on physical properties like <code class="highlighter-rouge notranslate">margin-left</code>, <code class="highlighter-rouge notranslate">padding-top</code>, and <code class="highlighter-rouge notranslate">width</code>. While effective, these are
+tied to the visual layout and can’t adapt automatically when the writing mode or text direction changes.</p>
+<p dir="auto"><strong>With physical properties:</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Physical properties */</span>
+<span class="nt">margin-left</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span> <span class="c">/* Always on the left side */</span></code></pre></figure>
+
+<p dir="auto">In an RTL layout, <code class="highlighter-rouge notranslate">margin-left</code> still applies to the left side — which may no longer be the “start” of the text.</p>
+<p dir="auto"><strong>With logical properties:</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Logical equivalent */</span>
+<span class="nt">margin-inline-start</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span> <span class="c">/* Adapts to start side based on writing mode */</span></code></pre></figure>
+
+<p dir="auto">This ensures your layout is <strong>writing-mode-aware</strong>.</p>
+<p dir="auto"><strong>Browser support:</strong></p>
+<p dir="auto">Logical properties are supported in all major browsers — Chrome, Edge, Firefox, and Safari — over the last 3 years, making them ready for production.</p>
+<h2 id="benefits-of-logical-properties" dir="auto">Benefits of Logical Properties<a href="#benefits-of-logical-properties" class="heading-anchor" aria-label="Permalink: Benefits of Logical Properties">#</a>
+</h2>
+
+          <ol dir="auto">
+              <li><p dir="auto"><strong>Internationalization Ready</strong> – Works for RTL and vertical writing without needing separate stylesheets.</p></li>
+  <li><p dir="auto"><strong>Consistent Layouts</strong> – Automatically adjusts for writing mode changes, keeping design predictable.</p></li>
+  <li><p dir="auto"><strong>Cleaner Code</strong> – Reduces redundancy and removes the need for duplicated directional styles.</p></li>
+  <li><p dir="auto"><strong>Accessibility Friendly</strong> – Plays nicely with screen readers in RTL and vertical text contexts.</p></li>
+  <li><p dir="auto"><strong>Performance Friendly</strong> – Fewer overrides and media queries improve maintainability.</p></li>
+  <li><p dir="auto"><strong>Future-Proof</strong> – Ready for expanded language and writing system support as browsers evolve.</p></li>
+
+          </ol>
+        
+<h2 id="understanding-inline-vs-block-axes" dir="auto">Understanding Inline vs Block Axes<a href="#understanding-inline-vs-block-axes" class="heading-anchor" aria-label="Permalink: Understanding Inline vs Block Axes">#</a>
+</h2>
+<p dir="auto"><strong>Inline axis</strong> — the direction in which text flows.
+<strong>Block axis</strong> — the direction perpendicular to the inline axis, where blocks (paragraphs, divs) stack.</p>
+<p dir="auto"><strong>Key idea</strong>: Logical properties use <code class="highlighter-rouge notranslate">inline</code> / <code class="highlighter-rouge notranslate">block</code> combined with <code class="highlighter-rouge notranslate">start</code> / <code class="highlighter-rouge notranslate">end</code>:</p>
+          <ul dir="auto">
+              <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-start</code> – leading edge of the inline axis (left in LTR, right in RTL, top in some vertical modes).</p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-end</code> – trailing edge of the inline axis.</p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-start</code> – leading edge of the block axis (top in horizontal writing).</p></li>
+  <li><p dir="auto"><code class="highlighter-rouge notranslate">block-end</code> – trailing edge of the block axis.</p></li>
+
+          </ul>
+        
+<h3 id="horizontal-tb-ltr-typical-english" dir="auto">horizontal-tb (LTR) (typical English)<a href="#horizontal-tb-ltr-typical-english" class="heading-anchor" aria-label="Permalink: horizontal-tb (LTR) (typical English)">#</a>
+</h3>
+<pre><code>+-----------------------------------------+
+| inline-start                 inline-end |
+|    (left)         ← inline →   (right)  |
+| block-start (top)                       |
+|                                         |
+|        ↓                                |
+|                                         |
+| block-end (bottom)                      |
++-----------------------------------------+
+</code></pre>
+
+<h3 id="horizontal-tb-rtl-arabic-hebrew" dir="auto">horizontal-tb (RTL) (Arabic, Hebrew)<a href="#horizontal-tb-rtl-arabic-hebrew" class="heading-anchor" aria-label="Permalink: horizontal-tb (RTL) (Arabic, Hebrew)">#</a>
+</h3>
+<pre><code>+-----------------------------------------+
+| inline-end                 inline-start |
+|   (left)          ← inline →   (right)  |
+| block-start (top)                       |
+|                                         |
+|        ↓                                |
+|                                         |
+| block-end (bottom)                      |
++-----------------------------------------+
+</code></pre>
+
+
+          <blockquote dir="auto">
+            <p dir="auto">In RTL: inline axis flows <strong>right</strong> → <strong>left</strong>, so <code class="highlighter-rouge notranslate">inline-start</code> = right, <code class="highlighter-rouge notranslate">inline-end</code> = left.</p>
+          </blockquote>
+        
+<h3 id="vertical-rl" dir="auto">vertical-rl<a href="#vertical-rl" class="heading-anchor" aria-label="Permalink: vertical-rl">#</a>
+</h3>
+<pre><code>+----------------+
+| block-start  → |  (right)
+| inline-start   |  (top)
+|                |
+|       ↓        |
+|                |
+| inline-end     |  (bottom)
+| block-end    ← |  (left)
++----------------+
+</code></pre>
+
+<h3 id="vertical-lr" dir="auto">vertical-lr<a href="#vertical-lr" class="heading-anchor" aria-label="Permalink: vertical-lr">#</a>
+</h3>
+<pre><code>+----------------+
+| block-start  ← |  (left)
+| inline-start   |  (top)
+|                |
+|       ↓        |
+|                |
+| inline-end     |  (bottom)
+| block-end    → |  (right)
++----------------+
+</code></pre>
+
+<h3 id="quick-reference-logical-vs-physical-mappings" dir="auto">Quick Reference: Logical vs Physical Mappings<a href="#quick-reference-logical-vs-physical-mappings" class="heading-anchor" aria-label="Permalink: Quick Reference: Logical vs Physical Mappings">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>Writing mode</th>
+      <th>Inline axis</th>
+      <th>Block axis</th>
+      <th>inline-start</th>
+      <th>inline-end</th>
+      <th>block-start</th>
+      <th>block-end</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<code class="highlighter-rouge notranslate">horizontal-tb</code> LTR</td>
+      <td>left → right</td>
+      <td>top → bottom</td>
+      <td>left</td>
+      <td>right</td>
+      <td>top</td>
+      <td>bottom</td>
+    </tr>
+    <tr>
+      <td>
+<code class="highlighter-rouge notranslate">horizontal-tb</code> RTL</td>
+      <td>right → left</td>
+      <td>top → bottom</td>
+      <td>right</td>
+      <td>left</td>
+      <td>top</td>
+      <td>bottom</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">vertical-rl</code></td>
+      <td>top → bottom</td>
+      <td>right → left</td>
+      <td>top</td>
+      <td>bottom</td>
+      <td>right</td>
+      <td>left</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge notranslate">vertical-lr</code></td>
+      <td>top → bottom</td>
+      <td>left → right</td>
+      <td>top</td>
+      <td>bottom</td>
+      <td>left</td>
+      <td>right</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<p dir="auto"><strong>Visual key:</strong></p>
+<pre><code>horizontal-tb (LTR)         horizontal-tb (RTL)         vertical-rl               vertical-lr
+------------------          ------------------          ------------------        ------------------
+block-start = top           block-start = top           block-start = right       block-start = left
+block-end   = bottom        block-end   = bottom        block-end   = left        block-end   = right
+inline-start = left         inline-start = right        inline-start = top        inline-start = top
+inline-end   = right        inline-end   = left         inline-end   = bottom     inline-end   = bottom
+</code></pre>
+
+
+          <blockquote dir="auto">
+            <p dir="auto">Think of <code class="highlighter-rouge notranslate">inline-*</code> as “text flow direction” and <code class="highlighter-rouge notranslate">block-*</code> as “line stacking direction.”</p>
+          </blockquote>
+        
+<h3 id="short-examples" dir="auto">Short Examples<a href="#short-examples" class="heading-anchor" aria-label="Permalink: Short Examples">#</a>
+</h3>
+<p dir="auto"><strong>Example 1 — Inline / Block sizing</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.box</span> <span class="p">{</span>
+  <span class="py">inline-size</span><span class="p">:</span> <span class="m">40ch</span><span class="p">;</span>    <span class="c">/* horizontal-tb: width; vertical-rl/lr: height */</span>
+  <span class="py">block-size</span><span class="p">:</span> <span class="m">10rem</span><span class="p">;</span>    <span class="c">/* horizontal-tb: height; vertical-rl/lr: width */</span>
+  <span class="py">padding-inline</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* horizontal-tb: left &amp; right; vertical: top &amp; bottom */</span>
+  <span class="py">padding-block</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span><span class="c">/* horizontal-tb: top &amp; bottom; vertical: right &amp; left */</span>
+<span class="p">}</span></code></pre></figure>
+
+<p dir="auto"><strong>Example 2 — Direction-aware margins</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
+  <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="c">/* horizontal LTR: left; horizontal RTL: right; vertical: top */</span>
+  <span class="py">margin-block-start</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>  <span class="c">/* horizontal: top; vertical-rl: right; vertical-lr: left */</span>
+<span class="p">}</span></code></pre></figure>
+
+<p dir="auto"><strong>Example 3 — Switching writing modes</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Default: horizontal LTR */</span>
+<span class="nc">.article</span> <span class="p">{</span>
+  <span class="nl">writing-mode</span><span class="p">:</span> <span class="n">horizontal-tb</span><span class="p">;</span>
+  <span class="nl">direction</span><span class="p">:</span> <span class="nb">ltr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Vertical (e.g., Japanese-style) */</span>
+<span class="nc">.vertical</span> <span class="p">{</span>
+  <span class="nl">writing-mode</span><span class="p">:</span> <span class="n">vertical-rl</span><span class="p">;</span>
+  <span class="nl">direction</span><span class="p">:</span> <span class="nb">rtl</span><span class="p">;</span> <span class="c">/* common for certain East Asian vertical layouts */</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="categories-of-logical-properties" dir="auto">Categories of Logical Properties<a href="#categories-of-logical-properties" class="heading-anchor" aria-label="Permalink: Categories of Logical Properties">#</a>
+</h2>
+<p dir="auto">Logical properties can be grouped into several categories:</p>
+<h3 id="dimension" dir="auto">Dimension<a href="#dimension" class="heading-anchor" aria-label="Permalink: Dimension">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">inline-size</code></strong></td>
+      <td>Logical width in the inline axis</td>
+      <td><code class="highlighter-rouge notranslate">width</code></td>
+      <td><code class="highlighter-rouge notranslate">width</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">block-size</code></strong></td>
+      <td>Logical height in the block axis</td>
+      <td><code class="highlighter-rouge notranslate">height</code></td>
+      <td><code class="highlighter-rouge notranslate">height</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">min-inline-size</code></strong></td>
+      <td>Minimum width in the inline axis</td>
+      <td><code class="highlighter-rouge notranslate">min-width</code></td>
+      <td><code class="highlighter-rouge notranslate">min-width</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">max-inline-size</code></strong></td>
+      <td>Maximum width in the inline axis</td>
+      <td><code class="highlighter-rouge notranslate">max-width</code></td>
+      <td><code class="highlighter-rouge notranslate">max-width</code></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong><code class="highlighter-rouge notranslate">min-block-size</code></strong></td>
+      <td>Minimum height in the block axis</td>
+      <td><code class="highlighter-rouge notranslate">min-height</code></td>
+      <td><code class="highlighter-rouge notranslate">min-height</code></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong><code class="highlighter-rouge notranslate">max-block-size</code></strong></td>
+      <td>Maximum height in the block axis</td>
+      <td><code class="highlighter-rouge notranslate">max-height</code></td>
+      <td><code class="highlighter-rouge notranslate">max-height</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="margin" dir="auto">Margin<a href="#margin" class="heading-anchor" aria-label="Permalink: Margin">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">margin-inline-start</code></strong></td>
+      <td>Margin at the start of the inline axis</td>
+      <td><code class="highlighter-rouge notranslate">margin-left</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-right</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">margin-inline-end</code></strong></td>
+      <td>Margin at the end of the inline axis</td>
+      <td><code class="highlighter-rouge notranslate">margin-right</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-left</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">margin-inline</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">margin-inline-start</code> and <code class="highlighter-rouge notranslate">margin-inline-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">margin-left</code> + <code class="highlighter-rouge notranslate">margin-right</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">margin-right</code> + <code class="highlighter-rouge notranslate">margin-left</code>
+</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">margin-block-start</code></strong></td>
+      <td>Margin at the start of the block axis</td>
+      <td><code class="highlighter-rouge notranslate">margin-top</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-top</code></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong><code class="highlighter-rouge notranslate">margin-block-end</code></strong></td>
+      <td>Margin at the end of the block axis</td>
+      <td><code class="highlighter-rouge notranslate">margin-bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">margin-bottom</code></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong><code class="highlighter-rouge notranslate">margin-block</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">margin-block-start</code> and <code class="highlighter-rouge notranslate">margin-block-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">margin-top</code> + <code class="highlighter-rouge notranslate">margin-bottom</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">margin-top</code> + <code class="highlighter-rouge notranslate">margin-bottom</code>
+</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="padding" dir="auto">Padding<a href="#padding" class="heading-anchor" aria-label="Permalink: Padding">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">padding-inline-start</code></strong></td>
+      <td>Padding at the start of the inline axis</td>
+      <td><code class="highlighter-rouge notranslate">padding-left</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-right</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">padding-inline-end</code></strong></td>
+      <td>Padding at the end of the inline axis</td>
+      <td><code class="highlighter-rouge notranslate">padding-right</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-left</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">padding-inline</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">padding-inline-start</code> and <code class="highlighter-rouge notranslate">padding-inline-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">padding-left</code> + <code class="highlighter-rouge notranslate">padding-right</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">padding-right</code> + <code class="highlighter-rouge notranslate">padding-left</code>
+</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">padding-block-start</code></strong></td>
+      <td>Padding at the start of the block axis</td>
+      <td><code class="highlighter-rouge notranslate">padding-top</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-top</code></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong><code class="highlighter-rouge notranslate">padding-block-end</code></strong></td>
+      <td>Padding at the end of the block axis</td>
+      <td><code class="highlighter-rouge notranslate">padding-bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">padding-bottom</code></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong><code class="highlighter-rouge notranslate">padding-block</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">padding-block-start</code> and <code class="highlighter-rouge notranslate">padding-block-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">padding-top</code> + <code class="highlighter-rouge notranslate">padding-bottom</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">padding-top</code> + <code class="highlighter-rouge notranslate">padding-bottom</code>
+</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="borders" dir="auto">Borders<a href="#borders" class="heading-anchor" aria-label="Permalink: Borders">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-start</code></strong></td>
+      <td>Border at the start of the inline axis</td>
+      <td><code class="highlighter-rouge notranslate">border-left</code></td>
+      <td><code class="highlighter-rouge notranslate">border-right</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-end</code></strong></td>
+      <td>Border at the end of the inline axis</td>
+      <td><code class="highlighter-rouge notranslate">border-right</code></td>
+      <td><code class="highlighter-rouge notranslate">border-left</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">border-inline-start</code> and <code class="highlighter-rouge notranslate">border-inline-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-left</code> + <code class="highlighter-rouge notranslate">border-right</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-right</code> + <code class="highlighter-rouge notranslate">border-left</code>
+</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-start</code></strong></td>
+      <td>Border at the start of the block axis</td>
+      <td><code class="highlighter-rouge notranslate">border-top</code></td>
+      <td><code class="highlighter-rouge notranslate">border-top</code></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-end</code></strong></td>
+      <td>Border at the end of the block axis</td>
+      <td><code class="highlighter-rouge notranslate">border-bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">border-bottom</code></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">border-block-start</code> and <code class="highlighter-rouge notranslate">border-block-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-top</code> + <code class="highlighter-rouge notranslate">border-bottom</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-top</code> + <code class="highlighter-rouge notranslate">border-bottom</code>
+</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-start-width</code></strong></td>
+      <td>Width of the border at inline-start</td>
+      <td><code class="highlighter-rouge notranslate">border-left-width</code></td>
+      <td><code class="highlighter-rouge notranslate">border-right-width</code></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-start-color</code></strong></td>
+      <td>Color of the border at inline-start</td>
+      <td><code class="highlighter-rouge notranslate">border-left-color</code></td>
+      <td><code class="highlighter-rouge notranslate">border-right-color</code></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-start-style</code></strong></td>
+      <td>Style of the border at inline-start</td>
+      <td><code class="highlighter-rouge notranslate">border-left-style</code></td>
+      <td><code class="highlighter-rouge notranslate">border-right-style</code></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-end-width</code></strong></td>
+      <td>Width of the border at inline-end</td>
+      <td><code class="highlighter-rouge notranslate">border-right-width</code></td>
+      <td><code class="highlighter-rouge notranslate">border-left-width</code></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-end-color</code></strong></td>
+      <td>Color of the border at inline-end</td>
+      <td><code class="highlighter-rouge notranslate">border-right-color</code></td>
+      <td><code class="highlighter-rouge notranslate">border-left-color</code></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-end-style</code></strong></td>
+      <td>Style of the border at inline-end</td>
+      <td><code class="highlighter-rouge notranslate">border-right-style</code></td>
+      <td><code class="highlighter-rouge notranslate">border-left-style</code></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-start-width</code></strong></td>
+      <td>Width of the border at block-start</td>
+      <td><code class="highlighter-rouge notranslate">border-top-width</code></td>
+      <td><code class="highlighter-rouge notranslate">border-top-width</code></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-start-color</code></strong></td>
+      <td>Color of the border at block-start</td>
+      <td><code class="highlighter-rouge notranslate">border-top-color</code></td>
+      <td><code class="highlighter-rouge notranslate">border-top-color</code></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-start-style</code></strong></td>
+      <td>Style of the border at block-start</td>
+      <td><code class="highlighter-rouge notranslate">border-top-style</code></td>
+      <td><code class="highlighter-rouge notranslate">border-top-style</code></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-end-width</code></strong></td>
+      <td>Width of the border at block-end</td>
+      <td><code class="highlighter-rouge notranslate">border-bottom-width</code></td>
+      <td><code class="highlighter-rouge notranslate">border-bottom-width</code></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-end-color</code></strong></td>
+      <td>Color of the border at block-end</td>
+      <td><code class="highlighter-rouge notranslate">border-bottom-color</code></td>
+      <td><code class="highlighter-rouge notranslate">border-bottom-color</code></td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-end-style</code></strong></td>
+      <td>Style of the border at block-end</td>
+      <td><code class="highlighter-rouge notranslate">border-bottom-style</code></td>
+      <td><code class="highlighter-rouge notranslate">border-bottom-style</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+
+          <blockquote dir="auto">
+            <p dir="auto">Note — be aware that border shorthand logical equivalents (<code class="highlighter-rouge notranslate">border-inline</code>, <code class="highlighter-rouge notranslate">border-block</code>) are not supported in older Safari.</p>
+          </blockquote>
+        
+<h3 id="border-radius" dir="auto">Border Radius<a href="#border-radius" class="heading-anchor" aria-label="Permalink: Border Radius">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-start-start-radius</code></strong></td>
+      <td>Radius for the corner where block-start and inline-start meet</td>
+      <td><code class="highlighter-rouge notranslate">border-top-left-radius</code></td>
+      <td><code class="highlighter-rouge notranslate">border-top-right-radius</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-start-end-radius</code></strong></td>
+      <td>Radius for the corner where block-start and inline-end meet</td>
+      <td><code class="highlighter-rouge notranslate">border-top-right-radius</code></td>
+      <td><code class="highlighter-rouge notranslate">border-top-left-radius</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-end-start-radius</code></strong></td>
+      <td>Radius for the corner where block-end and inline-start meet</td>
+      <td><code class="highlighter-rouge notranslate">border-bottom-left-radius</code></td>
+      <td><code class="highlighter-rouge notranslate">border-bottom-right-radius</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-end-end-radius</code></strong></td>
+      <td>Radius for the corner where block-end and inline-end meet</td>
+      <td><code class="highlighter-rouge notranslate">border-bottom-right-radius</code></td>
+      <td><code class="highlighter-rouge notranslate">border-bottom-left-radius</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="positioning--offsets" dir="auto">Positioning / Offsets<a href="#positioning--offsets" class="heading-anchor" aria-label="Permalink: Positioning / Offsets">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">inset-inline-start</code></strong></td>
+      <td>Offset from the inline-start edge</td>
+      <td><code class="highlighter-rouge notranslate">left</code></td>
+      <td><code class="highlighter-rouge notranslate">right</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">inset-inline-end</code></strong></td>
+      <td>Offset from the inline-end edge</td>
+      <td><code class="highlighter-rouge notranslate">right</code></td>
+      <td><code class="highlighter-rouge notranslate">left</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">inset-inline</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">inset-inline-start</code> and <code class="highlighter-rouge notranslate">inset-inline-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">left</code> + <code class="highlighter-rouge notranslate">right</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">right</code> + <code class="highlighter-rouge notranslate">left</code>
+</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">inset-block-start</code></strong></td>
+      <td>Offset from the block-start edge</td>
+      <td><code class="highlighter-rouge notranslate">top</code></td>
+      <td><code class="highlighter-rouge notranslate">top</code></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong><code class="highlighter-rouge notranslate">inset-block-end</code></strong></td>
+      <td>Offset from the block-end edge</td>
+      <td><code class="highlighter-rouge notranslate">bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">bottom</code></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong><code class="highlighter-rouge notranslate">inset-block</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">inset-block-start</code> and <code class="highlighter-rouge notranslate">inset-block-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">top</code> + <code class="highlighter-rouge notranslate">bottom</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">top</code> + <code class="highlighter-rouge notranslate">bottom</code>
+</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><strong><code class="highlighter-rouge notranslate">inset</code></strong></td>
+      <td>Shorthand for all four logical inset properties</td>
+      <td>
+<code class="highlighter-rouge notranslate">top</code> + <code class="highlighter-rouge notranslate">right</code> + <code class="highlighter-rouge notranslate">bottom</code> + <code class="highlighter-rouge notranslate">left</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">top</code> + <code class="highlighter-rouge notranslate">left</code> + <code class="highlighter-rouge notranslate">bottom</code> + <code class="highlighter-rouge notranslate">right</code>
+</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+
+          <blockquote dir="auto">
+            <p dir="auto">Note — <code class="highlighter-rouge notranslate">inset-*</code> and <code class="highlighter-rouge notranslate">block/inline-size</code> have less support in older mobile browsers and pre-Chromium Edge.</p>
+          </blockquote>
+        
+<h3 id="floats--clears" dir="auto">Floats &amp; Clears<a href="#floats--clears" class="heading-anchor" aria-label="Permalink: Floats &amp; Clears">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property / Value</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">float: inline-start</code></strong></td>
+      <td>Floats an element to the start side of the inline axis (like <code class="highlighter-rouge notranslate">float: left</code> in LTR).</td>
+      <td><code class="highlighter-rouge notranslate">float: left</code></td>
+      <td><code class="highlighter-rouge notranslate">float: right</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">float: inline-end</code></strong></td>
+      <td>Floats an element to the end side of the inline axis.</td>
+      <td><code class="highlighter-rouge notranslate">float: right</code></td>
+      <td><code class="highlighter-rouge notranslate">float: left</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">clear: inline-start</code></strong></td>
+      <td>Prevents floating elements on the start side.</td>
+      <td><code class="highlighter-rouge notranslate">clear: left</code></td>
+      <td><code class="highlighter-rouge notranslate">clear: right</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">clear: inline-end</code></strong></td>
+      <td>Prevents floating elements on the end side.</td>
+      <td><code class="highlighter-rouge notranslate">clear: right</code></td>
+      <td><code class="highlighter-rouge notranslate">clear: left</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="text-alignment" dir="auto">Text Alignment<a href="#text-alignment" class="heading-anchor" aria-label="Permalink: Text Alignment">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property / Value</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">text-align: start</code></strong></td>
+      <td>Aligns text to the start side of the inline axis.</td>
+      <td><code class="highlighter-rouge notranslate">text-align: left</code></td>
+      <td><code class="highlighter-rouge notranslate">text-align: right</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">text-align: end</code></strong></td>
+      <td>Aligns text to the end side of the inline axis.</td>
+      <td><code class="highlighter-rouge notranslate">text-align: right</code></td>
+      <td><code class="highlighter-rouge notranslate">text-align: left</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+
+          <blockquote dir="auto">
+            <p dir="auto">Note: <code class="highlighter-rouge notranslate">text-align: start/end</code> is not supported in IE11, needs fallback.</p>
+          </blockquote>
+        
+<h3 id="tables" dir="auto">Tables<a href="#tables" class="heading-anchor" aria-label="Permalink: Tables">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property / Value</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">caption-side: block-start</code></strong></td>
+      <td>Places table caption before table block axis.</td>
+      <td><code class="highlighter-rouge notranslate">caption-side: top</code></td>
+      <td><code class="highlighter-rouge notranslate">caption-side: top</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">caption-side: block-end</code></strong></td>
+      <td>Places table caption after table block axis.</td>
+      <td><code class="highlighter-rouge notranslate">caption-side: bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">caption-side: bottom</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">caption-side: inline-start</code></strong></td>
+      <td>Places caption at inline start of table.</td>
+      <td><code class="highlighter-rouge notranslate">caption-side: left</code></td>
+      <td><code class="highlighter-rouge notranslate">caption-side: right</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">caption-side: inline-end</code></strong></td>
+      <td>Places caption at inline end of table.</td>
+      <td><code class="highlighter-rouge notranslate">caption-side: right</code></td>
+      <td><code class="highlighter-rouge notranslate">caption-side: left</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="backgrounds" dir="auto">Backgrounds<a href="#backgrounds" class="heading-anchor" aria-label="Permalink: Backgrounds">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property / Value</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">background-position-inline</code></strong></td>
+      <td>Background position along inline axis</td>
+      <td><code class="highlighter-rouge notranslate">background-position-x</code></td>
+      <td><code class="highlighter-rouge notranslate">background-position-x</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">background-position-block</code></strong></td>
+      <td>Background position along block axis</td>
+      <td><code class="highlighter-rouge notranslate">background-position-y</code></td>
+      <td><code class="highlighter-rouge notranslate">background-position-y</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">background-position: start</code></strong></td>
+      <td>Places background image at inline start horizontally.</td>
+      <td><code class="highlighter-rouge notranslate">background-position: left</code></td>
+      <td><code class="highlighter-rouge notranslate">background-position: right</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">background-position: end</code></strong></td>
+      <td>Places background image at inline end horizontally.</td>
+      <td><code class="highlighter-rouge notranslate">background-position: right</code></td>
+      <td><code class="highlighter-rouge notranslate">background-position: left</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="scroll-margin" dir="auto">Scroll Margin<a href="#scroll-margin" class="heading-anchor" aria-label="Permalink: Scroll Margin">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-inline-start</code></strong></td>
+      <td>Scroll margin at inline start edge</td>
+      <td><code class="highlighter-rouge notranslate">scroll-margin-left</code></td>
+      <td><code class="highlighter-rouge notranslate">scroll-margin-right</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-inline-end</code></strong></td>
+      <td>Scroll margin at inline end edge</td>
+      <td><code class="highlighter-rouge notranslate">scroll-margin-right</code></td>
+      <td><code class="highlighter-rouge notranslate">scroll-margin-left</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-inline</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">inline-start</code> and <code class="highlighter-rouge notranslate">inline-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">scroll-margin-left</code> + <code class="highlighter-rouge notranslate">scroll-margin-right</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">scroll-margin-right</code> + <code class="highlighter-rouge notranslate">scroll-margin-left</code>
+</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-block-start</code></strong></td>
+      <td>Scroll margin at block start edge</td>
+      <td><code class="highlighter-rouge notranslate">scroll-margin-top</code></td>
+      <td><code class="highlighter-rouge notranslate">scroll-margin-top</code></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-block-end</code></strong></td>
+      <td>Scroll margin at block end edge</td>
+      <td><code class="highlighter-rouge notranslate">scroll-margin-bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">scroll-margin-bottom</code></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-margin-block</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">block-start</code> and <code class="highlighter-rouge notranslate">block-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">scroll-margin-top</code> + <code class="highlighter-rouge notranslate">scroll-margin-bottom</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">scroll-margin-top</code> + <code class="highlighter-rouge notranslate">scroll-margin-bottom</code>
+</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="scroll-padding" dir="auto">Scroll Padding<a href="#scroll-padding" class="heading-anchor" aria-label="Permalink: Scroll Padding">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-inline-start</code></strong></td>
+      <td>Scroll padding at inline start edge</td>
+      <td><code class="highlighter-rouge notranslate">scroll-padding-left</code></td>
+      <td><code class="highlighter-rouge notranslate">scroll-padding-right</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-inline-end</code></strong></td>
+      <td>Scroll padding at inline end edge</td>
+      <td><code class="highlighter-rouge notranslate">scroll-padding-right</code></td>
+      <td><code class="highlighter-rouge notranslate">scroll-padding-left</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-inline</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">inline-start</code> and <code class="highlighter-rouge notranslate">inline-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">scroll-padding-left</code> + <code class="highlighter-rouge notranslate">scroll-padding-right</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">scroll-padding-right</code> + <code class="highlighter-rouge notranslate">scroll-padding-left</code>
+</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-block-start</code></strong></td>
+      <td>Scroll padding at block start edge</td>
+      <td><code class="highlighter-rouge notranslate">scroll-padding-top</code></td>
+      <td><code class="highlighter-rouge notranslate">scroll-padding-top</code></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-block-end</code></strong></td>
+      <td>Scroll padding at block end edge</td>
+      <td><code class="highlighter-rouge notranslate">scroll-padding-bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">scroll-padding-bottom</code></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-padding-block</code></strong></td>
+      <td>Shorthand for both <code class="highlighter-rouge notranslate">block-start</code> and <code class="highlighter-rouge notranslate">block-end</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">scroll-padding-top</code> + <code class="highlighter-rouge notranslate">scroll-padding-bottom</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">scroll-padding-top</code> + <code class="highlighter-rouge notranslate">scroll-padding-bottom</code>
+</td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="resizing" dir="auto">Resizing<a href="#resizing" class="heading-anchor" aria-label="Permalink: Resizing">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property / Value</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">resize: block</code></strong></td>
+      <td>Allows resize in block axis only.</td>
+      <td><code class="highlighter-rouge notranslate">resize: vertical</code></td>
+      <td><code class="highlighter-rouge notranslate">resize: vertical</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">resize: inline</code></strong></td>
+      <td>Allows resize in inline axis only.</td>
+      <td><code class="highlighter-rouge notranslate">resize: horizontal</code></td>
+      <td><code class="highlighter-rouge notranslate">resize: horizontal</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="overscroll-behavior" dir="auto">Overscroll Behavior<a href="#overscroll-behavior" class="heading-anchor" aria-label="Permalink: Overscroll Behavior">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">overscroll-behavior-inline</code></strong></td>
+      <td>Overscroll behavior in inline axis</td>
+      <td><code class="highlighter-rouge notranslate">overscroll-behavior-x</code></td>
+      <td><code class="highlighter-rouge notranslate">overscroll-behavior-x</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">overscroll-behavior-block</code></strong></td>
+      <td>Overscroll behavior in block axis</td>
+      <td><code class="highlighter-rouge notranslate">overscroll-behavior-y</code></td>
+      <td><code class="highlighter-rouge notranslate">overscroll-behavior-y</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="transform-origin" dir="auto">Transform Origin<a href="#transform-origin" class="heading-anchor" aria-label="Permalink: Transform Origin">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property / Value</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">transform-origin: inline-start</code></strong></td>
+      <td>Sets transform origin at inline start side.</td>
+      <td><code class="highlighter-rouge notranslate">transform-origin: left</code></td>
+      <td><code class="highlighter-rouge notranslate">transform-origin: right</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">transform-origin: inline-end</code></strong></td>
+      <td>Sets transform origin at inline end side.</td>
+      <td><code class="highlighter-rouge notranslate">transform-origin: right</code></td>
+      <td><code class="highlighter-rouge notranslate">transform-origin: left</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">transform-origin: block-start</code></strong></td>
+      <td>Sets transform origin at block start side.</td>
+      <td><code class="highlighter-rouge notranslate">transform-origin: top</code></td>
+      <td><code class="highlighter-rouge notranslate">transform-origin: top</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">transform-origin: block-end</code></strong></td>
+      <td>Sets transform origin at block end side.</td>
+      <td><code class="highlighter-rouge notranslate">transform-origin: bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">transform-origin: bottom</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="offset-motion-path" dir="auto">Offset (Motion Path)<a href="#offset-motion-path" class="heading-anchor" aria-label="Permalink: Offset (Motion Path)">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">offset-inline-start</code></strong></td>
+      <td>Starting offset position in inline axis</td>
+      <td><code class="highlighter-rouge notranslate">offset-left</code></td>
+      <td><code class="highlighter-rouge notranslate">offset-right</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">offset-inline-end</code></strong></td>
+      <td>Ending offset position in inline axis</td>
+      <td><code class="highlighter-rouge notranslate">offset-right</code></td>
+      <td><code class="highlighter-rouge notranslate">offset-left</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong><code class="highlighter-rouge notranslate">offset-block-start</code></strong></td>
+      <td>Starting offset position in block axis</td>
+      <td><code class="highlighter-rouge notranslate">offset-top</code></td>
+      <td><code class="highlighter-rouge notranslate">offset-top</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong><code class="highlighter-rouge notranslate">offset-block-end</code></strong></td>
+      <td>Ending offset position in block axis</td>
+      <td><code class="highlighter-rouge notranslate">offset-bottom</code></td>
+      <td><code class="highlighter-rouge notranslate">offset-bottom</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h2 id="interactive-example" dir="auto">Interactive Example<a href="#interactive-example" class="heading-anchor" aria-label="Permalink: Interactive Example">#</a>
+</h2>
+<p dir="auto">Now that we’ve seen the different categories of logical properties, let’s try a small live example to see them in action.</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Logical padding &amp; margin example --&gt;</span>
+<span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"card-header"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"avatar"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Logical padding <span class="ni">&amp;amp;</span> margin<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"meta"</span><span class="nt">&gt;</span>Uses <span class="nt">&lt;code&gt;</span>padding-inline<span class="nt">&lt;/code&gt;</span> <span class="ni">&amp;amp;</span> <span class="nt">&lt;code&gt;</span>margin-block<span class="nt">&lt;/code&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
+    Logical properties adapt based on writing mode <span class="err">&amp;</span> direction.
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/article&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
+  <span class="py">padding-block</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="py">padding-inline</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/NPGavRO" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/NPGavRO" class="external-link">View Full Interactive Demo on CodePen</a></p>
+<h2 id="best-practices--reminders" dir="auto">Best Practices &amp; Reminders<a href="#best-practices--reminders" class="heading-anchor" aria-label="Permalink: Best Practices &amp; Reminders">#</a>
+</h2>
+
+          <ul dir="auto">
+              <li><p dir="auto"><strong>Fallbacks first</strong> — For older browsers, write the physical property first, then override with the logical equivalent.</p></li>
+  <li><p dir="auto"><strong>Be consistent</strong> — Avoid mixing physical and logical for the same property unless intentionally layering fallbacks.</p></li>
+  <li><p dir="auto"><strong>Test multiple flows</strong> — Check both <code class="highlighter-rouge notranslate">horizontal-tb</code> and <code class="highlighter-rouge notranslate">vertical-rl</code> modes to catch axis-mapping quirks.</p></li>
+  <li><p dir="auto"><strong>Prefer explicit props</strong> — Use individual logical properties (<code class="highlighter-rouge notranslate">margin-inline-start</code>) over shorthands for better browser reach.</p></li>
+  <li><p dir="auto"><strong>Switch direction</strong> — Use <code class="highlighter-rouge notranslate">direction: rtl</code> for horizontal RTL layouts (Arabic, Hebrew).</p></li>
+  <li><p dir="auto"><strong>Change flow</strong> — Use <code class="highlighter-rouge notranslate">writing-mode</code> for vertical layouts; remember that <code class="highlighter-rouge notranslate">inline</code> and <code class="highlighter-rouge notranslate">block</code> axes swap roles.</p></li>
+  <li><p dir="auto"><strong>Alignment shortcuts</strong> — Use <code class="highlighter-rouge notranslate">text-align: start</code> / <code class="highlighter-rouge notranslate">end</code> for automatic LTR/RTL alignment.</p></li>
+  <li><p dir="auto"><strong>Logical positioning</strong> — Replace fixed sides (<code class="highlighter-rouge notranslate">top</code>, <code class="highlighter-rouge notranslate">right</code>, <code class="highlighter-rouge notranslate">bottom</code>, <code class="highlighter-rouge notranslate">left</code>) with <code class="highlighter-rouge notranslate">inset-block</code> / <code class="highlighter-rouge notranslate">inset-inline</code>.</p></li>
+  <li><p dir="auto"><strong>Check compatibility</strong> — Always verify on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" class="external-link">MDN’s compatibility tables</a> before relying on lesser-known logical props.</p></li>
+
+          </ul>
+        
+<h2 id="fallbacks-for-non-supporting-browsers" dir="auto">Fallbacks for Non-Supporting Browsers<a href="#fallbacks-for-non-supporting-browsers" class="heading-anchor" aria-label="Permalink: Fallbacks for Non-Supporting Browsers">#</a>
+</h2>
+<p dir="auto">If you need to support older browsers that don’t recognize logical properties, you can define physical property fallbacks first, followed by
+your logical properties. This ensures that browsers without logical property support (e.g., Internet Explorer) still display layouts correctly.</p>
+<p dir="auto"><strong>Without Logical Properties (LTR &amp; RTL handled separately):</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* LTR */</span>
+<span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* RTL */</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">dir</span><span class="o">=</span><span class="s1">"rtl"</span><span class="o">]</span> <span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">margin-right</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding-right</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p dir="auto"><strong>With Logical Properties (Single stylesheet):</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
+  <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p dir="auto"><strong>Hybrid Approach (Fallback + Logical):</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.card</span> <span class="p">{</span>
+  <span class="c">/* Physical property fallbacks */</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+
+  <span class="c">/* Logical properties override when supported */</span>
+  <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p dir="auto"><strong><code class="highlighter-rouge notranslate">@supports</code>-Based Approach (Clean separation)</strong></p>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Physical property fallbacks */</span>
+<span class="nc">.card</span> <span class="p">{</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Apply logical properties only if supported */</span>
+<span class="k">@supports</span> <span class="p">(</span><span class="n">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.card</span> <span class="p">{</span>
+    <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p dir="auto"><strong>Why use <code class="highlighter-rouge notranslate">@supports?</code></strong></p>
+          <ul dir="auto">
+              <li><p dir="auto">Keeps fallback styles intact for older browsers without relying solely on cascade overrides.</p></li>
+  <li><p dir="auto">Ensures logical properties are parsed only when supported.</p></li>
+  <li><p dir="auto">Makes debugging easier by clearly separating legacy and modern styles.</p></li>
+
+          </ul>
+        
+<h2 id="conclusion" dir="auto">Conclusion<a href="#conclusion" class="heading-anchor" aria-label="Permalink: Conclusion">#</a>
+</h2>
+<p dir="auto">CSS Logical Properties are the future of responsive, internationalized web design. They eliminate the need for duplicate styles for different
+writing directions, ensuring your layouts adapt naturally to any language or script.</p>
+<p dir="auto">By adopting them now, you’re creating layouts that are <strong>direction-aware</strong>, <strong>international-ready</strong>, and <strong>easy to maintain</strong>—without the extra headaches.</p>
+    </div>
+
+    <div class="toc-wrapper">
+  <h2 id="toc-heading">
+    Table of contents
+  </h2>
+  <nav class="toc" aria-labelledby="toc-heading" role="doc-toc">
+    <ul class="toc-level toc-level-2">
+<li><a href="#introduction" class="toc-link toc-link-level-2">Introduction</a>
+</li>
+<li><a href="#why-css-logical-properties-matter" class="toc-link toc-link-level-2">Why CSS Logical Properties Matter</a>
+</li>
+<li><a href="#benefits-of-logical-properties" class="toc-link toc-link-level-2">Benefits of Logical Properties</a>
+</li>
+<li><a href="#understanding-inline-vs-block-axes" class="toc-link toc-link-level-2">Understanding Inline vs Block Axes</a>
+<ul class="toc-level toc-level-3">
+<li><a href="#horizontal-tb-ltr-typical-english" class="toc-link toc-link-level-3">horizontal-tb (LTR) (typical English)</a>
+</li>
+<li><a href="#horizontal-tb-rtl-arabic-hebrew" class="toc-link toc-link-level-3">horizontal-tb (RTL) (Arabic, Hebrew)</a>
+</li>
+<li><a href="#vertical-rl" class="toc-link toc-link-level-3">vertical-rl</a>
+</li>
+<li><a href="#vertical-lr" class="toc-link toc-link-level-3">vertical-lr</a>
+</li>
+<li><a href="#quick-reference-logical-vs-physical-mappings" class="toc-link toc-link-level-3">Quick Reference: Logical vs Physical Mappings</a>
+</li>
+<li><a href="#short-examples" class="toc-link toc-link-level-3">Short Examples</a>
+</li>
+</ul>
+</li>
+<li><a href="#categories-of-logical-properties" class="toc-link toc-link-level-2">Categories of Logical Properties</a>
+<ul class="toc-level toc-level-3">
+<li><a href="#dimension" class="toc-link toc-link-level-3">Dimension</a>
+</li>
+<li><a href="#margin" class="toc-link toc-link-level-3">Margin</a>
+</li>
+<li><a href="#padding" class="toc-link toc-link-level-3">Padding</a>
+</li>
+<li><a href="#borders" class="toc-link toc-link-level-3">Borders</a>
+</li>
+<li><a href="#border-radius" class="toc-link toc-link-level-3">Border Radius</a>
+</li>
+<li><a href="#positioning--offsets" class="toc-link toc-link-level-3">Positioning / Offsets</a>
+</li>
+<li><a href="#floats--clears" class="toc-link toc-link-level-3">Floats &amp; Clears</a>
+</li>
+<li><a href="#text-alignment" class="toc-link toc-link-level-3">Text Alignment</a>
+</li>
+<li><a href="#tables" class="toc-link toc-link-level-3">Tables</a>
+</li>
+<li><a href="#backgrounds" class="toc-link toc-link-level-3">Backgrounds</a>
+</li>
+<li><a href="#scroll-margin" class="toc-link toc-link-level-3">Scroll Margin</a>
+</li>
+<li><a href="#scroll-padding" class="toc-link toc-link-level-3">Scroll Padding</a>
+</li>
+<li><a href="#resizing" class="toc-link toc-link-level-3">Resizing</a>
+</li>
+<li><a href="#overscroll-behavior" class="toc-link toc-link-level-3">Overscroll Behavior</a>
+</li>
+<li><a href="#transform-origin" class="toc-link toc-link-level-3">Transform Origin</a>
+</li>
+<li><a href="#offset-motion-path" class="toc-link toc-link-level-3">Offset (Motion Path)</a>
+</li>
+</ul>
+</li>
+<li><a href="#interactive-example" class="toc-link toc-link-level-2">Interactive Example</a>
+</li>
+<li><a href="#best-practices--reminders" class="toc-link toc-link-level-2">Best Practices &amp; Reminders</a>
+</li>
+<li><a href="#fallbacks-for-non-supporting-browsers" class="toc-link toc-link-level-2">Fallbacks for Non-Supporting Browsers</a>
+</li>
+<li><a href="#conclusion" class="toc-link toc-link-level-2">Conclusion</a>
+</li>
+</ul>
+
+  </nav>
+</div>
+
+  </div>
+<div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
+    
+  <div class="post-meta-item post-categories" role="list">
+    <svg  class='icon icon-folder-open'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-folder-open" />
+</svg>
+    <span class="visually-hidden">Categories:</span>
+    <a href="/category/css" class="badge" aria-label="Category: CSS" rel="category" role="listitem">CSS</a>
+    
+    
+  </div>
+
+
+    
+  <div class="post-meta-item post-tags" role="list">
+    <svg  class='icon icon-tag'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-tag" />
+</svg>
+    <span class="visually-hidden">Tags:</span>
+    
+      <a href="/tag/css" class="badge" aria-label="Tag: css" rel="tag" role="listitem">css</a>
+    
+      <a href="/tag/web-development" class="badge" aria-label="Tag: web-development" rel="tag" role="listitem">web-development</a>
+    
+      <a href="/tag/layout" class="badge" aria-label="Tag: layout" rel="tag" role="listitem">layout</a>
+    
+      <a href="/tag/responsive" class="badge" aria-label="Tag: responsive" rel="tag" role="listitem">responsive</a>
+    
+      <a href="/tag/rtl" class="badge" aria-label="Tag: rtl" rel="tag" role="listitem">rtl</a>
+    
+      <a href="/tag/logical-properties" class="badge" aria-label="Tag: logical-properties" rel="tag" role="listitem">logical-properties</a>
+    
+      <a href="/tag/writing-modes" class="badge" aria-label="Tag: writing-modes" rel="tag" role="listitem">writing-modes</a>
+    
+      <a href="/tag/internationalization" class="badge" aria-label="Tag: internationalization" rel="tag" role="listitem">internationalization</a>
+    
+      <a href="/tag/i18n" class="badge" aria-label="Tag: i18n" rel="tag" role="listitem">i18n</a>
+    
+      <a href="/tag/frontend" class="badge" aria-label="Tag: frontend" rel="tag" role="listitem">frontend</a>
+    
+  </div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <p>I hope you’ve found this post informative and helpful. Thank you for reading!</p>
+
+    <div class="post-footer-content">
+      <div class="copyright">
+        This post is licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>
+        by the author.
+      </div>
+
+      <section aria-labelledby="share-title">
+        <h3 id="share-title" class="visually-hidden">Share this post</h3>
+        <div class="share-icons" role="group" aria-label="Share this post">
+  Share:
+  <a href="https://x.com/intent/tweet?via=shivam091&text=Unleashing%20CSS%20Logical%20Properties:%20Future-Proof%20Your%20Layouts&url=https%3A%2F%2Fshivam091.github.io%2Fpost%2Funleashing-css-logical-properties" class="share-link"
+       onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       aria-label="Share on Twitter" data-tooltip="Twitter">
+      <svg  class='icon icon-twitter'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-twitter" />
+</svg>
+    </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fshivam091.github.io%2Fpost%2Funleashing-css-logical-properties" class="share-link"
+       onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       aria-label="Share on Facebook" data-tooltip="Facebook">
+      <svg  class='icon icon-facebook'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-facebook" />
+</svg>
+    </a>
+  <a href="https://t.me/share/url?url=https%3A%2F%2Fshivam091.github.io%2Fpost%2Funleashing-css-logical-properties" class="share-link"
+       onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       aria-label="Share on Telegram" data-tooltip="Telegram">
+      <svg  class='icon icon-telegram'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-telegram" />
+</svg>
+    </a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fshivam091.github.io%2Fpost%2Funleashing-css-logical-properties" class="share-link"
+       onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       aria-label="Share on LinkedIn" data-tooltip="LinkedIn">
+      <svg  class='icon icon-linkedin'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-linkedin" />
+</svg>
+    </a>
+  <a href="https://wa.me/?text=https%3A%2F%2Fshivam091.github.io%2Fpost%2Funleashing-css-logical-properties" class="share-link"
+       onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       aria-label="Share on WhatsApp" data-tooltip="WhatsApp">
+      <svg  class='icon icon-whatsapp'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-whatsapp" />
+</svg>
+    </a>
+  <a href="mailto:?subject=Unleashing%20CSS%20Logical%20Properties:%20Future-Proof%20Your%20Layouts&body=Check%20this%20out:%20https%3A%2F%2Fshivam091.github.io%2Fpost%2Funleashing-css-logical-properties" class="share-link"
+       onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       aria-label="Share on Email" data-tooltip="Email">
+      <svg  class='icon icon-envelope'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-envelope" />
+</svg>
+    </a>
+  
+  <button class="share-link" aria-label="Copy link" data-copy-link data-copy-url="https://shivam091.github.io/post/unleashing-css-logical-properties" data-tooltip="Copy link">
+    <svg  class='icon icon-link'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-link" />
+</svg>
+  </button>
+</div>
+
+      </section>
+    </div>
+  </footer>
+
+  
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <defs>
+    <!-- Segment A (Top) -->
+    <path id="seg-a" d="M4,2 L6,0 L18,0 L20,2 L18,4 L6,4 Z" />
+    <!-- Segment B (Top-right) -->
+    <path id="seg-b" d="M22,3 L24,5 L24,17 L22,19 L20,17 L20,5 Z" />
+    <!-- Segment C (Bottom-right) -->
+    <path id="seg-c" d="M22,21 L24,23 L24,35 L22,37 L20,35 L20,23 Z" />
+    <!-- Segment D (Bottom) -->
+    <path id="seg-d" d="M4,38 L6,36 L18,36 L20,38 L18,40 L6,40 Z" />
+    <!-- Segment E (Bottom-left) -->
+    <path id="seg-e" d="M2,21 L4,23 L4,35 L2,37 L0,35 L0,23 Z" />
+    <!-- Segment F (Top-left) -->
+    <path id="seg-f" d="M2,3 L4,5 L4,17 L2,19 L0,17 L0,5 Z" />
+    <!-- Segment G (Middle) -->
+    <path id="seg-g" d="M4,20 L6,18 L18,18 L20,20 L18,22 L6,22 Z" />
+  </defs>
+
+  <!-- Digit 0 -->
+  <symbol id="digit-0" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="on" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="off" />
+  </symbol>
+
+  <!-- Digit 1 -->
+  <symbol id="digit-1" viewBox="0 0 24 40">
+    <use href="#seg-a" class="off" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="off" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="off" />
+    <use href="#seg-g" class="off" />
+  </symbol>
+
+  <!-- Digit 2 -->
+  <symbol id="digit-2" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="off" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="on" />
+    <use href="#seg-f" class="off" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 3 -->
+  <symbol id="digit-3" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="off" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 4 -->
+  <symbol id="digit-4" viewBox="0 0 24 40">
+    <use href="#seg-a" class="off" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="off" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 5 -->
+  <symbol id="digit-5" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="off" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 6 -->
+  <symbol id="digit-6" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="off" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="on" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 7 -->
+  <symbol id="digit-7" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="off" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="off" />
+    <use href="#seg-g" class="off" />
+  </symbol>
+
+  <!-- Digit 8 -->
+  <symbol id="digit-8" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="on" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+
+  <!-- Digit 9 -->
+  <symbol id="digit-9" viewBox="0 0 24 40">
+    <use href="#seg-a" class="on" />
+    <use href="#seg-b" class="on" />
+    <use href="#seg-c" class="on" />
+    <use href="#seg-d" class="on" />
+    <use href="#seg-e" class="off" />
+    <use href="#seg-f" class="on" />
+    <use href="#seg-g" class="on" />
+  </symbol>
+</svg>
+
+<section class="retro-counter-container" aria-labelledby="retro-counter-title">
+  <h3 id="retro-counter-title" class="visually-hidden">Page view counter</h3>
+  <strong><em># of hits</em></strong>
+  <div aria-label="Retro-style hit counter, showing that TOTAL_COUNT people have visited this page." class="retro-counter" tabindex="0" data-retro-counter></div>
+</section>
+
+
+</article>
+
+
+  <section id="related-posts" aria-labelledby="related-posts-heading">
+    <h3 id="related-posts-heading">Related Posts</h3>
+    <ul class="related-posts list-unstyled">
+      
+        <li class="related-post">
+          <article class="card">
+            <header class="card-header">
+              <h2 class="card-title post-title" title="Getting Started with CSS Grid: A Beginner's Guide to 2D Layouts">
+                <a href="/post/getting-started-with-css-grid" class="card-link" aria-label="Read post: Getting Started with CSS Grid: A Beginner's Guide to 2D Layouts">
+                  Getting Started with CSS Grid: A Beginner's Guide to 2D Layouts
+                </a>
+              </h2>
+            </header>
+            <div class="card-body">
+              
+                <div class="post-excerpt" title="A beginner-friendly introduction to CSS Grid that covers core concepts and guides you through building your first 2D layouts with real-world examples."><p  dir="auto">A beginner-friendly introduction to CSS Grid that covers core concepts and guides you through building your first 2D layouts with real-world examples.</p></div>
+              
+            </div>
+            <footer class="card-footer">
+              <div class="post-meta">
+                <div class="post-meta-item post-published-date">
+  <svg  class='icon icon-calendar'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-calendar" />
+</svg>
+  <span class="visually-hidden">Published at:</span>
+  <time datetime='2025-07-09T15:21:11+05:30' aria-label='Published on July 09, 2025 at 03:21 PM' role='time' data-tooltip='Wed, July 09, 2025 03:21 PM' data-tooltip-position='bottom' tabindex='0'>
+  July 09, 2025
+</time>
+
+</div>
+
+              </div>
+            </footer>
+          </article>
+        </li>
+      
+        <li class="related-post">
+          <article class="card">
+            <header class="card-header">
+              <h2 class="card-title post-title" title="Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning">
+                <a href="/post/mastering-css-grid" class="card-link" aria-label="Read post: Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning">
+                  Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning
+                </a>
+              </h2>
+            </header>
+            <div class="card-body">
+              
+                <div class="post-excerpt" title="Take your CSS Grid skills to the next level by mastering semantic layouts with grid areas, item alignment, and element spanning techniques."><p  dir="auto">Take your CSS Grid skills to the next level by mastering semantic layouts with grid areas, item alignment, and element spanning techniques.</p></div>
+              
+            </div>
+            <footer class="card-footer">
+              <div class="post-meta">
+                <div class="post-meta-item post-published-date">
+  <svg  class='icon icon-calendar'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-calendar" />
+</svg>
+  <span class="visually-hidden">Published at:</span>
+  <time datetime='2025-07-09T15:21:11+05:30' aria-label='Published on July 09, 2025 at 03:21 PM' role='time' data-tooltip='Wed, July 09, 2025 03:21 PM' data-tooltip-position='bottom' tabindex='0'>
+  July 09, 2025
+</time>
+
+</div>
+
+              </div>
+            </footer>
+          </article>
+        </li>
+      
+        <li class="related-post">
+          <article class="card">
+            <header class="card-header">
+              <h2 class="card-title post-title" title="Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained">
+                <a href="/post/responsive-css-grid-layouts" class="card-link" aria-label="Read post: Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained">
+                  Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained
+                </a>
+              </h2>
+            </header>
+            <div class="card-body">
+              
+                <div class="post-excerpt" title="Learn how to build truly responsive CSS Grid layouts using `fr` units, `minmax()`, `auto-fit`, `auto-fill`, and modern media &amp; container queries."><p  dir="auto">Learn how to build truly responsive CSS Grid layouts using <code  class="highlighter-rouge notranslate">fr</code> units, <code  class="highlighter-rouge notranslate">minmax()</code>, <code  class="highlighter-rouge notranslate">auto-fit</code>, <code  class="highlighter-rouge notranslate">auto-fill</code>, and modern media &amp; container queries.</p></div>
+              
+            </div>
+            <footer class="card-footer">
+              <div class="post-meta">
+                <div class="post-meta-item post-published-date">
+  <svg  class='icon icon-calendar'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-calendar" />
+</svg>
+  <span class="visually-hidden">Published at:</span>
+  <time datetime='2025-07-09T15:21:11+05:30' aria-label='Published on July 09, 2025 at 03:21 PM' role='time' data-tooltip='Wed, July 09, 2025 03:21 PM' data-tooltip-position='bottom' tabindex='0'>
+  July 09, 2025
+</time>
+
+</div>
+
+              </div>
+            </footer>
+          </article>
+        </li>
+      
+    </ul>
+  </section>
+
+
+<nav class="navigation" aria-label="Post navigation">
+  <a href="/post/mastering-js-operators" class="navigation-link" rel="previous">
+    <span class="label">Older</span>
+    <span class="title">Mastering JavaScript Operators: A Complete Guide with Examples</span>
+  </a>
+  <div class="navigation-link disabled" role="link" aria-disabled="true" tabindex="-1">
+    <span class="label">Newer</span>
+    <span class="title">—</span>
+  </div>
+</nav>
+
+
+</section>
+
+      </main>
+
+      <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+  <div class="footer-grid">
+    <nav class="footer-section footer-links" aria-label="General navigation">
+      
+      
+       <a href="/categories" class="footer-link">Categories</a>
+      
+      
+      
+       <a href="/tags" class="footer-link">Tags</a>
+      
+      
+      
+       <a href="/archives" class="footer-link">Archives</a>
+      
+      
+      
+       <a href="/contact" class="footer-link">Contact</a>
+      
+      
+    </nav>
+
+    <div class="footer-section footer-social" aria-label="Social links"><a href="https://www.github.com/shivam091" class="footer-link" target="_blank"
+           data-tooltip="GitHub" aria-label="GitHub"
+           
+           >
+          <svg  class='icon icon-github'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-github" />
+</svg>
+        </a><a href="https://www.linkedin.com/in/shivam091" class="footer-link" target="_blank"
+           data-tooltip="LinkedIn" aria-label="LinkedIn"
+           
+           >
+          <svg  class='icon icon-linkedin'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-linkedin" />
+</svg>
+        </a><a href="https://www.instagram.com/taurusian_soul" class="footer-link" target="_blank"
+           data-tooltip="Instagram" aria-label="Instagram"
+           
+           >
+          <svg  class='icon icon-instagram'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-instagram" />
+</svg>
+        </a><a href="mailto:harshal.ladhe.1@gmail.com" class="footer-link" target="_blank"
+           data-tooltip="Email " aria-label="Email "
+           
+           >
+          <svg  class='icon icon-envelope'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-envelope" />
+</svg>
+        </a><a href="/assets/docs/resume.pdf" class="footer-link" target="_blank"
+           data-tooltip="Resume" aria-label="Resume"
+           
+           
+             data-analytics-event="download_resume"
+             data-analytics-label="resume.pdf"
+             data-analytics-category="engagement"
+           >
+          <svg  class='icon icon-file'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-file" />
+</svg>
+        </a><a href="/atom.xml" class="footer-link" target="_blank"
+           data-tooltip="Atom Feed" aria-label="Atom Feed"
+           rel="alternate" type="application/atom+xml"
+           
+             data-analytics-event="subscribe_feed"
+             data-analytics-label="Atom Feed"
+             data-analytics-category="engagement"
+           >
+          <svg  class='icon icon-atom'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-atom" />
+</svg>
+        </a>
+    </div>
+
+    <nav class="footer-section footer-legal" aria-label="Legal links">
+      
+      <a href="/terms-of-use" class="footer-link">Terms of Use</a>
+      
+      <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+      
+      <a href="/code-of-conduct" class="footer-link">Code of Conduct</a>
+      
+    </nav>
+
+    <div class="footer-section footer-credits">
+      <span>&copy;
+        2025 <strong class="site-name">Harshal LADHE</strong>,
+        <span data-tooltip="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author." tabindex="0">Some rights reserved</span>.
+        Built with &#10084; and <a href="https://jekyllrb.com/">Jekyll</a>.
+      </span>
+    </div>
+  </div>
+</footer>
+
+    </div>
+  </div>
+
+  <button type="button" id="scroll-top" class="btn scroll-top" aria-label="Scroll to top" data-scroll-top>
+   <svg  class='icon icon-arrow-up'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-arrow-up" />
+</svg>
+  </button>
+
+  <div id="mask"></div>
+
+  <div class="sky-banner-bottom" aria-hidden="true">
+  <svg width="1590" height="213" viewBox="0 0 1557 213" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="cloud-layers-top-overlay" focusable="false" aria-hidden="true">
+    <path d="M1331 165.5C1320.5 162.5 1311 112 1221.5 92.4999C1132 72.9999 1104.5 114 1093.5 112C1082.5 110 1052 6.04351 903.5 1.00011C771 -3.49989 732.5 90 722.5 92.4999C712.5 94.9998 647.5 54.0001 535.5 73.9999C423.5 93.9997 421.5 165.5 411.5 165.5C401.5 165.5 359 58.5001 203.5 49.4999C48 40.4998 0.5 136 0.5 209.5C0.5 283 62.5 309.5 62.5 309.5H100.5L1556.5 304.5V232.5C1556.5 215.5 1542.5 159.009 1464 145.5C1368.81 129.118 1341.5 168.5 1331 165.5Z" class="bottom-cloud-overlay" />
+  </svg>
+  <div class="cloud-layers-bottom" role="presentation">
+    <svg width="320rem" height="15.625rem" viewBox="0 0 5120 337" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="cloud-shapes-bottom" focusable="false" aria-hidden="true">
+      <path d="M2262 93C2122.5 82.5987 2116 21.5 2096.5 21.5C2077 21.5 2070.5 77.5238 1920.5 93C1794.5 106 1786 62 1771.5 63.5C1757 65 1687 155.5 1580 142C1473 128.5 1446.5 90 1435 93C1423.5 96 1448.03 199.005 1340 214C1181.5 236 1155.5 142 1144 142C1132.5 142 1105.5 269 946.5 236C787.5 203 799 115 784 114.5C769 114 732.5 162 544 158C382 154.562 352.5 81 341 84.5C329.5 88 358 269 168 326C-22 383 -75.5 180 -75.5 180V0.5H5189.5L5193.5 46C5193.5 46 5200 94 5069.5 100.5C4939 107 4923.5 21.5 4906.5 21.5C4889.5 21.5 4870 35 4835 93.5C4800 152 4765.5 169.5 4643.5 173.5C4521.5 177.5 4436.5 69 4425.5 76.5C4414.5 84 4413.5 212 4235 222C4056.5 232 4045.5 92 4033.5 89C4021.5 86 3968.5 169.5 3823.5 172.5C3678.5 175.5 3573.5 104 3562.5 106.5C3551.5 109 3553.5 167.5 3396 201C3238.5 234.5 3171.5 168.5 3161 172.5C3150.5 176.5 3164 273 3076.5 294.5C2975.99 319.197 2935 228 2920 225.5C2905 223 2862 276.955 2749 245C2671.4 223.057 2672.5 149 2660.5 151.5C2648.5 154 2622.5 181.04 2548.5 158C2425 119.548 2427.5 53.5 2412 51C2396.5 48.5 2376 101.5 2262 93Z" class="bottom-background-clouds" />
+    </svg>
+  </div>
+</div>
+
+
+  <script src="/dist/app.js"></script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://shivam091.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Posts",
+      "item": "https://shivam091.github.io/posts"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Unleashing CSS Logical Properties: Future-Proof Your Layouts",
+      "item": "https://shivam091.github.io/post/unleashing-css-logical-properties"
+    }
+  ]
+}
+</script>
+
+
+
+</body>
+</html>

@@ -233,6 +233,15 @@
             </button>
           </li>
           <li>
+            <button type="button" class="dropdown-item" role="menuitem" aria-label="Use soft dark mode"
+                    data-color-scheme="soft-dark" data-theme-switcher-list-items>
+              <svg  class='icon icon-sun-moon'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-sun-moon" />
+</svg>
+              Soft Dark
+            </button>
+          </li>
+          <li>
             <button type="button" class="dropdown-item" role="menuitem" aria-label="Use dark mode"
                     data-color-scheme="dark" data-theme-switcher-list-items>
               <svg  class='icon icon-moon'  aria-hidden='true' focusable='false'>
@@ -253,11 +262,14 @@
     </a>
 
     <button class="header-action toggle-menu" aria-label="Toggle menu" aria-controls="header-drawer">
-      <svg class="icon icon-hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="3" y1="5" x2="21" y2="5" />
-        <line x1="3" y1="12" x2="21" y2="12" />
-        <line x1="3" y1="19" x2="21" y2="19" />
-      </svg>
+      <?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.0" icon-hamburger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class='icon icon-hamburger' width='24' height='24' aria-hidden='true' focusable='false'>
+  <line x1="3" y1="5" x2="21" y2="5" />
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="19" x2="21" y2="19" />
+</svg>
+
     </button>
   </div>
 </header>
@@ -289,8 +301,8 @@
             </a>
           </div>
           <span class="post-count">
-            <span class="badge" aria-label="Total 3 posts in CSS category">
-              3 posts
+            <span class="badge" aria-label="Total 4 posts in CSS category">
+              4 posts
 
             </span>
           </span>
@@ -305,6 +317,18 @@
 
         <div class="accordion-body" id="css-posts">
           <ul class="list-group">
+            <li class="list-group-item">
+                <a href="/post/unleashing-css-logical-properties" class="post-title" title="Unleashing CSS Logical Properties: Future-Proof Your Layouts" aria-label="Read post: Unleashing CSS Logical Properties: Future-Proof Your Layouts">
+                  Unleashing CSS Logical Properties: Future-Proof Your Layouts
+                </a>
+                <span class="dotted-separator"></span>
+                <span class="post-published-at">
+                  <time datetime='2025-08-10T18:52:49+05:30' aria-label='Published on August 10, 2025 at 06:52 PM' role='time'>
+  August 10, 2025
+</time>
+
+                </span>
+              </li>
             <li class="list-group-item">
                 <a href="/post/responsive-css-grid-layouts" class="post-title" title="Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained" aria-label="Read post: Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained">
                   Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained
@@ -396,6 +420,53 @@
                 <span class="post-published-at">
                   <time datetime='2025-06-07T18:47:49+05:30' aria-label='Published on June 07, 2025 at 06:47 PM' role='time'>
   June 07, 2025
+</time>
+
+                </span>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            <svg  class='icon icon-folder'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-folder" />
+</svg>
+            <svg  class='icon icon-folder-open'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-folder-open" />
+</svg>
+            <a href="/category/javascript" class="category-title" tabindex="0"
+               aria-label="View all posts in JavaScript">
+              JavaScript
+            </a>
+          </div>
+          <span class="post-count">
+            <span class="badge" aria-label="Total 1 posts in JavaScript category">
+              1 post
+
+            </span>
+          </span>
+          <button type="button" class="btn-sm accordion-toggle" aria-expanded="false"
+                  aria-label="Toggle all posts of JavaScript"
+                  aria-controls="javascript-posts">
+            <svg  class='icon icon-arrow-down'  aria-hidden='true' focusable='false'>
+  <use href="/assets/img/sprite.svg#icon-arrow-down" />
+</svg>
+          </button>
+        </div>
+
+        <div class="accordion-body" id="javascript-posts">
+          <ul class="list-group">
+            <li class="list-group-item">
+                <a href="/post/mastering-js-operators" class="post-title" title="Mastering JavaScript Operators: A Complete Guide with Examples" aria-label="Read post: Mastering JavaScript Operators: A Complete Guide with Examples">
+                  Mastering JavaScript Operators: A Complete Guide with Examples
+                </a>
+                <span class="dotted-separator"></span>
+                <span class="post-published-at">
+                  <time datetime='2025-08-08T22:28:06+05:30' aria-label='Published on August 08, 2025 at 10:28 PM' role='time'>
+  August 08, 2025
 </time>
 
                 </span>
