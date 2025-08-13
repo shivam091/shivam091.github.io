@@ -15,6 +15,9 @@
   background: var(--color-bg-transparent)
   color: var(--color-fg-accent-on-emphasis)
   gap: $space-md
+  width: 100%
+  max-width: clamp(var(--min-width, 37.5rem), 90%, var(--max-width, 75rem))
+  margin-inline: auto
 
   @include transition-properties((background, backdrop-filter), $duration: 350ms, $easing: cubic-bezier(0.41, 0.1, 0.13, 1))
 

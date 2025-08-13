@@ -3,13 +3,14 @@
 @use "abstracts/mixins/transition-properties" as *
 
 .hero-banner
-  position: absolute
-  inset: $header-height 0 auto
+  position: relative
+  // inset: $header-height 0 auto
+  inset: calc(-1 * $header-height) 0 auto
   isolation: isolate
   background: var(--color-sky-from)
   overflow: hidden
   overflow: clip
-  margin-top: calc(-1 * $header-height - 2.75rem)
+  // margin-top: calc(-1 * $header-height - 2.75rem)
   padding-top: calc($header-height + 2.75rem)
   width: 100vw
   z-index: 0
