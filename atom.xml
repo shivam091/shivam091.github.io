@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en">
   <generator uri="https://jekyllrb.com" version="4.3.3">Jekyll</generator>
-  <title>Harshal LADHE</title>
+  <title>Harshal V. LADHE</title>
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-13T16:14:54+05:30</updated>
-  <rights>© 2025 Harshal LADHE</rights>
+  <updated>2025-08-13T19:41:46+05:30</updated>
+  <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
   <link rel="self" type="application/atom+xml" href="https://shivam091.github.io/atom.xml" />
 
   
   <author>
-    <name>Harshal LADHE</name>
+    <name>Harshal V. LADHE</name>
     <email>harshal.ladhe.1@gmail.com</email>
     <uri>https://shivam091.github.io</uri>
   </author>
