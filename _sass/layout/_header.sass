@@ -1,6 +1,10 @@
 @use "abstracts/tokens" as *
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
+@use "abstracts/animations/scooch" as *
+@use "abstracts/animations/self-draw" as *
+@use "abstracts/animations/drop-icon" as *
+@use "abstracts/animations/fade-in" as *
 
 .site-header
   display: flex
@@ -48,6 +52,32 @@
     font-size: $font-size-md
     font-weight: $font-weight-medium
     letter-spacing: 0.02em
+    display: inline-flex
+
+    .first-name
+      display: inline-block
+      animation: scooch-left $motion-duration-default $motion-easing-overshoot $motion-delay-long both
+
+    .last-name
+      display: inline-block
+      animation: scooch-right $motion-duration-default $motion-easing-overshoot $motion-delay-extra-long both
+
+    .middle-initial
+      position: relative
+      display: inline-block
+      width: 18px
+
+    .v-mark
+      position: absolute
+      left: 6px
+      top: 0
+      width: 0.5625rem
+      height: 0.625rem
+
+    .v-draw
+      stroke-dasharray: 18
+      stroke-dashoffset: 18
+      animation: self-draw $motion-duration-ultra-slow $motion-easing-overshoot calc($motion-delay-extra-long + $motion-duration-default) forwards
 
 .nav-links
   display: flex
@@ -83,13 +113,25 @@
     padding: $space-sm
     font-size: $fluid-font-size-sm
     font-weight: $font-weight-semi-bold
+    animation: drop-icon calc(0.5s + var(--index) * 0.1s) $motion-easing-out both, fade-in calc(0.5s + var(--index) * 0.1s) $motion-easing-out both
+    animation-delay: calc(var(--index) * 0.1s)
 
     &:hover,
     &:focus
       background-color: var(--color-bg-control-transparent)
       border-color: var(--color-border-control-transparent-hover)
 
+.search-toggle
+  --index: 1
+
+.theme-toggle
+  --index: 2
+
+.atom-feed
+  --index: 3
+
 .toggle-menu
+  --index: 4
   display: none
 
   @include breakpoint.max(md)
@@ -100,3 +142,7 @@
 
     @at-root [data-drawer="open"] &
       transform: scale(1.5)
+
+      .toggle-menu:active
+        .icon-hamburger
+          transform: scale(1.5)
