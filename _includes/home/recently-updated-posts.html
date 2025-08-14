@@ -3,12 +3,15 @@
 {% if site.recently_updated_posts.enabled and recently_updated_posts != empty %}
 <section class="recently-updated-posts" aria-labelledby="recent-posts-heading">
   <h2 id="recent-posts-heading" class="section">Recently Updated</h2>
-  <ol class="recently-updated-list">
+  <ul class="recently-updated-list">
   {% for post in recently_updated_posts %}
-    <li class="recently-updated-post">
-      <a href="{{ post.url | relative_url }}" class="link-muted">{{ post.title }}</a>
+    <li>
+      <a href="{{ post.url | relative_url }}" class="recently-updated-post link-muted">
+        {% svg arrow-right %}
+        {{ post.title | titleify }}
+      </a>
     </li>
   {% endfor %}
-  </ol>
+  </ul>
 </section>
 {% endif %}

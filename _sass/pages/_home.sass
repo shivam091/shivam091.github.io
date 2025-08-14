@@ -1,4 +1,5 @@
 @use "abstracts/tokens" as *
+@use "abstracts/modules/list-unstyled" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
 
 .content-grid
@@ -39,9 +40,10 @@
   grid-area: recently-updated
 
   .recently-updated-list
-    padding-inline-start: 0
-    list-style-position: inside
+    color: var(--color-fg-muted)
+    @extend %list-unstyled
 
   .recently-updated-post
-    &::marker
-      color: var(--color-fg-muted)
+    display: flex
+    align-items: center
+    gap: $space-sm

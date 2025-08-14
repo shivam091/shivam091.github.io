@@ -1,4 +1,4 @@
-title: Harshal LADHE
+title: Harshal V. LADHE
 
 description: "I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech."
 
@@ -13,7 +13,6 @@ lang: en
 timezone: Asia/Kolkata
 
 plugins:
-  - jekyll-archives
   - jekyll-seo-tag
   - jekyll-paginate-v2
 
@@ -64,15 +63,6 @@ collections:
   series:
     output: false
 
-jekyll-archives:
-  enabled:
-    - tags
-    - categories
-  layout: archive
-  permalinks:
-    tag: /tag/:name/
-    category: /category/:name/
-
 pagination:
   enabled: true
   title: ":title - Page :num"
@@ -83,12 +73,11 @@ pagination:
   sort_reverse: true
 
 author:
-  name: Harshal LADHE
+  name: Harshal V. LADHE
   roles:
     - software engineer
     - freelancer
     - lifelong learner
-    - entrepreneur
   email: harshal.ladhe.1@gmail.com
   github: shivam091
   linkedin: shivam091

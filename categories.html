@@ -19,8 +19,7 @@ permalink: /categories
       <div class="accordion-item">
         <div class="accordion-header">
           <div class="accordion-title">
-            {% svg folder %}
-            {% svg folder-open %}
+            {% svg diamonds %}
             <a href="{{ '/category/' | append: category_slug | relative_url }}" class="category-title" tabindex="0"
                aria-label="View all posts in {{ category_name }}">
               {{ category_name }}
@@ -34,7 +33,7 @@ permalink: /categories
           <button type="button" class="btn-sm accordion-toggle" aria-expanded="false"
                   aria-label="Toggle all posts of {{ category_name }}"
                   aria-controls="{{ category_name | slugify }}-posts">
-            {% svg arrow-down %}
+            {% svg chevron-down %}
           </button>
         </div>
 

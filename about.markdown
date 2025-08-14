@@ -16,9 +16,17 @@ I’m a software engineer, freelancer, and lifelong learner passionate about bui
 
 ## GitHub Statistics
 
-![Github Stats](https://github-readme-stats.vercel.app/api?username={{ site.author.github }}&count_private=true&show_icons=true&include_all_commits=true&show_owner=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username={{ site.author.github }}&hide=TeX&layout=compact&langs_count=8)
+{% details summary="📊 Show my **GitHub stats**" %}
+![Github Stats](https://github-readme-stats.vercel.app/api?username={{ site.author.github }}&show_icons=true&include_all_commits=true&count_private=true&show=reviews,prs_merged,prs_merged_percentage&show_owner=true)
+{% enddetails %}
+
+{% details summary="🧑‍💻 See **top languages** I use" %}
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username={{ site.author.github }}&layout=pie&langs_count=8)
+{% enddetails %}
+
+{% details summary="📈 View my **GitHub activity graph**" %}
 ![Harshal's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username={{ site.author.github }}&color=000&bg_color=fff&line=0969da&point=1a7f37&area=true&area_color=59636e)
+{% enddetails %}
 
 ## Skills & Tools
 

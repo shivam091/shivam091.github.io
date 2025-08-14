@@ -1,7 +1,13 @@
 <header class="site-header">
   <a href="/" class="site-logo">
-    <img src="{{ '/assets/img/smiling-face.png' | relative_url }}" alt="{{ site.author.name }}" class="avatar" loading="lazy">
-    <span class="site-name">{{ site.author.name }}</span>
+    <img src="{{ '/assets/img/hl-smiling-face.png' | relative_url }}" alt="{{ site.author.name }}" class="avatar" loading="lazy">
+    <span class="site-name">
+      <span class="first-name">Harshal</span>
+      <span class="middle-name-initial">
+        {% svg middle-name-initial %}
+      </span>
+      <span class="last-name">LADHE</span>
+    </span>
   </a>
 
   <nav class="nav-links" role="navigation" aria-label="Main Navigation">

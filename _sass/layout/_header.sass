@@ -1,6 +1,9 @@
 @use "abstracts/tokens" as *
 @use "abstracts/mixins/transition-properties" as *
 @use "abstracts/mixins/breakpoints" as breakpoint
+@use "abstracts/animations/scooch" as *
+@use "abstracts/animations/self-draw" as *
+@use "abstracts/animations/fade-in" as *
 
 .site-header
   display: flex
@@ -8,7 +11,7 @@
   justify-content: center
   flex-wrap: wrap
   position: sticky
-  inset: $space-none
+  inset: $space-none $space-none auto
   z-index: 10
   height: $header-height
   padding: $fluid-space-md
@@ -25,7 +28,7 @@
     height: auto
 
 .glassy-backdrop
-  --glass-color: hsl(from var(--color-bg-sky-subtle) h s l / var(--glass-opacity, $opacity-none))
+  --glass-color: hsl(from var(--color-bg-sky-from) h s l / var(--glass-opacity, $opacity-none))
   background: var(--glass-color)
   backdrop-filter: blur(var(--blur-amount, $blur-none))
 
@@ -48,6 +51,33 @@
     font-size: $font-size-md
     font-weight: $font-weight-medium
     letter-spacing: 0.02em
+    display: inline-flex
+    gap: 0.25rem
+
+    .first-name
+      display: inline-block
+      animation: scooch-left $motion-duration-default $motion-easing-overshoot $motion-delay-long both
+      color: var(--color-fg-accent)
+
+    .last-name
+      display: inline-block
+      animation: scooch-right $motion-duration-default $motion-easing-overshoot $motion-delay-extra-long both
+      color: var(--color-fg-accent)
+
+    .middle-name-initial
+      position: relative
+      display: inline-block
+      width: 12px
+
+    .v-char
+      position: absolute
+      left: 2px
+      top: 0
+
+    .v-path
+      stroke-dasharray: 100
+      stroke-dashoffset: 100
+      animation: self-draw $motion-duration-ultra-slow $motion-easing-overshoot calc($motion-delay-extra-long + $motion-duration-default) forwards
 
 .nav-links
   display: flex
@@ -76,7 +106,7 @@
   gap: $space-sm
 
   .header-action
-    border-radius: $border-radius-default
+    border-radius: $border-radius-full
     background-color: var(--color-bg-control-transparent)
     color: inherit
     border: $border-width-default solid var(--color-border-control-transparent)
@@ -100,3 +130,7 @@
 
     @at-root [data-drawer="open"] &
       transform: scale(1.5)
+
+      .toggle-menu:active
+        .icon-hamburger
+          transform: scale(1.5)

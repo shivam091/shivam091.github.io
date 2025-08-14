@@ -4,13 +4,20 @@ details
   margin-block: $space-base
 
   summary
+    display: flex
+    align-items: center
+    gap: .5rem
+    list-style: none
     cursor: pointer
-    display: list-item
     font-weight: $font-weight-medium
+
+    &::-webkit-details-marker,
+    &::marker
+      display: none
 
   &[open]
     summary
       font-weight: $font-weight-semi-bold
 
   p
-    margin-top: $fluid-space-sm
+    margin: $space-none

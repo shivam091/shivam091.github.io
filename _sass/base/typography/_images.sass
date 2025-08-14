@@ -23,15 +23,10 @@ svg
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   speak: none
-  fill: currentColor
   vertical-align: middle
+  overflow: visible
 
 .avatar
   width: $size-xxxl
   height: $size-xxxl
-  border-radius: $border-radius-full
-  object-fit: cover
-
-  @include breakpoint.max(md)
-    width: $size-xl
-    height: $size-xl
+  object-fit: contain

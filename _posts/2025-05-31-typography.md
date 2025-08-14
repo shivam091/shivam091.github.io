@@ -125,13 +125,13 @@ Inline `console.log("Hi")` inside text.
 ### Image with Caption
 
 <figure>
-  <img src="https://via.placeholder.com/600x200" alt="Example Image">
+  <img src="{{ '/assets/img/hl-sitting.png' | relative_url }}" alt="Example Image">
   <figcaption>This is a caption below the image.</figcaption>
 </figure>
 
 ### Simple Image
 
-![Alt text](https://via.placeholder.com/400x200)
+![Alt text]({{ '/assets/img/hl-standing.png' | relative_url }})
 
 ## Tables
 

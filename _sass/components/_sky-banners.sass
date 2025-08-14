@@ -34,6 +34,9 @@
     z-index: -1
     @include transition-properties(background, $duration: $sky-from-duration, $easing: $color-swap-timing-function)
 
+    &.inner
+      background: linear-gradient(to bottom, hsl(from var(--color-bg-sky-subtle) h s l / .925), var(--color-bg-sky-subtle))
+
     .cloud-shapes
       display: block
       max-width: revert
