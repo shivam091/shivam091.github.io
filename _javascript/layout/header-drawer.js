@@ -23,6 +23,7 @@ export default class HeaderDrawer {
     this.animation.playbackRate = 1;
     this.animation.play();
     this.hamburger?.animateMorph(0, 1, COLOR_SWAP_TRANSITION.duration);
+    this.animateNavItemsIn();
 
     // Focus first link in drawer
     this.focusableElements[0]?.focus();
@@ -36,6 +37,8 @@ export default class HeaderDrawer {
 
     this.animation.reverse();
     this.hamburger?.animateMorph(1, 0, COLOR_SWAP_TRANSITION.duration);
+
+    this.animateNavItemsOut();
 
     // Restore focus to toggle button
     if (restoreFocus) this.lastFocused?.focus();
@@ -58,9 +61,47 @@ export default class HeaderDrawer {
     }
   }
 
+  static animateNavItemsIn() {
+    const items = this.drawer.querySelectorAll(".nav-item");
+
+    items.forEach((item, index) => {
+      item.animate(
+        [
+          { transform: "translateX(20px)" },
+          { transform: "translateX(0)" }
+        ],
+        {
+          duration: 350,
+          delay: index * 500,
+          easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+          fill: "forwards"
+        }
+      );
+    });
+  }
+
+  static animateNavItemsOut() {
+    const items = this.drawer.querySelectorAll(".nav-item");
+
+    items.forEach((item, index) => {
+      item.animate(
+        [
+          { transform: "translateX(0)" },
+          { transform: "translateX(20px)" }
+        ],
+        {
+          duration: 250,
+          delay: index * 50,
+          easing: "cubic-bezier(0.7, 0, 0.84, 0)",
+          fill: "forwards"
+        }
+      );
+    });
+  }
+
   static handleResize = () => {
     if (window.innerWidth >= 768 && this.isOpen) this.closeDrawer(false);
-  };
+  }
 
   static initialize() {
     document.documentElement.setAttribute("data-drawer", "close");
