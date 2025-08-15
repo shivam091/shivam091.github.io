@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-15T15:59:03+05:30</updated>
+  <updated>2025-08-15T19:16:46+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -4795,7 +4795,7 @@ like fr (fraction of available space).</p></li>
     <id>https://shivam091.github.io/post/components</id>
 
     <published>2025-06-16T19:10:40+05:30</published>
-    <updated>2025-08-08T16:06:50+05:30</updated>
+    <updated>2025-08-09T15:11:47+05:30</updated>
 
     
     <media:thumbnail
@@ -5091,10 +5091,6 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
   
 </div>
 
-<h2  id="icons" dir="auto">Icons</h2>
-<svg id="custom-id" class="icon icon-folder-open custom-class" width="20" height="20" role="img" aria-label="Open folder" focusable="false">
-  <use href="/assets/img/sprite.svg#icon-folder-open" />
-</svg>
 ]]></content>
 
     
