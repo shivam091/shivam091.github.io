@@ -68,15 +68,10 @@ $alert-types: (success, danger, attention, accent)
     flex-shrink: 0
 
     .icon-times
-      pointer-events: none
-
-      @include transition-properties((transform, color), $duration: $motion-duration-default, $easing: $motion-easing-linear)
+      will-change: transform
 
       @extend %no-cursor
 
     &:hover,
     &:focus
       background-color: var(--color-bg-transparent)
-
-      .icon-times
-        transform: scale(1.25) rotate(10deg)
