@@ -9,10 +9,10 @@ $alert-types: (success, danger, attention, accent)
   display: flex
   align-items: center
   padding: $space-base
-  border: $border-width-default solid var(--color-border-transparent)
+  border: $border-width-default solid var(--color-border-neutral-muted)
   border-radius: $border-radius-default
   font-size: $font-size-base
-  background-color: var(--color-bg-neutral-muted)
+  background-image: linear-gradient(var(--color-bg-neutral-muted), var(--color-bg-neutral-muted))
   color: var(--color-fg-default)
   gap: $space-base
   margin-bottom: $space-sm
@@ -32,7 +32,7 @@ $alert-types: (success, danger, attention, accent)
         border-color: var(--color-border-#{$type}-emphasis)
 
       .alert-icon
-        svg
+        .icon
           fill: var(--color-bg-#{$type}-emphasis)
 
   &.fade-out
@@ -67,7 +67,7 @@ $alert-types: (success, danger, attention, accent)
     line-height: 1
     flex-shrink: 0
 
-    svg
+    .icon-times
       pointer-events: none
 
       @include transition-properties((transform, color), $duration: $motion-duration-default, $easing: $motion-easing-linear)
@@ -78,5 +78,5 @@ $alert-types: (success, danger, attention, accent)
     &:focus
       background-color: var(--color-bg-transparent)
 
-      svg
-        transform: scale(1.25)
+      .icon-times
+        transform: scale(1.25) rotate(10deg)

@@ -10,10 +10,10 @@
     <a href="{{ link }}" class="share-link"
        onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
        aria-label="Share on {{ share.type }}" data-tooltip="{{ share.type }}">
-      {% icon {{ share.icon }} %}
+      {% svg {{ share.icon }} %}
     </a>
   {% endfor %}
   <button class="share-link" aria-label="Copy link" data-copy-link data-copy-url="{{ post.url | absolute_url }}" data-tooltip="Copy link">
-    {% icon link %}
+    {% svg link %}
   </button>
 </div>

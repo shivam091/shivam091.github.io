@@ -14,7 +14,7 @@
   border-radius: $border-radius-default
   padding-inline: $fluid-space-md
   background: var(--color-bg-default)
-  color: var(--color-fg-accent-on-emphasis)
+  color: var(--color-fg-accent-muted)
   overflow-y: auto
   pointer-events: none
   opacity: $opacity-none
@@ -65,7 +65,7 @@
   overflow: clip
   aspect-ratio: 18 / 10
   max-height: 250px
-  background: linear-gradient(to top, var(--color-sky-to) 30%, var(--color-sky-from) 100%)
+  background: linear-gradient(to top, var(--color-bg-sky-to) 30%, var(--color-bg-sky-from) 100%)
   margin-block-start: auto
 
   .visual-cloud-shape,
@@ -81,11 +81,11 @@
 
   .visual-base-shape
     width: calc(100% + 3px)
-    height: 70%
+    height: 50%
     inset: auto -1px -1px -1.5px
 
   .visual-cloud-path
-    fill: var(--color-sky-subtle)
+    fill: var(--color-bg-sky-subtle)
 
   .visual-base-path
     fill: var(--color-bg-default)
@@ -109,6 +109,7 @@
 
     .footer-item
       position: relative
+      margin-bottom: $space-none
 
     .footer-link
       display: block

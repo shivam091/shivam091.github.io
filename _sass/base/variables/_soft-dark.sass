@@ -1,0 +1,8 @@
+@use "abstracts/functions/flatten-map" as utils
+@use "themes/soft-dark" as *
+
+[data-theme="soft-dark"]
+  color-scheme: soft-dark
+
+  @each $name, $value in utils.flatten-map($soft-dark)
+    --#{$name}: #{$value}
