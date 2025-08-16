@@ -14,6 +14,8 @@ import CodeBlockUtils from "./utils/code-block-utils";
 import LazyLoader from "./modules/components/lazy-loader";
 import RetroCounter from "./components/retro-counter";
 import Scrollspy from "./components/scroll-spy";
+import DetailsPlusMorph from "./animations/details-plus-morph";
+import DetailsAnimator from "./animations/details-animator";
 
 import { bindHeroTyped } from "./components/hero";
 
@@ -31,6 +33,8 @@ Clipboard.initAll();
 Alert.init();
 CodeBlockUtils.initAll();
 LazyLoader.init();
+DetailsPlusMorph.initialize();
+DetailsAnimator.initialize();
 
 RetroCounter.initAll("[data-retro-counter]", {
   version: "v2",
