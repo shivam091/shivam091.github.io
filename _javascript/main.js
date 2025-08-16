@@ -15,6 +15,8 @@ import RetroCounter from "./components/retro-counter";
 import Scrollspy from "./components/scroll-spy";
 import DetailsPlusMorph from "./animations/details-plus-morph";
 import DetailsAnimator from "./animations/details-animator";
+import ArrowRightBoop from "./animations/arrow-right-boop";
+import HoverBoop from "./utils/animations/hover-boop";
 
 import { bindHeroTyped } from "./components/hero";
 
@@ -33,6 +35,8 @@ CodeBlockUtils.initAll();
 LazyLoader.init();
 DetailsPlusMorph.initialize();
 DetailsAnimator.initialize();
+HoverBoop.initialize(".alert-dismiss .icon-times", {boop: {rotate: 15, scale: 1.2}});
+HoverBoop.initialize(".icon-arrow-up", {boop: {translateY: -3}});
 
 RetroCounter.initAll("[data-retro-counter]", {
   version: "v2",
