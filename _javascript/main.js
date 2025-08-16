@@ -16,6 +16,7 @@ import RetroCounter from "./components/retro-counter";
 import Scrollspy from "./components/scroll-spy";
 import DetailsPlusMorph from "./animations/details-plus-morph";
 import DetailsAnimator from "./animations/details-animator";
+import IconWobble from "./animations/icon-wobble";
 
 import { bindHeroTyped } from "./components/hero";
 
@@ -35,6 +36,7 @@ CodeBlockUtils.initAll();
 LazyLoader.init();
 DetailsPlusMorph.initialize();
 DetailsAnimator.initialize();
+IconWobble.initialize(".icon-times");
 
 RetroCounter.initAll("[data-retro-counter]", {
   version: "v2",
