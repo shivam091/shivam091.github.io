@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-16T20:09:08+05:30</updated>
+  <updated>2025-08-16T20:25:48+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -3163,7 +3163,7 @@ Use <strong><code  class="highlighter-rouge notranslate">auto-fill</code></stron
     <id>https://shivam091.github.io/post/mastering-css-grid</id>
 
     <published>2025-07-09T15:21:11+05:30</published>
-    <updated>2025-08-08T16:06:50+05:30</updated>
+    <updated>2025-08-16T18:39:57+05:30</updated>
 
     
     <media:thumbnail
@@ -4154,6 +4154,26 @@ where an item starts and ends in the grid layout.</p>
 </ul>
 </details>
 
+<details>
+  <summary>
+    <svg version="1.0" role="img" class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1.25rem" height="1.25rem" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="6" y1="12" x2="18" y2="12" />
+  <line x1="12" y1="18" x2="12" y2="6" />
+</svg>
+
+    <p>When to use it?</p>
+
+  </summary>
+  <div class="content">
+    <ul>
+  <li>You <strong>don’t need to control exact start/end line numbers</strong>.</li>
+  <li>You want the browser to determine the position automatically.</li>
+  <li>You’re working with <strong>auto-placed items</strong> in a dynamic or responsive layout.</li>
+</ul>
+
+  </div>
+</details>
+
 <h2  id="grid-types" dir="auto">Grid Types</h2>
 <p  dir="auto">In CSS Grid, it’s important to understand the two types of grids: <strong>explicit</strong> and <strong>implicit</strong>. These define how grid tracks (rows and columns)
 are created—either by the developer or automatically by the browser.</p>
@@ -4736,7 +4756,7 @@ form what’s known as the <strong>implicit grid</strong>.</p>
     <id>https://shivam091.github.io/post/getting-started-with-css-grid</id>
 
     <published>2025-07-09T15:21:11+05:30</published>
-    <updated>2025-08-16T12:17:21+05:30</updated>
+    <updated>2025-08-16T18:39:57+05:30</updated>
 
     
     <media:thumbnail
