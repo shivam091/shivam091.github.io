@@ -338,6 +338,12 @@ This tells the grid item to span **2 columns and 2 rows** starting from its **au
 </ul>
 </details>
 
+{% details summary="When to use it?" %}
+- You **don’t need to control exact start/end line numbers**.
+- You want the browser to determine the position automatically.
+- You're working with **auto-placed items** in a dynamic or responsive layout.
+{% enddetails %}
+
 ## Grid Types
 
 In CSS Grid, it's important to understand the two types of grids: **explicit** and **implicit**. These define how grid tracks (rows and columns)

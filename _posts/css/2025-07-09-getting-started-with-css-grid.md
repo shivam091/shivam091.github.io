@@ -127,14 +127,11 @@ In frameworks like React or Vue, **Grid makes layout self-contained** — no dep
 > **Summary**: Use **flexbox** for 1D layout (e.g., navbars, button groups) and use **grid** for 2D layout (e.g., pages, cards, dashboard panels)
 > and you can always combine them!
 
-<details>
-  <summary>When <em>not</em> to use CSS Grid?</summary>
-  <ul>
-    <li>If you just need a horizontal or vertical alignment — use Flexbox.</li>
-    <li>If the layout is linear and small-scale (e.g. tag chips, breadcrumbs), Grid might be overkill.</li>
-    <li>Old browser support? Flexbox may be safer. (Grid has great support though!)</li>
-  </ul>
-</details>
+{% details summary="When _not_ to use CSS Grid?" %}
+- If you just need a horizontal or vertical alignment — use Flexbox.
+- If the layout is linear and small-scale (e.g. tag chips, breadcrumbs), Grid might be overkill.
+- Old browser support? Flexbox may be safer. (Grid has great support though!)
+{% enddetails %}
 
 ## Basic Terminology
 
