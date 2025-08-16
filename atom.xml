@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-16T18:28:54+05:30</updated>
+  <updated>2025-08-16T18:41:03+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -4997,14 +4997,16 @@ and you can always combine them!</p>
   <line x1="12" y1="18" x2="12" y2="6" />
 </svg>
 
-    <span>When <em>not</em> to use CSS Grid?</span>
+    <p>When <em>not</em> to use CSS Grid?</p>
+
   </summary>
   <div class="content">
     <ul>
-      <li>If you just need a horizontal or vertical alignment — use Flexbox.</li>
-      <li>If the layout is linear and small-scale (e.g. tag chips, breadcrumbs), Grid might be overkill.</li>
-      <li>Old browser support? Flexbox may be safer. (Grid has great support though!)</li>
-    </ul>
+  <li>If you just need a horizontal or vertical alignment — use Flexbox.</li>
+  <li>If the layout is linear and small-scale (e.g. tag chips, breadcrumbs), Grid might be overkill.</li>
+  <li>Old browser support? Flexbox may be safer. (Grid has great support though!)</li>
+</ul>
+
   </div>
 </details>
 
