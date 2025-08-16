@@ -14,6 +14,8 @@ import LazyLoader from "./modules/components/lazy-loader";
 import RetroCounter from "./components/retro-counter";
 import Scrollspy from "./components/scroll-spy";
 import Playground from './components/code-playground/playground';
+import DetailsPlusMorph from "./animations/details-plus-morph";
+import DetailsAnimator from "./animations/details-animator";
 
 import { bindHeroTyped } from "./components/hero";
 
@@ -30,6 +32,8 @@ Clipboard.initAll();
 Alert.init();
 CodeBlockUtils.initAll();
 LazyLoader.init();
+DetailsPlusMorph.initialize();
+DetailsAnimator.initialize();
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-playground]').forEach(el => new Playground(el));
