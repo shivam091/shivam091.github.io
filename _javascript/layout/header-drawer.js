@@ -22,7 +22,7 @@ export default class HeaderDrawer {
 
     this.animation.playbackRate = 1;
     this.animation.play();
-    this.hamburger?.animateMorph(0, 1, COLOR_SWAP_TRANSITION.duration);
+    this.hamburger?.animateMorph(0, 1);
     this.animateNavItemsIn();
 
     // Focus first link in drawer
@@ -36,7 +36,7 @@ export default class HeaderDrawer {
     this.toggleButton?.setAttribute("aria-expanded", "false");
 
     this.animation.reverse();
-    this.hamburger?.animateMorph(1, 0, COLOR_SWAP_TRANSITION.duration);
+    this.hamburger?.animateMorph(1, 0);
 
     this.animateNavItemsOut();
 
