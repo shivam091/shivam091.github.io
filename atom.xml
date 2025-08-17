@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-17T08:38:50+05:30</updated>
+  <updated>2025-08-17T08:46:10+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -4145,15 +4145,6 @@ where an item starts and ends in the grid layout.</p>
 
 <p  dir="auto">This tells the grid item to span <strong>2 columns and 2 rows</strong> starting from its <strong>auto-determined position</strong> (i.e. where the browser places it in the flow).</p>
 <p  dir="auto">👉 <a  href="https://codepen.io/shivam091/pen/raVEKzW" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/raVEKzW" class="external-link">Try this on CodePen</a></p>
-<details>
-<summary>When to use it?</summary>
-<ul>
-  <li>You <strong>don’t need to control exact start/end line numbers</strong>.</li>
-  <li>You want the browser to determine the position automatically.</li>
-  <li>You're working with <strong>auto-placed items</strong> in a dynamic or responsive layout.</li>
-</ul>
-</details>
-
 <details>
   <summary>
     <svg version="1.0" role="img" class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1.25rem" height="1.25rem" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
