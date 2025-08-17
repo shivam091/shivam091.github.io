@@ -31,6 +31,7 @@ export default class HamburgerMorph {
     this.interactions = new HamburgerIcon(this);
 
     this.observeDrawerState();
+    this.syncWithDrawer();
   }
 
   morphLines(targetFrames) {
