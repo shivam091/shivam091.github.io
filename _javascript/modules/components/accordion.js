@@ -1,24 +1,17 @@
 import setStyles from "./../../utils/styles";
+import DiamondBoop from "./../../animations/diamond-boop";
+import ChevronMorph from "./../../animations/chevron-morph";
 
 export default class Accordion {
+  static diamondBoopInstances = new WeakMap();
+  static chevronInstances = new WeakMap();
+
   static get accordions() {
     return document.querySelectorAll("[data-accordion]");
   }
 
   static getItems(container) {
     return container.querySelectorAll(".accordion-item");
-  }
-
-  static getHeader(item) {
-    return item.querySelector(".accordion-header");
-  }
-
-  static getToggle(item) {
-    return item.querySelector(".accordion-toggle");
-  }
-
-  static getBody(item) {
-    return item.querySelector(".accordion-body");
   }
 
   static isTransitioning(item) {
@@ -49,33 +42,58 @@ export default class Accordion {
     });
   }
 
+  static animateDiamond(svg) {
+    if (!svg) return;
+    let instance = this.diamondBoopInstances.get(svg);
+    if (!instance) {
+      instance = new DiamondBoop(svg);
+      this.diamondBoopInstances.set(svg, instance);
+    }
+    instance.boop();
+  }
+
+  static animateChevron(svg, up = true) {
+    if (!svg) return;
+    let instance = this.chevronInstances.get(svg);
+    if (!instance) {
+      instance = new ChevronMorph(svg);
+      this.chevronInstances.set(svg, instance);
+    }
+    if (up) instance.up();
+    else instance.reset();
+  }
+
   static expand(item) {
     if (this.isTransitioning(item)) return;
     this.setTransitioning(item, true);
 
-    const body = this.getBody(item);
+    const { body, diamondSvg, chevronSvg } = item._refs;
     setStyles(body, { display: "block" });
-
     item.setAttribute("data-expanded", true);
 
     this.animateHeight(body, body.scrollHeight, () => {
       setStyles(body, { height: "auto", overflow: "visible" });
       this.setTransitioning(item, false);
     });
+
+    this.animateDiamond(diamondSvg);
+    this.animateChevron(chevronSvg, true);
   }
 
   static collapse(item) {
     if (this.isTransitioning(item)) return;
     this.setTransitioning(item, true);
 
-    const body = this.getBody(item);
-
+    const { body, diamondSvg, chevronSvg } = item._refs;
     item.removeAttribute("data-expanded");
 
     this.animateHeight(body, 0, () => {
       setStyles(body, { display: "none" });
       this.setTransitioning(item, false);
     }, body.scrollHeight);
+
+    this.animateDiamond(diamondSvg);
+    this.animateChevron(chevronSvg, false);
   }
 
   static collapseAllExcept(container, currentItem) {
@@ -90,7 +108,7 @@ export default class Accordion {
     if (this.isTransitioning(item)) return;
 
     const isExpanded = item.hasAttribute("data-expanded");
-    const toggleButton = this.getToggle(item);
+    const toggleButton = item._refs.toggleButton;
     toggleButton?.setAttribute("aria-expanded", String(!isExpanded));
 
     if (isExpanded) {
@@ -102,9 +120,15 @@ export default class Accordion {
   }
 
   static bind(container, item) {
-    const toggleButton = this.getToggle(item);
-    const body = this.getBody(item);
-    if (!toggleButton || !body) return;
+    const toggleButton = item.querySelector(".accordion-toggle");
+    const body = item.querySelector(".accordion-body");
+    const header = item.querySelector(".accordion-header");
+    const diamondSvg = header?.querySelector("svg.icon-diamonds");
+    const chevronSvg = header?.querySelector("svg.icon-chevron-down");
+
+    if (!toggleButton || !body || !header) return;
+
+    item._refs = { toggleButton, body, header, diamondSvg, chevronSvg };
 
     toggleButton.addEventListener("click", () => this.toggle(container, item));
 
