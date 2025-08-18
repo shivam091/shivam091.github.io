@@ -36,6 +36,8 @@ CodeBlockUtils.initAll();
 LazyLoader.init();
 DetailsPlusMorph.initialize();
 DetailsAnimator.initialize();
+ArrowRightBoop.initialize(".icon-arrow-right");
+
 HoverBoop.initialize(".alert-dismiss .icon-times", {boop: {rotate: 15, scale: 1.2}});
 HoverBoop.initialize(".icon-arrow-up", {boop: {translateY: -3}});
 
