@@ -19,6 +19,7 @@ import ArrowRightBoop from "./animations/arrow-right-boop";
 import HoverBoop from "./utils/animations/hover-boop";
 import IconStretchyGuy from "./animations/icon-stretchy-guy";
 import HashIconMorph from "./animations/hash-icon-morph";
+import ListIconBoop from "./animations/list-icon-boop";
 
 import { bindHeroTyped } from "./components/hero";
 
@@ -40,6 +41,7 @@ DetailsAnimator.initialize();
 ArrowRightBoop.initialize(".icon-arrow-right");
 IconStretchyGuy.initialize();
 HashIconMorph.initialize();
+ListIconBoop.initialize();
 
 HoverBoop.initialize(".alert-dismiss .icon-times", {boop: {rotate: 15, scale: 1.2}});
 HoverBoop.initialize(".icon-arrow-up", {boop: {translateY: -3}});
