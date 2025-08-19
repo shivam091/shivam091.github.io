@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-19T11:44:24+05:30</updated>
+  <updated>2025-08-19T12:23:57+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -2051,8 +2051,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -2121,8 +2124,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -2203,8 +2209,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -2263,8 +2272,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -2329,8 +2341,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -2408,8 +2423,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -2500,8 +2518,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -2603,8 +2624,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -2674,8 +2698,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -2802,8 +2829,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -2872,8 +2902,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -2988,8 +3021,11 @@ expression’s result is implicitly returned.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -3227,8 +3263,11 @@ maintain—especially for complex page layouts. It acts as a visual blueprint of
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -3301,8 +3340,11 @@ using the <code  class="highlighter-rouge notranslate">grid-area</code> property
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -3398,8 +3440,11 @@ using the <code  class="highlighter-rouge notranslate">grid-area</code> property
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -3485,8 +3530,11 @@ using the <code  class="highlighter-rouge notranslate">grid-area</code> property
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -3558,8 +3606,11 @@ using the <code  class="highlighter-rouge notranslate">grid-area</code> property
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -3639,8 +3690,11 @@ These properties are set directly on the grid items themselves:</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -3706,8 +3760,11 @@ These properties are set directly on the grid items themselves:</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -3791,8 +3848,11 @@ where an item starts and ends in the grid layout.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -3853,8 +3913,11 @@ where an item starts and ends in the grid layout.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -3916,8 +3979,11 @@ where an item starts and ends in the grid layout.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -3993,8 +4059,11 @@ where an item starts and ends in the grid layout.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -4052,8 +4121,11 @@ where an item starts and ends in the grid layout.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -4118,8 +4190,11 @@ where an item starts and ends in the grid layout.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -4203,8 +4278,11 @@ are created—either by the developer or automatically by the browser.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -4265,8 +4343,11 @@ are created—either by the developer or automatically by the browser.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -4352,8 +4433,11 @@ form what’s known as the <strong>implicit grid</strong>.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -4414,8 +4498,11 @@ form what’s known as the <strong>implicit grid</strong>.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -4501,8 +4588,11 @@ form what’s known as the <strong>implicit grid</strong>.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -4560,8 +4650,11 @@ form what’s known as the <strong>implicit grid</strong>.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -4622,8 +4715,11 @@ form what’s known as the <strong>implicit grid</strong>.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -4834,8 +4930,11 @@ form what’s known as the <strong>implicit grid</strong>.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -4918,8 +5017,11 @@ form what’s known as the <strong>implicit grid</strong>.</p>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -5102,8 +5204,11 @@ like fr (fraction of available space).</p></li>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -5175,8 +5280,11 @@ like fr (fraction of available space).</p></li>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
@@ -5371,8 +5479,11 @@ like fr (fraction of available space).</p></li>
     </div>
     <div class="code-actions">
       <button type="button" class="btn btn-sm btn-toggle-lines" aria-label="Toggle line numbers" data-tooltip="Toggle line numbers">
-        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path fill-rule="evenodd" d="M10.2,10 L9.8,14 L13.8,14 L14.2,10 L10.2,10 Z M10.4,8 L14.4,8 L15,2 L17,2 L16.4,8 L21.0000061,8 L20.8000061,10 L16.2,10 L15.8,14 L20.0000061,14 L19.8000061,16 L15.6,16 L15,22 L13,22 L13.6,16 L9.6,16 L9,22 L7,22 L7.6,16 L3.00000305,16 L3.20000305,14 L7.8,14 L8.2,10 L4.00000305,10 L4.20000305,8 L8.4,8 L9,2 L11,2 L10.4,8 Z" />
+        <svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="4" y1="9" x2="20" y2="9" />
+  <line x1="4" y1="15" x2="20" y2="15" />
+  <line x1="10" y1="3" x2="8" y2="21" />
+  <line x1="16" y1="3" x2="14" y2="21" />
 </svg>
 
       </button>
