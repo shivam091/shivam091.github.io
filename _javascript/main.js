@@ -17,6 +17,7 @@ import DetailsPlusMorph from "./animations/details-plus-morph";
 import DetailsAnimator from "./animations/details-animator";
 import ArrowRightBoop from "./animations/arrow-right-boop";
 import HoverBoop from "./utils/animations/hover-boop";
+import IconStretchyGuy from "./animations/icon-stretchy-guy";
 
 import { bindHeroTyped } from "./components/hero";
 
@@ -36,9 +37,11 @@ LazyLoader.init();
 DetailsPlusMorph.initialize();
 DetailsAnimator.initialize();
 ArrowRightBoop.initialize(".icon-arrow-right");
+IconStretchyGuy.initialize();
 
 HoverBoop.initialize(".alert-dismiss .icon-times", {boop: {rotate: 15, scale: 1.2}});
 HoverBoop.initialize(".icon-arrow-up", {boop: {translateY: -3}});
+HoverBoop.initialize(".icon-search", {boop: {rotate: 10, scale: 1.1}});
 
 RetroCounter.initAll("[data-retro-counter]", {
   version: "v2",
