@@ -16,13 +16,14 @@
   <!-- Face (static, not morphed) -->
   <g class="face" stroke-width="2">
     <!-- Eyes -->
-    <circle cx="20" cy="30" r="0.5" class="eye left-eye" fill="currentColor" />
-    <circle cx="30" cy="30" r="0.5" class="eye right-eye" fill="currentColor" />
+    <circle cx="20" cy="30" r="0.5" class="eye left-eye" />
+    <circle cx="30" cy="30" r="0.5" class="eye right-eye" />
 
     <!-- Nose -->
     <line x1="25" y1="34" x2="25" y2="38" class="nose" />
 
-    <!-- Mouth (arc) -->
-    <path d="M20 41 Q25 45 30 41" class="mouth" fill="none" />
+    <!-- Mouth -->
+    <!-- <path d="M20 41 Q25 45 30 41" class="mouth" fill="none" /> -->
+    <polyline points="20 41 25 45 30 41" class="mouth" />
   </g>
 </svg>
