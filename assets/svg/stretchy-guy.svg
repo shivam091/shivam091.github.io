@@ -16,8 +16,8 @@
   <!-- Face -->
   <g class="face" stroke-width="2">
     <!-- Eyes -->
-    <circle cx="20" cy="30" r="0.5" class="eye left-eye" />
-    <circle cx="30" cy="30" r="0.5" class="eye right-eye" />
+    <circle cx="20" cy="30" r="0.5" class="left-eye" />
+    <circle cx="30" cy="30" r="0.5" class="right-eye" />
 
     <!-- Nose -->
     <line x1="25" y1="34" x2="25" y2="38" class="nose" />
