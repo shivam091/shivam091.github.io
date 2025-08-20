@@ -23,7 +23,7 @@
     <line x1="25" y1="34" x2="25" y2="38" class="nose" />
 
     <!-- Mouth -->
-    <!-- <path d="M20 41 Q25 45 30 41" class="mouth" fill="none" /> -->
-    <polyline points="20 42 25 44 30 42" class="mouth" />
+    <path d="M20 41 Q25 45 30 41" class="mouth" fill="none" />
+    <!-- <polyline points="20 42 25 44 30 42" class="mouth" /> -->
   </g>
 </svg>
