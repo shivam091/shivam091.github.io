@@ -13,7 +13,7 @@ const buildOptions = {
   sourcemap: true,
   outdir: "dist",
   plugins: [sassPlugin()],
-  loader: { ".sass": "file", ".png": "file", ".svg": "file" },
+  loader: { ".sass": "file", ".png": "file" },
   plugins: [
     sassPlugin({
       loadPaths: ["_sass"]
