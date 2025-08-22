@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-22T16:09:51+05:30</updated>
+  <updated>2025-08-22T18:30:42+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -2297,16 +2297,17 @@ where an item starts and ends in the grid layout.</p>
   <line x1="12" y1="18" x2="12" y2="6" />
 </svg>
 
-    <p>When to use it?</p>
-
+    <p dir="auto">When to use it?</p>
   </summary>
   <div class="content">
-    <ul>
-  <li>You <strong>don’t need to control exact start/end line numbers</strong>.</li>
-  <li>You want the browser to determine the position automatically.</li>
-  <li>You’re working with <strong>auto-placed items</strong> in a dynamic or responsive layout.</li>
-</ul>
+    
+          <ul dir="auto">
+              <li><p dir="auto">You <strong>don’t need to control exact start/end line numbers</strong>.</p></li>
+  <li><p dir="auto">You want the browser to determine the position automatically.</p></li>
+  <li><p dir="auto">You’re working with <strong>auto-placed items</strong> in a dynamic or responsive layout.</p></li>
 
+          </ul>
+        
   </div>
 </details>
 
@@ -3189,16 +3190,17 @@ and you can always combine them!</p>
   <line x1="12" y1="18" x2="12" y2="6" />
 </svg>
 
-    <p>When <em>not</em> to use CSS Grid?</p>
-
+    <p dir="auto">When <em>not</em> to use CSS Grid?</p>
   </summary>
   <div class="content">
-    <ul>
-  <li>If you just need a horizontal or vertical alignment — use Flexbox.</li>
-  <li>If the layout is linear and small-scale (e.g. tag chips, breadcrumbs), Grid might be overkill.</li>
-  <li>Old browser support? Flexbox may be safer. (Grid has great support though!)</li>
-</ul>
+    
+          <ul dir="auto">
+              <li><p dir="auto">If you just need a horizontal or vertical alignment — use Flexbox.</p></li>
+  <li><p dir="auto">If the layout is linear and small-scale (e.g. tag chips, breadcrumbs), Grid might be overkill.</p></li>
+  <li><p dir="auto">Old browser support? Flexbox may be safer. (Grid has great support though!)</p></li>
 
+          </ul>
+        
   </div>
 </details>
 
