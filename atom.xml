@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-22T08:13:54+05:30</updated>
+  <updated>2025-08-22T08:44:26+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -3872,7 +3872,7 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
     <id>https://shivam091.github.io/post/typography</id>
 
     <published>2025-06-07T18:47:49+05:30</published>
-    <updated>2025-08-08T16:06:50+05:30</updated>
+    <updated>2025-08-14T08:42:44+05:30</updated>
 
     
     <media:thumbnail
@@ -4015,14 +4015,14 @@ Mailto: <a  href="mailto:test@example.com">Send Email</a></p>
 <h2  id="figures-and-images" dir="auto">Figures and Images</h2>
 <h3  id="image-with-caption" dir="auto">Image with Caption</h3>
 <figure>
-  <img src="https://via.placeholder.com/600x200" alt="Example Image" />
+  <img src="/assets/img/hl-sitting.png" alt="Example Image" />
   <figcaption>This is a caption below the image.</figcaption>
 </figure>
 
 <h3  id="simple-image" dir="auto">Simple Image</h3>
 <p  dir="auto">  <div class="markdown-img-wrapper lazy-wrapper">
-<img  alt="Alt text" class="lazy-img" data-src="https://via.placeholder.com/400x200" loading="lazy" />
-<noscript><img  alt="Alt text" src="https://via.placeholder.com/400x200" /></noscript>  </div>
+<img  alt="Alt text" class="lazy-img" data-src="/assets/img/hl-standing.png" loading="lazy" />
+<noscript><img  alt="Alt text" src="/assets/img/hl-standing.png" /></noscript>  </div>
 </p>
 <h2  id="tables" dir="auto">Tables</h2>
 
