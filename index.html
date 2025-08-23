@@ -78,8 +78,6 @@
 
 </head>
 <body>
-  <div id="progress-bar"></div>
-
   <button type="button" class="skip-link" data-skip-link data-skip-to="#main-content">Skip to main content</button>
 
   <div id="header-drawer" class="header-drawer" role="dialog" aria-modal="true" aria-label="Main Menu" tabindex="-1">
@@ -166,7 +164,7 @@
 </div>
 
 
-  <div class="hero-banner" data-sky-shapes aria-hidden="true">
+  <div class="hero-banner" data-cloud-shapes aria-hidden="true">
   <div class="sky-layer sky-layer-back" role="presentation">
     <svg width="5120" height="456" viewBox="0 0 5120 456" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="sky-svg" focusable="false" aria-hidden="true">
       <path d="M2467 198C2478.93 198 2508.5 148.5 2692.3 167C2855.77 183.454 2890 275.92 2940.45 271C2978.5 267.29 3025.5 66.1073 3208.04 55.5002C3364.5 46.408 3407.37 123 3419.5 123.5C3431.63 124 3448.89 83.0002 3564.32 83.0002C3728 83.0002 3767.67 198.501 3779.08 198C3790.5 197.5 3808 45.0002 4044.68 45.0002C4238.5 45.0002 4245.32 120.5 4256.5 116.5C4267.69 112.5 4277 13.5002 4417.9 13.5002C4567 13.5002 4590.74 115.5 4608.5 116.5C4626.26 117.5 4640.5 13.5007 4795 13.5004C4946 13.5002 4954.43 76.5003 4970.51 76.5003C4986.6 76.5003 4983 8.5 5077 8.5C5147.13 8.5 5148.62 62.7657 5148.14 74.3437C5148.08 75.8075 5148 77.2344 5148 78.6994V360V361.5C5148 383.592 5130.09 401.5 5108 401.5H9C-13.0914 401.5 -31 383.592 -31 361.5V133.5V76.0021V76.0002C-31 75.9604 -30.9925 -7.80104e-05 24 0C103.747 0.000113126 132.617 67.9717 143.069 117.186C148.413 142.347 172.927 161.481 197.99 155.7L478.5 91C598.5 64.5 646 110.5 659 110.5C672 110.5 714 31 856 33.5C998 36 996.5 76 1008.5 73.5C1020.5 71 1014.28 28.0329 1174.5 31C1309.5 33.5 1298.5 110.5 1327.5 110.5C1366.31 110.5 1378.25 109.457 1388 110.5C1406.69 112.5 1429.5 27 1615 27C1743.74 27 1771.09 161.183 1855.16 167C1930.28 172.198 1914.5 85 2032.05 90.0002C2108.93 93.2702 2132.33 148 2146.16 148C2160 148 2184 81.6655 2318.08 102.5C2440.5 121.524 2455.07 198 2467 198Z" class="cloud cloud-background" />
@@ -184,52 +182,8 @@
             <feMergeNode in="SourceGraphic"/>
           </feMerge>
         </filter>
-
-        <!-- Gradients, filters, and masks for Sun & Moon -->
-        <radialGradient id="sun-photosphere" cx="50%" cy="50%" r="55%">
-          <stop offset="0%"  stop-color="#FFFBE6"/>
-          <stop offset="45%" stop-color="#FFD36B"/>
-          <stop offset="100%" stop-color="#FF9F1A"/>
-        </radialGradient>
-        <radialGradient id="sun-corona" cx="50%" cy="50%" r="65%">
-          <stop offset="0%"   stop-color="rgba(255, 210, 90, 0.8)"/>
-          <stop offset="70%"  stop-color="rgba(255, 160, 40, 0.25)"/>
-          <stop offset="100%" stop-color="rgba(255, 140, 0, 0)"/>
-        </radialGradient>
-        <filter id="sun-glow" x="-150%" y="-150%" width="400%" height="400%">
-          <feGaussianBlur stdDeviation="8" result="blur"/>
-          <feMerge>
-            <feMergeNode in="blur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-        <filter id="sun-breathe" x="-150%" y="-150%" width="400%" height="400%">
-          <feGaussianBlur stdDeviation="14">
-            <animate attributeName="stdDeviation" values="12;16;12" dur="6s" repeatCount="indefinite"/>
-          </feGaussianBlur>
-        </filter>
-
-        <radialGradient id="moon-core" cx="50%" cy="50%" r="55%">
-          <stop offset="0%"  stop-color="#F2F2F2"/>
-          <stop offset="65%" stop-color="#D9D9D9"/>
-          <stop offset="100%" stop-color="#C9C9C9"/>
-        </radialGradient>
-        <filter id="moon-noise" x="-50%" y="-50%" width="200%" height="200%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" seed="7" result="noise"/>
-          <feColorMatrix type="matrix"
-            values="0 0 0 0 0.6
-                    0 0 0 0 0.6
-                    0 0 0 0 0.6
-                    0 0 0 -0.9 1" result="maria"/>
-          <feGaussianBlur stdDeviation="0.8" in="maria" result="mariaBlur"/>
-          <feBlend in="SourceGraphic" in2="mariaBlur" mode="multiply"/>
-        </filter>
-        <mask id="moon-phase-mask">
-          <rect x="0" y="0" width="5120" height="456" fill="black"/>
-          <circle id="moon-mask-disc" cx="0" cy="0" r="60" fill="white"/>
-          <circle id="moon-phase-disc" cx="0" cy="0" r="60" fill="black"/>
-        </mask>
       </defs>
+
       <g filter="url(#glow)">
         <use href="#star" x="1630" y="10" width="12" height="12">
           <animate attributeName="opacity" values="0.75;1;0.75" dur="6.2s" begin="0.5s" repeatCount="indefinite" />
@@ -369,35 +323,6 @@
           <animateTransform attributeName="transform" type="translate" values="0 0; 7 3; 0 0" dur="20s" repeatCount="indefinite" />
         </use>
       </g>
-      <g id="sun">
-        <circle cx="2800" cy="120" r="50" fill="url(#sun-corona)" filter="url(#sun-breathe)"/>
-        <circle cx="2800" cy="120" r="30" fill="url(#sun-photosphere)" filter="url(#sun-glow)">
-          <animate attributeName="opacity" values="0.98;1;0.98" dur="8s" repeatCount="indefinite"/>
-        </circle>
-      </g>
-
-      <!-- Moon -->
-      <g id="moon">
-        <circle id="moon-body" cx="4800" cy="110" r="60" fill="url(#moon-core)" filter="url(#moon-noise)" mask="url(#moon-phase-mask)"/>
-        <circle cx="4800" cy="110" r="70" fill="none" opacity="0.35" filter="url(#sun-glow)"/>
-      </g>
-      <g stroke="white" stroke-width="2" opacity="0.8">
-        <!-- Left → Right -->
-        <line x1="0" y1="0" x2="20" y2="0">
-          <animateTransform attributeName="transform" type="translate" values="-200 200; 5120 -200" dur="2s" begin="10s" repeatCount="indefinite" />
-          <animate attributeName="opacity" values="0;1;0" dur="2s" begin="10s" repeatCount="indefinite" />
-        </line>
-        <line x1="0" y1="0" x2="15" y2="0">
-          <animateTransform attributeName="transform" type="translate" values="-100 500; 5120 200" dur="1.8s" begin="25s" repeatCount="indefinite" />
-          <animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="25s" repeatCount="indefinite" />
-        </line>
-
-        <!-- Right → Left -->
-        <line x1="0" y1="0" x2="20" y2="0">
-          <animateTransform attributeName="transform" type="translate" values="5300 300; -200 100" dur="2s" begin="15s" repeatCount="indefinite" />
-          <animate attributeName="opacity" values="0;1;0" dur="2s" begin="15s" repeatCount="indefinite" />
-        </line>
-      </g>
     </svg>
   </div>
   <div class="sky-layer sky-layer-front" role="presentation">
@@ -412,12 +337,12 @@
     <div class="page-wrapper" data-glass-trigger>
       <header class="site-header">
   <a href="/" class="site-logo">
-    <img src="/assets/img/smiling-face.png" alt="Harshal V. LADHE" class="avatar" loading="lazy">
+    <img src="/assets/img/hl-smiling-face.png" alt="Harshal V. LADHE" class="avatar" loading="lazy">
     <span class="site-name">
       <span class="first-name">Harshal</span>
-      <span class="middle-initial">
-        <svg version="1.0" role="img"  class="v-mark" viewBox="0 0 9 10" xmlns="http://www.w3.org/2000/svg" height="0.625rem" width="0.5625rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path d="M1 1 C2.23995 2.87536 3.87268 4.81073 4.17593 7.40074 C4.22017 7.77863 4.11111 9.268437 4.11111 8.95767 C4.11111 8.50868 4.41831 7.96848 4.55761 7.59295 C4.98522 6.44023 5.31447 5.30676 5.92593 4.29648 C6.43274 3.45908 7.08081 2.03796 8 2.03796" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" class="v-draw" />
+      <span class="middle-name-initial">
+        <svg version="1.0" role="img"  class="v-char" viewBox="0 0 9 10" xmlns="http://www.w3.org/2000/svg" height="0.625rem" width="0.5625rem" fill="currentColor" aria-hidden="true" focusable="false">
+  <path d="M1 1 C2.23995 2.87536 3.87268 4.81073 4.17593 7.40074 C4.22017 7.77863 4.11111 9.268437 4.11111 8.95767 C4.11111 8.50868 4.41831 7.96848 4.55761 7.59295 C4.98522 6.44023 5.31447 5.30676 5.92593 4.29648 C6.43274 3.45908 7.08081 2.03796 8 2.03796" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" class="v-path" />
 </svg>
 
       </span>
@@ -769,12 +694,6 @@
 <section class="trending-tags" aria-labelledby="trending-tags-heading">
   <h2 id="trending-tags-heading" class="section">Trending Tags</h2>
   <ul class="tags">
-    <li class="tag"><a href="/tag/frontend" class="tag-link link-muted"
-           rel="tag" aria-label="Tag: frontend">
-          <span class="tag-name">#frontend</span>
-        </a>
-        <span class="tag-count">4</span>
-      </li>
     <li class="tag"><a href="/tag/css" class="tag-link link-muted"
            rel="tag" aria-label="Tag: css">
           <span class="tag-name">#css</span>
@@ -787,6 +706,12 @@
         </a>
         <span class="tag-count">4</span>
       </li>
+    <li class="tag"><a href="/tag/frontend" class="tag-link link-muted"
+           rel="tag" aria-label="Tag: frontend">
+          <span class="tag-name">#frontend</span>
+        </a>
+        <span class="tag-count">3</span>
+      </li>
     <li class="tag"><a href="/tag/grid" class="tag-link link-muted"
            rel="tag" aria-label="Tag: grid">
           <span class="tag-name">#grid</span>
@@ -798,12 +723,6 @@
           <span class="tag-name">#beginner</span>
         </a>
         <span class="tag-count">3</span>
-      </li>
-    <li class="tag"><a href="/tag/css-grid" class="tag-link link-muted"
-           rel="tag" aria-label="Tag: css-grid">
-          <span class="tag-name">#css-grid</span>
-        </a>
-        <span class="tag-count">2</span>
       </li>
     <li class="tag"><a href="/tag/responsive" class="tag-link link-muted"
            rel="tag" aria-label="Tag: responsive">
@@ -829,6 +748,12 @@
         </a>
         <span class="tag-count">2</span>
       </li>
+    <li class="tag"><a href="/tag/css-grid" class="tag-link link-muted"
+           rel="tag" aria-label="Tag: css-grid">
+          <span class="tag-name">#css-grid</span>
+        </a>
+        <span class="tag-count">2</span>
+      </li>
     </ul>
 </section>
 
@@ -851,13 +776,6 @@
         <span class="posts-count">2 posts
 </span>
       </li>
-    <li class="popular-category">
-        <a href="/category/javascript" class="link-muted"
-           aria-label="Category: JavaScript">JavaScript</a>
-        <span class="dotted-separator"></span>
-        <span class="posts-count">1 post
-</span>
-      </li>
     
   </ul>
 </section>
@@ -866,7 +784,29 @@
           
 <section class="recently-updated-posts" aria-labelledby="recent-posts-heading">
   <h2 id="recent-posts-heading" class="section">Recently Updated</h2>
-  <ol class="recently-updated-list">
+  <ul class="recently-updated-list">
+  
+    <li>
+      <a href="/post/unleashing-css-logical-properties" class="recently-updated-post link-muted">
+        <svg version="1.0" role="img" class="icon icon-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="5" y1="12" x2="18" y2="12" />
+  <polyline points="12 5 19 12 12 19" />
+</svg>
+
+        Unleashing CSS Logical Properties: Future-Proof Your Layouts
+      </a>
+    </li>
+  
+    <li>
+      <a href="/post/typography" class="recently-updated-post link-muted">
+        <svg version="1.0" role="img" class="icon icon-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="5" y1="12" x2="18" y2="12" />
+  <polyline points="12 5 19 12 12 19" />
+</svg>
+
+        Text and Typography
+      </a>
+    </li>
   
     <li>
       <a href="/post/getting-started-with-css-grid" class="recently-updated-post link-muted">
@@ -891,17 +831,6 @@
     </li>
   
     <li>
-      <a href="/post/unleashing-css-logical-properties" class="recently-updated-post link-muted">
-        <svg version="1.0" role="img" class="icon icon-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <line x1="5" y1="12" x2="18" y2="12" />
-  <polyline points="12 5 19 12 12 19" />
-</svg>
-
-        Unleashing CSS Logical Properties: Future-Proof Your Layouts
-      </a>
-    </li>
-  
-    <li>
       <a href="/post/components" class="recently-updated-post link-muted">
         <svg version="1.0" role="img" class="icon icon-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <line x1="5" y1="12" x2="18" y2="12" />
@@ -912,18 +841,7 @@
       </a>
     </li>
   
-    <li>
-      <a href="/post/mastering-js-operators" class="recently-updated-post link-muted">
-        <svg version="1.0" role="img" class="icon icon-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <line x1="5" y1="12" x2="18" y2="12" />
-  <polyline points="12 5 19 12 12 19" />
-</svg>
-
-        Mastering JavaScript Operators: A Complete Guide with Examples
-      </a>
-    </li>
-  
-  </ol>
+  </ul>
 </section>
 
 

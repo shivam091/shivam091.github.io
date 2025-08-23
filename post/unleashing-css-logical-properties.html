@@ -13,17 +13,21 @@
 <meta property="og:title" content="Unleashing CSS Logical Properties: Future-Proof Your Layouts" />
 <meta name="author" content="Harshal V. LADHE" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Learn how CSS Logical Properties help you build layouts that adapt seamlessly to different writing modes, including RTL and vertical text. Includes comparisons, fallbacks, and a visual cheat sheet." />
-<meta property="og:description" content="Learn how CSS Logical Properties help you build layouts that adapt seamlessly to different writing modes, including RTL and vertical text. Includes comparisons, fallbacks, and a visual cheat sheet." />
+<meta name="description" content="CSS Logical Properties let you write layouts once and watch them adapt across languages, directions, and writing modes—from left-to-right to vertical text—without extra code." />
+<meta property="og:description" content="CSS Logical Properties let you write layouts once and watch them adapt across languages, directions, and writing modes—from left-to-right to vertical text—without extra code." />
 <link rel="canonical" href="https://shivam091.github.io/post/unleashing-css-logical-properties" />
 <meta property="og:url" content="https://shivam091.github.io/post/unleashing-css-logical-properties" />
 <meta property="og:site_name" content="Harshal V. LADHE" />
+<meta property="og:image" content="https://shivam091.github.io/assets/img/posts/css/unleashing-css-logical-properties/cover.png" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:width" content="1200" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-08-10T18:28:00+05:30" />
-<meta name="twitter:card" content="summary" />
+<meta property="article:published_time" content="2025-08-22T18:28:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://shivam091.github.io/assets/img/posts/css/unleashing-css-logical-properties/cover.png" />
 <meta property="twitter:title" content="Unleashing CSS Logical Properties: Future-Proof Your Layouts" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal V. LADHE","url":"https://shivam091.github.io"},"dateModified":"2025-08-10T18:52:49+05:30","datePublished":"2025-08-10T18:28:00+05:30","description":"Learn how CSS Logical Properties help you build layouts that adapt seamlessly to different writing modes, including RTL and vertical text. Includes comparisons, fallbacks, and a visual cheat sheet.","headline":"Unleashing CSS Logical Properties: Future-Proof Your Layouts","mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/unleashing-css-logical-properties"},"url":"https://shivam091.github.io/post/unleashing-css-logical-properties"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal V. LADHE","url":"https://shivam091.github.io"},"dateModified":"2025-08-22T22:34:58+05:30","datePublished":"2025-08-22T18:28:00+05:30","description":"CSS Logical Properties let you write layouts once and watch them adapt across languages, directions, and writing modes—from left-to-right to vertical text—without extra code.","headline":"Unleashing CSS Logical Properties: Future-Proof Your Layouts","image":{"width":1200,"height":630,"alt":null,"url":"https://shivam091.github.io/assets/img/posts/css/unleashing-css-logical-properties/cover.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/unleashing-css-logical-properties"},"url":"https://shivam091.github.io/post/unleashing-css-logical-properties"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-icon-57x57.png">
@@ -80,8 +84,6 @@
 
 </head>
 <body>
-  <div id="progress-bar"></div>
-
   <button type="button" class="skip-link" data-skip-link data-skip-to="#main-content">Skip to main content</button>
 
   <div id="header-drawer" class="header-drawer" role="dialog" aria-modal="true" aria-label="Main Menu" tabindex="-1">
@@ -169,12 +171,13 @@
 
 
   <div class="sky-banner-top" aria-hidden="true">
-  <div class="cloud-layers" role="presentation" data-sky-shapes>
-    <svg width="5120" height="225" viewBox="0 0 5120 225" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="cloud-shapes" focusable="false" aria-hidden="true">
-      <path d="M2436 28.9999C2329.5 34.4998 2347.5 132.5 2333 132.5C2318.5 132.5 2240.5 120 2240.5 120L2156.5 160.5L2079 114L1932.5 168L1854.5 104.5L1780 132.5L1638 90.9999C1638 90.9999 1555 139 1540.5 132.5C1526 126 1520.5 -11.5 1439.5 -24.0001C1358.5 -36.5002 1350.5 14.5 1340 13.4999C1329.5 12.4998 1306 -51.0001 1225 -49.0001C1144 -47.0001 1122 4.99988 1101.5 1.99988C1081 -1.00012 1092 -30.5001 957 -29.5001C822 -28.5001 827.5 22.4999 810 20.4999C792.5 18.4999 810 -29.5001 702 -24.0001C594 -18.5001 588 76.4999 588 76.4999L489 104.5L147 111L-20.5 76.4999V212.5H5141V-7.50012C5141 -7.50012 5141 -48 5085 -41.5001C5010 -41.5001 4995.19 28.9999 4986.5 28.9999C4973 28.9999 4964.5 -19 4874.5 -22.0001C4784.5 -25.0002 4758 28.9999 4744.5 23.4999C4731 17.9999 4719.5 -39.5 4626.5 -41.5001C4533.5 -43.5002 4552.5 23.4999 4540 23.4999C4527.5 23.4999 4510 -28 4419 -28.0001C4328 -28.0002 4340 43.4999 4326.5 43.4999C4313 43.4999 4309 13.4999 4230 28.9999C4151 44.4999 4126 123.5 4126 123.5L4034 63.9999L3919.5 150L3848 91.9999L3686 123.5L3610.5 76.4999C3610.5 76.4999 3374.5 91.9999 3342.5 91.9999C3310.5 91.9999 3326 14.5 3219.5 13.4999C3113 12.4998 3142.5 65 3128 63.9999C3113.5 62.9998 3086 25 2994.5 25C2903 25 2884.5 53.3387 2875 51.4999C2865.5 49.6611 2863.5 3.99988 2720 13.4999C2576.5 22.9999 2583 76.5 2570.5 76.4999C2558 76.4998 2542.5 23.5 2436 28.9999Z" class="background-clouds" />
-      <path d="M1819.52 94.9435C1816.05 95.3354 1787.96 65.5454 1740.98 60.4498C1694 55.3542 1684 83.9128 1679.73 83.1288C1675.45 82.3447 1667.53 41.8563 1620.5 40C1576.17 38.2501 1557.5 64.3141 1550.12 64.314C1542.75 64.3139 1535 32.8097 1477.5 31.0116C1420 29.2135 1403 65.9622 1397.48 65.9622C1391.97 65.9622 1384.89 56.4569 1341.5 54.1227C1292.87 51.5064 1300.5 74 1276 73C1251.5 72 1267 35.3079 1213 35.3079C1159 35.3079 1152.5 66.8755 1147.22 66.6658C1141.93 66.4562 1155.52 40.6061 1106.22 29.8203C1043.5 16.1012 1001 61.9622 992 61.5702C983 61.1783 952.5 29.8203 897.756 35.3079C843.011 40.7956 850.5 64.706 846.876 64.314C843.251 63.922 834.5 38.0518 781.67 35.3079C728.84 32.564 725.5 54.5147 720.417 54.1227C715.333 53.7306 699.871 28.1474 623.5 28.1474C559.41 28.1474 547.404 68.6258 541 67.8418C534.596 67.0578 529.5 43.1474 484.788 43.1474C386.5 43.1474 376.358 67.8418 372 67.8418C367.642 67.8418 343.786 32.9562 302.5 29.8203C245.877 25.5195 221.877 50.8519 211 48.5C200.123 46.1481 188.812 -15.6335 153.821 -21.1364C111.372 -27.812 74 35.3079 68.8563 35.3079C66.4159 35.3079 54 6.9321 2 8.5C-18.5366 7.26916 -23.6973 23.7594 -24.7587 28.5412C-24.9483 29.3952 -25 30.2591 -25 31.134V178.369C-25 189.415 -16.0458 198.369 -5.00006 198.369H5125C5136.05 198.369 5145 189.415 5145 178.369V85.7669C5145 81.2657 5143.44 76.8907 5139.79 74.2543C5128.71 66.2521 5097.73 50.8318 5025.95 54.1227C4949 57.6505 4973.91 78.817 4943.46 78.817C4913 78.817 4932.64 47.4591 4864 47.4591C4813.52 47.4591 4800 73.3295 4792.3 72.9374C4784.6 72.5454 4782.58 42.7555 4711.5 54.1227C4640.42 65.4899 4664 101.944 4657.94 101.944C4651.87 101.943 4622.18 65.1227 4589.77 64.314C4560 63.5715 4526.5 92.9281 4522.58 92.9281C4518.67 92.9281 4511.22 55.2987 4432.5 57.6505C4353.78 60.0023 4362.5 92.9281 4356.11 92.9281C4349.73 92.9281 4339.03 64.7061 4288.5 67.0579C4237.97 69.4097 4223 98.1195 4217.8 96.9435C4212.6 95.7675 4209.03 67.5305 4163.5 54.1227C4106.26 37.2678 4074 73.7214 4069.6 72.9374C4065.21 72.1534 4064.85 41.4026 4002.42 40.7956C3940 40.1885 3935.69 67.0579 3931 67.0579C3926.31 67.0578 3917.35 32.2561 3862.5 35C3807.65 37.7439 3799.5 64.314 3792.48 64.314C3785.46 64.314 3780 47.4591 3728.26 47.4591C3676.53 47.4591 3667.5 64.314 3658.12 64.314C3648.74 64.314 3663.53 72.5455 3588 72.9374C3512.47 73.3293 3513.5 72.9374 3504.49 72.9374C3495.48 72.9374 3501 31.4591 3430.39 31.4591C3372 31.4591 3372.27 48.314 3363 48.314C3353.73 48.314 3352 21.5796 3289.12 20.7956C3226.23 20.0116 3206 72.9374 3194.27 72.9374C3182.54 72.9374 3180 42.4591 3094.98 49.1227C3044.78 53.057 3020.63 70.7587 3009.26 84.5992C3002.25 93.1282 2990.93 100.074 2980.02 98.3621C2952.17 93.9887 2901.06 88.6922 2869.73 101.944C2845.11 112.354 2823.69 138.022 2811.58 154.943C2805.34 163.655 2793.56 167.079 2783.76 162.748C2762.93 153.539 2727.21 139.819 2698.81 139.573C2671.87 139.339 2622.48 150.058 2595.61 156.422C2585.17 158.893 2574.35 152.882 2568.76 143.731C2558.1 126.303 2535.74 101.949 2494 101.959C2448.72 101.97 2444.94 123 2433 123C2421.06 123 2427.95 103.959 2360.4 85.9281C2268.5 61.3999 2243.5 103.48 2232 101.959C2220.49 100.437 2216.5 45.7691 2109 54.1227C2028.5 60.3776 2015 92.9281 2009 92.9281C2003 92.9281 1989.5 66.7935 1915.85 64.314C1835.5 61.609 1823 94.5516 1819.52 94.9435Z" class="midground-clouds" />
-      <path d="M1886.89 102.5C1750 108 1716 173 1699.5 173C1683 173 1666.15 97.9407 1601.06 75.9997C1554.8 60.4091 1487.98 76.0195 1459.2 84.1928C1450.25 86.7338 1440.64 85.5242 1432.63 80.7951C1402.81 63.1909 1325.89 22.2278 1269.75 31.4997C1196.57 43.584 1137.82 124.5 1119.34 124.5C1100.85 124.5 1020.69 -0.888998 945.936 31.4997C916.035 44.4558 899.5 88.4997 884.971 88.4997C870.443 88.4997 792 31.4997 650.608 59.9997C501.794 89.9957 508.19 153 494.199 152C480.207 151 465.405 51.4021 329.294 31.4997C172 8.49984 164.602 90.4999 150.001 91.4997C143.165 91.9678 151.882 28.9814 60.5004 21.4998C-24.9948 14.5002 -25 43.4964 -25 43.4997V43.4999V195C-25 211.568 -11.238 225 5.3305 225H5114.67C5131.24 225 5145 211.568 5145 195V133.542C5145 111.61 5121.89 97.25 5102 106.501C5093.3 110.551 5083.1 110.254 5074.54 105.903C5047.98 92.4088 4987.54 64.0285 4941.62 59.9997C4881.15 54.6951 4798.63 87.4635 4761.6 103.95C4749.9 109.159 4736.08 107.015 4726.32 98.7121C4704.05 79.7453 4662.2 47.8936 4625.8 41.4997C4561.86 30.2692 4478.62 96.3872 4446.48 124.65C4438.02 132.085 4426.31 134.793 4415.42 131.909C4388.84 124.864 4334.87 113 4273 113C4171 113 4150.58 158 4133.09 163C4115.6 168 4087.4 77.818 3937.7 59.9997C3788 42.1814 3742.81 136 3725.82 129C3708.83 122 3710.33 59.9997 3601.39 41.4997C3523.31 28.239 3454.72 51.7146 3422.14 66.075C3409.95 71.4451 3394.36 70.6604 3381.52 67.1582C3367.94 63.4575 3346.25 59.9997 3312.56 59.9997C3240.1 59.9997 3170.5 129 3155.65 129C3140.8 129 3086 59.9997 2933.78 59.9997C2781.56 59.9997 2751 129 2738.39 129C2725.79 129 2728 100.5 2595 100.5C2523.87 100.5 2468.76 130.782 2441.46 149.522C2429.96 157.417 2414.14 158.851 2401.23 153.564C2384.84 146.85 2357.89 137.77 2316.64 129C2215.8 107.559 2123.41 132.924 2091.81 143.39C2084.34 145.862 2076.22 145.813 2068.88 143.006C2037.8 131.129 1949.71 99.9756 1886.89 102.5Z" class="foreground-clouds" />
+  <div class="cloud-layers inner" data-cloud-shapes role="presentation">
+    
+    <svg width="5120" height="357" viewBox="0 0 5120 357" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="cloud-shapes" focusable="false" aria-hidden="true">
+      <path d="M2970.83 162.311c-80.18 35.471-73.69 108.447-47.7 124.208 26 15.762 93.47 40.054 93.47 40.054h1305s57.5 19.5 57.5-51-94.97-66.296-94.97-66.296 40.27-77.869-52.89-120.793c-93.16-42.924-146.42 13.009-146.42 13.009s-5.54-62.255-95.87-73.305c-90.33-11.05-137.76 48.38-137.76 48.38s-4.64-52.293-92.06-70.127c-87.42-17.834-162.6 40.045-162.6 40.045S3565.05-8.443 3454.48 1.38c-110.56 9.822-137.31 62.814-137.31 62.814s-51.15-37.036-129.29-7.003c-78.15 30.034-77.58 104.275-77.58 104.275s-59.3-34.626-139.47.845zM330 57.505c-98 9-132 69.5-132 69.5l-88 225.5h2094.5v-.5s-11-77-135.5-89-147 17-159.5 16.5-46-34-131-43.5-154.5 29.5-165 27-32-50-134.5-58-142 20-152 17.5-20-41-100.5-65-162.5 5.5-174 0-5.5-59-110.5-100-166.5 11-181 6.5-40.5-40.5-151.5-40-134.5 53-151.5 54-30-29.5-128-20.5z" class="background-clouds" />
+      <path d="M2741.5 299.5c10-1.428 20.5-71 203.5-91.5s216 49 226.5 49 56.5-74 240-49 189 86 199 84.5 49-63.5 226-71 207 63 216 63 71.5-55 243-27.5 181.5 74 195.5 73.5-8.5-102 199-139 247.5 30.5 262 30 85.5-103.5 245-58.5 0 194 0 194H-92s-72-149.5 0-177.5S1 208 12 208s42.5-98.5 250.5-100.5S511 206.5 518 208s97-68 269-34.5 194 134 203 138 88.5-24 256.5-12 186 47.5 192.5 47.5 50.5-66 204.5-65.5 193 51 202 52 68.5-27.5 248-22 215 35.5 226.5 35.5c11.5.001 38-67.142 204-79 166-11.857 207.5 32.929 217.5 31.5z" class="foreground-clouds" />
     </svg>
+    
   </div>
 </div>
 
@@ -183,12 +186,12 @@
     <div class="page-wrapper" data-glass-trigger>
       <header class="site-header">
   <a href="/" class="site-logo">
-    <img src="/assets/img/smiling-face.png" alt="Harshal V. LADHE" class="avatar" loading="lazy">
+    <img src="/assets/img/hl-smiling-face.png" alt="Harshal V. LADHE" class="avatar" loading="lazy">
     <span class="site-name">
       <span class="first-name">Harshal</span>
-      <span class="middle-initial">
-        <svg version="1.0" role="img"  class="v-mark" viewBox="0 0 9 10" xmlns="http://www.w3.org/2000/svg" height="0.625rem" width="0.5625rem" fill="currentColor" aria-hidden="true" focusable="false">
-  <path d="M1 1 C2.23995 2.87536 3.87268 4.81073 4.17593 7.40074 C4.22017 7.77863 4.11111 9.268437 4.11111 8.95767 C4.11111 8.50868 4.41831 7.96848 4.55761 7.59295 C4.98522 6.44023 5.31447 5.30676 5.92593 4.29648 C6.43274 3.45908 7.08081 2.03796 8 2.03796" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" class="v-draw" />
+      <span class="middle-name-initial">
+        <svg version="1.0" role="img"  class="v-char" viewBox="0 0 9 10" xmlns="http://www.w3.org/2000/svg" height="0.625rem" width="0.5625rem" fill="currentColor" aria-hidden="true" focusable="false">
+  <path d="M1 1 C2.23995 2.87536 3.87268 4.81073 4.17593 7.40074 C4.22017 7.77863 4.11111 9.268437 4.11111 8.95767 C4.11111 8.50868 4.41831 7.96848 4.55761 7.59295 C4.98522 6.44023 5.31447 5.30676 5.92593 4.29648 C6.43274 3.45908 7.08081 2.03796 8 2.03796" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" class="v-path" />
 </svg>
 
       </span>
@@ -310,8 +313,8 @@
 
 <section class="page-content" aria-label="Unleashing CSS Logical Properties: Future-Proof Your Layouts">
   <article class="post" itemscope itemtype="https://schema.org/BlogPosting" aria-labelledby="page-title">
-  <meta itemprop="datePublished" content="2025-08-10T18:52:49+05:30">
-  <meta itemprop="dateModified" content="2025-08-10T18:52:49+05:30">
+  <meta itemprop="datePublished" content="2025-08-22T22:34:58+05:30">
+  <meta itemprop="dateModified" content="2025-08-22T22:34:58+05:30">
   <meta itemprop="headline" content="Unleashing CSS Logical Properties: Future-Proof Your Layouts">
   <meta itemprop="mainEntityOfPage" content="https://shivam091.github.io/post/unleashing-css-logical-properties">
 
@@ -323,8 +326,8 @@
 </svg>
 
   <span class="visually-hidden">Published at:</span>
-  <time datetime='2025-08-10T18:52:49+05:30' aria-label='Published on August 10, 2025 at 06:52 PM' role='time' data-tooltip='Sun, August 10, 2025 06:52 PM' data-tooltip-position='bottom' tabindex='0'>
-  August 10, 2025
+  <time datetime='2025-08-22T22:34:58+05:30' aria-label='Published on August 22, 2025 at 10:34 PM' role='time' data-tooltip='Fri, August 22, 2025 10:34 PM' data-tooltip-position='bottom' tabindex='0'>
+  August 22, 2025
 </time>
 
 </div>
@@ -336,8 +339,8 @@
 </svg>
 
     <span class="visually-hidden">Last updated:</span>
-    <time datetime='2025-08-10T18:52:49+05:30' aria-label='Last updated on August 10, 2025 at 06:52 PM' role='time' data-tooltip='Sun, August 10, 2025 06:52 PM' data-tooltip-position='bottom' tabindex='0'>
-  August 10, 2025
+    <time datetime='2025-08-22T22:34:58+05:30' aria-label='Last updated on August 22, 2025 at 10:34 PM' role='time' data-tooltip='Fri, August 22, 2025 10:34 PM' data-tooltip-position='bottom' tabindex='0'>
+  August 22, 2025
 </time>
 
   </div>
@@ -350,7 +353,7 @@
 </svg>
 
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="2572 words" data-tooltip-position="bottom" tabindex="0">15 min read</span>
+  <span data-tooltip="2677 words" data-tooltip-position="bottom" tabindex="0">15 min read</span>
 </div>
 
 
@@ -363,29 +366,11 @@
     <div class="post-content" itemprop="articleBody">
       <h2 id="introduction" dir="auto">Introduction<a href="#introduction" class="heading-anchor" aria-label="Permalink: Introduction">#</a>
 </h2>
-
-          <blockquote dir="auto">
-            <p dir="auto">Designing for multiple languages shouldn’t mean rewriting your CSS for every direction or writing mode. CSS Logical Properties
-let your layouts adapt automatically to RTL, vertical text, and more — with just one set of styles.</p>
-          </blockquote>
-        
 <p dir="auto">In modern web design, layouts must seamlessly adapt to different languages and writing modes — <strong>CSS Logical Properties</strong> offer a future-proof way
 to style elements that respect <strong>writing direction</strong>, <strong>text flow</strong>, and <strong>orientation</strong>.</p>
 <p dir="auto">Whether it’s <strong>right-to-left (RTL)</strong> languages like Arabic and Hebrew, or vertical writing in Japanese, logical properties let you create one
 stylesheet that works everywhere.</p>
-<p dir="auto">Instead of tying layout to fixed physical directions (<code class="highlighter-rouge notranslate">left</code>, <code class="highlighter-rouge notranslate">right</code>, <code class="highlighter-rouge notranslate">top</code>, <code class="highlighter-rouge notranslate">bottom</code>), they use logical directions: <strong>start</strong>, <strong>end</strong>, <strong>inline</strong>, and <strong>block</strong>.</p>
-<p dir="auto"><strong>Example:</strong></p>
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Instead of */</span>
-<span class="nt">padding-left</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span>
-
-<span class="c">/* Use */</span>
-<span class="nt">padding-inline-start</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span></code></pre></figure>
-
-<p dir="auto">If the document switches to RTL, <code class="highlighter-rouge notranslate">padding-inline-start</code> automatically applies to the right — no extra styles needed.</p>
-<h2 id="why-css-logical-properties-matter" dir="auto">Why CSS Logical Properties Matter<a href="#why-css-logical-properties-matter" class="heading-anchor" aria-label="Permalink: Why CSS Logical Properties Matter">#</a>
-</h2>
-<p dir="auto">Traditionally, CSS positioning and spacing relied on physical properties like <code class="highlighter-rouge notranslate">margin-left</code>, <code class="highlighter-rouge notranslate">padding-top</code>, and <code class="highlighter-rouge notranslate">width</code>. While effective, these are
-tied to the visual layout and can’t adapt automatically when the writing mode or text direction changes.</p>
+<p dir="auto">Instead of tying layout to fixed physical directions (<code class="highlighter-rouge notranslate">left</code>, <code class="highlighter-rouge notranslate">right</code>, <code class="highlighter-rouge notranslate">top</code>, <code class="highlighter-rouge notranslate">bottom</code>), they use flow-relative directions: <strong>start</strong>, <strong>end</strong>, <strong>inline</strong>, and <strong>block</strong>.</p>
 <p dir="auto"><strong>With physical properties:</strong></p>
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Physical properties */</span>
 <span class="nt">margin-left</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span> <span class="c">/* Always on the left side */</span></code></pre></figure>
@@ -395,9 +380,13 @@ tied to the visual layout and can’t adapt automatically when the writing mode 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* Logical equivalent */</span>
 <span class="nt">margin-inline-start</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span> <span class="c">/* Adapts to start side based on writing mode */</span></code></pre></figure>
 
-<p dir="auto">This ensures your layout is <strong>writing-mode-aware</strong>.</p>
-<p dir="auto"><strong>Browser support:</strong></p>
-<p dir="auto">Logical properties are supported in all major browsers — Chrome, Edge, Firefox, and Safari — over the last 3 years, making them ready for production.</p>
+<p dir="auto">If the document switches to RTL, <code class="highlighter-rouge notranslate">margin-inline-start</code> automatically applies to the right — no extra styles needed.</p>
+<p dir="auto">This ensures your layout is <strong>writing mode aware</strong>.</p>
+
+          <blockquote dir="auto">
+            <p dir="auto">Logical properties are broadly supported in current versions of Chrome, Edge, Firefox, and Safari; verify specifics on MDN when targeting older browsers.</p>
+          </blockquote>
+        
 <h2 id="benefits-of-logical-properties" dir="auto">Benefits of Logical Properties<a href="#benefits-of-logical-properties" class="heading-anchor" aria-label="Permalink: Benefits of Logical Properties">#</a>
 </h2>
 
@@ -407,14 +396,32 @@ tied to the visual layout and can’t adapt automatically when the writing mode 
   <li><p dir="auto"><strong>Cleaner Code</strong> – Reduces redundancy and removes the need for duplicated directional styles.</p></li>
   <li><p dir="auto"><strong>Accessibility Friendly</strong> – Plays nicely with screen readers in RTL and vertical text contexts.</p></li>
   <li><p dir="auto"><strong>Performance Friendly</strong> – Fewer overrides and media queries improve maintainability.</p></li>
-  <li><p dir="auto"><strong>Future-Proof</strong> – Ready for expanded language and writing system support as browsers evolve.</p></li>
+  <li><p dir="auto"><strong>Future Proof</strong> – Ready for expanded language and writing system support as browsers evolve.</p></li>
 
           </ol>
         
+<h2 id="when-to-use-logical-vs-physical" dir="auto">When to Use Logical vs. Physical<a href="#when-to-use-logical-vs-physical" class="heading-anchor" aria-label="Permalink: When to Use Logical vs. Physical">#</a>
+</h2>
+<p dir="auto">Logical properties shine when your layout needs to adapt across <strong>different writing modes</strong>, such as left-to-right (English), right-to-left (Arabic/Hebrew), or vertical scripts (Japanese). They future-proof your styles so you don’t have to rewrite CSS when switching directions or supporting multilingual content.</p>
+<p dir="auto">That said, <strong>physical properties aren’t “wrong.”</strong> If your project is a small, LTR-only site (like a personal blog or an internal tool with no internationalization needs), using <code class="highlighter-rouge notranslate">margin-left</code> or <code class="highlighter-rouge notranslate">padding-top</code> may be perfectly fine and even easier for quick prototyping.</p>
+<p dir="auto">Think of it this way:</p>
+
+          <ul dir="auto">
+              <li><p dir="auto">Use <strong>logical properties</strong> when accessibility, scalability, and localization are priorities.</p></li>
+  <li><p dir="auto">Use <strong>physical properties</strong> when the content direction is fixed and simplicity matters.</p></li>
+
+          </ul>
+        
+
+          <blockquote dir="auto">
+            <p dir="auto">Flow-relative properties help assistive tech expose consistent semantics across LTR, RTL, and vertical scripts, reducing
+the risk of one-off overrides that drift out of sync.</p>
+          </blockquote>
+        
 <h2 id="understanding-inline-vs-block-axes" dir="auto">Understanding Inline vs Block Axes<a href="#understanding-inline-vs-block-axes" class="heading-anchor" aria-label="Permalink: Understanding Inline vs Block Axes">#</a>
 </h2>
-<p dir="auto"><strong>Inline axis</strong> — the direction in which text flows.
-<strong>Block axis</strong> — the direction perpendicular to the inline axis, where blocks (paragraphs, divs) stack.</p>
+<p dir="auto"><strong>Inline axis</strong> — the direction in which text flows.</p>
+<p dir="auto"><strong>Block axis</strong> — the direction perpendicular to the inline axis, where blocks (paragraphs, divs) stack.</p>
 <p dir="auto"><strong>Key idea</strong>: Logical properties use <code class="highlighter-rouge notranslate">inline</code> / <code class="highlighter-rouge notranslate">block</code> combined with <code class="highlighter-rouge notranslate">start</code> / <code class="highlighter-rouge notranslate">end</code>:</p>
           <ul dir="auto">
               <li><p dir="auto"><code class="highlighter-rouge notranslate">inline-start</code> – leading edge of the inline axis (left in LTR, right in RTL, top in some vertical modes).</p></li>
@@ -424,27 +431,27 @@ tied to the visual layout and can’t adapt automatically when the writing mode 
 
           </ul>
         
-<h3 id="horizontal-tb-ltr-typical-english" dir="auto">horizontal-tb (LTR) (typical English)<a href="#horizontal-tb-ltr-typical-english" class="heading-anchor" aria-label="Permalink: horizontal-tb (LTR) (typical English)">#</a>
+<h3 id="horizontal-tb-ltr--eg-english" dir="auto">horizontal-tb (LTR – e.g., English)<a href="#horizontal-tb-ltr--eg-english" class="heading-anchor" aria-label="Permalink: horizontal-tb (LTR – e.g., English)">#</a>
 </h3>
 <pre><code>+-----------------------------------------+
 | inline-start                 inline-end |
-|    (left)         ← inline →   (right)  |
+|    (left)         → inline →   (right)  |
 | block-start (top)                       |
 |                                         |
-|        ↓                                |
+|        ↓ block                          |
 |                                         |
 | block-end (bottom)                      |
 +-----------------------------------------+
 </code></pre>
 
-<h3 id="horizontal-tb-rtl-arabic-hebrew" dir="auto">horizontal-tb (RTL) (Arabic, Hebrew)<a href="#horizontal-tb-rtl-arabic-hebrew" class="heading-anchor" aria-label="Permalink: horizontal-tb (RTL) (Arabic, Hebrew)">#</a>
+<h3 id="horizontal-tb-rtl--eg-arabic-hebrew" dir="auto">horizontal-tb (RTL – e.g., Arabic, Hebrew)<a href="#horizontal-tb-rtl--eg-arabic-hebrew" class="heading-anchor" aria-label="Permalink: horizontal-tb (RTL – e.g., Arabic, Hebrew)">#</a>
 </h3>
 <pre><code>+-----------------------------------------+
 | inline-end                 inline-start |
-|   (left)          ← inline →   (right)  |
+|    (left)         ← inline ←   (right)  |
 | block-start (top)                       |
 |                                         |
-|        ↓                                |
+|        ↓ block                          |
 |                                         |
 | block-end (bottom)                      |
 +-----------------------------------------+
@@ -455,26 +462,26 @@ tied to the visual layout and can’t adapt automatically when the writing mode 
             <p dir="auto">In RTL: inline axis flows <strong>right</strong> → <strong>left</strong>, so <code class="highlighter-rouge notranslate">inline-start</code> = right, <code class="highlighter-rouge notranslate">inline-end</code> = left.</p>
           </blockquote>
         
-<h3 id="vertical-rl" dir="auto">vertical-rl<a href="#vertical-rl" class="heading-anchor" aria-label="Permalink: vertical-rl">#</a>
+<h3 id="vertical-rl-eg-traditional-mongolian" dir="auto">vertical-rl (e.g., Traditional Mongolian)<a href="#vertical-rl-eg-traditional-mongolian" class="heading-anchor" aria-label="Permalink: vertical-rl (e.g., Traditional Mongolian)">#</a>
 </h3>
 <pre><code>+----------------+
 | block-start  → |  (right)
 | inline-start   |  (top)
 |                |
-|       ↓        |
+|        ↓ block |
 |                |
 | inline-end     |  (bottom)
 | block-end    ← |  (left)
 +----------------+
 </code></pre>
 
-<h3 id="vertical-lr" dir="auto">vertical-lr<a href="#vertical-lr" class="heading-anchor" aria-label="Permalink: vertical-lr">#</a>
+<h3 id="vertical-lr-eg-some-east-asian-scripts" dir="auto">vertical-lr (e.g., some East Asian scripts)<a href="#vertical-lr-eg-some-east-asian-scripts" class="heading-anchor" aria-label="Permalink: vertical-lr (e.g., some East Asian scripts)">#</a>
 </h3>
 <pre><code>+----------------+
 | block-start  ← |  (left)
 | inline-start   |  (top)
 |                |
-|       ↓        |
+|        ↓ block |
 |                |
 | inline-end     |  (bottom)
 | block-end    → |  (right)
@@ -539,21 +546,12 @@ tied to the visual layout and can’t adapt automatically when the writing mode 
 
           </table>
         
-<p dir="auto"><strong>Visual key:</strong></p>
-<pre><code>horizontal-tb (LTR)         horizontal-tb (RTL)         vertical-rl               vertical-lr
-------------------          ------------------          ------------------        ------------------
-block-start = top           block-start = top           block-start = right       block-start = left
-block-end   = bottom        block-end   = bottom        block-end   = left        block-end   = right
-inline-start = left         inline-start = right        inline-start = top        inline-start = top
-inline-end   = right        inline-end   = left         inline-end   = bottom     inline-end   = bottom
-</code></pre>
-
 
           <blockquote dir="auto">
-            <p dir="auto">Think of <code class="highlighter-rouge notranslate">inline-*</code> as “text flow direction” and <code class="highlighter-rouge notranslate">block-*</code> as “line stacking direction.”</p>
+            <p dir="auto">Think of <code class="highlighter-rouge notranslate">inline-*</code> as ‘text flow direction’ and <code class="highlighter-rouge notranslate">block-*</code> as ‘line stacking direction’.</p>
           </blockquote>
         
-<h3 id="short-examples" dir="auto">Short Examples<a href="#short-examples" class="heading-anchor" aria-label="Permalink: Short Examples">#</a>
+<h3 id="inline-vs-block-in-action" dir="auto">Inline vs. Block in Action<a href="#inline-vs-block-in-action" class="heading-anchor" aria-label="Permalink: Inline vs. Block in Action">#</a>
 </h3>
 <p dir="auto"><strong>Example 1 — Inline / Block sizing</strong></p>
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.box</span> <span class="p">{</span>
@@ -579,12 +577,12 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
 <span class="c">/* Vertical (e.g., Japanese-style) */</span>
 <span class="nc">.vertical</span> <span class="p">{</span>
   <span class="nl">writing-mode</span><span class="p">:</span> <span class="n">vertical-rl</span><span class="p">;</span>
-  <span class="nl">direction</span><span class="p">:</span> <span class="nb">rtl</span><span class="p">;</span> <span class="c">/* common for certain East Asian vertical layouts */</span>
+  <span class="c">/* Set `direction` only if your content is RTL; otherwise omit. */</span>
 <span class="p">}</span></code></pre></figure>
 
 <h2 id="categories-of-logical-properties" dir="auto">Categories of Logical Properties<a href="#categories-of-logical-properties" class="heading-anchor" aria-label="Permalink: Categories of Logical Properties">#</a>
 </h2>
-<p dir="auto">Logical properties can be grouped into several categories:</p>
+<p dir="auto">Here’s a categorized list of logical properties with their physical equivalents — use this as your quick lookup table.</p>
 <h3 id="dimension" dir="auto">Dimension<a href="#dimension" class="heading-anchor" aria-label="Permalink: Dimension">#</a>
 </h3>
 
@@ -935,14 +933,75 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
       <td><code class="highlighter-rouge notranslate">border-bottom-style</code></td>
       <td><code class="highlighter-rouge notranslate">border-bottom-style</code></td>
     </tr>
+    <tr>
+      <td>19</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-width</code></strong></td>
+      <td>Shorthand for width of borders on both inline sides</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-left-width</code> + <code class="highlighter-rouge notranslate">border-right-width</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-right-width</code> + <code class="highlighter-rouge notranslate">border-left-width</code>
+</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-style</code></strong></td>
+      <td>Shorthand for style of borders on both inline sides</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-left-style</code> + <code class="highlighter-rouge notranslate">border-right-style</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-right-style</code> + <code class="highlighter-rouge notranslate">border-left-style</code>
+</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-inline-color</code></strong></td>
+      <td>Shorthand for color of borders on both inline sides</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-left-color</code> + <code class="highlighter-rouge notranslate">border-right-color</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-right-color</code> + <code class="highlighter-rouge notranslate">border-left-color</code>
+</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-width</code></strong></td>
+      <td>Shorthand for width of borders on both block sides</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-top-width</code> + <code class="highlighter-rouge notranslate">border-bottom-width</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-top-width</code> + <code class="highlighter-rouge notranslate">border-bottom-width</code>
+</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-style</code></strong></td>
+      <td>Shorthand for style of borders on both block sides</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-top-style</code> + <code class="highlighter-rouge notranslate">border-bottom-style</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-top-style</code> + <code class="highlighter-rouge notranslate">border-bottom-style</code>
+</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td><strong><code class="highlighter-rouge notranslate">border-block-color</code></strong></td>
+      <td>Shorthand for color of borders on both block sides</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-top-color</code> + <code class="highlighter-rouge notranslate">border-bottom-color</code>
+</td>
+      <td>
+<code class="highlighter-rouge notranslate">border-top-color</code> + <code class="highlighter-rouge notranslate">border-bottom-color</code>
+</td>
+    </tr>
   </tbody>
 
           </table>
-        
-
-          <blockquote dir="auto">
-            <p dir="auto">Note — be aware that border shorthand logical equivalents (<code class="highlighter-rouge notranslate">border-inline</code>, <code class="highlighter-rouge notranslate">border-block</code>) are not supported in older Safari.</p>
-          </blockquote>
         
 <h3 id="border-radius" dir="auto">Border Radius<a href="#border-radius" class="heading-anchor" aria-label="Permalink: Border Radius">#</a>
 </h3>
@@ -1064,17 +1123,76 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
 <code class="highlighter-rouge notranslate">top</code> + <code class="highlighter-rouge notranslate">right</code> + <code class="highlighter-rouge notranslate">bottom</code> + <code class="highlighter-rouge notranslate">left</code>
 </td>
       <td>
-<code class="highlighter-rouge notranslate">top</code> + <code class="highlighter-rouge notranslate">left</code> + <code class="highlighter-rouge notranslate">bottom</code> + <code class="highlighter-rouge notranslate">right</code>
+<code class="highlighter-rouge notranslate">top</code> + <code class="highlighter-rouge notranslate">right</code> + <code class="highlighter-rouge notranslate">bottom</code> + <code class="highlighter-rouge notranslate">left</code>
 </td>
     </tr>
   </tbody>
 
           </table>
         
+<h3 id="resizing" dir="auto">Resizing<a href="#resizing" class="heading-anchor" aria-label="Permalink: Resizing">#</a>
+</h3>
 
-          <blockquote dir="auto">
-            <p dir="auto">Note — <code class="highlighter-rouge notranslate">inset-*</code> and <code class="highlighter-rouge notranslate">block/inline-size</code> have less support in older mobile browsers and pre-Chromium Edge.</p>
-          </blockquote>
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property / Value</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">resize: block</code></strong></td>
+      <td>Allows resize in block axis only.</td>
+      <td><code class="highlighter-rouge notranslate">resize: vertical</code></td>
+      <td><code class="highlighter-rouge notranslate">resize: vertical</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">resize: inline</code></strong></td>
+      <td>Allows resize in inline axis only.</td>
+      <td><code class="highlighter-rouge notranslate">resize: horizontal</code></td>
+      <td><code class="highlighter-rouge notranslate">resize: horizontal</code></td>
+    </tr>
+  </tbody>
+
+          </table>
+        
+<h3 id="containment" dir="auto">Containment<a href="#containment" class="heading-anchor" aria-label="Permalink: Containment">#</a>
+</h3>
+
+          <table dir="auto" role="table" class="markdown-table">
+              <thead>
+    <tr>
+      <th>#</th>
+      <th>Logical Property</th>
+      <th>Description</th>
+      <th>Physical LTR Equivalent</th>
+      <th>Physical RTL Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong><code class="highlighter-rouge notranslate">contain-intrinsic-block-size</code></strong></td>
+      <td>Specifies the element’s intrinsic size in the block (vertical) axis when its contents are subject to size containment.</td>
+      <td><code class="highlighter-rouge notranslate">contain-intrinsic-height</code></td>
+      <td><code class="highlighter-rouge notranslate">contain-intrinsic-height</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong><code class="highlighter-rouge notranslate">contain-intrinsic-inline-size</code></strong></td>
+      <td>Specifies the element’s intrinsic size in the inline (horizontal) axis when its contents are subject to size containment.</td>
+      <td><code class="highlighter-rouge notranslate">contain-intrinsic-width</code></td>
+      <td><code class="highlighter-rouge notranslate">contain-intrinsic-width</code></td>
+    </tr>
+  </tbody>
+
+          </table>
         
 <h3 id="floats--clears" dir="auto">Floats &amp; Clears<a href="#floats--clears" class="heading-anchor" aria-label="Permalink: Floats &amp; Clears">#</a>
 </h3>
@@ -1154,11 +1272,6 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
 
           </table>
         
-
-          <blockquote dir="auto">
-            <p dir="auto">Note: <code class="highlighter-rouge notranslate">text-align: start/end</code> is not supported in IE11, needs fallback.</p>
-          </blockquote>
-        
 <h3 id="tables" dir="auto">Tables<a href="#tables" class="heading-anchor" aria-label="Permalink: Tables">#</a>
 </h3>
 
@@ -1200,52 +1313,6 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
       <td>Places caption at inline end of table.</td>
       <td><code class="highlighter-rouge notranslate">caption-side: right</code></td>
       <td><code class="highlighter-rouge notranslate">caption-side: left</code></td>
-    </tr>
-  </tbody>
-
-          </table>
-        
-<h3 id="backgrounds" dir="auto">Backgrounds<a href="#backgrounds" class="heading-anchor" aria-label="Permalink: Backgrounds">#</a>
-</h3>
-
-          <table dir="auto" role="table" class="markdown-table">
-              <thead>
-    <tr>
-      <th>#</th>
-      <th>Logical Property / Value</th>
-      <th>Description</th>
-      <th>Physical LTR Equivalent</th>
-      <th>Physical RTL Equivalent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td><strong><code class="highlighter-rouge notranslate">background-position-inline</code></strong></td>
-      <td>Background position along inline axis</td>
-      <td><code class="highlighter-rouge notranslate">background-position-x</code></td>
-      <td><code class="highlighter-rouge notranslate">background-position-x</code></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td><strong><code class="highlighter-rouge notranslate">background-position-block</code></strong></td>
-      <td>Background position along block axis</td>
-      <td><code class="highlighter-rouge notranslate">background-position-y</code></td>
-      <td><code class="highlighter-rouge notranslate">background-position-y</code></td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td><strong><code class="highlighter-rouge notranslate">background-position: start</code></strong></td>
-      <td>Places background image at inline start horizontally.</td>
-      <td><code class="highlighter-rouge notranslate">background-position: left</code></td>
-      <td><code class="highlighter-rouge notranslate">background-position: right</code></td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td><strong><code class="highlighter-rouge notranslate">background-position: end</code></strong></td>
-      <td>Places background image at inline end horizontally.</td>
-      <td><code class="highlighter-rouge notranslate">background-position: right</code></td>
-      <td><code class="highlighter-rouge notranslate">background-position: left</code></td>
     </tr>
   </tbody>
 
@@ -1391,14 +1458,14 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
 
           </table>
         
-<h3 id="resizing" dir="auto">Resizing<a href="#resizing" class="heading-anchor" aria-label="Permalink: Resizing">#</a>
+<h3 id="overflow" dir="auto">Overflow<a href="#overflow" class="heading-anchor" aria-label="Permalink: Overflow">#</a>
 </h3>
 
           <table dir="auto" role="table" class="markdown-table">
               <thead>
     <tr>
       <th>#</th>
-      <th>Logical Property / Value</th>
+      <th>Logical Property</th>
       <th>Description</th>
       <th>Physical LTR Equivalent</th>
       <th>Physical RTL Equivalent</th>
@@ -1407,17 +1474,17 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
   <tbody>
     <tr>
       <td>1</td>
-      <td><strong><code class="highlighter-rouge notranslate">resize: block</code></strong></td>
-      <td>Allows resize in block axis only.</td>
-      <td><code class="highlighter-rouge notranslate">resize: vertical</code></td>
-      <td><code class="highlighter-rouge notranslate">resize: vertical</code></td>
+      <td><strong><code class="highlighter-rouge notranslate">overflow-block</code></strong></td>
+      <td>Controls overflow in the block direction (top → bottom in LTR/RTL).</td>
+      <td><code class="highlighter-rouge notranslate">overflow-y</code></td>
+      <td><code class="highlighter-rouge notranslate">overflow-y</code></td>
     </tr>
     <tr>
       <td>2</td>
-      <td><strong><code class="highlighter-rouge notranslate">resize: inline</code></strong></td>
-      <td>Allows resize in inline axis only.</td>
-      <td><code class="highlighter-rouge notranslate">resize: horizontal</code></td>
-      <td><code class="highlighter-rouge notranslate">resize: horizontal</code></td>
+      <td><strong><code class="highlighter-rouge notranslate">overflow-inline</code></strong></td>
+      <td>Controls overflow in the inline direction (left → right in LTR, right → left in RTL).</td>
+      <td><code class="highlighter-rouge notranslate">overflow-x</code></td>
+      <td><code class="highlighter-rouge notranslate">overflow-x</code></td>
     </tr>
   </tbody>
 
@@ -1455,7 +1522,12 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
 
           </table>
         
-<h3 id="transform-origin" dir="auto">Transform Origin<a href="#transform-origin" class="heading-anchor" aria-label="Permalink: Transform Origin">#</a>
+
+          <blockquote dir="auto">
+            <p dir="auto">Note: Inline maps to horizontal, block maps to vertical — regardless of writing direction.</p>
+          </blockquote>
+        
+<h3 id="scroll-snap" dir="auto">Scroll Snap<a href="#scroll-snap" class="heading-anchor" aria-label="Permalink: Scroll Snap">#</a>
 </h3>
 
           <table dir="auto" role="table" class="markdown-table">
@@ -1471,77 +1543,31 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
   <tbody>
     <tr>
       <td>1</td>
-      <td><strong><code class="highlighter-rouge notranslate">transform-origin: inline-start</code></strong></td>
-      <td>Sets transform origin at inline start side.</td>
-      <td><code class="highlighter-rouge notranslate">transform-origin: left</code></td>
-      <td><code class="highlighter-rouge notranslate">transform-origin: right</code></td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-snap-type: block</code></strong></td>
+      <td>Defines scroll snapping along the <strong>block axis</strong> (vertical in LTR/RTL).</td>
+      <td><code class="highlighter-rouge notranslate">scroll-snap-type: y</code></td>
+      <td><code class="highlighter-rouge notranslate">scroll-snap-type: y</code></td>
     </tr>
     <tr>
       <td>2</td>
-      <td><strong><code class="highlighter-rouge notranslate">transform-origin: inline-end</code></strong></td>
-      <td>Sets transform origin at inline end side.</td>
-      <td><code class="highlighter-rouge notranslate">transform-origin: right</code></td>
-      <td><code class="highlighter-rouge notranslate">transform-origin: left</code></td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-snap-type: inline</code></strong></td>
+      <td>Defines scroll snapping along the <strong>inline axis</strong> (horizontal in LTR/RTL).</td>
+      <td><code class="highlighter-rouge notranslate">scroll-snap-type: x</code></td>
+      <td><code class="highlighter-rouge notranslate">scroll-snap-type: x</code></td>
     </tr>
     <tr>
       <td>3</td>
-      <td><strong><code class="highlighter-rouge notranslate">transform-origin: block-start</code></strong></td>
-      <td>Sets transform origin at block start side.</td>
-      <td><code class="highlighter-rouge notranslate">transform-origin: top</code></td>
-      <td><code class="highlighter-rouge notranslate">transform-origin: top</code></td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-snap-align: start</code></strong></td>
+      <td>Snap aligns the element’s <strong>start edge</strong> with the scroll container’s snap position.</td>
+      <td>Top / Left</td>
+      <td>Top / Right</td>
     </tr>
     <tr>
       <td>4</td>
-      <td><strong><code class="highlighter-rouge notranslate">transform-origin: block-end</code></strong></td>
-      <td>Sets transform origin at block end side.</td>
-      <td><code class="highlighter-rouge notranslate">transform-origin: bottom</code></td>
-      <td><code class="highlighter-rouge notranslate">transform-origin: bottom</code></td>
-    </tr>
-  </tbody>
-
-          </table>
-        
-<h3 id="offset-motion-path" dir="auto">Offset (Motion Path)<a href="#offset-motion-path" class="heading-anchor" aria-label="Permalink: Offset (Motion Path)">#</a>
-</h3>
-
-          <table dir="auto" role="table" class="markdown-table">
-              <thead>
-    <tr>
-      <th>#</th>
-      <th>Logical Property</th>
-      <th>Description</th>
-      <th>Physical LTR Equivalent</th>
-      <th>Physical RTL Equivalent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td><strong><code class="highlighter-rouge notranslate">offset-inline-start</code></strong></td>
-      <td>Starting offset position in inline axis</td>
-      <td><code class="highlighter-rouge notranslate">offset-left</code></td>
-      <td><code class="highlighter-rouge notranslate">offset-right</code></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td><strong><code class="highlighter-rouge notranslate">offset-inline-end</code></strong></td>
-      <td>Ending offset position in inline axis</td>
-      <td><code class="highlighter-rouge notranslate">offset-right</code></td>
-      <td><code class="highlighter-rouge notranslate">offset-left</code></td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td><strong><code class="highlighter-rouge notranslate">offset-block-start</code></strong></td>
-      <td>Starting offset position in block axis</td>
-      <td><code class="highlighter-rouge notranslate">offset-top</code></td>
-      <td><code class="highlighter-rouge notranslate">offset-top</code></td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td><strong><code class="highlighter-rouge notranslate">offset-block-end</code></strong></td>
-      <td>Ending offset position in block axis</td>
-      <td><code class="highlighter-rouge notranslate">offset-bottom</code></td>
-      <td><code class="highlighter-rouge notranslate">offset-bottom</code></td>
+      <td><strong><code class="highlighter-rouge notranslate">scroll-snap-align: end</code></strong></td>
+      <td>Snap aligns the element’s <strong>end edge</strong> with the scroll container’s snap position.</td>
+      <td>Bottom / Right</td>
+      <td>Bottom / Left</td>
     </tr>
   </tbody>
 
@@ -1571,23 +1597,22 @@ inline-end   = right        inline-end   = left         inline-end   = bottom   
 <span class="p">}</span></code></pre></figure>
 
 <p dir="auto">👉 <a href="https://codepen.io/shivam091/pen/NPGavRO" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://codepen.io/shivam091/pen/NPGavRO" class="external-link">View Full Interactive Demo on CodePen</a></p>
-<h2 id="best-practices--reminders" dir="auto">Best Practices &amp; Reminders<a href="#best-practices--reminders" class="heading-anchor" aria-label="Permalink: Best Practices &amp; Reminders">#</a>
+<h2 id="best-practices" dir="auto">Best Practices<a href="#best-practices" class="heading-anchor" aria-label="Permalink: Best Practices">#</a>
 </h2>
 
           <ul dir="auto">
-              <li><p dir="auto"><strong>Fallbacks first</strong> — For older browsers, write the physical property first, then override with the logical equivalent.</p></li>
-  <li><p dir="auto"><strong>Be consistent</strong> — Avoid mixing physical and logical for the same property unless intentionally layering fallbacks.</p></li>
-  <li><p dir="auto"><strong>Test multiple flows</strong> — Check both <code class="highlighter-rouge notranslate">horizontal-tb</code> and <code class="highlighter-rouge notranslate">vertical-rl</code> modes to catch axis-mapping quirks.</p></li>
-  <li><p dir="auto"><strong>Prefer explicit props</strong> — Use individual logical properties (<code class="highlighter-rouge notranslate">margin-inline-start</code>) over shorthands for better browser reach.</p></li>
-  <li><p dir="auto"><strong>Switch direction</strong> — Use <code class="highlighter-rouge notranslate">direction: rtl</code> for horizontal RTL layouts (Arabic, Hebrew).</p></li>
-  <li><p dir="auto"><strong>Change flow</strong> — Use <code class="highlighter-rouge notranslate">writing-mode</code> for vertical layouts; remember that <code class="highlighter-rouge notranslate">inline</code> and <code class="highlighter-rouge notranslate">block</code> axes swap roles.</p></li>
-  <li><p dir="auto"><strong>Alignment shortcuts</strong> — Use <code class="highlighter-rouge notranslate">text-align: start</code> / <code class="highlighter-rouge notranslate">end</code> for automatic LTR/RTL alignment.</p></li>
-  <li><p dir="auto"><strong>Logical positioning</strong> — Replace fixed sides (<code class="highlighter-rouge notranslate">top</code>, <code class="highlighter-rouge notranslate">right</code>, <code class="highlighter-rouge notranslate">bottom</code>, <code class="highlighter-rouge notranslate">left</code>) with <code class="highlighter-rouge notranslate">inset-block</code> / <code class="highlighter-rouge notranslate">inset-inline</code>.</p></li>
-  <li><p dir="auto"><strong>Check compatibility</strong> — Always verify on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" class="external-link">MDN’s compatibility tables</a> before relying on lesser-known logical props.</p></li>
+              <li><p dir="auto"><strong>Start with fallbacks</strong> — Use physical as fallbacks, then layer logical — don’t mix both unintentionally</p></li>
+  <li><p dir="auto"><strong>Test different flows</strong> — Validate layouts in both <code class="highlighter-rouge notranslate">horizontal-tb</code> and <code class="highlighter-rouge notranslate">vertical-rl</code> writing modes to catch axis-mapping issues.</p></li>
+  <li><p dir="auto"><strong>Prefer explicit properties</strong> — Use individual logical properties (<code class="highlighter-rouge notranslate">margin-inline-start</code>) instead of shorthands for broader browser support.</p></li>
+  <li><p dir="auto"><strong>Handle RTL layouts</strong> — Apply <code class="highlighter-rouge notranslate">direction: rtl</code> for languages like <strong>Arabic</strong> and <strong>Hebrew</strong> to switch inline flow automatically.</p></li>
+  <li><p dir="auto"><strong>Control writing flow</strong> — Use <code class="highlighter-rouge notranslate">writing-mode</code> for vertical text layouts, keeping in mind that block and inline axes swap roles.</p></li>
+  <li><p dir="auto"><strong>Use alignment shortcuts</strong> — Rely on <code class="highlighter-rouge notranslate">text-align: start</code> / <code class="highlighter-rouge notranslate">end</code> to adapt automatically in LTR and RTL contexts.</p></li>
+  <li><p dir="auto"><strong>Adopt logical positioning</strong> — Replace physical offsets (<code class="highlighter-rouge notranslate">top</code>, <code class="highlighter-rouge notranslate">right</code>, <code class="highlighter-rouge notranslate">bottom</code>, <code class="highlighter-rouge notranslate">left</code>) with <code class="highlighter-rouge notranslate">inset-block</code> / <code class="highlighter-rouge notranslate">inset-inline</code> for flexibility.</p></li>
+  <li><p dir="auto"><strong>Check browser support</strong> — Always confirm on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" target="_blank" rel="noopener noreferrer nofollow" aria-label="External link to https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values#browser_compatibility" class="external-link">MDN’s compatibility tables</a> before using less common logical properties.</p></li>
 
           </ul>
         
-<h2 id="fallbacks-for-non-supporting-browsers" dir="auto">Fallbacks for Non-Supporting Browsers<a href="#fallbacks-for-non-supporting-browsers" class="heading-anchor" aria-label="Permalink: Fallbacks for Non-Supporting Browsers">#</a>
+<h2 id="fallbacks-for-older-browsers" dir="auto">Fallbacks for Older Browsers<a href="#fallbacks-for-older-browsers" class="heading-anchor" aria-label="Permalink: Fallbacks for Older Browsers">#</a>
 </h2>
 <p dir="auto">If you need to support older browsers that don’t recognize logical properties, you can define physical property fallbacks first, followed by
 your logical properties. This ensures that browsers without logical property support (e.g., Internet Explorer) still display layouts correctly.</p>
@@ -1620,7 +1645,7 @@ your logical properties. This ensures that browsers without logical property sup
   <span class="nl">padding-left</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
   <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
 
-  <span class="c">/* Logical properties override when supported */</span>
+  <span class="c">/* Logical properties override */</span>
   <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
   <span class="py">padding-inline-start</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
   <span class="nl">text-align</span><span class="p">:</span> <span class="nb">start</span><span class="p">;</span>
@@ -1643,7 +1668,17 @@ your logical properties. This ensures that browsers without logical property sup
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p dir="auto"><strong>Why use <code class="highlighter-rouge notranslate">@supports?</code></strong></p>
+<details>
+  <summary>
+    <svg version="1.0" role="img" class="icon icon-plus" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="1.25rem" height="1.25rem" fill="currentColor" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="6" y1="12" x2="18" y2="12"></line>
+  <line x1="12" y1="18" x2="12" y2="6"></line>
+</svg>
+
+    <p dir="auto"><strong>Why use <code class="highlighter-rouge notranslate">@supports?</code></strong></p>
+  </summary>
+  <div class="content">
+    
           <ul dir="auto">
               <li><p dir="auto">Keeps fallback styles intact for older browsers without relying solely on cascade overrides.</p></li>
   <li><p dir="auto">Ensures logical properties are parsed only when supported.</p></li>
@@ -1651,6 +1686,9 @@ your logical properties. This ensures that browsers without logical property sup
 
           </ul>
         
+  </div>
+</details>
+
 <h2 id="conclusion" dir="auto">Conclusion<a href="#conclusion" class="heading-anchor" aria-label="Permalink: Conclusion">#</a>
 </h2>
 <p dir="auto">CSS Logical Properties are the future of responsive, internationalized web design. They eliminate the need for duplicate styles for different
@@ -1666,23 +1704,23 @@ writing directions, ensuring your layouts adapt naturally to any language or scr
     <ul class="toc-level toc-level-2">
 <li><a href="#introduction" class="toc-link toc-link-level-2">Introduction</a>
 </li>
-<li><a href="#why-css-logical-properties-matter" class="toc-link toc-link-level-2">Why CSS Logical Properties Matter</a>
-</li>
 <li><a href="#benefits-of-logical-properties" class="toc-link toc-link-level-2">Benefits of Logical Properties</a>
+</li>
+<li><a href="#when-to-use-logical-vs-physical" class="toc-link toc-link-level-2">When to Use Logical vs. Physical</a>
 </li>
 <li><a href="#understanding-inline-vs-block-axes" class="toc-link toc-link-level-2">Understanding Inline vs Block Axes</a>
 <ul class="toc-level toc-level-3">
-<li><a href="#horizontal-tb-ltr-typical-english" class="toc-link toc-link-level-3">horizontal-tb (LTR) (typical English)</a>
+<li><a href="#horizontal-tb-ltr--eg-english" class="toc-link toc-link-level-3">horizontal-tb (LTR – e.g., English)</a>
 </li>
-<li><a href="#horizontal-tb-rtl-arabic-hebrew" class="toc-link toc-link-level-3">horizontal-tb (RTL) (Arabic, Hebrew)</a>
+<li><a href="#horizontal-tb-rtl--eg-arabic-hebrew" class="toc-link toc-link-level-3">horizontal-tb (RTL – e.g., Arabic, Hebrew)</a>
 </li>
-<li><a href="#vertical-rl" class="toc-link toc-link-level-3">vertical-rl</a>
+<li><a href="#vertical-rl-eg-traditional-mongolian" class="toc-link toc-link-level-3">vertical-rl (e.g., Traditional Mongolian)</a>
 </li>
-<li><a href="#vertical-lr" class="toc-link toc-link-level-3">vertical-lr</a>
+<li><a href="#vertical-lr-eg-some-east-asian-scripts" class="toc-link toc-link-level-3">vertical-lr (e.g., some East Asian scripts)</a>
 </li>
 <li><a href="#quick-reference-logical-vs-physical-mappings" class="toc-link toc-link-level-3">Quick Reference: Logical vs Physical Mappings</a>
 </li>
-<li><a href="#short-examples" class="toc-link toc-link-level-3">Short Examples</a>
+<li><a href="#inline-vs-block-in-action" class="toc-link toc-link-level-3">Inline vs. Block in Action</a>
 </li>
 </ul>
 </li>
@@ -1700,33 +1738,33 @@ writing directions, ensuring your layouts adapt naturally to any language or scr
 </li>
 <li><a href="#positioning--offsets" class="toc-link toc-link-level-3">Positioning / Offsets</a>
 </li>
+<li><a href="#resizing" class="toc-link toc-link-level-3">Resizing</a>
+</li>
+<li><a href="#containment" class="toc-link toc-link-level-3">Containment</a>
+</li>
 <li><a href="#floats--clears" class="toc-link toc-link-level-3">Floats &amp; Clears</a>
 </li>
 <li><a href="#text-alignment" class="toc-link toc-link-level-3">Text Alignment</a>
 </li>
 <li><a href="#tables" class="toc-link toc-link-level-3">Tables</a>
 </li>
-<li><a href="#backgrounds" class="toc-link toc-link-level-3">Backgrounds</a>
-</li>
 <li><a href="#scroll-margin" class="toc-link toc-link-level-3">Scroll Margin</a>
 </li>
 <li><a href="#scroll-padding" class="toc-link toc-link-level-3">Scroll Padding</a>
 </li>
-<li><a href="#resizing" class="toc-link toc-link-level-3">Resizing</a>
+<li><a href="#overflow" class="toc-link toc-link-level-3">Overflow</a>
 </li>
 <li><a href="#overscroll-behavior" class="toc-link toc-link-level-3">Overscroll Behavior</a>
 </li>
-<li><a href="#transform-origin" class="toc-link toc-link-level-3">Transform Origin</a>
-</li>
-<li><a href="#offset-motion-path" class="toc-link toc-link-level-3">Offset (Motion Path)</a>
+<li><a href="#scroll-snap" class="toc-link toc-link-level-3">Scroll Snap</a>
 </li>
 </ul>
 </li>
 <li><a href="#interactive-example" class="toc-link toc-link-level-2">Interactive Example</a>
 </li>
-<li><a href="#best-practices--reminders" class="toc-link toc-link-level-2">Best Practices &amp; Reminders</a>
+<li><a href="#best-practices" class="toc-link toc-link-level-2">Best Practices</a>
 </li>
-<li><a href="#fallbacks-for-non-supporting-browsers" class="toc-link toc-link-level-2">Fallbacks for Non-Supporting Browsers</a>
+<li><a href="#fallbacks-for-older-browsers" class="toc-link toc-link-level-2">Fallbacks for Older Browsers</a>
 </li>
 <li><a href="#conclusion" class="toc-link toc-link-level-2">Conclusion</a>
 </li>
@@ -2110,9 +2148,9 @@ writing directions, ensuring your layouts adapt naturally to any language or scr
 
 
 <nav class="navigation" aria-label="Post navigation">
-  <a href="/post/mastering-js-operators" class="navigation-link" rel="previous">
+  <a href="/post/responsive-css-grid-layouts" class="navigation-link" rel="previous">
     <span class="label">Older</span>
-    <span class="title">Mastering JavaScript Operators: A Complete Guide with Examples</span>
+    <span class="title">Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</span>
   </a>
   <div class="navigation-link disabled" role="link" aria-disabled="true" tabindex="-1">
     <span class="label">Newer</span>
