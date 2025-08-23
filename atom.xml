@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-23T12:24:47+05:30</updated>
+  <updated>2025-08-23T13:03:04+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -21,7 +21,7 @@
 
   
   <entry xml:lang="en">
-    <title>Unleashing CSS Logical Properties: Future-Proof Your Layouts</title>
+    <title>Unleashing CSS Logical Properties</title>
     <link rel="alternate" type="text/html" href="https://shivam091.github.io/post/unleashing-css-logical-properties" />
     <id>https://shivam091.github.io/post/unleashing-css-logical-properties</id>
 
@@ -32,11 +32,11 @@
     <media:thumbnail
       url="https://shivam091.github.io/assets/img/posts/css/unleashing-css-logical-properties/cover.png"
       width="1200"
-      height="630" />
+      height="800" />
     
 
     <summary type="html">
-      Master CSS Logical Properties to build global, adaptable layouts—without messy RTL hacks or duplicate stylesheets.
+      Future-proof your layouts with CSS Logical Properties — one set of styles that adapts across languages, directions, and writing modes — no more messy RTL hac...
     </summary>
     <content type="html"><![CDATA[<h2  id="introduction" dir="auto">Introduction</h2>
 <p  dir="auto">In modern web design, layouts must seamlessly adapt to different languages and writing modes — <strong>CSS Logical Properties</strong> offer a future-proof way
@@ -1268,6 +1268,12 @@ writing directions, ensuring your layouts adapt naturally to any language or scr
       <category term="i18n" scheme="urn:taxonomy:tag" />
     
       <category term="frontend" scheme="urn:taxonomy:tag" />
+    
+      <category term="best-practices" scheme="urn:taxonomy:tag" />
+    
+      <category term="globalization" scheme="urn:taxonomy:tag" />
+    
+      <category term="accessibility" scheme="urn:taxonomy:tag" />
     
 
     
