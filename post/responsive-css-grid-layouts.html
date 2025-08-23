@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained
+<title>Responsive CSS Grid Layouts: <code  class="highlighter-rouge notranslate">fr</code> Units, <code  class="highlighter-rouge notranslate">minmax()</code>, <code  class="highlighter-rouge notranslate">auto-fill</code>, and <code  class="highlighter-rouge notranslate">auto-fit</code> Explained
  | Harshal V. LADHE</title>
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -29,7 +29,7 @@
 <meta name="twitter:image:alt" content="Colorful flat-design illustration showcasing responsive CSS Grid techniques, including fr units, minmax(), auto-fit, media queries, and container queries." />
 <meta property="twitter:title" content="Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal V. LADHE","url":"https://shivam091.github.io"},"dateModified":"2025-08-08T16:06:50+05:30","datePublished":"2025-07-09T15:20:00+05:30","description":"Learn how to build truly responsive CSS Grid layouts using fr units, minmax(), auto-fit, auto-fill, and modern media &amp; container queries.","headline":"Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained","image":{"width":1200,"height":630,"alt":"Colorful flat-design illustration showcasing responsive CSS Grid techniques, including fr units, minmax(), auto-fit, media queries, and container queries.","url":"https://shivam091.github.io/assets/img/posts/css/responsive-css-grid-layouts/cover.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/responsive-css-grid-layouts"},"url":"https://shivam091.github.io/post/responsive-css-grid-layouts"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal V. LADHE","url":"https://shivam091.github.io"},"dateModified":"2025-08-14T08:42:44+05:30","datePublished":"2025-07-09T15:20:00+05:30","description":"Learn how to build truly responsive CSS Grid layouts using fr units, minmax(), auto-fit, auto-fill, and modern media &amp; container queries.","headline":"Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained","image":{"width":1200,"height":630,"alt":"Colorful flat-design illustration showcasing responsive CSS Grid techniques, including fr units, minmax(), auto-fit, media queries, and container queries.","url":"https://shivam091.github.io/assets/img/posts/css/responsive-css-grid-layouts/cover.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/responsive-css-grid-layouts"},"url":"https://shivam091.github.io/post/responsive-css-grid-layouts"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-icon-57x57.png">
@@ -308,20 +308,22 @@
 
       <main id="main-content" class="main-content" role="main" tabindex="-1">
         <h1 id="page-title" class="page-title">
-  Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained
+  Responsive CSS Grid Layouts: <code  class="highlighter-rouge notranslate">fr</code> Units, <code  class="highlighter-rouge notranslate">minmax()</code>, <code  class="highlighter-rouge notranslate">auto-fill</code>, and <code  class="highlighter-rouge notranslate">auto-fit</code> Explained
 
 </h1>
 
 
-<section class="page-content" aria-label="Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained">
+<section class="page-content" aria-label="Responsive CSS Grid Layouts: `fr` Units, `minmax()`, `auto-fill`, and `auto-fit` Explained">
   <article class="post" itemscope itemtype="https://schema.org/BlogPosting" aria-labelledby="page-title">
   <meta itemprop="datePublished" content="2025-07-09T15:21:11+05:30">
-  <meta itemprop="dateModified" content="2025-08-08T16:06:50+05:30">
-  <meta itemprop="headline" content="Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained">
+  <meta itemprop="dateModified" content="2025-08-14T08:42:44+05:30">
+  <meta itemprop="headline" content="Responsive CSS Grid Layouts: `fr` Units, `minmax()`, `auto-fill`, and `auto-fit` Explained">
   <meta itemprop="mainEntityOfPage" content="https://shivam091.github.io/post/responsive-css-grid-layouts">
 
   <header class="post-header">
     <div class="post-shortinfo">
+      
+        Smarter layouts without rigid breakpoints.
       
     </div>
 
@@ -345,8 +347,8 @@
 </svg>
 
     <span class="visually-hidden">Last updated:</span>
-    <time datetime='2025-08-08T16:06:50+05:30' aria-label='Last updated on August 08, 2025 at 04:06 PM' role='time' data-tooltip='Fri, August 08, 2025 04:06 PM' data-tooltip-position='bottom' tabindex='0'>
-  August 08, 2025
+    <time datetime='2025-08-14T08:42:44+05:30' aria-label='Last updated on August 14, 2025 at 08:42 AM' role='time' data-tooltip='Thu, August 14, 2025 08:42 AM' data-tooltip-position='bottom' tabindex='0'>
+  August 14, 2025
 </time>
 
   </div>
@@ -386,7 +388,7 @@
 
           <ul dir="auto">
               <li><p dir="auto"><a href="/post/getting-started-with-css-grid">Part 1</a>: Grid basics, tracks, and layout structure</p></li>
-  <li><p dir="auto"><a href="/post/mastering-css-grid-alignment-spanning">Part 2</a>: Grid areas, alignment, spanning, and implicit/explicit tracks</p></li>
+  <li><p dir="auto"><a href="/post/mastering-css-grid">Part 2</a>: Grid areas, alignment, spanning, and implicit/explicit tracks</p></li>
 
           </ul>
         
@@ -1771,7 +1773,7 @@ Use <strong><code class="highlighter-rouge notranslate">auto-fill</code></strong
         <h3 id="share-title" class="visually-hidden">Share this post</h3>
         <div class="share-icons" role="group" aria-label="Share this post">
   Share:
-  <a href="https://x.com/intent/tweet?via=shivam091&text=Responsive%20CSS%20Grid%20Layouts:%20fr%20Units,%20minmax(),%20auto-fill,%20and%20auto-fit%20Explained&url=https%3A%2F%2Fshivam091.github.io%2Fpost%2Fresponsive-css-grid-layouts" class="share-link"
+  <a href="https://x.com/intent/tweet?via=shivam091&text=Responsive%20CSS%20Grid%20Layouts:%20%60fr%60%20Units,%20%60minmax()%60,%20%60auto-fill%60,%20and%20%60auto-fit%60%20Explained&url=https%3A%2F%2Fshivam091.github.io%2Fpost%2Fresponsive-css-grid-layouts" class="share-link"
        onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
        aria-label="Share on Twitter" data-tooltip="Twitter">
       <svg version="1.0" role="img" class="icon icon-twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
@@ -1811,7 +1813,7 @@ Use <strong><code class="highlighter-rouge notranslate">auto-fill</code></strong
 </svg>
 
     </a>
-  <a href="mailto:?subject=Responsive%20CSS%20Grid%20Layouts:%20fr%20Units,%20minmax(),%20auto-fill,%20and%20auto-fit%20Explained&body=Check%20this%20out:%20https%3A%2F%2Fshivam091.github.io%2Fpost%2Fresponsive-css-grid-layouts" class="share-link"
+  <a href="mailto:?subject=Responsive%20CSS%20Grid%20Layouts:%20%60fr%60%20Units,%20%60minmax()%60,%20%60auto-fill%60,%20and%20%60auto-fit%60%20Explained&body=Check%20this%20out:%20https%3A%2F%2Fshivam091.github.io%2Fpost%2Fresponsive-css-grid-layouts" class="share-link"
        onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
        aria-label="Share on Email" data-tooltip="Email">
       <svg version="1.0" role="img" class="icon icon-envelope" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
@@ -2245,7 +2247,7 @@ Use <strong><code class="highlighter-rouge notranslate">auto-fill</code></strong
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained",
+      "name": "Responsive CSS Grid Layouts: `fr` Units, `minmax()`, `auto-fill`, and `auto-fit` Explained",
       "item": "https://shivam091.github.io/post/responsive-css-grid-layouts"
     }
   ]

@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-23T19:09:09+05:30</updated>
+  <updated>2025-08-23T19:23:35+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -1952,12 +1952,12 @@ writing directions, ensuring your layouts adapt naturally to any language or scr
   </entry>
   
   <entry xml:lang="en">
-    <title>Responsive CSS Grid Layouts: fr Units, minmax(), auto-fill, and auto-fit Explained</title>
+    <title>Responsive CSS Grid Layouts: `fr` Units, `minmax()`, `auto-fill`, and `auto-fit` Explained</title>
     <link rel="alternate" type="text/html" href="https://shivam091.github.io/post/responsive-css-grid-layouts" />
     <id>https://shivam091.github.io/post/responsive-css-grid-layouts</id>
 
     <published>2025-07-09T15:21:11+05:30</published>
-    <updated>2025-08-08T16:06:50+05:30</updated>
+    <updated>2025-08-14T08:42:44+05:30</updated>
 
     
     <media:thumbnail
@@ -1975,7 +1975,7 @@ writing directions, ensuring your layouts adapt naturally to any language or scr
 
           <ul  dir="auto">
               <li><p  dir="auto"><a  href="/post/getting-started-with-css-grid">Part 1</a>: Grid basics, tracks, and layout structure</p></li>
-  <li><p  dir="auto"><a  href="/post/mastering-css-grid-alignment-spanning">Part 2</a>: Grid areas, alignment, spanning, and implicit/explicit tracks</p></li>
+  <li><p  dir="auto"><a  href="/post/mastering-css-grid">Part 2</a>: Grid areas, alignment, spanning, and implicit/explicit tracks</p></li>
 
           </ul>
         
