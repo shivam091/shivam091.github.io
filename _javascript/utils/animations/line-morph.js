@@ -1,6 +1,6 @@
-import Morph from "./morph";
+import SpringMorph from "./spring-morph";
 
-export default class LineMorph extends Morph {
+export default class LineMorph extends SpringMorph {
   constructor(lines, config = { stiffness: 0.12, damping: 0.75 }) {
     super(
       lines,

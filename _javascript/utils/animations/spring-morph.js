@@ -6,7 +6,7 @@ import SpringGroup from "./spring-group";
  * Generic base class for morphing SVG primitives.
  * Accepts extract/build functions to handle different shapes.
  */
-export default class Morph {
+export default class SpringMorph {
   constructor(elements, config, extractPoints, buildAttr) {
     this.elements = Array.from(elements);
     this.groups = [];
