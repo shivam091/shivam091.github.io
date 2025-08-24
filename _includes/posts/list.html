@@ -8,7 +8,7 @@
       <header class="card-header">
         <h2 class="card-title post-title" title="{{ post.title }}">
           <a href="{{ post.url | relative_url }}" class="card-link" aria-label="Read post: {{ post.title }}">
-            {{ post.title }}
+            {{ post.title | titleify }}
           </a>
         </h2>
         {% include posts/series.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: "Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning"
 date: 2025-07-09 15:20
+shortinfo: "Structure with clarity, align with precision."
 tags: [css, css-grid, grid, beginner, layout, grid-template-areas, grid-alignment, frontend]
 categories: [CSS]
 excerpt: "Take your CSS Grid skills to the next level by mastering semantic layouts with grid areas, item alignment, and element spanning techniques."
@@ -329,14 +330,11 @@ This tells the grid item to span **2 columns and 2 rows** starting from its **au
 
 👉 [Try this on CodePen](https://codepen.io/shivam091/pen/raVEKzW)
 
-<details>
-<summary>When to use it?</summary>
-<ul>
-  <li>You <strong>don’t need to control exact start/end line numbers</strong>.</li>
-  <li>You want the browser to determine the position automatically.</li>
-  <li>You're working with <strong>auto-placed items</strong> in a dynamic or responsive layout.</li>
-</ul>
-</details>
+{% details summary="When to use it?" %}
+- You **don’t need to control exact start/end line numbers**.
+- You want the browser to determine the position automatically.
+- You're working with **auto-placed items** in a dynamic or responsive layout.
+{% enddetails %}
 
 ## Grid Types
 

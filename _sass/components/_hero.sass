@@ -4,7 +4,7 @@
 
 .hero
   padding: $fluid-space-md
-  min-height: 300px
+  min-height: 330px
   display: flex
   align-items: center
   justify-content: center
@@ -38,8 +38,14 @@
 
   .hero-highlight
     letter-spacing: 1px
+    background-color: var(--color-typed-text)
+    background-image: linear-gradient(-268.67deg, var(--color-typed-text), var(--color-fg-attention))
+    background-size: 100%
+    background-clip: text
+    color: transparent
+    -webkit-text-fill-color: transparent
     text-decoration-color: var(--color-typed-text)
     @extend %text-underline
 
   .hero-typed .typed-cursor
-    color: var(--color-typed-cursor)
+    color: var(--color-typed-text)

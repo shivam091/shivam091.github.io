@@ -6,7 +6,7 @@
   {%- if previous %}
   <a href="{{ previous.url }}" class="navigation-link" rel="previous">
     <span class="label">Older</span>
-    <span class="title">{{ previous.title }}</span>
+    <span class="title">{{ previous.title | titleify }}</span>
   </a>
   {%- else %}
   <div class="navigation-link disabled" role="link" aria-disabled="true" tabindex="-1">
@@ -18,7 +18,7 @@
   {%- if next %}
   <a href="{{ next.url }}" class="navigation-link" rel="next">
     <span class="label">Newer</span>
-    <span class="title">{{ next.title }}</span>
+    <span class="title">{{ next.title | titleify }}</span>
   </a>
   {%- else %}
   <div class="navigation-link disabled" role="link" aria-disabled="true" tabindex="-1">

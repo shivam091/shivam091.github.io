@@ -12,9 +12,6 @@ group :jekyll_plugins do
   # Add metadata tags for search engines and social networks
   gem "jekyll-seo-tag", "~> 2.8"
 
-  # Automatically generate post archives by dates, tags, and categories
-  gem "jekyll-archives", "~> 2.3"
-
   # Pagination gem built specially for Jekyll 3, and newer
   gem "jekyll-paginate-v2", "~> 3.0"
 end

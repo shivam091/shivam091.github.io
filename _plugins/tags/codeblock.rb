@@ -36,7 +36,7 @@ module Jekyll
                 #{inline_svg(context, "hash.svg")}
               </button>
               <button type="button" class="btn btn-sm btn-copy" aria-label="Copy code" data-tooltip="Copy">
-                #{inline_svg(context, "copy.svg")}
+                #{inline_svg(context, "clipboard-check.svg")}
               </button>
             </div>
           </div>

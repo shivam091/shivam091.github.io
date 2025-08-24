@@ -5,7 +5,7 @@ export default class HeaderGlassEffect {
 
   static siteHeader = document.querySelector(".site-header");
   static glassTrigger = document.querySelector("[data-glass-trigger]");
-  static skyContainer = document.querySelector("[data-sky-shapes]");
+  static skyContainer = document.querySelector("[data-cloud-shapes]");
 
   static updateGlassEffect() {
     if (!this.glassTrigger || !this.siteHeader) return;
@@ -16,7 +16,7 @@ export default class HeaderGlassEffect {
 
     const progress = Math.min(1, distanceScrolled / maxDistance);
     const opacity = (0.7 * progress).toFixed(2);
-    const blur = (8 * progress).toFixed(1) + "px";
+    const blur = (4 * progress).toFixed(1) + "px";
 
     this.siteHeader.style.setProperty("--glass-opacity", opacity);
     this.siteHeader.style.setProperty("--blur-amount", blur);
