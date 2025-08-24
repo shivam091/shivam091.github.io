@@ -4,7 +4,7 @@ title: "Getting Started with CSS Grid: A Beginner's Guide to 2D Layouts"
 date: 2025-07-09 15:20
 shortinfo: "Lay the foundation, shape the grid."
 tags: [css, grid, css-grid, beginner, layout, web design, frontend, 2d-layouts]
-categories: [CSS]
+category: CSS
 excerpt: "A beginner-friendly introduction to CSS Grid that covers core concepts and guides you through building your first 2D layouts with real-world examples."
 series: css-grid-fundamentals
 slug: getting-started-with-css-grid

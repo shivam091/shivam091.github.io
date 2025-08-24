@@ -4,7 +4,7 @@ title: "Mastering CSS Grid: Grid Areas, Item Alignment, and Spanning"
 date: 2025-07-09 15:20
 shortinfo: "Structure with clarity, align with precision."
 tags: [css, css-grid, grid, beginner, layout, grid-template-areas, grid-alignment, frontend]
-categories: [CSS]
+category: CSS
 excerpt: "Take your CSS Grid skills to the next level by mastering semantic layouts with grid areas, item alignment, and element spanning techniques."
 series: css-grid-fundamentals
 slug: mastering-css-grid

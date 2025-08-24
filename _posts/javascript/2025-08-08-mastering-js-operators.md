@@ -4,7 +4,7 @@ title: "Mastering JavaScript Operators: A Complete Guide with Examples"
 description: "A complete breakdown of all JavaScript operators including arithmetic, logical, assignment, comparison, bitwise, and special operators with syntax and real-world examples."
 excerpt: "Learn every JavaScript operator with clear syntax, use cases, and examples—from arithmetic to optional chaining, bitwise, and beyond."
 date: 2025-08-09
-categories: [JavaScript]
+category: JavaScript
 tags: [javascript, operators, syntax, tutorial, programming, webdev, es6+, frontend, cheatsheet]
 slug: mastering-js-operators
 ---
