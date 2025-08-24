@@ -13,6 +13,8 @@ image:
   alt: Demonstration of layout components
 ---
 
+{% include code-playground.html %}
+
 ## Codeblocks
 
 {% codeblock %}
