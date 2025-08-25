@@ -306,44 +306,43 @@
 
 
 <section class="page-content" aria-label="JavaScript Operator Lookup">
-  <section class="operators-list" aria-labelledby="operators-list-title">
-  <h2 id="operators-list-title" class="visually-hidden">JavaScript Operator Lookup</h2>
+  <section class="js-operators-list" aria-labelledby="js-operators-list-title">
+  <h2 id="js-operators-list-title" class="visually-hidden">JavaScript Operator Lookup</h2>
 
   <p>
     A complete breakdown of all JavaScript operators including arithmetic, logical, assignment, comparison,
     bitwise, and special operators with syntax and real-world examples.
   </p>
 
-  <div class="cheatsheet" data-component="cheatsheet">
-    <div class="cheatsheet-search">
+  <div class="js-operators" data-component="js-operators">
+    <div class="js-operators-search">
       <input type="text" placeholder="Search..." aria-label="Search cheat sheet">
     </div>
 
-    <ul class="cheatsheet-items">
+    <ul class="js-operators-items">
       
-      <li class="cheatsheet-item" data-key="addition" data-target="cs-addition">
+      <li class="js-operators-item" data-key="addition" data-target="cs-addition">
         +
       </li>
       
-      <li class="cheatsheet-item" data-key="subtraction" data-target="cs-subtraction">
+      <li class="js-operators-item" data-key="subtraction" data-target="cs-subtraction">
         -
       </li>
       
-      <li class="cheatsheet-item" data-key="bitwise-and" data-target="cs-bitwise-and">
+      <li class="js-operators-item" data-key="bitwise-and" data-target="cs-bitwise-and">
         &
       </li>
       
-      <li class="cheatsheet-item" data-key="logical-and" data-target="cs-logical-and">
+      <li class="js-operators-item" data-key="logical-and" data-target="cs-logical-and">
         &&
       </li>
       
     </ul>
 
-    <div class="cheatsheet-content">
-      
-      <section id="cs-addition" class="cheatsheet-panel" hidden>
-        <h3><p  dir="auto">This is <code  class="highlighter-rouge notranslate">Addition</code> operator</p></h3>
-        <p  dir="auto">This operator adds two numbers together, or concatenates two strings together. If a number and a string are used together,
+    
+    <div id="cs-addition" class="js-operators-content" hidden>
+      <h3><p  dir="auto">This is <code  class="highlighter-rouge notranslate">Addition</code> operator</p></h3>
+      <p  dir="auto">This operator adds two numbers together, or concatenates two strings together. If a number and a string are used together,
 it performs a concatenation.</p>
 <p  dir="auto">Less commonly, it can be used as a unary operator, to try and convert a string containing digits to a number. It’s a somewhat
 obscure trick, and it’s generally better to use the <code  class="highlighter-rouge notranslate">Number()</code> helper instead.</p>
@@ -358,11 +357,11 @@ obscure trick, and it’s generally better to use the <code  class="highlighter-
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">+</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// 1 (number)</span>
 </code></pre></div></div>
 
-      </section>
-      
-      <section id="cs-subtraction" class="cheatsheet-panel" hidden>
-        <h3><p  dir="auto">This is <code  class="highlighter-rouge notranslate">Subtraction</code> operator</p></h3>
-        <p  dir="auto">This operator subtracts the right operand from the left. It’s a mathematical operator.</p>
+    </div>
+    
+    <div id="cs-subtraction" class="js-operators-content" hidden>
+      <h3><p  dir="auto">This is <code  class="highlighter-rouge notranslate">Subtraction</code> operator</p></h3>
+      <p  dir="auto">This operator subtracts the right operand from the left. It’s a mathematical operator.</p>
 <p  dir="auto">As a unary operator, it can also be used to signify that a number is negative—for example <code  class="highlighter-rouge notranslate">-5</code> isn’t subtracting anything,
 it’s indicating that this number’s value is negative 5.</p>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// 6</span>
@@ -374,21 +373,21 @@ it’s indicating that this number’s value is negative 5.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="o">-</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// -0 (number)</span>
 </code></pre></div></div>
 
-      </section>
-      
-      <section id="cs-bitwise-and" class="cheatsheet-panel" hidden>
-        <h3><p  dir="auto">This is <code  class="highlighter-rouge notranslate">Bitwise AND</code> operator</p></h3>
-        <p  dir="auto">This operator performs a bitwise AND operation on each bit of two integers</p>
+    </div>
+    
+    <div id="cs-bitwise-and" class="js-operators-content" hidden>
+      <h3><p  dir="auto">This is <code  class="highlighter-rouge notranslate">Bitwise AND</code> operator</p></h3>
+      <p  dir="auto">This operator performs a bitwise AND operation on each bit of two integers</p>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">&amp;</span> <span class="nx">y</span><span class="p">);</span> <span class="c1">// 1  (0101 &amp; 0011 = 0001)</span>
 </code></pre></div></div>
 
-      </section>
-      
-      <section id="cs-logical-and" class="cheatsheet-panel" hidden>
-        <h3><p  dir="auto">This is <code  class="highlighter-rouge notranslate">Logical AND</code> operator</p></h3>
-        <p  dir="auto">This operator is commonly used to check if all supplied values are truthy.</p>
+    </div>
+    
+    <div id="cs-logical-and" class="js-operators-content" hidden>
+      <h3><p  dir="auto">This is <code  class="highlighter-rouge notranslate">Logical AND</code> operator</p></h3>
+      <p  dir="auto">This operator is commonly used to check if all supplied values are truthy.</p>
 <p  dir="auto">It also works as a control-flow operator: it will return the first falsy value. If none of the values are falsy, it will return the final value.</p>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// As a logical operator:</span>
 <span class="k">if </span><span class="p">(</span><span class="nx">someCondition</span> <span class="o">&amp;&amp;</span> <span class="nx">someOtherCondition</span><span class="p">)</span> <span class="p">{</span>
@@ -402,9 +401,8 @@ it’s indicating that this number’s value is negative 5.</p>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="dl">''</span> <span class="o">&amp;&amp;</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// '', the first falsy value</span>
 </code></pre></div></div>
 
-      </section>
-      
     </div>
+    
   </div>
 </section>
 
