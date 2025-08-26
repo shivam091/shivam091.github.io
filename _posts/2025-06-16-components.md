@@ -6,6 +6,7 @@ tags: [typography, design, styleguide]
 category: General
 excerpt: This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.
 slug: components
+toc: false
 image:
   path: /assets/img/posts/components/cover.png
   width: 1200
@@ -13,7 +14,7 @@ image:
   alt: Demonstration of layout components
 ---
 
-{% include code-playground.html %}
+{% include code-playground.html id="demo" %}
 
 ## Codeblocks
 
