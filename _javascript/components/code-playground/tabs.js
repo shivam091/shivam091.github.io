@@ -1,19 +1,31 @@
 export default class Tabs {
-  constructor(root) {
-    const tabButtons = root.querySelectorAll('[data-tab]');
-    const editors = root.querySelectorAll('[data-editor]');
+  constructor(root, tabSelector, panelSelector, tabAttr, panelAttr) {
+    this.tabs = [...root.querySelectorAll(tabSelector)];
+    this.panels = [...root.querySelectorAll(panelSelector)];
+    this.tabAttr = tabAttr;
+    this.panelAttr = panelAttr;
+    this._bind();
+  }
 
-    tabButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const tab = btn.dataset.tab;
-
-        tabButtons.forEach(b => b.setAttribute('aria-selected', 'false'));
-        btn.setAttribute('aria-selected', 'true');
-
-        editors.forEach(editor => {
-          editor.style.display = editor.dataset.editor === tab ? 'block' : 'none';
-        });
-      });
+  _bind() {
+    this.tabs.forEach(tab => {
+      tab.addEventListener("click", () => this.switch(tab.dataset[this.tabAttr]));
     });
+  }
+
+  get activeTab() {
+    return this.tabs.find(t => t.getAttribute("aria-selected") === "true");
+  }
+
+  switch(name) {
+    // Tabs: set aria-selected
+    this.tabs.forEach(t =>
+      t.setAttribute("aria-selected", String(t.dataset[this.tabAttr] === name))
+    );
+
+    // Panels: set aria-hidden
+    this.panels.forEach(p =>
+      p.setAttribute("aria-hidden", String(p.dataset[this.panelAttr] !== name))
+    );
   }
 }

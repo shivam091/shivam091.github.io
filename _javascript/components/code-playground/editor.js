@@ -1,21 +1,20 @@
 export default class Editor {
-  constructor(root) {
-    this.editors = {
-      html: root.querySelector('[data-editor="html"]'),
-      css: root.querySelector('[data-editor="css"]'),
-      js: root.querySelector('[data-editor="js"]'),
-    };
+  constructor(root, type) {
+    this.root = root;
+    this.type = type;
+    this.textarea = root.querySelector(`[data-editor="${type}"] textarea`);
+    this.initial = this.textarea.value;
   }
 
-  get(type) {
-    return this.editors[type]?.value || '';
+  get value() {
+    return this.textarea.value;
   }
 
-  getAll() {
-    return {
-      html: this.get('html'),
-      css: this.get('css'),
-      js: this.get('js')
-    };
+  set value(val) {
+    this.textarea.value = val;
+  }
+
+  reset() {
+    this.value = this.initial;
   }
 }
