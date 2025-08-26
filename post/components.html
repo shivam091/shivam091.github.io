@@ -355,7 +355,7 @@
 </svg>
 
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="286 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
+  <span data-tooltip="324 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
 </div>
 
 
@@ -372,14 +372,14 @@
       <span class="cp-dot blue"></span>
       <span class="cp-dot green"></span>
       <span class="cp-dot yellow"></span>
-      <span class="cp-title">CodePen‑style Playground</span>
+      <span class="cp-title">Code Playground</span>
     </div>
     <div class="cp-actions">
       <button class="cp-btn small" data-cp-export="">Export HTML</button>
       <button class="cp-btn small" data-cp-reset="">Reset</button>
     </div>
   </div>
-  <div class="cp-pen" data-code-playground="" data-autorun="true">
+  <div class="cp-pen" data-code-playground="" data-autorun="true" data-html="" data-css="" data-js="">
     <!-- Tabs row -->
     <div class="cp-tabs" role="tablist" aria-label="Editor Tabs">
       <button class="cp-tab" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML <span class="badge">.html</span>
@@ -399,30 +399,60 @@
     <!-- Editors -->
     <div class="cp-editors">
       <div class="cp-editor" role="tabpanel" aria-hidden="false" aria-labelledby="tab-html" data-editor="html">
-        <textarea spellcheck="false">
-					<div class="card">
-						<h1>Hello, Harshal 👋</h1>
-						<p>Edit HTML, CSS, and JS, then hit
-							<strong>Run</strong> or enable
-							<em>Auto‑run</em>.
-						</p>
-						<button id="btn">Click me</button>
-					</div>
-				</textarea>
+        <textarea spellcheck="false">&lt;div class="card"&gt;
+  &lt;h1&gt;Hello, I'm Harshal LADHE 👋&lt;/h1&gt;
+  &lt;p&gt;
+    Edit HTML, CSS, and JS, then hit
+    &lt;strong&gt;Run&lt;/strong&gt;
+    or enable
+    &lt;em&gt;Auto‑run&lt;/em&gt;.
+  &lt;/p&gt;
+  &lt;button id="btn"&gt;Click me&lt;/button&gt;
+&lt;/div&gt;
+</textarea>
       </div>
       <div class="cp-editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-css" data-editor="css">
-        <textarea spellcheck="false">:root{ --brand: #0ebeff; --ink:#111827; }
-body{ font-family: system-ui, sans-serif; margin:0; }
-.card{ width:min(680px, 90%); margin:2rem auto; padding:1.25rem 1.5rem; border-radius:14px; background:#ffffff; box-shadow:0 10px 30px rgba(0,0,0,.1); }
-h1{ margin:0 0 .5rem; font-size:clamp(1.5rem, 1rem + 2vw, 2rem); color:#0f172a }
-p{ color:#334155 }
-#btn{ background:var(--brand); color:white; border:0; padding:.6rem .9rem; border-radius:999px; font-weight:700; cursor:pointer }
-#btn:hover{ filter:brightness(0.95) }
+        <textarea spellcheck="false">:root {
+  --brand: #0ebeff;
+  --ink: #111827;
+}
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+}
+.card {
+  width: min(680px, 90%);
+  margin: 2rem auto;
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 1rem + 2vw, 2rem);
+  color: #0f172a;
+}
+p {
+  color: #334155;
+}
+#btn {
+  background: var(--brand);
+  color: white;
+  border: 0;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#btn:hover {
+  filter: brightness(0.95);
+}
 </textarea>
       </div>
       <div class="cp-editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-js" data-editor="js">
         <textarea spellcheck="false">document.getElementById('btn').addEventListener('click', () =&gt; {
-  alert('Boop! CodePen‑style playground ✅');
+  console.info("Boop! CodePen‑style playground ✅")
 });
 </textarea>
       </div>
@@ -450,8 +480,10 @@ p{ color:#334155 }
     </div>
     <!-- Optional initial seeds (override textareas if present) -->
     <!--
-      <script type="text/html" class="cp-seed-html">...</script><script type="text/css" class="cp-seed-css">...</script><script type="text/plain" class="cp-seed-js">...</script>
-      -->
+      <script type="text/html" class="cp-seed-html">...</script>
+      <script type="text/css" class="cp-seed-css">...</script>
+      <script type="text/plain" class="cp-seed-js">...</script>
+    -->
     <div class="cp-footer">
       <span class="cp-check">
         <input type="checkbox" data-cp-html-boiler="" checked> HTML boilerplate </span>
