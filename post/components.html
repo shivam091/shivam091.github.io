@@ -414,7 +414,9 @@
     <!-- Editors -->
     <div class="cp-editors">
       <div class="cp-editor" role="tabpanel" aria-hidden="false" aria-labelledby="tab-html" data-editor="html">
-        <textarea spellcheck="false">&lt;div class="card"&gt;
+        <div class="cp-editor-wrapper">
+          <div class="cp-editor-gutter"></div>
+          <textarea spellcheck="false">&lt;div class="card"&gt;
   &lt;h1&gt;Hello, I'm Harshal LADHE 👋&lt;/h1&gt;
   &lt;p&gt;
     Edit HTML, CSS, and JS, then hit
@@ -425,9 +427,12 @@
   &lt;button id="btn"&gt;Click me&lt;/button&gt;
 &lt;/div&gt;
 </textarea>
+        </div>
       </div>
       <div class="cp-editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-css" data-editor="css">
-        <textarea spellcheck="false">:root {
+        <div class="cp-editor-wrapper">
+          <div class="cp-editor-gutter"></div>
+          <textarea spellcheck="false">:root {
   --brand: #0ebeff;
   --ink: #111827;
 }
@@ -464,12 +469,16 @@ p {
   filter: brightness(0.95);
 }
 </textarea>
+        </div>
       </div>
       <div class="cp-editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-js" data-editor="js">
-        <textarea spellcheck="false">document.getElementById('btn').addEventListener('click', () =&gt; {
+        <div class="cp-editor-wrapper">
+          <div class="cp-editor-gutter"></div>
+          <textarea spellcheck="false">document.getElementById('btn').addEventListener('click', () =&gt; {
   console.info("Boop! CodePen‑style playground ✅")
 });
 </textarea>
+        </div>
       </div>
     </div>
     <!-- Preview -->
