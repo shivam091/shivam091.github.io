@@ -13,7 +13,7 @@ import CodeBlockUtils from "./utils/code-block-utils";
 import LazyLoader from "./modules/components/lazy-loader";
 import RetroCounter from "./components/retro-counter";
 import Scrollspy from "./components/scroll-spy";
-import Playground from './components/code-playground/playground';
+import CodePlayground from './components/code-playground';
 import DetailsPlusMorph from "./animations/details-plus-morph";
 import DetailsAnimator from "./animations/details-animator";
 import ArrowRightBoop from "./animations/arrow-right-boop";
@@ -49,9 +49,7 @@ HoverBoop.initialize(".icon-arrow-up", {boop: {translateY: -3}});
 HoverBoop.initialize(".icon-search", {boop: {rotate: 10, scale: 1.1}});
 HoverBoop.initialize(".icon-clipboard-check, .icon-hash", {boop: {scale: 1.1}});
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('[data-playground]').forEach(el => new Playground(el));
-});
+CodePlayground.initAll();
 
 RetroCounter.initAll("[data-retro-counter]", {
   version: "v2",
