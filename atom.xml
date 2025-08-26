@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-26T20:12:44+05:30</updated>
+  <updated>2025-08-26T22:19:37+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -6175,7 +6175,7 @@ like fr (fraction of available space).</p></li>
     <summary type="html">
       This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.
     </summary>
-    <content type="html"><![CDATA[<div class="cp-container">
+    <content type="html"><![CDATA[<div class="code-playground">
   <div class="cp-toolbar">
     <div class="cp-brand">
       <span class="cp-dot code-close">
@@ -6216,7 +6216,9 @@ like fr (fraction of available space).</p></li>
       <div class="cp-inline">
         <button class="cp-btn" data-cp-copy="" title="Copy active panel">Copy</button>
         <label class="cp-check">
-          <input type="checkbox" data-cp-autorun="" checked="" /> Auto‑run </label>
+          <input type="checkbox" data-cp-autorun="" checked="" />
+          Auto‑run
+        </label>
         <button class="cp-btn green" data-cp-run="">Run</button>
       </div>
     </div>
@@ -6318,10 +6320,10 @@ p {
       <script type="text/plain" class="cp-seed-js">...</script>
     -->
     <div class="cp-footer">
-      <span class="cp-check">
+      <label class="cp-check">
         <input type="checkbox" data-cp-html-boiler="" checked="" />
         HTML boilerplate
-      </span>
+      </label>
     </div>
   </div>
 </div>
