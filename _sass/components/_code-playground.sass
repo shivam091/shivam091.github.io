@@ -1,277 +1,235 @@
-:root
-  --cp-bg: #1e1f26 /* App background */
-  --cp-surface: #2b2d3a /* Panels */
-  --cp-surface-2: #242632 /* Topbar / tabs */
-  --cp-border: #3a3d4d /* Hairlines */
-  --cp-text: #e6e6e6 /* Primary text */
-  --cp-text-dim: #a9adc1 /* Muted text */
-  --cp-primary: #0ebeff /* CodePen blue */
-  --cp-accent: #47cf73 /* CodePen green */
-  --cp-warn: #ffdd40 /* CodePen yellow */
-  --cp-danger: #ff3c41 /* CodePen red */
-  --cp-radius: 14px
-  --cp-radius-sm: 10px
-  --cp-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "JetBrains Mono", "Fira Code", "Liberation Mono", "Courier New", monospace
-  --cp-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif
-  --cp-shadow: 0 10px 30px rgba(0, 0, 0, 0.35)
+@use "abstracts/tokens" as *
 
-.cp-container
-  max-width: 1200px
-  margin: 24px auto
-  padding: 0 16px
+.playground
+  background: var(--color-bg-default)
+  color: var(--color-fg-default)
+  border: $border-width-default solid var(--color-border-default)
+  border-radius: $border-radius-default
+  overflow: hidden
 
-/* Top bar */
-.cp-toolbar
+/* Toolbar */
+.toolbar
   display: flex
   align-items: center
   justify-content: space-between
-  background: var(--cp-surface-2)
-  border: 1px solid var(--cp-border)
-  border-bottom: none
-  padding: 10px 14px
-  border-top-left-radius: var(--cp-radius)
-  border-top-right-radius: var(--cp-radius)
+  background: var(--color-bg-muted)
+  color: var(--color-fg-muted)
+  padding: $space-sm $space-md
 
-.cp-brand
+.brand
   display: flex
   align-items: center
-  gap: 10px
+  gap: $space-sm
 
-.cp-dot
-  width: 10px
-  height: 10px
-  border-radius: 50%
+.dot .icon-circle-fill
+  width: 0.9em
+  height: 0.9em
 
-.cp-dot.blue
-  background: var(--cp-primary)
+.dot.close .icon-circle-fill
+  fill: var(--color-bg-danger-emphasis)
+.dot.minimize .icon-circle-fill
+  fill: var(--color-bg-attention-emphasis)
+.dot.maximize .icon-circle-fill
+  fill: var(--color-bg-success-emphasis)
 
-.cp-dot.green
-  background: var(--cp-accent)
-
-.cp-dot.yellow
-  background: var(--cp-warn)
-
-.cp-title
+.title
   font-weight: 600
   letter-spacing: 0.2px
 
-.cp-actions
+.actions
   display: flex
   align-items: center
   gap: 8px
 
-/* Buttons */
-.cp-btn
-  --h: 34px
-  height: var(--h)
-  padding: 0 12px
-  border-radius: 999px
-  border: 1px solid var(--cp-border)
-  background: linear-gradient(180deg, var(--cp-surface), #232634)
-  color: var(--cp-text)
-  display: inline-flex
-  align-items: center
-  gap: 8px
-  font-weight: 600
-  cursor: pointer
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05)
-  transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease
-
-.cp-btn:hover
-  transform: translateY(-1px)
-  border-color: #4a4f63
-
-.cp-btn:active
-  transform: translateY(0)
-
-.cp-btn.primary
-  background: linear-gradient(180deg, #148dbd, #0e6f96)
-  border-color: #1182aa
-
-.cp-btn.green
-  background: linear-gradient(180deg, #3aa65d, #2d8d4c)
-  border-color: #2f8f50
-
-.cp-btn.warn
-  background: linear-gradient(180deg, #e7c13b, #c4a431)
-  border-color: #c9a834
-  color: #1b1b1b
-
-.cp-btn.danger
-  background: linear-gradient(180deg, #e0444a, #c33a40)
-  border-color: #c2383e
-
-.cp-btn.small
-  --h: 28px
-  padding: 0 10px
-  font-size: 12px
-
-/* Main shell */
-.cp-pen
-  border: 1px solid var(--cp-border)
-  background: var(--cp-surface)
-  border-bottom-left-radius: var(--cp-radius)
-  border-bottom-right-radius: var(--cp-radius)
-  box-shadow: var(--cp-shadow)
+/* Pen wrapper */
+.pen
+  display: grid
+  grid-template-columns: 1fr 1fr
+  background: var(--color-bg-default)
   overflow: hidden
 
 /* Tabs */
-.cp-tabs
+.tabs
   display: flex
-  gap: 6px
+  gap: $space-sm
   align-items: center
   flex-wrap: wrap
-  background: var(--cp-surface-2)
-  border-top: 1px solid var(--cp-border)
-  border-bottom: 1px solid var(--cp-border)
-  padding: 8px 10px
+  background: var(--color-bg-muted)
+  border-top: $border-width-default solid var(--color-border-default)
+  border-bottom: $border-width-default solid var(--color-border-default)
+  padding: $space-sm $space-md
 
-.cp-tab
-  border: 1px solid var(--cp-border)
-  background: #222636
-  color: var(--cp-text-dim)
-  height: 30px
-  border-radius: 8px
-  padding: 0 10px
-  display: inline-flex
-  align-items: center
-  gap: 6px
-  font-weight: 600
-  cursor: pointer
-
-.cp-tab[aria-selected="true"]
-  background: #1e2231
-  color: var(--cp-text)
-  border-color: #50556d
-
-.cp-tab .badge
-  display: inline-block
-  min-width: 16px
-  height: 16px
-  padding: 0 6px
-  border-radius: 999px
-  font-size: 11px
-  line-height: 16px
-  background: #151928
-  color: #8d93a6
-  border: 1px solid #30344a
-
-.cp-tabs-spacer
+.spacer
   flex: 1
 
-.cp-inline
+.inline
   display: flex
   align-items: center
   gap: 8px
 
-.cp-check
+.check
   display: inline-flex
   align-items: center
   gap: 6px
-  color: var(--cp-text-dim)
+  color: var(--color-fg-muted)
   font-size: 12px
 
-.cp-check input
-  accent-color: var(--cp-accent)
+.check input
+  accent-color: var(--color-bg-accent-emphasis)
 
 /* Editors */
-.cp-editors
-  display: grid
-  grid-template-rows: auto 1fr
+.editors
+  display: flex
+  flex: 1
+  flex-direction: column
+  overflow: hidden
 
-.cp-editor
+.editor
   display: none
+  flex: 1
+  min-height: 400px
 
-.cp-editor[aria-hidden="false"]
-  display: block
+.editor[aria-hidden="false"]
+  display: flex
+  flex-direction: column
 
-.cp-editor textarea
+.editor textarea
+  flex: 1
   width: 100%
-  height: 280px
-  resize: vertical
-  min-height: 200px
-  background: #1a1d29
+  resize: none
+  min-height: 0
+  padding: $space-sm $space-md
+  font: 13px/1.6 $font-stack-monospace
+  background: var(--color-bg-default)
   border: none
-  color: var(--cp-text)
+  color: var(--color-fg-default)
   outline: none
-  padding: 12px 14px
-  border-top: 1px solid #111421
-  font: 13px/1.6 var(--cp-mono)
 
 /* Preview */
-.cp-preview
-  border-top: 1px solid var(--cp-border)
-  background: #111421
+.preview
+  border-top: $border-width-default solid var(--color-border-default)
+  background: var(--color-bg-default)
+  display: flex
+  flex-direction: column
+  flex: 1
+  min-height: 0
 
-.cp-preview-header
+.preview-tabs
   display: flex
   align-items: center
   justify-content: space-between
-  padding: 8px 10px
-  color: var(--cp-text-dim)
+  background: var(--color-bg-muted)
+  color: var(--color-fg-muted)
   font-size: 12px
-  border-bottom: 1px solid var(--cp-border)
+  border-bottom: $border-width-default solid var(--color-border-default)
+  padding: $space-sm $space-md
+  gap: $space-sm
 
-.cp-iframe
-  width: 100%
-  height: 360px
-  border: 0
-  display: block
-  background: white
-
-.cp-preview-tabs
-  display: flex
-  gap: 6px
-  padding: 6px 8px
-  background: var(--cp-surface-2)
-  border-bottom: 1px solid var(--cp-border)
-
-.cp-preview-tabs .cp-tab
-  height: 28px
-  padding: 0 12px
-  border-radius: 6px
-  background: #222636
-  color: var(--cp-text-dim)
-  font-size: 12px
-  cursor: pointer
-  border: 1px solid var(--cp-border)
-
-.cp-preview-tabs .cp-tab[aria-selected="true"]
-  background: #1e2231
-  color: var(--cp-text)
-  border-color: #50556d
-
-.cp-preview-panels
+.preview-panels
+  flex: 1
   position: relative
-  height: 360px
+  min-height: 0
 
-.cp-preview-panel
+.preview-panel
   position: absolute
   inset: 0
   display: none
 
-.cp-preview-panel[aria-hidden="false"]
-  display: block
+.preview-panel[aria-hidden="false"]
+  display: flex
+  flex-direction: column
 
-.cp-preview-panel iframe
+.preview-panel iframe,
+.preview-panel .console
+  flex: 1
   width: 100%
   height: 100%
-  border: 0
-  display: block
-  background: white
+  min-height: 400px
+  border: none
 
-.cp-footer
+/* Console */
+.console
+  position: relative
+  padding: $space-sm $space-md
+  overflow: auto
+  min-height: 100%
+  background: var(--color-bg-default)
+
+.console-actions
+  position: absolute
+  top: 6px
+  right: 6px
+
+  .cp-btn
+    padding: 2px 6px
+    font-size: 11px
+    background: var(--color-bg-control)
+    color: var(--color-fg-control)
+    border-radius: $border-radius-sm
+    border: $border-width-default solid var(--color-border-default)
+
+    &:hover
+      background: var(--color-bg-control-hover)
+
+.console-line
+  font: 12px / 1.4 $font-stack-monospace
+  white-space: pre-wrap
+
+.console-log
+  color: var(--color-fg-success)
+
+.console-info
+  color: var(--color-fg-accent)
+
+.console-warn
+  color: var(--color-fg-attention)
+
+.console-error
+  color: var(--color-fg-danger)
+
+.tab
+  background-color: var(--color-bg-control)
+  color: var(--color-fg-control)
+
+  &:hover,
+  &:focus
+    background-color: var(--color-bg-control-hover)
+
+  &[aria-selected="true"]
+    background: var(--color-bg-accent-muted)
+    font-weight: $font-weight-medium
+
+  /* Buttons */
+.tab,
+.cp-btn
+  border-radius: $border-radius-sm
+  padding: $space-sm
+  font-size: $font-size-sm
+  font-weight: $font-weight-base
+
+  .icon
+    height: 1rem
+    width: 1rem
+
+/* Editors column */
+.editors-col
   display: flex
-  justify-content: flex-end
-  gap: 8px
-  padding: 10px
-  border-top: 1px solid var(--cp-border)
-  background: var(--cp-surface-2)
+  flex-direction: column
+  border-right: $border-width-default solid var(--color-border-default)
 
-/* Mobile stack tweaks */
+/* Preview column */
+.preview-col
+  display: flex
+  flex-direction: column
+  min-height: 400px
+
+.preview-panels
+  flex: 1
+  position: relative
+
 @media (max-width: 720px)
-  .cp-toolbar
-    border-radius: 12px 12px 0 0
+  .pen
+    grid-template-columns: 1fr
 
-  .cp-preview .cp-iframe
-    height: 300px
+  .editors-col
+    border-right: none

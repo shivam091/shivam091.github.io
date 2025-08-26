@@ -1,11 +1,13 @@
 html: |
   <div class="card">
-  	<h1>Hello, Harshal 👋</h1>
-  	<p>Edit HTML, CSS, and JS, then hit
-  		<strong>Run</strong> or enable
-  		<em>Auto‑run</em>.
-  	</p>
-  	<button id="btn">Click me</button>
+    <h1>Hello, I'm Harshal LADHE 👋</h1>
+    <p>
+      Edit HTML, CSS, and JS, then hit
+      <strong>Run</strong>
+      or enable
+      <em>Auto‑run</em>.
+    </p>
+    <button id="btn">Click me</button>
   </div>
 css: |
   :root {
@@ -46,5 +48,5 @@ css: |
   }
 js: |
   document.getElementById('btn').addEventListener('click', () => {
-    alert('Boop! CodePen‑style playground ✅');
+    console.info("Boop! CodePen‑style playground ✅")
   });
