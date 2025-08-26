@@ -28,7 +28,7 @@
 <meta name="twitter:image:alt" content="Demonstration of layout components" />
 <meta property="twitter:title" content="Components" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal V. LADHE","url":"https://shivam091.github.io"},"dateModified":"2025-08-24T11:37:21+05:30","datePublished":"2025-06-16T18:20:00+05:30","description":"This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.","headline":"Components","image":{"width":1200,"height":630,"alt":"Demonstration of layout components","url":"https://shivam091.github.io/assets/img/posts/components/cover.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/components"},"url":"https://shivam091.github.io/post/components"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Harshal V. LADHE","url":"https://shivam091.github.io"},"dateModified":"2025-08-26T10:32:05+05:30","datePublished":"2025-06-16T18:20:00+05:30","description":"This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.","headline":"Components","image":{"width":1200,"height":630,"alt":"Demonstration of layout components","url":"https://shivam091.github.io/assets/img/posts/components/cover.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://shivam091.github.io/post/components"},"url":"https://shivam091.github.io/post/components"}</script>
 <!-- End Jekyll SEO tag -->
 <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-icon-57x57.png">
@@ -314,7 +314,7 @@
 <section class="page-content" aria-label="Components">
   <article class="post" itemscope itemtype="https://schema.org/BlogPosting" aria-labelledby="page-title">
   <meta itemprop="datePublished" content="2025-06-16T19:10:40+05:30">
-  <meta itemprop="dateModified" content="2025-08-24T11:37:21+05:30">
+  <meta itemprop="dateModified" content="2025-08-26T10:32:05+05:30">
   <meta itemprop="headline" content="Components">
   <meta itemprop="mainEntityOfPage" content="https://shivam091.github.io/post/components">
 
@@ -341,8 +341,8 @@
 </svg>
 
     <span class="visually-hidden">Last updated:</span>
-    <time datetime='2025-08-24T11:37:21+05:30' aria-label='Last updated on August 24, 2025 at 11:37 AM' role='time' data-tooltip='Sun, August 24, 2025 11:37 AM' data-tooltip-position='bottom' tabindex='0'>
-  August 24, 2025
+    <time datetime='2025-08-26T10:32:05+05:30' aria-label='Last updated on August 26, 2025 at 10:32 AM' role='time' data-tooltip='Tue, August 26, 2025 10:32 AM' data-tooltip-position='bottom' tabindex='0'>
+  August 26, 2025
 </time>
 
   </div>
@@ -355,7 +355,7 @@
 </svg>
 
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="231 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
+  <span data-tooltip="286 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
 </div>
 
 
@@ -366,44 +366,98 @@
 
   <div class="post-layout">
     <div class="post-content" itemprop="articleBody">
-      <div class="code-playground" data-playground="">
-  <div class="toolbar" role="toolbar" aria-label="Playground controls">
-    <div class="left">
-      <div class="tabs" role="tablist" aria-label="Code editors">
-        <button role="tab" data-tab="html" aria-selected="true">HTML</button>
-        <button role="tab" data-tab="css" aria-selected="false">CSS</button>
-        <button role="tab" data-tab="js" aria-selected="false">JS</button>
+      <div class="cp-container">
+  <div class="cp-toolbar">
+    <div class="cp-brand">
+      <span class="cp-dot blue"></span>
+      <span class="cp-dot green"></span>
+      <span class="cp-dot yellow"></span>
+      <span class="cp-title">CodePen‑style Playground</span>
+    </div>
+    <div class="cp-actions">
+      <button class="cp-btn small" data-cp-export="">Export HTML</button>
+      <button class="cp-btn small" data-cp-reset="">Reset</button>
+    </div>
+  </div>
+  <div class="cp-pen" data-code-playground="" data-autorun="true">
+    <!-- Tabs row -->
+    <div class="cp-tabs" role="tablist" aria-label="Editor Tabs">
+      <button class="cp-tab" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML <span class="badge">.html</span>
+      </button>
+      <button class="cp-tab" role="tab" aria-selected="false" data-tab="css" id="tab-css">CSS <span class="badge">.css</span>
+      </button>
+      <button class="cp-tab" role="tab" aria-selected="false" data-tab="js" id="tab-js">JS <span class="badge">.js</span>
+      </button>
+      <div class="cp-tabs-spacer"></div>
+      <div class="cp-inline">
+        <button class="cp-btn" data-cp-copy="" title="Copy active panel">Copy</button>
+        <label class="cp-check">
+          <input type="checkbox" data-cp-autorun="" checked> Auto‑run </label>
+        <button class="cp-btn green" data-cp-run="">Run</button>
       </div>
     </div>
-    <div class="right">
-      <button type="button" data-action="copy-html" title="Copy HTML">Copy HTML</button>
-      <button type="button" data-action="copy-css" title="Copy CSS">Copy CSS</button>
-      <button type="button" data-action="copy-js" title="Copy JS">Copy JS</button>
-      <button type="button" data-action="expand" title="Show all editors">Expand</button>
-      <button type="button" data-action="collapse" title="Hide editors">Collapse</button>
-      <button type="button" data-action="share" title="Copy shareable link">Share</button>
-      <button type="button" data-refresh="" title="Refresh preview">Refresh</button>
+    <!-- Editors -->
+    <div class="cp-editors">
+      <div class="cp-editor" role="tabpanel" aria-hidden="false" aria-labelledby="tab-html" data-editor="html">
+        <textarea spellcheck="false">
+					<div class="card">
+						<h1>Hello, Harshal 👋</h1>
+						<p>Edit HTML, CSS, and JS, then hit
+							<strong>Run</strong> or enable
+							<em>Auto‑run</em>.
+						</p>
+						<button id="btn">Click me</button>
+					</div>
+				</textarea>
+      </div>
+      <div class="cp-editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-css" data-editor="css">
+        <textarea spellcheck="false">:root{ --brand: #0ebeff; --ink:#111827; }
+body{ font-family: system-ui, sans-serif; margin:0; }
+.card{ width:min(680px, 90%); margin:2rem auto; padding:1.25rem 1.5rem; border-radius:14px; background:#ffffff; box-shadow:0 10px 30px rgba(0,0,0,.1); }
+h1{ margin:0 0 .5rem; font-size:clamp(1.5rem, 1rem + 2vw, 2rem); color:#0f172a }
+p{ color:#334155 }
+#btn{ background:var(--brand); color:white; border:0; padding:.6rem .9rem; border-radius:999px; font-weight:700; cursor:pointer }
+#btn:hover{ filter:brightness(0.95) }
+</textarea>
+      </div>
+      <div class="cp-editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-js" data-editor="js">
+        <textarea spellcheck="false">document.getElementById('btn').addEventListener('click', () =&gt; {
+  alert('Boop! CodePen‑style playground ✅');
+});
+</textarea>
+      </div>
     </div>
-  </div>
-
-  <div class="editors">
-    <div class="editor" data-panel="html">
-      <label class="sr-only" for="pg-html">HTML</label>
-      <textarea id="pg-html" data-editor="html" class="code-editor" data-lang="html">&lt;h1&gt;Hello Playground&lt;/h1&gt;\n&lt;p&gt;Edit HTML, CSS, JS and see live preview.&lt;/p&gt;</textarea>
+    <!-- Preview -->
+    <div class="cp-preview">
+      <div class="cp-preview-header cp-preview-tabs" role="tablist">
+        <button class="cp-tab" role="tab" aria-selected="true" data-preview="result">Result</button>
+        <button class="cp-tab" role="tab" aria-selected="false" data-preview="console">Console</button>
+      </div>
+      <div class="cp-preview-panels">
+        <div class="cp-preview-panel" data-panel="result" aria-hidden="false">
+          <iframe class="cp-iframe" title="Result"></iframe>
+        </div>
+        <div class="cp-preview-panel" data-panel="console" aria-hidden="true">
+          <div id="cp-console" style="font:12px/1.4 var(--cp-mono);
+                        background:#0b1220;
+                        color:#e6e6e6;
+                        padding:8px;
+                        min-height:100%;
+                        white-space:pre-wrap;
+                        overflow:auto;"></div>
+        </div>
+      </div>
     </div>
-    <div class="editor" data-panel="css" hidden="">
-      <label class="sr-only" for="pg-css">CSS</label>
-      <textarea id="pg-css" data-editor="css" class="code-editor" data-lang="css">:root{ --accent: hsl(262 83% 58%);}\nbody{ font-family: system-ui, sans-serif; padding: 2rem;}\nh1{ color: var(--accent);}\niframe{ border: 0; }</textarea>
+    <!-- Optional initial seeds (override textareas if present) -->
+    <!--
+      <script type="text/html" class="cp-seed-html">...</script><script type="text/css" class="cp-seed-css">...</script><script type="text/plain" class="cp-seed-js">...</script>
+      -->
+    <div class="cp-footer">
+      <span class="cp-check">
+        <input type="checkbox" data-cp-html-boiler="" checked> HTML boilerplate </span>
+      <span class="cp-check">
+        <input type="checkbox" data-cp-console=""> Show console </span>
     </div>
-    <div class="editor" data-panel="js" hidden="">
-      <label class="sr-only" for="pg-js">JS</label>
-      <textarea id="pg-js" data-editor="js" class="code-editor" data-lang="js">console.log('Playground ready');</textarea>
-    </div>
-  </div>
-
-  <div class="preview">
-    <iframe sandbox="allow-scripts allow-same-origin" data-preview="" title="Playground preview"></iframe>
-    <div class="iframe-resizer" role="separator" aria-orientation="horizontal" aria-label="Resize preview" tabindex="0"></div>
   </div>
 </div>
 
@@ -746,34 +800,7 @@ An example showing the <code class="language-plaintext highlighter-rouge">warnin
 
     </div>
 
-    <div class="toc-wrapper">
-  <h2 id="toc-heading">
-    Table of contents
-  </h2>
-  <nav class="toc" aria-labelledby="toc-heading" role="doc-toc">
-    <ul class="toc-level toc-level-2">
-<li><a href="#codeblocks" class="toc-link toc-link-level-2">Codeblocks</a>
-</li>
-<li><a href="#alerts" class="toc-link toc-link-level-2">Alerts</a>
-<ul class="toc-level toc-level-3">
-<li><a href="#default" class="toc-link toc-link-level-3">Default</a>
-</li>
-<li><a href="#with-icon-heading-and-dismiss" class="toc-link toc-link-level-3">With icon, heading, and dismiss</a>
-</li>
-<li><a href="#with-icon-outline-and-dismiss" class="toc-link toc-link-level-3">With icon, outline, and dismiss</a>
-</li>
-<li><a href="#with-links" class="toc-link toc-link-level-3">With links</a>
-</li>
-<li><a href="#markdown-support" class="toc-link toc-link-level-3">Markdown support</a>
-</li>
-<li><a href="#markdown-enabled-alert" class="toc-link toc-link-level-3">Markdown enabled alert</a>
-</li>
-</ul>
-</ul>
-
-  </nav>
-</div>
-
+    
   </div>
 <div class="post-meta post-meta-secondary" role="group" aria-label="Post metadata">
     
