@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-27T17:04:33+05:30</updated>
+  <updated>2025-08-27T17:17:35+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -6175,52 +6175,50 @@ like fr (fraction of available space).</p></li>
     <summary type="html">
       This post is a comprehensive test of various components. It includes alerts, code blocks, buttons, and more.
     </summary>
-    <content type="html"><![CDATA[<div class="code-playground">
-  <div class="cp-toolbar">
-    <div class="cp-brand">
-      <span class="cp-dot code-close">
-        <svg version="1.0" role="img" class="icon icon-circle-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
+    <content type="html"><![CDATA[<div class="playground">
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="brand">
+      <span class="dot close"><svg version="1.0" role="img" class="icon icon-circle-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
   <circle cx="12" cy="12" r="12" />
 </svg>
-
-      </span>
-      <span class="cp-dot code-minimize">
-        <svg version="1.0" role="img" class="icon icon-circle-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
+</span>
+      <span class="dot minimize"><svg version="1.0" role="img" class="icon icon-circle-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
   <circle cx="12" cy="12" r="12" />
 </svg>
-
-      </span>
-      <span class="cp-dot code-maximize">
-        <svg version="1.0" role="img" class="icon icon-circle-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
+</span>
+      <span class="dot maximize"><svg version="1.0" role="img" class="icon icon-circle-fill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="currentColor" aria-hidden="true" focusable="false">
   <circle cx="12" cy="12" r="12" />
 </svg>
-
-      </span>
-      <span class="cp-title">Code Playground</span>
+</span>
+      <span class="title">Code Playground</span>
     </div>
-    <div class="cp-actions">
-      <button class="cp-btn" data-cp-export="">Export HTML</button>
-      <button class="cp-btn" data-cp-reset="">Reset</button>
+    <div class="actions">
+      <button class="btn" data-cp-export="">Export HTML</button>
+      <button class="btn" data-cp-reset="">Reset</button>
     </div>
   </div>
-  <div class="cp-pen" data-code-playground="" data-autorun="true">
-    <!-- Tabs row -->
-    <div class="cp-tabs" role="tablist" aria-label="Editor Tabs">
-      <button class="cp-btn" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML</button>
-      <button class="cp-btn" role="tab" aria-selected="false" data-tab="css" id="tab-css">CSS</button>
-      <button class="cp-btn" role="tab" aria-selected="false" data-tab="js" id="tab-js">JS</button>
-      <div class="cp-tabs-spacer"></div>
-      <div class="cp-inline">
-        <button class="cp-btn" data-cp-copy="" title="Copy active panel">Copy</button>
-        <label class="cp-check">
-          <input type="checkbox" data-cp-autorun="" checked="" /> Auto‑run
+
+  <!-- Main -->
+  <div class="pen" data-code-playground="" data-autorun="true">
+    <!-- Editor Tabs -->
+    <div class="tabs" role="tablist" aria-label="Editor Tabs">
+      <button class="btn" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML</button>
+      <button class="btn" role="tab" aria-selected="false" data-tab="css" id="tab-css">CSS</button>
+      <button class="btn" role="tab" aria-selected="false" data-tab="js" id="tab-js">JS</button>
+      <div class="spacer"></div>
+      <div class="inline">
+        <button class="btn" data-cp-copy="" title="Copy active panel">Copy</button>
+        <label class="check">
+          <input type="checkbox" data-cp-autorun="" checked="" /> Auto-run
         </label>
-        <button class="cp-btn" data-cp-run="">Run</button>
+        <button class="btn" data-cp-run="">Run</button>
       </div>
     </div>
+
     <!-- Editors -->
-    <div class="cp-editors">
-      <div class="cp-editor" role="tabpanel" aria-hidden="false" aria-labelledby="tab-html" data-editor="html">
+    <div class="editors">
+      <div class="editor" role="tabpanel" aria-hidden="false" aria-labelledby="tab-html" data-editor="html">
         <textarea spellcheck="false">&lt;div class=&quot;card&quot;&gt;
   &lt;h1&gt;Hello, I&#39;m Harshal LADHE 👋&lt;/h1&gt;
   &lt;p&gt;
@@ -6233,7 +6231,7 @@ like fr (fraction of available space).</p></li>
 &lt;/div&gt;
 </textarea>
       </div>
-      <div class="cp-editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-css" data-editor="css">
+      <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-css" data-editor="css">
         <textarea spellcheck="false">:root {
   --brand: #0ebeff;
   --ink: #111827;
@@ -6272,39 +6270,36 @@ p {
 }
 </textarea>
       </div>
-      <div class="cp-editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-js" data-editor="js">
+      <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-js" data-editor="js">
         <textarea spellcheck="false">document.getElementById(&#39;btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
   console.info(&quot;Boop! CodePen‑style playground ✅&quot;)
 });
 </textarea>
       </div>
     </div>
+
     <!-- Preview -->
-    <div class="cp-preview">
-      <div class="cp-preview-tabs" role="tablist">
-        <button class="cp-btn" role="tab" aria-selected="true" data-preview="result">Result</button>
-        <button class="cp-btn" role="tab" aria-selected="false" data-preview="console">Console</button>
+    <div class="preview">
+      <div class="preview-tabs" role="tablist">
+        <button class="btn" role="tab" aria-selected="true" data-preview="result">Result</button>
+        <button class="btn" role="tab" aria-selected="false" data-preview="console">Console</button>
       </div>
-      <div class="cp-preview-panels">
-        <div class="cp-preview-panel" data-panel="result" aria-hidden="false">
-          <iframe class="cp-iframe" title="Result"></iframe>
+      <div class="preview-panels">
+        <div class="panel" data-panel="result" aria-hidden="false">
+          <iframe class="iframe" title="Result"></iframe>
         </div>
-        <div class="cp-preview-panel" data-panel="console" aria-hidden="true">
-          <div id="cp-console" class="cp-console"></div>
+        <div class="panel" data-panel="console" aria-hidden="true">
+          <div class="console" id="cp-console"></div>
         </div>
       </div>
     </div>
-    <!-- Optional initial seeds (override textareas if present) -->
-    <!--
-      <script type="text/html" class="cp-seed-html">...</script>
-      <script type="text/css" class="cp-seed-css">...</script>
-      <script type="text/plain" class="cp-seed-js">...</script>
-    -->
-    <div class="cp-footer">
-      <span class="cp-check">
+
+    <!-- Footer -->
+    <div class="footer">
+      <label class="check">
         <input type="checkbox" data-cp-html-boiler="" checked="" />
         HTML boilerplate
-      </span>
+      </label>
     </div>
   </div>
 </div>
