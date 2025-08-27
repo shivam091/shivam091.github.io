@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-26T22:42:01+05:30</updated>
+  <updated>2025-08-27T11:25:24+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -6216,18 +6216,14 @@ like fr (fraction of available space).</p></li>
       <div class="cp-inline">
         <button class="cp-btn" data-cp-copy="" title="Copy active panel">Copy</button>
         <label class="cp-check">
-          <input type="checkbox" data-cp-autorun="" checked="" />
-          Auto‑run
-        </label>
+          <input type="checkbox" data-cp-autorun="" checked="" /> Auto‑run </label>
         <button class="cp-btn green" data-cp-run="">Run</button>
       </div>
     </div>
     <!-- Editors -->
     <div class="cp-editors">
       <div class="cp-editor" role="tabpanel" aria-hidden="false" aria-labelledby="tab-html" data-editor="html">
-        <div class="cp-editor-wrapper">
-          <div class="cp-editor-gutter"></div>
-          <textarea spellcheck="false">&lt;div class=&quot;card&quot;&gt;
+        <textarea spellcheck="false">&lt;div class=&quot;card&quot;&gt;
   &lt;h1&gt;Hello, I&#39;m Harshal LADHE 👋&lt;/h1&gt;
   &lt;p&gt;
     Edit HTML, CSS, and JS, then hit
@@ -6238,12 +6234,9 @@ like fr (fraction of available space).</p></li>
   &lt;button id=&quot;btn&quot;&gt;Click me&lt;/button&gt;
 &lt;/div&gt;
 </textarea>
-        </div>
       </div>
       <div class="cp-editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-css" data-editor="css">
-        <div class="cp-editor-wrapper">
-          <div class="cp-editor-gutter"></div>
-          <textarea spellcheck="false">:root {
+        <textarea spellcheck="false">:root {
   --brand: #0ebeff;
   --ink: #111827;
 }
@@ -6280,16 +6273,12 @@ p {
   filter: brightness(0.95);
 }
 </textarea>
-        </div>
       </div>
       <div class="cp-editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-js" data-editor="js">
-        <div class="cp-editor-wrapper">
-          <div class="cp-editor-gutter"></div>
-          <textarea spellcheck="false">document.getElementById(&#39;btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+        <textarea spellcheck="false">document.getElementById(&#39;btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
   console.info(&quot;Boop! CodePen‑style playground ✅&quot;)
 });
 </textarea>
-        </div>
       </div>
     </div>
     <!-- Preview -->
@@ -6320,10 +6309,10 @@ p {
       <script type="text/plain" class="cp-seed-js">...</script>
     -->
     <div class="cp-footer">
-      <label class="cp-check">
+      <span class="cp-check">
         <input type="checkbox" data-cp-html-boiler="" checked="" />
         HTML boilerplate
-      </label>
+      </span>
     </div>
   </div>
 </div>
