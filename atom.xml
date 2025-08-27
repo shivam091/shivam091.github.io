@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-27T19:33:51+05:30</updated>
+  <updated>2025-08-27T20:24:16+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -6293,7 +6293,12 @@ p {
             <iframe class="iframe" title="Result"></iframe>
           </div>
           <div class="preview-panel" data-panel="console" aria-hidden="true">
-            <div class="console" id="cp-console"></div>
+            <div class="console" id="cp-console">
+              <div class="console-actions">
+                <button class="cp-btn" data-cp-clear-console="">Clear</button>
+              </div>
+              <div class="console-log-area"></div>
+            </div>
           </div>
         </div>
       </div>
