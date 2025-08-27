@@ -355,7 +355,7 @@
 </svg>
 
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="319 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
+  <span data-tooltip="317 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
 </div>
 
 
@@ -385,28 +385,29 @@
       <span class="title">Code Playground</span>
     </div>
     <div class="actions">
-      <button class="btn" data-cp-export="">Export HTML</button>
-      <button class="btn" data-cp-reset="">Reset</button>
+      <button class="cp-btn" data-cp-export="">Export HTML</button>
+      <button class="cp-btn" data-cp-reset="">Reset</button>
     </div>
   </div>
 
   <!-- Main -->
   <div class="pen" data-code-playground="" data-autorun="true">
-    <!-- Editor Tabs -->
-    <div class="tabs" role="tablist" aria-label="Editor Tabs">
-      <button class="btn" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML</button>
-      <button class="btn" role="tab" aria-selected="false" data-tab="css" id="tab-css">CSS</button>
-      <button class="btn" role="tab" aria-selected="false" data-tab="js" id="tab-js">JS</button>
-      <div class="spacer"></div>
-      <div class="inline">
-        <button class="btn" data-cp-copy="" title="Copy active panel">Copy</button>
+    <div class="editors-col">
+      <!-- Editor Tabs -->
+      <div class="tabs" role="tablist" aria-label="Editor Tabs">
+        <button class="cp-btn" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML</button>
+        <button class="cp-btn" role="tab" aria-selected="false" data-tab="css" id="tab-css">CSS</button>
+        <button class="cp-btn" role="tab" aria-selected="false" data-tab="js" id="tab-js">JS</button>
+        <div class="spacer"></div>
+        <div class="inline">
+          <button class="cp-btn" data-cp-copy="" title="Copy active panel">Copy</button>
+        </div>
       </div>
-    </div>
 
-    <!-- Editors -->
-    <div class="editors">
-      <div class="editor" role="tabpanel" aria-hidden="false" aria-labelledby="tab-html" data-editor="html">
-        <textarea spellcheck="false">&lt;div class="card"&gt;
+      <!-- Editors -->
+      <div class="editors">
+        <div class="editor" role="tabpanel" aria-hidden="false" aria-labelledby="tab-html" data-editor="html">
+          <textarea spellcheck="false">&lt;div class="card"&gt;
   &lt;h1&gt;Hello, I'm Harshal LADHE 👋&lt;/h1&gt;
   &lt;p&gt;
     Edit HTML, CSS, and JS, then hit
@@ -417,9 +418,9 @@
   &lt;button id="btn"&gt;Click me&lt;/button&gt;
 &lt;/div&gt;
 </textarea>
-      </div>
-      <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-css" data-editor="css">
-        <textarea spellcheck="false">:root {
+        </div>
+        <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-css" data-editor="css">
+          <textarea spellcheck="false">:root {
   --brand: #0ebeff;
   --ink: #111827;
 }
@@ -456,42 +457,37 @@ p {
   filter: brightness(0.95);
 }
 </textarea>
-      </div>
-      <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-js" data-editor="js">
-        <textarea spellcheck="false">document.getElementById('btn').addEventListener('click', () =&gt; {
+        </div>
+        <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-js" data-editor="js">
+          <textarea spellcheck="false">document.getElementById('btn').addEventListener('click', () =&gt; {
   console.info("Boop! CodePen‑style playground ✅")
 });
 </textarea>
+        </div>
       </div>
     </div>
 
     <!-- Preview -->
-    <div class="preview">
-      <div class="preview-tabs" role="tablist">
-        <button class="btn" role="tab" aria-selected="true" data-preview="result">Result</button>
-        <button class="btn" role="tab" aria-selected="false" data-preview="console">Console</button>
-        <div class="spacer"></div>
-        <label class="check">
-          <input type="checkbox" data-cp-autorun="" checked> Auto-run
-        </label>
-        <button class="btn" data-cp-run="">Run</button>
-      </div>
-      <div class="preview-panels">
-        <div class="preview-panel" data-panel="result" aria-hidden="false">
-          <iframe class="iframe" title="Result"></iframe>
+    <div class="preview-col">
+      <div class="preview">
+        <div class="preview-tabs" role="tablist">
+          <button class="cp-btn" role="tab" aria-selected="true" data-preview="result">Result</button>
+          <button class="cp-btn" role="tab" aria-selected="false" data-preview="console">Console</button>
+          <div class="spacer"></div>
+          <label class="check">
+            <input type="checkbox" data-cp-autorun="" checked> Auto-run
+          </label>
+          <button class="cp-btn" data-cp-run="">Run</button>
         </div>
-        <div class="preview-panel" data-panel="console" aria-hidden="true">
-          <div class="console" id="cp-console"></div>
+        <div class="preview-panels">
+          <div class="preview-panel" data-panel="result" aria-hidden="false">
+            <iframe class="iframe" title="Result"></iframe>
+          </div>
+          <div class="preview-panel" data-panel="console" aria-hidden="true">
+            <div class="console" id="cp-console"></div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      <label class="check">
-        <input type="checkbox" data-cp-html-boiler="" checked>
-        HTML boilerplate
-      </label>
     </div>
   </div>
 </div>
