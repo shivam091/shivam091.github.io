@@ -390,23 +390,23 @@
       <span class="cp-title">Code Playground</span>
     </div>
     <div class="cp-actions">
-      <button class="btn btn-sm" data-cp-export="">Export HTML</button>
-      <button class="btn btn-sm" data-cp-reset="">Reset</button>
+      <button class="cp-btn" data-cp-export="">Export HTML</button>
+      <button class="cp-btn" data-cp-reset="">Reset</button>
     </div>
   </div>
   <div class="cp-pen" data-code-playground="" data-autorun="true">
     <!-- Tabs row -->
     <div class="cp-tabs" role="tablist" aria-label="Editor Tabs">
-      <button class="btn cp-code-tabs" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML</button>
-      <button class="btn cp-code-tabs" role="tab" aria-selected="false" data-tab="css" id="tab-css">CSS</button>
-      <button class="btn cp-code-tabs" role="tab" aria-selected="false" data-tab="js" id="tab-js">JS</button>
+      <button class="cp-btn" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML</button>
+      <button class="cp-btn" role="tab" aria-selected="false" data-tab="css" id="tab-css">CSS</button>
+      <button class="cp-btn" role="tab" aria-selected="false" data-tab="js" id="tab-js">JS</button>
       <div class="cp-tabs-spacer"></div>
       <div class="cp-inline">
-        <button class="btn" data-cp-copy="" title="Copy active panel">Copy</button>
+        <button class="cp-btn" data-cp-copy="" title="Copy active panel">Copy</button>
         <label class="cp-check">
           <input type="checkbox" data-cp-autorun="" checked> Auto‑run
         </label>
-        <button class="btn" data-cp-run="">Run</button>
+        <button class="cp-btn" data-cp-run="">Run</button>
       </div>
     </div>
     <!-- Editors -->
@@ -472,9 +472,9 @@ p {
     </div>
     <!-- Preview -->
     <div class="cp-preview">
-      <div class="cp-preview-header cp-preview-tabs" role="tablist">
-        <button class="btn" role="tab" aria-selected="true" data-preview="result">Result</button>
-        <button class="btn" role="tab" aria-selected="false" data-preview="console">Console</button>
+      <div class="cp-preview-tabs" role="tablist">
+        <button class="cp-btn" role="tab" aria-selected="true" data-preview="result">Result</button>
+        <button class="cp-btn" role="tab" aria-selected="false" data-preview="console">Console</button>
       </div>
       <div class="cp-preview-panels">
         <div class="cp-preview-panel" data-panel="result" aria-hidden="false">
