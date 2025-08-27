@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-27T17:29:14+05:30</updated>
+  <updated>2025-08-27T17:42:39+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -6209,10 +6209,6 @@ like fr (fraction of available space).</p></li>
       <div class="spacer"></div>
       <div class="inline">
         <button class="btn" data-cp-copy="" title="Copy active panel">Copy</button>
-        <label class="check">
-          <input type="checkbox" data-cp-autorun="" checked="" /> Auto-run
-        </label>
-        <button class="btn" data-cp-run="">Run</button>
       </div>
     </div>
 
@@ -6283,6 +6279,11 @@ p {
       <div class="preview-tabs" role="tablist">
         <button class="btn" role="tab" aria-selected="true" data-preview="result">Result</button>
         <button class="btn" role="tab" aria-selected="false" data-preview="console">Console</button>
+        <div class="spacer"></div>
+        <label class="check">
+          <input type="checkbox" data-cp-autorun="" checked="" /> Auto-run
+        </label>
+        <button class="btn" data-cp-run="">Run</button>
       </div>
       <div class="preview-panels">
         <div class="preview-panel" data-panel="result" aria-hidden="false">
