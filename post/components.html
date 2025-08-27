@@ -355,7 +355,7 @@
 </svg>
 
   <span class="visually-hidden">Estimated reading time:</span>
-  <span data-tooltip="322 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
+  <span data-tooltip="319 words" data-tooltip-position="bottom" tabindex="0">2 min read</span>
 </div>
 
 
@@ -390,26 +390,23 @@
       <span class="cp-title">Code Playground</span>
     </div>
     <div class="cp-actions">
-      <button class="cp-btn small" data-cp-export="">Export HTML</button>
-      <button class="cp-btn small" data-cp-reset="">Reset</button>
+      <button class="btn btn-sm" data-cp-export="">Export HTML</button>
+      <button class="btn btn-sm" data-cp-reset="">Reset</button>
     </div>
   </div>
   <div class="cp-pen" data-code-playground="" data-autorun="true">
     <!-- Tabs row -->
     <div class="cp-tabs" role="tablist" aria-label="Editor Tabs">
-      <button class="cp-tab" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML <span class="badge">.html</span>
-      </button>
-      <button class="cp-tab" role="tab" aria-selected="false" data-tab="css" id="tab-css">CSS <span class="badge">.css</span>
-      </button>
-      <button class="cp-tab" role="tab" aria-selected="false" data-tab="js" id="tab-js">JS <span class="badge">.js</span>
-      </button>
+      <button class="btn cp-code-tabs" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML</button>
+      <button class="btn cp-code-tabs" role="tab" aria-selected="false" data-tab="css" id="tab-css">CSS</button>
+      <button class="btn cp-code-tabs" role="tab" aria-selected="false" data-tab="js" id="tab-js">JS</button>
       <div class="cp-tabs-spacer"></div>
       <div class="cp-inline">
-        <button class="cp-btn" data-cp-copy="" title="Copy active panel">Copy</button>
+        <button class="btn" data-cp-copy="" title="Copy active panel">Copy</button>
         <label class="cp-check">
           <input type="checkbox" data-cp-autorun="" checked> Auto‑run
         </label>
-        <button class="cp-btn" data-cp-run="">Run</button>
+        <button class="btn" data-cp-run="">Run</button>
       </div>
     </div>
     <!-- Editors -->
@@ -476,21 +473,15 @@ p {
     <!-- Preview -->
     <div class="cp-preview">
       <div class="cp-preview-header cp-preview-tabs" role="tablist">
-        <button class="cp-tab" role="tab" aria-selected="true" data-preview="result">Result</button>
-        <button class="cp-tab" role="tab" aria-selected="false" data-preview="console">Console</button>
+        <button class="btn" role="tab" aria-selected="true" data-preview="result">Result</button>
+        <button class="btn" role="tab" aria-selected="false" data-preview="console">Console</button>
       </div>
       <div class="cp-preview-panels">
         <div class="cp-preview-panel" data-panel="result" aria-hidden="false">
           <iframe class="cp-iframe" title="Result"></iframe>
         </div>
         <div class="cp-preview-panel" data-panel="console" aria-hidden="true">
-          <div id="cp-console" style="font:12px/1.4 var(--cp-mono);
-                        background:#0b1220;
-                        color:#e6e6e6;
-                        padding:8px;
-                        min-height:100%;
-                        white-space:pre-wrap;
-                        overflow:auto;"></div>
+          <div id="cp-console" class="cp-console"></div>
         </div>
       </div>
     </div>
