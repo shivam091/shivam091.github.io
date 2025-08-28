@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-28T13:47:32+05:30</updated>
+  <updated>2025-08-28T14:07:17+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -6194,18 +6194,6 @@ like fr (fraction of available space).</p></li>
       <span class="title">Code Playground</span>
     </div>
     <div class="actions">
-      <button class="cp-btn" data-cp-reset=""><svg version="1.0" role="img" class="icon icon-skip-back" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <line x1="5" y1="19" x2="5" y2="5" />
-  <polygon points="19 20 9 12 19 4 19 20" />
-</svg>
-</button>
-      <button class="cp-btn" data-cp-reset=""><svg version="1.0" role="img" class="icon icon-hash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <line x1="4" y1="9" x2="20" y2="9" />
-  <line x1="4" y1="15" x2="20" y2="15" />
-  <line x1="10" y1="3" x2="8" y2="21" />
-  <line x1="16" y1="3" x2="14" y2="21" />
-</svg>
-</button>
       <button class="cp-btn" data-cp-export=""><svg version="1.0" role="img" class="icon icon-download" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
   <polyline points="7 10 12 15 17 10" />
@@ -6220,43 +6208,20 @@ like fr (fraction of available space).</p></li>
     <div class="editors-col">
       <!-- Editor Tabs -->
       <div class="tabs" role="tablist" aria-label="Editor Tabs">
-        
-          <button class="tab" role="tab" aria-selected="true" data-tab="html" id="tab-html">
-            index.html
-          </button>
-        
-          <button class="tab" role="tab" aria-selected="false" data-tab="css" id="tab-css">
-            main.css
-          </button>
-        
-          <button class="tab" role="tab" aria-selected="false" data-tab="js" id="tab-js">
-            main.js
-          </button>
-        
+        <button class="tab" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="css" id="tab-css">CSS</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="js" id="tab-js">JS</button>
         <div class="spacer"></div>
         <div class="inline">
-          <button class="cp-btn" data-cp-copy="" title="Copy active panel"><svg version="1.0" role="img" class="icon icon-clipboard-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-  <path d="m9 14 2 2 4-4" stroke-opacity="0" />
-</svg>
-</button>
+          <button class="cp-btn" data-cp-reset="">Reset</button>
+          <button class="cp-btn" data-cp-copy="" title="Copy active panel">Copy</button>
         </div>
       </div>
 
       <!-- Editors -->
       <div class="editors">
-        
-          <div class="editor" role="tabpanel" aria-hidden="false" aria-labelledby="tab-html" data-editor="html">
-            <div class="editor-actions">
-              <button class="cp-btn" data-cp-copy="" title="Copy code"><svg version="1.0" role="img" class="icon icon-clipboard-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-  <path d="m9 14 2 2 4-4" stroke-opacity="0" />
-</svg>
-</button>
-            </div>
-            <textarea spellcheck="false">&lt;div class=&quot;card&quot;&gt;
+        <div class="editor" role="tabpanel" aria-hidden="false" aria-labelledby="tab-html" data-editor="html">
+          <textarea spellcheck="false">&lt;div class=&quot;card&quot;&gt;
   &lt;h1&gt;Hello, I&#39;m Harshal LADHE 👋&lt;/h1&gt;
   &lt;p&gt;
     Edit HTML, CSS, and JS, then hit
@@ -6267,18 +6232,9 @@ like fr (fraction of available space).</p></li>
   &lt;button id=&quot;btn&quot;&gt;Click me&lt;/button&gt;
 &lt;/div&gt;
 </textarea>
-          </div>
-        
-          <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-css" data-editor="css">
-            <div class="editor-actions">
-              <button class="cp-btn" data-cp-copy="" title="Copy code"><svg version="1.0" role="img" class="icon icon-clipboard-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-  <path d="m9 14 2 2 4-4" stroke-opacity="0" />
-</svg>
-</button>
-            </div>
-            <textarea spellcheck="false">:root {
+        </div>
+        <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-css" data-editor="css">
+          <textarea spellcheck="false">:root {
   --brand: #0ebeff;
   --ink: #111827;
 }
@@ -6315,23 +6271,13 @@ p {
   filter: brightness(0.95);
 }
 </textarea>
-          </div>
-        
-          <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-js" data-editor="js">
-            <div class="editor-actions">
-              <button class="cp-btn" data-cp-copy="" title="Copy code"><svg version="1.0" role="img" class="icon icon-clipboard-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-  <path d="m9 14 2 2 4-4" stroke-opacity="0" />
-</svg>
-</button>
-            </div>
-            <textarea spellcheck="false">document.getElementById(&#39;btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+        </div>
+        <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-js" data-editor="js">
+          <textarea spellcheck="false">document.getElementById(&#39;btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
   console.info(&quot;Boop! CodePen‑style playground ✅&quot;)
 });
 </textarea>
-          </div>
-        
+        </div>
       </div>
     </div>
 
@@ -6354,11 +6300,7 @@ p {
           <div class="preview-panel" data-panel="console" aria-hidden="true">
             <div class="console" id="cp-console">
               <div class="console-actions">
-                <button class="cp-btn" data-cp-clear-console=""><svg version="1.0" role="img" class="icon icon-circle-slash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.25rem" width="1.25rem" fill="none" aria-hidden="true" focusable="false" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="12" cy="12" r="10" />
-  <path d="M22 2 2 22" />&lt;/path&gt;
-</svg>
-</button>
+                <button class="cp-btn" data-cp-clear-console="">Clear</button>
               </div>
               <div class="console-log-area"></div>
             </div>
