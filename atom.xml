@@ -5,7 +5,7 @@
   <subtitle>I’m a software engineer, freelancer, and lifelong learner passionate about building clean, scalable web solutions. I contribute to open-source, embrace minimalism in code and life, and stay curious about emerging tech.</subtitle>
   <id>https://shivam091.github.io/</id>
   <icon>https://shivam091.github.io/img/favicon.png</icon>
-  <updated>2025-08-28T12:51:17+05:30</updated>
+  <updated>2025-08-28T13:32:55+05:30</updated>
   <rights>© 2025 Harshal V. LADHE</rights>
 
   <link rel="alternate" type="text/html" href="https://shivam091.github.io" />
@@ -6222,15 +6222,15 @@ like fr (fraction of available space).</p></li>
       <div class="tabs" role="tablist" aria-label="Editor Tabs">
         
           <button class="tab" role="tab" aria-selected="true" data-tab="html" id="tab-html">
-            demo.html
+            index.html
           </button>
         
           <button class="tab" role="tab" aria-selected="false" data-tab="css" id="tab-css">
-            demo.css
+            main.css
           </button>
         
           <button class="tab" role="tab" aria-selected="false" data-tab="js" id="tab-js">
-            demo.js
+            main.js
           </button>
         
         <div class="spacer"></div>
