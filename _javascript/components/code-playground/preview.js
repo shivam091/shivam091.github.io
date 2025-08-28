@@ -1,16 +1,16 @@
 export default class Preview {
   constructor(root, consolePanel) {
-    this.iframe = root.querySelector(".iframe");
+    this.previewFrame = root.querySelector(".preview-iframe");
     this.consolePanel = consolePanel;
   }
 
   run(html, css, js) {
     const doc = this._composeDocument(html, css, js);
-
     const blob = new Blob([doc], { type: "text/html" });
     const url = URL.createObjectURL(blob);
-    this.iframe.src = url;
-    this.iframe.onload = () => URL.revokeObjectURL(url);
+
+    this.previewFrame.src = url;
+    this.previewFrame.onload = () => URL.revokeObjectURL(url);
   }
 
   _composeDocument(html, css, js) {
@@ -33,7 +33,7 @@ export default class Preview {
                 "*"
               );
             } catch(e){}
-            orig[level](...args); // forward to DevTools console
+            orig[level](...args);
           }
           console.log = (...a)=>send("log", a);
           console.info = (...a)=>send("info", a);
@@ -44,8 +44,16 @@ export default class Preview {
       <\/script>
     `;
 
-    const body = `
-      ${html}
+    const baseStyle = `
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--color-bg-default);
+        color: var(--color-fg-default);
+      }
+    `;
+
+    const scripts = `
       ${consolePatch}
       <script>${js}<\/script>
     `;
@@ -53,12 +61,15 @@ export default class Preview {
     return `<!doctype html>
   <html lang="en">
   <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Playground</title>
-  <style>html,body{height:100%}body{margin:0}${css}</style>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Playground</title>
+    <style>${baseStyle}</style>
+    <style>${css}</style>
   </head>
   <body>
-  ${body}
+  ${html}
+  ${scripts}
   </body>
   </html>`;
   }

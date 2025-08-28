@@ -10,7 +10,12 @@
       <span class="title">Code Playground</span>
     </div>
     <div class="actions">
+      <button class="cp-btn" data-cp-reset>{% svg skip-back %}</button>
+      <button class="cp-btn" data-cp-reset>{% svg hash %}</button>
       <button class="cp-btn" data-cp-export>{% svg download %}</button>
+      {% if playground.url %}
+      <a href="{{ playground.url }}" class="cp-btn" target="_blank" title="Open in CodePen">{% svg external-link %}</a>
+      {% endif %}
     </div>
   </div>
 
@@ -19,27 +24,47 @@
     <div class="editors-col">
       <!-- Editor Tabs -->
       <div class="tabs" role="tablist" aria-label="Editor Tabs">
+        {% if playground.code.html %}
         <button class="tab" role="tab" aria-selected="true" data-tab="html" id="tab-html">HTML</button>
+        {% endif %}
+        {% if playground.code.css %}
         <button class="tab" role="tab" aria-selected="false" data-tab="css" id="tab-css">CSS</button>
+        {% endif %}
+        {% if playground.code.js %}
         <button class="tab" role="tab" aria-selected="false" data-tab="js" id="tab-js">JS</button>
+        {% endif %}
         <div class="spacer"></div>
-        <div class="inline">
-          <button class="cp-btn" data-cp-reset>Reset</button>
-          <button class="cp-btn" data-cp-copy title="Copy active panel">Copy</button>
-        </div>
       </div>
 
       <!-- Editors -->
       <div class="editors">
+        {% if playground.code.html %}
         <div class="editor" role="tabpanel" aria-hidden="false" aria-labelledby="tab-html" data-editor="html">
-          <textarea spellcheck="false">{{ playground.html | escape }}</textarea>
+          <div class="editor-actions">
+            <button class="cp-btn" data-copy-target="#code-html" title="Copy code">{% svg clipboard-check %}</button>
+            <button class="cp-btn" data-beautify="html" title="Beautify code">{% svg magic-wand %}</button>
+          </div>
+          <textarea spellcheck="false" id="code-html">{{ playground.code.html | escape }}</textarea>
         </div>
+        {% endif %}
+        {% if playground.code.css %}
         <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-css" data-editor="css">
-          <textarea spellcheck="false">{{ playground.css | escape }}</textarea>
+          <div class="editor-actions">
+            <button class="cp-btn" data-copy-target="#code-css" title="Copy code">{% svg clipboard-check %}</button>
+            <button class="cp-btn" data-beautify="css" title="Beautify code">{% svg magic-wand %}</button>
+          </div>
+          <textarea spellcheck="false" id="code-css">{{ playground.code.css | escape }}</textarea>
         </div>
+        {% endif %}
+        {% if playground.code.js %}
         <div class="editor" role="tabpanel" aria-hidden="true" aria-labelledby="tab-js" data-editor="js">
-          <textarea spellcheck="false">{{ playground.js | escape }}</textarea>
+          <div class="editor-actions">
+            <button class="cp-btn" data-copy-target="#code-js" title="Copy code">{% svg clipboard-check %}</button>
+            <button class="cp-btn" data-beautify="js" title="Beautify code">{% svg magic-wand %}</button>
+          </div>
+          <textarea spellcheck="false" id="code-js">{{ playground.code.js | escape }}</textarea>
         </div>
+        {% endif %}
       </div>
     </div>
 
@@ -53,19 +78,19 @@
           <label class="check">
             <input type="checkbox" data-cp-autorun checked /> Auto-run
           </label>
-          <button class="cp-btn" data-cp-run>Run</button>
         </div>
         <div class="preview-panels">
           <div class="preview-panel" data-panel="result" aria-hidden="false">
-            <iframe class="iframe" title="Result"></iframe>
+            <div class="preview-actions">
+              <button class="cp-btn" data-cp-run>{% svg refresh %}</button>
+            </div>
+            <iframe class="preview-iframe" title="Result"></iframe>
           </div>
           <div class="preview-panel" data-panel="console" aria-hidden="true">
-            <div class="console" id="cp-console">
-              <div class="console-actions">
-                <button class="cp-btn" data-cp-clear-console>Clear</button>
-              </div>
-              <div class="console-log-area"></div>
+            <div class="preview-actions">
+              <button class="cp-btn" data-cp-clear-console>{% svg circle-slash %}</button>
             </div>
+            <div class="console" id="cp-console"></div>
           </div>
         </div>
       </div>

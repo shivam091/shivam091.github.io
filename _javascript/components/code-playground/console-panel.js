@@ -1,34 +1,25 @@
 export default class ConsolePanel {
   constructor(el) {
     this.el = el;
-    this.logArea = el.querySelector(".console-log-area");
-    this.btnClearConsole = el.querySelector("[data-cp-clear-console]");
 
-    this._bindEvents();
     this._bindMessages();
   }
 
-  _bindEvents() {
-    if (this.btnClearConsole) {
-      this.btnClearConsole.addEventListener("click", () => this.clear());
-    }
-  }
-
   clear() {
-    if (this.logArea) {
-      this.logArea.textContent = "";
+    if (this.el) {
+      this.el.textContent = "";
     }
   }
 
   append(level, args) {
-    if (!this.logArea) return;
+    if (!this.el) return;
 
     const div = document.createElement("div");
     div.className = `console-line console-${level}`;
     div.textContent = `[${level}] ${Array.isArray(args) ? args.join(" ") : args}`;
 
-    this.logArea.appendChild(div);
-    this.logArea.scrollTop = this.logArea.scrollHeight;
+    this.el.appendChild(div);
+    this.el.scrollTop = this.el.scrollHeight;
   }
 
   _bindMessages() {
