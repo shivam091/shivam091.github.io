@@ -32,6 +32,7 @@ export default class CodePlayground {
     this.btnRun = this.container.querySelector("[data-cp-run]");
     this.chkAuto = this.container.querySelector("[data-cp-autorun]");
     this.btnReset = this.container.querySelector("[data-cp-reset]");
+    this.btnClearConsole = this.container.querySelector("[data-cp-clear-console]");
 
     this._bindControls();
 
@@ -44,6 +45,10 @@ export default class CodePlayground {
   _bindControls() {
     if (this.btnRun) {
       this.btnRun.addEventListener("click", () => this.run());
+    }
+
+    if (this.btnClearConsole) {
+      this.btnClearConsole.addEventListener("click", () => this.consolePanel.clear());
     }
 
     // autorun (debounced). If checkbox exists use it, otherwise fall back to _wantAuto
