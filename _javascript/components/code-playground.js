@@ -59,6 +59,21 @@ export default class CodePlayground {
     Object.values(this.editors).forEach(ed => ed.textarea.addEventListener("input", debounced));
 
     if (this.btnReset) this.btnReset.addEventListener("click", () => this.reset());
+
+    // Beautify
+    this.container.querySelectorAll("[data-beautify]").forEach(btn => {
+      const type = btn.getAttribute("data-beautify");
+      btn.addEventListener("click", () => {
+        const editor = this.editors[type];
+        if (editor) {
+          editor.format();
+
+          // re-run preview if autorun is enabled
+          const doAuto = this.chkAuto ? this.chkAuto.checked : this._wantAuto;
+          if (doAuto) this.run();
+        }
+      });
+    });
   }
 
   run() {

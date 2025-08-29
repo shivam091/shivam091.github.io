@@ -22,7 +22,8 @@
   "devDependencies": {
     "concurrently": "^8.2.2",
     "esbuild": "^0.25.5",
-    "esbuild-sass-plugin": "^3.3.1"
+    "esbuild-sass-plugin": "^3.3.1",
+    "prettier": "3.6.2"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
