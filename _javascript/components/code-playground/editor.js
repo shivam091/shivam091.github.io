@@ -1,3 +1,5 @@
+import { formatCode } from "./prettier";
+
 export default class Editor {
   constructor(root, type) {
     this.root = root;
@@ -17,7 +19,34 @@ export default class Editor {
   reset() {
     this.value = this.initial;
   }
+
+  async format() {
+    this.value = await formatCode(this.value, this.type);
+  }
 }
+
+
+
+// export default class Editor {
+//   constructor(root, type) {
+//     this.root = root;
+//     this.type = type;
+//     this.textarea = root.querySelector(`[data-editor="${type}"] textarea`);
+//     this.initial = this.textarea.value;
+//   }
+//
+//   get value() {
+//     return this.textarea.value;
+//   }
+//
+//   set value(val) {
+//     this.textarea.value = val;
+//   }
+//
+//   reset() {
+//     this.value = this.initial;
+//   }
+// }
 
 
 // import Prism from "prismjs";
