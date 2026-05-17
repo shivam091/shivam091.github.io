@@ -1,0 +1,9 @@
+@use "@/styles/abstracts";
+@use "@/styles/base";
+@use "@/styles/layout";
+
+/* Tailwind - Integrated at the top or bottom depending on override needs */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+

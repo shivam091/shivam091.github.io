@@ -1,0 +1,3 @@
+.container {
+  max-width: clamp(var(--min-width, 37.5rem), 90%, var(--max-width, 75rem));
+}

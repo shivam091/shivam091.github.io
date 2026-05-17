@@ -1,0 +1,10 @@
+@use "@/styles/abstracts/mixins/generate-variables" as *;
+@use "@/styles/themes/light" as *;
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  @include generate-variables($light);
+}
+
