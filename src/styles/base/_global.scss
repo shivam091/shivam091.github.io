@@ -1,0 +1,66 @@
+@use "@/styles/abstracts/tokens" as *;
+
+// ─── WHY @layer base ──────────────────────────────────────────────────────────
+//
+// Tailwind v4 places ALL utilities (mx-auto, mb-4, py-6, gap-*, etc.) inside
+// @layer utilities.  In the CSS cascade, unlayered styles always beat layered
+// ones — no matter specificity.  If the reset rules below were unlayered, every
+// Tailwind spacing utility would be silently overridden on div/section/article
+// elements.  Wrapping them in @layer base keeps the correct cascade order:
+//
+//   @layer base  <  @layer utilities  <  unlayered component CSS (.module.scss)
+//
+// Within @layer base, source order applies: Tailwind's own base (from
+// globals.css, imported first) runs before these rules, so our overrides win
+// inside the layer without needing !important.
+// ─────────────────────────────────────────────────────────────────────────────
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body,
+  body *:not(p):not(li):not(ul):not(ol):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(blockquote):not(pre):not(code):not(kbd):not(samp) {
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-bg-scrollbar-thumb) var(--color-bg-scrollbar);
+  }
+
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+    background-color: var(--color-bg-scrollbar);
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-bg-scrollbar);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-bg-scrollbar-thumb);
+    border-radius: 10px;
+    border: 2px solid var(--color-bg-scrollbar);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-bg-scrollbar-thumb-hover);
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background-color: var(--color-bg-scrollbar);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: var(--color-bg-scrollbar);
+  }
+}
