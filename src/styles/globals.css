@@ -1,0 +1,12 @@
+/*
+ * Tailwind CSS v4 entry point.
+ *
+ * This MUST be a plain .css file (not .scss) because Tailwind v4's PostCSS
+ * plugin resolves `@import "tailwindcss"` — if this line were inside a .scss
+ * file, Sass would try to resolve it as a Sass module and error out.
+ *
+ * `@config` points Tailwind at the JS/TS config so that `theme.extend`
+ * (custom fonts, etc.) is still respected in v4.
+ */
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
