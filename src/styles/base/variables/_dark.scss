@@ -1,0 +1,8 @@
+@use "./../../abstracts/mixins/generate-variables" as *;
+@use "./../../themes/dark" as *;
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  @include generate-variables($dark);
+}

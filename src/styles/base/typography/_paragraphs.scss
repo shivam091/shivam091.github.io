@@ -1,0 +1,6 @@
+@use "./../../abstracts/tokens" as *;
+
+p {
+  margin-block: $fluid-space-sm;
+  line-height: $line-height-paragraph;
+}

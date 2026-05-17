@@ -1,0 +1,9 @@
+@use "./../../abstracts/mixins/generate-variables" as *;
+@use "./../../themes/soft-dark" as *;
+
+[data-theme="soft-dark"] {
+  color-scheme: soft-dark;
+
+  @include generate-variables($soft-dark);
+}
+

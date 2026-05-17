@@ -1,0 +1,18 @@
+@use "./../../styles/abstracts/animations/bg-slide" as *;
+
+.heroHeading {
+  background: linear-gradient(
+    90deg,
+    var(--color-fg-attention),
+    var(--color-fg-success),
+    var(--color-fg-danger),
+    var(--color-fg-accent),
+    var(--color-fg-attention)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: bg-slide 3s linear infinite;
+}

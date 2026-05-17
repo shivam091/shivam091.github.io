@@ -1,0 +1,16 @@
+@use "sass:map";
+@use "./../../abstracts/tokens/typography" as *;
+@use "./../../abstracts/modules/heading" as *;
+
+@each $heading, $tokens in $heading-tokens {
+  #{$heading},
+  .#{$heading} {
+    @extend %heading;
+
+    font-size: map.get($tokens, size);
+    font-weight: map.get($tokens, weight);
+    line-height: map.get($tokens, line-height);
+    letter-spacing: map.get($tokens, letter-spacing);
+    text-wrap: map.get($tokens, wrap);
+  }
+}
