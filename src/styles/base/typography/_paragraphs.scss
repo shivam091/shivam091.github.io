@@ -1,0 +1,8 @@
+@use "@/styles/abstracts/tokens" as *;
+
+@layer base {
+  p {
+    margin-block: $fluid-space-sm;
+    line-height: $line-height-paragraph;
+  }
+}
