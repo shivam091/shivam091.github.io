@@ -1,0 +1,24 @@
+// Gradient text + matching underline applied to the typed role string.
+.heroHighlight {
+  background-color: var(--color-fg-danger);
+  background-image: linear-gradient(45deg, var(--color-fg-danger) 20%, var(--color-fg-success) 45%, var(--color-fg-attention) 70%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(45deg, var(--color-fg-danger) 20%, var(--color-fg-success) 45%, var(--color-fg-attention) 70%);
+  }
+}
+
+// Colours the typed.js blinking cursor to match the gradient accent.
+:global(.typed-cursor) {
+  color: var(--color-fg-attention);
+}

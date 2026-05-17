@@ -1,0 +1,10 @@
+// Base SVG display reset applied to every icon — normalises rendering across browsers.
+.icon {
+  display: block;
+  text-decoration: inherit;
+  text-rendering: auto;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overflow: visible;
+}
