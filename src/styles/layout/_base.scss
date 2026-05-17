@@ -1,0 +1,27 @@
+@use "@/styles/abstracts/tokens" as *;
+@use "@/styles/abstracts/mixins/transit-properties" as *;
+
+@layer base {
+  html {
+    height: 100%;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-height: 100vh;
+    width: 100%;
+    font-family: $font-stack-system;
+    font-size: $fluid-font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    color: var(--color-fg-default);
+    background: var(--color-bg-default);
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    @include transit-properties((background, color), $duration: $color-swap-duration, $easing: $color-swap-timing-function);
+  }
+}

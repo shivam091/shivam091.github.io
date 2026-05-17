@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "@/styles/abstracts/functions/to-em" as *;
+@use "@/styles/abstracts/tokens/breakpoints" as *;
+
+@function breakpoint($key, $use-em: false) {
+  @if map.has-key($breakpoints, $key) {
+    $value: map.get($breakpoints, $key);
+
+    @if $use-em {
+      @return to-em($value);
+    }
+
+    @return $value;
+  } @else {
+    @error "No breakpoint found for `#{$key}`. Available keys: #{map.keys($breakpoints)}.";
+  }
+}

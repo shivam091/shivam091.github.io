@@ -1,0 +1,10 @@
+@use "@/styles/abstracts/mixins/generate-variables" as *;
+@use "@/styles/themes/soft-dark" as *;
+
+@layer base {
+  [data-theme="soft-dark"] {
+    color-scheme: soft-dark;
+
+    @include generate-variables($soft-dark);
+  }
+}
