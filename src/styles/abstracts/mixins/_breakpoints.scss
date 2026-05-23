@@ -1,4 +1,4 @@
-@use "./../functions/breakpoint" as *;
+@use "@/styles/abstracts/functions/breakpoint" as *;
 
 // Mixin for media queries (min-width)
 @mixin min($key, $use-em: false) {

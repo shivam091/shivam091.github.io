@@ -1,0 +1,14 @@
+/** Borders (using Tailwind's border radius and width utilities) **/
+$border-width-default: 0.0625rem;
+$border-default: $border-width-default solid var(--color-border-default);
+$border-muted: $border-width-default solid var(--color-border-muted);
+$border-neutral-muted: $border-width-default solid var(--color-border-neutral-muted);
+$border-accent-emphasis: $border-width-default solid var(--color-border-accent-emphasis);
+$border-accent-muted: $border-width-default solid var(--color-border-accent-muted);
+$border-attention-emphasis: $border-width-default solid var(--color-border-attention-emphasis);
+$border-attention-muted: $border-width-default solid var(--color-border-attention-muted);
+$border-danger-emphasis: $border-width-default solid var(--color-border-danger-emphasis);
+$border-danger-muted: $border-width-default solid var(--color-border-danger-muted);
+$border-success-emphasis: $border-width-default solid var(--color-border-success-emphasis);
+$border-success-muted: $border-width-default solid var(--color-border-success-muted);
+$border-disabled: $border-width-default solid var(--color-border-disabled);

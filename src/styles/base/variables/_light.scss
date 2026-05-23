@@ -1,5 +1,5 @@
-@use "./../../abstracts/mixins/generate-variables" as *;
-@use "./../../themes/light" as *;
+@use "@/styles/abstracts/mixins/generate-variables" as *;
+@use "@/styles/themes/light" as *;
 
 :root,
 [data-theme="light"] {

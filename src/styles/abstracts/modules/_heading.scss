@@ -1,7 +1,7 @@
-@use "./../tokens/spacing" as *;
+@use "@/styles/abstracts/tokens/spacing" as *;
 
 %heading {
-  margin-block: $fluid-space-md $fluid-space-sm;
+  margin-block: $space-md $space-sm;
   text-rendering: optimizeLegibility;
   letter-spacing: -0.01em;
   overflow-wrap: break-word;

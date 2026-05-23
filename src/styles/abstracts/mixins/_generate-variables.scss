@@ -1,4 +1,4 @@
-@use "./../functions/flatten-map" as utils;
+@use "@/styles/abstracts/functions/flatten-map" as utils;
 
 @mixin generate-variables($map) {
   @each $name, $value in utils.flatten-map($map) {

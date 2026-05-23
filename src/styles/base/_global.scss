@@ -1,11 +1,13 @@
-@use "./../abstracts/tokens" as *;
-
 *,
 *::before,
 *::after {
-  margin: $space-none;
-  padding: $space-none;
   box-sizing: border-box;
+}
+
+body,
+body *:not(p):not(li):not(ul):not(ol):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(blockquote):not(pre):not(code):not(kbd):not(samp) {
+  margin: 0;
+  padding: 0;
 }
 
 * {

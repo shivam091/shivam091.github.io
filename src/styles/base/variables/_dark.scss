@@ -1,5 +1,5 @@
-@use "./../../abstracts/mixins/generate-variables" as *;
-@use "./../../themes/dark" as *;
+@use "@/styles/abstracts/mixins/generate-variables" as *;
+@use "@/styles/themes/dark" as *;
 
 [data-theme="dark"] {
   color-scheme: dark;
