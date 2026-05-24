@@ -1,0 +1,61 @@
+@use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
+@use "@/styles/abstracts/mixins/transition-properties" as *;
+
+.skyBannerBottom {
+  position: absolute;
+  inset: auto $space-none $space-none;
+  height: 350px;
+  z-index: -1;
+  pointer-events: none;
+  overflow: clip;
+  background: linear-gradient(
+    to top,
+    hsl(from var(--color-bg-sky-subtle) h s l / 0.925),
+    var(--color-bg-sky-subtle)
+  );
+  @include transition-properties(background, $duration: $sky-from-duration, $easing: $color-swap-timing-function);
+}
+
+// Right-anchored overlay SVG that sits above the bottom clouds
+.cloudLayersTopOverlay {
+  display: block;
+  position: absolute;
+  inset: auto 50% 0 auto;
+  z-index: 1;
+  transform: translateZ(0);
+
+  @include breakpoint.between(sm, md) {
+    transform: translate(80px);
+  }
+}
+
+.bottomCloudOverlay {
+  fill: var(--color-bg-sky-bottom);
+  @include transition-properties(fill, $duration: $first-swoop-duration, $easing: $color-swap-timing-function);
+}
+
+// Wide panoramic cloud row
+.cloudLayersBottom {
+  position: absolute;
+  inset: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: clip;
+  margin-top: -1px;
+}
+
+.cloudShapesBottom {
+  display: block;
+  margin-top: -1px;
+  max-width: revert;
+  min-width: 5120px;
+  overflow: visible;
+  transform: translateZ(0);
+}
+
+.bottomBackgroundClouds {
+  fill: var(--color-bg-default);
+  @include transition-properties(fill, $duration: $color-swap-duration, $easing: $color-swap-timing-function);
+}
