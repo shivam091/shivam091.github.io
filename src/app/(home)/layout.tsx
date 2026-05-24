@@ -1,5 +1,6 @@
 import React, { JSX } from "react";
 import Hero from "@/components/Hero/Hero";
+import SkyBannerBottom from "@/components/SkyBanners/SkyBannerBottom/SkyBannerBottom";
 
 export default function HomeLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
@@ -13,6 +14,8 @@ export default function HomeLayout({ children }: { children: React.ReactNode }):
           </main>
         </div>
       </div>
+
+      <SkyBannerBottom />
     </>
   );
 };
