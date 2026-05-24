@@ -1,6 +1,7 @@
 import { JSX } from "react";
 import PageHeading from "@/components/PageHeading/PageHeading";
 import SkyBannerTop from "@/components/SkyBanners/SkyBannerTop/SkyBannerTop";
+import SkyBannerBottom from "@/components/SkyBanners/SkyBannerBottom/SkyBannerBottom";
 
 export default function InternalLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
@@ -23,6 +24,8 @@ export default function InternalLayout({ children }: { children: React.ReactNode
           </main>
         </div>
       </div>
+
+      <SkyBannerBottom />
     </>
   );
 }
