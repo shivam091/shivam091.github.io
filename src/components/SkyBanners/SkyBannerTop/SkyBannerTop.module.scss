@@ -8,6 +8,7 @@
   overflow: clip;
   max-height: 100vh;
   pointer-events: none;
+  z-index: -1;
 }
 
 .cloudLayers {
@@ -20,7 +21,6 @@
   align-items: center;
   background: linear-gradient(to bottom, var(--color-bg-sky-from), var(--color-bg-sky-to));
   overflow: clip;
-  z-index: -1;
   @include transit-properties(background, $duration: $sky-from-duration, $easing: $color-swap-timing-function);
 
   &.inner {
