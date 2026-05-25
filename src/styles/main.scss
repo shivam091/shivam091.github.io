@@ -2,6 +2,31 @@
 @use "@/styles/base";
 @use "@/styles/layout";
 
+// ─── Animatable CSS custom properties (CSS Houdini) ──────────────────────────
+//
+// @property must be declared in the *global* stylesheet so the browser
+// registers --glass-opacity / --blur-amount as typed, animatable properties
+// before any component CSS runs.  If placed inside a CSS-module file the
+// bundler might emit it after the component rule that uses it, or not at all.
+//
+// @keyframes glass-on is intentionally kept in Header.module.scss so that
+// CSS Modules can scope its name and the matching `animation:` reference
+// inside the same file simultaneously — keeping both in sync.
+//
+// Support: Chrome 85+, Firefox 128+, Safari 16.4+
+
+@property --glass-opacity {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --blur-amount {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: false;
+}
+
 /* Tailwind - Integrated at the top or bottom depending on override needs */
 @tailwind base;
 @tailwind components;

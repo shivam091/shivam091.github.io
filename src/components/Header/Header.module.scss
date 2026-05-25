@@ -1,0 +1,273 @@
+@use "@/styles/abstracts/mixins/transition-properties" as *;
+@use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
+@use "@/styles/abstracts/modules/list-unstyled" as *;
+
+// ─── Scroll-driven glass animation ───────────────────────────────────────────
+//
+// @property --glass-opacity / --blur-amount are declared in main.scss (global)
+// so the browser registers them as typed properties before this module runs.
+//
+// @keyframes glass-on lives HERE so CSS Modules scopes both the keyframe name
+// and the `animation:` reference in `.siteHeader` identically — they always
+// match each other.
+//
+// Support: animation-timeline scroll() — Chrome 115+, Firefox 110+, Safari 18+
+// Fallback: header stays transparent — fully functional.
+
+@keyframes glass-on {
+  from {
+    --glass-opacity: 0;
+    --blur-amount: 0px;
+  }
+  to {
+    --glass-opacity: 0.7;
+    --blur-amount: 4px;
+  }
+}
+
+// ─── Site header ─────────────────────────────────────────────────────────────
+
+.siteHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: sticky;
+  inset: $space-none $space-none auto;
+  z-index: 10;
+  height: $header-height;
+  padding: $fluid-space-md;
+  color: var(--color-fg-accent-muted);
+  gap: $space-md;
+
+  // Glass is always expressed via the custom properties; @keyframes drives
+  // those properties when scroll-driven animations are supported.
+  background: hsl(from var(--color-bg-sky-from) h s l / var(--glass-opacity));
+  backdrop-filter: blur(var(--blur-amount));
+
+  // Smooth colour swap when the user changes theme
+  @include transition-properties(
+    color,
+    $duration: 350ms,
+    $easing: cubic-bezier(0.41, 0.1, 0.13, 1)
+  );
+
+  // Tie the glass animation to the page scroll position.
+  // Fully glassed by the time the user has scrolled 120 px.
+  @supports (animation-timeline: scroll()) {
+    animation: glass-on linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0px 120px;
+  }
+
+  @include breakpoint.max(md) {
+    gap: $space-sm;
+    justify-content: space-between;
+    min-height: $header-height;
+    height: auto;
+  }
+}
+
+// ─── Logo ─────────────────────────────────────────────────────────────────────
+
+.siteLogo {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-md;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-fg-default);
+    text-decoration: none;
+  }
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: $border-radius-full;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+// ─── Desktop navigation ───────────────────────────────────────────────────────
+
+.navItems {
+  display: flex;
+  gap: $space-sm;
+  flex: 1 1 auto;
+
+  @include breakpoint.max(md) {
+    display: none;
+  }
+}
+
+.navLinks {
+  @include list-unstyled;
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+
+  li {
+    margin-block-end: $space-none;
+  }
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-sm;
+  text-decoration: none;
+  font-size: $font-size-sm;
+  color: inherit;
+  padding-block: $space-xs;
+  padding-inline: $space-sm;
+
+  &:hover {
+    color: var(--color-fg-default);
+  }
+
+  &[aria-current="page"] {
+    color: var(--color-fg-default);
+    font-weight: $font-weight-semi-bold;
+  }
+}
+
+// ─── Header actions ──────────────────────────────────────────────────────────
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+}
+
+// ── Action button entry animation via @starting-style ─────────────────────────
+//
+// Each button has a CSS custom property --index (set by the nth-child loop
+// below) that staggers the delay so they drop in one after another.
+
+.headerAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-sm;
+  border-radius: $border-radius-full;
+  background-color: var(--color-bg-control-transparent);
+  color: inherit;
+  border: $border-width-default solid var(--color-border-control-transparent);
+  font-size: $fluid-font-size-sm;
+  font-weight: $font-weight-semi-bold;
+  cursor: pointer;
+  line-height: 1;
+  text-decoration: none;
+
+  // Entry animation (drop-in from above, staggered by --index)
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity       0.5s ease              calc(var(--index, 1) * 0.1s),
+    transform     0.5s ease              calc(var(--index, 1) * 0.1s),
+    background-color $motion-duration-default $motion-easing-smooth,
+    border-color     $motion-duration-default $motion-easing-smooth;
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-bg-control-transparent);
+    border-color: var(--color-border-control-transparent-hover);
+    outline: none;
+  }
+
+  // Assign --index so each button's delay is offset by 0.1 s
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      --index: #{$i};
+    }
+  }
+}
+
+// ─── Theme dropdown ──────────────────────────────────────────────────────────
+
+.dropdown {
+  position: relative;
+
+  &.headerAction {
+    display: inline-flex;
+  }
+}
+
+.dropdownToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.dropdownMenu {
+  @include list-unstyled;
+  position: absolute;
+  top: calc(100% + #{$space-xs});
+  right: 0;
+  z-index: 100;
+  min-width: 10rem;
+  background: var(--color-bg-overlay);
+  border: $border-width-default solid var(--color-border-overlay);
+  border-radius: $border-radius-md;
+  padding: $space-xs 0;
+  box-shadow: var(--box-shadow-md);
+
+  li {
+    margin-block-end: 0;
+  }
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  width: 100%;
+  padding: $space-sm $space-md;
+  background: none;
+  border: none;
+  color: var(--color-fg-default);
+  font-size: $font-size-sm;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    background: var(--color-bg-neutral-muted);
+  }
+}
+
+// ─── Mobile toggle ───────────────────────────────────────────────────────────
+
+.toggleMenu {
+  display: none;
+
+  @include breakpoint.max(md) {
+    display: inline-flex;
+  }
+}
+
+// Hamburger icon scales up when the drawer is open.
+// Driven by a class toggled from React state — no data-drawer needed.
+.iconActive {
+  transform: scale(1.5);
+  @include transition-properties(
+    transform,
+    $duration: $motion-duration-default,
+    $easing: $motion-easing-smooth
+  );
+}

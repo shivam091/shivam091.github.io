@@ -1,3 +1,23 @@
+/** Generic motion durations **/
+$motion-duration-fast:       150ms;
+$motion-duration-default:    300ms;
+$motion-duration-slow:       500ms;
+$motion-duration-ultra-slow: 1500ms;
+
+/** Generic motion easings **/
+$motion-easing-default:   ease;
+$motion-easing-in:        ease-in;
+$motion-easing-out:       ease-out;
+$motion-easing-smooth:    cubic-bezier(0.4, 0, 0.2, 1);
+$motion-easing-overshoot: cubic-bezier(0.17, 0.67, 0.2, 1);
+
+/** Generic motion delays **/
+$motion-delay-short:      100ms;
+$motion-delay-default:    200ms;
+$motion-delay-long:       400ms;
+$motion-delay-extra-long: 600ms;
+
+/** Theme-swap specific durations / easings **/
 $color-swap-duration: 350ms;
 $sky-duration: calc($color-swap-duration + 300ms);
 $sky-from-duration: calc($color-swap-duration + 500ms);
