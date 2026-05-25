@@ -1,0 +1,157 @@
+---
+title: "Next.js App Router Deep Dive"
+excerpt: "The App Router rewrites the mental model for Next.js — Server Components, nested layouts, parallel routes, and streaming change how you think about data fetching and UI composition."
+published_at: "2026-03-22"
+last_modified_at: "2026-04-15"
+author: "Harshal V. LADHE"
+tags: ["nextjs", "react", "web"]
+categories: ["tutorials", "web-dev"]
+---
+
+## The Shift to Server Components
+
+Next.js 13+ App Router made React Server Components (RSC) the default. Every component inside the `app/` directory is a Server Component unless you add `"use client"` at the top.
+
+This is a fundamental shift:
+
+| | Server Component | Client Component |
+|---|---|---|
+| Rendering | Server (Node.js) | Client (browser) |
+| Access to `fs`, DB | ✅ Yes | ❌ No |
+| useState / useEffect | ❌ No | ✅ Yes |
+| Event handlers | ❌ No | ✅ Yes |
+| Bundle size impact | Zero | Included in JS bundle |
+
+## Layouts and Nested Routing
+
+The `layout.tsx` file wraps all routes within a segment — and crucially, **layouts do not re-render on navigation**. Only the leaf page component re-renders.
+
+```
+app/
+  layout.tsx          ← Root layout (always mounted)
+  (marketing)/
+    layout.tsx        ← Marketing layout
+    about/page.tsx
+    pricing/page.tsx
+  (app)/
+    layout.tsx        ← App layout (sidebar, nav)
+    dashboard/page.tsx
+    settings/page.tsx
+```
+
+Route groups (parentheses folders) let you share layouts without affecting the URL.
+
+## Async Server Components
+
+Server Components can be `async` — you can `await` database queries or API calls directly:
+
+```tsx
+// app/posts/[slug]/page.tsx
+import { getPostBySlug } from '@/lib/posts'
+
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+  const post = await getPostBySlug(slug)   // ← direct DB/fs call
+
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <p>{post.excerpt}</p>
+    </article>
+  )
+}
+```
+
+No `useEffect`, no loading states at the page level, no API routes just to hydrate the page.
+
+## `generateStaticParams` for Static Export
+
+When using `output: "export"`, dynamic routes need `generateStaticParams` to enumerate all possible paths at build time:
+
+```tsx
+export async function generateStaticParams() {
+  const slugs = getAllSlugs()
+  return slugs.map((slug) => ({ slug }))
+}
+```
+
+Next.js will call `generateStaticParams` once per dynamic segment and pre-render every combination.
+
+## Streaming with `<Suspense>`
+
+Server Components support streaming. Wrap slow parts in `<Suspense>` to send fast parts immediately and stream the rest:
+
+```tsx
+import { Suspense } from 'react'
+import { PostComments } from './PostComments'
+
+export default function PostPage() {
+  return (
+    <article>
+      <h1>Post Title</h1>
+      <p>Content that renders immediately...</p>
+
+      <Suspense fallback={<p>Loading comments…</p>}>
+        <PostComments />   {/* streams in later */}
+      </Suspense>
+    </article>
+  )
+}
+```
+
+## Parallel Routes
+
+Parallel routes let you render multiple pages simultaneously within the same layout using `@slot` folders:
+
+```
+app/
+  layout.tsx
+  @modal/
+    (.)photo/[id]/page.tsx   ← intercepted route
+  feed/
+    page.tsx
+```
+
+This enables intercepting routes to show a modal over the current page — the classic "Instagram grid" pattern.
+
+## Metadata API
+
+Instead of `<Head>`, use the `Metadata` object:
+
+```tsx
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'My Post',
+  description: 'A post about something',
+  openGraph: {
+    title: 'My Post',
+    images: ['/og/my-post.png'],
+  },
+}
+```
+
+For dynamic metadata (based on fetched data):
+
+```tsx
+export async function generateMetadata({ params }): Promise<Metadata> {
+  const post = await getPostBySlug(params.slug)
+  return {
+    title: post.title,
+    description: post.excerpt,
+  }
+}
+```
+
+## Key Mental Models
+
+1. **Move data fetching as close to the leaf as possible** — don't prop-drill from root layouts.
+2. **Server Components are the default** — only add `"use client"` for interactivity.
+3. **Layouts survive navigation** — great for persistent sidebars, headers, or auth state.
+4. **`<Suspense>` boundaries are your loading UI** — think of them as async component wrappers.
+
+The App Router rewards thinking in components rather than pages. Once the mental model clicks, it's hard to go back.

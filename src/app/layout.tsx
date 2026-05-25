@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import Header from "@/components/Header/Header";
 import "./../styles/main.scss";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
   title: {
@@ -88,6 +89,20 @@ export default function RootLayout({
             </>
           )}
           {siteConfig.font_url && <link rel="stylesheet" href={siteConfig.font_url} />}
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                try {
+                  let theme = localStorage.getItem('theme') || 'system';
+                  if (theme === 'system') {
+                    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  }
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {}
+              `,
+            }}
+          />
         </head>
         <body className="min-h-full flex flex-col">
           {/* Blocking script — must be the very first child of <body> */}

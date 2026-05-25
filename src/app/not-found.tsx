@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import Icon from "@/components/Icon/Icon";
+import { EmojiSadIcon } from "@/components/Icon";
 
 export const metadata = {
   title: "Page Not Found"
@@ -13,7 +13,7 @@ export default function NotFound(): JSX.Element {
           className="rounded-full flex items-center justify-center mb-8"
           style={{ color: "var(--color-fg-danger)" }}
         >
-          <Icon name="emojiSad" size={96} />
+          <EmojiSadIcon size={96} />
         </div>
 
         <h1 className="text-5xl font-bold" style={{ color: "var(--color-fg-danger)" }}>

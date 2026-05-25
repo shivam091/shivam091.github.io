@@ -16,12 +16,12 @@
   opacity: 1;
   transform: translateX(0);
   transition:
-    opacity   $motion-duration-default $motion-easing-overshoot $motion-delay-long,
-    transform $motion-duration-default $motion-easing-overshoot $motion-delay-long;
+    opacity   $motion-duration-slow $motion-easing-overshoot $motion-delay-long,
+    transform $motion-duration-slow $motion-easing-overshoot $motion-delay-long;
 
   @starting-style {
     opacity: 0;
-    transform: translateX(6px);
+    transform: translateX(0.5rem);
   }
 }
 
@@ -29,12 +29,12 @@
   opacity: 1;
   transform: translateX(0);
   transition:
-    opacity   $motion-duration-default $motion-easing-overshoot $motion-delay-extra-long,
-    transform $motion-duration-default $motion-easing-overshoot $motion-delay-extra-long;
+    opacity   $motion-duration-slow $motion-easing-overshoot $motion-delay-extra-long,
+    transform $motion-duration-slow $motion-easing-overshoot $motion-delay-extra-long;
 
   @starting-style {
     opacity: 0;
-    transform: translateX(-6px);
+    transform: translateX(-0.5rem);
   }
 }
 

@@ -1,0 +1,115 @@
+@use "@/styles/abstracts/mixins/breakpoints" as bp;
+
+.toc {
+  font-size: $fluid-font-size-sm;
+
+  @include bp.min(lg) {
+    position: sticky;
+    top: $fluid-space-lg;
+    max-height: calc(100dvh - $fluid-space-xxl);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-bg-scrollbar-thumb) transparent;
+    align-self: start;
+  }
+}
+
+.tocDetails {
+  border: 1px solid var(--color-border-muted);
+  border-radius: $fluid-space-xs;
+  background: var(--color-bg-muted);
+  overflow: hidden;
+
+  // Remove default details marker
+  &[open] .tocChevron {
+    rotate: 180deg;
+  }
+}
+
+.tocSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $fluid-space-sm;
+  padding: $fluid-space-sm $fluid-space-base;
+  cursor: pointer;
+  font-weight: $font-weight-semi-bold;
+  font-size: $fluid-font-size-sm;
+  color: var(--color-fg-default);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  user-select: none;
+  list-style: none; // Remove default marker in Firefox
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:hover {
+    background: var(--color-bg-neutral-muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-outline-focus);
+    outline-offset: -2px;
+  }
+}
+
+.tocChevron {
+  transition: rotate 0.2s ease;
+  font-style: normal;
+  display: inline-block;
+}
+
+.tocList {
+  list-style: none;
+  margin: 0;
+  padding: $fluid-space-xs 0 $fluid-space-sm;
+  border-block-start: 1px solid var(--color-border-muted);
+}
+
+.tocItem {
+  margin: 0;
+  padding: 0;
+}
+
+.indent1 {
+  .tocLink {
+    padding-inline-start: calc($fluid-space-base + $fluid-space-base);
+  }
+}
+
+.indent2 {
+  .tocLink {
+    padding-inline-start: calc($fluid-space-base + $fluid-space-xl);
+  }
+}
+
+.tocLink {
+  display: block;
+  padding: $fluid-space-xxs $fluid-space-base;
+  color: var(--color-fg-muted);
+  text-decoration: none;
+  border-inline-start: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  line-height: $line-height-snug;
+
+  &:hover {
+    color: var(--color-fg-default);
+    background: var(--color-bg-neutral-muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-outline-focus);
+    outline-offset: -2px;
+  }
+}
+
+.active {
+  .tocLink {
+    color: var(--color-fg-accent);
+    border-inline-start-color: var(--color-border-accent-emphasis);
+    background: var(--color-bg-accent-muted);
+    font-weight: $font-weight-medium;
+  }
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { JSX, useEffect } from "react";
-import Icon from "@/components/Icon/Icon";
+import { EmojiSadIcon } from "@/components/Icon";
 
 export default function Error({
   error,
@@ -20,7 +20,7 @@ export default function Error({
         className="rounded-full flex items-center justify-center mb-8"
         style={{ color: "var(--color-fg-danger)" }}
       >
-        <Icon name="emojiSad" size={96} />
+        <EmojiSadIcon size={96} />
       </div>
 
       <h1 className="text-5xl font-bold" style={{ color: "var(--color-fg-danger)" }}>
