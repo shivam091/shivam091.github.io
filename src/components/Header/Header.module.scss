@@ -8,12 +8,21 @@
 // @property --glass-opacity / --blur-amount are declared in main.scss (global)
 // so the browser registers them as typed properties before this module runs.
 //
-// @keyframes glass-on lives HERE so CSS Modules scopes both the keyframe name
-// and the `animation:` reference in `.siteHeader` identically — they always
-// match each other.
+// WHY no fill-mode: forwards
+// ─────────────────────────
+// Browsers that support animation-timeline: scroll() have a known bug where
+// fill-mode: forwards (or both) does NOT preserve animated @property values
+// once the scroll position exits the animation-range.  The property snaps
+// back to its initial-value: 0, making the background hsl(…/0) — invisible.
+//
+// Fix: declare the *resting* (post-range) state directly on .siteHeader inside
+// the @supports block (--glass-opacity: 0.7; --blur-amount: 4px).  The
+// animation OVERRIDES these during the 0–120 px ramp-up; once scroll > 120 px
+// the animation exits its range with no fill needed and the declared values
+// take over — glass stays on permanently.
 //
 // Support: animation-timeline scroll() — Chrome 115+, Firefox 110+, Safari 18+
-// Fallback: header stays transparent — fully functional.
+// Fallback: @property initial-value:0 → header stays transparent — fully functional.
 
 // ─── Site header ─────────────────────────────────────────────────────────────
 
@@ -45,7 +54,15 @@
   // Tie the glass animation to the page scroll position.
   // Fully glassed by the time the user has scrolled 120 px.
   @supports (animation-timeline: scroll()) {
-    animation: glass-on linear both;
+    // Resting state: applied whenever the animation is outside its active range
+    // (i.e. scroll > 120px).  The animation overrides these during 0–120px.
+    --glass-opacity: 0.7;
+    --blur-amount: 4px;
+
+    // No fill-mode: resting state above handles the post-range behaviour.
+    // fill: backwards would only matter for scroll < 0 (impossible), so
+    // omitting it is safe and avoids the forwards-fill browser bug entirely.
+    animation: glass-on linear;
     animation-timeline: scroll(root block);
     animation-range: 0px 120px;
   }

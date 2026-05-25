@@ -10,12 +10,11 @@ export default function HomeLayout({ children }: { children: React.ReactNode }):
       <HeroBanner />
 
       <div className="container w-full mx-auto">
-        <Header />
-
         <div className="relative flex flex-col min-h-dvh z-10">
+          <Header />
           <Hero />
 
-          <main id="main-content" className="flex-1 p-4 max-w-full" style={{ containerType: "inline-size" }} tabIndex={-1}>
+          <main id="main-content" className="flex-1 max-w-full p-[clamp(.75rem,1vw,1rem)]" style={{ containerType: "inline-size" }} tabIndex={-1}>
             {children}
           </main>
         </div>

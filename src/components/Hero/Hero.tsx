@@ -11,7 +11,7 @@ export default function Hero(): JSX.Element {
 
   return (
     <>
-      <section className="p-6 min-h-[330px] flex items-center justify-center">
+      <section className="p-[clamp(.75rem,1vw,1rem)] min-h-[330px] flex items-center justify-center">
         <div className="flex flex-col items-start justify-center gap-6 w-full max-w-4xl">
           <h1 className={`${styles.heroHeading} text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight`}>
             <span className="text-[var(--color-fg-muted)] block mb-3 lowercase first-letter:uppercase">
