@@ -1,6 +1,7 @@
 @use "@/styles/abstracts/mixins/transition-properties" as *;
 @use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
 @use "@/styles/abstracts/modules/list-unstyled" as *;
+@use "@/styles/abstracts/animations/glass-on" as *;
 
 // ─── Scroll-driven glass animation ───────────────────────────────────────────
 //
@@ -13,17 +14,6 @@
 //
 // Support: animation-timeline scroll() — Chrome 115+, Firefox 110+, Safari 18+
 // Fallback: header stays transparent — fully functional.
-
-@keyframes glass-on {
-  from {
-    --glass-opacity: 0;
-    --blur-amount: 0px;
-  }
-  to {
-    --glass-opacity: 0.7;
-    --blur-amount: 4px;
-  }
-}
 
 // ─── Site header ─────────────────────────────────────────────────────────────
 
