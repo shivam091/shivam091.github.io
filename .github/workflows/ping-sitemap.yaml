@@ -1,0 +1,60 @@
+name: Ping Sitemap on Search Engines
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"   # Every Monday at 00:00 UTC (05:30 IST) — weekly is enough
+  workflow_dispatch:       # Allows manual trigger
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    name: Ping Search Engines
+    env:
+      # Use a Repository Variable (Settings → Variables), not a Secret.
+      # Secrets are for sensitive values (tokens, passwords) and are masked
+      # as *** in logs — a public sitemap URL doesn't need that.
+      SITEMAP_URL: ${{ vars.SITEMAP_URL }}
+
+    steps:
+      - name: Verify sitemap accessibility
+        run: |
+          echo "🔍 Verifying sitemap is reachable: $SITEMAP_URL"
+          # --fail makes curl exit non-zero on HTTP 4xx/5xx so the step
+          # actually fails instead of silently succeeding on a 404.
+          curl -I --fail --silent --show-error "$SITEMAP_URL" \
+            && echo "✅ Sitemap is reachable" \
+            || (echo "❌ Sitemap fetch failed" && exit 1)
+
+      - name: Ping Search Engines
+        run: |
+          set -e
+          echo "📡 Pinging sitemap: $SITEMAP_URL"
+          echo
+
+          # URL-encode the sitemap URL so it's safe as a query-string value.
+          # Python 3 is pre-installed on ubuntu-latest.
+          ENCODED_URL=$(python3 -c \
+            "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" \
+            "$SITEMAP_URL")
+
+          # Note: Google and Bing removed their ping endpoints in 2023.
+          # Yandex is currently the only major engine still accepting pings.
+          declare -A ENGINES=(
+            ["Yandex"]="https://yandex.com/ping?sitemap=${ENCODED_URL}"
+          )
+
+          for engine in "${!ENGINES[@]}"; do
+            url="${ENGINES[$engine]}"
+            echo "🔗 Pinging $engine ..."
+
+            # Capture HTTP status code from a single GET request.
+            # (HEAD requests may not trigger the ping — use GET.)
+            http_code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+
+            if [[ "$http_code" =~ ^2 ]]; then
+              echo "✅ $engine pinged successfully (HTTP $http_code)"
+            else
+              echo "⚠️  $engine ping returned HTTP $http_code — may not support sitemap ping."
+            fi
+            echo
+          done
