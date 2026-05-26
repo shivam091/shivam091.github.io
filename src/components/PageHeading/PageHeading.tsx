@@ -6,6 +6,7 @@ import styles from "@/components/PageHeading/PageHeading.module.scss";
 
 // Maps route path → human-readable title; paths not listed fall back to the last URL segment.
 const pageNames: Record<string, string> = {
+  "/about": "About",
   "/code-of-conduct": "Code of Conduct",
   "/privacy-policy": "Privacy Policy",
   "/terms-of-use": "Terms of Use",

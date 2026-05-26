@@ -31,6 +31,12 @@ const staticPages: MetadataRoute.Sitemap = [
     priority: 1.0,
   },
   {
+    url: `${base}/about`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  },
+  {
     url: `${base}/code-of-conduct`,
     lastModified: new Date(),
     changeFrequency: "yearly",
