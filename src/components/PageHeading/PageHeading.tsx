@@ -5,6 +5,7 @@ import { JSX } from "react";
 import styles from "@/components/PageHeading/PageHeading.module.scss";
 
 const pageNames: Record<string, string> = {
+  "/about": "About",
   "/code-of-conduct": "Code of Conduct",
   "/privacy-policy": "Privacy Policy",
   "/terms-of-use": "Terms of Use",
