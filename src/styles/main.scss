@@ -27,8 +27,5 @@
   inherits: false;
 }
 
-/* Tailwind - Integrated at the top or bottom depending on override needs */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind is loaded via globals.css (plain CSS) — see layout.tsx */
 

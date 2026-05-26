@@ -14,10 +14,9 @@ const config: Config = {
         mono: ["Source Code Pro", "ui-monospace", "monospace"],
       },
     },
-    corePlugins: {
-      container: false,
-    },
   },
+  // Note: corePlugins was removed in Tailwind v4.
+  // To disable the container utility in v4, use CSS: `@utility container { display: none; }`
   plugins: [],
 };
 export default config;
