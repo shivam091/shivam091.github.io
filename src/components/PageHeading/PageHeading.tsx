@@ -17,7 +17,7 @@ export default function PageHeading(): JSX.Element {
 
   return (
     <>
-      <h1 id="page-title" className={styles.pageTitle}>
+      <h1 id="page-title" className={`transition-[text-shadow] duration-200 ease-linear ${styles.pageTitle}`}>
         {title}
       </h1>
     </>

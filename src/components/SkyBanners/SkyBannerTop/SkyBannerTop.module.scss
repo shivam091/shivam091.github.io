@@ -1,5 +1,5 @@
 @use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
-@use "@/styles/abstracts/mixins/transition-properties" as *;
+@use "@/styles/abstracts/mixins/transit-properties" as *;
 
 .skyBannerTop {
   display: flex;
@@ -21,7 +21,7 @@
   background: linear-gradient(to bottom, var(--color-bg-sky-from), var(--color-bg-sky-to));
   overflow: clip;
   z-index: -1;
-  @include transition-properties(background, $duration: $sky-from-duration, $easing: $color-swap-timing-function);
+  @include transit-properties(background, $duration: $sky-from-duration, $easing: $color-swap-timing-function);
 
   &.inner {
     background: linear-gradient(
@@ -46,15 +46,15 @@
 
 .backgroundClouds {
   fill: var(--color-bg-cloud-500);
-  @include transition-properties(fill, $duration: $first-swoop-duration, $easing: $color-swap-timing-function);
+  @include transit-properties(fill, $duration: $first-swoop-duration, $easing: $color-swap-timing-function);
 }
 
 .midgroundClouds {
   fill: var(--color-bg-cloud-300);
-  @include transition-properties(fill, $duration: $second-swoop-duration, $easing: $color-swap-timing-function);
+  @include transit-properties(fill, $duration: $second-swoop-duration, $easing: $color-swap-timing-function);
 }
 
 .foregroundClouds {
   fill: var(--color-bg-default);
-  @include transition-properties(fill, $duration: $color-swap-duration, $easing: $color-swap-timing-function);
+  @include transit-properties(fill, $duration: $color-swap-duration, $easing: $color-swap-timing-function);
 }

@@ -10,12 +10,12 @@
 // @param {String | Null} $delay - Optional transition delay (default: `null`).
 //
 // @example scss
-//   @include transition-properties(top, opacity, background-color);
+//   @include transit-properties(top, opacity, background-color);
 //
-//   @include transition-properties((transform, opacity), 0.3s, ease-in-out);
+//   @include transit-properties((transform, opacity), 0.3s, ease-in-out);
 //
-//   @include transition-properties((height, opacity), 0.5s, ease, 100ms);
-@mixin transition-properties($props, $duration: $motion-duration-default, $easing: $motion-easing-default, $delay: null) {
+//   @include transit-properties((height, opacity), 0.5s, ease, 100ms);
+@mixin transit-properties($props, $duration: $motion-duration-default, $easing: $motion-easing-default, $delay: null) {
   $transitions: ();
 
   @each $prop in $props {

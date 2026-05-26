@@ -1,5 +1,5 @@
 @use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
-@use "@/styles/abstracts/mixins/transition-properties" as *;
+@use "@/styles/abstracts/mixins/transit-properties" as *;
 
 .heroBanner {
   position: absolute;
@@ -20,7 +20,7 @@
   justify-content: flex-end;
   align-items: center;
   overflow: clip;
-  @include transition-properties(background, $duration: $sky-from-duration, $easing: $color-swap-timing-function);
+  @include transit-properties(background, $duration: $sky-from-duration, $easing: $color-swap-timing-function);
 }
 
 .skyLayerBack {
@@ -49,17 +49,17 @@
 
 .cloudBackground {
   fill: var(--color-bg-cloud-500);
-  @include transition-properties(fill, $duration: $first-swoop-duration, $easing: $color-swap-timing-function);
+  @include transit-properties(fill, $duration: $first-swoop-duration, $easing: $color-swap-timing-function);
 }
 
 .cloudMidground {
   fill: var(--color-bg-cloud-300);
-  @include transition-properties(fill, $duration: $second-swoop-duration, $easing: $color-swap-timing-function);
+  @include transit-properties(fill, $duration: $second-swoop-duration, $easing: $color-swap-timing-function);
 }
 
 .cloudForeground {
   fill: var(--color-bg-default);
-  @include transition-properties(fill, $duration: $color-swap-duration, $easing: $color-swap-timing-function);
+  @include transit-properties(fill, $duration: $color-swap-duration, $easing: $color-swap-timing-function);
 }
 
 .star {

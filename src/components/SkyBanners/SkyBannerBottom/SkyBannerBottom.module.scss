@@ -1,5 +1,5 @@
 @use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
-@use "@/styles/abstracts/mixins/transition-properties" as *;
+@use "@/styles/abstracts/mixins/transit-properties" as *;
 
 .skyBannerBottom {
   position: absolute;
@@ -13,7 +13,7 @@
     hsl(from var(--color-bg-sky-subtle) h s l / 0.925),
     var(--color-bg-sky-subtle)
   );
-  @include transition-properties(background, $duration: $sky-from-duration, $easing: $color-swap-timing-function);
+  @include transit-properties(background, $duration: $sky-from-duration, $easing: $color-swap-timing-function);
 }
 
 // Right-anchored overlay SVG that sits above the bottom clouds
@@ -31,7 +31,7 @@
 
 .bottomCloudOverlay {
   fill: var(--color-bg-sky-bottom);
-  @include transition-properties(fill, $duration: $first-swoop-duration, $easing: $color-swap-timing-function);
+  @include transit-properties(fill, $duration: $first-swoop-duration, $easing: $color-swap-timing-function);
 }
 
 // Wide panoramic cloud row
@@ -57,5 +57,5 @@
 
 .bottomBackgroundClouds {
   fill: var(--color-bg-default);
-  @include transition-properties(fill, $duration: $color-swap-duration, $easing: $color-swap-timing-function);
+  @include transit-properties(fill, $duration: $color-swap-duration, $easing: $color-swap-timing-function);
 }
