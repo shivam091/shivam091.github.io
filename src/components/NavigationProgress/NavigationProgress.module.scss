@@ -1,0 +1,132 @@
+@use "@/styles/abstracts/animations/bg-slide" as *;
+@use "@/styles/abstracts/animations/spin" as *;
+
+// Counter-clockwise variant (middle ring)
+@keyframes spin-ccw {
+  to { transform: rotate(-360deg); }
+}
+
+// ─── Track (full-width rail fixed to top of viewport) ─────────────────────────
+.track {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  z-index: 9999;
+  pointer-events: none;
+
+  // Fade out after completion — 150 ms delay lets bar visually reach 100 %.
+  opacity: 1;
+  transition: opacity 350ms ease 150ms;
+
+  &.done {
+    opacity: 0;
+  }
+}
+
+// ─── Bar ──────────────────────────────────────────────────────────────────────
+.bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  height: 100%;
+
+  // Gradient animates via bg-slide (same keyframe as hero heading).
+  background: linear-gradient(
+    90deg,
+    var(--color-fg-attention),
+    var(--color-fg-success),
+    var(--color-fg-accent),
+    var(--color-fg-attention)
+  );
+  background-size: 200% 100%;
+  animation: bg-slide 1.4s linear infinite;
+
+  // Width driven by inline style — short ease makes increments feel fluid.
+  transition: width 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 2px 2px 0;
+
+  // Ambient glow along the bar
+  box-shadow:
+    0 0 6px 0 var(--color-fg-accent),
+    0 0 14px 0 hsl(from var(--color-fg-accent) h s l / 0.4);
+}
+
+// ─── Leading orb ─────────────────────────────────────────────────────────────
+.orb {
+  position: absolute;
+  top: 50%;
+  right: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-fg-accent);
+  transform: translateY(-50%);
+  box-shadow:
+    0 0 6px 2px  var(--color-fg-accent),
+    0 0 14px 4px hsl(from var(--color-fg-accent) h s l / 0.5);
+}
+
+// ─── Spinner overlay ──────────────────────────────────────────────────────────
+// Appears after a 400 ms delay (set by JS) so fast navigations never show it.
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;   // sits below the progress bar (9999)
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity 220ms ease;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+
+// ─── Frosted glass backdrop ───────────────────────────────────────────────────
+// Subtle circular frosted pill behind the SVG so rings are readable on any bg.
+.backdrop {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: hsl(from var(--color-bg-default) h s l / 0.72);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  border: 1px solid hsl(from var(--color-border-default) h s l / 0.25);
+}
+
+// ─── SVG rings ────────────────────────────────────────────────────────────────
+.svg {
+  position: relative;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  // Shared glow lifted from the bar's colour
+  filter: drop-shadow(0 0 6px hsl(from var(--color-fg-accent) h s l / 0.45));
+}
+
+// Each ring rotates around its own centre (cx="40" cy="40" in the SVG).
+// transform-box: fill-box makes transform-origin: center work correctly for SVG.
+
+.ring1 {
+  // Outer — attention (orange), 3/4 arc, clockwise, slow
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin 2.8s linear infinite;
+}
+
+.ring2 {
+  // Middle — success (green), 2/3 arc, counter-clockwise, medium
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin-ccw 2s ease-in-out infinite;
+}
+
+.ring3 {
+  // Inner — accent (blue), 1/2 arc, clockwise, fast
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin 1.2s linear infinite;
+}

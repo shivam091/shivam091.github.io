@@ -1,6 +1,7 @@
 import { JSX } from "react";
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
+import NavigationProgress from "@/components/NavigationProgress";
 import "@/styles/globals.css"; // Tailwind v4 — must be plain CSS, not SCSS
 import "@/styles/main.scss";
 
@@ -60,6 +61,8 @@ export default function RootLayout({
           {siteConfig.font_url && <link rel="stylesheet" href={siteConfig.font_url} />}
         </head>
         <body className="min-h-full flex flex-col">
+          {/* Fixed to top of viewport — renders above all page content */}
+          <NavigationProgress />
           {children}
         </body>
       </html>
