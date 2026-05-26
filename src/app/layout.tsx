@@ -1,10 +1,8 @@
 import { JSX } from "react";
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import Header from "@/components/Header/Header";
-import "./../styles/globals.css"; // Tailwind v4 — must be plain CSS, not SCSS
-import "./../styles/main.scss";
-import { ThemeProvider } from "@/context/ThemeContext";
+import "@/styles/globals.css"; // Tailwind v4 — must be plain CSS, not SCSS
+import "@/styles/main.scss";
 
 export const metadata: Metadata = {
   title: {
