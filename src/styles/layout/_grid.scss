@@ -1,3 +1,5 @@
 .container {
+  width: 100%;
   max-width: clamp(var(--min-width, 37.5rem), 90%, var(--max-width, 75rem));
+  margin-inline: auto; // centering baked in — not relying on a Tailwind utility
 }
