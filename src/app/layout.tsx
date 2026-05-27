@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Anti-FOUC (Flash of Unstyled Content) script — Josh W. Comeau pattern.
+ * Anti-FOUC (Flash of Unstyled Content) script.
  *
  * Injected as a *blocking* <script> at the very top of <body> so the browser
  * runs it synchronously before painting anything.  It reads the user's saved

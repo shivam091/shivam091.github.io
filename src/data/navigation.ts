@@ -15,18 +15,17 @@ export type ColorScheme = {
 };
 
 export const mainNav: NavItem[] = [
-  { href: "/",         title: "Home",     icon: "home"     },
-  { href: "/blog",     title: "Blog",     icon: "book"     },
-  { href: "/projects", title: "Projects", icon: "code"     },
-  { href: "/til",      title: "TIL",      icon: "bulb"     },
-  { href: "/gems",     title: "Gems",     icon: "diamonds" },
+  { href: "/about",   title: "About",   icon: "infoCircle" },
+  { href: "/posts",   title: "Posts",   icon: "list"       },
+  { href: "/series",  title: "Series",  icon: "book"       },
+  { href: "/goodies", title: "Goodies", icon: "candy"      },
 ];
 
 export const quickLinks: NavItem[] = [
-  { href: "/blog",     title: "Blog"     },
-  { href: "/projects", title: "Projects" },
-  { href: "/til",      title: "TIL"      },
-  { href: "/gems",     title: "Gems"     },
+  { href: "/categories", title: "Categories" },
+  { href: "/tags",       title: "Tags"       },
+  { href: "/archive",    title: "Archive"    },
+  { href: "/contact",    title: "Contact"    },
 ];
 
 export const legalLinks: NavItem[] = [
@@ -36,7 +35,8 @@ export const legalLinks: NavItem[] = [
 ];
 
 export const colorSchemes: ColorScheme[] = [
-  { key: "light",    label: "Light",    icon: "sun",    description: "Switch to light color scheme"    },
-  { key: "dark",     label: "Dark",     icon: "moon",   description: "Switch to dark color scheme"     },
-  { key: "soft-dark",label: "Soft Dark",icon: "adjust", description: "Switch to soft dark color scheme"},
+  { key: "system",    label: "System",    icon: "deviceDesktop", description: "Use your system’s default theme" },
+  { key: "light",     label: "Light",     icon: "sun",           description: "Use light mode"                  },
+  { key: "soft-dark", label: "Soft Dark", icon: "sunDim",        description: "Use soft dark mode"              },
+  { key: "dark",      label: "Dark",      icon: "moon",          description: "Use dark mode"                   },
 ];

@@ -10,12 +10,19 @@
  *   • Theme-dropdown click-outside dismissal
  *   • Three-phase glass effect driven by IntersectionObserver + scroll
  *
- * Glass effect phases (see Header.module.scss for the CSS counterpart):
+ * Styling split:
+ *   Tailwind handles all layout, colour, and typography.
+ *   styles.headerAction is the only CSS-module class applied here — it carries
+ *   the @starting-style entry animation and calc(var(--index)) stagger that
+ *   cannot be expressed as Tailwind utilities.
+ *   styles.glassyBackdrop is toggled on the parent <header> by the glass effect.
+ *
+ * Glass effect phases (Header.module.scss for the CSS counterpart):
  *   1. At top — trigger intersecting → transparent, no glass
  *   2. Scrolling through sky banner — ramp --glass-opacity / --blur-amount
- *      over 100 px; .glassyBackdrop applied → sky-tinted glass
+ *      over 100 px; styles.glassyBackdrop → sky-tinted glass
  *   3. Past sky banner — [data-cloud-shapes] bottom ≤ 0 → data-is-over-threshold
- *      toggled on <header> → CSS crossfades tint to default-bg glass
+ *      on <header> → CSS crossfades tint to default-bg glass
  */
 
 import { JSX, useCallback, useEffect, useRef, useState, useId } from "react";
@@ -33,46 +40,68 @@ import { Icon } from "@/components/Icon";
 import HeaderDrawer from "@/components/Header/HeaderDrawer/HeaderDrawer";
 import styles from "@/components/Header/Header.module.scss";
 
+// ─── Shared header-action class string ───────────────────────────────────────
+// All icon buttons / the theme-dropdown wrapper share the same visual treatment.
+// styles.headerAction is the SCSS module class that carries ONLY the @starting-style
+// drop-in animation and the @for stagger loop — Tailwind provides everything else.
+const ACTION =
+  [
+    styles.headerAction,
+    "inline-flex items-center justify-center",
+    "p-2 rounded-full cursor-pointer leading-none",
+    "bg-(--color-bg-control-transparent)",
+    "text-inherit",
+    "border border-(--color-border-control-transparent)",
+    "text-[clamp(.8125rem,1.4vw,.875rem)] font-semibold",
+    "no-underline",
+    "hover:bg-(--color-bg-control-transparent)",
+    "hover:border-(--color-border-control-transparent-hover)",
+    "focus-visible:outline-none",
+  ].join(" ");
+
 export default function HeaderClient(): JSX.Element {
   const pathname = usePathname();
   const drawerId  = useId();          // stable id shared with aria-controls
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen]   = useState(false);
   const [themeMenuOpen, setThemeMenuOpen] = useState(false);
 
-  const dropdownRef  = useRef<HTMLDivElement>(null);
-  const toggleRef    = useRef<HTMLButtonElement>(null);  // hamburger button
-  const anchorRef    = useRef<HTMLSpanElement>(null);    // locates parent <header>
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const toggleRef   = useRef<HTMLButtonElement>(null);  // hamburger button
+  const anchorRef   = useRef<HTMLSpanElement>(null);    // locates parent <header>
 
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
 
   // ── Three-phase glass effect ───────────────────────────────────────────
   //
-  // Ported from the HeaderGlassEffect JS class in the reference project.
+  // <Header> is mounted once in the root layout and never remounts, so this
+  // effect must re-run on every navigation (pathname dep) to reconnect the
+  // sky observer to whichever [data-cloud-shapes] element the new route has.
   //
-  //   observerTrigger watches [data-glass-trigger] (a 1 px sentinel at the
-  //   very top of the page).  While it's visible the header stays transparent;
+  //   observerTrigger watches [data-glass-trigger] (a 1 px sentinel in the
+  //   root layout at y = 0).  While it's visible the header stays transparent;
   //   once it leaves, a scroll listener ramps up opacity/blur over 100 px.
   //
   //   observerSky watches [data-cloud-shapes] (the sky banner container).
-  //   When its bottom edge scrolls above y=0, the header switches its glass
+  //   When its bottom edge scrolls above y = 0, the header switches its glass
   //   tint from the sky colour to the default background colour.
+  //   skyContainer is optional — pages without a sky banner still get Phase 2.
   useEffect(() => {
-    const siteHeader  = anchorRef.current?.closest("header") as HTMLElement | null;
+    const siteHeader   = anchorRef.current?.closest("header") as HTMLElement | null;
     const glassTrigger = document.querySelector("[data-glass-trigger]") as HTMLElement | null;
     const skyContainer = document.querySelector("[data-cloud-shapes]")  as HTMLElement | null;
 
-    if (!siteHeader || !glassTrigger || !skyContainer) return;
+    if (!siteHeader || !glassTrigger) return;
 
     let isScrolling = false;
 
     const updateGlassEffect = () => {
-      const triggerTop      = glassTrigger.getBoundingClientRect().top;
+      const triggerTop       = glassTrigger.getBoundingClientRect().top;
       const distanceScrolled = Math.max(0, -triggerTop);
-      const maxDistance     = 100;
-      const progress        = Math.min(1, distanceScrolled / maxDistance);
+      const maxDistance      = 100;
+      const progress         = Math.min(1, distanceScrolled / maxDistance);
 
-      siteHeader.style.setProperty("--glass-opacity", (0.7  * progress).toFixed(2));
-      siteHeader.style.setProperty("--blur-amount",   (4    * progress).toFixed(1) + "px");
+      siteHeader.style.setProperty("--glass-opacity", (0.7 * progress).toFixed(2));
+      siteHeader.style.setProperty("--blur-amount",   (4   * progress).toFixed(1) + "px");
       siteHeader.classList.toggle(styles.glassyBackdrop, progress > 0);
     };
 
@@ -81,7 +110,7 @@ export default function HeaderClient(): JSX.Element {
         window.addEventListener("scroll", updateGlassEffect, { passive: true });
         isScrolling = true;
       }
-      updateGlassEffect();  // sync immediately on entry
+      updateGlassEffect(); // sync immediately on entry
     };
 
     const stopTrackingScroll = () => {
@@ -105,25 +134,30 @@ export default function HeaderClient(): JSX.Element {
     );
     observerTrigger.observe(glassTrigger);
 
-    // Sky observer: swap the glass tint once the cloud container is fully
-    // above the viewport (bottom edge ≤ 0).
-    const observerSky = new IntersectionObserver(
-      ([entry]) => {
-        siteHeader.toggleAttribute(
-          "data-is-over-threshold",
-          entry.boundingClientRect.bottom <= 0,
-        );
-      },
-      { threshold: 0 },
-    );
-    observerSky.observe(skyContainer);
+    // Sky observer (optional): swap the glass tint once the cloud container
+    // is fully above the viewport (bottom edge ≤ 0).
+    // Re-connected on every navigation so it always tracks the current page's
+    // sky banner — home uses HeroBanner, internal uses SkyBannerTop.
+    let observerSky: IntersectionObserver | null = null;
+    if (skyContainer) {
+      observerSky = new IntersectionObserver(
+        ([entry]) => {
+          siteHeader.toggleAttribute(
+            "data-is-over-threshold",
+            entry.boundingClientRect.bottom <= 0,
+          );
+        },
+        { threshold: 0 },
+      );
+      observerSky.observe(skyContainer);
+    }
 
     return () => {
       stopTrackingScroll();
       observerTrigger.disconnect();
-      observerSky.disconnect();
+      observerSky?.disconnect();
     };
-  }, []); // mount/unmount only — observers self-update on scroll
+  }, [pathname]); // re-run on navigation to reconnect sky observer to new route's banner
 
   // ── Close drawer whenever the route changes ────────────────────────────
   useEffect(() => { setDrawerOpen(false); }, [pathname]);
@@ -175,17 +209,29 @@ export default function HeaderClient(): JSX.Element {
 
   return (
     <>
-      {/* Hidden anchor — lets the glass effect useEffect locate the parent <header> */}
+      {/* Hidden anchor — lets the glass useEffect locate the parent <header> */}
       <span ref={anchorRef} aria-hidden="true" style={{ display: "none" }} />
 
       {/* ── Desktop navigation ──────────────────────────────────────────── */}
-      <nav className={styles.navItems} role="navigation" aria-label="Main Navigation">
-        <ul className={styles.navLinks}>
+      <nav
+        className="flex gap-2 flex-auto max-md:hidden"
+        role="navigation"
+        aria-label="Main Navigation"
+      >
+        <ul className="list-none m-0 p-0 flex items-center gap-2">
           {mainNav.map((item) => (
-            <li key={item.href}>
+            <li key={item.href} className="mb-0">
               <Link
                 href={item.href}
-                className={styles.navLink}
+                className={[
+                  "inline-flex items-center gap-2 no-underline",
+                  "text-sm text-inherit py-1 px-2",
+                  "hover:text-(--color-fg-default)",
+                  // Active page gets a stronger colour + semi-bold weight
+                  pathname === item.href
+                    ? "text-(--color-fg-default) font-semibold"
+                    : "",
+                ].filter(Boolean).join(" ")}
                 aria-current={pathname === item.href ? "page" : undefined}
               >
                 {item.title}
@@ -196,23 +242,21 @@ export default function HeaderClient(): JSX.Element {
       </nav>
 
       {/* ── Header actions ──────────────────────────────────────────────── */}
-      <div className={styles.headerActions}>
-        <button className={styles.headerAction} aria-label="Search">
+      <div className="flex items-center gap-2">
+
+        <button className={ACTION} aria-label="Search">
           <SearchIcon size={16} />
         </button>
 
-        <button className={styles.headerAction} aria-label="Toggle sounds">
+        <button className={ACTION} aria-label="Toggle sounds">
           <SpeakerIcon size={16} />
         </button>
 
-        {/* Theme switcher dropdown */}
-        <div
-          ref={dropdownRef}
-          className={`${styles.dropdown} ${styles.headerAction}`}
-        >
+        {/* Theme switcher dropdown ─────────────────────────────────────── */}
+        <div ref={dropdownRef} className={`${ACTION} relative`}>
           <button
             type="button"
-            className={styles.dropdownToggle}
+            className="flex items-center justify-center [background:none] border-0 text-inherit cursor-pointer p-0 leading-none"
             aria-haspopup="true"
             aria-expanded={themeMenuOpen}
             aria-label="Toggle color scheme"
@@ -223,15 +267,30 @@ export default function HeaderClient(): JSX.Element {
 
           {themeMenuOpen && (
             <ul
-              className={styles.dropdownMenu}
+              className={[
+                "list-none m-0",
+                "absolute top-[calc(100%+.25rem)] right-0 z-[100]",
+                "min-w-40 py-1",
+                "bg-(--color-bg-overlay)",
+                "border border-(--color-border-overlay)",
+                "rounded-md",
+                "[box-shadow:var(--box-shadow-md)]",
+              ].join(" ")}
               role="menu"
               aria-label="Available color schemes"
             >
               {colorSchemes.map((scheme) => (
-                <li key={scheme.key}>
+                <li key={scheme.key} className="mb-0">
                   <button
                     type="button"
-                    className={styles.dropdownItem}
+                    className={[
+                      "flex items-center gap-2 w-full",
+                      "py-2 px-3",
+                      "[background:none] border-0",
+                      "text-(--color-fg-default) text-sm",
+                      "cursor-pointer text-left",
+                      "hover:bg-(--color-bg-neutral-muted)",
+                    ].join(" ")}
                     role="menuitem"
                     aria-label={scheme.description ?? scheme.label}
                     data-color-scheme={scheme.key}
@@ -248,7 +307,7 @@ export default function HeaderClient(): JSX.Element {
 
         <Link
           href="/atom.xml"
-          className={styles.headerAction}
+          className={ACTION}
           aria-label="Atom Feed"
           target="_blank"
           rel="alternate"
@@ -257,10 +316,10 @@ export default function HeaderClient(): JSX.Element {
           <RssIcon size={16} />
         </Link>
 
-        {/* Hamburger — scales up when the drawer is open */}
+        {/* Hamburger — hidden on desktop, shown on mobile ──────────────── */}
         <button
           ref={toggleRef}
-          className={`${styles.headerAction} ${styles.toggleMenu}`}
+          className={`${ACTION} hidden max-md:inline-flex`}
           aria-label="Toggle menu"
           aria-controls={drawerId}
           aria-expanded={drawerOpen}
@@ -268,18 +327,23 @@ export default function HeaderClient(): JSX.Element {
         >
           <HamburgerIcon
             size={16}
-            className={drawerOpen ? styles.iconActive : undefined}
+            // Tailwind: scale up + transition when drawer is open
+            className={
+              drawerOpen
+                ? "scale-150 transition-transform duration-200 ease-in-out"
+                : undefined
+            }
           />
         </button>
       </div>
 
       {/* ── Mobile drawer ───────────────────────────────────────────────── */}
-      <HeaderDrawer
+      {/* <HeaderDrawer
         id={drawerId}
         isOpen={drawerOpen}
         pathname={pathname ?? "/"}
         onClose={closeDrawer}
-      />
+      /> */}
     </>
   );
 }
