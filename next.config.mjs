@@ -7,6 +7,12 @@ const __dirname = path.dirname(__filename);
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
+  // React Strict Mode causes the App Router to fire two RSC fetches per
+  // navigation in development (mount → unmount → remount cycle).  Disabling it
+  // gives clean single-GET logs during local dev; it has no effect on the
+  // production build output.
+  reactStrictMode: false,
+
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   output: "export",
   basePath: "",

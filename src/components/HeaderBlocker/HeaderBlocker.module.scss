@@ -1,0 +1,54 @@
+// ─── Header Blocker ───────────────────────────────────────────────────────────
+//
+// Pure-CSS frosted-glass header effect — no JavaScript, no IntersectionObserver.
+//
+// Technique ("Sneaky Header Blocker"):
+//   The site <header> has position:fixed and a permanently transparent background.
+//   Two "blocker" elements sit BEHIND the header (lower z-index) using
+//   position:sticky + top:0.  Each blocker is the same height as the header, so
+//   it slides perfectly behind the header as the user scrolls.
+//
+//   • .sky     blocker — sits at the top of the hero / sky-banner section.
+//               Shows sky-tinted glass while the user is in that section.
+//               Scrolls away naturally when its containing section ends.
+//
+//   • .default blocker — sits at the top of <main> (all remaining content).
+//               Sticks to the viewport top immediately after the sky section
+//               leaves, providing the default-bg glass for the rest of the page.
+//
+// Seamless handoff:
+//   <main> gets  margin-top: -$header-height.  This shifts the DefaultBlocker's
+//   natural position up by exactly one header-height, so it starts sticking at
+//   the same scroll position the SkyBlocker stops sticking — zero gap between
+//   the two phases.
+//
+// Stacking (z-index scale):
+//   z-index: 10  (below the fixed header at z-index: 20 / Tailwind z-20)
+//   The blocker blurs the sky SVG / page content that scrolls behind it, while
+//   the header nav and logo remain perfectly sharp in front.
+//
+//   This two-step gap (10 → 20) aligns with Tailwind's scale and leaves room
+//   for future sticky/floating UI elements (z:11-19) between the glass and header.
+
+.blocker {
+  position: sticky;
+  top: 0;
+  height: $header-height;         // matches fixed header height (5rem)
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  // Smooth crossfade when theme changes (color-scheme swap)
+  transition: background 350ms cubic-bezier(0.41, 0.1, 0.13, 1);
+}
+
+// Phase 2 — sky-tinted glass while header is over the sky/hero banner
+.sky {
+  background: hsl(from var(--color-bg-sky-from) h s l / 0.72);
+  z-index: 2;
+}
+
+// Phase 3 — default-bg glass for all remaining page content
+.default {
+  background: hsl(from var(--color-bg-default) h s l / 0.72);
+  z-index: 2;
+}

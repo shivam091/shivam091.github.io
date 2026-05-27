@@ -11,11 +11,16 @@
  *     <HeaderClient />      ← client  (nav, theme, drawer)
  *   </Header>
  *
+ * Glass effect — pure CSS "Header Blocker" technique (Josh W. Comeau):
+ *   This header has position:fixed and a permanently transparent background.
+ *   The glass tint + blur come from HeaderBlocker sticky divs that sit BEHIND
+ *   this header in the page layout — no JS, no IntersectionObserver.
+ *   See HeaderBlocker.module.scss for the full explanation.
+ *
  * Styling split:
- *   Tailwind utilities handle layout, spacing, colour, and typography.
- *   Header.module.scss retains only SCSS-only constructs (multi-property
- *   transition with a custom cubic-bezier, glass-effect classes, and the
- *   @starting-style entry animation that cannot be expressed in Tailwind).
+ *   Tailwind handles layout, colour, and typography.
+ *   Header.module.scss keeps only the @starting-style staggered drop-in
+ *   animation for the action buttons (cannot be expressed in Tailwind).
  */
 
 import { JSX } from "react";
@@ -28,13 +33,12 @@ import styles from "@/components/Header/Header.module.scss";
 export default function Header(): JSX.Element {
   return (
     /*
-     * styles.siteHeader — provides only the 3-property transition + will-change
-     *   (cubic-bezier(0.41, 0.1, 0.13, 1) shared across background/backdrop-filter/color).
-     * All layout, colour, and spacing come from the Tailwind classes alongside it.
-     *
-     * bg-(--color-bg-transparent) — Phase 1: fully transparent at the top of
-     *   the page.  JS in HeaderClient adds styles.glassyBackdrop on scroll,
-     *   overriding this with the sky/default glass tint.
+     * position:fixed  — out of flow, always at viewport top.
+     * inset-x-0 top-0 — spans full viewport width.
+     * z-20            — above the HeaderBlocker sticky divs (z-index: 10).
+     *                   Two-step gap: glass (z:10) → header (z:20).
+     * bg-transparent  — permanently transparent; the HeaderBlocker behind it
+     *                   provides the sky or default glass tint + blur.
      */
     <header
       className={[
@@ -42,7 +46,7 @@ export default function Header(): JSX.Element {
 
         // Layout
         "flex flex-wrap items-center justify-center",
-        "sticky inset-x-0 top-0 z-10",
+        "sticky inset-x-0 inset-y-0",
 
         // Sizing — fixed height on large screens, auto (wrappable) on mobile
         "h-20 max-md:h-auto max-md:min-h-20",
@@ -54,9 +58,9 @@ export default function Header(): JSX.Element {
         // Alignment override on mobile
         "max-md:justify-between",
 
-        // Colour — transparent until JS ramps in the glass
+        // Always transparent — glass tint comes from HeaderBlocker behind this
         "text-(--color-fg-accent-muted)",
-        "bg-(--color-bg-transparent)",
+        "bg-transparent",
       ].join(" ")}
     >
       {/* ── Logo ── static HTML, zero JS ──────────────────────────────────── */}

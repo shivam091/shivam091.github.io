@@ -1,28 +1,24 @@
 /**
  * SiteLayout — the single layout shared by every content route.
  *
- * Why here, rather than in the old (home) + (internal) layouts?
- * ─────────────────────────────────────────────────────────────
- * Previously, <Header> lived in two separate route-group layouts.
- * When the user navigated between home ( / ) and internal pages, React
- * unmounted the old layout and mounted the new one — remounting <Header>
- * each time.  That re-triggered @starting-style on every navigation.
+ * <Header> lives here (not in separate (home)/(internal) layouts) so React
+ * never unmounts it on client-side navigation.  That keeps the DOM nodes alive
+ * across routes, meaning @starting-style only fires on a true full-page refresh
+ * — exactly the once-per-session drop-in animation the design calls for.
  *
- * Moving <Header> into this parent (site) layout means React keeps it
- * mounted for the lifetime of the session. @starting-style only fires
- * on a true full-page refresh — exactly once per session.
+ * Glass effect — pure CSS "Header Blocker" technique (no JavaScript):
+ *   The <Header> has position:fixed and a permanently transparent background.
+ *   Each child layout places HeaderBlocker sticky divs directly behind the
+ *   header to provide the sky or default glass tint + blur.
+ *   See HeaderBlocker/HeaderBlocker.module.scss for the full explanation.
  *
- * Layout tree (after this change):
- *   <SiteLayout>           ← this file — server component, mounted once
+ * Layout tree:
+ *   <SiteLayout>           ← this file (server component, mounted once)
  *     <SiteBanner />       ← client — swaps HeroBanner ↔ SkyBannerTop
- *     <Header />           ← mounted once, never remounts on navigation
- *     <HomeLayout>         ← (home) — Hero + main
- *       <page />
- *     </HomeLayout>
+ *     <Header />           ← fixed, transparent, mounted once
+ *     <HomeLayout>         ← (home) — SkyBlocker + Hero + DefaultBlocker + main
  *     — or —
- *     <InternalLayout>     ← (internal) — PageHeading + main
- *       <page />
- *     </InternalLayout>
+ *     <InternalLayout>     ← (internal) — SkyBlocker + DefaultBlocker + main
  *   </SiteLayout>
  */
 
@@ -41,30 +37,21 @@ export default function SiteLayout({
       {/*
        * SiteBanner — client component that switches the full-bleed sky
        * background between HeroBanner (home) and SkyBannerTop (internal).
-       * Both banners are position:absolute overlays that take no flow space,
-       * so the container below still starts at y = 0.
+       * Both banners use position:absolute cloud layers that take no flow
+       * space, so the content below starts at y = 0.
        */}
       <SiteBanner />
 
       <div className="container w-full mx-auto">
-        <div className="relative flex flex-col min-h-dvh z-10">
-          {/*
-           * Glass-trigger sentinel — 1 px absolutely-positioned marker at
-           * y = 0 of this relative container (≈ y = 0 of the page, since the
-           * banners above take no flow space).
-           *
-           * HeaderClient's IntersectionObserver fires the instant it leaves
-           * the viewport, starting the glass opacity ramp-up.
-           */}
-          <div
-            data-glass-trigger
-            aria-hidden="true"
-            className="absolute inset-x-0 top-0 h-px pointer-events-none"
-          />
+        {/*
+         * Header — position:sticky, permanently transparent, mounted once.
+         * The sky/default glass tint + blur come from HeaderBlocker divs
+         * inside each child layout — pure CSS, no JavaScript.
+         */}
+        <Header />
 
-          {/* Header — mounted once in this shared layout, never remounted */}
-          <Header />
-
+        {/* Content column — fills at least the viewport height */}
+        <div className="flex flex-col min-h-dvh">
           {children}
         </div>
       </div>

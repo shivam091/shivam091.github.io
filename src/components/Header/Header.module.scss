@@ -1,71 +1,42 @@
-// ─── Header glass effect ──────────────────────────────────────────────────────
+// ─── Site header ──────────────────────────────────────────────────────────────
 //
-// Three-phase behaviour (transparent → sky glass → default-bg glass) driven by
-// IntersectionObserver + scroll listener in HeaderClient.tsx.
+// The glass effect is now handled entirely by HeaderBlocker sticky divs that
+// sit behind this fixed-transparent header (pure CSS, no JS).
+// This file retains only constructs that cannot be expressed in Tailwind:
 //
-// All layout / colour / spacing live in Tailwind (Header.tsx + HeaderClient.tsx).
-// Only constructs that cannot be expressed as Tailwind utilities stay here:
-//   • Multi-property transition with a shared custom cubic-bezier
-//   • backdrop-filter driven by an animated CSS custom property
-//   • [data-is-over-threshold] attribute selector nested inside a class
-//   • @starting-style + calc(var(--index)) staggered delay loop
+//   • .siteHeader   — smooth color transition for theme switching
+//   • .headerAction — @starting-style staggered drop-in animation
 
-// ─── Site header base ─────────────────────────────────────────────────────────
-// Smooth crossfades for: glass opacity ramp-up, sky→default colour swap,
-// theme colour switching. The custom cubic-bezier across three properties in one
-// declaration is too verbose as an arbitrary Tailwind annotation.
-
+// Color-only transition for theme switches (the glass tint lives in
+// HeaderBlocker; no backdrop-filter or background transition needed here).
 .siteHeader {
-  transition:
-    background      350ms cubic-bezier(0.41, 0.1, 0.13, 1),
-    backdrop-filter 350ms cubic-bezier(0.41, 0.1, 0.13, 1),
-    color           350ms cubic-bezier(0.41, 0.1, 0.13, 1);
-  will-change: background, backdrop-filter, color;
-}
-
-// ─── Phase 2 + 3 glass ───────────────────────────────────────────────────────
-// Added to <header> via JS classList.toggle when user scrolls past
-// [data-glass-trigger].  --glass-opacity / --blur-amount are set as inline
-// styles by the scroll listener (0→0.7 / 0→4px over first 100 px of scroll).
-
-.glassyBackdrop {
-  // Phase 2 — sky gradient tint while header is over the sky banner
-  --glass-color: hsl(from var(--color-bg-sky-from) h s l / var(--glass-opacity, 0));
-  background: var(--glass-color);
-  backdrop-filter: blur(var(--blur-amount, 0px));
-
-  // Phase 3 — JS sets data-is-over-threshold once [data-cloud-shapes] bottom
-  // edge scrolls above the viewport top → crossfade to default page bg tint.
-  &[data-is-over-threshold] {
-    --glass-color: hsl(from var(--color-bg-default) h s l / var(--glass-opacity, 0));
-  }
+  transition: color 350ms cubic-bezier(0.41, 0.1, 0.13, 1);
+  z-index: 10;
 }
 
 // ─── Action button entry animation ───────────────────────────────────────────
-// @starting-style and the calc(var(--index)) staggered delay are SCSS-only
-// constructs.  All visual / layout styles for header action buttons live in
-// Tailwind on the elements; this class is applied alongside them purely for the
-// entry animation.
+// @starting-style fires only when the element first receives a computed style —
+// i.e., on a true full-page refresh (never on client-side navigation, because
+// the header DOM nodes persist inside the shared (site)/layout.tsx).
+// This matches the once-per-session drop-in behaviour on joshwcomeau.com.
 
 .headerAction {
   opacity: 1;
   transform: translateY(0);
 
-  // Staggered drop-in (opacity + transform) + smooth bg/border transitions.
-  // Delay per button = --index * 0.1s (set by the @for loop below).
+  // Staggered drop-in (opacity + transform) + smooth bg/border hover transitions.
   transition:
     opacity          0.5s ease calc(var(--index, 1) * 0.1s),
     transform        0.5s ease calc(var(--index, 1) * 0.1s),
     background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color     200ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  // Animate from invisible / shifted-up when the element first renders.
   @starting-style {
     opacity: 0;
     transform: translateY(-0.5rem);
   }
 
-  // Assign --index (1-based) so each button's delay is offset by 0.1 s.
+  // Assign --index (1-based) so each button's delay is staggered by 0.1 s.
   @for $i from 1 through 6 {
     &:nth-child(#{$i}) {
       --index: #{$i};

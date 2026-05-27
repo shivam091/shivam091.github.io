@@ -8,21 +8,17 @@
  *   • Theme switching persisted to localStorage
  *   • Mobile drawer open/close state
  *   • Theme-dropdown click-outside dismissal
- *   • Three-phase glass effect driven by IntersectionObserver + scroll
+ *
+ * Glass effect:
+ *   Removed from this file. The frosted-glass header tint is now provided by
+ *   pure-CSS HeaderBlocker sticky divs (no JS, no IntersectionObserver).
+ *   See HeaderBlocker/HeaderBlocker.module.scss for the technique.
  *
  * Styling split:
  *   Tailwind handles all layout, colour, and typography.
  *   styles.headerAction is the only CSS-module class applied here — it carries
  *   the @starting-style entry animation and calc(var(--index)) stagger that
  *   cannot be expressed as Tailwind utilities.
- *   styles.glassyBackdrop is toggled on the parent <header> by the glass effect.
- *
- * Glass effect phases (Header.module.scss for the CSS counterpart):
- *   1. At top — trigger intersecting → transparent, no glass
- *   2. Scrolling through sky banner — ramp --glass-opacity / --blur-amount
- *      over 100 px; styles.glassyBackdrop → sky-tinted glass
- *   3. Past sky banner — [data-cloud-shapes] bottom ≤ 0 → data-is-over-threshold
- *      on <header> → CSS crossfades tint to default-bg glass
  */
 
 import { JSX, useCallback, useEffect, useRef, useState, useId } from "react";
@@ -67,97 +63,8 @@ export default function HeaderClient(): JSX.Element {
 
   const dropdownRef = useRef<HTMLDivElement>(null);
   const toggleRef   = useRef<HTMLButtonElement>(null);  // hamburger button
-  const anchorRef   = useRef<HTMLSpanElement>(null);    // locates parent <header>
 
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
-
-  // ── Three-phase glass effect ───────────────────────────────────────────
-  //
-  // <Header> is mounted once in the root layout and never remounts, so this
-  // effect must re-run on every navigation (pathname dep) to reconnect the
-  // sky observer to whichever [data-cloud-shapes] element the new route has.
-  //
-  //   observerTrigger watches [data-glass-trigger] (a 1 px sentinel in the
-  //   root layout at y = 0).  While it's visible the header stays transparent;
-  //   once it leaves, a scroll listener ramps up opacity/blur over 100 px.
-  //
-  //   observerSky watches [data-cloud-shapes] (the sky banner container).
-  //   When its bottom edge scrolls above y = 0, the header switches its glass
-  //   tint from the sky colour to the default background colour.
-  //   skyContainer is optional — pages without a sky banner still get Phase 2.
-  useEffect(() => {
-    const siteHeader   = anchorRef.current?.closest("header") as HTMLElement | null;
-    const glassTrigger = document.querySelector("[data-glass-trigger]") as HTMLElement | null;
-    const skyContainer = document.querySelector("[data-cloud-shapes]")  as HTMLElement | null;
-
-    if (!siteHeader || !glassTrigger) return;
-
-    let isScrolling = false;
-
-    const updateGlassEffect = () => {
-      const triggerTop       = glassTrigger.getBoundingClientRect().top;
-      const distanceScrolled = Math.max(0, -triggerTop);
-      const maxDistance      = 100;
-      const progress         = Math.min(1, distanceScrolled / maxDistance);
-
-      siteHeader.style.setProperty("--glass-opacity", (0.7 * progress).toFixed(2));
-      siteHeader.style.setProperty("--blur-amount",   (4   * progress).toFixed(1) + "px");
-      siteHeader.classList.toggle(styles.glassyBackdrop, progress > 0);
-    };
-
-    const startTrackingScroll = () => {
-      if (!isScrolling) {
-        window.addEventListener("scroll", updateGlassEffect, { passive: true });
-        isScrolling = true;
-      }
-      updateGlassEffect(); // sync immediately on entry
-    };
-
-    const stopTrackingScroll = () => {
-      if (isScrolling) {
-        window.removeEventListener("scroll", updateGlassEffect);
-        isScrolling = false;
-      }
-      siteHeader.style.setProperty("--glass-opacity", "0");
-      siteHeader.style.setProperty("--blur-amount",   "0px");
-      siteHeader.classList.remove(styles.glassyBackdrop);
-      siteHeader.removeAttribute("data-is-over-threshold");
-    };
-
-    // Trigger observer: start / stop scroll tracking when the sentinel
-    // enters / leaves the viewport (threshold 0.98 fires almost instantly).
-    const observerTrigger = new IntersectionObserver(
-      ([entry]) => {
-        entry.isIntersecting ? stopTrackingScroll() : startTrackingScroll();
-      },
-      { threshold: 0.98 },
-    );
-    observerTrigger.observe(glassTrigger);
-
-    // Sky observer (optional): swap the glass tint once the cloud container
-    // is fully above the viewport (bottom edge ≤ 0).
-    // Re-connected on every navigation so it always tracks the current page's
-    // sky banner — home uses HeroBanner, internal uses SkyBannerTop.
-    let observerSky: IntersectionObserver | null = null;
-    if (skyContainer) {
-      observerSky = new IntersectionObserver(
-        ([entry]) => {
-          siteHeader.toggleAttribute(
-            "data-is-over-threshold",
-            entry.boundingClientRect.bottom <= 0,
-          );
-        },
-        { threshold: 0 },
-      );
-      observerSky.observe(skyContainer);
-    }
-
-    return () => {
-      stopTrackingScroll();
-      observerTrigger.disconnect();
-      observerSky?.disconnect();
-    };
-  }, [pathname]); // re-run on navigation to reconnect sky observer to new route's banner
 
   // ── Close drawer whenever the route changes ────────────────────────────
   useEffect(() => { setDrawerOpen(false); }, [pathname]);
@@ -209,9 +116,6 @@ export default function HeaderClient(): JSX.Element {
 
   return (
     <>
-      {/* Hidden anchor — lets the glass useEffect locate the parent <header> */}
-      <span ref={anchorRef} aria-hidden="true" style={{ display: "none" }} />
-
       {/* ── Desktop navigation ──────────────────────────────────────────── */}
       <nav
         className="flex gap-2 flex-auto max-md:hidden"

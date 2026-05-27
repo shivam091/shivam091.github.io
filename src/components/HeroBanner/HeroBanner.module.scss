@@ -10,7 +10,7 @@
   margin-top: calc(-1 * $header-height - 2.75rem);
   padding-top: calc($header-height + 2.75rem);
   width: 100vw;
-  z-index: 0;
+  z-index: 3;
   pointer-events: none;
 }
 
