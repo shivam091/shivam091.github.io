@@ -1,0 +1,154 @@
+---
+title: "Understanding Ruby Metaprogramming"
+excerpt: "Ruby's metaprogramming capabilities allow you to write code that writes code, opening up powerful patterns for DSLs, decorators, and dynamic class manipulation. Let's dig in."
+published_at: "2026-04-10"
+last_modified_at: "2026-05-01"
+author: "Harshal V. LADHE"
+tags: ["ruby", "metaprogramming", "advanced"]
+categories: ["tutorials"]
+---
+
+## What is Metaprogramming?
+
+Metaprogramming is the practice of writing code that generates or manipulates other code at runtime. Ruby is one of the best languages for this because of its open classes, flexible object model, and rich reflection API.
+
+## `method_missing` and `respond_to_missing?`
+
+One of Ruby's most powerful hooks is `method_missing`. When you call a method that doesn't exist, Ruby walks up the ancestor chain looking for it. If nothing handles it, `method_missing` gets called on the receiver.
+
+```ruby
+class FlexibleProxy
+  def initialize(target)
+    @target = target
+  end
+
+  def method_missing(name, *args, &block)
+    if @target.respond_to?(name)
+      @target.public_send(name, *args, &block)
+    else
+      super
+    end
+  end
+
+  def respond_to_missing?(name, include_private = false)
+    @target.respond_to?(name, include_private) || super
+  end
+end
+```
+
+Always pair `method_missing` with `respond_to_missing?` — otherwise `respond_to?` and `method` will lie about the methods your object supports.
+
+## `define_method`
+
+Rather than `method_missing`, prefer `define_method` when the set of dynamic methods is known at class load time. It is faster and keeps stack traces readable.
+
+```ruby
+class Report
+  FORMATS = %i[pdf csv html json].freeze
+
+  FORMATS.each do |fmt|
+    define_method(:"export_#{fmt}") do |data|
+      Exporter.new(format: fmt).call(data)
+    end
+  end
+end
+```
+
+## `instance_eval` and `class_eval`
+
+`instance_eval` executes a block in the context of an object, giving you access to its private state. `class_eval` (alias `module_eval`) executes a block inside a class body.
+
+```ruby
+class Config
+  def initialize(&block)
+    instance_eval(&block) if block
+  end
+
+  def set(key, value)
+    instance_variable_set(:"@#{key}", value)
+  end
+
+  def get(key)
+    instance_variable_get(:"@#{key}")
+  end
+end
+
+config = Config.new do
+  set :timeout, 30
+  set :retries, 3
+end
+
+config.get(:timeout) # => 30
+```
+
+## Building a Simple DSL
+
+Combining these tools lets you build elegant DSLs. Here's a tiny validation library:
+
+```ruby
+module Validatable
+  def self.included(base)
+    base.extend(ClassMethods)
+    base.instance_variable_set(:@validations, [])
+  end
+
+  module ClassMethods
+    def validates(attr, **rules)
+      @validations << { attr: attr, rules: rules }
+    end
+
+    def validations
+      @validations
+    end
+  end
+
+  def valid?
+    self.class.validations.all? do |v|
+      value = public_send(v[:attr])
+      v[:rules].all? do |rule, opt|
+        case rule
+        when :presence then !value.nil? && value != ""
+        when :min_length then value.to_s.length >= opt
+        end
+      end
+    end
+  end
+end
+
+class User
+  include Validatable
+
+  attr_accessor :name, :email
+
+  validates :name, presence: true, min_length: 2
+  validates :email, presence: true
+end
+```
+
+## Eigenclasses (Singleton Classes)
+
+Every Ruby object has a hidden eigenclass (also called singleton class) that stores methods defined on just that one object.
+
+```ruby
+str = "hello"
+
+def str.shout
+  upcase + "!!!"
+end
+
+str.shout       # => "HELLO!!!"
+"world".shout   # => NoMethodError
+```
+
+This is exactly how class methods work: `def self.foo` adds `foo` to the class's own eigenclass.
+
+## When to Use Metaprogramming
+
+- **Do use it** for removing repetitive boilerplate that would otherwise be copy-pasted.
+- **Do use it** when building DSLs that are consumed by domain experts, not just developers.
+- **Avoid it** when a simple method or module would suffice — metaprogramming is harder to debug and trace.
+- **Always add tests** around dynamic method definitions.
+
+## Conclusion
+
+Ruby's metaprogramming model rewards patience. Start with `define_method`, graduate to `method_missing` only when you must, and reach for `class_eval` when building frameworks. The power is real — wield it carefully.

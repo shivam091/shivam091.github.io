@@ -1,0 +1,20 @@
+.pageSignoff {
+  margin-block-start: var(--fluid-space-xl, $fluid-space-xl);
+
+  p {
+    text-align: center;
+    line-height: 1.6;
+  }
+}
+
+.signoffWave {
+  max-width: 100px;
+  margin-inline: auto;
+  margin-block: var(--space-xl, $space-xl);
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

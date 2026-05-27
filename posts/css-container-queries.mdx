@@ -1,0 +1,169 @@
+---
+title: "CSS Container Queries Are Here — Use Them"
+excerpt: "Container queries let components respond to their container's size instead of the viewport. This is the missing piece that makes truly reusable, layout-agnostic components possible."
+published_at: "2025-12-10"
+last_modified_at: "2025-12-10"
+author: "Harshal V. LADHE"
+tags: ["css", "web", "responsive-design"]
+categories: ["tutorials", "web-dev"]
+---
+
+## Why Media Queries Fall Short
+
+Media queries respond to the *viewport* width. But the viewport is the wrong reference point for a component that can be placed anywhere — in a sidebar, a dialog, a full-width section, or a narrow card grid.
+
+Imagine a `<PostCard>` component. In a 3-column grid it should show a compact layout. Placed full-width in a hero section, it should expand. Media queries can't help — they don't know where the card is on the page.
+
+Container queries solve this.
+
+## Declaring a Containment Context
+
+Mark a parent element as a *container*:
+
+```css
+.card-grid {
+  container-type: inline-size;
+  container-name: card-wrapper; /* optional but good practice */
+}
+```
+
+`inline-size` means "respond to width changes" (the most common case). You can also use `size` for both width and height.
+
+## Querying the Container
+
+Now your card can query `card-wrapper`:
+
+```css
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@container card-wrapper (min-width: 480px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@container card-wrapper (min-width: 720px) {
+  .card {
+    gap: 1.5rem;
+  }
+
+  .card__image {
+    width: 280px;
+    flex-shrink: 0;
+  }
+}
+```
+
+The card now adapts to *its container's* width, not the viewport.
+
+## Container Query Units
+
+Container queries introduce new length units:
+
+| Unit | Meaning |
+|------|---------|
+| `cqw` | 1% of container width |
+| `cqh` | 1% of container height |
+| `cqi` | 1% of container inline size |
+| `cqb` | 1% of container block size |
+| `cqmin` | Smaller of `cqi` and `cqb` |
+| `cqmax` | Larger of `cqi` and `cqb` |
+
+```css
+.card__title {
+  font-size: clamp(1rem, 4cqi, 1.5rem);
+}
+```
+
+## Style Queries (Experimental)
+
+Style queries let you query *computed styles* of a container, not just its size:
+
+```css
+@container style(--layout: sidebar) {
+  .nav-item {
+    writing-mode: vertical-lr;
+  }
+}
+```
+
+Set the custom property on the container in JavaScript or via an ancestor class:
+
+```css
+.layout-sidebar {
+  --layout: sidebar;
+}
+```
+
+Browser support for style queries is still catching up — use them progressively.
+
+## A Practical Card Component
+
+```html
+<div class="posts-grid">
+  <article class="post-card">
+    <img class="post-card__image" src="..." alt="">
+    <div class="post-card__body">
+      <h2 class="post-card__title">Scaling PostgreSQL</h2>
+      <p class="post-card__excerpt">When your Rails app outgrows…</p>
+      <div class="post-card__meta">
+        <time>Jan 30, 2026</time>
+        <span>8 min read</span>
+      </div>
+    </div>
+  </article>
+</div>
+```
+
+```css
+.posts-grid {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Default: stacked */
+.post-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* When the grid is wide enough that a card gets ≥ 480px */
+@container (min-width: 480px) {
+  .post-card {
+    flex-direction: row;
+  }
+
+  .post-card__image {
+    width: 180px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+}
+```
+
+The grid handles the column count; the card handles its own internal layout — completely decoupled.
+
+## Browser Support
+
+Container queries (`inline-size`) are supported in all modern browsers since Chrome 105, Safari 16, Firefox 110. If you need to support older browsers, use `@supports`:
+
+```css
+@supports (container-type: inline-size) {
+  .card-grid {
+    container-type: inline-size;
+  }
+}
+```
+
+## Conclusion
+
+Container queries are the component-level responsive design primitive that CSS has needed for years. They're production-ready today. Start using `container-type: inline-size` on your layout wrappers and let your components own their own responsiveness — the result is genuinely portable, reusable UI.

@@ -1,0 +1,172 @@
+---
+title: "Scaling PostgreSQL for Rails Applications"
+excerpt: "When your Rails app outgrows a single-box Postgres setup, it's time to think about connection pooling, read replicas, partial indexes, and query planning. Here's a practical guide."
+published_at: "2026-01-30"
+last_modified_at: "2026-02-05"
+author: "Harshal V. LADHE"
+tags: ["postgresql", "rails", "performance", "database"]
+categories: ["tutorials", "devops"]
+---
+
+## Connection Pooling with PgBouncer
+
+Each PostgreSQL connection costs ~5–10 MB of RAM. A typical Rails app with Puma running 5 workers × 5 threads can open 25 connections per dyno. With 10 dynos, that's 250 connections — enough to overwhelm a small Postgres instance.
+
+**PgBouncer** sits between your app and Postgres, reusing connections. Use **transaction-mode** pooling for Rails:
+
+```ini
+; pgbouncer.ini
+[databases]
+myapp = host=localhost port=5432 dbname=myapp_production
+
+[pgbouncer]
+pool_mode = transaction
+max_client_conn = 1000
+default_pool_size = 25
+server_idle_timeout = 300
+```
+
+With transaction mode, a server connection is only held during a transaction — idle connections go back to the pool. **Caveat**: prepared statements don't work in transaction mode; disable them in `database.yml`:
+
+```yaml
+production:
+  prepared_statements: false
+```
+
+## Read Replicas with ActiveRecord
+
+Rails 6+ supports multiple databases natively. Add a replica to `database.yml`:
+
+```yaml
+production:
+  primary:
+    adapter: postgresql
+    url: <%= ENV['DATABASE_URL'] %>
+  replica:
+    adapter: postgresql
+    url: <%= ENV['DATABASE_REPLICA_URL'] %>
+    replica: true
+```
+
+Then in `ApplicationRecord`:
+
+```ruby
+class ApplicationRecord < ActiveRecord::Base
+  connects_to database: { writing: :primary, reading: :replica }
+end
+```
+
+Route read-heavy actions to the replica:
+
+```ruby
+class ProductsController < ApplicationController
+  def index
+    ActiveRecord::Base.connected_to(role: :reading) do
+      @products = Product.where(published: true).includes(:category).limit(50)
+    end
+  end
+end
+```
+
+## Partial Indexes
+
+A partial index only covers rows matching a condition. It's smaller, faster to build, and more cache-friendly.
+
+```sql
+-- Only index unpublished posts (your backlog queue)
+CREATE INDEX idx_posts_pending ON posts (created_at)
+  WHERE status = 'pending';
+
+-- Only index active users
+CREATE INDEX idx_users_active_email ON users (email)
+  WHERE deactivated_at IS NULL;
+```
+
+Rails migration equivalent:
+
+```ruby
+add_index :posts, :created_at,
+  where: "status = 'pending'",
+  name: 'idx_posts_pending'
+```
+
+## Identifying Slow Queries
+
+Enable `pg_stat_statements` in Postgres:
+
+```sql
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
+```
+
+Then query the top offenders:
+
+```sql
+SELECT
+  round(mean_exec_time::numeric, 2) AS mean_ms,
+  calls,
+  round(total_exec_time::numeric, 2) AS total_ms,
+  left(query, 80) AS query
+FROM pg_stat_statements
+ORDER BY mean_exec_time DESC
+LIMIT 20;
+```
+
+In Rails, enable slow query logging:
+
+```ruby
+# config/initializers/query_logger.rb
+ActiveSupport::Notifications.subscribe('sql.active_record') do |*, payload|
+  if payload[:duration] > 200 # ms
+    Rails.logger.warn "[SLOW QUERY] #{payload[:sql]} (#{payload[:duration].round(1)}ms)"
+  end
+end
+```
+
+## EXPLAIN ANALYZE
+
+Never guess; always `EXPLAIN ANALYZE`:
+
+```sql
+EXPLAIN (ANALYZE, BUFFERS, FORMAT TEXT)
+SELECT *
+FROM orders
+WHERE user_id = 42 AND status = 'pending'
+ORDER BY created_at DESC
+LIMIT 10;
+```
+
+Key things to look for:
+
+- **Seq Scan** on a large table → missing index
+- **Hash Join** on millions of rows → consider denormalizing
+- **Buffers: hit** vs **read** → cache hit ratio (aim for >99%)
+
+## Autovacuum Tuning
+
+Autovacuum reclaims dead tuples from `DELETE` and `UPDATE`. On high-write tables, the defaults are too conservative:
+
+```sql
+ALTER TABLE events
+  SET (
+    autovacuum_vacuum_scale_factor = 0.01,  -- default 0.2
+    autovacuum_analyze_scale_factor = 0.005, -- default 0.1
+    autovacuum_vacuum_cost_delay = 2         -- ms; default 20
+  );
+```
+
+Check bloat:
+
+```sql
+SELECT
+  schemaname, tablename,
+  n_dead_tup,
+  n_live_tup,
+  round(n_dead_tup::numeric / NULLIF(n_live_tup + n_dead_tup, 0) * 100, 1) AS dead_pct
+FROM pg_stat_user_tables
+ORDER BY dead_pct DESC NULLS LAST
+LIMIT 10;
+```
+
+## Conclusion
+
+Scaling Postgres is a progression: first add indexes and kill N+1 queries, then pool connections with PgBouncer, then add read replicas, and finally consider partitioning or Citus for extreme scale. Most Rails apps comfortably handle millions of records with just good indexing and a connection pool.

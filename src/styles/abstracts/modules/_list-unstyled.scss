@@ -1,0 +1,15 @@
+// Mixin variant – safe to @include inside CSS-module SCSS files
+@mixin list-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+// Placeholder variant – for use in global / non-module SCSS files via @extend
+%list-unstyled {
+  @include list-unstyled;
+}

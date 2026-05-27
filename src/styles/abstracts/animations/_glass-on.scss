@@ -1,0 +1,10 @@
+@keyframes glass-on {
+  from {
+    --glass-opacity: 0;
+    --blur-amount: 0px;
+  }
+  to {
+    --glass-opacity: 0.7;
+    --blur-amount: 4px;
+  }
+}

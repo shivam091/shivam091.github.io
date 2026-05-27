@@ -1,0 +1,180 @@
+---
+title: "TypeScript Utility Types You Should Know"
+excerpt: "TypeScript ships with a rich set of built-in utility types. Mastering Partial, Required, Pick, Omit, Awaited, and friends will make your type definitions cleaner and more maintainable."
+published_at: "2026-02-18"
+last_modified_at: "2026-02-18"
+author: "Harshal V. LADHE"
+tags: ["typescript", "types", "web"]
+categories: ["tutorials"]
+---
+
+## Why Utility Types?
+
+Utility types let you derive new types from existing ones — avoiding duplication and keeping your source of truth in one place. Instead of copy-pasting a type and removing one field, you reach for `Omit`.
+
+## `Partial<T>` and `Required<T>`
+
+`Partial` makes every property optional. `Required` does the opposite.
+
+```ts
+interface User {
+  id: number
+  name: string
+  email?: string
+}
+
+type PartialUser = Partial<User>
+// { id?: number; name?: string; email?: string }
+
+type RequiredUser = Required<User>
+// { id: number; name: string; email: string }
+```
+
+Common use case: update functions that accept partial payloads:
+
+```ts
+function updateUser(id: number, patch: Partial<Omit<User, 'id'>>) {
+  // patch can contain any subset of User's fields, except id
+}
+```
+
+## `Pick<T, K>` and `Omit<T, K>`
+
+Pick a subset of properties, or remove properties you don't want.
+
+```ts
+interface Post {
+  id: number
+  title: string
+  content: string
+  publishedAt: Date
+  authorId: number
+}
+
+type PostSummary = Pick<Post, 'id' | 'title' | 'publishedAt'>
+// { id: number; title: string; publishedAt: Date }
+
+type NewPost = Omit<Post, 'id' | 'publishedAt'>
+// { title: string; content: string; authorId: number }
+```
+
+## `Record<K, V>`
+
+Map keys to values — great for lookup tables:
+
+```ts
+type Status = 'idle' | 'loading' | 'success' | 'error'
+
+const labels: Record<Status, string> = {
+  idle: 'Waiting',
+  loading: 'Loading…',
+  success: 'Done!',
+  error: 'Something went wrong',
+}
+```
+
+Unlike `{ [key: string]: V }`, `Record` is exhaustive — the type checker will tell you if you miss a key.
+
+## `Readonly<T>` and `ReadonlyArray<T>`
+
+Prevent mutation at the type level:
+
+```ts
+function freeze<T>(obj: T): Readonly<T> {
+  return Object.freeze(obj)
+}
+
+const config = freeze({ apiUrl: 'https://api.example.com', timeout: 5000 })
+config.timeout = 3000 // ❌ TypeScript error
+```
+
+## `NonNullable<T>`
+
+Removes `null` and `undefined` from a type:
+
+```ts
+type MaybeString = string | null | undefined
+type DefiniteString = NonNullable<MaybeString>  // string
+```
+
+Useful when you've already done a null-check and want to narrow a generic type:
+
+```ts
+function assertDefined<T>(val: T): NonNullable<T> {
+  if (val == null) throw new Error('Expected a value')
+  return val as NonNullable<T>
+}
+```
+
+## `ReturnType<T>` and `Parameters<T>`
+
+Infer types from function signatures:
+
+```ts
+function createSession(userId: number, role: 'admin' | 'user') {
+  return { userId, role, createdAt: new Date() }
+}
+
+type Session = ReturnType<typeof createSession>
+// { userId: number; role: 'admin' | 'user'; createdAt: Date }
+
+type CreateSessionArgs = Parameters<typeof createSession>
+// [userId: number, role: 'admin' | 'user']
+```
+
+This is powerful when you don't control the function definition (e.g., a third-party library).
+
+## `Awaited<T>`
+
+Unwraps the resolved type of a Promise — deeply:
+
+```ts
+async function fetchUser(id: number) {
+  return { id, name: 'Harshal' }
+}
+
+type User = Awaited<ReturnType<typeof fetchUser>>
+// { id: number; name: string }
+```
+
+Before `Awaited` (TypeScript 4.5+), you'd have to reach into `Promise<infer T>` manually.
+
+## Template Literal Types
+
+Not strictly a utility type, but incredibly powerful for generating string unions:
+
+```ts
+type EventName = 'click' | 'focus' | 'blur'
+type Handler = `on${Capitalize<EventName>}`
+// 'onClick' | 'onFocus' | 'onBlur'
+```
+
+Combined with `Record`:
+
+```ts
+type Handlers = Record<Handler, () => void>
+// { onClick: () => void; onFocus: () => void; onBlur: () => void }
+```
+
+## Composing Utility Types
+
+The real power is in combining them. A common pattern for form state:
+
+```ts
+interface FormField<T> {
+  value: T
+  error: string | null
+  touched: boolean
+  dirty: boolean
+}
+
+type FormState<T extends object> = {
+  [K in keyof T]: FormField<T[K]>
+}
+
+type UserForm = FormState<Pick<User, 'name' | 'email'>>
+```
+
+## Conclusion
+
+Utility types are the difference between duplicating types everywhere and having a single source of truth. Start with `Partial`, `Pick`, `Omit`, and `Record` — you'll use them every day. Then graduate to `ReturnType`, `Parameters`, and `Awaited` as you work with more complex generic code.
