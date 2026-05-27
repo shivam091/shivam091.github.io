@@ -1,0 +1,187 @@
+@use "@/styles/abstracts/mixins/transit-properties" as *;
+@use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
+@use "@/styles/abstracts/modules/list-unstyled" as *;
+
+// ─── Drawer shell ─────────────────────────────────────────────────────────────
+
+.headerDrawer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  inset: $header-height $space-sm $space-sm;
+  z-index: 999;
+  box-shadow: var(--box-shadow-md);
+  box-sizing: border-box;
+  border-radius: $border-radius-default;
+  padding-inline: $fluid-space-md;
+  background: var(--color-bg-default);
+  color: var(--color-fg-accent-muted);
+  overflow-y: auto;
+  pointer-events: none;
+  opacity: $opacity-none;
+  transform: translateX(25%);
+
+  @include transit-properties(
+    (opacity, transform),
+    $duration: 350ms,
+    $easing: cubic-bezier(0.41, 0.1, 0.13, 1)
+  );
+
+  &.open {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  // Only shown on small screens – above md we hide it even if state is open
+  @include breakpoint.min(md) {
+    display: none !important;
+  }
+}
+
+// ─── Container ───────────────────────────────────────────────────────────────
+
+.drawerContainer {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: $space-md;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// ─── Navigation ──────────────────────────────────────────────────────────────
+
+.drawerNavigation {
+  display: flex;
+  flex-direction: column;
+  line-height: $line-height-tight;
+}
+
+.navList {
+  @include list-unstyled;
+}
+
+.navItem {
+  padding-block: $space-xs;
+  margin-bottom: $space-none;
+  border-bottom: $border-muted;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  padding-block: $space-md;
+  padding-inline: $space-sm;
+  font-size: $font-size-sm;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-fg-default);
+  }
+
+  &[aria-current="page"] {
+    color: var(--color-fg-default);
+    font-weight: $font-weight-semi-bold;
+  }
+}
+
+// ─── Decorative sky visual ───────────────────────────────────────────────────
+
+.drawerVisuals {
+  position: relative;
+  border-radius: $border-radius-md;
+  overflow: clip;
+  aspect-ratio: 18 / 10;
+  max-height: 250px;
+  background: linear-gradient(to top, var(--color-bg-sky-to) 30%, var(--color-bg-sky-from) 100%);
+  margin-block-start: auto;
+}
+
+.visualCloudShape,
+.visualBaseShape {
+  max-width: revert;
+  position: absolute;
+}
+
+.visualCloudShape {
+  min-width: 475px;
+  width: 85%;
+  height: 14rem;
+  inset: auto -1px -1px auto;
+}
+
+.visualBaseShape {
+  width: calc(100% + 3px);
+  height: 50%;
+  inset: auto -1px -1px -1.5px;
+}
+
+.visualCloudPath {
+  fill: var(--color-bg-sky-subtle);
+}
+
+.visualBasePath {
+  fill: var(--color-bg-default);
+}
+
+// ─── Quick links ─────────────────────────────────────────────────────────────
+
+.quickLinks {
+  @include list-unstyled;
+  position: absolute;
+  right: $space-sm;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0 0 6%;
+}
+
+.quickLink {
+  display: block;
+  padding: $space-sm;
+  color: inherit;
+  font-size: $font-size-sm;
+  text-align: right;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--color-fg-default);
+  }
+}
+
+// ─── Footer ──────────────────────────────────────────────────────────────────
+
+.drawerFooter {
+  .footerLinks {
+    @include list-unstyled;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: $font-size-xs;
+  }
+}
+
+.footerItem {
+  position: relative;
+  margin-bottom: $space-none;
+}
+
+.footerLink {
+  display: block;
+  padding: $space-sm;
+  color: inherit;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

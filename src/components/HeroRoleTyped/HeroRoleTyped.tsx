@@ -13,12 +13,15 @@ export default function HeroRoleTyped(): JSX.Element {
     if (strings.length === 0 || !el.current) return;
 
     const typed = new Typed(el.current, {
-      strings: strings,
+      strings,
       loop: true,
       typeSpeed: 60,
       backSpeed: 30,
       backDelay: 2000,
-      smartBackspace: true
+      smartBackspace: true,
+      // Prevent the cursor element being inserted into the DOM so screen
+      // readers don't announce the blinking "│" character.
+      showCursor: false,
     });
 
     return () => {
@@ -28,7 +31,25 @@ export default function HeroRoleTyped(): JSX.Element {
 
   return (
     <>
-      <span ref={el} className={`${styles.heroHighlight} relative tracking-wider pb-0.5`} />
+      {/*
+       * Static, visually-hidden text for screen readers.
+       * Reads the full roles list once rather than spelling out every
+       * animated character as it types.  sr-only keeps it off-screen but
+       * in the accessibility tree.
+       */}
+      <span className="sr-only">
+        {siteConfig.author.roles.join(", or a ")}
+      </span>
+
+      {/*
+       * Visual-only animated span — hidden from AT with aria-hidden so
+       * the typing animation doesn't produce a stream of partial words.
+       */}
+      <span
+        ref={el}
+        aria-hidden="true"
+        className={`${styles.heroHighlight} relative tracking-wider pb-0.5`}
+      />
     </>
   );
-};
+}
