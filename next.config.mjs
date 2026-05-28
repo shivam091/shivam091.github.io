@@ -9,10 +9,11 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
   reactStrictMode: false,
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  output: "export",
   basePath: "",
   assetPrefix: "",
   images: {
+    // External images (e.g. GitHub readme stats) are not optimised by default.
+    // Remove this once all remote images are added to remotePatterns.
     unoptimized: true,
   },
   sassOptions: {

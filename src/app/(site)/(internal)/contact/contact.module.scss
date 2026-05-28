@@ -1,0 +1,89 @@
+@use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
+
+.contactLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "intro  faq"
+    "section faq";
+  gap: $space-lg;
+  align-items: start;
+
+  @include breakpoint.max(md) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "faq"
+      "section";
+  }
+}
+
+.contactIntro {
+  grid-area: intro;
+
+  p {
+    color: var(--color-fg-muted);
+    font-size: $font-size-base;
+    line-height: $line-height-relaxed;
+    margin-bottom: $space-base;
+
+    &:last-child {
+      margin-bottom: $space-none;
+    }
+  }
+}
+
+.belowText {
+  display: none;
+
+  @include breakpoint.max(md) {
+    display: inline;
+  }
+}
+
+.rightText {
+  display: inline;
+
+  @include breakpoint.max(md) {
+    display: none;
+  }
+}
+
+.contactSection {
+  grid-area: section;
+  position: sticky;
+  top: calc($header-height + $space-base);
+  align-self: start;
+}
+
+.recaptchaDisclaimer {
+  font-size: $font-size-xs;
+  color: var(--color-fg-muted);
+  margin-top: $space-base;
+
+  a {
+    color: var(--color-fg-link);
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--color-fg-link-hover);
+    }
+  }
+}
+
+.contactFaq {
+  grid-area: faq;
+  background: var(--color-bg-cloud-300);
+  border-radius: 0.5rem;
+  padding: $space-base;
+  border: 1px solid var(--color-border-muted);
+
+  h2 {
+    font-size: $font-size-lg;
+    font-family: $font-stack-monospace;
+    letter-spacing: 0.05em;
+    margin-block: $space-none $space-base;
+    color: var(--color-fg-default);
+  }
+}

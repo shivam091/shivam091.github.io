@@ -1,0 +1,73 @@
+@use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.collapse {
+  border: 1px solid var(--color-border-muted);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--color-bg-default);
+}
+
+.collapseToggle {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-sm;
+  width: 100%;
+  padding: $space-md $space-base;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-fg-default);
+  font-family: inherit;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-align: left;
+  line-height: $line-height-snug;
+
+  &:hover {
+    background: var(--color-bg-control-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-outline-focus);
+    outline-offset: -2px;
+  }
+}
+
+.iconWrap {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-top: 0.1em;
+  color: var(--color-fg-muted);
+  transition: transform 200ms ease;
+}
+
+.iconOpen {
+  transform: rotate(0deg);
+  color: var(--color-fg-accent);
+}
+
+.question {
+  flex: 1;
+}
+
+.collapseContent {
+  padding: $space-none $space-base $space-md;
+  font-size: $font-size-sm;
+  color: var(--color-fg-muted);
+  line-height: $line-height-relaxed;
+
+  &[hidden] {
+    display: none;
+  }
+
+  strong {
+    color: var(--color-fg-default);
+    font-weight: $font-weight-semi-bold;
+  }
+}
