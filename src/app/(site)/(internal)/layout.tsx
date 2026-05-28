@@ -23,17 +23,19 @@ import HeaderBlocker from "@/components/HeaderBlocker/HeaderBlocker";
  *   so DefaultBlocker.naturalTop = main.offsetTop exactly.
  *
  * Z-index scale:
- *   HeaderBlocker (glass)  z-index: 10  — blurs sky + content behind it
- *   Header (fixed, z-20)   z-index: 20  — nav/logo always crisp on top
+ *   Cloud SVGs / sky banners        z-index: 1   — very back, decorative
+ *   SkyBlocker (sky glass)          z-index: 3   — above clouds, below hero + header
+ *   DefaultBlocker (default glass)  z-index: 8   — sits on page content, below header
+ *   Header (sticky)                 z-index: 10  — always crisp on top
  *
  * DOM structure:
  *   ┌──────────────────────────────────────┐  ← viewport top
- *   │  [fixed Header — z:20, transparent]  │
+ *   │  [sticky Header — z:10, transparent] │
  *   │  h-56 sky section                    │
- *   │    [SkyBlocker — z:10, sticky top:0] │  sky glass phase
- *   │  (SkyBannerTop cloud SVG underlies)  │
+ *   │    [SkyBlocker — z:3,  sticky top:0] │  sky glass phase
+ *   │  (SkyBannerTop cloud SVG z:1 behind) │
  *   ├──────────────────────────────────────┤  ← -mt-20 on <main>
- *   │  [DefaultBlocker — z:10, sticky top:0│  default glass takes over
+ *   │  [DefaultBlocker — z:8,  sticky top:0│  default glass takes over
  *   │  padded content wrapper              │
  *   │    PageHeading + page content        │
  *   └──────────────────────────────────────┘

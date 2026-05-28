@@ -12,7 +12,7 @@ export default function Hero(): JSX.Element {
   return (
     <section
       aria-label="Introduction"
-      className="p-[clamp(.75rem,1vw,1rem)] min-h-82.5 flex items-center justify-start"
+      className="p-[clamp(.75rem,1vw,1rem)] min-h-82.5 flex items-center justify-start z-10 relative"
     >
       <div className="flex flex-col items-start justify-center gap-2 w-full max-w-4xl">
         <h1 className={`${styles.heroHeading} font-semibold tracking-tight leading-tight`}>
