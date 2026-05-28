@@ -66,15 +66,8 @@ export default function Footer(): JSX.Element {
           <span>
             © {year}{" "}
             <strong>{siteConfig.name}</strong>,{" "}
-            <span
-              className={styles.licenseNote}
-              data-tooltip={LICENSE_NOTE}
-              title={LICENSE_NOTE}
-              tabIndex={0}
-            >
-              Some rights reserved
-            </span>
-            . Built with{" "}
+            All Rights Reserved.
+            Built with{" "}
             <span className={styles.heart} aria-hidden="true">♥</span>
             {" and "}
             <a

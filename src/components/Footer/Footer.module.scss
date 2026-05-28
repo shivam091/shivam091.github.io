@@ -31,8 +31,13 @@
   }
 }
 
-.footerLinks { grid-area: misc; }
-.footerLegal { grid-area: legal; }
+.footerLinks {
+  grid-area: misc;
+}
+
+.footerLegal {
+  grid-area: legal;
+}
 
 .footerSocial {
   grid-area: social;
@@ -67,10 +72,9 @@
 }
 
 .heart {
-  color: hsl(0 70% 60%);
+  color: var(--color-fg-danger);
 }
 
-// Footer is at the page bottom — tooltip always opens upward to stay in viewport.
 .footerLink[data-tooltip],
 .licenseNote[data-tooltip] {
   position: relative;
