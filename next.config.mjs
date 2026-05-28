@@ -27,5 +27,11 @@ const nextConfig = {
   }
 }
 
-const withMDX = createMDX({})
-export default withMDX(nextConfig)
+// Pass plugin as an absolute path string — Turbopack requires serializable (non-function) loader
+// options, and mdx-js-loader resolves string entries via require.resolve at compile time.
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [path.join(__dirname, "src/lib/remark-git-dates.mjs")],
+  },
+});
+export default withMDX(nextConfig);
