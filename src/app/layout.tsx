@@ -40,6 +40,30 @@ export const metadata: Metadata = {
   manifest: "/assets/img/icons/manifest.json",
 };
 
+/**
+ * Anti-FOUC (Flash of Unstyled Content) script.
+ *
+ * Injected as a *blocking* <script> at the very top of <body> so the browser
+ * runs it synchronously before painting anything.  It reads the user's saved
+ * theme from localStorage and overrides the server-rendered `data-theme`
+ * attribute on <html> on frame 0 — zero flash on every page load.
+ *
+ * On first visit (no saved value) it honours `prefers-color-scheme` so the
+ * user never sees the wrong colour scheme.  Because this is a static export
+ * (`output: "export"`) we cannot read a server-side cookie, so localStorage
+ * is the correct persistence layer.
+ */
+const ANTI_FOUC_SCRIPT = `(function() {
+  try {
+    var t = localStorage.getItem('theme');
+    if (!t) {
+      t = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'soft-dark' : 'light';
+      localStorage.setItem('theme', t);
+    }
+    document.documentElement.dataset.theme = t;
+  } catch (e) {}
+})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>): JSX.Element {
@@ -47,7 +71,17 @@ export default function RootLayout({
 
   return (
     <>
-      <html lang={siteConfig.lang || "en"} className="h-full antialiased" data-theme="soft-dark">
+      {/*
+       * data-theme="soft-dark" is the server-rendered default.
+       * The ANTI_FOUC_SCRIPT below overrides it on frame 0 using the user's
+       * saved preference, so no flash is ever visible.
+       */}
+      <html
+        lang={siteConfig.lang || "en"}
+        className="h-full antialiased"
+        data-theme="soft-dark"
+        suppressHydrationWarning={true}
+      >
         <head>
           <meta name="google-site-verification" content="FtCAe189XCM-WjInapqVOrgS_WajuLMnBL201RiO2B8" />
 
@@ -58,11 +92,28 @@ export default function RootLayout({
             </>
           )}
           {siteConfig.font_url && <link rel="stylesheet" href={siteConfig.font_url} />}
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                try {
+                  let theme = localStorage.getItem('theme') || 'system';
+                  if (theme === 'system') {
+                    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  }
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {}
+              `,
+            }}
+          />
         </head>
         <body className="min-h-full flex flex-col">
+          {/* Blocking script — must be the very first child of <body> */}
+          <script dangerouslySetInnerHTML={{ __html: ANTI_FOUC_SCRIPT }} />
+
           {children}
         </body>
       </html>
     </>
   );
-};
+}
