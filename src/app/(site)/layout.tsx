@@ -4,6 +4,7 @@
 import { JSX } from "react";
 import SiteBanner from "@/components/SiteBanner";
 import SkyBannerBottom from "@/components/SkyBanners/SkyBannerBottom";
+import SiteFooter from "@/components/SiteFooter";
 
 export default function SiteLayout({
   children,
@@ -17,6 +18,7 @@ export default function SiteLayout({
       <div className="container w-full mx-auto">
         <div className="flex flex-col min-h-dvh">
           {children}
+          <SiteFooter />
         </div>
       </div>
 
