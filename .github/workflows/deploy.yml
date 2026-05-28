@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout Codebase
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0  # Full history required for git log to read file commit dates
 
       - name: Setup Node.js Environment
         uses: actions/setup-node@v5
