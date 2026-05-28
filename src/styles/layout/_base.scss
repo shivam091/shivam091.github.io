@@ -1,5 +1,6 @@
 @use "@/styles/abstracts/tokens" as *;
 @use "@/styles/abstracts/mixins/transit-properties" as *;
+@use "@/styles/abstracts/mixins/scroll-lock" as *;
 
 @layer base {
   html {
@@ -9,6 +10,10 @@
     scrollbar-gutter: stable;
     scroll-behavior: smooth;
     overflow-x: hidden;
+
+    &[data-drawer="open"] {
+      @include scroll-lock;
+    }
   }
 
   body {

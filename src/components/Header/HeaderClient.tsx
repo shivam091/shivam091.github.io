@@ -242,12 +242,12 @@ export default function HeaderClient(): JSX.Element {
       </div>
 
       {/* ── Mobile drawer ───────────────────────────────────────────────── */}
-      {/* <HeaderDrawer
+      <HeaderDrawer
         id={drawerId}
         isOpen={drawerOpen}
         pathname={pathname ?? "/"}
         onClose={closeDrawer}
-      /> */}
+      />
     </>
   );
 }
