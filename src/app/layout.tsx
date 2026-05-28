@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import "@/styles/globals.css"; // Tailwind v4 — must be plain CSS, not SCSS
 import "@/styles/main.scss";
+import SkipLink from "@/components/SkipLink";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
@@ -111,6 +112,8 @@ export default function RootLayout({
         <body className="min-h-full flex flex-col">
           {/* Blocking script — must be the very first child of <body> */}
           <script dangerouslySetInnerHTML={{ __html: ANTI_FOUC_SCRIPT }} />
+
+          <SkipLink />
 
           {children}
 
