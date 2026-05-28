@@ -25,6 +25,7 @@
 import { JSX } from "react";
 import SiteBanner from "@/components/SiteBanner";
 import SkyBannerBottom from "@/components/SkyBanners/SkyBannerBottom";
+import Footer from "@/components/Footer";
 
 export default function SiteLayout({
   children,
@@ -45,6 +46,7 @@ export default function SiteLayout({
         {/* Content column — fills at least the viewport height */}
         <div className="flex flex-col min-h-dvh">
           {children}
+          <Footer />
         </div>
       </div>
 
