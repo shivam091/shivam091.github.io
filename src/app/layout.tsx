@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import "@/styles/globals.css"; // Tailwind v4 — must be plain CSS, not SCSS
 import "@/styles/main.scss";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: {
@@ -112,6 +113,8 @@ export default function RootLayout({
           <script dangerouslySetInnerHTML={{ __html: ANTI_FOUC_SCRIPT }} />
 
           {children}
+
+          <ScrollToTop />
         </body>
       </html>
     </>
