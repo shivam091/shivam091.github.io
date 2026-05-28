@@ -1,0 +1,109 @@
+@use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
+
+.siteFooter {
+  background: var(--color-bg-transparent);
+  color: var(--color-fg-accent-muted);
+  font-size: $font-size-sm;
+  padding: $fluid-space-md;
+  margin-block-start: $space-base;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "misc social" "legal credits";
+  gap: $space-md;
+  align-items: center;
+
+  @include breakpoint.max(md) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "misc" "legal" "social" "credits";
+  }
+}
+
+.footerSection {
+  display: flex;
+  gap: $space-base;
+  flex-wrap: wrap;
+
+  @include breakpoint.max(md) {
+    justify-content: center;
+  }
+}
+
+.footerLinks { grid-area: misc; }
+.footerLegal { grid-area: legal; }
+
+.footerSocial {
+  grid-area: social;
+
+  @include breakpoint.min(md) {
+    justify-content: flex-end;
+  }
+}
+
+.footerCredits {
+  grid-area: credits;
+
+  @include breakpoint.min(md) {
+    justify-content: flex-end;
+  }
+}
+
+.footerLink {
+  color: inherit;
+  text-decoration: none;
+  padding-block: $space-xxs;
+
+  &:hover {
+    color: var(--color-fg-default);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-outline-focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+.heart {
+  color: hsl(0 70% 60%);
+}
+
+// Footer is at the page bottom — tooltip always opens upward to stay in viewport.
+.footerLink[data-tooltip],
+.licenseNote[data-tooltip] {
+  position: relative;
+
+  &::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + $space-xs);
+    left: 50%;
+    transform: translateX(-50%) translateY($space-xxs);
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0;
+    background: var(--color-bg-overlay);
+    border: 1px solid var(--color-border-overlay);
+    border-radius: 4px;
+    color: var(--color-fg-default);
+    font-size: $font-size-xs;
+    line-height: $line-height-snug;
+    padding: $space-xxs $space-xs;
+    max-width: 280px;
+    white-space: normal;
+    text-align: center;
+    transition: opacity 150ms ease, transform 150ms ease;
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.licenseNote {
+  cursor: default;
+}
