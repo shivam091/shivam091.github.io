@@ -1,0 +1,15 @@
+.wrapper {
+  position: fixed;
+  top: $space-sm;
+  left: $space-sm;
+  z-index: 9999;
+  width: fit-content;
+  // Shift up by own height + top gap so it sits just above the viewport edge.
+  // On :focus-within the translate resets to 0 and the button slides into view.
+  translate: 0 calc(-100% - #{$space-sm});
+  transition: translate $motion-duration-medium $motion-easing-entrance;
+
+  &:focus-within {
+    translate: 0 0;
+  }
+}
