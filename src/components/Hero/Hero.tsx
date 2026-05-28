@@ -3,7 +3,7 @@
 import { JSX } from "react";
 import { siteConfig } from "@/config/site";
 import { useTimeGreeting } from "@/hooks/useTimeGreeting";
-import HeroRoleTyped from "@/components/HeroRoleTyped/HeroRoleTyped";
+import HeroRoleTyped from "@/components/HeroRoleTyped";
 import styles from "@/components/Hero/Hero.module.scss";
 
 export default function Hero(): JSX.Element {
