@@ -1,0 +1,43 @@
+@use "@/styles/abstracts/animations/scroll-top" as *;
+@use "@/styles/abstracts/mixins/transit-properties" as *;
+@use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
+
+.scrollTop {
+  position: fixed;
+  inset-block-end: $space-xl;
+  inset-inline-end: $space-base;
+  z-index: 1000;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  // Starting offset for the bounce-in animation.
+  transform: translateY(20px);
+
+  // Transition inset-inline-end (not `right`) to match the logical property used above,
+  // otherwise the responsive position change won't animate.
+  @include transit-properties(
+    (inset-inline-end, background-color, color, border-color),
+    $duration: $motion-duration-fast,
+    $easing: $motion-easing-in-out
+  );
+
+  @include breakpoint.max(md) {
+    inset-inline-end: $space-md;
+  }
+
+  // data-state is driven by JS scroll position; undefined = never shown, no animation plays.
+  &[data-state="visible"] {
+    animation: scroll-top-bounce-in $motion-duration-slow both;
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  &[data-state="hidden"] {
+    animation: scroll-top-bounce-out $motion-duration-slow both;
+    pointer-events: none;
+    opacity: 0;
+  }
+}
