@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: rails-api
+    runtime: ruby
+    buildCommand: bundle install
+    startCommand: bundle exec puma -C config/puma.rb
+    healthCheckPath: /up
+    envVars:
+      - key: RAILS_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        sync: false
+      - key: RECAPTCHA_SECRET_KEY
+        sync: false
+      - key: NEXTAUTH_SECRET
+        sync: false
+      - key: ALLOWED_ORIGIN
+        sync: false

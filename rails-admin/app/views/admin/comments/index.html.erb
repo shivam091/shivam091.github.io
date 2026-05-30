@@ -1,0 +1,25 @@
+<h1 class="text-2xl font-bold mb-2">Comments</h1>
+<p class="text-sm text-gray-500 mb-6">
+  <%= PostComment.approved.count %> approved &middot; <%= PostComment.pending.count %> pending
+</p>
+
+<div class="overflow-x-auto">
+  <table class="w-full text-sm border-collapse">
+    <thead>
+      <tr class="border-b">
+        <th class="text-left p-2 font-semibold">Post</th>
+        <th class="text-left p-2 font-semibold">Name</th>
+        <th class="text-left p-2 font-semibold">Body</th>
+        <th class="text-left p-2 font-semibold">Status</th>
+        <th class="text-left p-2 font-semibold">Date</th>
+        <th class="text-left p-2 font-semibold">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @comments %>
+    </tbody>
+  </table>
+  <% if @comments.empty? %>
+    <p class="text-center py-12 text-gray-400">No comments yet.</p>
+  <% end %>
+</div>

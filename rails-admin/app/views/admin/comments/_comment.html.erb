@@ -1,0 +1,25 @@
+<%= turbo_frame_tag "comment_#{comment.id}" do %>
+  <tr class="border-b hover:bg-gray-50">
+    <td class="p-2 font-mono text-xs"><%= comment.postSlug %></td>
+    <td class="p-2"><%= comment.name %></td>
+    <td class="p-2 max-w-xs truncate" title="<%= comment.body %>"><%= comment.body %></td>
+    <td class="p-2">
+      <span class="<%= comment.status == 'approved' ? 'text-green-600' : 'text-yellow-600' %>">
+        <%= comment.status %>
+      </span>
+    </td>
+    <td class="p-2 whitespace-nowrap"><%= comment.createdAt&.strftime("%b %d, %Y") %></td>
+    <td class="p-2">
+      <div class="flex gap-2">
+        <% if comment.status != "approved" %>
+          <%= button_to "Approve", admin_comment_path(comment), method: :patch,
+              class: "text-xs text-green-600 hover:underline bg-transparent border-none cursor-pointer p-0",
+              data: { turbo_stream: true } %>
+        <% end %>
+        <%= button_to "Delete", admin_comment_path(comment), method: :delete,
+            class: "text-xs text-red-600 hover:underline bg-transparent border-none cursor-pointer p-0",
+            data: { turbo_confirm: "Delete this comment?", turbo_stream: true } %>
+      </div>
+    </td>
+  </tr>
+<% end %>

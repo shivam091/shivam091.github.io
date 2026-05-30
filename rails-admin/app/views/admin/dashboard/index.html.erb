@@ -1,0 +1,20 @@
+<h1 class="text-2xl font-bold mb-6">Overview</h1>
+
+<div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+  <div class="rounded-lg border p-4">
+    <p class="text-sm text-gray-500">Contact Submissions</p>
+    <p class="text-3xl font-bold mt-1"><%= @submission_count %></p>
+  </div>
+  <div class="rounded-lg border p-4">
+    <p class="text-sm text-gray-500">Comments</p>
+    <p class="text-3xl font-bold mt-1"><%= @comment_count %></p>
+  </div>
+  <div class="rounded-lg border p-4">
+    <p class="text-sm text-gray-500">Pending Comments</p>
+    <p class="text-3xl font-bold mt-1 text-yellow-600"><%= @pending_count %></p>
+  </div>
+  <div class="rounded-lg border p-4">
+    <p class="text-sm text-gray-500">Total Likes</p>
+    <p class="text-3xl font-bold mt-1"><%= @like_count %></p>
+  </div>
+</div>

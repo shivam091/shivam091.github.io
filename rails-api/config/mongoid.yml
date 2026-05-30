@@ -1,0 +1,24 @@
+development:
+  clients:
+    default:
+      uri: <%= ENV["MONGODB_URI"] %>
+      database: <%= ENV.fetch("MONGODB_DB", "blog") %>
+  options:
+    raise_not_found_error: false
+
+test:
+  clients:
+    default:
+      database: blog_test
+      hosts:
+        - localhost:27017
+  options:
+    raise_not_found_error: false
+
+production:
+  clients:
+    default:
+      uri: <%= ENV["MONGODB_URI"] %>
+      database: <%= ENV.fetch("MONGODB_DB", "blog") %>
+  options:
+    raise_not_found_error: false

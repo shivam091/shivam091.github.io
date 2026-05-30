@@ -1,0 +1,24 @@
+<h1 class="text-2xl font-bold mb-2">Likes by Post</h1>
+<p class="text-sm text-gray-500 mb-6">
+  <%= @likes_by_slug.sum { |r| r["count"] } %> total across <%= @likes_by_slug.length %> posts
+</p>
+
+<table class="w-full text-sm border-collapse">
+  <thead>
+    <tr class="border-b">
+      <th class="text-left p-2 font-semibold">Post Slug</th>
+      <th class="text-right p-2 font-semibold">Likes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @likes_by_slug.each do |row| %>
+      <tr class="border-b hover:bg-gray-50">
+        <td class="p-2 font-mono text-xs"><%= row["_id"] || "(unknown)" %></td>
+        <td class="p-2 text-right font-bold"><%= row["count"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% if @likes_by_slug.empty? %>
+  <p class="text-center py-12 text-gray-400">No likes yet.</p>
+<% end %>
