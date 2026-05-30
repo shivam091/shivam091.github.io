@@ -1,0 +1,24 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background: radial-gradient(
+    circle 300px at var(--x, -9999px) var(--y, -9999px),
+    transparent 0%,
+    rgba(0, 0, 0, 0.87) 100%
+  );
+  opacity: 1;
+  transition: opacity 0.4s ease;
+
+  &[data-enabled="false"] {
+    opacity: 0;
+  }
+}
+
+.toggleWrapper {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 51;
+}
