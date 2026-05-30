@@ -69,7 +69,7 @@ export default function InternalLayout({
           <PageHeading />
 
           <section className="page-content" aria-labelledby="page-title">
-            {children}
+            {chidldren}
           </section>
         </div>
       </main>

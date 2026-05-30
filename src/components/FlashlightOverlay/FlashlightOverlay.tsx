@@ -25,8 +25,8 @@ export default function FlashlightOverlay({ showToggle = false }: Props): JSX.El
     const el = overlayRef.current;
     if (!el) return;
 
-    el.style.setProperty("--x", `${e.clientX}px`);
-    el.style.setProperty("--y", `${e.clientY}px`);
+    el.style.setProperty("--cursorX", `${e.clientX}px`);
+    el.style.setProperty("--cursorY", `${e.clientY}px`);
   }, []);
 
   useEffect(() => {
@@ -43,8 +43,8 @@ export default function FlashlightOverlay({ showToggle = false }: Props): JSX.El
     const el = overlayRef.current;
     if (!el) return;
 
-    el.style.setProperty("--x", `${posRef.current.x}px`);
-    el.style.setProperty("--y", `${posRef.current.y}px`);
+    el.style.setProperty("--cursorX", `${posRef.current.x}px`);
+    el.style.setProperty("--cursorY", `${posRef.current.y}px`);
   }, [enabled]);
 
   useEffect(() => {
