@@ -23,8 +23,8 @@ import HeaderBlocker from "@/components/HeaderBlocker/HeaderBlocker";
  *   so DefaultBlocker.naturalTop = main.offsetTop exactly.
  *
  * Z-index scale:
- *   Cloud SVGs / sky banners        z-index: 1   — very back, decorative
- *   SkyBlocker (sky glass)          z-index: 3   — above clouds, below hero + header
+ *   SkyBlocker (sky glass)          z-index: 0   — behind banners; shows through transparent header
+ *   Sky/hero banners                z-index: 1   — above sky blocker; hides it in the sky section
  *   DefaultBlocker (default glass)  z-index: 8   — sits on page content, below header
  *   Header (sticky)                 z-index: 10  — always crisp on top
  *

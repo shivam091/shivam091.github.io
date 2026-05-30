@@ -13,6 +13,14 @@ const nextConfig = {
   // production build output.
   reactStrictMode: false,
 
+  experimental: {
+    // Wraps every next/link navigation in document.startViewTransition(),
+    // activating the CSS View Transitions API.  Elements with
+    // view-transition-name (e.g. the site header) are treated as shared
+    // persistent elements and stay locked in place across page changes.
+    viewTransition: true,
+  },
+
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   output: "export",
   basePath: "",

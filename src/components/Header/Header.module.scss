@@ -12,6 +12,12 @@
 .siteHeader {
   transition: color 350ms cubic-bezier(0.41, 0.1, 0.13, 1);
   z-index: 10;
+  // Marks this element as a View Transitions "shared element".
+  // When the browser performs a page transition (startViewTransition), matching
+  // elements on the old and new page are cross-faded as a unit instead of
+  // animating away and back in — so the header stays visually locked in place
+  // across navigations rather than flickering or re-running its drop-in animation.
+  view-transition-name: site-header;
 }
 
 // ─── Action button entry animation ───────────────────────────────────────────

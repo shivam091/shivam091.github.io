@@ -4,6 +4,7 @@
 .skyBannerTop {
   display: flex;
   flex-direction: column;
+  position: relative;         // required for z-index: 1 to apply in the stacking order
   isolation: isolate;
   overflow: clip;
   max-height: 100vh;

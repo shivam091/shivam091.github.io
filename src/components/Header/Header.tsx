@@ -33,10 +33,9 @@ import styles from "@/components/Header/Header.module.scss";
 export default function Header(): JSX.Element {
   return (
     /*
-     * position:fixed  — out of flow, always at viewport top.
-     * inset-x-0 top-0 — spans full viewport width.
+     * position:fixed  — out of flow, always at viewport top, full viewport width.
+     * inset-x-0 top-0 — pins to all three edges (left, right, top).
      * z-20            — above the HeaderBlocker sticky divs (z-index: 10).
-     *                   Two-step gap: glass (z:10) → header (z:20).
      * bg-transparent  — permanently transparent; the HeaderBlocker behind it
      *                   provides the sky or default glass tint + blur.
      */
@@ -46,7 +45,7 @@ export default function Header(): JSX.Element {
 
         // Layout
         "flex flex-wrap items-center justify-center",
-        "sticky inset-x-0 inset-y-0",
+        "fixed inset-x-0 top-0",
 
         // Sizing — fixed height on large screens, auto (wrappable) on mobile
         "h-20 max-md:h-auto max-md:min-h-20",

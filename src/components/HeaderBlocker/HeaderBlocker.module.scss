@@ -23,13 +23,10 @@
 //   the two phases.
 //
 // Stacking (z-index scale):
-//   z-index: 1   — cloud SVGs / sky banners (very back, purely decorative)
-//   z-index: 3   — sky blocker (above clouds, below hero content and header)
+//   z-index: 0   — sky blocker (behind sky/hero banners; shows through transparent header)
+//   z-index: 1   — sky/hero banners (sit above sky blocker, hiding it in the sky section)
 //   z-index: 8   — default blocker (sits on page content, below header z:10)
 //   z-index: 10  — hero content + header (same level, always crisp on top)
-//
-//   This two-step gap (10 → 20) aligns with Tailwind's scale and leaves room
-//   for future sticky/floating UI elements (z:11-19) between the glass and header.
 
 .blocker {
   position: sticky;
@@ -42,10 +39,12 @@
   transition: background 350ms cubic-bezier(0.41, 0.1, 0.13, 1);
 }
 
-// Phase 2 — sky-tinted glass while header is over the sky/hero banner
+// Phase 2 — sky-tinted glass while header is over the sky/hero banner.
+// z-index: 0 keeps it below the sky/hero banners (z:1) so the banners cover
+// it in the sky section, while still sitting behind the transparent header (z:10).
 .sky {
   background: hsl(from var(--color-bg-sky-from) h s l / 0.72);
-  z-index: 3;
+  z-index: 0;
 }
 
 // Phase 3 — default-bg glass for all remaining page content
