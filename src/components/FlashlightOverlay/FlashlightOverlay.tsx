@@ -56,7 +56,7 @@ export default function FlashlightOverlay({ showToggle = false }: Props): JSX.El
     <>
       <div
         ref={overlayRef}
-        className={styles.overlay}
+        className={styles.flashlightOverlay}
         data-enabled={enabled}
         aria-hidden="true"
       />
