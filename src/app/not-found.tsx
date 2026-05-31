@@ -1,6 +1,7 @@
 import { JSX } from "react";
 import { EmojiSadIcon } from "@/components/Icon";
 import Button from "@/components/Button";
+import FlashlightOverlay from "@/components/FlashlightOverlay";
 import styles from "./error.module.scss";
 
 export const metadata = {
@@ -10,6 +11,7 @@ export const metadata = {
 export default function NotFound(): JSX.Element {
   return (
     <>
+      <FlashlightOverlay showToggle />
       <div className={`flex flex-col items-center justify-center min-h-screen px-6 py-20 ${styles.page}`}>
         <div className="rounded-full flex items-center justify-center mb-6 text-(--color-fg-danger)">
           <EmojiSadIcon size={96} />

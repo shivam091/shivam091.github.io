@@ -1,3 +1,7 @@
+:global(body[data-error-page]) .wrapper {
+  display: none;
+}
+
 .wrapper {
   position: fixed;
   top: $space-sm;
