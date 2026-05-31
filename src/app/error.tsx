@@ -3,8 +3,10 @@
 import { JSX, useEffect } from "react";
 import { EmojiSadIcon } from "@/components/Icon";
 import Button from "@/components/Button";
+import FlashlightOverlay from "@/components/FlashlightOverlay";
 import styles from "./error.module.scss";
 
+// Full-page error boundary UI — logs the runtime error and offers a retry/home button.
 export default function Error({
   error,
   reset,
@@ -17,12 +19,14 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className={`flex flex-col items-center justify-center min-h-screen px-6 py-20 ${styles.page}`}>
+    <>
+      <FlashlightOverlay showToggle />
+      <div className={`flex flex-col items-center justify-center min-h-screen px-6 py-20 ${styles.page}`}>
       <div className="rounded-full flex items-center justify-center mb-6 text-(--color-fg-danger)">
         <EmojiSadIcon size={96} />
       </div>
 
-      <h1 className="text-5xl font-bold text-(--color-fg-danger)">
+      <h1 className="text-center text-5xl font-bold text-(--color-fg-danger)">
         Something Went Wrong
       </h1>
 
@@ -41,5 +45,6 @@ export default function Error({
         </Button>
       </div>
     </div>
+    </>
   );
 }

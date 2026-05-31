@@ -1,3 +1,8 @@
+// Error/404 pages have their own full-screen overlay — hide the skip link there.
+:global(body[data-error-page]) .wrapper {
+  display: none;
+}
+
 // Off-screen by default; slides into view on :focus-within so keyboard users see it.
 .wrapper {
   position: fixed;

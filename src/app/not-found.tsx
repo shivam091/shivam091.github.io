@@ -1,21 +1,24 @@
 import { JSX } from "react";
 import { EmojiSadIcon } from "@/components/Icon";
 import Button from "@/components/Button";
+import FlashlightOverlay from "@/components/FlashlightOverlay";
 import styles from "./error.module.scss";
 
 export const metadata = {
   title: "Page Not Found"
 };
 
+// 404 page shown for any unmatched route — flashlight overlay plus a "Go Home" button.
 export default function NotFound(): JSX.Element {
   return (
     <>
+      <FlashlightOverlay showToggle />
       <div className={`flex flex-col items-center justify-center min-h-screen px-6 py-20 ${styles.page}`}>
         <div className="rounded-full flex items-center justify-center mb-6 text-(--color-fg-danger)">
           <EmojiSadIcon size={96} />
         </div>
 
-        <h1 className="text-5xl font-bold text-(--color-fg-danger)">
+        <h1 className="text-center text-5xl font-bold text-(--color-fg-danger)">
           404 — Page Not Found
         </h1>
 
