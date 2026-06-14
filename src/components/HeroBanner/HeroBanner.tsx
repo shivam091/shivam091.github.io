@@ -5,7 +5,7 @@ import styles from "@/components/HeroBanner/HeroBanner.module.scss";
 export default function HeroBanner(): JSX.Element {
   return (
     <>
-      <div className={styles.heroBanner} data-cloud-shapes aria-hidden="true">
+      <div className={styles.heroBanner} data-banner="hero" data-cloud-shapes aria-hidden="true">
         <div className={`${styles.skyLayer} ${styles.skyLayerBack}`} role="presentation">
           <svg
             width="5120"

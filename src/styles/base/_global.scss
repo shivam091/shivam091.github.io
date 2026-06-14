@@ -1,4 +1,63 @@
 @use "@/styles/abstracts/tokens" as *;
+@use "@/styles/abstracts/mixins/scroll-lock" as *;
+
+// ─── Typed custom properties for the scroll-driven glass animation ───────────
+//
+// Registering these as typed properties lets the browser interpolate them
+// smoothly in @keyframes. Without @property they are untyped (<any>), and CSS
+// can only animate untyped custom properties discretely — i.e. they jump from
+// the "from" to the "to" value at exactly 50% of the animation range.
+//
+// initial-value must be a concrete literal; CSS variables are not allowed here.
+//
+@property --glass-opacity {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --blur-amount {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+// ─── Scroll animation threshold ───────────────────────────────────────────────
+//
+// --scroll-threshold controls the animation-range end point for the header
+// glass effect.  Registering it as <length> (with inherits: true) means the
+// browser can substitute it inside animation-range: 0px var(--scroll-threshold).
+// Without @property registration the value would be opaque to the animation
+// engine and animation-range would silently ignore it.
+//
+// Override per page by setting --scroll-threshold on any ancestor of <header>.
+// The :has() rules below do this automatically based on which banner is present.
+@property --scroll-threshold {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 250px;
+}
+
+// Default covers SkyBannerTop (225 px SVG → 250 px gives a small overlap).
+// :has() selectors key off data-banner attributes on the banner components,
+// so each layout gets the right threshold with no JavaScript.
+:root {
+  --scroll-threshold: 250px;
+}
+
+// Inner/post pages use the taller inner sky SVG (357 px viewBox).
+:root:has([data-banner="sky-inner"]) {
+  --scroll-threshold: 360px;
+}
+
+// Home page hero banner SVG front layer is 456 px.
+:root:has([data-banner="hero"]) {
+  --scroll-threshold: 460px;
+}
+
+html.scroll-locked {
+  @include scroll-lock;
+}
 
 // ─── WHY @layer base ──────────────────────────────────────────────────────────
 //

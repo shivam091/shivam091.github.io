@@ -1,0 +1,10 @@
+@mixin scroll-lock {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

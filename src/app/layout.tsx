@@ -1,6 +1,7 @@
-import { JSX } from "react";
+import { JSX, type ReactNode } from "react";
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
+import { ThemeProvider } from "@/context/ThemeContext";
 import "@/styles/globals.css"; // Tailwind v4 — must be plain CSS, not SCSS
 import "@/styles/main.scss";
 import SkipLink from "@/components/SkipLink";
@@ -40,36 +41,38 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/assets/img/icons/manifest.json",
+  verification: {
+    google: "FtCAe189XCM-WjInapqVOrgS_WajuLMnBL201RiO2B8",
+  },
 };
 
 /**
  * Anti-FOUC (Flash of Unstyled Content) script.
  *
- * Injected as a *blocking* <script> at the very top of <body> so the browser
- * runs it synchronously before painting anything. It reads the user's saved
- * theme from localStorage and overrides the server-rendered `data-theme`
- * attribute on <html> on frame 0 — zero flash on every page load.
+ * Runs synchronously as the very first child of <body> so the browser applies
+ * the correct theme before painting anything — zero flash on every page load.
  *
- * On first visit (no saved value) it honours `prefers-color-scheme` so the
- * user never sees the wrong colour scheme. Because this is a static export
- * (`output: "export"`) we cannot read a server-side cookie, so localStorage
- * is the correct persistence layer.
+ * "system" is stored as a preference but always resolved to a concrete theme
+ * before being written to data-theme, because the CSS only understands
+ * "light" | "dark" | "soft-dark" — not "system".
  */
 const ANTI_FOUC_SCRIPT = `(function() {
   try {
-    var t = localStorage.getItem("theme");
-    if (!t) {
-      t = window.matchMedia("(prefers-color-scheme:dark)").matches ? "soft-dark" : "light";
-      localStorage.setItem("theme", t);
+    var saved = localStorage.getItem("saved-color-theme") || "system";
+    var resolved = saved;
+    if (saved === "system") {
+      resolved = window.matchMedia("(prefers-color-scheme:dark)").matches
+        ? "dark"
+        : "light";
     }
-    document.documentElement.dataset.theme = t;
+    document.documentElement.setAttribute("data-theme", resolved);
   } catch (e) {}
 })();`;
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>): JSX.Element {
-  const isGoogleFont = siteConfig.font_url?.includes("fonts.googleapis.com");
+}: Readonly<{ children: ReactNode }>): JSX.Element {
+  const isGoogleFont = siteConfig.font_url.includes("fonts.googleapis.com");
 
   return (
     <>
@@ -79,35 +82,19 @@ export default function RootLayout({
        * saved preference, so no flash is ever visible.
        */}
       <html
-        lang={siteConfig.lang || "en"}
+        lang={siteConfig.lang}
         className="h-full antialiased"
         data-theme="soft-dark"
         suppressHydrationWarning={true}
       >
         <head>
-          <meta name="google-site-verification" content="FtCAe189XCM-WjInapqVOrgS_WajuLMnBL201RiO2B8" />
-
           {isGoogleFont && (
             <>
               <link rel="preconnect" href="https://fonts.googleapis.com" />
               <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
             </>
           )}
-          {siteConfig.font_url && <link rel="stylesheet" href={siteConfig.font_url} />}
-
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                try {
-                  let theme = localStorage.getItem("theme") || "system";
-                  if (theme === "system") {
-                    theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-                  }
-                  document.documentElement.setAttribute("data-theme", theme);
-                } catch (e) {}
-              `,
-            }}
-          />
+          <link rel="stylesheet" href={siteConfig.font_url} />
         </head>
         <body className="min-h-full flex flex-col">
           {/* Blocking script — must be the very first child of <body> */}
@@ -115,7 +102,9 @@ export default function RootLayout({
 
           <SkipLink />
 
-          {children}
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
 
           <ScrollToTop />
         </body>

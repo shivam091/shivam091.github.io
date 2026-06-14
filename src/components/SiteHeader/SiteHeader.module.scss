@@ -1,0 +1,51 @@
+@use "@/styles/abstracts/mixins/transit-properties" as *;
+@use "@/styles/abstracts/animations/glass-on" as *;
+
+.siteHeader {
+  background: hsl(from var(--color-bg-sky-from) h s l / var(--glass-opacity));
+  backdrop-filter: blur(var(--blur-amount));
+
+  @include transit-properties(
+    color,
+    $duration: 350ms,
+    $easing: cubic-bezier(0.41, 0.1, 0.13, 1)
+  );
+
+  @supports (animation-timeline: scroll()) {
+    // linear timing lets the @keyframes stops define the curve directly,
+    // so the 3-stop easing in glass-on maps 1:1 to scroll position.
+    // --scroll-threshold is set per banner type via :has() in _global.scss.
+    animation: glass-on linear;
+    animation-timeline: scroll(root block);
+    animation-range: 0px var(--scroll-threshold);
+    animation-fill-mode: forwards;
+  }
+}
+
+.headerAction {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity          0.5s ease calc(var(--index, 1) * 0.1s),
+    transform        0.5s ease calc(var(--index, 1) * 0.1s),
+    background-color $motion-duration-default $motion-easing-in-out,
+    border-color     $motion-duration-default $motion-easing-in-out;
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-bg-control-transparent);
+    border-color: var(--color-border-control-transparent-hover);
+    outline: none;
+  }
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      --index: #{$i};
+    }
+  }
+}
