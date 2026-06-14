@@ -14,6 +14,7 @@
  */
 
 import { JSX, useCallback, useEffect, useRef, useState, useId } from "react";
+import { useBoop } from "@/hooks/useBoop";
 import { createPortal } from "react-dom";
 import { AnimatePresence } from "motion/react";
 import Link from "next/link";
@@ -22,10 +23,10 @@ import { mainNav, colorSchemes } from "@/data/navigation";
 import { useTheme } from "@/context/ThemeContext";
 import {
   AdjustIcon,
-  RssIcon,
   SearchIcon,
   SpeakerIcon,
 } from "@/components/Icon";
+import IconRssAnimated from "@/components/Icon/IconRssAnimated";
 import IconHamburger from "@/components/Icon/IconHamburger";
 import { Icon } from "@/components/Icon";
 import {
@@ -57,10 +58,10 @@ export default function SiteHeaderClient(): JSX.Element {
 
   const toggleRef = useRef<HTMLButtonElement>(null);
   const [mounted, setMounted] = useState(false);
+  const [rssBooped, triggerRssBoop] = useBoop();
 
   // Boop state lives inside IconHamburger itself; only press timing lives here.
   const [isPressed, setIsPressed] = useState(false);
-  const [isBooped, setIsBooped] = useState(false);
   const pressedTimestamp = useRef<number | null>(null);
   const pressTimeoutRef = useRef<number | null>(null);
 
@@ -216,8 +217,9 @@ export default function SiteHeaderClient(): JSX.Element {
           target="_blank"
           rel="alternate"
           type="application/atom+xml"
+          onMouseEnter={triggerRssBoop}
         >
-          <RssIcon size={16} />
+          <IconRssAnimated size={16} isBooped={rssBooped} />
         </Link>
 
         {/* Hamburger — hidden on desktop, visible on mobile.
@@ -241,10 +243,7 @@ export default function SiteHeaderClient(): JSX.Element {
           onPointerDown={() => {
             pressedTimestamp.current = Date.now();
             setIsPressed(true);
-            // Cancel any in-flight minimum-press timeout from a previous tap
-            if (pressTimeoutRef.current !== null) {
-              window.clearTimeout(pressTimeoutRef.current);
-            }
+            if (pressTimeoutRef.current !== null) window.clearTimeout(pressTimeoutRef.current);
           }}
           onClick={() => {
             // Enforce ~7 frames (≈117ms) in opening/closing so the morph is
