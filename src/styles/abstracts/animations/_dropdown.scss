@@ -1,0 +1,64 @@
+// Open: panel enters from the opposite side of the trigger.
+@keyframes dropdown-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes dropdown-in-top {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes dropdown-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+}
+
+@keyframes dropdown-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+}
+
+// Close: panel retreats back toward the trigger.
+@keyframes dropdown-out-bottom {
+  to {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes dropdown-out-top {
+  to {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes dropdown-out-left {
+  to {
+    opacity: 0;
+    transform: translateX(4px);
+  }
+}
+
+@keyframes dropdown-out-right {
+  to {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+}
+
+// Content inner fade.
+@keyframes dropdown-content-fade-in {
+  from {
+    opacity: 0;
+  }
+}
