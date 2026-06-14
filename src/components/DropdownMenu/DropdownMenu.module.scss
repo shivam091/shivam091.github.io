@@ -1,0 +1,111 @@
+@use "@/styles/abstracts/animations/dropdown" as *;
+
+.content {
+  position: relative;
+  min-width: 10rem;
+  background: var(--color-bg-overlay);
+  border-radius: 0.375rem;
+  padding: 0.25rem;
+  box-shadow: var(--box-shadow-md);
+  z-index: 1002;
+
+  // Direction varies by the side Radix resolves to (after collision avoidance).
+  // data-side is always present on Radix.Content — no JS needed.
+  &[data-state="open"] {
+    &[data-side="bottom"] {
+      animation: dropdown-in-bottom 0.55s cubic-bezier(0.17, 0.67, 0.51, 1) both;
+    }
+
+    &[data-side="top"] {
+      animation: dropdown-in-top 0.55s cubic-bezier(0.17, 0.67, 0.51, 1) both;
+    }
+
+    &[data-side="left"] {
+      animation: dropdown-in-left 0.55s cubic-bezier(0.17, 0.67, 0.51, 1) both;
+    }
+
+    &[data-side="right"] {
+      animation: dropdown-in-right 0.55s cubic-bezier(0.17, 0.67, 0.51, 1) both;
+    }
+  }
+
+  &[data-state="closed"] {
+    &[data-side="bottom"] {
+      animation: dropdown-out-bottom 0.2s ease-in both;
+    }
+
+    &[data-side="top"] {
+      animation: dropdown-out-top 0.2s ease-in both;
+    }
+
+    &[data-side="left"] {
+      animation: dropdown-out-left 0.2s ease-in both;
+    }
+
+    &[data-side="right"] {
+      animation: dropdown-out-right 0.2s ease-in both;
+    }
+  }
+
+  // The hill-shaped tip SVG is 30×10. Radix rotates it ±90° for left/right
+  // placements, which distorts it into a 10×30 shape — hide it in those cases.
+  &[data-side="left"] .tip,
+  &[data-side="right"] .tip {
+    display: none;
+  }
+}
+
+// Curved tip
+//
+// Positioning is handled entirely by Radix's Floating UI arrow middleware —
+// the SVG is wrapped in an absolutely-positioned SPAN that Radix centres on
+// the trigger. We only need visual styles here.
+
+.tip {
+  overflow: visible;
+}
+
+.tipPath {
+  fill: var(--color-bg-overlay);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-fg-default);
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  border-radius: 0.25rem;
+
+  &[data-highlighted] {
+    background: var(--color-bg-neutral-muted);
+  }
+
+  &[data-disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.separator {
+  height: 1px;
+  background: var(--color-border-muted);
+  margin-block: 0.25rem;
+}
+
+.label {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-fg-muted);
+  pointer-events: none;
+}
+
+.contentInner {
+  animation: dropdown-content-fade-in 0.2s 0.1s backwards;
+}
