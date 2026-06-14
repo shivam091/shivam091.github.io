@@ -14,6 +14,7 @@ export default function SkyBannerTop({ inner = false }: SkyBannerTopProps): JSX.
       <div className={styles.skyBannerTop} aria-hidden="true">
         <div
           className={[styles.cloudLayers, inner ? styles.inner : ""].filter(Boolean).join(" ")}
+          data-banner={inner ? "sky-inner" : "sky-default"}
           data-cloud-shapes
           role="presentation"
         >

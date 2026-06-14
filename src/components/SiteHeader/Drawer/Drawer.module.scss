@@ -1,0 +1,17 @@
+@use "@/styles/abstracts/mixins/breakpoints" as breakpoint;
+
+.headerDrawer {
+  // Force-hide above md — !important overrides Motion's inline style.
+  @include breakpoint.min(md) {
+    display: none !important;
+  }
+}
+
+// Hides the inner scroll container's scrollbar (webkit + legacy IE/Edge).
+.drawerContainer {
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
