@@ -22,11 +22,11 @@ import { mainNav, colorSchemes } from "@/data/navigation";
 import { useTheme } from "@/context/ThemeContext";
 import {
   AdjustIcon,
-  HamburgerIcon,
   RssIcon,
   SearchIcon,
   SpeakerIcon,
 } from "@/components/Icon";
+import IconHamburger from "@/components/Icon/IconHamburger";
 import { Icon } from "@/components/Icon";
 import {
   DropdownMenu,
@@ -34,11 +34,9 @@ import {
   DropdownContent,
   DropdownItem,
 } from "@/components/DropdownMenu";
-import styles from "@/components/SiteHeader/SiteHeader.module.scss";
+import type { IconStatus } from "@/components/Icon/IconHamburger.helpers";
 import Drawer from "@/components/SiteHeader/Drawer";
-
-// Temporary local alias — will be imported from IconHamburger.helpers once the spring-hamburger commit lands.
-type IconStatus = "closed" | "opening" | "open" | "closing";
+import styles from "@/components/SiteHeader/SiteHeader.module.scss";
 
 const actionCls = [
   styles.headerAction,
@@ -62,6 +60,7 @@ export default function SiteHeaderClient(): JSX.Element {
 
   // Boop state lives inside IconHamburger itself; only press timing lives here.
   const [isPressed, setIsPressed] = useState(false);
+  const [isBooped, setIsBooped] = useState(false);
   const pressedTimestamp = useRef<number | null>(null);
   const pressTimeoutRef = useRef<number | null>(null);
 
@@ -99,6 +98,11 @@ export default function SiteHeaderClient(): JSX.Element {
   // would inherit the glassed state. Restarting the animation clears that.
   useEffect(() => {
     setDrawerOpen(false);
+    setIsPressed(false);
+    if (pressTimeoutRef.current !== null) {
+      window.clearTimeout(pressTimeoutRef.current);
+      pressTimeoutRef.current = null;
+    }
 
     const header = toggleRef.current?.closest("header");
     if (header instanceof HTMLElement) {
@@ -216,9 +220,13 @@ export default function SiteHeaderClient(): JSX.Element {
           <RssIcon size={16} />
         </Link>
 
-        {/* Hamburger — hidden on desktop, visible on mobile */}
-        <button
+        {/* Hamburger — hidden on desktop, visible on mobile.
+            IconHamburger IS the button; it owns boop state + scale wrapper internally. */}
+        <IconHamburger
           ref={toggleRef}
+          iconStatus={iconStatus}
+          isOpen={drawerOpen}
+          size={16}
           className={[
             styles.headerAction,
             "hidden max-md:inline-flex items-center justify-center",
@@ -230,13 +238,35 @@ export default function SiteHeaderClient(): JSX.Element {
           aria-label="Toggle menu"
           aria-controls={drawerId}
           aria-expanded={drawerOpen}
-          onClick={() => setDrawerOpen((v) => !v)}
-        >
-          <HamburgerIcon
-            size={16}
-            className={`transition-transform duration-300 ease-[cubic-bezier(0.6,0,0.2,1)] will-change-transform${drawerOpen ? " scale-150" : ""}`}
-          />
-        </button>
+          onPointerDown={() => {
+            pressedTimestamp.current = Date.now();
+            setIsPressed(true);
+            // Cancel any in-flight minimum-press timeout from a previous tap
+            if (pressTimeoutRef.current !== null) {
+              window.clearTimeout(pressTimeoutRef.current);
+            }
+          }}
+          onClick={() => {
+            // Enforce ~7 frames (≈117ms) in opening/closing so the morph is
+            // always visible even on an instant tap
+            const MIN_PRESS_MS = Math.ceil(16.667 * 7);
+            const elapsed = pressedTimestamp.current
+              ? Date.now() - pressedTimestamp.current
+              : MIN_PRESS_MS;
+            const remaining = MIN_PRESS_MS - elapsed;
+            if (remaining <= 0) {
+              setDrawerOpen((v) => !v);
+              setIsPressed(false);
+            } else {
+              pressTimeoutRef.current = window.setTimeout(() => {
+                setDrawerOpen((v) => !v);
+                setIsPressed(false);
+                pressTimeoutRef.current = null;
+              }, remaining);
+            }
+          }}
+          onPointerLeave={() => setIsPressed(false)}
+        />
       </div>
 
       {/* Mobile drawer */}
