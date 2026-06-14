@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import Icon from "@/components/Icon/Icon";
 import { quickLinks, legalLinks, socialLinks } from "@/data/navigation";
+import FooterRssLink from "@/components/SiteFooter/FooterRssLink";
 import styles from "@/components/SiteFooter/SiteFooter.module.scss";
 
 // Site footer with three nav sections (quick links, social, legal) plus a credits/copyright row.
@@ -29,22 +30,30 @@ export default function Footer(): JSX.Element {
 
           <nav className={`${styles.footerSection} ${styles.footerSocial}`} aria-label="Social links">
             {/* Skip links whose href is empty (e.g. resume not yet configured). */}
-            {socialLinks.filter(link => link.href).map(({ label, href, icon, external, analytics }) => (
-              <a
-                key={href}
-                href={href}
-                className={styles.footerLink}
-                aria-label={label}
-                {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                {...(analytics ? {
-                  "data-analytics-event":    analytics.event,
-                  "data-analytics-label":    analytics.label,
-                  "data-analytics-category": analytics.category,
-                } : {})}
-              >
-                <Icon name={icon} size={18} aria-hidden="true" focusable={false} />
-              </a>
-            ))}
+            {socialLinks.filter(link => link.href).map((link) => {
+              const { type, label, href, icon, external, analytics } = link;
+
+              if (type === "atom") {
+                return <FooterRssLink key={href} href={href} label={label} analytics={analytics} />;
+              }
+
+              return (
+                <a
+                  key={href}
+                  href={href}
+                  className={styles.footerLink}
+                  aria-label={label}
+                  {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  {...(analytics ? {
+                    "data-analytics-event":    analytics.event,
+                    "data-analytics-label":    analytics.label,
+                    "data-analytics-category": analytics.category,
+                  } : {})}
+                >
+                  <Icon name={icon} size={18} aria-hidden="true" focusable={false} />
+                </a>
+              );
+            })}
           </nav>
 
           <nav className={`${styles.footerSection} ${styles.footerLegal}`} aria-label="Legal links">
